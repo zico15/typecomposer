@@ -1,6 +1,9 @@
 import { ClassDeclaration, Decorator, Project, SourceFile } from 'ts-morph';
 import { RegisterBuild, RegisterOptions } from './Register';
 import { TemplateBuild } from './Template';
+import { StyleBuild } from './Style';
+import { ViteDevServer } from 'vite';
+import * as fs from 'fs';
 
 export interface ClassInfo {
     className: string | undefined;
@@ -11,34 +14,42 @@ export interface ClassInfo {
     classDeclaration: ClassDeclaration;
     registerOptions: RegisterOptions;
     constructorDatas: string[];
+    styles: string[];
 }
 
 export interface FileInfo {
+    path: string;
     sourceFile: SourceFile;
     classes: ClassInfo[];
     removeDatas: string[];
+    templatesUrl: string[];
 }
 
 export class ProjectBuild extends Project {
 
     public files: Map<string, FileInfo> = new Map<string, FileInfo>();
     public path: string;
+    public stylePath: string;
+    public styleCode: string = "";
 
-    constructor() {
+    constructor(public server: ViteDevServer) {
         super();
         this.addSourceFilesAtPaths('**/*.ts');
         this.path = this.getSourceFiles().find(e => e.getFilePath().includes("node_modules/typecompose-plugin"))?.getFilePath() || "";
         if (this.path != "")
             this.path = this.path.split("node_modules/typecompose-plugin/")[0] + "node_modules/typecompose-plugin/";
+        this.stylePath = this.path + "styles/style-base.scss";
     }
 
     public async analyze(path: string, code: string): Promise<string> {
         const sourceFile = this.createSourceFile('dummy.ts', code, { overwrite: true });
-        const fileInfo: FileInfo = this.files.get(path) || { sourceFile: sourceFile, classes: [], removeDatas: [] };
+        const fileInfo: FileInfo = this.files.get(path) || { sourceFile: sourceFile, classes: [], removeDatas: [], path: path, templatesUrl: [] };
         const classes = sourceFile.getClasses();
         console.log('Path:', sourceFile.getFilePath());
         fileInfo.sourceFile = sourceFile;
         fileInfo.removeDatas = [];
+        fileInfo.path = path;
+        fileInfo.templatesUrl = [];
         fileInfo.classes = classes.map((classDeclaration: ClassDeclaration) => {
             return this.getClassInofo(sourceFile, classDeclaration);
         }).filter((classInfo: ClassInfo) => classInfo.isComponent);
@@ -51,6 +62,8 @@ export class ProjectBuild extends Project {
 
     private async build(fileInfo: FileInfo) {
         for await (const classInfo of fileInfo.classes) {
+            this.insertConstructorDatas(classInfo);
+            this.injectFunctions(fileInfo.sourceFile, classInfo.classDeclaration);
             RegisterBuild.injectTag(fileInfo, classInfo);
         }
         let code = fileInfo.sourceFile.getFullText();
@@ -59,6 +72,7 @@ export class ProjectBuild extends Project {
         }
         console.log(fileInfo.removeDatas);
         fileInfo.removeDatas.length = 0;
+        await StyleBuild.build(this);
         return code;
     }
 
@@ -75,6 +89,7 @@ export class ProjectBuild extends Project {
             classDeclaration: classDeclaration,
             registerOptions: {},
             constructorDatas: [],
+            styles: []
         };
     }
 
@@ -123,5 +138,56 @@ export class ProjectBuild extends Project {
             return { moduleSpecifier: moduleSpecifier, namedImports: namedImports };
         });
         return imports;
+    }
+
+    private insertConstructorDatas(classInfo: ClassInfo) {
+        const classDeclaration: ClassDeclaration = classInfo.classDeclaration;
+        try {
+            let constructorDeclaration = classDeclaration.getConstructors()[0];
+            if (constructorDeclaration == undefined) {
+                constructorDeclaration = classDeclaration.addConstructor();
+                if (classDeclaration.getExtends()) {
+                    constructorDeclaration.insertStatements(0, writer => {
+                        writer.write("super();");
+                    });
+                }
+            }
+            const injectedLine = classInfo.constructorDatas.join("\n");
+            console.log("injectedLine: ", injectedLine);
+            if (injectedLine != "")
+                constructorDeclaration.insertStatements(1, writer => {
+                    writer.write(injectedLine);
+                });
+        }
+        catch (__) {
+            console.log("Error: ", __);
+        }
+    }
+
+    private injectFunctions(sourceFile: SourceFile, classDeclaration: ClassDeclaration) {
+        const connectedCallback = classDeclaration.getMethod("connectedCallback") || classDeclaration.addMethod({
+            name: "connectedCallback",
+            isAsync: false,
+            isStatic: false,
+            returnType: "void",
+            statements: [],
+            parameters: []
+        });
+        connectedCallback?.insertStatements(0, 'this.onInit();');
+
+        const disconnectedCallback = classDeclaration.getMethod("disconnectedCallback") || classDeclaration.addMethod({
+            name: "disconnectedCallback",
+            isAsync: false,
+            isStatic: false,
+            returnType: "void",
+            statements: [],
+            parameters: []
+        });
+        disconnectedCallback?.insertStatements(0, 'this.unmount?.(); this._styleRef?.disconnectedCallback();this.removeEvents?.();');
+    }
+
+    public sendServerUpdate(fileInfo: FileInfo) {
+        const now = new Date();
+        fs.utimesSync(fileInfo.path, now, now);
     }
 }

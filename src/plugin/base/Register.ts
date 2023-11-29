@@ -2,7 +2,7 @@ import { ClassInfo, FileInfo } from "./ProjectBuild";
 
 export interface RegisterOptions {
     tag?: string;
-    template?: string;
+    templateUrl?: string;
     extends?: string;
 }
 

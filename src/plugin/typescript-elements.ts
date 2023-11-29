@@ -1,10 +1,4 @@
-import { Plugin } from 'vite';
-import { ComponentDefinitionOptions } from 'typecompose';
-import { ClassDeclaration, PropertyDeclaration, SourceFile } from 'ts-morph';
-import * as fs from 'fs';
-import { ComponentEdit } from './base/Component';
-import { TemplateBuild } from './base/Template';
-import { StyleController } from './base/Style';
+import { Plugin, ViteDevServer } from 'vite';
 import { ProjectBuild } from './base/ProjectBuild';
 
 export interface EmittedAsset {
@@ -15,17 +9,16 @@ export interface EmittedAsset {
     type: 'asset';
 }
 
-const registers: string[] = [];
-const templates = new Map<string, string>();
 
 export default function typeComposePlugin(options = {}): Plugin {
-    let project = new ProjectBuild();
+    let project: any;
 
     return {
         name: 'typescript-elements',
         enforce: 'pre',
-        configureServer(server: any) {
+        configureServer(server: ViteDevServer) {
             console.log('config:');
+            project = new ProjectBuild(server);
         },
         async buildStart() {
             console.log('buildStart:');
@@ -37,165 +30,55 @@ export default function typeComposePlugin(options = {}): Plugin {
 
         },
         async configResolved(config) {
-            StyleController.clear();
+            // StyleBuild.clear();
         },
         async load(id) {
+            if (id.includes("base/style-base.scss")) {
+                console.log('load:', id);
+                return project.styleCode;
+            }
             return null;
         },
         async resolveId(id, importer) {
-            return null;
+            if (id.includes("base/style-base.scss")) {
+                // const code = `
+                // body {
+                //     background-color: red !important;
+                // };`
+                // // Retorne o ID do módulo virtual
+                const virtualId = `virtual:${id}`;
+                console.log('resolveId:', id, virtualId);
+                return {
+                    id: virtualId
+                    , external: true, contents: project.styleCode
+                };
+            }
         },
         async handleHotUpdate({ file, server }) {
             if (file.endsWith('.html')) {
-                for (const [key, value] of templates.entries()) {
-                    if (file.includes(value)) {
-                        const data = fs.readFileSync(key, 'utf-8');
-                        fs.writeFileSync(key, data);
+                for await (const fileInfo of project.files.values()) {
+                    if (fileInfo.templatesUrl.length > 0 && fileInfo.templatesUrl.includes(file)) {
+                        project.sendServerUpdate(fileInfo);
                     }
                 }
             }
+
+            // const module = server.moduleGraph.getModuleById("virtual:/base/style-base.scss?direct");
+            // console.log('module: ', module);
+            // if (module && module.transformResult) {
+            //     console.log('handleHotUpdate:', module.transformResult.code);
+            //     project.server.moduleGraph.invalidateModule(module);
+            // }
+
+
         },
         async transform(code, path) {
             if (path.endsWith('.ts')) {
                 code = await project.analyze(path, code);
-                console.log('===================================\n\n', code);
             }
             return code;
         },
     };
 }
 
-export function readRegister(id: string, code: string, project: ProjectBuild, sourceFile?: SourceFile): string {
-    sourceFile = sourceFile != undefined ? sourceFile : project.createSourceFile("temp.ts", code, { overwrite: true });
-    registers.length = 0;
-    for (let i = 0; i < sourceFile.getClasses().length; i++)
-        updateClass(id, project, sourceFile, sourceFile.getClasses()[i]);
-    return sourceFile.getFullText().replace(registers.join("\n"), "");
-}
 
-function updateClass(id: string, project: ProjectBuild, sourceFile: SourceFile, classDeclaration: ClassDeclaration) {
-
-    const decorators = classDeclaration.getDecorators();
-    const register = decorators.find(e => e.getName() == "Register");
-    const registerArgs = register?.getArguments().map(arg => arg.getText().replace(/,(?=\s*})/, '')).join(", ").replace(/(\w+):/g, '"$1":');
-    const isComponent = project.checkIsComponent(classDeclaration);
-    let component: ComponentEdit | undefined = ComponentEdit.components.get(id);
-
-    let options = {};
-    try {
-        options = JSON.parse(registerArgs || "{}");
-    } catch (error) {
-    }
-    if (component == undefined && (register || isComponent)) {
-        component = new ComponentEdit(id, project, sourceFile, classDeclaration, options);
-        ComponentEdit.components.set(id, component);
-    }
-    else if (component != undefined && !(register || isComponent)) {
-        ComponentEdit.components.delete(id);
-        component = undefined;
-    }
-    // console.log('isComponent:', isComponent, "ClassName:", classDeclaration.getName(), " Register:", options);
-    if (component) {
-        component.update(sourceFile, classDeclaration, options);
-        if (register)
-            registers.push(register.getText());
-        readTemplateAndReferencies(id, sourceFile, classDeclaration, options, component);
-        // readReference(sourceFile, classDeclaration, component);
-        if (isComponent || register)
-            ComponentEdit.injectTag(component);
-    }
-}
-
-function readTemplateAndReferencies(id: string, sourceFile: SourceFile, classDeclaration: ClassDeclaration, options: ComponentDefinitionOptions, component: ComponentEdit) {
-    const referencies: { ref: string, name: string; }[] = [];
-    const propertyDeclarations: PropertyDeclaration[] = classDeclaration.getProperties();
-
-    for (let i = 0; i < propertyDeclarations.length; i++) {
-        const property = propertyDeclarations[i];
-        const propertyDecorators = [...property.getDecorators()];
-        propertyDecorators.forEach(decorator => {
-            if ("RefComponent" == decorator.getName()) {
-                let ref = decorator.getArguments().map(arg => arg.getText()).join(", ").replace(/(\w+):/g, '"$1":');
-                if (ref.includes("{") && ref.includes("}"))
-                    ref = JSON.parse(ref)?.id || property.getName();
-                else
-                    ref = ref.replace(/"/g, "") || property.getName();
-                const name = property.getName();
-                referencies.push({ ref, name });
-            }
-        });
-    }
-    injectDataSuper(id, classDeclaration, options, referencies, component);
-    injectFunctions(sourceFile, classDeclaration);
-}
-
-async function injectDataSuper(id: string, classDeclaration: ClassDeclaration,
-    options: ComponentDefinitionOptions,
-    referencies: { ref: string, name: string; }[],
-    component: ComponentEdit
-) {
-    try {
-        let injectedLine = "";
-        let templateUrl = undefined
-        if (classDeclaration.getName() == "Description") {
-            if (options?.templateUrl == undefined) {
-                options["templateUrl"] = classDeclaration.getSourceFile().getFilePath().replace(classDeclaration.getSourceFile().getBaseName(), `${classDeclaration.getName()}.html`);
-                if (!fs.existsSync(options["templateUrl"]))
-                    options["templateUrl"] = undefined;
-                templateUrl = options["templateUrl"];
-            }
-        }
-        if (options?.templateUrl != undefined) {
-            templateUrl = templateUrl || options.templateUrl.includes("src/") ? options.templateUrl : "src/" + options.templateUrl;
-            const newTemplateUrl = templateUrl || id.replace(/\\/g, '/').split('/src/')[0] + '/' + templateUrl;
-            templates.set(id, newTemplateUrl);
-            let html = fs.readFileSync(newTemplateUrl, 'utf-8');
-            html = TemplateBuild.read(html);
-            html = StyleController.read(component, component.tag, html);
-            injectedLine = `this.innerHTML = \`${html}\`;`;
-        }
-        if (referencies.length > 0) {
-            referencies.forEach((e: { ref: string; name: string; }) => {
-                injectedLine += `\nthis.${e.name} = this.querySelector("#${e.ref}");`;
-            });
-        }
-
-        let constructorDeclaration = classDeclaration.getConstructors()[0];
-        if (constructorDeclaration == undefined) {
-            constructorDeclaration = classDeclaration.addConstructor();
-            if (classDeclaration.getExtends()) {
-                constructorDeclaration.insertStatements(0, writer => {
-                    writer.write("super();");
-                });
-            }
-        }
-        if (injectedLine != "")
-            constructorDeclaration.insertStatements(1, writer => {
-                writer.write(injectedLine);
-            });
-    }
-    catch (__) {
-    }
-}
-
-function injectFunctions(sourceFile: SourceFile, classDeclaration: ClassDeclaration) {
-    const connectedCallback = classDeclaration.getMethod("connectedCallback") || classDeclaration.addMethod({
-        name: "connectedCallback",
-        isAsync: false,
-        isStatic: false,
-        returnType: "void",
-        statements: [],
-        parameters: []
-    });
-    connectedCallback?.insertStatements(0, 'this.onInit();');
-
-    const disconnectedCallback = classDeclaration.getMethod("disconnectedCallback") || classDeclaration.addMethod({
-        name: "disconnectedCallback",
-        isAsync: false,
-        isStatic: false,
-        returnType: "void",
-        statements: [],
-        parameters: []
-    });
-    disconnectedCallback?.insertStatements(0, 'this.unmount?.(); this._styleRef?.disconnectedCallback();this.removeEvents?.();');
-}

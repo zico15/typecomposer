@@ -1,61 +1,52 @@
-
-import { ComponentEdit } from './Component';
+import { ClassInfo, FileInfo, ProjectBuild } from './ProjectBuild';
 import * as fs from 'fs';
 
+export class StyleBuild {
 
-
-export class StyleController {
-
-    // private static virtualPath: string = "/src/assets/styles/style-base.scss";
-
-    public static read(component: ComponentEdit, tag: string, html: string): string {
+    public static read(classInfo: ClassInfo, html: string): string {
         const styles = html.match(/<(style|script)\b[^>]*>[\s\S]*?<\/\1>/g);
-        let styleEdite: boolean = component?.styles.length > 0 || false;
-        component.styles = [];
+        classInfo.styles = [];
         if (styles != undefined) {
             styles.forEach((style, index) => {
                 const styleTag = style.split(">")[0];
-                if (tag != "" && !styleTag.includes("global")) {
-                    style = style.replace(`>`, `>\n${tag} {`);
+                if (classInfo.registerOptions.tag != "" && !styleTag.includes("global")) {
+                    style = style.replace(`>`, `>\n${classInfo.registerOptions.tag} {`);
                     style = style.replace(`</style>`, `}</style>`);
                     html = html.replace(styles[index], "");
                     style = style.split(">\n")[1]
                     style = style.split("</style>")[0]
-
-                    component.styles.push(style);
+                    classInfo.styles.push(style);
                 }
-            });
-            styleEdite = true;
-        }
-        if (styleEdite || true) {
-            StyleController.update(Array.from(ComponentEdit.components.values())).then((code: string) => {
             });
         }
         return html;
     }
 
-    private static async update(components: ComponentEdit[]): Promise<any> {
-        let code = "";
-        // for await (const component of components) {
-        //     if (component.styles.length > 0)
-        //         code += `\n${component.styles.join("\n")}`;
-        // }
-        // const path = process.cwd() + StyleController.virtualPath;
-        // const fd = fs.openSync(path, 'w');
-
-        // fs.writeSync(fd, code);
-        // fs.close(fd);
-        return code;
+    public static async build(project: ProjectBuild): Promise<any> {
+        project.styleCode = "";
+        const fileInfos: FileInfo[] = Array.from(project.files.values())
+        for await (const fileInfo of fileInfos) {
+            for await (const classInfo of fileInfo.classes) {
+                if (classInfo.styles.length > 0)
+                    project.styleCode += `\n${classInfo.styles.join("\n")}`;
+            }
+        }
+        const module = project.server.moduleGraph.getModuleById("virtual:/base/style-base.scss?direct");
+        if (module && module.transformResult) {
+            project.server.moduleGraph.invalidateModule(module);
+        }
+        console.log('StyleBuild',);
+        return project.styleCode;
     }
 
 
-    public static async clear(): Promise<any> {
+    public static async clear(project: ProjectBuild): Promise<any> {
+        if (!fs.existsSync(project.stylePath))
+            return;
+        const fd = fs.openSync(project.stylePath, 'w');
 
-        // const path = process.cwd() + StyleController.virtualPath;
-        // const fd = fs.openSync(path, 'w');
-
-        // fs.writeSync(fd, "");
-        // fs.close(fd);
+        fs.writeSync(fd, "");
+        fs.close(fd);
 
     }
 
