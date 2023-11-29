@@ -1,12 +1,11 @@
 import { Plugin } from 'vite';
 import { ComponentDefinitionOptions } from 'typecompose';
-import { ClassDeclaration, Project, PropertyDeclaration, SourceFile } from 'ts-morph';
+import { ClassDeclaration, PropertyDeclaration, SourceFile } from 'ts-morph';
 import * as fs from 'fs';
-import { readReference } from './base/Reference';
-import * as path from 'path';
 import { ComponentEdit } from './base/Component';
-import { TemplateController } from './base/Template';
+import { TemplateBuild } from './base/Template';
 import { StyleController } from './base/Style';
+import { ProjectBuild } from './base/ProjectBuild';
 
 export interface EmittedAsset {
     fileName?: string;
@@ -19,28 +18,16 @@ export interface EmittedAsset {
 const registers: string[] = [];
 const templates = new Map<string, string>();
 
-
 export default function typeComposePlugin(options = {}): Plugin {
-    let project = new Project();
+    let project = new ProjectBuild();
 
     return {
         name: 'typescript-elements',
         enforce: 'pre',
         configureServer(server: any) {
             console.log('config:');
-
-            server.watcher.on('custom-reload', (path: string) => {
-                console.log('custom-reload:', path);
-                server.ws.send({
-                    type: 'full-reload',
-                    path,
-                });
-            });
-
-            // Faça alguma coisa com a configuração do Vite
         },
-        buildStart() {
-            // this.emitFile(StyleController.craeteFile() as any);
+        async buildStart() {
             console.log('buildStart:');
         },
         generateBundle(options, bundle) {
@@ -51,10 +38,6 @@ export default function typeComposePlugin(options = {}): Plugin {
         },
         async configResolved(config) {
             StyleController.clear();
-            const projectDir = config.root || process.cwd();
-            project = new Project();
-            // Carregar todas as classes quando a configuração do Vite está sendo resolvida
-            project.addSourceFilesAtPaths(path.join(projectDir, 'src/**/*.ts'));
         },
         async load(id) {
             return null;
@@ -72,16 +55,17 @@ export default function typeComposePlugin(options = {}): Plugin {
                 }
             }
         },
-        async transform(code, id) {
-            if (id.endsWith('.ts')) {
-                code = readRegister(id, code, project, project.createSourceFile(id, code, { overwrite: true }));
+        async transform(code, path) {
+            if (path.endsWith('.ts')) {
+                code = await project.analyze(path, code);
+                console.log('===================================\n\n', code);
             }
             return code;
         },
     };
 }
 
-export function readRegister(id: string, code: string, project: Project, sourceFile?: SourceFile): string {
+export function readRegister(id: string, code: string, project: ProjectBuild, sourceFile?: SourceFile): string {
     sourceFile = sourceFile != undefined ? sourceFile : project.createSourceFile("temp.ts", code, { overwrite: true });
     registers.length = 0;
     for (let i = 0; i < sourceFile.getClasses().length; i++)
@@ -89,12 +73,12 @@ export function readRegister(id: string, code: string, project: Project, sourceF
     return sourceFile.getFullText().replace(registers.join("\n"), "");
 }
 
-function updateClass(id: string, project: Project, sourceFile: SourceFile, classDeclaration: ClassDeclaration) {
+function updateClass(id: string, project: ProjectBuild, sourceFile: SourceFile, classDeclaration: ClassDeclaration) {
 
     const decorators = classDeclaration.getDecorators();
     const register = decorators.find(e => e.getName() == "Register");
     const registerArgs = register?.getArguments().map(arg => arg.getText().replace(/,(?=\s*})/, '')).join(", ").replace(/(\w+):/g, '"$1":');
-    const isComponent = ComponentEdit.checkIsComponent(project, classDeclaration);
+    const isComponent = project.checkIsComponent(classDeclaration);
     let component: ComponentEdit | undefined = ComponentEdit.components.get(id);
 
     let options = {};
@@ -110,12 +94,13 @@ function updateClass(id: string, project: Project, sourceFile: SourceFile, class
         ComponentEdit.components.delete(id);
         component = undefined;
     }
+    // console.log('isComponent:', isComponent, "ClassName:", classDeclaration.getName(), " Register:", options);
     if (component) {
         component.update(sourceFile, classDeclaration, options);
         if (register)
             registers.push(register.getText());
         readTemplateAndReferencies(id, sourceFile, classDeclaration, options, component);
-        readReference(sourceFile, classDeclaration, component);
+        // readReference(sourceFile, classDeclaration, component);
         if (isComponent || register)
             ComponentEdit.injectTag(component);
     }
@@ -165,7 +150,7 @@ async function injectDataSuper(id: string, classDeclaration: ClassDeclaration,
             const newTemplateUrl = templateUrl || id.replace(/\\/g, '/').split('/src/')[0] + '/' + templateUrl;
             templates.set(id, newTemplateUrl);
             let html = fs.readFileSync(newTemplateUrl, 'utf-8');
-            html = TemplateController.read(html);
+            html = TemplateBuild.read(html);
             html = StyleController.read(component, component.tag, html);
             injectedLine = `this.innerHTML = \`${html}\`;`;
         }
