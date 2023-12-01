@@ -2,8 +2,7 @@ import { ClassDeclaration, Decorator, Project, SourceFile } from 'ts-morph';
 import { RegisterBuild, RegisterOptions } from './Register';
 import { TemplateBuild } from './Template';
 import { StyleBuild } from './Style';
-import { ViteDevServer } from 'vite';
-import * as fs from 'fs';
+import { utimesSync } from 'node:fs';
 
 export interface ClassInfo {
     className: string | undefined;
@@ -32,7 +31,7 @@ export class ProjectBuild extends Project {
     public stylePath: string;
     public styleCode: string = "";
 
-    constructor(public server: ViteDevServer) {
+    constructor() {
         super();
         this.addSourceFilesAtPaths('**/*.ts');
         this.path = this.getSourceFiles().find(e => e.getFilePath().includes("node_modules/typecompose-plugin"))?.getFilePath() || "";
@@ -188,6 +187,6 @@ export class ProjectBuild extends Project {
 
     public sendServerUpdate(fileInfo: FileInfo) {
         const now = new Date();
-        fs.utimesSync(fileInfo.path, now, now);
+        utimesSync(fileInfo.path, now, now);
     }
 }

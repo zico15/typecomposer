@@ -1,5 +1,4 @@
 import { ClassInfo, FileInfo, ProjectBuild } from './ProjectBuild';
-import * as fs from 'fs';
 
 export class StyleBuild {
 
@@ -31,23 +30,12 @@ export class StyleBuild {
                     project.styleCode += `\n${classInfo.styles.join("\n")}`;
             }
         }
-        const module = project.server.moduleGraph.getModuleById("virtual:/base/style-base.scss?direct");
-        if (module && module.transformResult) {
-            project.server.moduleGraph.invalidateModule(module);
-        }
-        console.log('StyleBuild',);
+        // const module = project.server.moduleGraph.getModuleById("virtual:/base/style-base.scss?direct");
+        // if (module && module.transformResult) {
+        //     project.server.moduleGraph.invalidateModule(module);
+        // }
+        // console.log('StyleBuild',);
         return project.styleCode;
-    }
-
-
-    public static async clear(project: ProjectBuild): Promise<any> {
-        if (!fs.existsSync(project.stylePath))
-            return;
-        const fd = fs.openSync(project.stylePath, 'w');
-
-        fs.writeSync(fd, "");
-        fs.close(fd);
-
     }
 
 }

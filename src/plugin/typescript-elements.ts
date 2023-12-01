@@ -38,10 +38,11 @@ export default function typeComposePlugin(options: TypeComposeOptions = {}): Plu
         enforce: 'pre',
         configureServer(server: ViteDevServer) {
             console.log('config:');
-            project = new ProjectBuild(server);
         },
         async buildStart() {
             console.log('buildStart:');
+            project = new ProjectBuild();
+
         },
         generateBundle(options, bundle) {
 
@@ -93,7 +94,7 @@ export default function typeComposePlugin(options: TypeComposeOptions = {}): Plu
 
         },
         async transform(code, path) {
-            if (path.endsWith('.ts')) {
+            if (path.endsWith('.ts') && !path.includes("node_modules/typecompose-plugin")) {
                 code = await project.analyze(path, code);
             }
             return code;
