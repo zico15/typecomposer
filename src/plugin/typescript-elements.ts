@@ -9,8 +9,28 @@ export interface EmittedAsset {
     type: 'asset';
 }
 
+export interface PwaManifest {
+    name: string;
+    short_name: string;
+    description: string;
+    start_url: string;
+    display: string;
+    background_color: string;
+    theme_color: string;
+    icons: {
+        src: string;
+        sizes: string;
+        type: string;
+    }[];
+}
 
-export default function typeComposePlugin(options = {}): Plugin {
+export interface TypeComposeOptions {
+    build?: {
+        pwd?: PwaManifest;
+    };
+}
+
+export default function typeComposePlugin(options: TypeComposeOptions = {}): Plugin {
     let project: any;
 
     return {

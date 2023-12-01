@@ -1,6 +1,6 @@
 {
   "name": "typecompose-plugin",
-  "version": "0.0.25",
+  "version": "0.0.31",
   "license": "MIT",
   "author": "Evan You",
   "files": [
@@ -20,9 +20,10 @@
   "scripts": {
     "dev": "unbuild --stub",
     "copy": "rm -rf /Users/ezequiel/Documents/TypeCompose/testproje/node_modules/typecompose-plugin/dist && cp -r ./dist /Users/ezequiel/Documents/TypeCompose/testproje/node_modules/typecompose-plugin/dist",
-    "build": "unbuild && pnpm run patch-cjs && pnpm run copy",
+    "build": "unbuild && pnpm run patch-cjs",
     "patch-cjs": "tsx ../scripts/patchCJS.ts",
-    "prepublishOnly": "npm run build"
+    "prepublishOnly": "npm run build",
+    "pub": "pnpm run build && npm publish --access public"
   },
   "engines": {
     "node": "^18.0.0 || >=20.0.0"
@@ -43,12 +44,12 @@
     "rollup": "^4.6.0",
     "slash": "^5.1.0",
     "source-map-js": "^1.0.2",
-    "vite": "^5.0.2"
+    "vite": "^5.0.0",
+    "typecompose": "^0.0.44"
   },
   "dependencies": {
     "chalk": "^5.3.0",
     "connect-history-api-fallback": "^2.0.0",
-    "ts-morph": "^20.0.0",
-    "typecompose": "^2.6.24"
+    "ts-morph": "^20.0.0"
   }
 }
