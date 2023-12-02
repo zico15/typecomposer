@@ -1,36 +1,7 @@
 import { Plugin, ViteDevServer } from 'vite';
-import { ProjectBuild } from './base/ProjectBuild';
+import { ProjectBuild } from './ProjectBuild';
 
-export interface EmittedAsset {
-    fileName?: string;
-    name?: string;
-    needsCodeReference?: boolean;
-    source?: string | Uint8Array;
-    type: 'asset';
-}
-
-export interface PwaManifest {
-    name: string;
-    short_name: string;
-    description: string;
-    start_url: string;
-    display: string;
-    background_color: string;
-    theme_color: string;
-    icons: {
-        src: string;
-        sizes: string;
-        type: string;
-    }[];
-}
-
-export interface TypeComposeOptions {
-    build?: {
-        pwd?: PwaManifest;
-    };
-}
-
-export default function typeComposePlugin(options: TypeComposeOptions = {}): Plugin {
+export default function typeComposePlugin(): Plugin {
     let project: any;
 
     return {
