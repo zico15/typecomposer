@@ -26,14 +26,14 @@ function listDir(path: string, ignoreFiles: string[]): string[] {
 
 export function sw(config: ResolvedConfig, options: PWDOptions) {
   const ignoreFiles = options?.ignoreFiles || [];
-  ignoreFiles.push('manifest.webmanifest');
+  // ignoreFiles.push('manifest.webmanifest');
   ignoreFiles.push('sw.js');
   const staticAssets: string[] = listDir(config?.build?.outDir || '', ignoreFiles);
-  console.log('staticAssets: ', staticAssets);
   staticAssets.push("./")
   const files = staticAssets.map((asset) => {
-    return `'./${asset}'`
+    return `'${asset}'`
   });
+  console.log('staticAssets: ', staticAssets);
   return {
     fileName: 'sw.js',
     staticAssets,
@@ -48,6 +48,13 @@ export function sw(config: ResolvedConfig, options: PWDOptions) {
       const cache = await caches.open(cacheName);
       await cache.addAll(staticAssets);
       return self.skipWaiting();
+    });
+
+    self.addEventListener("notificationclick", (event) => {
+      event.notification.close();
+      var fullPath = self.location.origin + event.notification.data.path;
+      console.log(fullPath);
+      clients.openWindow(fullPath);
     });
 
     self.addEventListener("activate", (e) => {

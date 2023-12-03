@@ -6,7 +6,7 @@ import { register } from './register';
 
 
 export interface PWDOptions {
-    manifest?: PWAManifest;
+    manifest?: PWAManifest | "auto";
     ignoreFiles?: string[];
 }
 
@@ -26,6 +26,10 @@ async function injectServiceWorker(config: ResolvedConfig, options: PWDOptions, 
     // create service worker
     const file = sw(config, options);
     writeFileSync(`${config.build.outDir}/${file.fileName}`, file.code)
+}
+
+export function autoManifest(config: ResolvedConfig): PWAManifest | undefined {
+    return undefined
 }
 
 export function PwaBuildPlugin(options: PWDOptions): Plugin {
@@ -62,6 +66,8 @@ export function PwaBuildPlugin(options: PWDOptions): Plugin {
         },
         configResolved(_config) {
             config = _config
+            if (options.manifest === 'auto')
+                options.manifest = autoManifest(config)
             // Acesso ao caminho do diretório de saída (outDir)
             const caminhoDoBuild: ResolvedConfig = config;
 
@@ -79,20 +85,19 @@ export function PwaBuildPlugin(options: PWDOptions): Plugin {
             sequential: true,
             order: 'post',
             async handler() {
-                // if (!ctx.viteConfig.build.ssr && !ctx.options.disable)
-                //     await _generateSW(ctx)
-                console.log('generateBundle: \n', files)
                 if (options.manifest && config && indexjs) {
+                    console.log('generateBundle: \n', files);
                     writeFileSync(`${config.build.outDir}/manifest.webmanifest`, JSON.stringify(options.manifest))
-                    await injectServiceWorker(config, options, indexjs)
+                    await injectServiceWorker(config, options, indexjs);
+                    console.log('closeBundle');
                 }
-                console.log('closeBundle')
+                else
+                    console.log('no manifest');
             },
         },
         async buildEnd(error) {
             if (error)
                 throw error
-
         },
     }
 }
