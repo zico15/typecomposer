@@ -1,55 +1,62 @@
 {
   "name": "typecompose-plugin",
-  "version": "0.0.31",
+  "type": "module",
+  "version": "0.1.1",
+  "packageManager": "pnpm@8.11.0",
+  "description": "TypeCompose plugin for Vite",
+  "author": "zico15 <zequielzico@gmail.com>",
   "license": "MIT",
-  "author": "Evan You",
-  "files": [
-    "dist",
-    "bin",
-    "public"
-  ],
-  "main": "./dist/index.cjs",
-  "module": "./dist/index.mjs",
-  "types": "./dist/index.d.ts",
-  "exports": {
-    ".": {
-      "import": "./dist/index.mjs",
-      "require": "./dist/index.cjs"
-    }
-  },
-  "scripts": {
-    "dev": "unbuild --stub",
-    "copy": "rm -rf /Users/ezequiel/Documents/TypeCompose/testproje/node_modules/typecompose-plugin/dist && cp -r ./dist /Users/ezequiel/Documents/TypeCompose/testproje/node_modules/typecompose-plugin/dist",
-    "build": "unbuild && pnpm run patch-cjs",
-    "patch-cjs": "tsx ../scripts/patchCJS.ts",
-    "prepublishOnly": "npm run build",
-    "pub": "pnpm run build && npm publish --access public"
-  },
-  "engines": {
-    "node": "^18.0.0 || >=20.0.0"
-  },
+  "homepage": "https://github.com/zico15/typecompose-plugin#readme",
   "repository": {
     "type": "git",
-    "url": "git+https://github.com/vitejs/vite-plugin-vue.git",
-    "directory": "packages/plugin-vue"
+    "url": "https://github.com/zico15/typecompose-plugin.git"
+  },
+  "bugs": "https://github.com/zico15/typecompose-plugin/issues",
+  "keywords": [
+    "vite",
+    "vite-plugin",
+    "framework"
+  ],
+  "sideEffects": false,
+  "exports": {
+    ".": {
+      "import": {
+        "types": "./dist/index.d.ts",
+        "default": "./dist/index.js"
+      },
+      "require": {
+        "types": "./dist/index.d.cts",
+        "default": "./dist/index.cjs"
+      }
+    },
+    "./client": {
+      "types": "./client.d.ts"
+    },
+    "./*": "./*"
+  },
+  "main": "dist/index.cjs",
+  "module": "dist/index.js",
+  "types": "dist/index.d.ts",
+  "files": [
+    "*.d.ts",
+    "dist",
+    "pwa"
+  ],
+  "engines": {
+    "node": ">=16.0.0"
+  },
+  "scripts": {
+    "copy": "cp -r dist /Users/ezequiel/Documents/TypeCompose/vite-project/node_modules/typecompose-plugin",
+    "build": "esno scripts/build.ts && npm run copy",
+    "pub": "npm run build && npm publish --access public --tag latest"
   },
   "peerDependencies": {
-    "vite": "^5.0.0"
+    "vite": "^3.1.0 || ^4.0.0 || ^5.0.0",
+    "ts-morph": "^20.0.0"
   },
   "devDependencies": {
-    "@jridgewell/gen-mapping": "^0.3.3",
-    "@jridgewell/trace-mapping": "^0.3.20",
-    "@types/connect-history-api-fallback": "^1.5.4",
-    "debug": "^4.3.4",
-    "rollup": "^4.6.0",
-    "slash": "^5.1.0",
-    "source-map-js": "^1.0.2",
-    "vite": "^5.0.0",
-    "typecompose": "^0.0.44"
-  },
-  "dependencies": {
-    "chalk": "^5.3.0",
-    "connect-history-api-fallback": "^2.0.0",
-    "ts-morph": "^20.0.0"
+    "ts-morph": "^20.0.0",
+    "typescript": "^5.3.2",
+    "vite": "^5.0.0"
   }
 }

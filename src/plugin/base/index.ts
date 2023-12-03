@@ -1,36 +1,7 @@
 import { Plugin, ViteDevServer } from 'vite';
-import { ProjectBuild } from './base/ProjectBuild';
+import { ProjectBuild } from './ProjectBuild';
 
-export interface EmittedAsset {
-    fileName?: string;
-    name?: string;
-    needsCodeReference?: boolean;
-    source?: string | Uint8Array;
-    type: 'asset';
-}
-
-export interface PwaManifest {
-    name: string;
-    short_name: string;
-    description: string;
-    start_url: string;
-    display: string;
-    background_color: string;
-    theme_color: string;
-    icons: {
-        src: string;
-        sizes: string;
-        type: string;
-    }[];
-}
-
-export interface TypeComposeOptions {
-    build?: {
-        pwd?: PwaManifest;
-    };
-}
-
-export default function typeComposePlugin(options: TypeComposeOptions = {}): Plugin {
+export default function typeComposePlugin(): Plugin {
     let project: any;
 
     return {
@@ -38,10 +9,11 @@ export default function typeComposePlugin(options: TypeComposeOptions = {}): Plu
         enforce: 'pre',
         configureServer(server: ViteDevServer) {
             console.log('config:');
-            project = new ProjectBuild(server);
         },
         async buildStart() {
             console.log('buildStart:');
+            project = new ProjectBuild();
+
         },
         generateBundle(options, bundle) {
 
@@ -93,7 +65,7 @@ export default function typeComposePlugin(options: TypeComposeOptions = {}): Plu
 
         },
         async transform(code, path) {
-            if (path.endsWith('.ts')) {
+            if (path.endsWith('.ts') && !path.includes("node_modules/typecompose-plugin")) {
                 code = await project.analyze(path, code);
             }
             return code;

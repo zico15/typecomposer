@@ -1,8 +1,8 @@
 import { ClassInfo, FileInfo } from "./ProjectBuild";
 import { PropertyDeclaration } from 'ts-morph';
-import * as fs from 'fs';
-import * as path from 'path';
 import { StyleBuild } from "./Style";
+import { existsSync, readFileSync } from "node:fs";
+import { basename, dirname, join, normalize } from "node:path";
 
 
 export interface RefComponentOptions {
@@ -27,12 +27,12 @@ export class TemplateBuild {
         if (templateUrl)
             templateUrl = templateUrl?.includes("src/") ? classInfo.registerOptions.templateUrl : "src/" + classInfo.registerOptions.templateUrl;
         if (templateUrl == undefined)
-            templateUrl = path.join(path.dirname(fileInfo.path), `${path.basename(fileInfo.path, '.ts')}.html`);
+            templateUrl = join(dirname(fileInfo.path), `${basename(fileInfo.path, '.ts')}.html`);
         if (templateUrl == undefined)
             return undefined;
-        templateUrl = path.normalize(templateUrl);
-        console.log("normalize: ", path.normalize(templateUrl), " => ", fs.existsSync(templateUrl));
-        if (templateUrl == undefined || !fs.existsSync(templateUrl))
+        templateUrl = normalize(templateUrl);
+        console.log("normalize: ", normalize(templateUrl), " => ", existsSync(templateUrl));
+        if (templateUrl == undefined || !existsSync(templateUrl))
             return undefined;
         return templateUrl;
     }
@@ -41,7 +41,7 @@ export class TemplateBuild {
         if (templateUrl == undefined)
             return;
         try {
-            let html = fs.readFileSync(templateUrl, 'utf-8');
+            let html = readFileSync(templateUrl, 'utf-8');
             for (let i = 0; i < TemplateBuild.bases.length; i++) {
                 const base = TemplateBuild.bases[i];
                 html = html.replaceAll(`<${base}`, `<${base} is="base-${base}-element" `);
