@@ -24,6 +24,11 @@ export class RouteView extends Component {
       " routePage: ",
       router.routePage,
     );
+    this.updateView();
+    this.addEventListener("onload", () => this.updateView());
+  }
+
+  private updateView() {
     if (router.routePage != undefined) {
       const routePageView = router.routePage.links?.find((link) =>
         this.url.includes(link.pathname),

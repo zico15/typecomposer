@@ -74,14 +74,14 @@ export class Component extends HTMLElement implements IComponent {
     if (data != undefined) this.setStyle(data);
   }
 
-  onInit(): void { }
+  onInit(): void {}
   appendChilds(...childs: any[]): void {
     childs.forEach((child) => {
       try {
         if (child && child instanceof Node) {
           this.appendChild(child);
         }
-      } catch (error) { }
+      } catch (error) {}
     });
   }
   addClasName(...names: string[]): void {
@@ -204,14 +204,14 @@ export class DivElement extends HTMLDivElement implements IComponent {
     Component.applyDate(data, this);
   }
 
-  onInit(): void { }
+  onInit(): void {}
   appendChilds(...childs: any[]): void {
     childs.forEach((child) => {
       try {
         if (child && child instanceof Node) {
           this.appendChild(child);
         }
-      } catch (error) { }
+      } catch (error) {}
     });
   }
 
@@ -240,7 +240,8 @@ customElements.define("base-div-element", DivElement, { extends: "div" });
 
 export class ParagraphElement
   extends HTMLParagraphElement
-  implements IComponent {
+  implements IComponent
+{
   private _styleRef: CSSStyleRef = new CSSStyleRef(super.style);
 
   constructor(data?: DataElement) {
@@ -249,14 +250,14 @@ export class ParagraphElement
     Component.applyDate(data, this);
   }
 
-  onInit(): void { }
+  onInit(): void {}
   appendChilds(...childs: any[]): void {
     childs.forEach((child) => {
       try {
         if (child && child instanceof Node) {
           this.appendChild(child);
         }
-      } catch (error) { }
+      } catch (error) {}
     });
   }
   addClasName(...names: string[]): void {
@@ -290,16 +291,22 @@ export class AnchorElement extends HTMLAnchorElement implements IComponent {
         router.go(this._rlink);
       }
     });
+    this.addEventListener("href", (event) => {
+      if (this._rlink != "") {
+        event.preventDefault();
+        router.go(this._rlink);
+      }
+    });
   }
 
-  onInit(): void { }
+  onInit(): void {}
   appendChilds(...childs: any[]): void {
     childs.forEach((child) => {
       try {
         if (child && child instanceof Node) {
           this.appendChild(child);
         }
-      } catch (error) { }
+      } catch (error) {}
     });
   }
   addClasName(...names: string[]): void {
@@ -312,7 +319,7 @@ export class AnchorElement extends HTMLAnchorElement implements IComponent {
   }
 
   set rlink(link: string) {
-    console.log("set rlink: ", link);
+    this.href = link;
     this._rlink = link;
   }
 
@@ -338,14 +345,14 @@ export class ImageElement extends HTMLImageElement implements IComponent {
     if (data?.src != undefined) this.src = data.src;
   }
 
-  onInit(): void { }
+  onInit(): void {}
   appendChilds(...childs: any[]): void {
     childs.forEach((child) => {
       try {
         if (child && child instanceof Node) {
           this.appendChild(child);
         }
-      } catch (error) { }
+      } catch (error) {}
     });
   }
   addClasName(...names: string[]): void {
@@ -369,14 +376,14 @@ export class UListElement extends HTMLUListElement implements IComponent {
     Component.applyDate(data, this);
   }
 
-  onInit(): void { }
+  onInit(): void {}
   appendChilds(...childs: any[]): void {
     childs.forEach((child) => {
       try {
         if (child && child instanceof Node) {
           this.appendChild(child);
         }
-      } catch (error) { }
+      } catch (error) {}
     });
   }
   addClasName(...names: string[]): void {
@@ -400,14 +407,14 @@ export class OrderedListElement extends HTMLOListElement implements IComponent {
     Component.applyDate(data, this);
   }
 
-  onInit(): void { }
+  onInit(): void {}
   appendChilds(...childs: any[]): void {
     childs.forEach((child) => {
       try {
         if (child && child instanceof Node) {
           this.appendChild(child);
         }
-      } catch (error) { }
+      } catch (error) {}
     });
   }
   addClasName(...names: string[]): void {
@@ -431,7 +438,7 @@ export class ListItemElement extends HTMLLIElement implements IComponent {
     Component.applyDate(data, this);
   }
 
-  onInit(): void { }
+  onInit(): void {}
 
   appendChilds(...childs: any[]): void {
     childs.forEach((child) => {
@@ -439,7 +446,7 @@ export class ListItemElement extends HTMLLIElement implements IComponent {
         if (child && child instanceof Node) {
           this.appendChild(child);
         }
-      } catch (error) { }
+      } catch (error) {}
     });
   }
 
@@ -464,7 +471,7 @@ export class HeaderElement extends HTMLElement implements IComponent {
     Component.applyDate(data, this);
   }
 
-  onInit(): void { }
+  onInit(): void {}
 
   appendChilds(...childs: any[]): void {
     childs.forEach((child) => {
@@ -472,7 +479,7 @@ export class HeaderElement extends HTMLElement implements IComponent {
         if (child && child instanceof Node) {
           this.appendChild(child);
         }
-      } catch (error) { }
+      } catch (error) {}
     });
   }
 
@@ -499,7 +506,7 @@ export class FooterElement extends HTMLElement implements IComponent {
     Component.applyDate(data, this);
   }
 
-  onInit(): void { }
+  onInit(): void {}
 
   appendChilds(...childs: any[]): void {
     childs.forEach((child) => {
@@ -507,7 +514,7 @@ export class FooterElement extends HTMLElement implements IComponent {
         if (child && child instanceof Node) {
           this.appendChild(child);
         }
-      } catch (error) { }
+      } catch (error) {}
     });
   }
 
@@ -534,7 +541,7 @@ export class MainElement extends HTMLElement implements IComponent {
     Component.applyDate(data, this);
   }
 
-  onInit(): void { }
+  onInit(): void {}
 
   appendChilds(...childs: any[]): void {
     childs.forEach((child) => {
@@ -542,7 +549,7 @@ export class MainElement extends HTMLElement implements IComponent {
         if (child && child instanceof Node) {
           this.appendChild(child);
         }
-      } catch (error) { }
+      } catch (error) {}
     });
   }
 
@@ -572,7 +579,7 @@ export class H1Element extends HTMLHeadingElement implements IComponent {
     if (data?.text) this.innerText = data.text.toString();
   }
 
-  public onInit(): void { }
+  public onInit(): void {}
 
   public appendChilds(...childs: any[]): void {
     throw new Error("Method not implemented.");
@@ -599,7 +606,7 @@ export class H2Element extends HTMLHeadingElement implements IComponent {
     if (data?.text) this.innerText = data.text.toString();
   }
 
-  public onInit(): void { }
+  public onInit(): void {}
 
   public appendChilds(...childs: any[]): void {
     throw new Error("Method not implemented.");
@@ -636,7 +643,7 @@ export class H3Element extends HTMLHeadingElement implements IComponent {
     else this.innerText = value;
   }
 
-  public onInit(): void { }
+  public onInit(): void {}
 
   public appendChilds(...childs: any[]): void {
     throw new Error("Method not implemented.");
@@ -661,7 +668,7 @@ export class H4Element extends H3Element implements IComponent {
     if (data?.text) this.innerText = data.text.toString();
   }
 
-  public onInit(): void { }
+  public onInit(): void {}
 
   public appendChilds(...childs: any[]): void {
     throw new Error("Method not implemented.");
@@ -681,7 +688,7 @@ export class H5Element extends H3Element implements IComponent {
     if (data?.text) this.innerText = data.text.toString();
   }
 
-  public onInit(): void { }
+  public onInit(): void {}
 
   public appendChilds(...childs: any[]): void {
     throw new Error("Method not implemented.");
@@ -701,7 +708,7 @@ export class H6Element extends H3Element implements IComponent {
     if (data?.text) this.innerText = data.text.toString();
   }
 
-  public onInit(): void { }
+  public onInit(): void {}
 
   public appendChilds(...childs: any[]): void {
     throw new Error("Method not implemented.");
@@ -723,7 +730,7 @@ export class SpanElement extends HTMLSpanElement implements IComponent {
     Component.applyDate(data, this);
   }
 
-  public onInit(): void { }
+  public onInit(): void {}
 
   public appendChilds(...childs: any[]): void {
     throw new Error("Method not implemented.");
@@ -750,7 +757,7 @@ export class StrongElement extends HTMLSpanElement implements IComponent {
     Component.applyDate(data, this);
   }
 
-  public onInit(): void { }
+  public onInit(): void {}
 
   public appendChilds(...childs: any[]): void {
     throw new Error("Method not implemented.");
@@ -779,7 +786,7 @@ export class EmElement extends HTMLEmbedElement implements IComponent {
     Component.applyDate(data, this);
   }
 
-  public onInit(): void { }
+  public onInit(): void {}
 
   public appendChilds(...childs: any[]): void {
     throw new Error("Method not implemented.");
@@ -806,14 +813,14 @@ export class BreakElement extends HTMLBRElement implements IComponent {
     Component.applyDate(data, this);
   }
 
-  onInit(): void { }
+  onInit(): void {}
   appendChilds(...childs: any[]): void {
     childs.forEach((child) => {
       try {
         if (child && child instanceof Node) {
           this.appendChild(child);
         }
-      } catch (error) { }
+      } catch (error) {}
     });
   }
   addClasName(...names: string[]): void {
@@ -837,14 +844,14 @@ export class HorizontalRuleElement extends HTMLHRElement implements IComponent {
     Component.applyDate(data, this);
   }
 
-  onInit(): void { }
+  onInit(): void {}
   appendChilds(...childs: any[]): void {
     childs.forEach((child) => {
       try {
         if (child && child instanceof Node) {
           this.appendChild(child);
         }
-      } catch (error) { }
+      } catch (error) {}
     });
   }
   addClasName(...names: string[]): void {
@@ -870,14 +877,14 @@ export class TableElement extends HTMLTableElement implements IComponent {
     Component.applyDate(data, this);
   }
 
-  onInit(): void { }
+  onInit(): void {}
   appendChilds(...childs: any[]): void {
     childs.forEach((child) => {
       try {
         if (child && child instanceof Node) {
           this.appendChild(child);
         }
-      } catch (error) { }
+      } catch (error) {}
     });
   }
   addClasName(...names: string[]): void {
@@ -901,14 +908,14 @@ export class TableRowElement extends HTMLTableRowElement implements IComponent {
     Component.applyDate(data, this);
   }
 
-  onInit(): void { }
+  onInit(): void {}
   appendChilds(...childs: any[]): void {
     childs.forEach((child) => {
       try {
         if (child && child instanceof Node) {
           this.appendChild(child);
         }
-      } catch (error) { }
+      } catch (error) {}
     });
   }
   addClasName(...names: string[]): void {
@@ -932,14 +939,14 @@ export class FormElement extends HTMLFormElement implements IComponent {
     Component.applyDate(data, this);
   }
 
-  onInit(): void { }
+  onInit(): void {}
   appendChilds(...childs: any[]): void {
     childs.forEach((child) => {
       try {
         if (child && child instanceof Node) {
           this.appendChild(child);
         }
-      } catch (error) { }
+      } catch (error) {}
     });
   }
   addClasName(...names: string[]): void {
@@ -957,28 +964,28 @@ customElements.define("base-form-element", FormElement, { extends: "form" });
 export interface DataInputElement extends DataElement {
   id?: string;
   type?:
-  | "text"
-  | "password"
-  | "checkbox"
-  | "radio"
-  | "submit"
-  | "reset"
-  | "file"
-  | "hidden"
-  | "image"
-  | "button"
-  | "color"
-  | "date"
-  | "datetime-local"
-  | "email"
-  | "month"
-  | "number"
-  | "range"
-  | "search"
-  | "tel"
-  | "time"
-  | "url"
-  | "week";
+    | "text"
+    | "password"
+    | "checkbox"
+    | "radio"
+    | "submit"
+    | "reset"
+    | "file"
+    | "hidden"
+    | "image"
+    | "button"
+    | "color"
+    | "date"
+    | "datetime-local"
+    | "email"
+    | "month"
+    | "number"
+    | "range"
+    | "search"
+    | "tel"
+    | "time"
+    | "url"
+    | "week";
   name?: string;
   value?: string;
   placeholder?: string;
@@ -992,14 +999,14 @@ export class InputElement extends HTMLInputElement implements IComponent {
     Component.applyDate(data, this);
   }
 
-  onInit(): void { }
+  onInit(): void {}
   appendChilds(...childs: any[]): void {
     childs.forEach((child) => {
       try {
         if (child && child instanceof Node) {
           this.appendChild(child);
         }
-      } catch (error) { }
+      } catch (error) {}
     });
   }
   addClasName(...names: string[]): void {
@@ -1023,14 +1030,14 @@ export class ButtonElement extends HTMLButtonElement implements IComponent {
     Component.applyDate(data, this);
   }
 
-  onInit(): void { }
+  onInit(): void {}
   appendChilds(...childs: any[]): void {
     childs.forEach((child) => {
       try {
         if (child && child instanceof Node) {
           this.appendChild(child);
         }
-      } catch (error) { }
+      } catch (error) {}
     });
   }
   addClasName(...names: string[]): void {
@@ -1063,14 +1070,14 @@ export class TextAreaElement extends HTMLTextAreaElement implements IComponent {
     Component.applyDate(data, this);
   }
 
-  onInit(): void { }
+  onInit(): void {}
   appendChilds(...childs: any[]): void {
     childs.forEach((child) => {
       try {
         if (child && child instanceof Node) {
           this.appendChild(child);
         }
-      } catch (error) { }
+      } catch (error) {}
     });
   }
   addClasName(...names: string[]): void {
@@ -1095,14 +1102,14 @@ export class LabelElement extends HTMLLabelElement implements IComponent {
     Component.applyDate(data, this);
   }
 
-  onInit(): void { }
+  onInit(): void {}
   appendChilds(...childs: any[]): void {
     childs.forEach((child) => {
       try {
         if (child && child instanceof Node) {
           this.appendChild(child);
         }
-      } catch (error) { }
+      } catch (error) {}
     });
   }
   addClasName(...names: string[]): void {
@@ -1126,14 +1133,14 @@ export class SelectElement extends HTMLSelectElement implements IComponent {
     Component.applyDate(data, this);
   }
 
-  onInit(): void { }
+  onInit(): void {}
   appendChilds(...childs: any[]): void {
     childs.forEach((child) => {
       try {
         if (child && child instanceof Node) {
           this.appendChild(child);
         }
-      } catch (error) { }
+      } catch (error) {}
     });
   }
   addClasName(...names: string[]): void {
@@ -1159,14 +1166,14 @@ export class IframeElement extends HTMLIFrameElement implements IComponent {
     Component.applyDate(data, this);
   }
 
-  onInit(): void { }
+  onInit(): void {}
   appendChilds(...childs: any[]): void {
     childs.forEach((child) => {
       try {
         if (child && child instanceof Node) {
           this.appendChild(child);
         }
-      } catch (error) { }
+      } catch (error) {}
     });
   }
   addClasName(...names: string[]): void {
@@ -1192,14 +1199,14 @@ export class AudioElement extends HTMLAudioElement implements IComponent {
     Component.applyDate(data, this);
   }
 
-  onInit(): void { }
+  onInit(): void {}
   appendChilds(...childs: any[]): void {
     childs.forEach((child) => {
       try {
         if (child && child instanceof Node) {
           this.appendChild(child);
         }
-      } catch (error) { }
+      } catch (error) {}
     });
   }
   addClasName(...names: string[]): void {
@@ -1223,14 +1230,14 @@ export class VideoElement extends HTMLVideoElement implements IComponent {
     Component.applyDate(data, this);
   }
 
-  onInit(): void { }
+  onInit(): void {}
   appendChilds(...childs: any[]): void {
     childs.forEach((child) => {
       try {
         if (child && child instanceof Node) {
           this.appendChild(child);
         }
-      } catch (error) { }
+      } catch (error) {}
     });
   }
   addClasName(...names: string[]): void {
@@ -1255,14 +1262,14 @@ export class CanvasElement extends HTMLCanvasElement implements IComponent {
     Component.applyDate(data, this);
   }
 
-  onInit(): void { }
+  onInit(): void {}
   appendChilds(...childs: any[]): void {
     childs.forEach((child) => {
       try {
         if (child && child instanceof Node) {
           this.appendChild(child);
         }
-      } catch (error) { }
+      } catch (error) {}
     });
   }
   addClasName(...names: string[]): void {
@@ -1294,14 +1301,14 @@ export class NavElement extends HTMLElement implements IComponent {
     Component.applyDate(data, this);
   }
 
-  onInit(): void { }
+  onInit(): void {}
   appendChilds(...childs: any[]): void {
     childs.forEach((child) => {
       try {
         if (child && child instanceof Node) {
           this.appendChild(child);
         }
-      } catch (error) { }
+      } catch (error) {}
     });
   }
   addClasName(...names: string[]): void {
@@ -1325,14 +1332,14 @@ export class SectionElement extends HTMLElement implements IComponent {
     Component.applyDate(data, this);
   }
 
-  onInit(): void { }
+  onInit(): void {}
   appendChilds(...childs: any[]): void {
     childs.forEach((child) => {
       try {
         if (child && child instanceof Node) {
           this.appendChild(child);
         }
-      } catch (error) { }
+      } catch (error) {}
     });
   }
   addClasName(...names: string[]): void {
@@ -1358,14 +1365,14 @@ export class ArticleElement extends HTMLElement implements IComponent {
     Component.applyDate(data, this);
   }
 
-  onInit(): void { }
+  onInit(): void {}
   appendChilds(...childs: any[]): void {
     childs.forEach((child) => {
       try {
         if (child && child instanceof Node) {
           this.appendChild(child);
         }
-      } catch (error) { }
+      } catch (error) {}
     });
   }
   addClasName(...names: string[]): void {
@@ -1391,14 +1398,14 @@ export class SummaryElement extends HTMLElement implements IComponent {
     Component.applyDate(data, this);
   }
 
-  onInit(): void { }
+  onInit(): void {}
   appendChilds(...childs: any[]): void {
     childs.forEach((child) => {
       try {
         if (child && child instanceof Node) {
           this.appendChild(child);
         }
-      } catch (error) { }
+      } catch (error) {}
     });
   }
   addClasName(...names: string[]): void {
@@ -1424,7 +1431,7 @@ export class DetailsElement extends HTMLElement implements IComponent {
     Component.applyDate(data, this);
   }
 
-  onInit(): void { }
+  onInit(): void {}
 
   appendChilds(...childs: any[]): void {
     childs.forEach((child) => {
@@ -1432,7 +1439,7 @@ export class DetailsElement extends HTMLElement implements IComponent {
         if (child && child instanceof Node) {
           this.appendChild(child);
         }
-      } catch (error) { }
+      } catch (error) {}
     });
   }
 

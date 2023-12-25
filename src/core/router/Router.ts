@@ -13,6 +13,8 @@ class Router {
   private routes: Map<string, RoutePage> = new Map();
   private props: {} = {};
   public routePage: RoutePage | undefined = undefined;
+  public routeLinks: RoutePage[] = [];
+
   private routeView: RouteView | undefined = undefined;
 
   constructor() {
@@ -26,15 +28,35 @@ class Router {
     };
   }
 
-  private loadPage(pathname: string = window.location.pathname) {
+  private async loadPage(pathname: string = window.location.pathname) {
+    if (this.routeLinks.length > 0) {
+      let l = undefined;
+      a: for await (const routePage of this.routeLinks) {
+        {
+          for await (const link of routePage?.links || []) {
+            if (link.pathname == pathname) {
+              console.log("go: ", pathname, " link: ", link);
+              l = link;
+              break a;
+            }
+          }
+        }
+      }
+      if (l != undefined) {
+        console.log("go: ", pathname, " routePage: ", l);
+        return;
+      }
+    }
     console.log("loadPage: ", pathname);
     let routePage = this.routes.get(pathname);
     this.routePage = routePage;
+    this.routeLinks = [routePage];
     console.log("routePage: ", this.routePage);
     while (routePage) {
       if (routePage?.parent != undefined) {
         routePage = this.routePage["parent"];
         this.routePage = routePage;
+        this.routeLinks.unshift(routePage);
         continue;
       }
       if (routePage != undefined) {
@@ -95,14 +117,14 @@ class Router {
     // this.routes.delete(route.pathname);
   }
 
-  public goLink(pathname: string, props: {} = {}) {
-    this.props = props;
-    if (pathname.charAt(0) != "/") pathname = "/" + pathname;
-    if (typeof pathname == "string") this.loadPage(pathname);
-    window.history.pushState({}, pathname, window.location.origin + pathname);
-  }
+  // public goLink(pathname: string, props: {} = {}) {
+  //   this.props = props;
+  //   if (pathname.charAt(0) != "/") pathname = "/" + pathname;
+  //   if (typeof pathname == "string") this.loadPage(pathname);
+  //   window.history.pushState({}, pathname, window.location.origin + pathname);
+  // }
 
-  public go(pathname: string, props: {} = {}) {
+  public async go(pathname: string, props: {} = {}) {
     this.props = props;
     if (pathname.charAt(0) != "/") pathname = "/" + pathname;
     if (typeof pathname == "string") this.loadPage(pathname);

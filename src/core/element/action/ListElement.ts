@@ -1,18 +1,23 @@
-import { type DataElement, Component, DivElement } from "..";
-import { Register } from "../../decorators";
+import { type DataElement, Component, UListElement, ListItemElement } from "..";
 
-export class ListElement<T = string> extends Component {
+export class ListElement<T = any> extends Component {
   private itemSelected: {
     parent: HTMLElement;
     child: T;
   } | null = null;
 
+  private _container: UListElement = new UListElement();
+
   constructor(data?: DataElement) {
-    super(data);
-    this.addClasName("list-element");
+    super({ height: "100vh", ...data });
+    super.append(this.container);
   }
 
-  appendChild<T extends Node>(node: T | HTMLCollection): T {
+  public get container(): UListElement {
+    return this._container;
+  }
+
+  public appendChild<T extends Node>(node: T | HTMLCollection): T {
     if (node instanceof HTMLCollection) {
       for (let i = 0; i < node.length; i++) {
         const item = node.item(i);
@@ -28,18 +33,19 @@ export class ListElement<T = string> extends Component {
     return node as T;
   }
 
-  removeChild<T extends Node>(child: T): T {
+  public removeChild<T extends Node>(child: T): T {
     if (child instanceof HTMLElement) this.removeItem(child);
     return child;
   }
 
-  public addItem(element: T): void {
-    const item = new DivElement();
+  public addItem(element: T): ListItemElement {
+    const item = new ListItemElement();
     item.classList.add("list-element-item");
     if (element instanceof HTMLElement) item.appendChild(element as Node);
     else item.innerHTML = element as string;
-    this.addItemEventListener(item, element);
-    super.appendChild(item);
+    this.addItemEventListener(item as any, element);
+    this.container.appendChild(item);
+    return item;
   }
 
   private addItemEventListener(parent: HTMLElement, child: T): void {
@@ -61,11 +67,15 @@ export class ListElement<T = string> extends Component {
       const child = this.children.item(i);
       if (child instanceof HTMLElement) {
         if (typeof element == "string" && child.innerHTML == element)
-          super.removeChild(child);
-        else if (child == element) super.removeChild(child);
+          this.container.removeChild(child);
+        else if (child == element) this.container.removeChild(child);
         break;
       }
     }
+  }
+
+  append(...nodes: (string | Node)[]): void {
+    this.container.append(...nodes);
   }
 
   public onSelectItem: (item: T) => void = () => {};
