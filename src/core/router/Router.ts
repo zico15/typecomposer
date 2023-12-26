@@ -12,8 +12,9 @@ export interface RoutePage {
 class Router {
   private routes: Map<string, RoutePage> = new Map();
   private props: {} = {};
-  public routePage: RoutePage | undefined = undefined;
-  public routeLinks: RoutePage[] = [];
+  private index: number = 0;
+  // public routePage: RoutePage | undefined = undefined;
+  private routeLinks: RoutePage[] = [];
 
   private routeView: RouteView | undefined = undefined;
 
@@ -28,57 +29,48 @@ class Router {
     };
   }
 
-  private async loadPage(pathname: string = window.location.pathname) {
-    if (this.routeLinks.length > 0) {
-      let l = undefined;
-      a: for await (const routePage of this.routeLinks) {
-        {
-          for await (const link of routePage?.links || []) {
-            if (link.pathname == pathname) {
-              console.log("go: ", pathname, " link: ", link);
-              l = link;
-              break a;
-            }
-          }
-        }
-      }
-      if (l != undefined) {
-        console.log("go: ", pathname, " routePage: ", l);
-        return;
-      }
-    }
-    console.log("loadPage: ", pathname);
+  private async getRoutePage(
+    pathname: string,
+  ): Promise<{ routePage: RoutePage; routeLinks: RoutePage[] }> {
     let routePage = this.routes.get(pathname);
-    this.routePage = routePage;
-    this.routeLinks = [routePage];
-    console.log("routePage: ", this.routePage);
-    while (routePage) {
-      if (routePage?.parent != undefined) {
-        routePage = this.routePage["parent"];
-        this.routePage = routePage;
-        this.routeLinks.unshift(routePage);
-        continue;
-      }
-      if (routePage != undefined) {
-        const page = new routePage.component();
-        page.props = this.props;
-        this.setApp(page);
-        if (page.title != null) window.document.title = page.title;
-        else {
-          page.title = pathname.substring(
-            pathname.indexOf("/") + 1,
-            pathname.length,
-          );
-          window.document.title =
-            page.title != undefined
-              ? page.title
-              : page.title != undefined
-                ? page.title
-                : "home";
-        }
-      } else this.pageNotFound();
-      if (routePage?.parent == undefined) break;
+    if (routePage == undefined) return { routePage: undefined, routeLinks: [] };
+    const routeLinks = [routePage];
+    while (routePage && routePage?.parent != undefined) {
+      routePage = routePage?.parent;
+      routeLinks.unshift(routePage);
     }
+    return { routePage, routeLinks };
+  }
+
+  private async loadPage(pathname: string = window.location.pathname) {
+    console.log("loadPage: ", pathname);
+    const { routePage, routeLinks } = await this.getRoutePage(pathname);
+    this.routeLinks = routeLinks;
+    this.index = 0;
+    console.log("routeLinks: ", this.routeLinks);
+
+    if (routePage != undefined) {
+      const page = new routePage.component();
+      page.props = this.props;
+      this.setApp(page);
+      if (page.title != null) window.document.title = page.title;
+      else {
+        page.title = pathname.substring(
+          pathname.indexOf("/") + 1,
+          pathname.length,
+        );
+        window.document.title =
+          page.title != undefined
+            ? page.title
+            : page.title != undefined
+              ? page.title
+              : "home";
+      }
+    } else this.pageNotFound();
+  }
+
+  protected nextRoutePage(): RoutePage | undefined {
+    return this.routeLinks[this.index++];
   }
 
   public async put<Component>(
@@ -117,18 +109,42 @@ class Router {
     // this.routes.delete(route.pathname);
   }
 
-  // public goLink(pathname: string, props: {} = {}) {
-  //   this.props = props;
-  //   if (pathname.charAt(0) != "/") pathname = "/" + pathname;
-  //   if (typeof pathname == "string") this.loadPage(pathname);
-  //   window.history.pushState({}, pathname, window.location.origin + pathname);
-  // }
+  private async checkRouteLink(pathname: string): Promise<boolean> {
+    const { routePage, routeLinks } = await this.getRoutePage(pathname);
+    if (routePage != undefined) {
+      const isRouteLink = routeLinks[0] == this.routeLinks[0];
+      console.log("isRouteLink: ", isRouteLink);
+      if (!isRouteLink) return false;
+      let routeLinkLast = this.routeLinks[this.index];
+      this.index = 0;
+      for await (const routeLink of routeLinks) {
+        if (
+          this.index < this.routeLinks.length &&
+          routeLink == this.routeLinks[this.index]
+        ) {
+          routeLinkLast = routeLink;
+        } else break;
+        this.index++;
+      }
+      console.log("routeLinkLast: ", routeLinkLast);
+      if (routeLinkLast && routeLinkLast["routeView"] != undefined) {
+        this.routeLinks = routeLinks;
+        this.index > 0 && this.index--;
+        routeLinkLast["routeView"].updateView();
+      }
+      return true;
+    }
+    return false;
+  }
 
   public async go(pathname: string, props: {} = {}) {
     this.props = props;
     if (pathname.charAt(0) != "/") pathname = "/" + pathname;
-    if (typeof pathname == "string") this.loadPage(pathname);
     window.history.pushState({}, pathname, window.location.origin + pathname);
+    if (typeof pathname == "string") {
+      if (await this.checkRouteLink(pathname)) {
+      } else this.loadPage(pathname);
+    }
   }
 
   private setApp<T extends Component>(app: T) {

@@ -1,8 +1,10 @@
 import { Component, DataElement, IComponent, router } from "..";
+import { RoutePage } from "./Router";
 
 export class RouteView extends Component {
   private _view: IComponent | undefined = undefined;
   private _url: string = "";
+  private routePage: RoutePage | undefined = undefined;
 
   constructor(
     public classParent: any,
@@ -10,7 +12,6 @@ export class RouteView extends Component {
   ) {
     super(data);
     router["routeView"] = this;
-    this._url = window.location.pathname;
   }
 
   get url(): string {
@@ -18,24 +19,28 @@ export class RouteView extends Component {
   }
 
   connectedCallback() {
-    console.log(
-      "RouteView.connectedCallback: ",
-      this,
-      " routePage: ",
-      router.routePage,
-    );
+    // console.log(
+    //   "RouteView.connectedCallback: ",
+    //   this,
+    //   " routePage: ",
+    //   router.routePage,
+    // );
     this.updateView();
-    this.addEventListener("onload", () => this.updateView());
   }
 
   private updateView() {
-    if (router.routePage != undefined) {
-      const routePageView = router.routePage.links?.find((link) =>
+    console.log("urlo:", window.location.href);
+    this._url = window.location.pathname;
+    const routePage = router["nextRoutePage"]();
+    console.log("routePage: ", routePage);
+    if (routePage != undefined) {
+      this.routePage = routePage;
+      this.routePage["routeView"] = this;
+      const routePageView = routePage.links?.find((link) =>
         this.url.includes(link.pathname),
       );
       console.log("routePageView: ", routePageView);
       if (routePageView && routePageView.component) {
-        router.routePage = routePageView;
         const component: any = new routePageView.component();
         this.view = component;
       }
@@ -45,6 +50,7 @@ export class RouteView extends Component {
   disconnectedCallback() {
     // router["routeView"] = undefined;
     console.log("RouteView.disconnectedCallback: ", router["routeView"]);
+    this.routePage["routeView"] = undefined;
   }
 
   get view(): IComponent | undefined {
