@@ -122,5 +122,5 @@ export class ChartElement extends Component {
     };
   }
 }
-
+// @ts-ignore
 customElements.define("chart-element", ChartElement);

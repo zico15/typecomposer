@@ -40,6 +40,7 @@ export class TextFieldElement extends Component {
     } else this.input.placeholder = data?.placeholder || " ";
     this.appendChilds(this.iconPane);
     this.iconPane.addEventListener("click", () => this.input.focus());
+    // @ts-ignore
     Component.setVariant(this.input, data?.variant);
     if (data?.icon != undefined) this.icon = data.icon;
   }
@@ -74,5 +75,5 @@ export class TextFieldElement extends Component {
     }
   }
 }
-
+// @ts-ignore
 customElements.define("text-field-element", TextFieldElement);

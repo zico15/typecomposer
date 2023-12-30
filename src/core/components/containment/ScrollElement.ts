@@ -61,5 +61,5 @@ export class ScrollElement extends Component {
     else this.style.overflowY = "hidden";
   }
 }
-
+// @ts-ignore
 customElements.define("scroll-element", ScrollElement);

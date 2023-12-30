@@ -180,5 +180,5 @@ export class GoogleMapElement extends Component {
     }
   }
 }
-
+// @ts-ignore
 customElements.define("google-map-element", GoogleMapElement);

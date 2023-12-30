@@ -102,5 +102,5 @@ export class TabPane extends BorderPaneElement {
 
   public onSelectTab: (title: string, content: HTMLElement) => void = () => {};
 }
-
+// @ts-ignore
 customElements.define("tab-pane", TabPane);

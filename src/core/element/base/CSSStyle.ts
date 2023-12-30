@@ -1,4 +1,3 @@
-import { tr } from "date-fns/locale";
 import { Ref } from "../../ref";
 
 export type Variant =
@@ -626,2415 +625,2415 @@ const _styleAtributtes = [
 
 export interface CSSStyleDeclarationOptional {
   /** [MDN Reference](https://developer.mozilla.org/docs/Web/CSS/accent-color) */
-  text?: string | Ref<string> | any;
-  accentColor?: string | Ref<string> | any;
+  text?: string | Ref<string>;
+  accentColor?: string | Ref<string>;
   /** [MDN Reference](https://developer.mozilla.org/docs/Web/CSS/align-content) */
-  alignContent?: string | Ref<string> | any;
+  alignContent?: string | Ref<string>;
   /** [MDN Reference](https://developer.mozilla.org/docs/Web/CSS/align-items) */
-  alignItems?: string | Ref<string> | any;
+  alignItems?: string | Ref<string>;
   /** [MDN Reference](https://developer.mozilla.org/docs/Web/CSS/align-self) */
-  alignSelf?: string | Ref<string> | any;
-  alignmentBaseline?: string | Ref<string> | any;
+  alignSelf?: string | Ref<string>;
+  alignmentBaseline?: string | Ref<string>;
   /** [MDN Reference](https://developer.mozilla.org/docs/Web/CSS/all) */
-  all?: string | Ref<string> | any;
+  all?: string | Ref<string>;
   /** [MDN Reference](https://developer.mozilla.org/docs/Web/CSS/animation) */
-  animation?: string | Ref<string> | any;
+  animation?: string | Ref<string>;
   /** [MDN Reference](https://developer.mozilla.org/docs/Web/CSS/animation-composition) */
-  animationComposition?: string | Ref<string> | any;
+  animationComposition?: string | Ref<string>;
   /** [MDN Reference](https://developer.mozilla.org/docs/Web/CSS/animation-delay) */
-  animationDelay?: string | Ref<string> | any;
+  animationDelay?: string | Ref<string>;
   /** [MDN Reference](https://developer.mozilla.org/docs/Web/CSS/animation-direction) */
-  animationDirection?: string | Ref<string> | any;
+  animationDirection?: string | Ref<string>;
   /** [MDN Reference](https://developer.mozilla.org/docs/Web/CSS/animation-duration) */
-  animationDuration?: string | Ref<string> | any;
+  animationDuration?: string | Ref<string>;
   /** [MDN Reference](https://developer.mozilla.org/docs/Web/CSS/animation-fill-mode) */
-  animationFillMode?: string | Ref<string> | any;
+  animationFillMode?: string | Ref<string>;
   /** [MDN Reference](https://developer.mozilla.org/docs/Web/CSS/animation-iteration-count) */
-  animationIterationCount?: string | Ref<string> | any;
+  animationIterationCount?: string | Ref<string>;
   /** [MDN Reference](https://developer.mozilla.org/docs/Web/CSS/animation-name) */
-  animationName?: string | Ref<string> | any;
+  animationName?: string | Ref<string>;
   /** [MDN Reference](https://developer.mozilla.org/docs/Web/CSS/animation-play-state) */
-  animationPlayState?: string | Ref<string> | any;
+  animationPlayState?: string | Ref<string>;
   /** [MDN Reference](https://developer.mozilla.org/docs/Web/CSS/animation-timing-function) */
-  animationTimingFunction?: string | Ref<string> | any;
+  animationTimingFunction?: string | Ref<string>;
   /** [MDN Reference](https://developer.mozilla.org/docs/Web/CSS/appearance) */
-  appearance?: string | Ref<string> | any;
+  appearance?: string | Ref<string>;
   /** [MDN Reference](https://developer.mozilla.org/docs/Web/CSS/aspect-ratio) */
-  aspectRatio?: string | Ref<string> | any;
+  aspectRatio?: string | Ref<string>;
   /** [MDN Reference](https://developer.mozilla.org/docs/Web/CSS/backdrop-filter) */
-  backdropFilter?: string | Ref<string> | any;
+  backdropFilter?: string | Ref<string>;
   /** [MDN Reference](https://developer.mozilla.org/docs/Web/CSS/backface-visibility) */
-  backfaceVisibility?: string | Ref<string> | any;
+  backfaceVisibility?: string | Ref<string>;
   /** [MDN Reference](https://developer.mozilla.org/docs/Web/CSS/background) */
-  background?: string | Ref<string> | any;
+  background?: string | Ref<string>;
   /** [MDN Reference](https://developer.mozilla.org/docs/Web/CSS/background-attachment) */
-  backgroundAttachment?: string | Ref<string> | any;
+  backgroundAttachment?: string | Ref<string>;
   /** [MDN Reference](https://developer.mozilla.org/docs/Web/CSS/background-blend-mode) */
-  backgroundBlendMode?: string | Ref<string> | any;
+  backgroundBlendMode?: string | Ref<string>;
   /** [MDN Reference](https://developer.mozilla.org/docs/Web/CSS/background-clip) */
-  backgroundClip?: string | Ref<string> | any;
+  backgroundClip?: string | Ref<string>;
   /** [MDN Reference](https://developer.mozilla.org/docs/Web/CSS/background-color) */
-  backgroundColor?: string | Ref<string> | any;
+  backgroundColor?: string | Ref<string>;
   /** [MDN Reference](https://developer.mozilla.org/docs/Web/CSS/background-image) */
-  backgroundImage?: string | Ref<string> | any;
+  backgroundImage?: string | Ref<string>;
   /** [MDN Reference](https://developer.mozilla.org/docs/Web/CSS/background-origin) */
-  backgroundOrigin?: string | Ref<string> | any;
+  backgroundOrigin?: string | Ref<string>;
   /** [MDN Reference](https://developer.mozilla.org/docs/Web/CSS/background-position) */
-  backgroundPosition?: string | Ref<string> | any;
+  backgroundPosition?: string | Ref<string>;
   /** [MDN Reference](https://developer.mozilla.org/docs/Web/CSS/background-position-x) */
-  backgroundPositionX?: string | Ref<string> | any;
+  backgroundPositionX?: string | Ref<string>;
   /** [MDN Reference](https://developer.mozilla.org/docs/Web/CSS/background-position-y) */
-  backgroundPositionY?: string | Ref<string> | any;
+  backgroundPositionY?: string | Ref<string>;
   /** [MDN Reference](https://developer.mozilla.org/docs/Web/CSS/background-repeat) */
-  backgroundRepeat?: string | Ref<string> | any;
+  backgroundRepeat?: string | Ref<string>;
   /** [MDN Reference](https://developer.mozilla.org/docs/Web/CSS/background-size) */
-  backgroundSize?: string | Ref<string> | any;
-  baselineShift?: string | Ref<string> | any;
+  backgroundSize?: string | Ref<string>;
+  baselineShift?: string | Ref<string>;
   /** [MDN Reference](https://developer.mozilla.org/docs/Web/CSS/block-size) */
-  blockSize?: string | Ref<string> | any;
+  blockSize?: string | Ref<string>;
   /** [MDN Reference](https://developer.mozilla.org/docs/Web/CSS/border) */
-  border?: string | Ref<string> | any;
+  border?: string | Ref<string>;
   /** [MDN Reference](https://developer.mozilla.org/docs/Web/CSS/border-block) */
-  borderBlock?: string | Ref<string> | any;
+  borderBlock?: string | Ref<string>;
   /** [MDN Reference](https://developer.mozilla.org/docs/Web/CSS/border-block-color) */
-  borderBlockColor?: string | Ref<string> | any;
+  borderBlockColor?: string | Ref<string>;
   /** [MDN Reference](https://developer.mozilla.org/docs/Web/CSS/border-block-end) */
-  borderBlockEnd?: string | Ref<string> | any;
+  borderBlockEnd?: string | Ref<string>;
   /** [MDN Reference](https://developer.mozilla.org/docs/Web/CSS/border-block-end-color) */
-  borderBlockEndColor?: string | Ref<string> | any;
+  borderBlockEndColor?: string | Ref<string>;
   /** [MDN Reference](https://developer.mozilla.org/docs/Web/CSS/border-block-end-style) */
-  borderBlockEndStyle?: string | Ref<string> | any;
+  borderBlockEndStyle?: string | Ref<string>;
   /** [MDN Reference](https://developer.mozilla.org/docs/Web/CSS/border-block-end-width) */
-  borderBlockEndWidth?: string | Ref<string> | any;
+  borderBlockEndWidth?: string | Ref<string>;
   /** [MDN Reference](https://developer.mozilla.org/docs/Web/CSS/border-block-start) */
-  borderBlockStart?: string | Ref<string> | any;
+  borderBlockStart?: string | Ref<string>;
   /** [MDN Reference](https://developer.mozilla.org/docs/Web/CSS/border-block-start-color) */
-  borderBlockStartColor?: string | Ref<string> | any;
+  borderBlockStartColor?: string | Ref<string>;
   /** [MDN Reference](https://developer.mozilla.org/docs/Web/CSS/border-block-start-style) */
-  borderBlockStartStyle?: string | Ref<string> | any;
+  borderBlockStartStyle?: string | Ref<string>;
   /** [MDN Reference](https://developer.mozilla.org/docs/Web/CSS/border-block-start-width) */
-  borderBlockStartWidth?: string | Ref<string> | any;
+  borderBlockStartWidth?: string | Ref<string>;
   /** [MDN Reference](https://developer.mozilla.org/docs/Web/CSS/border-block-style) */
-  borderBlockStyle?: string | Ref<string> | any;
+  borderBlockStyle?: string | Ref<string>;
   /** [MDN Reference](https://developer.mozilla.org/docs/Web/CSS/border-block-width) */
-  borderBlockWidth?: string | Ref<string> | any;
+  borderBlockWidth?: string | Ref<string>;
   /** [MDN Reference](https://developer.mozilla.org/docs/Web/CSS/border-bottom) */
-  borderBottom?: string | Ref<string> | any;
+  borderBottom?: string | Ref<string>;
   /** [MDN Reference](https://developer.mozilla.org/docs/Web/CSS/border-bottom-color) */
-  borderBottomColor?: string | Ref<string> | any;
+  borderBottomColor?: string | Ref<string>;
   /** [MDN Reference](https://developer.mozilla.org/docs/Web/CSS/border-bottom-left-radius) */
-  borderBottomLeftRadius?: string | Ref<string> | any;
+  borderBottomLeftRadius?: string | Ref<string>;
   /** [MDN Reference](https://developer.mozilla.org/docs/Web/CSS/border-bottom-right-radius) */
-  borderBottomRightRadius?: string | Ref<string> | any;
+  borderBottomRightRadius?: string | Ref<string>;
   /** [MDN Reference](https://developer.mozilla.org/docs/Web/CSS/border-bottom-style) */
-  borderBottomStyle?: string | Ref<string> | any;
+  borderBottomStyle?: string | Ref<string>;
   /** [MDN Reference](https://developer.mozilla.org/docs/Web/CSS/border-bottom-width) */
-  borderBottomWidth?: string | Ref<string> | any;
+  borderBottomWidth?: string | Ref<string>;
   /** [MDN Reference](https://developer.mozilla.org/docs/Web/CSS/border-collapse) */
-  borderCollapse?: string | Ref<string> | any;
+  borderCollapse?: string | Ref<string>;
   /** [MDN Reference](https://developer.mozilla.org/docs/Web/CSS/border-color) */
-  borderColor?: string | Ref<string> | any;
+  borderColor?: string | Ref<string>;
   /** [MDN Reference](https://developer.mozilla.org/docs/Web/CSS/border-end-end-radius) */
-  borderEndEndRadius?: string | Ref<string> | any;
+  borderEndEndRadius?: string | Ref<string>;
   /** [MDN Reference](https://developer.mozilla.org/docs/Web/CSS/border-end-start-radius) */
-  borderEndStartRadius?: string | Ref<string> | any;
+  borderEndStartRadius?: string | Ref<string>;
   /** [MDN Reference](https://developer.mozilla.org/docs/Web/CSS/border-image) */
-  borderImage?: string | Ref<string> | any;
+  borderImage?: string | Ref<string>;
   /** [MDN Reference](https://developer.mozilla.org/docs/Web/CSS/border-image-outset) */
-  borderImageOutset?: string | Ref<string> | any;
+  borderImageOutset?: string | Ref<string>;
   /** [MDN Reference](https://developer.mozilla.org/docs/Web/CSS/border-image-repeat) */
-  borderImageRepeat?: string | Ref<string> | any;
+  borderImageRepeat?: string | Ref<string>;
   /** [MDN Reference](https://developer.mozilla.org/docs/Web/CSS/border-image-slice) */
-  borderImageSlice?: string | Ref<string> | any;
+  borderImageSlice?: string | Ref<string>;
   /** [MDN Reference](https://developer.mozilla.org/docs/Web/CSS/border-image-source) */
-  borderImageSource?: string | Ref<string> | any;
+  borderImageSource?: string | Ref<string>;
   /** [MDN Reference](https://developer.mozilla.org/docs/Web/CSS/border-image-width) */
-  borderImageWidth?: string | Ref<string> | any;
+  borderImageWidth?: string | Ref<string>;
   /** [MDN Reference](https://developer.mozilla.org/docs/Web/CSS/border-inline) */
-  borderInline?: string | Ref<string> | any;
+  borderInline?: string | Ref<string>;
   /** [MDN Reference](https://developer.mozilla.org/docs/Web/CSS/border-inline-color) */
-  borderInlineColor?: string | Ref<string> | any;
+  borderInlineColor?: string | Ref<string>;
   /** [MDN Reference](https://developer.mozilla.org/docs/Web/CSS/border-inline-end) */
-  borderInlineEnd?: string | Ref<string> | any;
+  borderInlineEnd?: string | Ref<string>;
   /** [MDN Reference](https://developer.mozilla.org/docs/Web/CSS/border-inline-end-color) */
-  borderInlineEndColor?: string | Ref<string> | any;
+  borderInlineEndColor?: string | Ref<string>;
   /** [MDN Reference](https://developer.mozilla.org/docs/Web/CSS/border-inline-end-style) */
-  borderInlineEndStyle?: string | Ref<string> | any;
+  borderInlineEndStyle?: string | Ref<string>;
   /** [MDN Reference](https://developer.mozilla.org/docs/Web/CSS/border-inline-end-width) */
-  borderInlineEndWidth?: string | Ref<string> | any;
+  borderInlineEndWidth?: string | Ref<string>;
   /** [MDN Reference](https://developer.mozilla.org/docs/Web/CSS/border-inline-start) */
-  borderInlineStart?: string | Ref<string> | any;
+  borderInlineStart?: string | Ref<string>;
   /** [MDN Reference](https://developer.mozilla.org/docs/Web/CSS/border-inline-start-color) */
-  borderInlineStartColor?: string | Ref<string> | any;
+  borderInlineStartColor?: string | Ref<string>;
   /** [MDN Reference](https://developer.mozilla.org/docs/Web/CSS/border-inline-start-style) */
-  borderInlineStartStyle?: string | Ref<string> | any;
+  borderInlineStartStyle?: string | Ref<string>;
   /** [MDN Reference](https://developer.mozilla.org/docs/Web/CSS/border-inline-start-width) */
-  borderInlineStartWidth?: string | Ref<string> | any;
+  borderInlineStartWidth?: string | Ref<string>;
   /** [MDN Reference](https://developer.mozilla.org/docs/Web/CSS/border-inline-style) */
-  borderInlineStyle?: string | Ref<string> | any;
+  borderInlineStyle?: string | Ref<string>;
   /** [MDN Reference](https://developer.mozilla.org/docs/Web/CSS/border-inline-width) */
-  borderInlineWidth?: string | Ref<string> | any;
+  borderInlineWidth?: string | Ref<string>;
   /** [MDN Reference](https://developer.mozilla.org/docs/Web/CSS/border-left) */
-  borderLeft?: string | Ref<string> | any;
+  borderLeft?: string | Ref<string>;
   /** [MDN Reference](https://developer.mozilla.org/docs/Web/CSS/border-left-color) */
-  borderLeftColor?: string | Ref<string> | any;
+  borderLeftColor?: string | Ref<string>;
   /** [MDN Reference](https://developer.mozilla.org/docs/Web/CSS/border-left-style) */
-  borderLeftStyle?: string | Ref<string> | any;
+  borderLeftStyle?: string | Ref<string>;
   /** [MDN Reference](https://developer.mozilla.org/docs/Web/CSS/border-left-width) */
-  borderLeftWidth?: string | Ref<string> | any;
+  borderLeftWidth?: string | Ref<string>;
   /** [MDN Reference](https://developer.mozilla.org/docs/Web/CSS/border-radius) */
-  borderRadius?: string | Ref<string> | any;
+  borderRadius?: string | Ref<string>;
   /** [MDN Reference](https://developer.mozilla.org/docs/Web/CSS/border-right) */
-  borderRight?: string | Ref<string> | any;
+  borderRight?: string | Ref<string>;
   /** [MDN Reference](https://developer.mozilla.org/docs/Web/CSS/border-right-color) */
-  borderRightColor?: string | Ref<string> | any;
+  borderRightColor?: string | Ref<string>;
   /** [MDN Reference](https://developer.mozilla.org/docs/Web/CSS/border-right-style) */
-  borderRightStyle?: string | Ref<string> | any;
+  borderRightStyle?: string | Ref<string>;
   /** [MDN Reference](https://developer.mozilla.org/docs/Web/CSS/border-right-width) */
-  borderRightWidth?: string | Ref<string> | any;
+  borderRightWidth?: string | Ref<string>;
   /** [MDN Reference](https://developer.mozilla.org/docs/Web/CSS/border-spacing) */
-  borderSpacing?: string | Ref<string> | any;
+  borderSpacing?: string | Ref<string>;
   /** [MDN Reference](https://developer.mozilla.org/docs/Web/CSS/border-start-end-radius) */
-  borderStartEndRadius?: string | Ref<string> | any;
+  borderStartEndRadius?: string | Ref<string>;
   /** [MDN Reference](https://developer.mozilla.org/docs/Web/CSS/border-start-start-radius) */
-  borderStartStartRadius?: string | Ref<string> | any;
+  borderStartStartRadius?: string | Ref<string>;
   /** [MDN Reference](https://developer.mozilla.org/docs/Web/CSS/border-style) */
-  borderStyle?: string | Ref<string> | any;
+  borderStyle?: string | Ref<string>;
   /** [MDN Reference](https://developer.mozilla.org/docs/Web/CSS/border-top) */
-  borderTop?: string | Ref<string> | any;
+  borderTop?: string | Ref<string>;
   /** [MDN Reference](https://developer.mozilla.org/docs/Web/CSS/border-top-color) */
-  borderTopColor?: string | Ref<string> | any;
+  borderTopColor?: string | Ref<string>;
   /** [MDN Reference](https://developer.mozilla.org/docs/Web/CSS/border-top-left-radius) */
-  borderTopLeftRadius?: string | Ref<string> | any;
+  borderTopLeftRadius?: string | Ref<string>;
   /** [MDN Reference](https://developer.mozilla.org/docs/Web/CSS/border-top-right-radius) */
-  borderTopRightRadius?: string | Ref<string> | any;
+  borderTopRightRadius?: string | Ref<string>;
   /** [MDN Reference](https://developer.mozilla.org/docs/Web/CSS/border-top-style) */
-  borderTopStyle?: string | Ref<string> | any;
+  borderTopStyle?: string | Ref<string>;
   /** [MDN Reference](https://developer.mozilla.org/docs/Web/CSS/border-top-width) */
-  borderTopWidth?: string | Ref<string> | any;
+  borderTopWidth?: string | Ref<string>;
   /** [MDN Reference](https://developer.mozilla.org/docs/Web/CSS/border-width) */
-  borderWidth?: string | Ref<string> | any;
+  borderWidth?: string | Ref<string>;
   /** [MDN Reference](https://developer.mozilla.org/docs/Web/CSS/bottom) */
-  bottom?: string | Ref<string> | any;
+  bottom?: string | Ref<string>;
   /** [MDN Reference](https://developer.mozilla.org/docs/Web/CSS/box-shadow) */
-  boxShadow?: string | Ref<string> | any;
+  boxShadow?: string | Ref<string>;
   /** [MDN Reference](https://developer.mozilla.org/docs/Web/CSS/box-sizing) */
-  boxSizing?: string | Ref<string> | any;
+  boxSizing?: string | Ref<string>;
   /** [MDN Reference](https://developer.mozilla.org/docs/Web/CSS/break-after) */
-  breakAfter?: string | Ref<string> | any;
+  breakAfter?: string | Ref<string>;
   /** [MDN Reference](https://developer.mozilla.org/docs/Web/CSS/break-before) */
-  breakBefore?: string | Ref<string> | any;
+  breakBefore?: string | Ref<string>;
   /** [MDN Reference](https://developer.mozilla.org/docs/Web/CSS/break-inside) */
-  breakInside?: string | Ref<string> | any;
+  breakInside?: string | Ref<string>;
   /** [MDN Reference](https://developer.mozilla.org/docs/Web/CSS/caption-side) */
-  captionSide?: string | Ref<string> | any;
+  captionSide?: string | Ref<string>;
   /** [MDN Reference](https://developer.mozilla.org/docs/Web/CSS/caret-color) */
-  caretColor?: string | Ref<string> | any;
+  caretColor?: string | Ref<string>;
   /** [MDN Reference](https://developer.mozilla.org/docs/Web/CSS/clear) */
-  clear?: string | Ref<string> | any;
+  clear?: string | Ref<string>;
   /**
    * @deprecated
    *
    * [MDN Reference](https://developer.mozilla.org/docs/Web/CSS/clip)
    */
-  clip?: string | Ref<string> | any;
+  clip?: string | Ref<string>;
   /** [MDN Reference](https://developer.mozilla.org/docs/Web/CSS/clip-path) */
-  clipPath?: string | Ref<string> | any;
-  clipRule?: string | Ref<string> | any;
+  clipPath?: string | Ref<string>;
+  clipRule?: string | Ref<string>;
   /** [MDN Reference](https://developer.mozilla.org/docs/Web/CSS/color) */
-  color?: string | Ref<string> | any;
-  colorInterpolation?: string | Ref<string> | any;
-  colorInterpolationFilters?: string | Ref<string> | any;
+  color?: string | Ref<string>;
+  colorInterpolation?: string | Ref<string>;
+  colorInterpolationFilters?: string | Ref<string>;
   /** [MDN Reference](https://developer.mozilla.org/docs/Web/CSS/color-scheme) */
-  colorScheme?: string | Ref<string> | any;
+  colorScheme?: string | Ref<string>;
   /** [MDN Reference](https://developer.mozilla.org/docs/Web/CSS/column-count) */
-  columnCount?: string | Ref<string> | any;
+  columnCount?: string | Ref<string>;
   /** [MDN Reference](https://developer.mozilla.org/docs/Web/CSS/column-fill) */
-  columnFill?: string | Ref<string> | any;
+  columnFill?: string | Ref<string>;
   /** [MDN Reference](https://developer.mozilla.org/docs/Web/CSS/column-gap) */
-  columnGap?: string | Ref<string> | any;
+  columnGap?: string | Ref<string>;
   /** [MDN Reference](https://developer.mozilla.org/docs/Web/CSS/column-rule) */
-  columnRule?: string | Ref<string> | any;
+  columnRule?: string | Ref<string>;
   /** [MDN Reference](https://developer.mozilla.org/docs/Web/CSS/column-rule-color) */
-  columnRuleColor?: string | Ref<string> | any;
+  columnRuleColor?: string | Ref<string>;
   /** [MDN Reference](https://developer.mozilla.org/docs/Web/CSS/column-rule-style) */
-  columnRuleStyle?: string | Ref<string> | any;
+  columnRuleStyle?: string | Ref<string>;
   /** [MDN Reference](https://developer.mozilla.org/docs/Web/CSS/column-rule-width) */
-  columnRuleWidth?: string | Ref<string> | any;
+  columnRuleWidth?: string | Ref<string>;
   /** [MDN Reference](https://developer.mozilla.org/docs/Web/CSS/column-span) */
-  columnSpan?: string | Ref<string> | any;
+  columnSpan?: string | Ref<string>;
   /** [MDN Reference](https://developer.mozilla.org/docs/Web/CSS/column-width) */
-  columnWidth?: string | Ref<string> | any;
+  columnWidth?: string | Ref<string>;
   /** [MDN Reference](https://developer.mozilla.org/docs/Web/CSS/columns) */
   columns?: string | number;
   rows?: string | number;
   /** [MDN Reference](https://developer.mozilla.org/docs/Web/CSS/contain) */
-  contain?: string | Ref<string> | any;
+  contain?: string | Ref<string>;
   /** [MDN Reference](https://developer.mozilla.org/docs/Web/CSS/contain-intrinsic-contain-intrinsic-block-size) */
-  containIntrinsicBlockSize?: string | Ref<string> | any;
+  containIntrinsicBlockSize?: string | Ref<string>;
   /** [MDN Reference](https://developer.mozilla.org/docs/Web/CSS/contain-intrinsic-height) */
-  containIntrinsicHeight?: string | Ref<string> | any;
+  containIntrinsicHeight?: string | Ref<string>;
   /** [MDN Reference](https://developer.mozilla.org/docs/Web/CSS/contain-intrinsic-contain-intrinsic-inline-size) */
-  containIntrinsicInlineSize?: string | Ref<string> | any;
+  containIntrinsicInlineSize?: string | Ref<string>;
   /** [MDN Reference](https://developer.mozilla.org/docs/Web/CSS/contain-intrinsic-size) */
-  containIntrinsicSize?: string | Ref<string> | any;
+  containIntrinsicSize?: string | Ref<string>;
   /** [MDN Reference](https://developer.mozilla.org/docs/Web/CSS/contain-intrinsic-width) */
-  containIntrinsicWidth?: string | Ref<string> | any;
+  containIntrinsicWidth?: string | Ref<string>;
   /** [MDN Reference](https://developer.mozilla.org/docs/Web/CSS/container) */
-  container?: string | Ref<string> | any;
+  container?: string | Ref<string>;
   /** [MDN Reference](https://developer.mozilla.org/docs/Web/CSS/container-name) */
-  containerName?: string | Ref<string> | any;
+  containerName?: string | Ref<string>;
   /** [MDN Reference](https://developer.mozilla.org/docs/Web/CSS/container-type) */
-  containerType?: string | Ref<string> | any;
+  containerType?: string | Ref<string>;
   /** [MDN Reference](https://developer.mozilla.org/docs/Web/CSS/content) */
-  content?: string | Ref<string> | any;
+  content?: string | Ref<string>;
   /** [MDN Reference](https://developer.mozilla.org/docs/Web/CSS/counter-increment) */
-  counterIncrement?: string | Ref<string> | any;
+  counterIncrement?: string | Ref<string>;
   /** [MDN Reference](https://developer.mozilla.org/docs/Web/CSS/counter-reset) */
-  counterReset?: string | Ref<string> | any;
+  counterReset?: string | Ref<string>;
   /** [MDN Reference](https://developer.mozilla.org/docs/Web/CSS/counter-set) */
-  counterSet?: string | Ref<string> | any;
+  counterSet?: string | Ref<string>;
   /** [MDN Reference](https://developer.mozilla.org/docs/Web/API/CSSStyleDeclaration/cssFloat) */
-  cssFloat?: string | Ref<string> | any;
+  cssFloat?: string | Ref<string>;
   /** [MDN Reference](https://developer.mozilla.org/docs/Web/API/CSSStyleDeclaration/cssText) */
-  cssText?: string | Ref<string> | any;
+  cssText?: string | Ref<string>;
   /** [MDN Reference](https://developer.mozilla.org/docs/Web/CSS/cursor) */
-  cursor?: string | Ref<string> | any;
+  cursor?: string | Ref<string>;
   /** [MDN Reference](https://developer.mozilla.org/docs/Web/CSS/direction) */
-  direction?: string | Ref<string> | any;
+  direction?: string | Ref<string>;
   /** [MDN Reference](https://developer.mozilla.org/docs/Web/CSS/display) */
-  display?: string | Ref<string> | any;
-  dominantBaseline?: string | Ref<string> | any;
+  display?: string | Ref<string>;
+  dominantBaseline?: string | Ref<string>;
   /** [MDN Reference](https://developer.mozilla.org/docs/Web/CSS/empty-cells) */
-  emptyCells?: string | Ref<string> | any;
-  fill?: string | Ref<string> | any;
-  fillOpacity?: string | Ref<string> | any;
-  fillRule?: string | Ref<string> | any;
+  emptyCells?: string | Ref<string>;
+  fill?: string | Ref<string>;
+  fillOpacity?: string | Ref<string>;
+  fillRule?: string | Ref<string>;
   /** [MDN Reference](https://developer.mozilla.org/docs/Web/CSS/filter) */
-  filter?: string | Ref<string> | any;
+  filter?: string | Ref<string>;
   /** [MDN Reference](https://developer.mozilla.org/docs/Web/CSS/flex) */
-  flex?: string | Ref<string> | any;
+  flex?: string | Ref<string>;
   /** [MDN Reference](https://developer.mozilla.org/docs/Web/CSS/flex-basis) */
-  flexBasis?: string | Ref<string> | any;
+  flexBasis?: string | Ref<string>;
   /** [MDN Reference](https://developer.mozilla.org/docs/Web/CSS/flex-direction) */
-  flexDirection?: string | Ref<string> | any;
+  flexDirection?: string | Ref<string>;
   /** [MDN Reference](https://developer.mozilla.org/docs/Web/CSS/flex-flow) */
-  flexFlow?: string | Ref<string> | any;
+  flexFlow?: string | Ref<string>;
   /** [MDN Reference](https://developer.mozilla.org/docs/Web/CSS/flex-grow) */
-  flexGrow?: string | Ref<string> | any;
+  flexGrow?: string | Ref<string>;
   /** [MDN Reference](https://developer.mozilla.org/docs/Web/CSS/flex-shrink) */
-  flexShrink?: string | Ref<string> | any;
+  flexShrink?: string | Ref<string>;
   /** [MDN Reference](https://developer.mozilla.org/docs/Web/CSS/flex-wrap) */
-  flexWrap?: string | Ref<string> | any;
+  flexWrap?: string | Ref<string>;
   /** [MDN Reference](https://developer.mozilla.org/docs/Web/CSS/float) */
-  float?: string | Ref<string> | any;
-  floodColor?: string | Ref<string> | any;
-  floodOpacity?: string | Ref<string> | any;
+  float?: string | Ref<string>;
+  floodColor?: string | Ref<string>;
+  floodOpacity?: string | Ref<string>;
   /** [MDN Reference](https://developer.mozilla.org/docs/Web/CSS/font) */
-  font?: string | Ref<string> | any;
+  font?: string | Ref<string>;
   /** [MDN Reference](https://developer.mozilla.org/docs/Web/CSS/font-family) */
-  fontFamily?: string | Ref<string> | any;
+  fontFamily?: string | Ref<string>;
   /** [MDN Reference](https://developer.mozilla.org/docs/Web/CSS/font-feature-settings) */
-  fontFeatureSettings?: string | Ref<string> | any;
+  fontFeatureSettings?: string | Ref<string>;
   /** [MDN Reference](https://developer.mozilla.org/docs/Web/CSS/font-kerning) */
-  fontKerning?: string | Ref<string> | any;
+  fontKerning?: string | Ref<string>;
   /** [MDN Reference](https://developer.mozilla.org/docs/Web/CSS/font-optical-sizing) */
-  fontOpticalSizing?: string | Ref<string> | any;
+  fontOpticalSizing?: string | Ref<string>;
   /** [MDN Reference](https://developer.mozilla.org/docs/Web/CSS/font-palette) */
-  fontPalette?: string | Ref<string> | any;
+  fontPalette?: string | Ref<string>;
   /** [MDN Reference](https://developer.mozilla.org/docs/Web/CSS/font-size) */
-  fontSize?: string | Ref<string> | any;
+  fontSize?: string | Ref<string>;
   /** [MDN Reference](https://developer.mozilla.org/docs/Web/CSS/font-size-adjust) */
-  fontSizeAdjust?: string | Ref<string> | any;
+  fontSizeAdjust?: string | Ref<string>;
   /** [MDN Reference](https://developer.mozilla.org/docs/Web/CSS/font-stretch) */
-  fontStretch?: string | Ref<string> | any;
+  fontStretch?: string | Ref<string>;
   /** [MDN Reference](https://developer.mozilla.org/docs/Web/CSS/font-style) */
-  fontStyle?: string | Ref<string> | any;
+  fontStyle?: string | Ref<string>;
   /** [MDN Reference](https://developer.mozilla.org/docs/Web/CSS/font-synthesis) */
-  fontSynthesis?: string | Ref<string> | any;
+  fontSynthesis?: string | Ref<string>;
   /** [MDN Reference](https://developer.mozilla.org/docs/Web/CSS/font-synthesis-small-caps) */
-  fontSynthesisSmallCaps?: string | Ref<string> | any;
+  fontSynthesisSmallCaps?: string | Ref<string>;
   /** [MDN Reference](https://developer.mozilla.org/docs/Web/CSS/font-synthesis-style) */
-  fontSynthesisStyle?: string | Ref<string> | any;
+  fontSynthesisStyle?: string | Ref<string>;
   /** [MDN Reference](https://developer.mozilla.org/docs/Web/CSS/font-synthesis-weight) */
-  fontSynthesisWeight?: string | Ref<string> | any;
+  fontSynthesisWeight?: string | Ref<string>;
   /** [MDN Reference](https://developer.mozilla.org/docs/Web/CSS/font-variant) */
-  fontVariant?: string | Ref<string> | any;
+  fontVariant?: string | Ref<string>;
   /** [MDN Reference](https://developer.mozilla.org/docs/Web/CSS/font-variant-alternates) */
-  fontVariantAlternates?: string | Ref<string> | any;
+  fontVariantAlternates?: string | Ref<string>;
   /** [MDN Reference](https://developer.mozilla.org/docs/Web/CSS/font-variant-caps) */
-  fontVariantCaps?: string | Ref<string> | any;
+  fontVariantCaps?: string | Ref<string>;
   /** [MDN Reference](https://developer.mozilla.org/docs/Web/CSS/font-variant-east-asian) */
-  fontVariantEastAsian?: string | Ref<string> | any;
+  fontVariantEastAsian?: string | Ref<string>;
   /** [MDN Reference](https://developer.mozilla.org/docs/Web/CSS/font-variant-ligatures) */
-  fontVariantLigatures?: string | Ref<string> | any;
+  fontVariantLigatures?: string | Ref<string>;
   /** [MDN Reference](https://developer.mozilla.org/docs/Web/CSS/font-variant-numeric) */
-  fontVariantNumeric?: string | Ref<string> | any;
+  fontVariantNumeric?: string | Ref<string>;
   /** [MDN Reference](https://developer.mozilla.org/docs/Web/CSS/font-variant-position) */
-  fontVariantPosition?: string | Ref<string> | any;
+  fontVariantPosition?: string | Ref<string>;
   /** [MDN Reference](https://developer.mozilla.org/docs/Web/CSS/font-variation-settings) */
-  fontVariationSettings?: string | Ref<string> | any;
+  fontVariationSettings?: string | Ref<string>;
   /** [MDN Reference](https://developer.mozilla.org/docs/Web/CSS/font-weight) */
-  fontWeight?: string | Ref<string> | any;
+  fontWeight?: string | Ref<string>;
   /** [MDN Reference](https://developer.mozilla.org/docs/Web/CSS/forced-color-adjust) */
-  forcedColorAdjust?: string | Ref<string> | any;
+  forcedColorAdjust?: string | Ref<string>;
   /** [MDN Reference](https://developer.mozilla.org/docs/Web/CSS/gap) */
-  gap?: string | Ref<string> | any;
+  gap?: string | Ref<string>;
   /** [MDN Reference](https://developer.mozilla.org/docs/Web/CSS/grid) */
-  grid?: string | Ref<string> | any;
+  grid?: string | Ref<string>;
   /** [MDN Reference](https://developer.mozilla.org/docs/Web/CSS/grid-area) */
-  gridArea?: string | Ref<string> | any;
+  gridArea?: string | Ref<string>;
   /** [MDN Reference](https://developer.mozilla.org/docs/Web/CSS/grid-auto-columns) */
-  gridAutoColumns?: string | Ref<string> | any;
+  gridAutoColumns?: string | Ref<string>;
   /** [MDN Reference](https://developer.mozilla.org/docs/Web/CSS/grid-auto-flow) */
-  gridAutoFlow?: string | Ref<string> | any;
+  gridAutoFlow?: string | Ref<string>;
   /** [MDN Reference](https://developer.mozilla.org/docs/Web/CSS/grid-auto-rows) */
-  gridAutoRows?: string | Ref<string> | any;
+  gridAutoRows?: string | Ref<string>;
   /** [MDN Reference](https://developer.mozilla.org/docs/Web/CSS/grid-column) */
-  gridColumn?: string | Ref<string> | any;
+  gridColumn?: string | Ref<string>;
   /** [MDN Reference](https://developer.mozilla.org/docs/Web/CSS/grid-column-end) */
-  gridColumnEnd?: string | Ref<string> | any;
+  gridColumnEnd?: string | Ref<string>;
   /** @deprecated This is a legacy alias of `columnGap`. */
-  gridColumnGap?: string | Ref<string> | any;
+  gridColumnGap?: string | Ref<string>;
   /** [MDN Reference](https://developer.mozilla.org/docs/Web/CSS/grid-column-start) */
-  gridColumnStart?: string | Ref<string> | any;
+  gridColumnStart?: string | Ref<string>;
   /** @deprecated This is a legacy alias of `gap`. */
-  gridGap?: string | Ref<string> | any;
+  gridGap?: string | Ref<string>;
   /** [MDN Reference](https://developer.mozilla.org/docs/Web/CSS/grid-row) */
-  gridRow?: string | Ref<string> | any;
+  gridRow?: string | Ref<string>;
   /** [MDN Reference](https://developer.mozilla.org/docs/Web/CSS/grid-row-end) */
-  gridRowEnd?: string | Ref<string> | any;
+  gridRowEnd?: string | Ref<string>;
   /** @deprecated This is a legacy alias of `rowGap`. */
-  gridRowGap?: string | Ref<string> | any;
+  gridRowGap?: string | Ref<string>;
   /** [MDN Reference](https://developer.mozilla.org/docs/Web/CSS/grid-row-start) */
-  gridRowStart?: string | Ref<string> | any;
+  gridRowStart?: string | Ref<string>;
   /** [MDN Reference](https://developer.mozilla.org/docs/Web/CSS/grid-template) */
-  gridTemplate?: string | Ref<string> | any;
+  gridTemplate?: string | Ref<string>;
   /** [MDN Reference](https://developer.mozilla.org/docs/Web/CSS/grid-template-areas) */
-  gridTemplateAreas?: string | Ref<string> | any;
+  gridTemplateAreas?: string | Ref<string>;
   /** [MDN Reference](https://developer.mozilla.org/docs/Web/CSS/grid-template-columns) */
-  gridTemplateColumns?: string | Ref<string> | any;
+  gridTemplateColumns?: string | Ref<string>;
   /** [MDN Reference](https://developer.mozilla.org/docs/Web/CSS/grid-template-rows) */
-  gridTemplateRows?: string | Ref<string> | any;
+  gridTemplateRows?: string | Ref<string>;
   /** [MDN Reference](https://developer.mozilla.org/docs/Web/CSS/height) */
-  height?: string | Ref<string> | any;
+  height?: string | Ref<string>;
   /** [MDN Reference](https://developer.mozilla.org/docs/Web/CSS/hyphenate-character) */
-  hyphenateCharacter?: string | Ref<string> | any;
+  hyphenateCharacter?: string | Ref<string>;
   /** [MDN Reference](https://developer.mozilla.org/docs/Web/CSS/hyphens) */
-  hyphens?: string | Ref<string> | any;
+  hyphens?: string | Ref<string>;
   /**
    * @deprecated
    *
    * [MDN Reference](https://developer.mozilla.org/docs/Web/CSS/image-orientation)
    */
-  imageOrientation?: string | Ref<string> | any;
+  imageOrientation?: string | Ref<string>;
   /** [MDN Reference](https://developer.mozilla.org/docs/Web/CSS/image-rendering) */
-  imageRendering?: string | Ref<string> | any;
+  imageRendering?: string | Ref<string>;
   /** [MDN Reference](https://developer.mozilla.org/docs/Web/CSS/inline-size) */
-  inlineSize?: string | Ref<string> | any;
+  inlineSize?: string | Ref<string>;
   /** [MDN Reference](https://developer.mozilla.org/docs/Web/CSS/inset) */
-  inset?: string | Ref<string> | any;
+  inset?: string | Ref<string>;
   /** [MDN Reference](https://developer.mozilla.org/docs/Web/CSS/inset-block) */
-  insetBlock?: string | Ref<string> | any;
+  insetBlock?: string | Ref<string>;
   /** [MDN Reference](https://developer.mozilla.org/docs/Web/CSS/inset-block-end) */
-  insetBlockEnd?: string | Ref<string> | any;
+  insetBlockEnd?: string | Ref<string>;
   /** [MDN Reference](https://developer.mozilla.org/docs/Web/CSS/inset-block-start) */
-  insetBlockStart?: string | Ref<string> | any;
+  insetBlockStart?: string | Ref<string>;
   /** [MDN Reference](https://developer.mozilla.org/docs/Web/CSS/inset-inline) */
-  insetInline?: string | Ref<string> | any;
+  insetInline?: string | Ref<string>;
   /** [MDN Reference](https://developer.mozilla.org/docs/Web/CSS/inset-inline-end) */
-  insetInlineEnd?: string | Ref<string> | any;
+  insetInlineEnd?: string | Ref<string>;
   /** [MDN Reference](https://developer.mozilla.org/docs/Web/CSS/inset-inline-start) */
-  insetInlineStart?: string | Ref<string> | any;
+  insetInlineStart?: string | Ref<string>;
   /** [MDN Reference](https://developer.mozilla.org/docs/Web/CSS/isolation) */
-  isolation?: string | Ref<string> | any;
+  isolation?: string | Ref<string>;
   /** [MDN Reference](https://developer.mozilla.org/docs/Web/CSS/justify-content) */
-  justifyContent?: string | Ref<string> | any;
+  justifyContent?: string | Ref<string>;
   /** [MDN Reference](https://developer.mozilla.org/docs/Web/CSS/justify-items) */
-  justifyItems?: string | Ref<string> | any;
+  justifyItems?: string | Ref<string>;
   /** [MDN Reference](https://developer.mozilla.org/docs/Web/CSS/justify-self) */
-  justifySelf?: string | Ref<string> | any;
+  justifySelf?: string | Ref<string>;
   /** [MDN Reference](https://developer.mozilla.org/docs/Web/CSS/left) */
-  left?: string | Ref<string> | any;
+  left?: string | Ref<string>;
   /** [MDN Reference](https://developer.mozilla.org/docs/Web/API/CSSStyleDeclaration/length) */
   readonly length?: number;
   /** [MDN Reference](https://developer.mozilla.org/docs/Web/CSS/letter-spacing) */
-  letterSpacing?: string | Ref<string> | any;
-  lightingColor?: string | Ref<string> | any;
+  letterSpacing?: string | Ref<string>;
+  lightingColor?: string | Ref<string>;
   /** [MDN Reference](https://developer.mozilla.org/docs/Web/CSS/line-break) */
-  lineBreak?: string | Ref<string> | any;
+  lineBreak?: string | Ref<string>;
   /** [MDN Reference](https://developer.mozilla.org/docs/Web/CSS/line-height) */
-  lineHeight?: string | Ref<string> | any;
+  lineHeight?: string | Ref<string>;
   /** [MDN Reference](https://developer.mozilla.org/docs/Web/CSS/list-style) */
-  listStyle?: string | Ref<string> | any;
+  listStyle?: string | Ref<string>;
   /** [MDN Reference](https://developer.mozilla.org/docs/Web/CSS/list-style-image) */
-  listStyleImage?: string | Ref<string> | any;
+  listStyleImage?: string | Ref<string>;
   /** [MDN Reference](https://developer.mozilla.org/docs/Web/CSS/list-style-position) */
-  listStylePosition?: string | Ref<string> | any;
+  listStylePosition?: string | Ref<string>;
   /** [MDN Reference](https://developer.mozilla.org/docs/Web/CSS/list-style-type) */
-  listStyleType?: string | Ref<string> | any;
+  listStyleType?: string | Ref<string>;
   /** [MDN Reference](https://developer.mozilla.org/docs/Web/CSS/margin) */
-  margin?: string | Ref<string> | any;
+  margin?: string | Ref<string>;
   /** [MDN Reference](https://developer.mozilla.org/docs/Web/CSS/margin-block) */
-  marginBlock?: string | Ref<string> | any;
+  marginBlock?: string | Ref<string>;
   /** [MDN Reference](https://developer.mozilla.org/docs/Web/CSS/margin-block-end) */
-  marginBlockEnd?: string | Ref<string> | any;
+  marginBlockEnd?: string | Ref<string>;
   /** [MDN Reference](https://developer.mozilla.org/docs/Web/CSS/margin-block-start) */
-  marginBlockStart?: string | Ref<string> | any;
+  marginBlockStart?: string | Ref<string>;
   /** [MDN Reference](https://developer.mozilla.org/docs/Web/CSS/margin-bottom) */
-  marginBottom?: string | Ref<string> | any;
+  marginBottom?: string | Ref<string>;
   /** [MDN Reference](https://developer.mozilla.org/docs/Web/CSS/margin-inline) */
-  marginInline?: string | Ref<string> | any;
+  marginInline?: string | Ref<string>;
   /** [MDN Reference](https://developer.mozilla.org/docs/Web/CSS/margin-inline-end) */
-  marginInlineEnd?: string | Ref<string> | any;
+  marginInlineEnd?: string | Ref<string>;
   /** [MDN Reference](https://developer.mozilla.org/docs/Web/CSS/margin-inline-start) */
-  marginInlineStart?: string | Ref<string> | any;
+  marginInlineStart?: string | Ref<string>;
   /** [MDN Reference](https://developer.mozilla.org/docs/Web/CSS/margin-left) */
-  marginLeft?: string | Ref<string> | any;
+  marginLeft?: string | Ref<string>;
   /** [MDN Reference](https://developer.mozilla.org/docs/Web/CSS/margin-right) */
-  marginRight?: string | Ref<string> | any;
+  marginRight?: string | Ref<string>;
   /** [MDN Reference](https://developer.mozilla.org/docs/Web/CSS/margin-top) */
-  marginTop?: string | Ref<string> | any;
-  marker?: string | Ref<string> | any;
-  markerEnd?: string | Ref<string> | any;
-  markerMid?: string | Ref<string> | any;
-  markerStart?: string | Ref<string> | any;
+  marginTop?: string | Ref<string>;
+  marker?: string | Ref<string>;
+  markerEnd?: string | Ref<string>;
+  markerMid?: string | Ref<string>;
+  markerStart?: string | Ref<string>;
   /** [MDN Reference](https://developer.mozilla.org/docs/Web/CSS/mask) */
-  mask?: string | Ref<string> | any;
+  mask?: string | Ref<string>;
   /** [MDN Reference](https://developer.mozilla.org/docs/Web/CSS/mask-clip) */
-  maskClip?: string | Ref<string> | any;
+  maskClip?: string | Ref<string>;
   /** [MDN Reference](https://developer.mozilla.org/docs/Web/CSS/mask-composite) */
-  maskComposite?: string | Ref<string> | any;
+  maskComposite?: string | Ref<string>;
   /** [MDN Reference](https://developer.mozilla.org/docs/Web/CSS/mask-image) */
-  maskImage?: string | Ref<string> | any;
+  maskImage?: string | Ref<string>;
   /** [MDN Reference](https://developer.mozilla.org/docs/Web/CSS/mask-mode) */
-  maskMode?: string | Ref<string> | any;
+  maskMode?: string | Ref<string>;
   /** [MDN Reference](https://developer.mozilla.org/docs/Web/CSS/mask-origin) */
-  maskOrigin?: string | Ref<string> | any;
+  maskOrigin?: string | Ref<string>;
   /** [MDN Reference](https://developer.mozilla.org/docs/Web/CSS/mask-position) */
-  maskPosition?: string | Ref<string> | any;
+  maskPosition?: string | Ref<string>;
   /** [MDN Reference](https://developer.mozilla.org/docs/Web/CSS/mask-repeat) */
-  maskRepeat?: string | Ref<string> | any;
+  maskRepeat?: string | Ref<string>;
   /** [MDN Reference](https://developer.mozilla.org/docs/Web/CSS/mask-size) */
-  maskSize?: string | Ref<string> | any;
+  maskSize?: string | Ref<string>;
   /** [MDN Reference](https://developer.mozilla.org/docs/Web/CSS/mask-type) */
-  maskType?: string | Ref<string> | any;
+  maskType?: string | Ref<string>;
   /** [MDN Reference](https://developer.mozilla.org/docs/Web/CSS/math-style) */
-  mathStyle?: string | Ref<string> | any;
+  mathStyle?: string | Ref<string>;
   /** [MDN Reference](https://developer.mozilla.org/docs/Web/CSS/max-block-size) */
-  maxBlockSize?: string | Ref<string> | any;
+  maxBlockSize?: string | Ref<string>;
   /** [MDN Reference](https://developer.mozilla.org/docs/Web/CSS/max-height) */
-  maxHeight?: string | Ref<string> | any;
+  maxHeight?: string | Ref<string>;
   /** [MDN Reference](https://developer.mozilla.org/docs/Web/CSS/max-inline-size) */
-  maxInlineSize?: string | Ref<string> | any;
+  maxInlineSize?: string | Ref<string>;
   /** [MDN Reference](https://developer.mozilla.org/docs/Web/CSS/max-width) */
-  maxWidth?: string | Ref<string> | any;
+  maxWidth?: string | Ref<string>;
   /** [MDN Reference](https://developer.mozilla.org/docs/Web/CSS/min-block-size) */
-  minBlockSize?: string | Ref<string> | any;
+  minBlockSize?: string | Ref<string>;
   /** [MDN Reference](https://developer.mozilla.org/docs/Web/CSS/min-height) */
-  minHeight?: string | Ref<string> | any;
+  minHeight?: string | Ref<string>;
   /** [MDN Reference](https://developer.mozilla.org/docs/Web/CSS/min-inline-size) */
-  minInlineSize?: string | Ref<string> | any;
+  minInlineSize?: string | Ref<string>;
   /** [MDN Reference](https://developer.mozilla.org/docs/Web/CSS/min-width) */
-  minWidth?: string | Ref<string> | any;
+  minWidth?: string | Ref<string>;
   /** [MDN Reference](https://developer.mozilla.org/docs/Web/CSS/mix-blend-mode) */
-  mixBlendMode?: string | Ref<string> | any;
+  mixBlendMode?: string | Ref<string>;
   /** [MDN Reference](https://developer.mozilla.org/docs/Web/CSS/object-fit) */
-  objectFit?: string | Ref<string> | any;
+  objectFit?: string | Ref<string>;
   /** [MDN Reference](https://developer.mozilla.org/docs/Web/CSS/object-position) */
-  objectPosition?: string | Ref<string> | any;
+  objectPosition?: string | Ref<string>;
   /** [MDN Reference](https://developer.mozilla.org/docs/Web/CSS/offset) */
-  offset?: string | Ref<string> | any;
+  offset?: string | Ref<string>;
   /** [MDN Reference](https://developer.mozilla.org/docs/Web/CSS/offset-distance) */
-  offsetDistance?: string | Ref<string> | any;
+  offsetDistance?: string | Ref<string>;
   /** [MDN Reference](https://developer.mozilla.org/docs/Web/CSS/offset-path) */
-  offsetPath?: string | Ref<string> | any;
+  offsetPath?: string | Ref<string>;
   /** [MDN Reference](https://developer.mozilla.org/docs/Web/CSS/offset-rotate) */
-  offsetRotate?: string | Ref<string> | any;
+  offsetRotate?: string | Ref<string>;
   /** [MDN Reference](https://developer.mozilla.org/docs/Web/CSS/opacity) */
-  opacity?: string | Ref<string> | any;
+  opacity?: string | Ref<string>;
   /** [MDN Reference](https://developer.mozilla.org/docs/Web/CSS/order) */
-  order?: string | Ref<string> | any;
+  order?: string | Ref<string>;
   /** [MDN Reference](https://developer.mozilla.org/docs/Web/CSS/orphans) */
-  orphans?: string | Ref<string> | any;
+  orphans?: string | Ref<string>;
   /** [MDN Reference](https://developer.mozilla.org/docs/Web/CSS/outline) */
-  outline?: string | Ref<string> | any;
+  outline?: string | Ref<string>;
   /** [MDN Reference](https://developer.mozilla.org/docs/Web/CSS/outline-color) */
-  outlineColor?: string | Ref<string> | any;
+  outlineColor?: string | Ref<string>;
   /** [MDN Reference](https://developer.mozilla.org/docs/Web/CSS/outline-offset) */
-  outlineOffset?: string | Ref<string> | any;
+  outlineOffset?: string | Ref<string>;
   /** [MDN Reference](https://developer.mozilla.org/docs/Web/CSS/outline-style) */
-  outlineStyle?: string | Ref<string> | any;
+  outlineStyle?: string | Ref<string>;
   /** [MDN Reference](https://developer.mozilla.org/docs/Web/CSS/outline-width) */
-  outlineWidth?: string | Ref<string> | any;
+  outlineWidth?: string | Ref<string>;
   /** [MDN Reference](https://developer.mozilla.org/docs/Web/CSS/overflow) */
-  overflow?: string | Ref<string> | any;
+  overflow?: string | Ref<string>;
   /** [MDN Reference](https://developer.mozilla.org/docs/Web/CSS/overflow-anchor) */
-  overflowAnchor?: string | Ref<string> | any;
+  overflowAnchor?: string | Ref<string>;
   /** [MDN Reference](https://developer.mozilla.org/docs/Web/CSS/overflow-clip-margin) */
-  overflowClipMargin?: string | Ref<string> | any;
+  overflowClipMargin?: string | Ref<string>;
   /** [MDN Reference](https://developer.mozilla.org/docs/Web/CSS/overflow-wrap) */
-  overflowWrap?: string | Ref<string> | any;
+  overflowWrap?: string | Ref<string>;
   /** [MDN Reference](https://developer.mozilla.org/docs/Web/CSS/overflow-x) */
-  overflowX?: string | Ref<string> | any;
+  overflowX?: string | Ref<string>;
   /** [MDN Reference](https://developer.mozilla.org/docs/Web/CSS/overflow-y) */
-  overflowY?: string | Ref<string> | any;
+  overflowY?: string | Ref<string>;
   /** [MDN Reference](https://developer.mozilla.org/docs/Web/CSS/overscroll-behavior) */
-  overscrollBehavior?: string | Ref<string> | any;
+  overscrollBehavior?: string | Ref<string>;
   /** [MDN Reference](https://developer.mozilla.org/docs/Web/CSS/overscroll-behavior-block) */
-  overscrollBehaviorBlock?: string | Ref<string> | any;
+  overscrollBehaviorBlock?: string | Ref<string>;
   /** [MDN Reference](https://developer.mozilla.org/docs/Web/CSS/overscroll-behavior-inline) */
-  overscrollBehaviorInline?: string | Ref<string> | any;
+  overscrollBehaviorInline?: string | Ref<string>;
   /** [MDN Reference](https://developer.mozilla.org/docs/Web/CSS/overscroll-behavior-x) */
-  overscrollBehaviorX?: string | Ref<string> | any;
+  overscrollBehaviorX?: string | Ref<string>;
   /** [MDN Reference](https://developer.mozilla.org/docs/Web/CSS/overscroll-behavior-y) */
-  overscrollBehaviorY?: string | Ref<string> | any;
+  overscrollBehaviorY?: string | Ref<string>;
   /** [MDN Reference](https://developer.mozilla.org/docs/Web/CSS/padding) */
-  padding?: string | Ref<string> | any;
+  padding?: string | Ref<string>;
   /** [MDN Reference](https://developer.mozilla.org/docs/Web/CSS/padding-block) */
-  paddingBlock?: string | Ref<string> | any;
+  paddingBlock?: string | Ref<string>;
   /** [MDN Reference](https://developer.mozilla.org/docs/Web/CSS/padding-block-end) */
-  paddingBlockEnd?: string | Ref<string> | any;
+  paddingBlockEnd?: string | Ref<string>;
   /** [MDN Reference](https://developer.mozilla.org/docs/Web/CSS/padding-block-start) */
-  paddingBlockStart?: string | Ref<string> | any;
+  paddingBlockStart?: string | Ref<string>;
   /** [MDN Reference](https://developer.mozilla.org/docs/Web/CSS/padding-bottom) */
-  paddingBottom?: string | Ref<string> | any;
+  paddingBottom?: string | Ref<string>;
   /** [MDN Reference](https://developer.mozilla.org/docs/Web/CSS/padding-inline) */
-  paddingInline?: string | Ref<string> | any;
+  paddingInline?: string | Ref<string>;
   /** [MDN Reference](https://developer.mozilla.org/docs/Web/CSS/padding-inline-end) */
-  paddingInlineEnd?: string | Ref<string> | any;
+  paddingInlineEnd?: string | Ref<string>;
   /** [MDN Reference](https://developer.mozilla.org/docs/Web/CSS/padding-inline-start) */
-  paddingInlineStart?: string | Ref<string> | any;
+  paddingInlineStart?: string | Ref<string>;
   /** [MDN Reference](https://developer.mozilla.org/docs/Web/CSS/padding-left) */
-  paddingLeft?: string | Ref<string> | any;
+  paddingLeft?: string | Ref<string>;
   /** [MDN Reference](https://developer.mozilla.org/docs/Web/CSS/padding-right) */
-  paddingRight?: string | Ref<string> | any;
+  paddingRight?: string | Ref<string>;
   /** [MDN Reference](https://developer.mozilla.org/docs/Web/CSS/padding-top) */
-  paddingTop?: string | Ref<string> | any;
+  paddingTop?: string | Ref<string>;
   /** [MDN Reference](https://developer.mozilla.org/docs/Web/CSS/page) */
-  page?: string | Ref<string> | any;
+  page?: string | Ref<string>;
   /** [MDN Reference](https://developer.mozilla.org/docs/Web/CSS/page-break-after) */
-  pageBreakAfter?: string | Ref<string> | any;
+  pageBreakAfter?: string | Ref<string>;
   /** [MDN Reference](https://developer.mozilla.org/docs/Web/CSS/page-break-before) */
-  pageBreakBefore?: string | Ref<string> | any;
+  pageBreakBefore?: string | Ref<string>;
   /** [MDN Reference](https://developer.mozilla.org/docs/Web/CSS/page-break-inside) */
-  pageBreakInside?: string | Ref<string> | any;
+  pageBreakInside?: string | Ref<string>;
   /** [MDN Reference](https://developer.mozilla.org/docs/Web/CSS/paint-order) */
-  paintOrder?: string | Ref<string> | any;
+  paintOrder?: string | Ref<string>;
   /** [MDN Reference](https://developer.mozilla.org/docs/Web/API/CSSStyleDeclaration/parentRule) */
   readonly parentRule?: CSSRule | null;
   /** [MDN Reference](https://developer.mozilla.org/docs/Web/CSS/perspective) */
-  perspective?: string | Ref<string> | any;
+  perspective?: string | Ref<string>;
   /** [MDN Reference](https://developer.mozilla.org/docs/Web/CSS/perspective-origin) */
-  perspectiveOrigin?: string | Ref<string> | any;
+  perspectiveOrigin?: string | Ref<string>;
   /** [MDN Reference](https://developer.mozilla.org/docs/Web/CSS/place-content) */
-  placeContent?: string | Ref<string> | any;
+  placeContent?: string | Ref<string>;
   /** [MDN Reference](https://developer.mozilla.org/docs/Web/CSS/place-items) */
-  placeItems?: string | Ref<string> | any;
+  placeItems?: string | Ref<string>;
   /** [MDN Reference](https://developer.mozilla.org/docs/Web/CSS/place-self) */
-  placeSelf?: string | Ref<string> | any;
+  placeSelf?: string | Ref<string>;
   /** [MDN Reference](https://developer.mozilla.org/docs/Web/CSS/pointer-events) */
-  pointerEvents?: string | Ref<string> | any;
+  pointerEvents?: string | Ref<string>;
   /** [MDN Reference](https://developer.mozilla.org/docs/Web/CSS/position) */
-  position?: string | Ref<string> | any;
+  position?: string | Ref<string>;
   /** [MDN Reference](https://developer.mozilla.org/docs/Web/CSS/print-color-adjust) */
-  printColorAdjust?: string | Ref<string> | any;
+  printColorAdjust?: string | Ref<string>;
   /** [MDN Reference](https://developer.mozilla.org/docs/Web/CSS/quotes) */
-  quotes?: string | Ref<string> | any;
+  quotes?: string | Ref<string>;
   /** [MDN Reference](https://developer.mozilla.org/docs/Web/CSS/resize) */
-  resize?: string | Ref<string> | any;
+  resize?: string | Ref<string>;
   /** [MDN Reference](https://developer.mozilla.org/docs/Web/CSS/right) */
-  right?: string | Ref<string> | any;
+  right?: string | Ref<string>;
   /** [MDN Reference](https://developer.mozilla.org/docs/Web/CSS/rotate) */
-  rotate?: string | Ref<string> | any;
+  rotate?: string | Ref<string>;
   /** [MDN Reference](https://developer.mozilla.org/docs/Web/CSS/row-gap) */
-  rowGap?: string | Ref<string> | any;
+  rowGap?: string | Ref<string>;
   /** [MDN Reference](https://developer.mozilla.org/docs/Web/CSS/ruby-position) */
-  rubyPosition?: string | Ref<string> | any;
+  rubyPosition?: string | Ref<string>;
   /** [MDN Reference](https://developer.mozilla.org/docs/Web/CSS/scale) */
-  scale?: string | Ref<string> | any;
+  scale?: string | Ref<string>;
   /** [MDN Reference](https://developer.mozilla.org/docs/Web/CSS/scroll-behavior) */
-  scrollBehavior?: string | Ref<string> | any;
+  scrollBehavior?: string | Ref<string>;
   /** [MDN Reference](https://developer.mozilla.org/docs/Web/CSS/scroll-margin) */
-  scrollMargin?: string | Ref<string> | any;
+  scrollMargin?: string | Ref<string>;
   /** [MDN Reference](https://developer.mozilla.org/docs/Web/CSS/scroll-margin-block) */
-  scrollMarginBlock?: string | Ref<string> | any;
+  scrollMarginBlock?: string | Ref<string>;
   /** [MDN Reference](https://developer.mozilla.org/docs/Web/CSS/scroll-margin-block-end) */
-  scrollMarginBlockEnd?: string | Ref<string> | any;
+  scrollMarginBlockEnd?: string | Ref<string>;
   /** [MDN Reference](https://developer.mozilla.org/docs/Web/CSS/scroll-margin-block-start) */
-  scrollMarginBlockStart?: string | Ref<string> | any;
+  scrollMarginBlockStart?: string | Ref<string>;
   /** [MDN Reference](https://developer.mozilla.org/docs/Web/CSS/scroll-margin-bottom) */
-  scrollMarginBottom?: string | Ref<string> | any;
+  scrollMarginBottom?: string | Ref<string>;
   /** [MDN Reference](https://developer.mozilla.org/docs/Web/CSS/scroll-margin-inline) */
-  scrollMarginInline?: string | Ref<string> | any;
+  scrollMarginInline?: string | Ref<string>;
   /** [MDN Reference](https://developer.mozilla.org/docs/Web/CSS/scroll-margin-inline-end) */
-  scrollMarginInlineEnd?: string | Ref<string> | any;
+  scrollMarginInlineEnd?: string | Ref<string>;
   /** [MDN Reference](https://developer.mozilla.org/docs/Web/CSS/scroll-margin-inline-start) */
-  scrollMarginInlineStart?: string | Ref<string> | any;
+  scrollMarginInlineStart?: string | Ref<string>;
   /** [MDN Reference](https://developer.mozilla.org/docs/Web/CSS/scroll-margin-left) */
-  scrollMarginLeft?: string | Ref<string> | any;
+  scrollMarginLeft?: string | Ref<string>;
   /** [MDN Reference](https://developer.mozilla.org/docs/Web/CSS/scroll-margin-right) */
-  scrollMarginRight?: string | Ref<string> | any;
+  scrollMarginRight?: string | Ref<string>;
   /** [MDN Reference](https://developer.mozilla.org/docs/Web/CSS/scroll-margin-top) */
-  scrollMarginTop?: string | Ref<string> | any;
+  scrollMarginTop?: string | Ref<string>;
   /** [MDN Reference](https://developer.mozilla.org/docs/Web/CSS/scroll-padding) */
-  scrollPadding?: string | Ref<string> | any;
+  scrollPadding?: string | Ref<string>;
   /** [MDN Reference](https://developer.mozilla.org/docs/Web/CSS/scroll-padding-block) */
-  scrollPaddingBlock?: string | Ref<string> | any;
+  scrollPaddingBlock?: string | Ref<string>;
   /** [MDN Reference](https://developer.mozilla.org/docs/Web/CSS/scroll-padding-block-end) */
-  scrollPaddingBlockEnd?: string | Ref<string> | any;
+  scrollPaddingBlockEnd?: string | Ref<string>;
   /** [MDN Reference](https://developer.mozilla.org/docs/Web/CSS/scroll-padding-block-start) */
-  scrollPaddingBlockStart?: string | Ref<string> | any;
+  scrollPaddingBlockStart?: string | Ref<string>;
   /** [MDN Reference](https://developer.mozilla.org/docs/Web/CSS/scroll-padding-bottom) */
-  scrollPaddingBottom?: string | Ref<string> | any;
+  scrollPaddingBottom?: string | Ref<string>;
   /** [MDN Reference](https://developer.mozilla.org/docs/Web/CSS/scroll-padding-inline) */
-  scrollPaddingInline?: string | Ref<string> | any;
+  scrollPaddingInline?: string | Ref<string>;
   /** [MDN Reference](https://developer.mozilla.org/docs/Web/CSS/scroll-padding-inline-end) */
-  scrollPaddingInlineEnd?: string | Ref<string> | any;
+  scrollPaddingInlineEnd?: string | Ref<string>;
   /** [MDN Reference](https://developer.mozilla.org/docs/Web/CSS/scroll-padding-inline-start) */
-  scrollPaddingInlineStart?: string | Ref<string> | any;
+  scrollPaddingInlineStart?: string | Ref<string>;
   /** [MDN Reference](https://developer.mozilla.org/docs/Web/CSS/scroll-padding-left) */
-  scrollPaddingLeft?: string | Ref<string> | any;
+  scrollPaddingLeft?: string | Ref<string>;
   /** [MDN Reference](https://developer.mozilla.org/docs/Web/CSS/scroll-padding-right) */
-  scrollPaddingRight?: string | Ref<string> | any;
+  scrollPaddingRight?: string | Ref<string>;
   /** [MDN Reference](https://developer.mozilla.org/docs/Web/CSS/scroll-padding-top) */
-  scrollPaddingTop?: string | Ref<string> | any;
+  scrollPaddingTop?: string | Ref<string>;
   /** [MDN Reference](https://developer.mozilla.org/docs/Web/CSS/scroll-snap-align) */
-  scrollSnapAlign?: string | Ref<string> | any;
+  scrollSnapAlign?: string | Ref<string>;
   /** [MDN Reference](https://developer.mozilla.org/docs/Web/CSS/scroll-snap-stop) */
-  scrollSnapStop?: string | Ref<string> | any;
+  scrollSnapStop?: string | Ref<string>;
   /** [MDN Reference](https://developer.mozilla.org/docs/Web/CSS/scroll-snap-type) */
-  scrollSnapType?: string | Ref<string> | any;
+  scrollSnapType?: string | Ref<string>;
   /** [MDN Reference](https://developer.mozilla.org/docs/Web/CSS/scrollbar-gutter) */
-  scrollbarGutter?: string | Ref<string> | any;
+  scrollbarGutter?: string | Ref<string>;
   /** [MDN Reference](https://developer.mozilla.org/docs/Web/CSS/shape-image-threshold) */
-  shapeImageThreshold?: string | Ref<string> | any;
+  shapeImageThreshold?: string | Ref<string>;
   /** [MDN Reference](https://developer.mozilla.org/docs/Web/CSS/shape-margin) */
-  shapeMargin?: string | Ref<string> | any;
+  shapeMargin?: string | Ref<string>;
   /** [MDN Reference](https://developer.mozilla.org/docs/Web/CSS/shape-outside) */
-  shapeOutside?: string | Ref<string> | any;
-  shapeRendering?: string | Ref<string> | any;
-  stopColor?: string | Ref<string> | any;
-  stopOpacity?: string | Ref<string> | any;
-  stroke?: string | Ref<string> | any;
-  strokeDasharray?: string | Ref<string> | any;
-  strokeDashoffset?: string | Ref<string> | any;
-  strokeLinecap?: string | Ref<string> | any;
-  strokeLinejoin?: string | Ref<string> | any;
-  strokeMiterlimit?: string | Ref<string> | any;
-  strokeOpacity?: string | Ref<string> | any;
-  strokeWidth?: string | Ref<string> | any;
+  shapeOutside?: string | Ref<string>;
+  shapeRendering?: string | Ref<string>;
+  stopColor?: string | Ref<string>;
+  stopOpacity?: string | Ref<string>;
+  stroke?: string | Ref<string>;
+  strokeDasharray?: string | Ref<string>;
+  strokeDashoffset?: string | Ref<string>;
+  strokeLinecap?: string | Ref<string>;
+  strokeLinejoin?: string | Ref<string>;
+  strokeMiterlimit?: string | Ref<string>;
+  strokeOpacity?: string | Ref<string>;
+  strokeWidth?: string | Ref<string>;
   /** [MDN Reference](https://developer.mozilla.org/docs/Web/CSS/tab-size) */
-  tabSize?: string | Ref<string> | any;
+  tabSize?: string | Ref<string>;
   /** [MDN Reference](https://developer.mozilla.org/docs/Web/CSS/table-layout) */
-  tableLayout?: string | Ref<string> | any;
+  tableLayout?: string | Ref<string>;
   /** [MDN Reference](https://developer.mozilla.org/docs/Web/CSS/text-align) */
-  textAlign?: string | Ref<string> | any;
+  textAlign?: string | Ref<string>;
   /** [MDN Reference](https://developer.mozilla.org/docs/Web/CSS/text-align-last) */
-  textAlignLast?: string | Ref<string> | any;
-  textAnchor?: string | Ref<string> | any;
+  textAlignLast?: string | Ref<string>;
+  textAnchor?: string | Ref<string>;
   /** [MDN Reference](https://developer.mozilla.org/docs/Web/CSS/text-combine-upright) */
-  textCombineUpright?: string | Ref<string> | any;
+  textCombineUpright?: string | Ref<string>;
   /** [MDN Reference](https://developer.mozilla.org/docs/Web/CSS/text-decoration) */
-  textDecoration?: string | Ref<string> | any;
+  textDecoration?: string | Ref<string>;
   /** [MDN Reference](https://developer.mozilla.org/docs/Web/CSS/text-decoration-color) */
-  textDecorationColor?: string | Ref<string> | any;
+  textDecorationColor?: string | Ref<string>;
   /** [MDN Reference](https://developer.mozilla.org/docs/Web/CSS/text-decoration-line) */
-  textDecorationLine?: string | Ref<string> | any;
+  textDecorationLine?: string | Ref<string>;
   /** [MDN Reference](https://developer.mozilla.org/docs/Web/CSS/text-decoration-skip-ink) */
-  textDecorationSkipInk?: string | Ref<string> | any;
+  textDecorationSkipInk?: string | Ref<string>;
   /** [MDN Reference](https://developer.mozilla.org/docs/Web/CSS/text-decoration-style) */
-  textDecorationStyle?: string | Ref<string> | any;
+  textDecorationStyle?: string | Ref<string>;
   /** [MDN Reference](https://developer.mozilla.org/docs/Web/CSS/text-decoration-thickness) */
-  textDecorationThickness?: string | Ref<string> | any;
+  textDecorationThickness?: string | Ref<string>;
   /** [MDN Reference](https://developer.mozilla.org/docs/Web/CSS/text-emphasis) */
-  textEmphasis?: string | Ref<string> | any;
+  textEmphasis?: string | Ref<string>;
   /** [MDN Reference](https://developer.mozilla.org/docs/Web/CSS/text-emphasis-color) */
-  textEmphasisColor?: string | Ref<string> | any;
+  textEmphasisColor?: string | Ref<string>;
   /** [MDN Reference](https://developer.mozilla.org/docs/Web/CSS/text-emphasis-position) */
-  textEmphasisPosition?: string | Ref<string> | any;
+  textEmphasisPosition?: string | Ref<string>;
   /** [MDN Reference](https://developer.mozilla.org/docs/Web/CSS/text-emphasis-style) */
-  textEmphasisStyle?: string | Ref<string> | any;
+  textEmphasisStyle?: string | Ref<string>;
   /** [MDN Reference](https://developer.mozilla.org/docs/Web/CSS/text-indent) */
-  textIndent?: string | Ref<string> | any;
+  textIndent?: string | Ref<string>;
   /** [MDN Reference](https://developer.mozilla.org/docs/Web/CSS/text-orientation) */
-  textOrientation?: string | Ref<string> | any;
+  textOrientation?: string | Ref<string>;
   /** [MDN Reference](https://developer.mozilla.org/docs/Web/CSS/text-overflow) */
-  textOverflow?: string | Ref<string> | any;
+  textOverflow?: string | Ref<string>;
   /** [MDN Reference](https://developer.mozilla.org/docs/Web/CSS/text-rendering) */
-  textRendering?: string | Ref<string> | any;
+  textRendering?: string | Ref<string>;
   /** [MDN Reference](https://developer.mozilla.org/docs/Web/CSS/text-shadow) */
-  textShadow?: string | Ref<string> | any;
+  textShadow?: string | Ref<string>;
   /** [MDN Reference](https://developer.mozilla.org/docs/Web/CSS/text-transform) */
-  textTransform?: string | Ref<string> | any;
+  textTransform?: string | Ref<string>;
   /** [MDN Reference](https://developer.mozilla.org/docs/Web/CSS/text-underline-offset) */
-  textUnderlineOffset?: string | Ref<string> | any;
+  textUnderlineOffset?: string | Ref<string>;
   /** [MDN Reference](https://developer.mozilla.org/docs/Web/CSS/text-underline-position) */
-  textUnderlinePosition?: string | Ref<string> | any;
+  textUnderlinePosition?: string | Ref<string>;
   /** [MDN Reference](https://developer.mozilla.org/docs/Web/CSS/top) */
-  top?: string | Ref<string> | any;
+  top?: string | Ref<string>;
   /** [MDN Reference](https://developer.mozilla.org/docs/Web/CSS/touch-action) */
-  touchAction?: string | Ref<string> | any;
+  touchAction?: string | Ref<string>;
   /** [MDN Reference](https://developer.mozilla.org/docs/Web/CSS/transform) */
-  transform?: string | Ref<string> | any;
+  transform?: string | Ref<string>;
   /** [MDN Reference](https://developer.mozilla.org/docs/Web/CSS/transform-box) */
-  transformBox?: string | Ref<string> | any;
+  transformBox?: string | Ref<string>;
   /** [MDN Reference](https://developer.mozilla.org/docs/Web/CSS/transform-origin) */
-  transformOrigin?: string | Ref<string> | any;
+  transformOrigin?: string | Ref<string>;
   /** [MDN Reference](https://developer.mozilla.org/docs/Web/CSS/transform-style) */
-  transformStyle?: string | Ref<string> | any;
+  transformStyle?: string | Ref<string>;
   /** [MDN Reference](https://developer.mozilla.org/docs/Web/CSS/transition) */
-  transition?: string | Ref<string> | any;
+  transition?: string | Ref<string>;
   /** [MDN Reference](https://developer.mozilla.org/docs/Web/CSS/transition-delay) */
-  transitionDelay?: string | Ref<string> | any;
+  transitionDelay?: string | Ref<string>;
   /** [MDN Reference](https://developer.mozilla.org/docs/Web/CSS/transition-duration) */
-  transitionDuration?: string | Ref<string> | any;
+  transitionDuration?: string | Ref<string>;
   /** [MDN Reference](https://developer.mozilla.org/docs/Web/CSS/transition-property) */
-  transitionProperty?: string | Ref<string> | any;
+  transitionProperty?: string | Ref<string>;
   /** [MDN Reference](https://developer.mozilla.org/docs/Web/CSS/transition-timing-function) */
-  transitionTimingFunction?: string | Ref<string> | any;
+  transitionTimingFunction?: string | Ref<string>;
   /** [MDN Reference](https://developer.mozilla.org/docs/Web/CSS/translate) */
-  translate?: string | Ref<string> | any;
+  translate?: string | Ref<string>;
   /** [MDN Reference](https://developer.mozilla.org/docs/Web/CSS/unicode-bidi) */
-  unicodeBidi?: string | Ref<string> | any;
+  unicodeBidi?: string | Ref<string>;
   /** [MDN Reference](https://developer.mozilla.org/docs/Web/CSS/user-select) */
-  userSelect?: string | Ref<string> | any;
+  userSelect?: string | Ref<string>;
   /** [MDN Reference](https://developer.mozilla.org/docs/Web/CSS/vertical-align) */
-  verticalAlign?: string | Ref<string> | any;
+  verticalAlign?: string | Ref<string>;
   /** [MDN Reference](https://developer.mozilla.org/docs/Web/CSS/visibility) */
-  visibility?: string | Ref<string> | any;
+  visibility?: string | Ref<string>;
   /**
    * @deprecated This is a legacy alias of `alignContent`.
    *
    * [MDN Reference](https://developer.mozilla.org/docs/Web/CSS/align-content)
    */
-  webkitAlignContent?: string | Ref<string> | any;
+  webkitAlignContent?: string | Ref<string>;
   /**
    * @deprecated This is a legacy alias of `alignItems`.
    *
    * [MDN Reference](https://developer.mozilla.org/docs/Web/CSS/align-items)
    */
-  webkitAlignItems?: string | Ref<string> | any;
+  webkitAlignItems?: string | Ref<string>;
   /**
    * @deprecated This is a legacy alias of `alignSelf`.
    *
    * [MDN Reference](https://developer.mozilla.org/docs/Web/CSS/align-self)
    */
-  webkitAlignSelf?: string | Ref<string> | any;
+  webkitAlignSelf?: string | Ref<string>;
   /**
    * @deprecated This is a legacy alias of `animation`.
    *
    * [MDN Reference](https://developer.mozilla.org/docs/Web/CSS/animation)
    */
-  webkitAnimation?: string | Ref<string> | any;
+  webkitAnimation?: string | Ref<string>;
   /**
    * @deprecated This is a legacy alias of `animationDelay`.
    *
    * [MDN Reference](https://developer.mozilla.org/docs/Web/CSS/animation-delay)
    */
-  webkitAnimationDelay?: string | Ref<string> | any;
+  webkitAnimationDelay?: string | Ref<string>;
   /**
    * @deprecated This is a legacy alias of `animationDirection`.
    *
    * [MDN Reference](https://developer.mozilla.org/docs/Web/CSS/animation-direction)
    */
-  webkitAnimationDirection?: string | Ref<string> | any;
+  webkitAnimationDirection?: string | Ref<string>;
   /**
    * @deprecated This is a legacy alias of `animationDuration`.
    *
    * [MDN Reference](https://developer.mozilla.org/docs/Web/CSS/animation-duration)
    */
-  webkitAnimationDuration?: string | Ref<string> | any;
+  webkitAnimationDuration?: string | Ref<string>;
   /**
    * @deprecated This is a legacy alias of `animationFillMode`.
    *
    * [MDN Reference](https://developer.mozilla.org/docs/Web/CSS/animation-fill-mode)
    */
-  webkitAnimationFillMode?: string | Ref<string> | any;
+  webkitAnimationFillMode?: string | Ref<string>;
   /**
    * @deprecated This is a legacy alias of `animationIterationCount`.
    *
    * [MDN Reference](https://developer.mozilla.org/docs/Web/CSS/animation-iteration-count)
    */
-  webkitAnimationIterationCount?: string | Ref<string> | any;
+  webkitAnimationIterationCount?: string | Ref<string>;
   /**
    * @deprecated This is a legacy alias of `animationName`.
    *
    * [MDN Reference](https://developer.mozilla.org/docs/Web/CSS/animation-name)
    */
-  webkitAnimationName?: string | Ref<string> | any;
+  webkitAnimationName?: string | Ref<string>;
   /**
    * @deprecated This is a legacy alias of `animationPlayState`.
    *
    * [MDN Reference](https://developer.mozilla.org/docs/Web/CSS/animation-play-state)
    */
-  webkitAnimationPlayState?: string | Ref<string> | any;
+  webkitAnimationPlayState?: string | Ref<string>;
   /**
    * @deprecated This is a legacy alias of `animationTimingFunction`.
    *
    * [MDN Reference](https://developer.mozilla.org/docs/Web/CSS/animation-timing-function)
    */
-  webkitAnimationTimingFunction?: string | Ref<string> | any;
+  webkitAnimationTimingFunction?: string | Ref<string>;
   /**
    * @deprecated This is a legacy alias of `appearance`.
    *
    * [MDN Reference](https://developer.mozilla.org/docs/Web/CSS/appearance)
    */
-  webkitAppearance?: string | Ref<string> | any;
+  webkitAppearance?: string | Ref<string>;
   /**
    * @deprecated This is a legacy alias of `backfaceVisibility`.
    *
    * [MDN Reference](https://developer.mozilla.org/docs/Web/CSS/backface-visibility)
    */
-  webkitBackfaceVisibility?: string | Ref<string> | any;
+  webkitBackfaceVisibility?: string | Ref<string>;
   /**
    * @deprecated This is a legacy alias of `backgroundClip`.
    *
    * [MDN Reference](https://developer.mozilla.org/docs/Web/CSS/background-clip)
    */
-  webkitBackgroundClip?: string | Ref<string> | any;
+  webkitBackgroundClip?: string | Ref<string>;
   /**
    * @deprecated This is a legacy alias of `backgroundOrigin`.
    *
    * [MDN Reference](https://developer.mozilla.org/docs/Web/CSS/background-origin)
    */
-  webkitBackgroundOrigin?: string | Ref<string> | any;
+  webkitBackgroundOrigin?: string | Ref<string>;
   /**
    * @deprecated This is a legacy alias of `backgroundSize`.
    *
    * [MDN Reference](https://developer.mozilla.org/docs/Web/CSS/background-size)
    */
-  webkitBackgroundSize?: string | Ref<string> | any;
+  webkitBackgroundSize?: string | Ref<string>;
   /**
    * @deprecated This is a legacy alias of `borderBottomLeftRadius`.
    *
    * [MDN Reference](https://developer.mozilla.org/docs/Web/CSS/border-bottom-left-radius)
    */
-  webkitBorderBottomLeftRadius?: string | Ref<string> | any;
+  webkitBorderBottomLeftRadius?: string | Ref<string>;
   /**
    * @deprecated This is a legacy alias of `borderBottomRightRadius`.
    *
    * [MDN Reference](https://developer.mozilla.org/docs/Web/CSS/border-bottom-right-radius)
    */
-  webkitBorderBottomRightRadius?: string | Ref<string> | any;
+  webkitBorderBottomRightRadius?: string | Ref<string>;
   /**
    * @deprecated This is a legacy alias of `borderRadius`.
    *
    * [MDN Reference](https://developer.mozilla.org/docs/Web/CSS/border-radius)
    */
-  webkitBorderRadius?: string | Ref<string> | any;
+  webkitBorderRadius?: string | Ref<string>;
   /**
    * @deprecated This is a legacy alias of `borderTopLeftRadius`.
    *
    * [MDN Reference](https://developer.mozilla.org/docs/Web/CSS/border-top-left-radius)
    */
-  webkitBorderTopLeftRadius?: string | Ref<string> | any;
+  webkitBorderTopLeftRadius?: string | Ref<string>;
   /**
    * @deprecated This is a legacy alias of `borderTopRightRadius`.
    *
    * [MDN Reference](https://developer.mozilla.org/docs/Web/CSS/border-top-right-radius)
    */
-  webkitBorderTopRightRadius?: string | Ref<string> | any;
+  webkitBorderTopRightRadius?: string | Ref<string>;
   /**
    * @deprecated This is a legacy alias of `boxAlign`.
    *
    * [MDN Reference](https://developer.mozilla.org/docs/Web/CSS/box-align)
    */
-  webkitBoxAlign?: string | Ref<string> | any;
+  webkitBoxAlign?: string | Ref<string>;
   /**
    * @deprecated This is a legacy alias of `boxFlex`.
    *
    * [MDN Reference](https://developer.mozilla.org/docs/Web/CSS/box-flex)
    */
-  webkitBoxFlex?: string | Ref<string> | any;
+  webkitBoxFlex?: string | Ref<string>;
   /**
    * @deprecated This is a legacy alias of `boxOrdinalGroup`.
    *
    * [MDN Reference](https://developer.mozilla.org/docs/Web/CSS/box-ordinal-group)
    */
-  webkitBoxOrdinalGroup?: string | Ref<string> | any;
+  webkitBoxOrdinalGroup?: string | Ref<string>;
   /**
    * @deprecated This is a legacy alias of `boxOrient`.
    *
    * [MDN Reference](https://developer.mozilla.org/docs/Web/CSS/box-orient)
    */
-  webkitBoxOrient?: string | Ref<string> | any;
+  webkitBoxOrient?: string | Ref<string>;
   /**
    * @deprecated This is a legacy alias of `boxPack`.
    *
    * [MDN Reference](https://developer.mozilla.org/docs/Web/CSS/box-pack)
    */
-  webkitBoxPack?: string | Ref<string> | any;
+  webkitBoxPack?: string | Ref<string>;
   /**
    * @deprecated This is a legacy alias of `boxShadow`.
    *
    * [MDN Reference](https://developer.mozilla.org/docs/Web/CSS/box-shadow)
    */
-  webkitBoxShadow?: string | Ref<string> | any;
+  webkitBoxShadow?: string | Ref<string>;
   /**
    * @deprecated This is a legacy alias of `boxSizing`.
    *
    * [MDN Reference](https://developer.mozilla.org/docs/Web/CSS/box-sizing)
    */
-  webkitBoxSizing?: string | Ref<string> | any;
+  webkitBoxSizing?: string | Ref<string>;
   /**
    * @deprecated This is a legacy alias of `filter`.
    *
    * [MDN Reference](https://developer.mozilla.org/docs/Web/CSS/filter)
    */
-  webkitFilter?: string | Ref<string> | any;
+  webkitFilter?: string | Ref<string>;
   /**
    * @deprecated This is a legacy alias of `flex`.
    *
    * [MDN Reference](https://developer.mozilla.org/docs/Web/CSS/flex)
    */
-  webkitFlex?: string | Ref<string> | any;
+  webkitFlex?: string | Ref<string>;
   /**
    * @deprecated This is a legacy alias of `flexBasis`.
    *
    * [MDN Reference](https://developer.mozilla.org/docs/Web/CSS/flex-basis)
    */
-  webkitFlexBasis?: string | Ref<string> | any;
+  webkitFlexBasis?: string | Ref<string>;
   /**
    * @deprecated This is a legacy alias of `flexDirection`.
    *
    * [MDN Reference](https://developer.mozilla.org/docs/Web/CSS/flex-direction)
    */
-  webkitFlexDirection?: string | Ref<string> | any;
+  webkitFlexDirection?: string | Ref<string>;
   /**
    * @deprecated This is a legacy alias of `flexFlow`.
    *
    * [MDN Reference](https://developer.mozilla.org/docs/Web/CSS/flex-flow)
    */
-  webkitFlexFlow?: string | Ref<string> | any;
+  webkitFlexFlow?: string | Ref<string>;
   /**
    * @deprecated This is a legacy alias of `flexGrow`.
    *
    * [MDN Reference](https://developer.mozilla.org/docs/Web/CSS/flex-grow)
    */
-  webkitFlexGrow?: string | Ref<string> | any;
+  webkitFlexGrow?: string | Ref<string>;
   /**
    * @deprecated This is a legacy alias of `flexShrink`.
    *
    * [MDN Reference](https://developer.mozilla.org/docs/Web/CSS/flex-shrink)
    */
-  webkitFlexShrink?: string | Ref<string> | any;
+  webkitFlexShrink?: string | Ref<string>;
   /**
    * @deprecated This is a legacy alias of `flexWrap`.
    *
    * [MDN Reference](https://developer.mozilla.org/docs/Web/CSS/flex-wrap)
    */
-  webkitFlexWrap?: string | Ref<string> | any;
+  webkitFlexWrap?: string | Ref<string>;
   /**
    * @deprecated This is a legacy alias of `justifyContent`.
    *
    * [MDN Reference](https://developer.mozilla.org/docs/Web/CSS/justify-content)
    */
-  webkitJustifyContent?: string | Ref<string> | any;
+  webkitJustifyContent?: string | Ref<string>;
   /** [MDN Reference](https://developer.mozilla.org/docs/Web/CSS/-webkit-line-clamp) */
-  webkitLineClamp?: string | Ref<string> | any;
+  webkitLineClamp?: string | Ref<string>;
   /**
    * @deprecated This is a legacy alias of `mask`.
    *
    * [MDN Reference](https://developer.mozilla.org/docs/Web/CSS/mask)
    */
-  webkitMask?: string | Ref<string> | any;
+  webkitMask?: string | Ref<string>;
   /**
    * @deprecated This is a legacy alias of `maskBorder`.
    *
    * [MDN Reference](https://developer.mozilla.org/docs/Web/CSS/mask-border)
    */
-  webkitMaskBoxImage?: string | Ref<string> | any;
+  webkitMaskBoxImage?: string | Ref<string>;
   /**
    * @deprecated This is a legacy alias of `maskBorderOutset`.
    *
    * [MDN Reference](https://developer.mozilla.org/docs/Web/CSS/mask-border-outset)
    */
-  webkitMaskBoxImageOutset?: string | Ref<string> | any;
+  webkitMaskBoxImageOutset?: string | Ref<string>;
   /**
    * @deprecated This is a legacy alias of `maskBorderRepeat`.
    *
    * [MDN Reference](https://developer.mozilla.org/docs/Web/CSS/mask-border-repeat)
    */
-  webkitMaskBoxImageRepeat?: string | Ref<string> | any;
+  webkitMaskBoxImageRepeat?: string | Ref<string>;
   /**
    * @deprecated This is a legacy alias of `maskBorderSlice`.
    *
    * [MDN Reference](https://developer.mozilla.org/docs/Web/CSS/mask-border-slice)
    */
-  webkitMaskBoxImageSlice?: string | Ref<string> | any;
+  webkitMaskBoxImageSlice?: string | Ref<string>;
   /**
    * @deprecated This is a legacy alias of `maskBorderSource`.
    *
    * [MDN Reference](https://developer.mozilla.org/docs/Web/CSS/mask-border-source)
    */
-  webkitMaskBoxImageSource?: string | Ref<string> | any;
+  webkitMaskBoxImageSource?: string | Ref<string>;
   /**
    * @deprecated This is a legacy alias of `maskBorderWidth`.
    *
    * [MDN Reference](https://developer.mozilla.org/docs/Web/CSS/mask-border-width)
    */
-  webkitMaskBoxImageWidth?: string | Ref<string> | any;
+  webkitMaskBoxImageWidth?: string | Ref<string>;
   /**
    * @deprecated This is a legacy alias of `maskClip`.
    *
    * [MDN Reference](https://developer.mozilla.org/docs/Web/CSS/mask-clip)
    */
-  webkitMaskClip?: string | Ref<string> | any;
+  webkitMaskClip?: string | Ref<string>;
   /** [MDN Reference](https://developer.mozilla.org/docs/Web/CSS/-webkit-mask-composite) */
-  webkitMaskComposite?: string | Ref<string> | any;
+  webkitMaskComposite?: string | Ref<string>;
   /**
    * @deprecated This is a legacy alias of `maskImage`.
    *
    * [MDN Reference](https://developer.mozilla.org/docs/Web/CSS/mask-image)
    */
-  webkitMaskImage?: string | Ref<string> | any;
+  webkitMaskImage?: string | Ref<string>;
   /**
    * @deprecated This is a legacy alias of `maskOrigin`.
    *
    * [MDN Reference](https://developer.mozilla.org/docs/Web/CSS/mask-origin)
    */
-  webkitMaskOrigin?: string | Ref<string> | any;
+  webkitMaskOrigin?: string | Ref<string>;
   /**
    * @deprecated This is a legacy alias of `maskPosition`.
    *
    * [MDN Reference](https://developer.mozilla.org/docs/Web/CSS/mask-position)
    */
-  webkitMaskPosition?: string | Ref<string> | any;
+  webkitMaskPosition?: string | Ref<string>;
   /**
    * @deprecated This is a legacy alias of `maskRepeat`.
    *
    * [MDN Reference](https://developer.mozilla.org/docs/Web/CSS/mask-repeat)
    */
-  webkitMaskRepeat?: string | Ref<string> | any;
+  webkitMaskRepeat?: string | Ref<string>;
   /**
    * @deprecated This is a legacy alias of `maskSize`.
    *
    * [MDN Reference](https://developer.mozilla.org/docs/Web/CSS/mask-size)
    */
-  webkitMaskSize?: string | Ref<string> | any;
+  webkitMaskSize?: string | Ref<string>;
   /**
    * @deprecated This is a legacy alias of `order`.
    *
    * [MDN Reference](https://developer.mozilla.org/docs/Web/CSS/order)
    */
-  webkitOrder?: string | Ref<string> | any;
+  webkitOrder?: string | Ref<string>;
   /**
    * @deprecated This is a legacy alias of `perspective`.
    *
    * [MDN Reference](https://developer.mozilla.org/docs/Web/CSS/perspective)
    */
-  webkitPerspective?: string | Ref<string> | any;
+  webkitPerspective?: string | Ref<string>;
   /**
    * @deprecated This is a legacy alias of `perspectiveOrigin`.
    *
    * [MDN Reference](https://developer.mozilla.org/docs/Web/CSS/perspective-origin)
    */
-  webkitPerspectiveOrigin?: string | Ref<string> | any;
+  webkitPerspectiveOrigin?: string | Ref<string>;
   /** [MDN Reference](https://developer.mozilla.org/docs/Web/CSS/-webkit-text-fill-color) */
-  webkitTextFillColor?: string | Ref<string> | any;
+  webkitTextFillColor?: string | Ref<string>;
   /**
    * @deprecated This is a legacy alias of `textSizeAdjust`.
    *
    * [MDN Reference](https://developer.mozilla.org/docs/Web/CSS/text-size-adjust)
    */
-  webkitTextSizeAdjust?: string | Ref<string> | any;
+  webkitTextSizeAdjust?: string | Ref<string>;
   /** [MDN Reference](https://developer.mozilla.org/docs/Web/CSS/-webkit-text-stroke) */
-  webkitTextStroke?: string | Ref<string> | any;
+  webkitTextStroke?: string | Ref<string>;
   /** [MDN Reference](https://developer.mozilla.org/docs/Web/CSS/-webkit-text-stroke-color) */
-  webkitTextStrokeColor?: string | Ref<string> | any;
+  webkitTextStrokeColor?: string | Ref<string>;
   /** [MDN Reference](https://developer.mozilla.org/docs/Web/CSS/-webkit-text-stroke-width) */
-  webkitTextStrokeWidth?: string | Ref<string> | any;
+  webkitTextStrokeWidth?: string | Ref<string>;
   /**
    * @deprecated This is a legacy alias of `transform`.
    *
    * [MDN Reference](https://developer.mozilla.org/docs/Web/CSS/transform)
    */
-  webkitTransform?: string | Ref<string> | any;
+  webkitTransform?: string | Ref<string>;
   /**
    * @deprecated This is a legacy alias of `transformOrigin`.
    *
    * [MDN Reference](https://developer.mozilla.org/docs/Web/CSS/transform-origin)
    */
-  webkitTransformOrigin?: string | Ref<string> | any;
+  webkitTransformOrigin?: string | Ref<string>;
   /**
    * @deprecated This is a legacy alias of `transformStyle`.
    *
    * [MDN Reference](https://developer.mozilla.org/docs/Web/CSS/transform-style)
    */
-  webkitTransformStyle?: string | Ref<string> | any;
+  webkitTransformStyle?: string | Ref<string>;
   /**
    * @deprecated This is a legacy alias of `transition`.
    *
    * [MDN Reference](https://developer.mozilla.org/docs/Web/CSS/transition)
    */
-  webkitTransition?: string | Ref<string> | any;
+  webkitTransition?: string | Ref<string>;
   /**
    * @deprecated This is a legacy alias of `transitionDelay`.
    *
    * [MDN Reference](https://developer.mozilla.org/docs/Web/CSS/transition-delay)
    */
-  webkitTransitionDelay?: string | Ref<string> | any;
+  webkitTransitionDelay?: string | Ref<string>;
   /**
    * @deprecated This is a legacy alias of `transitionDuration`.
    *
    * [MDN Reference](https://developer.mozilla.org/docs/Web/CSS/transition-duration)
    */
-  webkitTransitionDuration?: string | Ref<string> | any;
+  webkitTransitionDuration?: string | Ref<string>;
   /**
    * @deprecated This is a legacy alias of `transitionProperty`.
    *
    * [MDN Reference](https://developer.mozilla.org/docs/Web/CSS/transition-property)
    */
-  webkitTransitionProperty?: string | Ref<string> | any;
+  webkitTransitionProperty?: string | Ref<string>;
   /**
    * @deprecated This is a legacy alias of `transitionTimingFunction`.
    *
    * [MDN Reference](https://developer.mozilla.org/docs/Web/CSS/transition-timing-function)
    */
-  webkitTransitionTimingFunction?: string | Ref<string> | any;
+  webkitTransitionTimingFunction?: string | Ref<string>;
   /**
    * @deprecated This is a legacy alias of `userSelect`.
    *
    * [MDN Reference](https://developer.mozilla.org/docs/Web/CSS/user-select)
    */
-  webkitUserSelect?: string | Ref<string> | any;
+  webkitUserSelect?: string | Ref<string>;
   /** [MDN Reference](https://developer.mozilla.org/docs/Web/CSS/white-space) */
-  whiteSpace?: string | Ref<string> | any;
+  whiteSpace?: string | Ref<string>;
   /** [MDN Reference](https://developer.mozilla.org/docs/Web/CSS/widows) */
-  widows?: string | Ref<string> | any;
+  widows?: string | Ref<string>;
   /** [MDN Reference](https://developer.mozilla.org/docs/Web/CSS/width) */
-  width?: string | Ref<string> | any;
+  width?: string | Ref<string>;
   /** [MDN Reference](https://developer.mozilla.org/docs/Web/CSS/will-change) */
-  willChange?: string | Ref<string> | any;
+  willChange?: string | Ref<string>;
   /** [MDN Reference](https://developer.mozilla.org/docs/Web/CSS/word-break) */
-  wordBreak?: string | Ref<string> | any;
+  wordBreak?: string | Ref<string>;
   /** [MDN Reference](https://developer.mozilla.org/docs/Web/CSS/word-spacing) */
-  wordSpacing?: string | Ref<string> | any;
+  wordSpacing?: string | Ref<string>;
   /**
    * @deprecated
    *
    * [MDN Reference](https://developer.mozilla.org/docs/Web/CSS/overflow-wrap)
    */
-  wordWrap?: string | Ref<string> | any;
+  wordWrap?: string | Ref<string>;
   /** [MDN Reference](https://developer.mozilla.org/docs/Web/CSS/writing-mode) */
-  writingMode?: string | Ref<string> | any;
+  writingMode?: string | Ref<string>;
   /** [MDN Reference](https://developer.mozilla.org/docs/Web/CSS/z-index) */
-  zIndex?: string | Ref<string> | any;
+  zIndex?: string | Ref<string>;
 }
 
 export interface CSSStyleDeclarationRef {
   get accentColor(): string;
   set accentColor(value: string | Ref<string>);
-  text?: string | Ref<string> | any;
+  text?: string | Ref<string>;
   /** [MDN Reference](https://developer.mozilla.org/docs/Web/CSS/accent-color) */
   /** [MDN Reference](https://developer.mozilla.org/docs/Web/CSS/align-content) */
-  alignContent: string | Ref<string> | any;
+  alignContent: string | Ref<string>;
   /** [MDN Reference](https://developer.mozilla.org/docs/Web/CSS/align-items) */
-  alignItems: string | Ref<string> | any;
+  alignItems: string | Ref<string>;
   /** [MDN Reference](https://developer.mozilla.org/docs/Web/CSS/align-self) */
-  alignSelf: string | Ref<string> | any;
-  alignmentBaseline: string | Ref<string> | any;
+  alignSelf: string | Ref<string>;
+  alignmentBaseline: string | Ref<string>;
   /** [MDN Reference](https://developer.mozilla.org/docs/Web/CSS/all) */
-  all: string | Ref<string> | any;
+  all: string | Ref<string>;
   /** [MDN Reference](https://developer.mozilla.org/docs/Web/CSS/animation) */
-  animation: string | Ref<string> | any;
+  animation: string | Ref<string>;
   /** [MDN Reference](https://developer.mozilla.org/docs/Web/CSS/animation-composition) */
-  animationComposition: string | Ref<string> | any;
+  animationComposition: string | Ref<string>;
   /** [MDN Reference](https://developer.mozilla.org/docs/Web/CSS/animation-delay) */
-  animationDelay: string | Ref<string> | any;
+  animationDelay: string | Ref<string>;
   /** [MDN Reference](https://developer.mozilla.org/docs/Web/CSS/animation-direction) */
-  animationDirection: string | Ref<string> | any;
+  animationDirection: string | Ref<string>;
   /** [MDN Reference](https://developer.mozilla.org/docs/Web/CSS/animation-duration) */
-  animationDuration: string | Ref<string> | any;
+  animationDuration: string | Ref<string>;
   /** [MDN Reference](https://developer.mozilla.org/docs/Web/CSS/animation-fill-mode) */
-  animationFillMode: string | Ref<string> | any;
+  animationFillMode: string | Ref<string>;
   /** [MDN Reference](https://developer.mozilla.org/docs/Web/CSS/animation-iteration-count) */
-  animationIterationCount: string | Ref<string> | any;
+  animationIterationCount: string | Ref<string>;
   /** [MDN Reference](https://developer.mozilla.org/docs/Web/CSS/animation-name) */
-  animationName: string | Ref<string> | any;
+  animationName: string | Ref<string>;
   /** [MDN Reference](https://developer.mozilla.org/docs/Web/CSS/animation-play-state) */
-  animationPlayState: string | Ref<string> | any;
+  animationPlayState: string | Ref<string>;
   /** [MDN Reference](https://developer.mozilla.org/docs/Web/CSS/animation-timing-function) */
-  animationTimingFunction: string | Ref<string> | any;
+  animationTimingFunction: string | Ref<string>;
   /** [MDN Reference](https://developer.mozilla.org/docs/Web/CSS/appearance) */
-  appearance: string | Ref<string> | any;
+  appearance: string | Ref<string>;
   /** [MDN Reference](https://developer.mozilla.org/docs/Web/CSS/aspect-ratio) */
-  aspectRatio: string | Ref<string> | any;
+  aspectRatio: string | Ref<string>;
   /** [MDN Reference](https://developer.mozilla.org/docs/Web/CSS/backdrop-filter) */
-  backdropFilter: string | Ref<string> | any;
+  backdropFilter: string | Ref<string>;
   /** [MDN Reference](https://developer.mozilla.org/docs/Web/CSS/backface-visibility) */
-  backfaceVisibility: string | Ref<string> | any;
+  backfaceVisibility: string | Ref<string>;
   /** [MDN Reference](https://developer.mozilla.org/docs/Web/CSS/background) */
-  background: string | Ref<string> | any;
+  background: string | Ref<string>;
   /** [MDN Reference](https://developer.mozilla.org/docs/Web/CSS/background-attachment) */
-  backgroundAttachment: string | Ref<string> | any;
+  backgroundAttachment: string | Ref<string>;
   /** [MDN Reference](https://developer.mozilla.org/docs/Web/CSS/background-blend-mode) */
-  backgroundBlendMode: string | Ref<string> | any;
+  backgroundBlendMode: string | Ref<string>;
   /** [MDN Reference](https://developer.mozilla.org/docs/Web/CSS/background-clip) */
-  backgroundClip: string | Ref<string> | any;
+  backgroundClip: string | Ref<string>;
   /** [MDN Reference](https://developer.mozilla.org/docs/Web/CSS/background-color) */
-  backgroundColor: string | Ref<string> | any;
+  backgroundColor: string | Ref<string>;
   /** [MDN Reference](https://developer.mozilla.org/docs/Web/CSS/background-image) */
-  backgroundImage: string | Ref<string> | any;
+  backgroundImage: string | Ref<string>;
   /** [MDN Reference](https://developer.mozilla.org/docs/Web/CSS/background-origin) */
-  backgroundOrigin: string | Ref<string> | any;
+  backgroundOrigin: string | Ref<string>;
   /** [MDN Reference](https://developer.mozilla.org/docs/Web/CSS/background-position) */
-  backgroundPosition: string | Ref<string> | any;
+  backgroundPosition: string | Ref<string>;
   /** [MDN Reference](https://developer.mozilla.org/docs/Web/CSS/background-position-x) */
-  backgroundPositionX: string | Ref<string> | any;
+  backgroundPositionX: string | Ref<string>;
   /** [MDN Reference](https://developer.mozilla.org/docs/Web/CSS/background-position-y) */
-  backgroundPositionY: string | Ref<string> | any;
+  backgroundPositionY: string | Ref<string>;
   /** [MDN Reference](https://developer.mozilla.org/docs/Web/CSS/background-repeat) */
-  backgroundRepeat: string | Ref<string> | any;
+  backgroundRepeat: string | Ref<string>;
   /** [MDN Reference](https://developer.mozilla.org/docs/Web/CSS/background-size) */
-  backgroundSize: string | Ref<string> | any;
-  baselineShift: string | Ref<string> | any;
+  backgroundSize: string | Ref<string>;
+  baselineShift: string | Ref<string>;
   /** [MDN Reference](https://developer.mozilla.org/docs/Web/CSS/block-size) */
-  blockSize: string | Ref<string> | any;
+  blockSize: string | Ref<string>;
   /** [MDN Reference](https://developer.mozilla.org/docs/Web/CSS/border) */
-  border: string | Ref<string> | any;
+  border: string | Ref<string>;
   /** [MDN Reference](https://developer.mozilla.org/docs/Web/CSS/border-block) */
-  borderBlock: string | Ref<string> | any;
+  borderBlock: string | Ref<string>;
   /** [MDN Reference](https://developer.mozilla.org/docs/Web/CSS/border-block-color) */
-  borderBlockColor: string | Ref<string> | any;
+  borderBlockColor: string | Ref<string>;
   /** [MDN Reference](https://developer.mozilla.org/docs/Web/CSS/border-block-end) */
-  borderBlockEnd: string | Ref<string> | any;
+  borderBlockEnd: string | Ref<string>;
   /** [MDN Reference](https://developer.mozilla.org/docs/Web/CSS/border-block-end-color) */
-  borderBlockEndColor: string | Ref<string> | any;
+  borderBlockEndColor: string | Ref<string>;
   /** [MDN Reference](https://developer.mozilla.org/docs/Web/CSS/border-block-end-style) */
-  borderBlockEndStyle: string | Ref<string> | any;
+  borderBlockEndStyle: string | Ref<string>;
   /** [MDN Reference](https://developer.mozilla.org/docs/Web/CSS/border-block-end-width) */
-  borderBlockEndWidth: string | Ref<string> | any;
+  borderBlockEndWidth: string | Ref<string>;
   /** [MDN Reference](https://developer.mozilla.org/docs/Web/CSS/border-block-start) */
-  borderBlockStart: string | Ref<string> | any;
+  borderBlockStart: string | Ref<string>;
   /** [MDN Reference](https://developer.mozilla.org/docs/Web/CSS/border-block-start-color) */
-  borderBlockStartColor: string | Ref<string> | any;
+  borderBlockStartColor: string | Ref<string>;
   /** [MDN Reference](https://developer.mozilla.org/docs/Web/CSS/border-block-start-style) */
-  borderBlockStartStyle: string | Ref<string> | any;
+  borderBlockStartStyle: string | Ref<string>;
   /** [MDN Reference](https://developer.mozilla.org/docs/Web/CSS/border-block-start-width) */
-  borderBlockStartWidth: string | Ref<string> | any;
+  borderBlockStartWidth: string | Ref<string>;
   /** [MDN Reference](https://developer.mozilla.org/docs/Web/CSS/border-block-style) */
-  borderBlockStyle: string | Ref<string> | any;
+  borderBlockStyle: string | Ref<string>;
   /** [MDN Reference](https://developer.mozilla.org/docs/Web/CSS/border-block-width) */
-  borderBlockWidth: string | Ref<string> | any;
+  borderBlockWidth: string | Ref<string>;
   /** [MDN Reference](https://developer.mozilla.org/docs/Web/CSS/border-bottom) */
-  borderBottom: string | Ref<string> | any;
+  borderBottom: string | Ref<string>;
   /** [MDN Reference](https://developer.mozilla.org/docs/Web/CSS/border-bottom-color) */
-  borderBottomColor: string | Ref<string> | any;
+  borderBottomColor: string | Ref<string>;
   /** [MDN Reference](https://developer.mozilla.org/docs/Web/CSS/border-bottom-left-radius) */
-  borderBottomLeftRadius: string | Ref<string> | any;
+  borderBottomLeftRadius: string | Ref<string>;
   /** [MDN Reference](https://developer.mozilla.org/docs/Web/CSS/border-bottom-right-radius) */
-  borderBottomRightRadius: string | Ref<string> | any;
+  borderBottomRightRadius: string | Ref<string>;
   /** [MDN Reference](https://developer.mozilla.org/docs/Web/CSS/border-bottom-style) */
-  borderBottomStyle: string | Ref<string> | any;
+  borderBottomStyle: string | Ref<string>;
   /** [MDN Reference](https://developer.mozilla.org/docs/Web/CSS/border-bottom-width) */
-  borderBottomWidth: string | Ref<string> | any;
+  borderBottomWidth: string | Ref<string>;
   /** [MDN Reference](https://developer.mozilla.org/docs/Web/CSS/border-collapse) */
-  borderCollapse: string | Ref<string> | any;
+  borderCollapse: string | Ref<string>;
   /** [MDN Reference](https://developer.mozilla.org/docs/Web/CSS/border-color) */
-  borderColor: string | Ref<string> | any;
+  borderColor: string | Ref<string>;
   /** [MDN Reference](https://developer.mozilla.org/docs/Web/CSS/border-end-end-radius) */
-  borderEndEndRadius: string | Ref<string> | any;
+  borderEndEndRadius: string | Ref<string>;
   /** [MDN Reference](https://developer.mozilla.org/docs/Web/CSS/border-end-start-radius) */
-  borderEndStartRadius: string | Ref<string> | any;
+  borderEndStartRadius: string | Ref<string>;
   /** [MDN Reference](https://developer.mozilla.org/docs/Web/CSS/border-image) */
-  borderImage: string | Ref<string> | any;
+  borderImage: string | Ref<string>;
   /** [MDN Reference](https://developer.mozilla.org/docs/Web/CSS/border-image-outset) */
-  borderImageOutset: string | Ref<string> | any;
+  borderImageOutset: string | Ref<string>;
   /** [MDN Reference](https://developer.mozilla.org/docs/Web/CSS/border-image-repeat) */
-  borderImageRepeat: string | Ref<string> | any;
+  borderImageRepeat: string | Ref<string>;
   /** [MDN Reference](https://developer.mozilla.org/docs/Web/CSS/border-image-slice) */
-  borderImageSlice: string | Ref<string> | any;
+  borderImageSlice: string | Ref<string>;
   /** [MDN Reference](https://developer.mozilla.org/docs/Web/CSS/border-image-source) */
-  borderImageSource: string | Ref<string> | any;
+  borderImageSource: string | Ref<string>;
   /** [MDN Reference](https://developer.mozilla.org/docs/Web/CSS/border-image-width) */
-  borderImageWidth: string | Ref<string> | any;
+  borderImageWidth: string | Ref<string>;
   /** [MDN Reference](https://developer.mozilla.org/docs/Web/CSS/border-inline) */
-  borderInline: string | Ref<string> | any;
+  borderInline: string | Ref<string>;
   /** [MDN Reference](https://developer.mozilla.org/docs/Web/CSS/border-inline-color) */
-  borderInlineColor: string | Ref<string> | any;
+  borderInlineColor: string | Ref<string>;
   /** [MDN Reference](https://developer.mozilla.org/docs/Web/CSS/border-inline-end) */
-  borderInlineEnd: string | Ref<string> | any;
+  borderInlineEnd: string | Ref<string>;
   /** [MDN Reference](https://developer.mozilla.org/docs/Web/CSS/border-inline-end-color) */
-  borderInlineEndColor: string | Ref<string> | any;
+  borderInlineEndColor: string | Ref<string>;
   /** [MDN Reference](https://developer.mozilla.org/docs/Web/CSS/border-inline-end-style) */
-  borderInlineEndStyle: string | Ref<string> | any;
+  borderInlineEndStyle: string | Ref<string>;
   /** [MDN Reference](https://developer.mozilla.org/docs/Web/CSS/border-inline-end-width) */
-  borderInlineEndWidth: string | Ref<string> | any;
+  borderInlineEndWidth: string | Ref<string>;
   /** [MDN Reference](https://developer.mozilla.org/docs/Web/CSS/border-inline-start) */
-  borderInlineStart: string | Ref<string> | any;
+  borderInlineStart: string | Ref<string>;
   /** [MDN Reference](https://developer.mozilla.org/docs/Web/CSS/border-inline-start-color) */
-  borderInlineStartColor: string | Ref<string> | any;
+  borderInlineStartColor: string | Ref<string>;
   /** [MDN Reference](https://developer.mozilla.org/docs/Web/CSS/border-inline-start-style) */
-  borderInlineStartStyle: string | Ref<string> | any;
+  borderInlineStartStyle: string | Ref<string>;
   /** [MDN Reference](https://developer.mozilla.org/docs/Web/CSS/border-inline-start-width) */
-  borderInlineStartWidth: string | Ref<string> | any;
+  borderInlineStartWidth: string | Ref<string>;
   /** [MDN Reference](https://developer.mozilla.org/docs/Web/CSS/border-inline-style) */
-  borderInlineStyle: string | Ref<string> | any;
+  borderInlineStyle: string | Ref<string>;
   /** [MDN Reference](https://developer.mozilla.org/docs/Web/CSS/border-inline-width) */
-  borderInlineWidth: string | Ref<string> | any;
+  borderInlineWidth: string | Ref<string>;
   /** [MDN Reference](https://developer.mozilla.org/docs/Web/CSS/border-left) */
-  borderLeft: string | Ref<string> | any;
+  borderLeft: string | Ref<string>;
   /** [MDN Reference](https://developer.mozilla.org/docs/Web/CSS/border-left-color) */
-  borderLeftColor: string | Ref<string> | any;
+  borderLeftColor: string | Ref<string>;
   /** [MDN Reference](https://developer.mozilla.org/docs/Web/CSS/border-left-style) */
-  borderLeftStyle: string | Ref<string> | any;
+  borderLeftStyle: string | Ref<string>;
   /** [MDN Reference](https://developer.mozilla.org/docs/Web/CSS/border-left-width) */
-  borderLeftWidth: string | Ref<string> | any;
+  borderLeftWidth: string | Ref<string>;
   /** [MDN Reference](https://developer.mozilla.org/docs/Web/CSS/border-radius) */
-  borderRadius: string | Ref<string> | any;
+  borderRadius: string | Ref<string>;
   /** [MDN Reference](https://developer.mozilla.org/docs/Web/CSS/border-right) */
-  borderRight: string | Ref<string> | any;
+  borderRight: string | Ref<string>;
   /** [MDN Reference](https://developer.mozilla.org/docs/Web/CSS/border-right-color) */
-  borderRightColor: string | Ref<string> | any;
+  borderRightColor: string | Ref<string>;
   /** [MDN Reference](https://developer.mozilla.org/docs/Web/CSS/border-right-style) */
-  borderRightStyle: string | Ref<string> | any;
+  borderRightStyle: string | Ref<string>;
   /** [MDN Reference](https://developer.mozilla.org/docs/Web/CSS/border-right-width) */
-  borderRightWidth: string | Ref<string> | any;
+  borderRightWidth: string | Ref<string>;
   /** [MDN Reference](https://developer.mozilla.org/docs/Web/CSS/border-spacing) */
-  borderSpacing: string | Ref<string> | any;
+  borderSpacing: string | Ref<string>;
   /** [MDN Reference](https://developer.mozilla.org/docs/Web/CSS/border-start-end-radius) */
-  borderStartEndRadius: string | Ref<string> | any;
+  borderStartEndRadius: string | Ref<string>;
   /** [MDN Reference](https://developer.mozilla.org/docs/Web/CSS/border-start-start-radius) */
-  borderStartStartRadius: string | Ref<string> | any;
+  borderStartStartRadius: string | Ref<string>;
   /** [MDN Reference](https://developer.mozilla.org/docs/Web/CSS/border-style) */
-  borderStyle: string | Ref<string> | any;
+  borderStyle: string | Ref<string>;
   /** [MDN Reference](https://developer.mozilla.org/docs/Web/CSS/border-top) */
-  borderTop: string | Ref<string> | any;
+  borderTop: string | Ref<string>;
   /** [MDN Reference](https://developer.mozilla.org/docs/Web/CSS/border-top-color) */
-  borderTopColor: string | Ref<string> | any;
+  borderTopColor: string | Ref<string>;
   /** [MDN Reference](https://developer.mozilla.org/docs/Web/CSS/border-top-left-radius) */
-  borderTopLeftRadius: string | Ref<string> | any;
+  borderTopLeftRadius: string | Ref<string>;
   /** [MDN Reference](https://developer.mozilla.org/docs/Web/CSS/border-top-right-radius) */
-  borderTopRightRadius: string | Ref<string> | any;
+  borderTopRightRadius: string | Ref<string>;
   /** [MDN Reference](https://developer.mozilla.org/docs/Web/CSS/border-top-style) */
-  borderTopStyle: string | Ref<string> | any;
+  borderTopStyle: string | Ref<string>;
   /** [MDN Reference](https://developer.mozilla.org/docs/Web/CSS/border-top-width) */
-  borderTopWidth: string | Ref<string> | any;
+  borderTopWidth: string | Ref<string>;
   /** [MDN Reference](https://developer.mozilla.org/docs/Web/CSS/border-width) */
-  borderWidth: string | Ref<string> | any;
+  borderWidth: string | Ref<string>;
   /** [MDN Reference](https://developer.mozilla.org/docs/Web/CSS/bottom) */
-  bottom: string | Ref<string> | any;
+  bottom: string | Ref<string>;
   /** [MDN Reference](https://developer.mozilla.org/docs/Web/CSS/box-shadow) */
-  boxShadow: string | Ref<string> | any;
+  boxShadow: string | Ref<string>;
   /** [MDN Reference](https://developer.mozilla.org/docs/Web/CSS/box-sizing) */
-  boxSizing: string | Ref<string> | any;
+  boxSizing: string | Ref<string>;
   /** [MDN Reference](https://developer.mozilla.org/docs/Web/CSS/break-after) */
-  breakAfter: string | Ref<string> | any;
+  breakAfter: string | Ref<string>;
   /** [MDN Reference](https://developer.mozilla.org/docs/Web/CSS/break-before) */
-  breakBefore: string | Ref<string> | any;
+  breakBefore: string | Ref<string>;
   /** [MDN Reference](https://developer.mozilla.org/docs/Web/CSS/break-inside) */
-  breakInside: string | Ref<string> | any;
+  breakInside: string | Ref<string>;
   /** [MDN Reference](https://developer.mozilla.org/docs/Web/CSS/caption-side) */
-  captionSide: string | Ref<string> | any;
+  captionSide: string | Ref<string>;
   /** [MDN Reference](https://developer.mozilla.org/docs/Web/CSS/caret-color) */
-  caretColor: string | Ref<string> | any;
+  caretColor: string | Ref<string>;
   /** [MDN Reference](https://developer.mozilla.org/docs/Web/CSS/clear) */
-  clear: string | Ref<string> | any;
+  clear: string | Ref<string>;
   /**
    * @deprecated
    *
    * [MDN Reference](https://developer.mozilla.org/docs/Web/CSS/clip)
    */
-  clip: string | Ref<string> | any;
+  clip: string | Ref<string>;
   /** [MDN Reference](https://developer.mozilla.org/docs/Web/CSS/clip-path) */
-  clipPath: string | Ref<string> | any;
-  clipRule: string | Ref<string> | any;
+  clipPath: string | Ref<string>;
+  clipRule: string | Ref<string>;
   /** [MDN Reference](https://developer.mozilla.org/docs/Web/CSS/color) */
-  color: string | Ref<string> | any;
-  colorInterpolation: string | Ref<string> | any;
-  colorInterpolationFilters: string | Ref<string> | any;
+  color: string | Ref<string>;
+  colorInterpolation: string | Ref<string>;
+  colorInterpolationFilters: string | Ref<string>;
   /** [MDN Reference](https://developer.mozilla.org/docs/Web/CSS/color-scheme) */
-  colorScheme: string | Ref<string> | any;
+  colorScheme: string | Ref<string>;
   /** [MDN Reference](https://developer.mozilla.org/docs/Web/CSS/column-count) */
-  columnCount: string | Ref<string> | any;
+  columnCount: string | Ref<string>;
   /** [MDN Reference](https://developer.mozilla.org/docs/Web/CSS/column-fill) */
-  columnFill: string | Ref<string> | any;
+  columnFill: string | Ref<string>;
   /** [MDN Reference](https://developer.mozilla.org/docs/Web/CSS/column-gap) */
-  columnGap: string | Ref<string> | any;
+  columnGap: string | Ref<string>;
   /** [MDN Reference](https://developer.mozilla.org/docs/Web/CSS/column-rule) */
-  columnRule: string | Ref<string> | any;
+  columnRule: string | Ref<string>;
   /** [MDN Reference](https://developer.mozilla.org/docs/Web/CSS/column-rule-color) */
-  columnRuleColor: string | Ref<string> | any;
+  columnRuleColor: string | Ref<string>;
   /** [MDN Reference](https://developer.mozilla.org/docs/Web/CSS/column-rule-style) */
-  columnRuleStyle: string | Ref<string> | any;
+  columnRuleStyle: string | Ref<string>;
   /** [MDN Reference](https://developer.mozilla.org/docs/Web/CSS/column-rule-width) */
-  columnRuleWidth: string | Ref<string> | any;
+  columnRuleWidth: string | Ref<string>;
   /** [MDN Reference](https://developer.mozilla.org/docs/Web/CSS/column-span) */
-  columnSpan: string | Ref<string> | any;
+  columnSpan: string | Ref<string>;
   /** [MDN Reference](https://developer.mozilla.org/docs/Web/CSS/column-width) */
-  columnWidth: string | Ref<string> | any;
+  columnWidth: string | Ref<string>;
   /** [MDN Reference](https://developer.mozilla.org/docs/Web/CSS/columns) */
-  columns: string | Ref<string> | any;
+  columns: string | Ref<string>;
   /** [MDN Reference](https://developer.mozilla.org/docs/Web/CSS/contain) */
-  contain: string | Ref<string> | any;
+  contain: string | Ref<string>;
   /** [MDN Reference](https://developer.mozilla.org/docs/Web/CSS/contain-intrinsic-contain-intrinsic-block-size) */
-  containIntrinsicBlockSize: string | Ref<string> | any;
+  containIntrinsicBlockSize: string | Ref<string>;
   /** [MDN Reference](https://developer.mozilla.org/docs/Web/CSS/contain-intrinsic-height) */
-  containIntrinsicHeight: string | Ref<string> | any;
+  containIntrinsicHeight: string | Ref<string>;
   /** [MDN Reference](https://developer.mozilla.org/docs/Web/CSS/contain-intrinsic-contain-intrinsic-inline-size) */
-  containIntrinsicInlineSize: string | Ref<string> | any;
+  containIntrinsicInlineSize: string | Ref<string>;
   /** [MDN Reference](https://developer.mozilla.org/docs/Web/CSS/contain-intrinsic-size) */
-  containIntrinsicSize: string | Ref<string> | any;
+  containIntrinsicSize: string | Ref<string>;
   /** [MDN Reference](https://developer.mozilla.org/docs/Web/CSS/contain-intrinsic-width) */
-  containIntrinsicWidth: string | Ref<string> | any;
+  containIntrinsicWidth: string | Ref<string>;
   /** [MDN Reference](https://developer.mozilla.org/docs/Web/CSS/container) */
-  container: string | Ref<string> | any;
+  container: string | Ref<string>;
   /** [MDN Reference](https://developer.mozilla.org/docs/Web/CSS/container-name) */
-  containerName: string | Ref<string> | any;
+  containerName: string | Ref<string>;
   /** [MDN Reference](https://developer.mozilla.org/docs/Web/CSS/container-type) */
-  containerType: string | Ref<string> | any;
+  containerType: string | Ref<string>;
   /** [MDN Reference](https://developer.mozilla.org/docs/Web/CSS/content) */
-  content: string | Ref<string> | any;
+  content: string | Ref<string>;
   /** [MDN Reference](https://developer.mozilla.org/docs/Web/CSS/counter-increment) */
-  counterIncrement: string | Ref<string> | any;
+  counterIncrement: string | Ref<string>;
   /** [MDN Reference](https://developer.mozilla.org/docs/Web/CSS/counter-reset) */
-  counterReset: string | Ref<string> | any;
+  counterReset: string | Ref<string>;
   /** [MDN Reference](https://developer.mozilla.org/docs/Web/CSS/counter-set) */
-  counterSet: string | Ref<string> | any;
+  counterSet: string | Ref<string>;
   /** [MDN Reference](https://developer.mozilla.org/docs/Web/API/CSSStyleDeclaration/cssFloat) */
-  cssFloat: string | Ref<string> | any;
+  cssFloat: string | Ref<string>;
   /** [MDN Reference](https://developer.mozilla.org/docs/Web/API/CSSStyleDeclaration/cssText) */
-  cssText: string | Ref<string> | any;
+  cssText: string | Ref<string>;
   /** [MDN Reference](https://developer.mozilla.org/docs/Web/CSS/cursor) */
-  cursor: string | Ref<string> | any;
+  cursor: string | Ref<string>;
   /** [MDN Reference](https://developer.mozilla.org/docs/Web/CSS/direction) */
-  direction: string | Ref<string> | any;
+  direction: string | Ref<string>;
   /** [MDN Reference](https://developer.mozilla.org/docs/Web/CSS/display) */
-  display: string | Ref<string> | any;
-  dominantBaseline: string | Ref<string> | any;
+  display: string | Ref<string>;
+  dominantBaseline: string | Ref<string>;
   /** [MDN Reference](https://developer.mozilla.org/docs/Web/CSS/empty-cells) */
-  emptyCells: string | Ref<string> | any;
-  fill: string | Ref<string> | any;
-  fillOpacity: string | Ref<string> | any;
-  fillRule: string | Ref<string> | any;
+  emptyCells: string | Ref<string>;
+  fill: string | Ref<string>;
+  fillOpacity: string | Ref<string>;
+  fillRule: string | Ref<string>;
   /** [MDN Reference](https://developer.mozilla.org/docs/Web/CSS/filter) */
-  filter: string | Ref<string> | any;
+  filter: string | Ref<string>;
   /** [MDN Reference](https://developer.mozilla.org/docs/Web/CSS/flex) */
-  flex: string | Ref<string> | any;
+  flex: string | Ref<string>;
   /** [MDN Reference](https://developer.mozilla.org/docs/Web/CSS/flex-basis) */
-  flexBasis: string | Ref<string> | any;
+  flexBasis: string | Ref<string>;
   /** [MDN Reference](https://developer.mozilla.org/docs/Web/CSS/flex-direction) */
-  flexDirection: string | Ref<string> | any;
+  flexDirection: string | Ref<string>;
   /** [MDN Reference](https://developer.mozilla.org/docs/Web/CSS/flex-flow) */
-  flexFlow: string | Ref<string> | any;
+  flexFlow: string | Ref<string>;
   /** [MDN Reference](https://developer.mozilla.org/docs/Web/CSS/flex-grow) */
-  flexGrow: string | Ref<string> | any;
+  flexGrow: string | Ref<string>;
   /** [MDN Reference](https://developer.mozilla.org/docs/Web/CSS/flex-shrink) */
-  flexShrink: string | Ref<string> | any;
+  flexShrink: string | Ref<string>;
   /** [MDN Reference](https://developer.mozilla.org/docs/Web/CSS/flex-wrap) */
-  flexWrap: string | Ref<string> | any;
+  flexWrap: string | Ref<string>;
   /** [MDN Reference](https://developer.mozilla.org/docs/Web/CSS/float) */
-  float: string | Ref<string> | any;
-  floodColor: string | Ref<string> | any;
-  floodOpacity: string | Ref<string> | any;
+  float: string | Ref<string>;
+  floodColor: string | Ref<string>;
+  floodOpacity: string | Ref<string>;
   /** [MDN Reference](https://developer.mozilla.org/docs/Web/CSS/font) */
-  font: string | Ref<string> | any;
+  font: string | Ref<string>;
   /** [MDN Reference](https://developer.mozilla.org/docs/Web/CSS/font-family) */
-  fontFamily: string | Ref<string> | any;
+  fontFamily: string | Ref<string>;
   /** [MDN Reference](https://developer.mozilla.org/docs/Web/CSS/font-feature-settings) */
-  fontFeatureSettings: string | Ref<string> | any;
+  fontFeatureSettings: string | Ref<string>;
   /** [MDN Reference](https://developer.mozilla.org/docs/Web/CSS/font-kerning) */
-  fontKerning: string | Ref<string> | any;
+  fontKerning: string | Ref<string>;
   /** [MDN Reference](https://developer.mozilla.org/docs/Web/CSS/font-optical-sizing) */
-  fontOpticalSizing: string | Ref<string> | any;
+  fontOpticalSizing: string | Ref<string>;
   /** [MDN Reference](https://developer.mozilla.org/docs/Web/CSS/font-palette) */
-  fontPalette: string | Ref<string> | any;
+  fontPalette: string | Ref<string>;
   /** [MDN Reference](https://developer.mozilla.org/docs/Web/CSS/font-size) */
-  fontSize: string | Ref<string> | any;
+  fontSize: string | Ref<string>;
   /** [MDN Reference](https://developer.mozilla.org/docs/Web/CSS/font-size-adjust) */
-  fontSizeAdjust: string | Ref<string> | any;
+  fontSizeAdjust: string | Ref<string>;
   /** [MDN Reference](https://developer.mozilla.org/docs/Web/CSS/font-stretch) */
-  fontStretch: string | Ref<string> | any;
+  fontStretch: string | Ref<string>;
   /** [MDN Reference](https://developer.mozilla.org/docs/Web/CSS/font-style) */
-  fontStyle: string | Ref<string> | any;
+  fontStyle: string | Ref<string>;
   /** [MDN Reference](https://developer.mozilla.org/docs/Web/CSS/font-synthesis) */
-  fontSynthesis: string | Ref<string> | any;
+  fontSynthesis: string | Ref<string>;
   /** [MDN Reference](https://developer.mozilla.org/docs/Web/CSS/font-synthesis-small-caps) */
-  fontSynthesisSmallCaps: string | Ref<string> | any;
+  fontSynthesisSmallCaps: string | Ref<string>;
   /** [MDN Reference](https://developer.mozilla.org/docs/Web/CSS/font-synthesis-style) */
-  fontSynthesisStyle: string | Ref<string> | any;
+  fontSynthesisStyle: string | Ref<string>;
   /** [MDN Reference](https://developer.mozilla.org/docs/Web/CSS/font-synthesis-weight) */
-  fontSynthesisWeight: string | Ref<string> | any;
+  fontSynthesisWeight: string | Ref<string>;
   /** [MDN Reference](https://developer.mozilla.org/docs/Web/CSS/font-variant) */
-  fontVariant: string | Ref<string> | any;
+  fontVariant: string | Ref<string>;
   /** [MDN Reference](https://developer.mozilla.org/docs/Web/CSS/font-variant-alternates) */
-  fontVariantAlternates: string | Ref<string> | any;
+  fontVariantAlternates: string | Ref<string>;
   /** [MDN Reference](https://developer.mozilla.org/docs/Web/CSS/font-variant-caps) */
-  fontVariantCaps: string | Ref<string> | any;
+  fontVariantCaps: string | Ref<string>;
   /** [MDN Reference](https://developer.mozilla.org/docs/Web/CSS/font-variant-east-asian) */
-  fontVariantEastAsian: string | Ref<string> | any;
+  fontVariantEastAsian: string | Ref<string>;
   /** [MDN Reference](https://developer.mozilla.org/docs/Web/CSS/font-variant-ligatures) */
-  fontVariantLigatures: string | Ref<string> | any;
+  fontVariantLigatures: string | Ref<string>;
   /** [MDN Reference](https://developer.mozilla.org/docs/Web/CSS/font-variant-numeric) */
-  fontVariantNumeric: string | Ref<string> | any;
+  fontVariantNumeric: string | Ref<string>;
   /** [MDN Reference](https://developer.mozilla.org/docs/Web/CSS/font-variant-position) */
-  fontVariantPosition: string | Ref<string> | any;
+  fontVariantPosition: string | Ref<string>;
   /** [MDN Reference](https://developer.mozilla.org/docs/Web/CSS/font-variation-settings) */
-  fontVariationSettings: string | Ref<string> | any;
+  fontVariationSettings: string | Ref<string>;
   /** [MDN Reference](https://developer.mozilla.org/docs/Web/CSS/font-weight) */
-  fontWeight: string | Ref<string> | any;
+  fontWeight: string | Ref<string>;
   /** [MDN Reference](https://developer.mozilla.org/docs/Web/CSS/forced-color-adjust) */
-  forcedColorAdjust: string | Ref<string> | any;
+  forcedColorAdjust: string | Ref<string>;
   /** [MDN Reference](https://developer.mozilla.org/docs/Web/CSS/gap) */
-  gap: string | Ref<string> | any;
+  gap: string | Ref<string>;
   /** [MDN Reference](https://developer.mozilla.org/docs/Web/CSS/grid) */
-  grid: string | Ref<string> | any;
+  grid: string | Ref<string>;
   /** [MDN Reference](https://developer.mozilla.org/docs/Web/CSS/grid-area) */
-  gridArea: string | Ref<string> | any;
+  gridArea: string | Ref<string>;
   /** [MDN Reference](https://developer.mozilla.org/docs/Web/CSS/grid-auto-columns) */
-  gridAutoColumns: string | Ref<string> | any;
+  gridAutoColumns: string | Ref<string>;
   /** [MDN Reference](https://developer.mozilla.org/docs/Web/CSS/grid-auto-flow) */
-  gridAutoFlow: string | Ref<string> | any;
+  gridAutoFlow: string | Ref<string>;
   /** [MDN Reference](https://developer.mozilla.org/docs/Web/CSS/grid-auto-rows) */
-  gridAutoRows: string | Ref<string> | any;
+  gridAutoRows: string | Ref<string>;
   /** [MDN Reference](https://developer.mozilla.org/docs/Web/CSS/grid-column) */
-  gridColumn: string | Ref<string> | any;
+  gridColumn: string | Ref<string>;
   /** [MDN Reference](https://developer.mozilla.org/docs/Web/CSS/grid-column-end) */
-  gridColumnEnd: string | Ref<string> | any;
+  gridColumnEnd: string | Ref<string>;
   /** @deprecated This is a legacy alias of `columnGap`. */
-  gridColumnGap: string | Ref<string> | any;
+  gridColumnGap: string | Ref<string>;
   /** [MDN Reference](https://developer.mozilla.org/docs/Web/CSS/grid-column-start) */
-  gridColumnStart: string | Ref<string> | any;
+  gridColumnStart: string | Ref<string>;
   /** @deprecated This is a legacy alias of `gap`. */
-  gridGap: string | Ref<string> | any;
+  gridGap: string | Ref<string>;
   /** [MDN Reference](https://developer.mozilla.org/docs/Web/CSS/grid-row) */
-  gridRow: string | Ref<string> | any;
+  gridRow: string | Ref<string>;
   /** [MDN Reference](https://developer.mozilla.org/docs/Web/CSS/grid-row-end) */
-  gridRowEnd: string | Ref<string> | any;
+  gridRowEnd: string | Ref<string>;
   /** @deprecated This is a legacy alias of `rowGap`. */
-  gridRowGap: string | Ref<string> | any;
+  gridRowGap: string | Ref<string>;
   /** [MDN Reference](https://developer.mozilla.org/docs/Web/CSS/grid-row-start) */
-  gridRowStart: string | Ref<string> | any;
+  gridRowStart: string | Ref<string>;
   /** [MDN Reference](https://developer.mozilla.org/docs/Web/CSS/grid-template) */
-  gridTemplate: string | Ref<string> | any;
+  gridTemplate: string | Ref<string>;
   /** [MDN Reference](https://developer.mozilla.org/docs/Web/CSS/grid-template-areas) */
-  gridTemplateAreas: string | Ref<string> | any;
+  gridTemplateAreas: string | Ref<string>;
   /** [MDN Reference](https://developer.mozilla.org/docs/Web/CSS/grid-template-columns) */
-  gridTemplateColumns: string | Ref<string> | any;
+  gridTemplateColumns: string | Ref<string>;
   /** [MDN Reference](https://developer.mozilla.org/docs/Web/CSS/grid-template-rows) */
-  gridTemplateRows: string | Ref<string> | any;
+  gridTemplateRows: string | Ref<string>;
   /** [MDN Reference](https://developer.mozilla.org/docs/Web/CSS/height) */
-  height: string | Ref<string> | any;
+  height: string | Ref<string>;
   /** [MDN Reference](https://developer.mozilla.org/docs/Web/CSS/hyphenate-character) */
-  hyphenateCharacter: string | Ref<string> | any;
+  hyphenateCharacter: string | Ref<string>;
   /** [MDN Reference](https://developer.mozilla.org/docs/Web/CSS/hyphens) */
-  hyphens: string | Ref<string> | any;
+  hyphens: string | Ref<string>;
   /**
    * @deprecated
    *
    * [MDN Reference](https://developer.mozilla.org/docs/Web/CSS/image-orientation)
    */
-  imageOrientation: string | Ref<string> | any;
+  imageOrientation: string | Ref<string>;
   /** [MDN Reference](https://developer.mozilla.org/docs/Web/CSS/image-rendering) */
-  imageRendering: string | Ref<string> | any;
+  imageRendering: string | Ref<string>;
   /** [MDN Reference](https://developer.mozilla.org/docs/Web/CSS/inline-size) */
-  inlineSize: string | Ref<string> | any;
+  inlineSize: string | Ref<string>;
   /** [MDN Reference](https://developer.mozilla.org/docs/Web/CSS/inset) */
-  inset: string | Ref<string> | any;
+  inset: string | Ref<string>;
   /** [MDN Reference](https://developer.mozilla.org/docs/Web/CSS/inset-block) */
-  insetBlock: string | Ref<string> | any;
+  insetBlock: string | Ref<string>;
   /** [MDN Reference](https://developer.mozilla.org/docs/Web/CSS/inset-block-end) */
-  insetBlockEnd: string | Ref<string> | any;
+  insetBlockEnd: string | Ref<string>;
   /** [MDN Reference](https://developer.mozilla.org/docs/Web/CSS/inset-block-start) */
-  insetBlockStart: string | Ref<string> | any;
+  insetBlockStart: string | Ref<string>;
   /** [MDN Reference](https://developer.mozilla.org/docs/Web/CSS/inset-inline) */
-  insetInline: string | Ref<string> | any;
+  insetInline: string | Ref<string>;
   /** [MDN Reference](https://developer.mozilla.org/docs/Web/CSS/inset-inline-end) */
-  insetInlineEnd: string | Ref<string> | any;
+  insetInlineEnd: string | Ref<string>;
   /** [MDN Reference](https://developer.mozilla.org/docs/Web/CSS/inset-inline-start) */
-  insetInlineStart: string | Ref<string> | any;
+  insetInlineStart: string | Ref<string>;
   /** [MDN Reference](https://developer.mozilla.org/docs/Web/CSS/isolation) */
-  isolation: string | Ref<string> | any;
+  isolation: string | Ref<string>;
   /** [MDN Reference](https://developer.mozilla.org/docs/Web/CSS/justify-content) */
-  justifyContent: string | Ref<string> | any;
+  justifyContent: string | Ref<string>;
   /** [MDN Reference](https://developer.mozilla.org/docs/Web/CSS/justify-items) */
-  justifyItems: string | Ref<string> | any;
+  justifyItems: string | Ref<string>;
   /** [MDN Reference](https://developer.mozilla.org/docs/Web/CSS/justify-self) */
-  justifySelf: string | Ref<string> | any;
+  justifySelf: string | Ref<string>;
   /** [MDN Reference](https://developer.mozilla.org/docs/Web/CSS/left) */
-  left: string | Ref<string> | any;
+  left: string | Ref<string>;
   /** [MDN Reference](https://developer.mozilla.org/docs/Web/API/CSSStyleDeclaration/length) */
   readonly length: number;
   /** [MDN Reference](https://developer.mozilla.org/docs/Web/CSS/letter-spacing) */
-  letterSpacing: string | Ref<string> | any;
-  lightingColor: string | Ref<string> | any;
+  letterSpacing: string | Ref<string>;
+  lightingColor: string | Ref<string>;
   /** [MDN Reference](https://developer.mozilla.org/docs/Web/CSS/line-break) */
-  lineBreak: string | Ref<string> | any;
+  lineBreak: string | Ref<string>;
   /** [MDN Reference](https://developer.mozilla.org/docs/Web/CSS/line-height) */
-  lineHeight: string | Ref<string> | any;
+  lineHeight: string | Ref<string>;
   /** [MDN Reference](https://developer.mozilla.org/docs/Web/CSS/list-style) */
-  listStyle: string | Ref<string> | any;
+  listStyle: string | Ref<string>;
   /** [MDN Reference](https://developer.mozilla.org/docs/Web/CSS/list-style-image) */
-  listStyleImage: string | Ref<string> | any;
+  listStyleImage: string | Ref<string>;
   /** [MDN Reference](https://developer.mozilla.org/docs/Web/CSS/list-style-position) */
-  listStylePosition: string | Ref<string> | any;
+  listStylePosition: string | Ref<string>;
   /** [MDN Reference](https://developer.mozilla.org/docs/Web/CSS/list-style-type) */
-  listStyleType: string | Ref<string> | any;
+  listStyleType: string | Ref<string>;
   /** [MDN Reference](https://developer.mozilla.org/docs/Web/CSS/margin) */
-  margin: string | Ref<string> | any;
+  margin: string | Ref<string>;
   /** [MDN Reference](https://developer.mozilla.org/docs/Web/CSS/margin-block) */
-  marginBlock: string | Ref<string> | any;
+  marginBlock: string | Ref<string>;
   /** [MDN Reference](https://developer.mozilla.org/docs/Web/CSS/margin-block-end) */
-  marginBlockEnd: string | Ref<string> | any;
+  marginBlockEnd: string | Ref<string>;
   /** [MDN Reference](https://developer.mozilla.org/docs/Web/CSS/margin-block-start) */
-  marginBlockStart: string | Ref<string> | any;
+  marginBlockStart: string | Ref<string>;
   /** [MDN Reference](https://developer.mozilla.org/docs/Web/CSS/margin-bottom) */
-  marginBottom: string | Ref<string> | any;
+  marginBottom: string | Ref<string>;
   /** [MDN Reference](https://developer.mozilla.org/docs/Web/CSS/margin-inline) */
-  marginInline: string | Ref<string> | any;
+  marginInline: string | Ref<string>;
   /** [MDN Reference](https://developer.mozilla.org/docs/Web/CSS/margin-inline-end) */
-  marginInlineEnd: string | Ref<string> | any;
+  marginInlineEnd: string | Ref<string>;
   /** [MDN Reference](https://developer.mozilla.org/docs/Web/CSS/margin-inline-start) */
-  marginInlineStart: string | Ref<string> | any;
+  marginInlineStart: string | Ref<string>;
   /** [MDN Reference](https://developer.mozilla.org/docs/Web/CSS/margin-left) */
-  marginLeft: string | Ref<string> | any;
+  marginLeft: string | Ref<string>;
   /** [MDN Reference](https://developer.mozilla.org/docs/Web/CSS/margin-right) */
-  marginRight: string | Ref<string> | any;
+  marginRight: string | Ref<string>;
   /** [MDN Reference](https://developer.mozilla.org/docs/Web/CSS/margin-top) */
-  marginTop: string | Ref<string> | any;
-  marker: string | Ref<string> | any;
-  markerEnd: string | Ref<string> | any;
-  markerMid: string | Ref<string> | any;
-  markerStart: string | Ref<string> | any;
+  marginTop: string | Ref<string>;
+  marker: string | Ref<string>;
+  markerEnd: string | Ref<string>;
+  markerMid: string | Ref<string>;
+  markerStart: string | Ref<string>;
   /** [MDN Reference](https://developer.mozilla.org/docs/Web/CSS/mask) */
-  mask: string | Ref<string> | any;
+  mask: string | Ref<string>;
   /** [MDN Reference](https://developer.mozilla.org/docs/Web/CSS/mask-clip) */
-  maskClip: string | Ref<string> | any;
+  maskClip: string | Ref<string>;
   /** [MDN Reference](https://developer.mozilla.org/docs/Web/CSS/mask-composite) */
-  maskComposite: string | Ref<string> | any;
+  maskComposite: string | Ref<string>;
   /** [MDN Reference](https://developer.mozilla.org/docs/Web/CSS/mask-image) */
-  maskImage: string | Ref<string> | any;
+  maskImage: string | Ref<string>;
   /** [MDN Reference](https://developer.mozilla.org/docs/Web/CSS/mask-mode) */
-  maskMode: string | Ref<string> | any;
+  maskMode: string | Ref<string>;
   /** [MDN Reference](https://developer.mozilla.org/docs/Web/CSS/mask-origin) */
-  maskOrigin: string | Ref<string> | any;
+  maskOrigin: string | Ref<string>;
   /** [MDN Reference](https://developer.mozilla.org/docs/Web/CSS/mask-position) */
-  maskPosition: string | Ref<string> | any;
+  maskPosition: string | Ref<string>;
   /** [MDN Reference](https://developer.mozilla.org/docs/Web/CSS/mask-repeat) */
-  maskRepeat: string | Ref<string> | any;
+  maskRepeat: string | Ref<string>;
   /** [MDN Reference](https://developer.mozilla.org/docs/Web/CSS/mask-size) */
-  maskSize: string | Ref<string> | any;
+  maskSize: string | Ref<string>;
   /** [MDN Reference](https://developer.mozilla.org/docs/Web/CSS/mask-type) */
-  maskType: string | Ref<string> | any;
+  maskType: string | Ref<string>;
   /** [MDN Reference](https://developer.mozilla.org/docs/Web/CSS/math-style) */
-  mathStyle: string | Ref<string> | any;
+  mathStyle: string | Ref<string>;
   /** [MDN Reference](https://developer.mozilla.org/docs/Web/CSS/max-block-size) */
-  maxBlockSize: string | Ref<string> | any;
+  maxBlockSize: string | Ref<string>;
   /** [MDN Reference](https://developer.mozilla.org/docs/Web/CSS/max-height) */
-  maxHeight: string | Ref<string> | any;
+  maxHeight: string | Ref<string>;
   /** [MDN Reference](https://developer.mozilla.org/docs/Web/CSS/max-inline-size) */
-  maxInlineSize: string | Ref<string> | any;
+  maxInlineSize: string | Ref<string>;
   /** [MDN Reference](https://developer.mozilla.org/docs/Web/CSS/max-width) */
-  maxWidth: string | Ref<string> | any;
+  maxWidth: string | Ref<string>;
   /** [MDN Reference](https://developer.mozilla.org/docs/Web/CSS/min-block-size) */
-  minBlockSize: string | Ref<string> | any;
+  minBlockSize: string | Ref<string>;
   /** [MDN Reference](https://developer.mozilla.org/docs/Web/CSS/min-height) */
-  minHeight: string | Ref<string> | any;
+  minHeight: string | Ref<string>;
   /** [MDN Reference](https://developer.mozilla.org/docs/Web/CSS/min-inline-size) */
-  minInlineSize: string | Ref<string> | any;
+  minInlineSize: string | Ref<string>;
   /** [MDN Reference](https://developer.mozilla.org/docs/Web/CSS/min-width) */
-  minWidth: string | Ref<string> | any;
+  minWidth: string | Ref<string>;
   /** [MDN Reference](https://developer.mozilla.org/docs/Web/CSS/mix-blend-mode) */
-  mixBlendMode: string | Ref<string> | any;
+  mixBlendMode: string | Ref<string>;
   /** [MDN Reference](https://developer.mozilla.org/docs/Web/CSS/object-fit) */
-  objectFit: string | Ref<string> | any;
+  objectFit: string | Ref<string>;
   /** [MDN Reference](https://developer.mozilla.org/docs/Web/CSS/object-position) */
-  objectPosition: string | Ref<string> | any;
+  objectPosition: string | Ref<string>;
   /** [MDN Reference](https://developer.mozilla.org/docs/Web/CSS/offset) */
-  offset: string | Ref<string> | any;
+  offset: string | Ref<string>;
   /** [MDN Reference](https://developer.mozilla.org/docs/Web/CSS/offset-distance) */
-  offsetDistance: string | Ref<string> | any;
+  offsetDistance: string | Ref<string>;
   /** [MDN Reference](https://developer.mozilla.org/docs/Web/CSS/offset-path) */
-  offsetPath: string | Ref<string> | any;
+  offsetPath: string | Ref<string>;
   /** [MDN Reference](https://developer.mozilla.org/docs/Web/CSS/offset-rotate) */
-  offsetRotate: string | Ref<string> | any;
+  offsetRotate: string | Ref<string>;
   /** [MDN Reference](https://developer.mozilla.org/docs/Web/CSS/opacity) */
-  opacity: string | Ref<string> | any;
+  opacity: string | Ref<string>;
   /** [MDN Reference](https://developer.mozilla.org/docs/Web/CSS/order) */
-  order: string | Ref<string> | any;
+  order: string | Ref<string>;
   /** [MDN Reference](https://developer.mozilla.org/docs/Web/CSS/orphans) */
-  orphans: string | Ref<string> | any;
+  orphans: string | Ref<string>;
   /** [MDN Reference](https://developer.mozilla.org/docs/Web/CSS/outline) */
-  outline: string | Ref<string> | any;
+  outline: string | Ref<string>;
   /** [MDN Reference](https://developer.mozilla.org/docs/Web/CSS/outline-color) */
-  outlineColor: string | Ref<string> | any;
+  outlineColor: string | Ref<string>;
   /** [MDN Reference](https://developer.mozilla.org/docs/Web/CSS/outline-offset) */
-  outlineOffset: string | Ref<string> | any;
+  outlineOffset: string | Ref<string>;
   /** [MDN Reference](https://developer.mozilla.org/docs/Web/CSS/outline-style) */
-  outlineStyle: string | Ref<string> | any;
+  outlineStyle: string | Ref<string>;
   /** [MDN Reference](https://developer.mozilla.org/docs/Web/CSS/outline-width) */
-  outlineWidth: string | Ref<string> | any;
+  outlineWidth: string | Ref<string>;
   /** [MDN Reference](https://developer.mozilla.org/docs/Web/CSS/overflow) */
-  overflow: string | Ref<string> | any;
+  overflow: string | Ref<string>;
   /** [MDN Reference](https://developer.mozilla.org/docs/Web/CSS/overflow-anchor) */
-  overflowAnchor: string | Ref<string> | any;
+  overflowAnchor: string | Ref<string>;
   /** [MDN Reference](https://developer.mozilla.org/docs/Web/CSS/overflow-clip-margin) */
-  overflowClipMargin: string | Ref<string> | any;
+  overflowClipMargin: string | Ref<string>;
   /** [MDN Reference](https://developer.mozilla.org/docs/Web/CSS/overflow-wrap) */
-  overflowWrap: string | Ref<string> | any;
+  overflowWrap: string | Ref<string>;
   /** [MDN Reference](https://developer.mozilla.org/docs/Web/CSS/overflow-x) */
-  overflowX: string | Ref<string> | any;
+  overflowX: string | Ref<string>;
   /** [MDN Reference](https://developer.mozilla.org/docs/Web/CSS/overflow-y) */
-  overflowY: string | Ref<string> | any;
+  overflowY: string | Ref<string>;
   /** [MDN Reference](https://developer.mozilla.org/docs/Web/CSS/overscroll-behavior) */
-  overscrollBehavior: string | Ref<string> | any;
+  overscrollBehavior: string | Ref<string>;
   /** [MDN Reference](https://developer.mozilla.org/docs/Web/CSS/overscroll-behavior-block) */
-  overscrollBehaviorBlock: string | Ref<string> | any;
+  overscrollBehaviorBlock: string | Ref<string>;
   /** [MDN Reference](https://developer.mozilla.org/docs/Web/CSS/overscroll-behavior-inline) */
-  overscrollBehaviorInline: string | Ref<string> | any;
+  overscrollBehaviorInline: string | Ref<string>;
   /** [MDN Reference](https://developer.mozilla.org/docs/Web/CSS/overscroll-behavior-x) */
-  overscrollBehaviorX: string | Ref<string> | any;
+  overscrollBehaviorX: string | Ref<string>;
   /** [MDN Reference](https://developer.mozilla.org/docs/Web/CSS/overscroll-behavior-y) */
-  overscrollBehaviorY: string | Ref<string> | any;
+  overscrollBehaviorY: string | Ref<string>;
   /** [MDN Reference](https://developer.mozilla.org/docs/Web/CSS/padding) */
-  padding: string | Ref<string> | any;
+  padding: string | Ref<string>;
   /** [MDN Reference](https://developer.mozilla.org/docs/Web/CSS/padding-block) */
-  paddingBlock: string | Ref<string> | any;
+  paddingBlock: string | Ref<string>;
   /** [MDN Reference](https://developer.mozilla.org/docs/Web/CSS/padding-block-end) */
-  paddingBlockEnd: string | Ref<string> | any;
+  paddingBlockEnd: string | Ref<string>;
   /** [MDN Reference](https://developer.mozilla.org/docs/Web/CSS/padding-block-start) */
-  paddingBlockStart: string | Ref<string> | any;
+  paddingBlockStart: string | Ref<string>;
   /** [MDN Reference](https://developer.mozilla.org/docs/Web/CSS/padding-bottom) */
-  paddingBottom: string | Ref<string> | any;
+  paddingBottom: string | Ref<string>;
   /** [MDN Reference](https://developer.mozilla.org/docs/Web/CSS/padding-inline) */
-  paddingInline: string | Ref<string> | any;
+  paddingInline: string | Ref<string>;
   /** [MDN Reference](https://developer.mozilla.org/docs/Web/CSS/padding-inline-end) */
-  paddingInlineEnd: string | Ref<string> | any;
+  paddingInlineEnd: string | Ref<string>;
   /** [MDN Reference](https://developer.mozilla.org/docs/Web/CSS/padding-inline-start) */
-  paddingInlineStart: string | Ref<string> | any;
+  paddingInlineStart: string | Ref<string>;
   /** [MDN Reference](https://developer.mozilla.org/docs/Web/CSS/padding-left) */
-  paddingLeft: string | Ref<string> | any;
+  paddingLeft: string | Ref<string>;
   /** [MDN Reference](https://developer.mozilla.org/docs/Web/CSS/padding-right) */
-  paddingRight: string | Ref<string> | any;
+  paddingRight: string | Ref<string>;
   /** [MDN Reference](https://developer.mozilla.org/docs/Web/CSS/padding-top) */
-  paddingTop: string | Ref<string> | any;
+  paddingTop: string | Ref<string>;
   /** [MDN Reference](https://developer.mozilla.org/docs/Web/CSS/page) */
-  page: string | Ref<string> | any;
+  page: string | Ref<string>;
   /** [MDN Reference](https://developer.mozilla.org/docs/Web/CSS/page-break-after) */
-  pageBreakAfter: string | Ref<string> | any;
+  pageBreakAfter: string | Ref<string>;
   /** [MDN Reference](https://developer.mozilla.org/docs/Web/CSS/page-break-before) */
-  pageBreakBefore: string | Ref<string> | any;
+  pageBreakBefore: string | Ref<string>;
   /** [MDN Reference](https://developer.mozilla.org/docs/Web/CSS/page-break-inside) */
-  pageBreakInside: string | Ref<string> | any;
+  pageBreakInside: string | Ref<string>;
   /** [MDN Reference](https://developer.mozilla.org/docs/Web/CSS/paint-order) */
-  paintOrder: string | Ref<string> | any;
+  paintOrder: string | Ref<string>;
   /** [MDN Reference](https://developer.mozilla.org/docs/Web/API/CSSStyleDeclaration/parentRule) */
   readonly parentRule: CSSRule | null;
   /** [MDN Reference](https://developer.mozilla.org/docs/Web/CSS/perspective) */
-  perspective: string | Ref<string> | any;
+  perspective: string | Ref<string>;
   /** [MDN Reference](https://developer.mozilla.org/docs/Web/CSS/perspective-origin) */
-  perspectiveOrigin: string | Ref<string> | any;
+  perspectiveOrigin: string | Ref<string>;
   /** [MDN Reference](https://developer.mozilla.org/docs/Web/CSS/place-content) */
-  placeContent: string | Ref<string> | any;
+  placeContent: string | Ref<string>;
   /** [MDN Reference](https://developer.mozilla.org/docs/Web/CSS/place-items) */
-  placeItems: string | Ref<string> | any;
+  placeItems: string | Ref<string>;
   /** [MDN Reference](https://developer.mozilla.org/docs/Web/CSS/place-self) */
-  placeSelf: string | Ref<string> | any;
+  placeSelf: string | Ref<string>;
   /** [MDN Reference](https://developer.mozilla.org/docs/Web/CSS/pointer-events) */
-  pointerEvents: string | Ref<string> | any;
+  pointerEvents: string | Ref<string>;
   /** [MDN Reference](https://developer.mozilla.org/docs/Web/CSS/position) */
-  position: string | Ref<string> | any;
+  position: string | Ref<string>;
   /** [MDN Reference](https://developer.mozilla.org/docs/Web/CSS/print-color-adjust) */
-  printColorAdjust: string | Ref<string> | any;
+  printColorAdjust: string | Ref<string>;
   /** [MDN Reference](https://developer.mozilla.org/docs/Web/CSS/quotes) */
-  quotes: string | Ref<string> | any;
+  quotes: string | Ref<string>;
   /** [MDN Reference](https://developer.mozilla.org/docs/Web/CSS/resize) */
-  resize: string | Ref<string> | any;
+  resize: string | Ref<string>;
   /** [MDN Reference](https://developer.mozilla.org/docs/Web/CSS/right) */
-  right: string | Ref<string> | any;
+  right: string | Ref<string>;
   /** [MDN Reference](https://developer.mozilla.org/docs/Web/CSS/rotate) */
-  rotate: string | Ref<string> | any;
+  rotate: string | Ref<string>;
   /** [MDN Reference](https://developer.mozilla.org/docs/Web/CSS/row-gap) */
-  rowGap: string | Ref<string> | any;
+  rowGap: string | Ref<string>;
   /** [MDN Reference](https://developer.mozilla.org/docs/Web/CSS/ruby-position) */
-  rubyPosition: string | Ref<string> | any;
+  rubyPosition: string | Ref<string>;
   /** [MDN Reference](https://developer.mozilla.org/docs/Web/CSS/scale) */
-  scale: string | Ref<string> | any;
+  scale: string | Ref<string>;
   /** [MDN Reference](https://developer.mozilla.org/docs/Web/CSS/scroll-behavior) */
-  scrollBehavior: string | Ref<string> | any;
+  scrollBehavior: string | Ref<string>;
   /** [MDN Reference](https://developer.mozilla.org/docs/Web/CSS/scroll-margin) */
-  scrollMargin: string | Ref<string> | any;
+  scrollMargin: string | Ref<string>;
   /** [MDN Reference](https://developer.mozilla.org/docs/Web/CSS/scroll-margin-block) */
-  scrollMarginBlock: string | Ref<string> | any;
+  scrollMarginBlock: string | Ref<string>;
   /** [MDN Reference](https://developer.mozilla.org/docs/Web/CSS/scroll-margin-block-end) */
-  scrollMarginBlockEnd: string | Ref<string> | any;
+  scrollMarginBlockEnd: string | Ref<string>;
   /** [MDN Reference](https://developer.mozilla.org/docs/Web/CSS/scroll-margin-block-start) */
-  scrollMarginBlockStart: string | Ref<string> | any;
+  scrollMarginBlockStart: string | Ref<string>;
   /** [MDN Reference](https://developer.mozilla.org/docs/Web/CSS/scroll-margin-bottom) */
-  scrollMarginBottom: string | Ref<string> | any;
+  scrollMarginBottom: string | Ref<string>;
   /** [MDN Reference](https://developer.mozilla.org/docs/Web/CSS/scroll-margin-inline) */
-  scrollMarginInline: string | Ref<string> | any;
+  scrollMarginInline: string | Ref<string>;
   /** [MDN Reference](https://developer.mozilla.org/docs/Web/CSS/scroll-margin-inline-end) */
-  scrollMarginInlineEnd: string | Ref<string> | any;
+  scrollMarginInlineEnd: string | Ref<string>;
   /** [MDN Reference](https://developer.mozilla.org/docs/Web/CSS/scroll-margin-inline-start) */
-  scrollMarginInlineStart: string | Ref<string> | any;
+  scrollMarginInlineStart: string | Ref<string>;
   /** [MDN Reference](https://developer.mozilla.org/docs/Web/CSS/scroll-margin-left) */
-  scrollMarginLeft: string | Ref<string> | any;
+  scrollMarginLeft: string | Ref<string>;
   /** [MDN Reference](https://developer.mozilla.org/docs/Web/CSS/scroll-margin-right) */
-  scrollMarginRight: string | Ref<string> | any;
+  scrollMarginRight: string | Ref<string>;
   /** [MDN Reference](https://developer.mozilla.org/docs/Web/CSS/scroll-margin-top) */
-  scrollMarginTop: string | Ref<string> | any;
+  scrollMarginTop: string | Ref<string>;
   /** [MDN Reference](https://developer.mozilla.org/docs/Web/CSS/scroll-padding) */
-  scrollPadding: string | Ref<string> | any;
+  scrollPadding: string | Ref<string>;
   /** [MDN Reference](https://developer.mozilla.org/docs/Web/CSS/scroll-padding-block) */
-  scrollPaddingBlock: string | Ref<string> | any;
+  scrollPaddingBlock: string | Ref<string>;
   /** [MDN Reference](https://developer.mozilla.org/docs/Web/CSS/scroll-padding-block-end) */
-  scrollPaddingBlockEnd: string | Ref<string> | any;
+  scrollPaddingBlockEnd: string | Ref<string>;
   /** [MDN Reference](https://developer.mozilla.org/docs/Web/CSS/scroll-padding-block-start) */
-  scrollPaddingBlockStart: string | Ref<string> | any;
+  scrollPaddingBlockStart: string | Ref<string>;
   /** [MDN Reference](https://developer.mozilla.org/docs/Web/CSS/scroll-padding-bottom) */
-  scrollPaddingBottom: string | Ref<string> | any;
+  scrollPaddingBottom: string | Ref<string>;
   /** [MDN Reference](https://developer.mozilla.org/docs/Web/CSS/scroll-padding-inline) */
-  scrollPaddingInline: string | Ref<string> | any;
+  scrollPaddingInline: string | Ref<string>;
   /** [MDN Reference](https://developer.mozilla.org/docs/Web/CSS/scroll-padding-inline-end) */
-  scrollPaddingInlineEnd: string | Ref<string> | any;
+  scrollPaddingInlineEnd: string | Ref<string>;
   /** [MDN Reference](https://developer.mozilla.org/docs/Web/CSS/scroll-padding-inline-start) */
-  scrollPaddingInlineStart: string | Ref<string> | any;
+  scrollPaddingInlineStart: string | Ref<string>;
   /** [MDN Reference](https://developer.mozilla.org/docs/Web/CSS/scroll-padding-left) */
-  scrollPaddingLeft: string | Ref<string> | any;
+  scrollPaddingLeft: string | Ref<string>;
   /** [MDN Reference](https://developer.mozilla.org/docs/Web/CSS/scroll-padding-right) */
-  scrollPaddingRight: string | Ref<string> | any;
+  scrollPaddingRight: string | Ref<string>;
   /** [MDN Reference](https://developer.mozilla.org/docs/Web/CSS/scroll-padding-top) */
-  scrollPaddingTop: string | Ref<string> | any;
+  scrollPaddingTop: string | Ref<string>;
   /** [MDN Reference](https://developer.mozilla.org/docs/Web/CSS/scroll-snap-align) */
-  scrollSnapAlign: string | Ref<string> | any;
+  scrollSnapAlign: string | Ref<string>;
   /** [MDN Reference](https://developer.mozilla.org/docs/Web/CSS/scroll-snap-stop) */
-  scrollSnapStop: string | Ref<string> | any;
+  scrollSnapStop: string | Ref<string>;
   /** [MDN Reference](https://developer.mozilla.org/docs/Web/CSS/scroll-snap-type) */
-  scrollSnapType: string | Ref<string> | any;
+  scrollSnapType: string | Ref<string>;
   /** [MDN Reference](https://developer.mozilla.org/docs/Web/CSS/scrollbar-gutter) */
-  scrollbarGutter: string | Ref<string> | any;
+  scrollbarGutter: string | Ref<string>;
   /** [MDN Reference](https://developer.mozilla.org/docs/Web/CSS/shape-image-threshold) */
-  shapeImageThreshold: string | Ref<string> | any;
+  shapeImageThreshold: string | Ref<string>;
   /** [MDN Reference](https://developer.mozilla.org/docs/Web/CSS/shape-margin) */
-  shapeMargin: string | Ref<string> | any;
+  shapeMargin: string | Ref<string>;
   /** [MDN Reference](https://developer.mozilla.org/docs/Web/CSS/shape-outside) */
-  shapeOutside: string | Ref<string> | any;
-  shapeRendering: string | Ref<string> | any;
-  stopColor: string | Ref<string> | any;
-  stopOpacity: string | Ref<string> | any;
-  stroke: string | Ref<string> | any;
-  strokeDasharray: string | Ref<string> | any;
-  strokeDashoffset: string | Ref<string> | any;
-  strokeLinecap: string | Ref<string> | any;
-  strokeLinejoin: string | Ref<string> | any;
-  strokeMiterlimit: string | Ref<string> | any;
-  strokeOpacity: string | Ref<string> | any;
-  strokeWidth: string | Ref<string> | any;
+  shapeOutside: string | Ref<string>;
+  shapeRendering: string | Ref<string>;
+  stopColor: string | Ref<string>;
+  stopOpacity: string | Ref<string>;
+  stroke: string | Ref<string>;
+  strokeDasharray: string | Ref<string>;
+  strokeDashoffset: string | Ref<string>;
+  strokeLinecap: string | Ref<string>;
+  strokeLinejoin: string | Ref<string>;
+  strokeMiterlimit: string | Ref<string>;
+  strokeOpacity: string | Ref<string>;
+  strokeWidth: string | Ref<string>;
   /** [MDN Reference](https://developer.mozilla.org/docs/Web/CSS/tab-size) */
-  tabSize: string | Ref<string> | any;
+  tabSize: string | Ref<string>;
   /** [MDN Reference](https://developer.mozilla.org/docs/Web/CSS/table-layout) */
-  tableLayout: string | Ref<string> | any;
+  tableLayout: string | Ref<string>;
   /** [MDN Reference](https://developer.mozilla.org/docs/Web/CSS/text-align) */
-  textAlign: string | Ref<string> | any;
+  textAlign: string | Ref<string>;
   /** [MDN Reference](https://developer.mozilla.org/docs/Web/CSS/text-align-last) */
-  textAlignLast: string | Ref<string> | any;
-  textAnchor: string | Ref<string> | any;
+  textAlignLast: string | Ref<string>;
+  textAnchor: string | Ref<string>;
   /** [MDN Reference](https://developer.mozilla.org/docs/Web/CSS/text-combine-upright) */
-  textCombineUpright: string | Ref<string> | any;
+  textCombineUpright: string | Ref<string>;
   /** [MDN Reference](https://developer.mozilla.org/docs/Web/CSS/text-decoration) */
-  textDecoration: string | Ref<string> | any;
+  textDecoration: string | Ref<string>;
   /** [MDN Reference](https://developer.mozilla.org/docs/Web/CSS/text-decoration-color) */
-  textDecorationColor: string | Ref<string> | any;
+  textDecorationColor: string | Ref<string>;
   /** [MDN Reference](https://developer.mozilla.org/docs/Web/CSS/text-decoration-line) */
-  textDecorationLine: string | Ref<string> | any;
+  textDecorationLine: string | Ref<string>;
   /** [MDN Reference](https://developer.mozilla.org/docs/Web/CSS/text-decoration-skip-ink) */
-  textDecorationSkipInk: string | Ref<string> | any;
+  textDecorationSkipInk: string | Ref<string>;
   /** [MDN Reference](https://developer.mozilla.org/docs/Web/CSS/text-decoration-style) */
-  textDecorationStyle: string | Ref<string> | any;
+  textDecorationStyle: string | Ref<string>;
   /** [MDN Reference](https://developer.mozilla.org/docs/Web/CSS/text-decoration-thickness) */
-  textDecorationThickness: string | Ref<string> | any;
+  textDecorationThickness: string | Ref<string>;
   /** [MDN Reference](https://developer.mozilla.org/docs/Web/CSS/text-emphasis) */
-  textEmphasis: string | Ref<string> | any;
+  textEmphasis: string | Ref<string>;
   /** [MDN Reference](https://developer.mozilla.org/docs/Web/CSS/text-emphasis-color) */
-  textEmphasisColor: string | Ref<string> | any;
+  textEmphasisColor: string | Ref<string>;
   /** [MDN Reference](https://developer.mozilla.org/docs/Web/CSS/text-emphasis-position) */
-  textEmphasisPosition: string | Ref<string> | any;
+  textEmphasisPosition: string | Ref<string>;
   /** [MDN Reference](https://developer.mozilla.org/docs/Web/CSS/text-emphasis-style) */
-  textEmphasisStyle: string | Ref<string> | any;
+  textEmphasisStyle: string | Ref<string>;
   /** [MDN Reference](https://developer.mozilla.org/docs/Web/CSS/text-indent) */
-  textIndent: string | Ref<string> | any;
+  textIndent: string | Ref<string>;
   /** [MDN Reference](https://developer.mozilla.org/docs/Web/CSS/text-orientation) */
-  textOrientation: string | Ref<string> | any;
+  textOrientation: string | Ref<string>;
   /** [MDN Reference](https://developer.mozilla.org/docs/Web/CSS/text-overflow) */
-  textOverflow: string | Ref<string> | any;
+  textOverflow: string | Ref<string>;
   /** [MDN Reference](https://developer.mozilla.org/docs/Web/CSS/text-rendering) */
-  textRendering: string | Ref<string> | any;
+  textRendering: string | Ref<string>;
   /** [MDN Reference](https://developer.mozilla.org/docs/Web/CSS/text-shadow) */
-  textShadow: string | Ref<string> | any;
+  textShadow: string | Ref<string>;
   /** [MDN Reference](https://developer.mozilla.org/docs/Web/CSS/text-transform) */
-  textTransform: string | Ref<string> | any;
+  textTransform: string | Ref<string>;
   /** [MDN Reference](https://developer.mozilla.org/docs/Web/CSS/text-underline-offset) */
-  textUnderlineOffset: string | Ref<string> | any;
+  textUnderlineOffset: string | Ref<string>;
   /** [MDN Reference](https://developer.mozilla.org/docs/Web/CSS/text-underline-position) */
-  textUnderlinePosition: string | Ref<string> | any;
+  textUnderlinePosition: string | Ref<string>;
   /** [MDN Reference](https://developer.mozilla.org/docs/Web/CSS/top) */
-  top: string | Ref<string> | any;
+  top: string | Ref<string>;
   /** [MDN Reference](https://developer.mozilla.org/docs/Web/CSS/touch-action) */
-  touchAction: string | Ref<string> | any;
+  touchAction: string | Ref<string>;
   /** [MDN Reference](https://developer.mozilla.org/docs/Web/CSS/transform) */
-  transform: string | Ref<string> | any;
+  transform: string | Ref<string>;
   /** [MDN Reference](https://developer.mozilla.org/docs/Web/CSS/transform-box) */
-  transformBox: string | Ref<string> | any;
+  transformBox: string | Ref<string>;
   /** [MDN Reference](https://developer.mozilla.org/docs/Web/CSS/transform-origin) */
-  transformOrigin: string | Ref<string> | any;
+  transformOrigin: string | Ref<string>;
   /** [MDN Reference](https://developer.mozilla.org/docs/Web/CSS/transform-style) */
-  transformStyle: string | Ref<string> | any;
+  transformStyle: string | Ref<string>;
   /** [MDN Reference](https://developer.mozilla.org/docs/Web/CSS/transition) */
-  transition: string | Ref<string> | any;
+  transition: string | Ref<string>;
   /** [MDN Reference](https://developer.mozilla.org/docs/Web/CSS/transition-delay) */
-  transitionDelay: string | Ref<string> | any;
+  transitionDelay: string | Ref<string>;
   /** [MDN Reference](https://developer.mozilla.org/docs/Web/CSS/transition-duration) */
-  transitionDuration: string | Ref<string> | any;
+  transitionDuration: string | Ref<string>;
   /** [MDN Reference](https://developer.mozilla.org/docs/Web/CSS/transition-property) */
-  transitionProperty: string | Ref<string> | any;
+  transitionProperty: string | Ref<string>;
   /** [MDN Reference](https://developer.mozilla.org/docs/Web/CSS/transition-timing-function) */
-  transitionTimingFunction: string | Ref<string> | any;
+  transitionTimingFunction: string | Ref<string>;
   /** [MDN Reference](https://developer.mozilla.org/docs/Web/CSS/translate) */
-  translate: string | Ref<string> | any;
+  translate: string | Ref<string>;
   /** [MDN Reference](https://developer.mozilla.org/docs/Web/CSS/unicode-bidi) */
-  unicodeBidi: string | Ref<string> | any;
+  unicodeBidi: string | Ref<string>;
   /** [MDN Reference](https://developer.mozilla.org/docs/Web/CSS/user-select) */
-  userSelect: string | Ref<string> | any;
+  userSelect: string | Ref<string>;
   /** [MDN Reference](https://developer.mozilla.org/docs/Web/CSS/vertical-align) */
-  verticalAlign: string | Ref<string> | any;
+  verticalAlign: string | Ref<string>;
   /** [MDN Reference](https://developer.mozilla.org/docs/Web/CSS/visibility) */
-  visibility: string | Ref<string> | any;
+  visibility: string | Ref<string>;
   /**
    * @deprecated This is a legacy alias of `alignContent`.
    *
    * [MDN Reference](https://developer.mozilla.org/docs/Web/CSS/align-content)
    */
-  webkitAlignContent: string | Ref<string> | any;
+  webkitAlignContent: string | Ref<string>;
   /**
    * @deprecated This is a legacy alias of `alignItems`.
    *
    * [MDN Reference](https://developer.mozilla.org/docs/Web/CSS/align-items)
    */
-  webkitAlignItems: string | Ref<string> | any;
+  webkitAlignItems: string | Ref<string>;
   /**
    * @deprecated This is a legacy alias of `alignSelf`.
    *
    * [MDN Reference](https://developer.mozilla.org/docs/Web/CSS/align-self)
    */
-  webkitAlignSelf: string | Ref<string> | any;
+  webkitAlignSelf: string | Ref<string>;
   /**
    * @deprecated This is a legacy alias of `animation`.
    *
    * [MDN Reference](https://developer.mozilla.org/docs/Web/CSS/animation)
    */
-  webkitAnimation: string | Ref<string> | any;
+  webkitAnimation: string | Ref<string>;
   /**
    * @deprecated This is a legacy alias of `animationDelay`.
    *
    * [MDN Reference](https://developer.mozilla.org/docs/Web/CSS/animation-delay)
    */
-  webkitAnimationDelay: string | Ref<string> | any;
+  webkitAnimationDelay: string | Ref<string>;
   /**
    * @deprecated This is a legacy alias of `animationDirection`.
    *
    * [MDN Reference](https://developer.mozilla.org/docs/Web/CSS/animation-direction)
    */
-  webkitAnimationDirection: string | Ref<string> | any;
+  webkitAnimationDirection: string | Ref<string>;
   /**
    * @deprecated This is a legacy alias of `animationDuration`.
    *
    * [MDN Reference](https://developer.mozilla.org/docs/Web/CSS/animation-duration)
    */
-  webkitAnimationDuration: string | Ref<string> | any;
+  webkitAnimationDuration: string | Ref<string>;
   /**
    * @deprecated This is a legacy alias of `animationFillMode`.
    *
    * [MDN Reference](https://developer.mozilla.org/docs/Web/CSS/animation-fill-mode)
    */
-  webkitAnimationFillMode: string | Ref<string> | any;
+  webkitAnimationFillMode: string | Ref<string>;
   /**
    * @deprecated This is a legacy alias of `animationIterationCount`.
    *
    * [MDN Reference](https://developer.mozilla.org/docs/Web/CSS/animation-iteration-count)
    */
-  webkitAnimationIterationCount: string | Ref<string> | any;
+  webkitAnimationIterationCount: string | Ref<string>;
   /**
    * @deprecated This is a legacy alias of `animationName`.
    *
    * [MDN Reference](https://developer.mozilla.org/docs/Web/CSS/animation-name)
    */
-  webkitAnimationName: string | Ref<string> | any;
+  webkitAnimationName: string | Ref<string>;
   /**
    * @deprecated This is a legacy alias of `animationPlayState`.
    *
    * [MDN Reference](https://developer.mozilla.org/docs/Web/CSS/animation-play-state)
    */
-  webkitAnimationPlayState: string | Ref<string> | any;
+  webkitAnimationPlayState: string | Ref<string>;
   /**
    * @deprecated This is a legacy alias of `animationTimingFunction`.
    *
    * [MDN Reference](https://developer.mozilla.org/docs/Web/CSS/animation-timing-function)
    */
-  webkitAnimationTimingFunction: string | Ref<string> | any;
+  webkitAnimationTimingFunction: string | Ref<string>;
   /**
    * @deprecated This is a legacy alias of `appearance`.
    *
    * [MDN Reference](https://developer.mozilla.org/docs/Web/CSS/appearance)
    */
-  webkitAppearance: string | Ref<string> | any;
+  webkitAppearance: string | Ref<string>;
   /**
    * @deprecated This is a legacy alias of `backfaceVisibility`.
    *
    * [MDN Reference](https://developer.mozilla.org/docs/Web/CSS/backface-visibility)
    */
-  webkitBackfaceVisibility: string | Ref<string> | any;
+  webkitBackfaceVisibility: string | Ref<string>;
   /**
    * @deprecated This is a legacy alias of `backgroundClip`.
    *
    * [MDN Reference](https://developer.mozilla.org/docs/Web/CSS/background-clip)
    */
-  webkitBackgroundClip: string | Ref<string> | any;
+  webkitBackgroundClip: string | Ref<string>;
   /**
    * @deprecated This is a legacy alias of `backgroundOrigin`.
    *
    * [MDN Reference](https://developer.mozilla.org/docs/Web/CSS/background-origin)
    */
-  webkitBackgroundOrigin: string | Ref<string> | any;
+  webkitBackgroundOrigin: string | Ref<string>;
   /**
    * @deprecated This is a legacy alias of `backgroundSize`.
    *
    * [MDN Reference](https://developer.mozilla.org/docs/Web/CSS/background-size)
    */
-  webkitBackgroundSize: string | Ref<string> | any;
+  webkitBackgroundSize: string | Ref<string>;
   /**
    * @deprecated This is a legacy alias of `borderBottomLeftRadius`.
    *
    * [MDN Reference](https://developer.mozilla.org/docs/Web/CSS/border-bottom-left-radius)
    */
-  webkitBorderBottomLeftRadius: string | Ref<string> | any;
+  webkitBorderBottomLeftRadius: string | Ref<string>;
   /**
    * @deprecated This is a legacy alias of `borderBottomRightRadius`.
    *
    * [MDN Reference](https://developer.mozilla.org/docs/Web/CSS/border-bottom-right-radius)
    */
-  webkitBorderBottomRightRadius: string | Ref<string> | any;
+  webkitBorderBottomRightRadius: string | Ref<string>;
   /**
    * @deprecated This is a legacy alias of `borderRadius`.
    *
    * [MDN Reference](https://developer.mozilla.org/docs/Web/CSS/border-radius)
    */
-  webkitBorderRadius: string | Ref<string> | any;
+  webkitBorderRadius: string | Ref<string>;
   /**
    * @deprecated This is a legacy alias of `borderTopLeftRadius`.
    *
    * [MDN Reference](https://developer.mozilla.org/docs/Web/CSS/border-top-left-radius)
    */
-  webkitBorderTopLeftRadius: string | Ref<string> | any;
+  webkitBorderTopLeftRadius: string | Ref<string>;
   /**
    * @deprecated This is a legacy alias of `borderTopRightRadius`.
    *
    * [MDN Reference](https://developer.mozilla.org/docs/Web/CSS/border-top-right-radius)
    */
-  webkitBorderTopRightRadius: string | Ref<string> | any;
+  webkitBorderTopRightRadius: string | Ref<string>;
   /**
    * @deprecated This is a legacy alias of `boxAlign`.
    *
    * [MDN Reference](https://developer.mozilla.org/docs/Web/CSS/box-align)
    */
-  webkitBoxAlign: string | Ref<string> | any;
+  webkitBoxAlign: string | Ref<string>;
   /**
    * @deprecated This is a legacy alias of `boxFlex`.
    *
    * [MDN Reference](https://developer.mozilla.org/docs/Web/CSS/box-flex)
    */
-  webkitBoxFlex: string | Ref<string> | any;
+  webkitBoxFlex: string | Ref<string>;
   /**
    * @deprecated This is a legacy alias of `boxOrdinalGroup`.
    *
    * [MDN Reference](https://developer.mozilla.org/docs/Web/CSS/box-ordinal-group)
    */
-  webkitBoxOrdinalGroup: string | Ref<string> | any;
+  webkitBoxOrdinalGroup: string | Ref<string>;
   /**
    * @deprecated This is a legacy alias of `boxOrient`.
    *
    * [MDN Reference](https://developer.mozilla.org/docs/Web/CSS/box-orient)
    */
-  webkitBoxOrient: string | Ref<string> | any;
+  webkitBoxOrient: string | Ref<string>;
   /**
    * @deprecated This is a legacy alias of `boxPack`.
    *
    * [MDN Reference](https://developer.mozilla.org/docs/Web/CSS/box-pack)
    */
-  webkitBoxPack: string | Ref<string> | any;
+  webkitBoxPack: string | Ref<string>;
   /**
    * @deprecated This is a legacy alias of `boxShadow`.
    *
    * [MDN Reference](https://developer.mozilla.org/docs/Web/CSS/box-shadow)
    */
-  webkitBoxShadow: string | Ref<string> | any;
+  webkitBoxShadow: string | Ref<string>;
   /**
    * @deprecated This is a legacy alias of `boxSizing`.
    *
    * [MDN Reference](https://developer.mozilla.org/docs/Web/CSS/box-sizing)
    */
-  webkitBoxSizing: string | Ref<string> | any;
+  webkitBoxSizing: string | Ref<string>;
   /**
    * @deprecated This is a legacy alias of `filter`.
    *
    * [MDN Reference](https://developer.mozilla.org/docs/Web/CSS/filter)
    */
-  webkitFilter: string | Ref<string> | any;
+  webkitFilter: string | Ref<string>;
   /**
    * @deprecated This is a legacy alias of `flex`.
    *
    * [MDN Reference](https://developer.mozilla.org/docs/Web/CSS/flex)
    */
-  webkitFlex: string | Ref<string> | any;
+  webkitFlex: string | Ref<string>;
   /**
    * @deprecated This is a legacy alias of `flexBasis`.
    *
    * [MDN Reference](https://developer.mozilla.org/docs/Web/CSS/flex-basis)
    */
-  webkitFlexBasis: string | Ref<string> | any;
+  webkitFlexBasis: string | Ref<string>;
   /**
    * @deprecated This is a legacy alias of `flexDirection`.
    *
    * [MDN Reference](https://developer.mozilla.org/docs/Web/CSS/flex-direction)
    */
-  webkitFlexDirection: string | Ref<string> | any;
+  webkitFlexDirection: string | Ref<string>;
   /**
    * @deprecated This is a legacy alias of `flexFlow`.
    *
    * [MDN Reference](https://developer.mozilla.org/docs/Web/CSS/flex-flow)
    */
-  webkitFlexFlow: string | Ref<string> | any;
+  webkitFlexFlow: string | Ref<string>;
   /**
    * @deprecated This is a legacy alias of `flexGrow`.
    *
    * [MDN Reference](https://developer.mozilla.org/docs/Web/CSS/flex-grow)
    */
-  webkitFlexGrow: string | Ref<string> | any;
+  webkitFlexGrow: string | Ref<string>;
   /**
    * @deprecated This is a legacy alias of `flexShrink`.
    *
    * [MDN Reference](https://developer.mozilla.org/docs/Web/CSS/flex-shrink)
    */
-  webkitFlexShrink: string | Ref<string> | any;
+  webkitFlexShrink: string | Ref<string>;
   /**
    * @deprecated This is a legacy alias of `flexWrap`.
    *
    * [MDN Reference](https://developer.mozilla.org/docs/Web/CSS/flex-wrap)
    */
-  webkitFlexWrap: string | Ref<string> | any;
+  webkitFlexWrap: string | Ref<string>;
   /**
    * @deprecated This is a legacy alias of `justifyContent`.
    *
    * [MDN Reference](https://developer.mozilla.org/docs/Web/CSS/justify-content)
    */
-  webkitJustifyContent: string | Ref<string> | any;
+  webkitJustifyContent: string | Ref<string>;
   /** [MDN Reference](https://developer.mozilla.org/docs/Web/CSS/-webkit-line-clamp) */
-  webkitLineClamp: string | Ref<string> | any;
+  webkitLineClamp: string | Ref<string>;
   /**
    * @deprecated This is a legacy alias of `mask`.
    *
    * [MDN Reference](https://developer.mozilla.org/docs/Web/CSS/mask)
    */
-  webkitMask: string | Ref<string> | any;
+  webkitMask: string | Ref<string>;
   /**
    * @deprecated This is a legacy alias of `maskBorder`.
    *
    * [MDN Reference](https://developer.mozilla.org/docs/Web/CSS/mask-border)
    */
-  webkitMaskBoxImage: string | Ref<string> | any;
+  webkitMaskBoxImage: string | Ref<string>;
   /**
    * @deprecated This is a legacy alias of `maskBorderOutset`.
    *
    * [MDN Reference](https://developer.mozilla.org/docs/Web/CSS/mask-border-outset)
    */
-  webkitMaskBoxImageOutset: string | Ref<string> | any;
+  webkitMaskBoxImageOutset: string | Ref<string>;
   /**
    * @deprecated This is a legacy alias of `maskBorderRepeat`.
    *
    * [MDN Reference](https://developer.mozilla.org/docs/Web/CSS/mask-border-repeat)
    */
-  webkitMaskBoxImageRepeat: string | Ref<string> | any;
+  webkitMaskBoxImageRepeat: string | Ref<string>;
   /**
    * @deprecated This is a legacy alias of `maskBorderSlice`.
    *
    * [MDN Reference](https://developer.mozilla.org/docs/Web/CSS/mask-border-slice)
    */
-  webkitMaskBoxImageSlice: string | Ref<string> | any;
+  webkitMaskBoxImageSlice: string | Ref<string>;
   /**
    * @deprecated This is a legacy alias of `maskBorderSource`.
    *
    * [MDN Reference](https://developer.mozilla.org/docs/Web/CSS/mask-border-source)
    */
-  webkitMaskBoxImageSource: string | Ref<string> | any;
+  webkitMaskBoxImageSource: string | Ref<string>;
   /**
    * @deprecated This is a legacy alias of `maskBorderWidth`.
    *
    * [MDN Reference](https://developer.mozilla.org/docs/Web/CSS/mask-border-width)
    */
-  webkitMaskBoxImageWidth: string | Ref<string> | any;
+  webkitMaskBoxImageWidth: string | Ref<string>;
   /**
    * @deprecated This is a legacy alias of `maskClip`.
    *
    * [MDN Reference](https://developer.mozilla.org/docs/Web/CSS/mask-clip)
    */
-  webkitMaskClip: string | Ref<string> | any;
+  webkitMaskClip: string | Ref<string>;
   /** [MDN Reference](https://developer.mozilla.org/docs/Web/CSS/-webkit-mask-composite) */
-  webkitMaskComposite: string | Ref<string> | any;
+  webkitMaskComposite: string | Ref<string>;
   /**
    * @deprecated This is a legacy alias of `maskImage`.
    *
    * [MDN Reference](https://developer.mozilla.org/docs/Web/CSS/mask-image)
    */
-  webkitMaskImage: string | Ref<string> | any;
+  webkitMaskImage: string | Ref<string>;
   /**
    * @deprecated This is a legacy alias of `maskOrigin`.
    *
    * [MDN Reference](https://developer.mozilla.org/docs/Web/CSS/mask-origin)
    */
-  webkitMaskOrigin: string | Ref<string> | any;
+  webkitMaskOrigin: string | Ref<string>;
   /**
    * @deprecated This is a legacy alias of `maskPosition`.
    *
    * [MDN Reference](https://developer.mozilla.org/docs/Web/CSS/mask-position)
    */
-  webkitMaskPosition: string | Ref<string> | any;
+  webkitMaskPosition: string | Ref<string>;
   /**
    * @deprecated This is a legacy alias of `maskRepeat`.
    *
    * [MDN Reference](https://developer.mozilla.org/docs/Web/CSS/mask-repeat)
    */
-  webkitMaskRepeat: string | Ref<string> | any;
+  webkitMaskRepeat: string | Ref<string>;
   /**
    * @deprecated This is a legacy alias of `maskSize`.
    *
    * [MDN Reference](https://developer.mozilla.org/docs/Web/CSS/mask-size)
    */
-  webkitMaskSize: string | Ref<string> | any;
+  webkitMaskSize: string | Ref<string>;
   /**
    * @deprecated This is a legacy alias of `order`.
    *
    * [MDN Reference](https://developer.mozilla.org/docs/Web/CSS/order)
    */
-  webkitOrder: string | Ref<string> | any;
+  webkitOrder: string | Ref<string>;
   /**
    * @deprecated This is a legacy alias of `perspective`.
    *
    * [MDN Reference](https://developer.mozilla.org/docs/Web/CSS/perspective)
    */
-  webkitPerspective: string | Ref<string> | any;
+  webkitPerspective: string | Ref<string>;
   /**
    * @deprecated This is a legacy alias of `perspectiveOrigin`.
    *
    * [MDN Reference](https://developer.mozilla.org/docs/Web/CSS/perspective-origin)
    */
-  webkitPerspectiveOrigin: string | Ref<string> | any;
+  webkitPerspectiveOrigin: string | Ref<string>;
   /** [MDN Reference](https://developer.mozilla.org/docs/Web/CSS/-webkit-text-fill-color) */
-  webkitTextFillColor: string | Ref<string> | any;
+  webkitTextFillColor: string | Ref<string>;
   /**
    * @deprecated This is a legacy alias of `textSizeAdjust`.
    *
    * [MDN Reference](https://developer.mozilla.org/docs/Web/CSS/text-size-adjust)
    */
-  webkitTextSizeAdjust: string | Ref<string> | any;
+  webkitTextSizeAdjust: string | Ref<string>;
   /** [MDN Reference](https://developer.mozilla.org/docs/Web/CSS/-webkit-text-stroke) */
-  webkitTextStroke: string | Ref<string> | any;
+  webkitTextStroke: string | Ref<string>;
   /** [MDN Reference](https://developer.mozilla.org/docs/Web/CSS/-webkit-text-stroke-color) */
-  webkitTextStrokeColor: string | Ref<string> | any;
+  webkitTextStrokeColor: string | Ref<string>;
   /** [MDN Reference](https://developer.mozilla.org/docs/Web/CSS/-webkit-text-stroke-width) */
-  webkitTextStrokeWidth: string | Ref<string> | any;
+  webkitTextStrokeWidth: string | Ref<string>;
   /**
    * @deprecated This is a legacy alias of `transform`.
    *
    * [MDN Reference](https://developer.mozilla.org/docs/Web/CSS/transform)
    */
-  webkitTransform: string | Ref<string> | any;
+  webkitTransform: string | Ref<string>;
   /**
    * @deprecated This is a legacy alias of `transformOrigin`.
    *
    * [MDN Reference](https://developer.mozilla.org/docs/Web/CSS/transform-origin)
    */
-  webkitTransformOrigin: string | Ref<string> | any;
+  webkitTransformOrigin: string | Ref<string>;
   /**
    * @deprecated This is a legacy alias of `transformStyle`.
    *
    * [MDN Reference](https://developer.mozilla.org/docs/Web/CSS/transform-style)
    */
-  webkitTransformStyle: string | Ref<string> | any;
+  webkitTransformStyle: string | Ref<string>;
   /**
    * @deprecated This is a legacy alias of `transition`.
    *
    * [MDN Reference](https://developer.mozilla.org/docs/Web/CSS/transition)
    */
-  webkitTransition: string | Ref<string> | any;
+  webkitTransition: string | Ref<string>;
   /**
    * @deprecated This is a legacy alias of `transitionDelay`.
    *
    * [MDN Reference](https://developer.mozilla.org/docs/Web/CSS/transition-delay)
    */
-  webkitTransitionDelay: string | Ref<string> | any;
+  webkitTransitionDelay: string | Ref<string>;
   /**
    * @deprecated This is a legacy alias of `transitionDuration`.
    *
    * [MDN Reference](https://developer.mozilla.org/docs/Web/CSS/transition-duration)
    */
-  webkitTransitionDuration: string | Ref<string> | any;
+  webkitTransitionDuration: string | Ref<string>;
   /**
    * @deprecated This is a legacy alias of `transitionProperty`.
    *
    * [MDN Reference](https://developer.mozilla.org/docs/Web/CSS/transition-property)
    */
-  webkitTransitionProperty: string | Ref<string> | any;
+  webkitTransitionProperty: string | Ref<string>;
   /**
    * @deprecated This is a legacy alias of `transitionTimingFunction`.
    *
    * [MDN Reference](https://developer.mozilla.org/docs/Web/CSS/transition-timing-function)
    */
-  webkitTransitionTimingFunction: string | Ref<string> | any;
+  webkitTransitionTimingFunction: string | Ref<string>;
   /**
    * @deprecated This is a legacy alias of `userSelect`.
    *
    * [MDN Reference](https://developer.mozilla.org/docs/Web/CSS/user-select)
    */
-  webkitUserSelect: string | Ref<string> | any;
+  webkitUserSelect: string | Ref<string>;
   /** [MDN Reference](https://developer.mozilla.org/docs/Web/CSS/white-space) */
-  whiteSpace: string | Ref<string> | any;
+  whiteSpace: string | Ref<string>;
   /** [MDN Reference](https://developer.mozilla.org/docs/Web/CSS/widows) */
-  widows: string | Ref<string> | any;
+  widows: string | Ref<string>;
   /** [MDN Reference](https://developer.mozilla.org/docs/Web/CSS/width) */
-  width: string | Ref<string> | any;
+  width: string | Ref<string>;
   /** [MDN Reference](https://developer.mozilla.org/docs/Web/CSS/will-change) */
-  willChange: string | Ref<string> | any;
+  willChange: string | Ref<string>;
   /** [MDN Reference](https://developer.mozilla.org/docs/Web/CSS/word-break) */
-  wordBreak: string | Ref<string> | any;
+  wordBreak: string | Ref<string>;
   /** [MDN Reference](https://developer.mozilla.org/docs/Web/CSS/word-spacing) */
-  wordSpacing: string | Ref<string> | any;
+  wordSpacing: string | Ref<string>;
   /**
    * @deprecated
    *
    * [MDN Reference](https://developer.mozilla.org/docs/Web/CSS/overflow-wrap)
    */
-  wordWrap: string | Ref<string> | any;
+  wordWrap: string | Ref<string>;
   /** [MDN Reference](https://developer.mozilla.org/docs/Web/CSS/writing-mode) */
-  writingMode: string | Ref<string> | any;
+  writingMode: string | Ref<string>;
   /** [MDN Reference](https://developer.mozilla.org/docs/Web/CSS/z-index) */
-  zIndex: string | Ref<string> | any;
+  zIndex: string | Ref<string>;
   /** [MDN Reference](https://developer.mozilla.org/docs/Web/API/CSSStyleDeclaration/getPropertyPriority) */
-  getPropertyPriority(property: string): string | Ref<string> | any;
+  getPropertyPriority(property: string): string | Ref<string>;
   /** [MDN Reference](https://developer.mozilla.org/docs/Web/API/CSSStyleDeclaration/getPropertyValue) */
-  getPropertyValue(property: string): string | Ref<string> | any;
+  getPropertyValue(property: string): string | Ref<string>;
   /** [MDN Reference](https://developer.mozilla.org/docs/Web/API/CSSStyleDeclaration/item) */
-  item(index: number): string | Ref<string> | any;
+  item(index: number): string | Ref<string>;
   /** [MDN Reference](https://developer.mozilla.org/docs/Web/API/CSSStyleDeclaration/removeProperty) */
-  removeProperty(property: string): string | Ref<string> | any;
+  removeProperty(property: string): string | Ref<string>;
   /** [MDN Reference](https://developer.mozilla.org/docs/Web/API/CSSStyleDeclaration/setProperty) */
   setProperty(
     property: string,
     value: string | Ref<string> | null,
     priority?: string,
   ): void;
-  [index: number]: string | Ref<string> | any;
+  [index: number]: string | Ref<string>;
 
   hasOwnProperty?(key: string): boolean;
 }
@@ -3046,30 +3045,30 @@ declare var CSSStyleDeclarationRef: {
 
 export class CSSStyleRef implements CSSStyleDeclarationRef {
   [index: number]: any;
-  private _style: CSSStyleDeclaration | any;
+  private _style: CSSStyleDeclaration;
   private styleRefMap = new Map<
     string,
     { data: { ref: any; name: string }; ref: Ref<any> }
   >();
 
-  private setStyleRefMap(value: string, ref: Ref<any>) {
-    let oldRef = this.styleRefMap.get(value);
+  private setStyleRefMap(propertyKey: string, ref: Ref<any>) {
+    let oldRef = this.styleRefMap.get(propertyKey);
     if (oldRef) oldRef.ref.unsubscribe(oldRef.data);
-    else oldRef = { data: { ref: this._style, name: value }, ref: ref };
-    ref.subscriber(oldRef.data);
+    else oldRef = { data: { ref: this._style, name: propertyKey }, ref: ref };
+    ref.subscriber(this._style, propertyKey);
   }
 
-  public appendStyleRef(value: string, element: any, ref: Ref<any>) {
-    let oldRef = this.styleRefMap.get(value);
+  public appendStyleRef(propertyKey: string, element: any, ref: Ref<any>) {
+    let oldRef = this.styleRefMap.get(propertyKey);
     if (oldRef) oldRef.ref.unsubscribe(oldRef.data);
-    else oldRef = { data: { ref: element, name: value }, ref: ref };
-    ref.subscriber(oldRef.data);
+    else oldRef = { data: { ref: element, name: propertyKey }, ref: ref };
+    ref.subscriber(this._style, propertyKey);
   }
 
   public disconnectedCallback() {
-    this.styleRefMap.forEach((value) => {
-      value.ref.unsubscribe(value.data);
-    });
+    // this.styleRefMap.forEach((value) => {
+    //   value.ref.unsubscribe(value.data);
+    // });
   }
 
   constructor(style: CSSStyleDeclaration) {
@@ -7435,15 +7434,22 @@ export class CSSStyleRef implements CSSStyleDeclarationRef {
     else this._style.zIndex = value as any;
   }
 
+  // @ts-ignore
   getPropertyPriority(property: string) {
     this._style.getPropertyPriority(property);
   }
+  // @ts-ignore
+
   getPropertyValue(property: string) {
     this._style.getPropertyValue(property);
   }
+
+  // @ts-ignore
   item(index: number) {
     this._style.item(index);
   }
+
+  // @ts-ignore
   removeProperty(property: string) {
     if (this.styleRefMap.has(property)) {
       const data = this.styleRefMap.get(property);

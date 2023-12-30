@@ -29,5 +29,5 @@ export class DropdownElement extends Component {
     // }
   }
 }
-
+// @ts-ignore
 customElements.define("dropdown-element", DropdownElement);

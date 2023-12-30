@@ -46,6 +46,7 @@ export class SelectBox<T = any> extends TextFieldElement {
       }, 100);
     });
     if (data?.itemValue) this.itemValue = data.itemValue;
+    // @ts-ignore
     Component.setVariant(this.options, data?.variant);
     console.log(this.itemValue);
   }
@@ -89,5 +90,5 @@ export class SelectBox<T = any> extends TextFieldElement {
     return this._options;
   }
 }
-
+// @ts-ignore
 customElements.define("select-box", SelectBox);

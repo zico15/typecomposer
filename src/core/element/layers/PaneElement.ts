@@ -21,5 +21,5 @@ export class PaneElement extends Component {
     return this.___element_pane__.style;
   }
 }
-
+// @ts-ignore
 customElements.define("pane-element", PaneElement);

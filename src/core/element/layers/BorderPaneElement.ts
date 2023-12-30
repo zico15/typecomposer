@@ -99,5 +99,5 @@ export class BorderPaneElement extends Component {
     this.appendChilds(this.top, this._center, this.bottom);
   }
 }
-
+// @ts-ignore
 customElements.define("border-pane", BorderPaneElement);

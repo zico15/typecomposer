@@ -36,6 +36,14 @@ export class CheckBox extends Component {
     });
   }
 
+  public get checked(): boolean {
+    return this.input.checked;
+  }
+
+  public set checked(value: boolean) {
+    this.input.checked = value;
+  }
+
   public get value(): string {
     return this._input.value;
   }
@@ -52,5 +60,5 @@ export class CheckBox extends Component {
     return this._label;
   }
 }
-
+// @ts-ignore
 customElements.define("check-box", CheckBox);

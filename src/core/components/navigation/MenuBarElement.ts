@@ -63,6 +63,7 @@ export class MenuBarElement extends Component {
     if (this._logo) this._logo.remove();
 
     if (typeof value === "string")
+      // @ts-ignore
       this._logo = new LabelElement({ text: value });
     else this._logo = value;
     this.logo.classList.add("logo");
@@ -90,5 +91,5 @@ export class MenuBarElement extends Component {
     this._ul.appendChild(li);
   }
 }
-
+// @ts-ignore
 customElements.define("menu-bar-element", MenuBarElement);

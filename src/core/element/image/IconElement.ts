@@ -29,6 +29,7 @@ export class IconElement extends Component {
   }
 
   get color(): string {
+    // @ts-ignore
     return this.style.color;
   }
 
@@ -36,5 +37,5 @@ export class IconElement extends Component {
     this.style.color = value;
   }
 }
-
+// @ts-ignore
 customElements.define("icon-element", IconElement);

@@ -13,7 +13,6 @@ class Router {
   private routes: Map<string, RoutePage> = new Map();
   private props: {} = {};
   private index: number = 0;
-  // public routePage: RoutePage | undefined = undefined;
   private routeLinks: RoutePage[] = [];
 
   private routeView: RouteView | undefined = undefined;
@@ -24,6 +23,7 @@ class Router {
       ev.preventDefault();
     };
     window.onpopstate = (ev) => {
+      console.log("popstate: ", window.location.pathname);
       this.loadPage(window.location.pathname);
       ev.preventDefault();
     };
@@ -43,11 +43,9 @@ class Router {
   }
 
   private async loadPage(pathname: string = window.location.pathname) {
-    console.log("loadPage: ", pathname);
     const { routePage, routeLinks } = await this.getRoutePage(pathname);
     this.routeLinks = routeLinks;
     this.index = 0;
-    console.log("routeLinks: ", this.routeLinks);
 
     if (routePage != undefined) {
       const page = new routePage.component();

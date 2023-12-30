@@ -81,5 +81,5 @@ export class ListElement<T = any> extends Component {
   public onSelectItem: (item: T) => void = () => {};
   public onUnselectItem: (item: T) => void = () => {};
 }
-
+// @ts-ignore
 customElements.define("list-element", ListElement);

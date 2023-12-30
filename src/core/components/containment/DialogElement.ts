@@ -1,6 +1,7 @@
 import { CardElement, Component, DataElement, DivElement } from "../../element";
 
 export class DialogElement extends Component {
+  // @ts-ignore
   private _content: HTMLElement = new CardElement({
     className: "content",
     width: "500px",
@@ -36,5 +37,5 @@ export class DialogElement extends Component {
     this.style.display = "none";
   }
 }
-
+// @ts-ignore
 customElements.define("dialog-element", DialogElement);

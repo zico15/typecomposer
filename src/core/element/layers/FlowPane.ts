@@ -43,5 +43,5 @@ export class FlowPane extends Component {
     this.addClassNameInChilds(element, flowType);
   }
 }
-
+// @ts-ignore
 customElements.define("flow-pane", FlowPane);

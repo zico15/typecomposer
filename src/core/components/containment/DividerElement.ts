@@ -14,5 +14,5 @@ export class DividerElement extends Component {
     Component.applyDate(data, this);
   }
 }
-
+// @ts-ignore
 customElements.define("divider-element", DividerElement);

@@ -25,6 +25,7 @@ export class TabElement extends Component {
     this.titleElement = new H4Element({
       text: title,
       padding: "0px 10px",
+      // @ts-ignore
       order: 1,
       margin: "0px",
     });
@@ -44,6 +45,7 @@ export class TabElement extends Component {
   set closeable(value: boolean) {
     this.__closeable = value;
     if (value && !this.closeIcon) {
+      // @ts-ignore
       this.closeIcon = new IconElement({ icon: "fa-thin fa-x", order: 2 });
       this.closeIcon.onclick = () => {
         console.log("close");
@@ -72,5 +74,5 @@ export class TabElement extends Component {
     return this._content;
   }
 }
-
+// @ts-ignore
 customElements.define("tab-element", TabElement);

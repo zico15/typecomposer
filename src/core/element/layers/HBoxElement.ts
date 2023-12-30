@@ -7,5 +7,5 @@ export class HBoxElement extends Component {
     this.addClasName("hbox");
   }
 }
-
+// @ts-ignore
 customElements.define("hbox-element", HBoxElement);

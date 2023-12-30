@@ -4,6 +4,7 @@ export interface DataToggleButton extends DataElement {}
 
 export class ToggleButton extends CheckBox {
   constructor(data?: DataToggleButton) {
+    // @ts-ignore
     super({ ...data, color: data?.color || undefined });
     this.input.classList.remove("checkbox");
     const labelColor = this.label.style.backgroundColor;
@@ -14,5 +15,5 @@ export class ToggleButton extends CheckBox {
     });
   }
 }
-
+// @ts-ignore
 customElements.define("toggle-button", ToggleButton);

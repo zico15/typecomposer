@@ -41,5 +41,5 @@ export class CardElement extends Component {
     this.__card_element_pane__.append(...nodes);
   }
 }
-
+// @ts-ignore
 customElements.define("card-element", CardElement);

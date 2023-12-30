@@ -1,4 +1,4 @@
-export class Ref<T> {
+export class Ref2<T> {
   private _id: string = Math.random().toString(36).substr(2, 9);
   private _subscribers: { ref: any; name: string; fun?: Function }[] = [];
   public proxy: any;
@@ -30,6 +30,8 @@ export class Ref<T> {
       };
     }
   }
+
+  destructor() {}
 
   private setData(target: any, prop: any, value: any) {
     this._subscribers.forEach((subscriber) => {

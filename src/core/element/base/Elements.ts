@@ -74,6 +74,8 @@ export class Component extends HTMLElement implements IComponent {
     if (data != undefined) this.setStyle(data);
   }
 
+  destructor() {}
+
   onInit(): void {}
   appendChilds(...childs: any[]): void {
     childs.forEach((child) => {
@@ -99,6 +101,7 @@ export class Component extends HTMLElement implements IComponent {
 
   // @ts-ignore
   get style(): CSSStyleDeclarationRef {
+    // @ts-ignore
     return this._styleRef;
   }
 
@@ -193,6 +196,7 @@ export class Component extends HTMLElement implements IComponent {
   }
 }
 
+// @ts-ignore
 customElements.define("component-element", Component, { extends: "div" });
 
 export class DivElement extends HTMLDivElement implements IComponent {
@@ -232,10 +236,12 @@ export class DivElement extends HTMLDivElement implements IComponent {
 
   // @ts-ignore
   get style(): CSSStyleDeclarationRef {
+    // @ts-ignore
     return this._styleRef;
   }
 }
 
+// @ts-ignore
 customElements.define("base-div-element", DivElement, { extends: "div" });
 
 export class ParagraphElement
@@ -266,10 +272,12 @@ export class ParagraphElement
 
   // @ts-ignore
   get style(): CSSStyleDeclarationRef {
+    // @ts-ignore
     return this._styleRef;
   }
 }
 
+// @ts-ignore
 customElements.define("base-p-element", ParagraphElement, { extends: "p" });
 
 export interface DataAnchorElement extends DataElement {
@@ -315,6 +323,7 @@ export class AnchorElement extends HTMLAnchorElement implements IComponent {
 
   // @ts-ignore
   get style(): CSSStyleDeclarationRef {
+    // @ts-ignore
     return this._styleRef;
   }
 
@@ -328,6 +337,7 @@ export class AnchorElement extends HTMLAnchorElement implements IComponent {
   }
 }
 
+// @ts-ignore
 customElements.define("base-a-element", AnchorElement, { extends: "a" });
 
 export interface DataImageElement extends DataElement {
@@ -361,10 +371,12 @@ export class ImageElement extends HTMLImageElement implements IComponent {
 
   // @ts-ignore
   get style(): CSSStyleDeclarationRef {
+    // @ts-ignore
     return this._styleRef;
   }
 }
 
+// @ts-ignore
 customElements.define("base-img-element", ImageElement, { extends: "img" });
 
 export class UListElement extends HTMLUListElement implements IComponent {
@@ -392,10 +404,12 @@ export class UListElement extends HTMLUListElement implements IComponent {
 
   // @ts-ignore
   get style(): CSSStyleDeclarationRef {
+    // @ts-ignore
     return this._styleRef;
   }
 }
 
+// @ts-ignore
 customElements.define("base-ul-element", UListElement, { extends: "ul" });
 
 export class OrderedListElement extends HTMLOListElement implements IComponent {
@@ -423,10 +437,12 @@ export class OrderedListElement extends HTMLOListElement implements IComponent {
 
   // @ts-ignore
   get style(): CSSStyleDeclarationRef {
+    // @ts-ignore
     return this._styleRef;
   }
 }
 
+// @ts-ignore
 customElements.define("base-ol-element", OrderedListElement, { extends: "ol" });
 
 export class ListItemElement extends HTMLLIElement implements IComponent {
@@ -456,10 +472,12 @@ export class ListItemElement extends HTMLLIElement implements IComponent {
 
   // @ts-ignore
   get style(): CSSStyleDeclarationRef {
+    // @ts-ignore
     return this._styleRef;
   }
 }
 
+// @ts-ignore
 customElements.define("base-li-element", ListItemElement, { extends: "li" });
 
 export class HeaderElement extends HTMLElement implements IComponent {
@@ -489,10 +507,12 @@ export class HeaderElement extends HTMLElement implements IComponent {
 
   // @ts-ignore
   get style(): CSSStyleDeclarationRef {
+    // @ts-ignore
     return this._styleRef;
   }
 }
 
+// @ts-ignore
 customElements.define("base-header-element", HeaderElement, {
   extends: "header",
 });
@@ -524,10 +544,12 @@ export class FooterElement extends HTMLElement implements IComponent {
 
   // @ts-ignore
   get style(): CSSStyleDeclarationRef {
+    // @ts-ignore
     return this._styleRef;
   }
 }
 
+// @ts-ignore
 customElements.define("base-footer-element", FooterElement, {
   extends: "footer",
 });
@@ -559,10 +581,12 @@ export class MainElement extends HTMLElement implements IComponent {
 
   // @ts-ignore
   get style(): CSSStyleDeclarationRef {
+    // @ts-ignore
     return this._styleRef;
   }
 }
 
+// @ts-ignore
 customElements.define("base-main-element", MainElement, { extends: "main" });
 
 export interface DataHeadingElement extends DataElement {
@@ -591,10 +615,12 @@ export class H1Element extends HTMLHeadingElement implements IComponent {
 
   // @ts-ignore
   get style(): CSSStyleDeclarationRef {
+    // @ts-ignore
     return this._styleRef;
   }
 }
 
+// @ts-ignore
 customElements.define("base-h1-element", H1Element, { extends: "h1" });
 
 export class H2Element extends HTMLHeadingElement implements IComponent {
@@ -618,10 +644,12 @@ export class H2Element extends HTMLHeadingElement implements IComponent {
 
   // @ts-ignore
   get style(): CSSStyleDeclarationRef {
+    // @ts-ignore
     return this._styleRef;
   }
 }
 
+// @ts-ignore
 customElements.define("base-h2-element", H2Element, { extends: "h2" });
 
 export class H3Element extends HTMLHeadingElement implements IComponent {
@@ -655,10 +683,12 @@ export class H3Element extends HTMLHeadingElement implements IComponent {
 
   // @ts-ignore
   get style(): CSSStyleDeclarationRef {
+    // @ts-ignore
     return this._styleRef;
   }
 }
 
+// @ts-ignore
 customElements.define("base-h3-element", H3Element, { extends: "h3" });
 
 export class H4Element extends H3Element implements IComponent {
@@ -679,6 +709,7 @@ export class H4Element extends H3Element implements IComponent {
   }
 }
 
+// @ts-ignore
 customElements.define("base-h4-element", H4Element, { extends: "h4" });
 
 export class H5Element extends H3Element implements IComponent {
@@ -699,6 +730,7 @@ export class H5Element extends H3Element implements IComponent {
   }
 }
 
+// @ts-ignore
 customElements.define("base-h5-element", H5Element, { extends: "h5" });
 
 export class H6Element extends H3Element implements IComponent {
@@ -719,6 +751,7 @@ export class H6Element extends H3Element implements IComponent {
   }
 }
 
+// @ts-ignore
 customElements.define("base-h6-element", H6Element, { extends: "h6" });
 
 export class SpanElement extends HTMLSpanElement implements IComponent {
@@ -742,10 +775,12 @@ export class SpanElement extends HTMLSpanElement implements IComponent {
 
   // @ts-ignore
   get style(): CSSStyleDeclarationRef {
+    // @ts-ignore
     return this._styleRef;
   }
 }
 
+// @ts-ignore
 customElements.define("base-span-element", SpanElement, { extends: "span" });
 
 export class StrongElement extends HTMLSpanElement implements IComponent {
@@ -769,10 +804,12 @@ export class StrongElement extends HTMLSpanElement implements IComponent {
 
   // @ts-ignore
   get style(): CSSStyleDeclarationRef {
+    // @ts-ignore
     return this._styleRef;
   }
 }
 
+// @ts-ignore
 customElements.define("base-strong-element", StrongElement, {
   extends: "strong",
 });
@@ -798,10 +835,12 @@ export class EmElement extends HTMLEmbedElement implements IComponent {
 
   // @ts-ignore
   get style(): CSSStyleDeclarationRef {
+    // @ts-ignore
     return this._styleRef;
   }
 }
 
+// @ts-ignore
 customElements.define("base-em-element", EmElement, { extends: "em" });
 
 export class BreakElement extends HTMLBRElement implements IComponent {
@@ -829,10 +868,12 @@ export class BreakElement extends HTMLBRElement implements IComponent {
 
   // @ts-ignore
   get style(): CSSStyleDeclarationRef {
+    // @ts-ignore
     return this._styleRef;
   }
 }
 
+// @ts-ignore
 customElements.define("base-br-element", BreakElement, { extends: "br" });
 
 export class HorizontalRuleElement extends HTMLHRElement implements IComponent {
@@ -860,10 +901,12 @@ export class HorizontalRuleElement extends HTMLHRElement implements IComponent {
 
   // @ts-ignore
   get style(): CSSStyleDeclarationRef {
+    // @ts-ignore
     return this._styleRef;
   }
 }
 
+// @ts-ignore
 customElements.define("base-hr-element", HorizontalRuleElement, {
   extends: "hr",
 });
@@ -893,10 +936,12 @@ export class TableElement extends HTMLTableElement implements IComponent {
 
   // @ts-ignore
   get style(): CSSStyleDeclarationRef {
+    // @ts-ignore
     return this._styleRef;
   }
 }
 
+// @ts-ignore
 customElements.define("base-table-element", TableElement, { extends: "table" });
 
 export class TableRowElement extends HTMLTableRowElement implements IComponent {
@@ -924,10 +969,12 @@ export class TableRowElement extends HTMLTableRowElement implements IComponent {
 
   // @ts-ignore
   get style(): CSSStyleDeclarationRef {
+    // @ts-ignore
     return this._styleRef;
   }
 }
 
+// @ts-ignore
 customElements.define("base-tr-element", TableRowElement, { extends: "tr" });
 
 export class FormElement extends HTMLFormElement implements IComponent {
@@ -955,10 +1002,12 @@ export class FormElement extends HTMLFormElement implements IComponent {
 
   // @ts-ignore
   get style(): CSSStyleDeclarationRef {
+    // @ts-ignore
     return this._styleRef;
   }
 }
 
+// @ts-ignore
 customElements.define("base-form-element", FormElement, { extends: "form" });
 
 export interface DataInputElement extends DataElement {
@@ -1015,16 +1064,22 @@ export class InputElement extends HTMLInputElement implements IComponent {
 
   // @ts-ignore
   get style(): CSSStyleDeclarationRef {
+    // @ts-ignore
     return this._styleRef;
   }
 }
 
+// @ts-ignore
 customElements.define("base-input-element", InputElement, { extends: "input" });
+
+export interface DataButtonElement extends DataHeadingElement {
+  onclick?: (event: MouseEvent) => void;
+}
 
 export class ButtonElement extends HTMLButtonElement implements IComponent {
   private _styleRef: CSSStyleRef = new CSSStyleRef(super.style);
 
-  constructor(data?: DataHeadingElement) {
+  constructor(data?: DataButtonElement) {
     super();
 
     Component.applyDate(data, this);
@@ -1046,17 +1101,20 @@ export class ButtonElement extends HTMLButtonElement implements IComponent {
 
   // @ts-ignore
   get style(): CSSStyleDeclarationRef {
+    // @ts-ignore
     return this._styleRef;
   }
 
-  set innerHTML(value: string | Ref<string> | any) {
+  // @ts-ignore
+  set innerHTML(value: string | Ref<string>) {
     if (value instanceof Ref) {
-      value.subscriber({ ref: this, name: "innerHTML" });
+      value.subscriber(this, "innerHTML");
       super.innerHTML = value.toString();
     } else super.innerHTML = value;
   }
 }
 
+// @ts-ignore
 customElements.define("base-button-element", ButtonElement, {
   extends: "button",
 });
@@ -1086,10 +1144,12 @@ export class TextAreaElement extends HTMLTextAreaElement implements IComponent {
 
   // @ts-ignore
   get style(): CSSStyleDeclarationRef {
+    // @ts-ignore
     return this._styleRef;
   }
 }
 
+// @ts-ignore
 customElements.define("base-textarea-element", TextAreaElement, {
   extends: "textarea",
 });
@@ -1118,10 +1178,12 @@ export class LabelElement extends HTMLLabelElement implements IComponent {
 
   // @ts-ignore
   get style(): CSSStyleDeclarationRef {
+    // @ts-ignore
     return this._styleRef;
   }
 }
 
+// @ts-ignore
 customElements.define("base-label-element", LabelElement, { extends: "label" });
 
 export class SelectElement extends HTMLSelectElement implements IComponent {
@@ -1149,10 +1211,12 @@ export class SelectElement extends HTMLSelectElement implements IComponent {
 
   // @ts-ignore
   get style(): CSSStyleDeclarationRef {
+    // @ts-ignore
     return this._styleRef;
   }
 }
 
+// @ts-ignore
 customElements.define("base-select-element", SelectElement, {
   extends: "select",
 });
@@ -1182,10 +1246,12 @@ export class IframeElement extends HTMLIFrameElement implements IComponent {
 
   // @ts-ignore
   get style(): CSSStyleDeclarationRef {
+    // @ts-ignore
     return this._styleRef;
   }
 }
 
+// @ts-ignore
 customElements.define("base-iframe-element", IframeElement, {
   extends: "iframe",
 });
@@ -1215,10 +1281,12 @@ export class AudioElement extends HTMLAudioElement implements IComponent {
 
   // @ts-ignore
   get style(): CSSStyleDeclarationRef {
+    // @ts-ignore
     return this._styleRef;
   }
 }
 
+// @ts-ignore
 customElements.define("base-audio-element", AudioElement, { extends: "audio" });
 
 export class VideoElement extends HTMLVideoElement implements IComponent {
@@ -1246,10 +1314,12 @@ export class VideoElement extends HTMLVideoElement implements IComponent {
 
   // @ts-ignore
   get style(): CSSStyleDeclarationRef {
+    // @ts-ignore
     return this._styleRef;
   }
 }
 
+// @ts-ignore
 customElements.define("base-video-element", VideoElement, { extends: "video" });
 
 export class CanvasElement extends HTMLCanvasElement implements IComponent {
@@ -1257,8 +1327,8 @@ export class CanvasElement extends HTMLCanvasElement implements IComponent {
 
   constructor(data?: DataElement) {
     super();
-    if (data?.width) this.width = data.width;
-    if (data?.height) this.height = data.height;
+    if (data?.width) this.width = data.width as any;
+    if (data?.height) this.height = data.height as any;
     Component.applyDate(data, this);
   }
 
@@ -1278,10 +1348,12 @@ export class CanvasElement extends HTMLCanvasElement implements IComponent {
 
   // @ts-ignore
   get style(): CSSStyleDeclarationRef {
+    // @ts-ignore
     return this._styleRef;
   }
 }
 
+// @ts-ignore
 customElements.define("base-canvas-element", CanvasElement, {
   extends: "canvas",
 });
@@ -1317,10 +1389,12 @@ export class NavElement extends HTMLElement implements IComponent {
 
   // @ts-ignore
   get style(): CSSStyleDeclarationRef {
+    // @ts-ignore
     return this._styleRef;
   }
 }
 
+// @ts-ignore
 customElements.define("base-nav-element", NavElement, { extends: "nav" });
 
 export class SectionElement extends HTMLElement implements IComponent {
@@ -1348,10 +1422,12 @@ export class SectionElement extends HTMLElement implements IComponent {
 
   // @ts-ignore
   get style(): CSSStyleDeclarationRef {
+    // @ts-ignore
     return this._styleRef;
   }
 }
 
+// @ts-ignore
 customElements.define("base-section-element", SectionElement, {
   extends: "section",
 });
@@ -1381,10 +1457,12 @@ export class ArticleElement extends HTMLElement implements IComponent {
 
   // @ts-ignore
   get style(): CSSStyleDeclarationRef {
+    // @ts-ignore
     return this._styleRef;
   }
 }
 
+// @ts-ignore
 customElements.define("base-article-element", ArticleElement, {
   extends: "article",
 });
@@ -1414,10 +1492,12 @@ export class SummaryElement extends HTMLElement implements IComponent {
 
   // @ts-ignore
   get style(): CSSStyleDeclarationRef {
+    // @ts-ignore
     return this._styleRef;
   }
 }
 
+// @ts-ignore
 customElements.define("base-summary-element", SummaryElement, {
   extends: "summary",
 });
@@ -1449,10 +1529,12 @@ export class DetailsElement extends HTMLElement implements IComponent {
 
   // @ts-ignore
   get style(): CSSStyleDeclarationRef {
+    // @ts-ignore
     return this._styleRef;
   }
 }
 
+// @ts-ignore
 customElements.define("base-details-element", DetailsElement, {
   extends: "details",
 });

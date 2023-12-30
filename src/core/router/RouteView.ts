@@ -6,10 +6,7 @@ export class RouteView extends Component {
   private _url: string = "";
   private routePage: RoutePage | undefined = undefined;
 
-  constructor(
-    public classParent: any,
-    data?: DataElement,
-  ) {
+  constructor(data?: DataElement) {
     super(data);
     router["routeView"] = this;
   }
@@ -19,27 +16,18 @@ export class RouteView extends Component {
   }
 
   connectedCallback() {
-    // console.log(
-    //   "RouteView.connectedCallback: ",
-    //   this,
-    //   " routePage: ",
-    //   router.routePage,
-    // );
     this.updateView();
   }
 
   private updateView() {
-    console.log("urlo:", window.location.href);
     this._url = window.location.pathname;
     const routePage = router["nextRoutePage"]();
-    console.log("routePage: ", routePage);
     if (routePage != undefined) {
       this.routePage = routePage;
       this.routePage["routeView"] = this;
       const routePageView = routePage.links?.find((link) =>
         this.url.includes(link.pathname),
       );
-      console.log("routePageView: ", routePageView);
       if (routePageView && routePageView.component) {
         const component: any = new routePageView.component();
         this.view = component;
@@ -48,8 +36,6 @@ export class RouteView extends Component {
   }
 
   disconnectedCallback() {
-    // router["routeView"] = undefined;
-    console.log("RouteView.disconnectedCallback: ", router["routeView"]);
     this.routePage["routeView"] = undefined;
   }
 
@@ -58,7 +44,6 @@ export class RouteView extends Component {
   }
 
   set view(value: IComponent | undefined) {
-    console.log("RouteView.set view: ", value);
     if (this._view != undefined) {
       this._view.remove();
     }
@@ -66,12 +51,12 @@ export class RouteView extends Component {
     if (value != undefined) {
       this.append(value);
     }
-    if (value != undefined) {
-      this.style.display = "contents";
-    } else {
-      this.style.removeProperty("display");
-    }
+    // if (value != undefined) {
+    //   this.style.display = "contents";
+    // } else {
+    //   this.style.removeProperty("display");
+    // }
   }
 }
-
+// @ts-ignore
 customElements.define("route-view", RouteView);

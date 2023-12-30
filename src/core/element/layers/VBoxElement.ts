@@ -7,5 +7,5 @@ export class VBoxElement extends Component {
     this.addClasName("vbox");
   }
 }
-
+// @ts-ignore
 customElements.define("vbox-element", VBoxElement);

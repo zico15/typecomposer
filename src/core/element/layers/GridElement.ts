@@ -21,5 +21,5 @@ export class GridElement extends Component {
     else this.style.gridTemplateRows = `repeat(${value}, auto)`;
   }
 }
-
+// @ts-ignore
 customElements.define("grid-element", GridElement);
