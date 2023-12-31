@@ -197,7 +197,7 @@ export class Component extends HTMLElement implements IComponent {
 }
 
 // @ts-ignore
-customElements.define("component-element", Component, { extends: "div" });
+customElements.define("component-element", Component);
 
 export class DivElement extends HTMLDivElement implements IComponent {
   private _styleRef: CSSStyleRef = new CSSStyleRef(super.style);
@@ -934,6 +934,12 @@ export class TableElement extends HTMLTableElement implements IComponent {
     this.classList.add(...names);
   }
 
+  addRow(...rows: TableRowElement[]) {
+    rows.forEach((row) => {
+      this.appendChild(row);
+    });
+  }
+
   // @ts-ignore
   get style(): CSSStyleDeclarationRef {
     // @ts-ignore
@@ -963,6 +969,7 @@ export class TableRowElement extends HTMLTableRowElement implements IComponent {
       } catch (error) {}
     });
   }
+
   addClasName(...names: string[]): void {
     this.classList.add(...names);
   }
@@ -972,10 +979,70 @@ export class TableRowElement extends HTMLTableRowElement implements IComponent {
     // @ts-ignore
     return this._styleRef;
   }
+
+  addCell(...cells: TableCellElement[]) {
+    cells.forEach((cell) => {
+      this.appendChild(cell);
+    });
+  }
 }
 
 // @ts-ignore
 customElements.define("base-tr-element", TableRowElement, { extends: "tr" });
+// TableColElement
+
+export class TableColElement extends HTMLTableColElement implements IComponent {
+  private _styleRef: CSSStyleRef = new CSSStyleRef(super.style);
+
+  constructor(data?: DataElement) {
+    super();
+    Component.applyDate(data, this);
+  }
+
+  onInit(): void {}
+  appendChilds(...childs: any[]): void {
+    throw new Error("Method not implemented.");
+  }
+  addClasName(...names: string[]): void {
+    this.classList.add(...names);
+  }
+  // @ts-ignore
+  get style(): CSSStyleDeclarationRef {
+    // @ts-ignore
+    return this._styleRef;
+  }
+}
+
+// @ts-ignore
+customElements.define("base-col-element", TableColElement, { extends: "col" });
+
+export class TableCellElement
+  extends HTMLTableCellElement
+  implements IComponent
+{
+  private _styleRef: CSSStyleRef = new CSSStyleRef(super.style);
+
+  constructor(data?: DataElement) {
+    super();
+    Component.applyDate(data, this);
+  }
+
+  onInit(): void {}
+  appendChilds(...childs: any[]): void {
+    throw new Error("Method not implemented.");
+  }
+  addClasName(...names: string[]): void {
+    this.classList.add(...names);
+  }
+  // @ts-ignore
+  get style(): CSSStyleDeclarationRef {
+    // @ts-ignore
+    return this._styleRef;
+  }
+}
+
+// @ts-ignore
+customElements.define("base-td-element", TableCellElement, { extends: "td" });
 
 export class FormElement extends HTMLFormElement implements IComponent {
   private _styleRef: CSSStyleRef = new CSSStyleRef(super.style);
