@@ -27,6 +27,7 @@ export class TextFieldElement extends Component {
     this._input = new InputElement({
       type: "text",
       height: "auto",
+      width: "100%",
       placeholder: " ",
     });
     this.appendChilds(this.input);
