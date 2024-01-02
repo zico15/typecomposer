@@ -1405,7 +1405,6 @@ customElements.define("base-details-element", DetailsElement, {
 });
 
 // <dfn>
-
 export class DefinitionElement extends HTMLElement implements IComponent {
   private _styleRef: CSSStyleRef = new CSSStyleRef(super.style);
 
