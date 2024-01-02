@@ -1,4 +1,4 @@
-import { Component, type DataElement } from "..";
+import { Component, type StyleOptional } from "..";
 
 export class DropdownElement extends Component {
   // @RefComponent({ id: "dropdown-button" })
@@ -10,8 +10,10 @@ export class DropdownElement extends Component {
 
   // private titleRef: Ref<string> = new Ref("");
 
-  constructor(data?: DataElement & { text: string; onclick?: () => void }) {
-    super(data);
+  constructor(
+    optional?: StyleOptional & { text: string; onclick?: () => void },
+  ) {
+    super(optional);
     this.addClasName("relative", "inline-block", "text-left");
   }
 

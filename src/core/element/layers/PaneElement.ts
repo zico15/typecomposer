@@ -1,13 +1,12 @@
-import { type DataElement, Component, DivElement } from "..";
-import { Register } from "../../decorators";
+import { type StyleOptional, DivElement, ILayout } from "..";
 import { CSSStyleDeclarationRef } from "../base/CSSStyle";
 
-export class PaneElement extends Component {
+export class PaneElement extends ILayout {
   private ___element_pane__: DivElement;
 
-  constructor(data?: DataElement) {
+  constructor(optional?: StyleOptional) {
     super();
-    this.___element_pane__ = new DivElement(data);
+    this.___element_pane__ = new DivElement(optional);
     super.appendChild(this.___element_pane__);
     this.addClasName("pane-element");
     this.___element_pane__.addClasName("pane");

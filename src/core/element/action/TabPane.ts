@@ -3,11 +3,11 @@ import {
   DivElement,
   IconElement,
   TabElement,
-  type DataElement,
+  type StyleOptional,
 } from "..";
 import { Register } from "../../decorators";
 
-export interface DataTabPane extends DataElement {
+export interface DataTabPane extends StyleOptional {
   type?: "min" | "max";
   closeable?: boolean;
   alignTab?: "left" | "right" | "center";
@@ -19,8 +19,8 @@ export class TabPane extends BorderPaneElement {
   private type: string = "min";
   private _closeable: boolean = false;
 
-  constructor(data?: DataTabPane) {
-    super(data);
+  constructor(optional?: DataTabPane) {
+    super(optional);
     this.addClasName("tab-pane");
     this.style.width = "100%";
     this.style.marginTop = "10px";
@@ -30,11 +30,12 @@ export class TabPane extends BorderPaneElement {
     this.top = this.tabs;
     this.center = new DivElement();
     this.center.classList.add("tab-pane-content");
-    if (data != undefined && data?.type != undefined) this.type = data.type;
-    if (data != undefined && data?.closeable != undefined)
-      this._closeable = data.closeable;
-    if (data != undefined && data?.alignTab != undefined)
-      this.tabs.style.justifyContent = data.alignTab;
+    if (optional != undefined && optional?.type != undefined)
+      this.type = optional.type;
+    if (optional != undefined && optional?.closeable != undefined)
+      this._closeable = optional.closeable;
+    if (optional != undefined && optional?.alignTab != undefined)
+      this.tabs.style.justifyContent = optional.alignTab;
   }
 
   public addTap(

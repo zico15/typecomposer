@@ -1,13 +1,12 @@
-import { type DataElement, Component, DivElement } from "..";
-import { Register } from "../../decorators";
+import { type StyleOptional, Component, DivElement } from "..";
 import { CSSStyleDeclarationRef } from "../base/CSSStyle";
 
 export class CardElement extends Component {
   private __card_element_pane__: DivElement;
 
-  constructor(data?: DataElement) {
+  constructor(optional?: StyleOptional) {
     super();
-    this.__card_element_pane__ = new DivElement(data);
+    this.__card_element_pane__ = new DivElement(optional);
     super.appendChild(this.__card_element_pane__);
     this.addClasName("card-element");
     this.__card_element_pane__.addClasName("card-pane");
@@ -15,11 +14,11 @@ export class CardElement extends Component {
 
   public static create(
     n: number,
-    data?: DataElement,
+    optional?: StyleOptional,
   ): { [key: string]: CardElement } {
     const cards: { [key: string]: CardElement } = {};
     for (let i = 0; i < n; i++) {
-      const card = new CardElement(data);
+      const card = new CardElement(optional);
       cards[`card${i + 1}`] = card;
     }
     return cards;

@@ -8,17 +8,14 @@ import {
 import { EventComponent, EventHandler } from "./Event";
 import { router } from "../..";
 
-export type Layout = "hbox" | "vbox" | "column" | "row";
-
-export interface DataElement extends CSSStyleDeclarationOptional {
+export interface StyleOptional extends CSSStyleDeclarationOptional {
   id?: string;
   className?: string;
-  layout?: Layout;
 }
 
 export interface IElement {
   onInit(): void;
-  appendChilds(...childs: any[]): void;
+  append(...childs: any[]): void;
   addClasName(...names: string[]): void;
   // @ts-ignore
   get style(): CSSStyleDeclarationRef;
@@ -28,7 +25,6 @@ export interface IElement {
 export interface IComponent extends HTMLElement {
   onInit(): void;
   unmount?(): void;
-  appendChilds(...childs: any[]): void;
   addClasName(...names: string[]): void;
   // @ts-ignore
   get style(): CSSStyleDeclarationRef;
@@ -69,29 +65,21 @@ export interface IComponent extends HTMLElement {
 export class Component extends HTMLElement implements IComponent {
   private _styleRef: CSSStyleRef = new CSSStyleRef(super.style);
 
-  constructor(data?: DataElement) {
+  constructor(optional?: StyleOptional) {
     super();
-    if (data != undefined) this.setStyle(data);
+    if (optional != undefined) this.setStyle(optional);
   }
 
   destructor() {}
 
   onInit(): void {}
-  appendChilds(...childs: any[]): void {
-    childs.forEach((child) => {
-      try {
-        if (child && child instanceof Node) {
-          this.appendChild(child);
-        }
-      } catch (error) {}
-    });
-  }
+
   addClasName(...names: string[]): void {
     this.classList.add(...names);
   }
 
-  setStyle(data: DataElement) {
-    Component.applyDate(data, this);
+  setStyle(optional: StyleOptional) {
+    Component.applyDate(optional, this);
   }
 
   set innerHTML(value: string) {
@@ -106,7 +94,7 @@ export class Component extends HTMLElement implements IComponent {
   }
 
   public static applyDate<T extends IComponent>(
-    data: DataElement | undefined,
+    data: StyleOptional | undefined,
     element: T,
   ): void {
     if (data != undefined) {
@@ -115,9 +103,6 @@ export class Component extends HTMLElement implements IComponent {
       }
       if (data.className != undefined) {
         (element as any).addClasName(data.className);
-      }
-      if (data.layout != undefined) {
-        (element as any).addClasName(data.layout);
       }
       this.applyStyleOrAttribute(data, element);
     }
@@ -203,21 +188,12 @@ export class DivElement extends HTMLDivElement implements IComponent {
   private _styleRef: CSSStyleRef = new CSSStyleRef(super.style);
   public Test = "teste";
 
-  constructor(data?: DataElement) {
+  constructor(optional?: StyleOptional) {
     super();
-    Component.applyDate(data, this);
+    Component.applyDate(optional, this);
   }
 
   onInit(): void {}
-  appendChilds(...childs: any[]): void {
-    childs.forEach((child) => {
-      try {
-        if (child && child instanceof Node) {
-          this.appendChild(child);
-        }
-      } catch (error) {}
-    });
-  }
 
   addClasName(...names: string[]): void {
     this.classList.add(...names);
@@ -250,22 +226,14 @@ export class ParagraphElement
 {
   private _styleRef: CSSStyleRef = new CSSStyleRef(super.style);
 
-  constructor(data?: DataElement) {
+  constructor(optional?: StyleOptional) {
     super();
 
-    Component.applyDate(data, this);
+    Component.applyDate(optional, this);
   }
 
   onInit(): void {}
-  appendChilds(...childs: any[]): void {
-    childs.forEach((child) => {
-      try {
-        if (child && child instanceof Node) {
-          this.appendChild(child);
-        }
-      } catch (error) {}
-    });
-  }
+
   addClasName(...names: string[]): void {
     this.classList.add(...names);
   }
@@ -280,7 +248,7 @@ export class ParagraphElement
 // @ts-ignore
 customElements.define("base-p-element", ParagraphElement, { extends: "p" });
 
-export interface DataAnchorElement extends DataElement {
+export interface DataAnchorElement extends StyleOptional {
   href?: string;
   rlink?: string;
   target?: string;
@@ -290,9 +258,43 @@ export class AnchorElement extends HTMLAnchorElement implements IComponent {
   private _styleRef: CSSStyleRef = new CSSStyleRef(super.style);
   private _rlink: string = "";
 
-  constructor(data?: DataAnchorElement) {
+  constructor(
+    optional?: StyleOptional & {
+      download?: string;
+      href?: string;
+      hreflang?: string;
+      media?: string;
+      ping?: string;
+      referrerpolicy?:
+        | "no-referrer"
+        | "no-referrer-when-downgrade"
+        | "origin"
+        | "origin-when-cross-origin"
+        | "same-origin"
+        | "strict-origin"
+        | "strict-origin-when-cross-origin"
+        | "unsafe-url";
+      rel?:
+        | "alternate"
+        | "author"
+        | "bookmark"
+        | "external"
+        | "help"
+        | "license"
+        | "next"
+        | "nofollow"
+        | "noopener"
+        | "noreferrer"
+        | "opener"
+        | "prev"
+        | "search"
+        | "tag";
+      target?: "_blank" | "_self" | "_parent" | "_top";
+      type?: string;
+    },
+  ) {
     super();
-    Component.applyDate(data, this);
+    Component.applyDate(optional, this);
     this.addEventListener("click", (event) => {
       event.preventDefault();
       if (this._rlink != "") {
@@ -308,15 +310,7 @@ export class AnchorElement extends HTMLAnchorElement implements IComponent {
   }
 
   onInit(): void {}
-  appendChilds(...childs: any[]): void {
-    childs.forEach((child) => {
-      try {
-        if (child && child instanceof Node) {
-          this.appendChild(child);
-        }
-      } catch (error) {}
-    });
-  }
+
   addClasName(...names: string[]): void {
     this.classList.add(...names);
   }
@@ -340,7 +334,100 @@ export class AnchorElement extends HTMLAnchorElement implements IComponent {
 // @ts-ignore
 customElements.define("base-a-element", AnchorElement, { extends: "a" });
 
-export interface DataImageElement extends DataElement {
+export class AbbreviationElement extends HTMLElement implements IComponent {
+  private _styleRef: CSSStyleRef = new CSSStyleRef(super.style);
+
+  constructor(
+    optional?: StyleOptional & {
+      title?: string;
+    },
+  ) {
+    super();
+    Component.applyDate(optional, this);
+  }
+
+  onInit(): void {}
+
+  public addClasName(...names: string[]): void {
+    this.classList.add(...names);
+  }
+
+  // @ts-ignore
+  public get style(): CSSStyleDeclarationRef {
+    // @ts-ignore
+    return this._styleRef;
+  }
+}
+
+// @ts-ignore
+customElements.define("base-abbr-element", AbbreviationElement, {
+  extends: "abbr",
+});
+
+// area
+
+export class AreaElement extends HTMLAreaElement implements IComponent {
+  private _styleRef: CSSStyleRef = new CSSStyleRef(super.style);
+
+  constructor(
+    optional?: StyleOptional & {
+      alt?: string;
+      coords?: string;
+      download?: string;
+      href?: string;
+      hreflang?: string;
+      media?: string;
+      ping?: string;
+      referrerpolicy?:
+        | "no-referrer"
+        | "no-referrer-when-downgrade"
+        | "origin"
+        | "origin-when-cross-origin"
+        | "same-origin"
+        | "strict-origin"
+        | "strict-origin-when-cross-origin"
+        | "unsafe-url";
+      rel?:
+        | "alternate"
+        | "author"
+        | "bookmark"
+        | "external"
+        | "help"
+        | "license"
+        | "next"
+        | "nofollow"
+        | "noopener"
+        | "noreferrer"
+        | "opener"
+        | "prev"
+        | "search"
+        | "tag";
+      shape?: "circle" | "default" | "poly" | "rect";
+      target?: "_blank" | "_self" | "_parent" | "_top";
+      type?: string;
+    },
+  ) {
+    super();
+    Component.applyDate(optional, this);
+  }
+
+  onInit(): void {}
+
+  public addClasName(...names: string[]): void {
+    this.classList.add(...names);
+  }
+
+  // @ts-ignore
+  public get style(): CSSStyleDeclarationRef {
+    // @ts-ignore
+    return this._styleRef;
+  }
+}
+
+// @ts-ignore
+customElements.define("base-area-element", AreaElement, { extends: "area" });
+
+export interface DataImageElement extends StyleOptional {
   src?: string;
   alt?: string;
 }
@@ -348,23 +435,15 @@ export interface DataImageElement extends DataElement {
 export class ImageElement extends HTMLImageElement implements IComponent {
   private _styleRef: CSSStyleRef = new CSSStyleRef(super.style);
 
-  constructor(data?: DataImageElement) {
+  constructor(optional?: DataImageElement) {
     super();
     this.className = "image-element";
-    Component.applyDate(data, this);
-    if (data?.src != undefined) this.src = data.src;
+    Component.applyDate(optional, this);
+    if (optional?.src != undefined) this.src = optional.src;
   }
 
   onInit(): void {}
-  appendChilds(...childs: any[]): void {
-    childs.forEach((child) => {
-      try {
-        if (child && child instanceof Node) {
-          this.appendChild(child);
-        }
-      } catch (error) {}
-    });
-  }
+
   addClasName(...names: string[]): void {
     this.classList.add(...names);
   }
@@ -382,22 +461,14 @@ customElements.define("base-img-element", ImageElement, { extends: "img" });
 export class UListElement extends HTMLUListElement implements IComponent {
   private _styleRef: CSSStyleRef = new CSSStyleRef(super.style);
 
-  constructor(data?: DataElement) {
+  constructor(optional?: StyleOptional) {
     super();
 
-    Component.applyDate(data, this);
+    Component.applyDate(optional, this);
   }
 
   onInit(): void {}
-  appendChilds(...childs: any[]): void {
-    childs.forEach((child) => {
-      try {
-        if (child && child instanceof Node) {
-          this.appendChild(child);
-        }
-      } catch (error) {}
-    });
-  }
+
   addClasName(...names: string[]): void {
     this.classList.add(...names);
   }
@@ -415,22 +486,14 @@ customElements.define("base-ul-element", UListElement, { extends: "ul" });
 export class OrderedListElement extends HTMLOListElement implements IComponent {
   private _styleRef: CSSStyleRef = new CSSStyleRef(super.style);
 
-  constructor(data?: DataElement) {
+  constructor(optional?: StyleOptional) {
     super();
 
-    Component.applyDate(data, this);
+    Component.applyDate(optional, this);
   }
 
   onInit(): void {}
-  appendChilds(...childs: any[]): void {
-    childs.forEach((child) => {
-      try {
-        if (child && child instanceof Node) {
-          this.appendChild(child);
-        }
-      } catch (error) {}
-    });
-  }
+
   addClasName(...names: string[]): void {
     this.classList.add(...names);
   }
@@ -448,23 +511,13 @@ customElements.define("base-ol-element", OrderedListElement, { extends: "ol" });
 export class ListItemElement extends HTMLLIElement implements IComponent {
   private _styleRef: CSSStyleRef = new CSSStyleRef(super.style);
 
-  constructor(data?: DataElement) {
+  constructor(optional?: StyleOptional) {
     super();
 
-    Component.applyDate(data, this);
+    Component.applyDate(optional, this);
   }
 
   onInit(): void {}
-
-  appendChilds(...childs: any[]): void {
-    childs.forEach((child) => {
-      try {
-        if (child && child instanceof Node) {
-          this.appendChild(child);
-        }
-      } catch (error) {}
-    });
-  }
 
   addClasName(...names: string[]): void {
     this.classList.add(...names);
@@ -483,23 +536,13 @@ customElements.define("base-li-element", ListItemElement, { extends: "li" });
 export class HeaderElement extends HTMLElement implements IComponent {
   private _styleRef: CSSStyleRef = new CSSStyleRef(super.style);
 
-  constructor(data?: DataElement) {
+  constructor(optional?: StyleOptional) {
     super();
 
-    Component.applyDate(data, this);
+    Component.applyDate(optional, this);
   }
 
   onInit(): void {}
-
-  appendChilds(...childs: any[]): void {
-    childs.forEach((child) => {
-      try {
-        if (child && child instanceof Node) {
-          this.appendChild(child);
-        }
-      } catch (error) {}
-    });
-  }
 
   addClasName(...names: string[]): void {
     this.classList.add(...names);
@@ -517,63 +560,16 @@ customElements.define("base-header-element", HeaderElement, {
   extends: "header",
 });
 
-export class FooterElement extends HTMLElement implements IComponent {
-  private _styleRef: CSSStyleRef = new CSSStyleRef(super.style);
-
-  constructor(data?: DataElement) {
-    super();
-
-    Component.applyDate(data, this);
-  }
-
-  onInit(): void {}
-
-  appendChilds(...childs: any[]): void {
-    childs.forEach((child) => {
-      try {
-        if (child && child instanceof Node) {
-          this.appendChild(child);
-        }
-      } catch (error) {}
-    });
-  }
-
-  addClasName(...names: string[]): void {
-    this.classList.add(...names);
-  }
-
-  // @ts-ignore
-  get style(): CSSStyleDeclarationRef {
-    // @ts-ignore
-    return this._styleRef;
-  }
-}
-
-// @ts-ignore
-customElements.define("base-footer-element", FooterElement, {
-  extends: "footer",
-});
-
 export class MainElement extends HTMLElement implements IComponent {
   private _styleRef: CSSStyleRef = new CSSStyleRef(super.style);
 
-  constructor(data?: DataElement) {
+  constructor(optional?: StyleOptional) {
     super();
 
-    Component.applyDate(data, this);
+    Component.applyDate(optional, this);
   }
 
   onInit(): void {}
-
-  appendChilds(...childs: any[]): void {
-    childs.forEach((child) => {
-      try {
-        if (child && child instanceof Node) {
-          this.appendChild(child);
-        }
-      } catch (error) {}
-    });
-  }
 
   addClasName(...names: string[]): void {
     this.classList.add(...names);
@@ -589,7 +585,7 @@ export class MainElement extends HTMLElement implements IComponent {
 // @ts-ignore
 customElements.define("base-main-element", MainElement, { extends: "main" });
 
-export interface DataHeadingElement extends DataElement {
+export interface DataHeadingElement extends StyleOptional {
   text?: string | Ref<string>;
   for?: string;
 }
@@ -597,17 +593,13 @@ export interface DataHeadingElement extends DataElement {
 export class H1Element extends HTMLHeadingElement implements IComponent {
   private _styleRef: CSSStyleRef = new CSSStyleRef(super.style);
 
-  constructor(data?: DataHeadingElement) {
+  constructor(optional?: DataHeadingElement) {
     super();
-    Component.applyDate(data, this);
-    if (data?.text) this.innerText = data.text.toString();
+    Component.applyDate(optional, this);
+    if (optional?.text) this.innerText = optional.text.toString();
   }
 
   public onInit(): void {}
-
-  public appendChilds(...childs: any[]): void {
-    throw new Error("Method not implemented.");
-  }
 
   addClasName(...names: string[]): void {
     this.classList.add(...names);
@@ -626,17 +618,13 @@ customElements.define("base-h1-element", H1Element, { extends: "h1" });
 export class H2Element extends HTMLHeadingElement implements IComponent {
   private _styleRef: CSSStyleRef = new CSSStyleRef(super.style);
 
-  constructor(data?: DataHeadingElement) {
+  constructor(optional?: DataHeadingElement) {
     super();
-    Component.applyDate(data, this);
-    if (data?.text) this.innerText = data.text.toString();
+    Component.applyDate(optional, this);
+    if (optional?.text) this.innerText = optional.text.toString();
   }
 
   public onInit(): void {}
-
-  public appendChilds(...childs: any[]): void {
-    throw new Error("Method not implemented.");
-  }
 
   addClasName(...names: string[]): void {
     this.classList.add(...names);
@@ -655,10 +643,10 @@ customElements.define("base-h2-element", H2Element, { extends: "h2" });
 export class H3Element extends HTMLHeadingElement implements IComponent {
   private _styleRef: CSSStyleRef = new CSSStyleRef(super.style);
 
-  constructor(data?: DataHeadingElement) {
+  constructor(optional?: DataHeadingElement) {
     super();
-    Component.applyDate(data, this);
-    if (data?.text) this.text = data.text;
+    Component.applyDate(optional, this);
+    if (optional?.text) this.text = optional.text;
   }
 
   get text(): string {
@@ -672,10 +660,6 @@ export class H3Element extends HTMLHeadingElement implements IComponent {
   }
 
   public onInit(): void {}
-
-  public appendChilds(...childs: any[]): void {
-    throw new Error("Method not implemented.");
-  }
 
   addClasName(...names: string[]): void {
     this.classList.add(...names);
@@ -692,17 +676,13 @@ export class H3Element extends HTMLHeadingElement implements IComponent {
 customElements.define("base-h3-element", H3Element, { extends: "h3" });
 
 export class H4Element extends H3Element implements IComponent {
-  constructor(data?: DataHeadingElement) {
+  constructor(optional?: DataHeadingElement) {
     super();
-    Component.applyDate(data, this);
-    if (data?.text) this.innerText = data.text.toString();
+    Component.applyDate(optional, this);
+    if (optional?.text) this.innerText = optional.text.toString();
   }
 
   public onInit(): void {}
-
-  public appendChilds(...childs: any[]): void {
-    throw new Error("Method not implemented.");
-  }
 
   addClasName(...names: string[]): void {
     this.classList.add(...names);
@@ -713,17 +693,13 @@ export class H4Element extends H3Element implements IComponent {
 customElements.define("base-h4-element", H4Element, { extends: "h4" });
 
 export class H5Element extends H3Element implements IComponent {
-  constructor(data?: DataHeadingElement) {
+  constructor(optional?: DataHeadingElement) {
     super();
-    Component.applyDate(data, this);
-    if (data?.text) this.innerText = data.text.toString();
+    Component.applyDate(optional, this);
+    if (optional?.text) this.innerText = optional.text.toString();
   }
 
   public onInit(): void {}
-
-  public appendChilds(...childs: any[]): void {
-    throw new Error("Method not implemented.");
-  }
 
   addClasName(...names: string[]): void {
     this.classList.add(...names);
@@ -734,17 +710,13 @@ export class H5Element extends H3Element implements IComponent {
 customElements.define("base-h5-element", H5Element, { extends: "h5" });
 
 export class H6Element extends H3Element implements IComponent {
-  constructor(data?: DataHeadingElement) {
+  constructor(optional?: DataHeadingElement) {
     super();
-    Component.applyDate(data, this);
-    if (data?.text) this.innerText = data.text.toString();
+    Component.applyDate(optional, this);
+    if (optional?.text) this.innerText = optional.text.toString();
   }
 
   public onInit(): void {}
-
-  public appendChilds(...childs: any[]): void {
-    throw new Error("Method not implemented.");
-  }
 
   addClasName(...names: string[]): void {
     this.classList.add(...names);
@@ -757,17 +729,13 @@ customElements.define("base-h6-element", H6Element, { extends: "h6" });
 export class SpanElement extends HTMLSpanElement implements IComponent {
   private _styleRef: CSSStyleRef = new CSSStyleRef(super.style);
 
-  constructor(data?: DataElement) {
+  constructor(optional?: StyleOptional) {
     super();
 
-    Component.applyDate(data, this);
+    Component.applyDate(optional, this);
   }
 
   public onInit(): void {}
-
-  public appendChilds(...childs: any[]): void {
-    throw new Error("Method not implemented.");
-  }
 
   addClasName(...names: string[]): void {
     this.classList.add(...names);
@@ -786,17 +754,13 @@ customElements.define("base-span-element", SpanElement, { extends: "span" });
 export class StrongElement extends HTMLSpanElement implements IComponent {
   private _styleRef: CSSStyleRef = new CSSStyleRef(super.style);
 
-  constructor(data?: DataElement) {
+  constructor(optional?: StyleOptional) {
     super();
 
-    Component.applyDate(data, this);
+    Component.applyDate(optional, this);
   }
 
   public onInit(): void {}
-
-  public appendChilds(...childs: any[]): void {
-    throw new Error("Method not implemented.");
-  }
 
   addClasName(...names: string[]): void {
     this.classList.add(...names);
@@ -817,17 +781,13 @@ customElements.define("base-strong-element", StrongElement, {
 export class EmElement extends HTMLEmbedElement implements IComponent {
   private _styleRef: CSSStyleRef = new CSSStyleRef(super.style);
 
-  constructor(data?: DataElement) {
+  constructor(optional?: StyleOptional) {
     super();
 
-    Component.applyDate(data, this);
+    Component.applyDate(optional, this);
   }
 
   public onInit(): void {}
-
-  public appendChilds(...childs: any[]): void {
-    throw new Error("Method not implemented.");
-  }
 
   addClasName(...names: string[]): void {
     this.classList.add(...names);
@@ -846,22 +806,13 @@ customElements.define("base-em-element", EmElement, { extends: "em" });
 export class BreakElement extends HTMLBRElement implements IComponent {
   private _styleRef: CSSStyleRef = new CSSStyleRef(super.style);
 
-  constructor(data?: DataElement) {
+  constructor(optional?: StyleOptional) {
     super();
-
-    Component.applyDate(data, this);
+    Component.applyDate(optional, this);
   }
 
   onInit(): void {}
-  appendChilds(...childs: any[]): void {
-    childs.forEach((child) => {
-      try {
-        if (child && child instanceof Node) {
-          this.appendChild(child);
-        }
-      } catch (error) {}
-    });
-  }
+
   addClasName(...names: string[]): void {
     this.classList.add(...names);
   }
@@ -879,22 +830,13 @@ customElements.define("base-br-element", BreakElement, { extends: "br" });
 export class HorizontalRuleElement extends HTMLHRElement implements IComponent {
   private _styleRef: CSSStyleRef = new CSSStyleRef(super.style);
 
-  constructor(data?: DataElement) {
+  constructor(optional?: StyleOptional) {
     super();
-
-    Component.applyDate(data, this);
+    Component.applyDate(optional, this);
   }
 
   onInit(): void {}
-  appendChilds(...childs: any[]): void {
-    childs.forEach((child) => {
-      try {
-        if (child && child instanceof Node) {
-          this.appendChild(child);
-        }
-      } catch (error) {}
-    });
-  }
+
   addClasName(...names: string[]): void {
     this.classList.add(...names);
   }
@@ -914,22 +856,14 @@ customElements.define("base-hr-element", HorizontalRuleElement, {
 export class TableElement extends HTMLTableElement implements IComponent {
   private _styleRef: CSSStyleRef = new CSSStyleRef(super.style);
 
-  constructor(data?: DataElement) {
+  constructor(optional?: StyleOptional) {
     super();
 
-    Component.applyDate(data, this);
+    Component.applyDate(optional, this);
   }
 
   onInit(): void {}
-  appendChilds(...childs: any[]): void {
-    childs.forEach((child) => {
-      try {
-        if (child && child instanceof Node) {
-          this.appendChild(child);
-        }
-      } catch (error) {}
-    });
-  }
+
   addClasName(...names: string[]): void {
     this.classList.add(...names);
   }
@@ -953,22 +887,13 @@ customElements.define("base-table-element", TableElement, { extends: "table" });
 export class TableRowElement extends HTMLTableRowElement implements IComponent {
   private _styleRef: CSSStyleRef = new CSSStyleRef(super.style);
 
-  constructor(data?: DataElement) {
+  constructor(optional?: StyleOptional) {
     super();
 
-    Component.applyDate(data, this);
+    Component.applyDate(optional, this);
   }
 
   onInit(): void {}
-  appendChilds(...childs: any[]): void {
-    childs.forEach((child) => {
-      try {
-        if (child && child instanceof Node) {
-          this.appendChild(child);
-        }
-      } catch (error) {}
-    });
-  }
 
   addClasName(...names: string[]): void {
     this.classList.add(...names);
@@ -989,32 +914,6 @@ export class TableRowElement extends HTMLTableRowElement implements IComponent {
 
 // @ts-ignore
 customElements.define("base-tr-element", TableRowElement, { extends: "tr" });
-// TableColElement
-
-export class TableColElement extends HTMLTableColElement implements IComponent {
-  private _styleRef: CSSStyleRef = new CSSStyleRef(super.style);
-
-  constructor(data?: DataElement) {
-    super();
-    Component.applyDate(data, this);
-  }
-
-  onInit(): void {}
-  appendChilds(...childs: any[]): void {
-    throw new Error("Method not implemented.");
-  }
-  addClasName(...names: string[]): void {
-    this.classList.add(...names);
-  }
-  // @ts-ignore
-  get style(): CSSStyleDeclarationRef {
-    // @ts-ignore
-    return this._styleRef;
-  }
-}
-
-// @ts-ignore
-customElements.define("base-col-element", TableColElement, { extends: "col" });
 
 export class TableCellElement
   extends HTMLTableCellElement
@@ -1022,13 +921,13 @@ export class TableCellElement
 {
   private _styleRef: CSSStyleRef = new CSSStyleRef(super.style);
 
-  constructor(data?: DataElement) {
+  constructor(optional?: StyleOptional) {
     super();
-    Component.applyDate(data, this);
+    Component.applyDate(optional, this);
   }
 
   onInit(): void {}
-  appendChilds(...childs: any[]): void {
+  append(...childs: any[]): void {
     throw new Error("Method not implemented.");
   }
   addClasName(...names: string[]): void {
@@ -1044,40 +943,28 @@ export class TableCellElement
 // @ts-ignore
 customElements.define("base-td-element", TableCellElement, { extends: "td" });
 
-export class FormElement extends HTMLFormElement implements IComponent {
-  private _styleRef: CSSStyleRef = new CSSStyleRef(super.style);
+// export interface FormOptional {
+//   acceptCharset?: string;
+//   action?: string;
+//   enctype?: string;
+//   method?: "get" | "post";
+//   name?: string;
+//   novalidate?: boolean;
+//   rel?:
+//   | "external"
+//   | "help"
+//   | "license"
+//   | "next"
+//   | "nofollow"
+//   | "noopener"
+//   | "noreferrer"
+//   | "opener"
+//   | "prev"
+//   | "search";
+//   target?: "_blank" | "_self" | "_parent" | "_top";
+// }
 
-  constructor(data?: DataElement) {
-    super();
-
-    Component.applyDate(data, this);
-  }
-
-  onInit(): void {}
-  appendChilds(...childs: any[]): void {
-    childs.forEach((child) => {
-      try {
-        if (child && child instanceof Node) {
-          this.appendChild(child);
-        }
-      } catch (error) {}
-    });
-  }
-  addClasName(...names: string[]): void {
-    this.classList.add(...names);
-  }
-
-  // @ts-ignore
-  get style(): CSSStyleDeclarationRef {
-    // @ts-ignore
-    return this._styleRef;
-  }
-}
-
-// @ts-ignore
-customElements.define("base-form-element", FormElement, { extends: "form" });
-
-export interface DataInputElement extends DataElement {
+export interface DataInputElement extends StyleOptional {
   id?: string;
   type?:
     | "text"
@@ -1110,21 +997,13 @@ export interface DataInputElement extends DataElement {
 export class InputElement extends HTMLInputElement implements IComponent {
   private _styleRef: CSSStyleRef = new CSSStyleRef(super.style);
 
-  constructor(data?: DataInputElement) {
+  constructor(optional?: DataInputElement) {
     super();
-    Component.applyDate(data, this);
+    Component.applyDate(optional, this);
   }
 
   onInit(): void {}
-  appendChilds(...childs: any[]): void {
-    childs.forEach((child) => {
-      try {
-        if (child && child instanceof Node) {
-          this.appendChild(child);
-        }
-      } catch (error) {}
-    });
-  }
+
   addClasName(...names: string[]): void {
     this.classList.add(...names);
   }
@@ -1139,29 +1018,34 @@ export class InputElement extends HTMLInputElement implements IComponent {
 // @ts-ignore
 customElements.define("base-input-element", InputElement, { extends: "input" });
 
-export interface DataButtonElement extends DataHeadingElement {
-  onclick?: (event: MouseEvent) => void;
-}
-
 export class ButtonElement extends HTMLButtonElement implements IComponent {
   private _styleRef: CSSStyleRef = new CSSStyleRef(super.style);
 
-  constructor(data?: DataButtonElement) {
+  constructor(
+    optional?: StyleOptional & {
+      autofocus?: boolean;
+      disabled?: boolean;
+      form?: string;
+      formaction?: string;
+      formenctype?: string;
+      formmethod?: string;
+      formnovalidate?: boolean;
+      formtarget?: string;
+      popovertarget?: string;
+      popovertargetaction?: "hide" | "show" | "toggle";
+      name?: string;
+      type?: "button" | "reset" | "submit";
+      value?: string;
+      onclick?: (event: MouseEvent) => void;
+    },
+  ) {
     super();
 
-    Component.applyDate(data, this);
+    Component.applyDate(optional, this);
   }
 
   onInit(): void {}
-  appendChilds(...childs: any[]): void {
-    childs.forEach((child) => {
-      try {
-        if (child && child instanceof Node) {
-          this.appendChild(child);
-        }
-      } catch (error) {}
-    });
-  }
+
   addClasName(...names: string[]): void {
     this.classList.add(...names);
   }
@@ -1189,22 +1073,14 @@ customElements.define("base-button-element", ButtonElement, {
 export class TextAreaElement extends HTMLTextAreaElement implements IComponent {
   private _styleRef: CSSStyleRef = new CSSStyleRef(super.style);
 
-  constructor(data?: DataElement) {
+  constructor(optional?: StyleOptional) {
     super();
 
-    Component.applyDate(data, this);
+    Component.applyDate(optional, this);
   }
 
   onInit(): void {}
-  appendChilds(...childs: any[]): void {
-    childs.forEach((child) => {
-      try {
-        if (child && child instanceof Node) {
-          this.appendChild(child);
-        }
-      } catch (error) {}
-    });
-  }
+
   addClasName(...names: string[]): void {
     this.classList.add(...names);
   }
@@ -1224,21 +1100,13 @@ customElements.define("base-textarea-element", TextAreaElement, {
 export class LabelElement extends HTMLLabelElement implements IComponent {
   private _styleRef: CSSStyleRef = new CSSStyleRef(super.style);
 
-  constructor(data?: DataHeadingElement) {
+  constructor(optional?: DataHeadingElement) {
     super();
-    Component.applyDate(data, this);
+    Component.applyDate(optional, this);
   }
 
   onInit(): void {}
-  appendChilds(...childs: any[]): void {
-    childs.forEach((child) => {
-      try {
-        if (child && child instanceof Node) {
-          this.appendChild(child);
-        }
-      } catch (error) {}
-    });
-  }
+
   addClasName(...names: string[]): void {
     this.classList.add(...names);
   }
@@ -1256,22 +1124,14 @@ customElements.define("base-label-element", LabelElement, { extends: "label" });
 export class SelectElement extends HTMLSelectElement implements IComponent {
   private _styleRef: CSSStyleRef = new CSSStyleRef(super.style);
 
-  constructor(data?: DataElement) {
+  constructor(optional?: StyleOptional) {
     super();
 
-    Component.applyDate(data, this);
+    Component.applyDate(optional, this);
   }
 
   onInit(): void {}
-  appendChilds(...childs: any[]): void {
-    childs.forEach((child) => {
-      try {
-        if (child && child instanceof Node) {
-          this.appendChild(child);
-        }
-      } catch (error) {}
-    });
-  }
+
   addClasName(...names: string[]): void {
     this.classList.add(...names);
   }
@@ -1291,22 +1151,14 @@ customElements.define("base-select-element", SelectElement, {
 export class IframeElement extends HTMLIFrameElement implements IComponent {
   private _styleRef: CSSStyleRef = new CSSStyleRef(super.style);
 
-  constructor(data?: DataElement) {
+  constructor(optional?: StyleOptional) {
     super();
 
-    Component.applyDate(data, this);
+    Component.applyDate(optional, this);
   }
 
   onInit(): void {}
-  appendChilds(...childs: any[]): void {
-    childs.forEach((child) => {
-      try {
-        if (child && child instanceof Node) {
-          this.appendChild(child);
-        }
-      } catch (error) {}
-    });
-  }
+
   addClasName(...names: string[]): void {
     this.classList.add(...names);
   }
@@ -1326,22 +1178,22 @@ customElements.define("base-iframe-element", IframeElement, {
 export class AudioElement extends HTMLAudioElement implements IComponent {
   private _styleRef: CSSStyleRef = new CSSStyleRef(super.style);
 
-  constructor(data?: DataElement) {
+  constructor(
+    optional?: StyleOptional & {
+      autoplay?: boolean;
+      controls?: boolean;
+      loop?: boolean;
+      muted?: boolean;
+      preload?: "auto" | "metadata" | "none";
+      src?: string;
+    },
+  ) {
     super();
-
-    Component.applyDate(data, this);
+    Component.applyDate(optional, this);
   }
 
   onInit(): void {}
-  appendChilds(...childs: any[]): void {
-    childs.forEach((child) => {
-      try {
-        if (child && child instanceof Node) {
-          this.appendChild(child);
-        }
-      } catch (error) {}
-    });
-  }
+
   addClasName(...names: string[]): void {
     this.classList.add(...names);
   }
@@ -1356,25 +1208,97 @@ export class AudioElement extends HTMLAudioElement implements IComponent {
 // @ts-ignore
 customElements.define("base-audio-element", AudioElement, { extends: "audio" });
 
+export class BoldElement extends HTMLElement implements IComponent {
+  private _styleRef: CSSStyleRef = new CSSStyleRef(super.style);
+
+  constructor(optional?: StyleOptional) {
+    super();
+    Component.applyDate(optional, this);
+  }
+
+  public onInit(): void {}
+
+  public addClasName(...names: string[]): void {
+    this.classList.add(...names);
+  }
+
+  // @ts-ignore
+  public get style(): CSSStyleDeclarationRef {
+    // @ts-ignore
+    return this._styleRef;
+  }
+}
+
+// @ts-ignore
+customElements.define("base-b-element", BoldElement, { extends: "b" });
+
+// <base>
+export class BaseElement extends HTMLElement implements IComponent {
+  private _styleRef: CSSStyleRef = new CSSStyleRef(super.style);
+
+  constructor(
+    optional?: StyleOptional & {
+      href?: string;
+      target?: "_blank" | "_self" | "_parent" | "_top";
+    },
+  ) {
+    super();
+    Component.applyDate(optional, this);
+  }
+
+  public onInit(): void {}
+
+  public addClasName(...names: string[]): void {
+    this.classList.add(...names);
+  }
+
+  // @ts-ignore
+  public get style(): CSSStyleDeclarationRef {
+    // @ts-ignore
+    return this._styleRef;
+  }
+}
+
+// @ts-ignore
+customElements.define("base-base-element", BaseElement, { extends: "base" });
+
+// <body>
+export class BodyElement extends HTMLBodyElement implements IComponent {
+  private _styleRef: CSSStyleRef = new CSSStyleRef(super.style);
+
+  constructor(optional?: StyleOptional) {
+    super();
+    Component.applyDate(optional, this);
+  }
+
+  public onInit(): void {}
+
+  public addClasName(...names: string[]): void {
+    this.classList.add(...names);
+  }
+
+  // @ts-ignore
+  public get style(): CSSStyleDeclarationRef {
+    // @ts-ignore
+    return this._styleRef;
+  }
+}
+
+// @ts-ignore
+customElements.define("base-body-element", BodyElement, { extends: "body" });
+
+// <video>
 export class VideoElement extends HTMLVideoElement implements IComponent {
   private _styleRef: CSSStyleRef = new CSSStyleRef(super.style);
 
-  constructor(data?: DataElement) {
+  constructor(optional?: StyleOptional) {
     super();
 
-    Component.applyDate(data, this);
+    Component.applyDate(optional, this);
   }
 
   onInit(): void {}
-  appendChilds(...childs: any[]): void {
-    childs.forEach((child) => {
-      try {
-        if (child && child instanceof Node) {
-          this.appendChild(child);
-        }
-      } catch (error) {}
-    });
-  }
+
   addClasName(...names: string[]): void {
     this.classList.add(...names);
   }
@@ -1392,23 +1316,20 @@ customElements.define("base-video-element", VideoElement, { extends: "video" });
 export class CanvasElement extends HTMLCanvasElement implements IComponent {
   private _styleRef: CSSStyleRef = new CSSStyleRef(super.style);
 
-  constructor(data?: DataElement) {
+  constructor(
+    optional?: StyleOptional & {
+      width?: number;
+      height?: number;
+    },
+  ) {
     super();
-    if (data?.width) this.width = data.width as any;
-    if (data?.height) this.height = data.height as any;
-    Component.applyDate(data, this);
+    if (optional?.width) this.width = optional.width as any;
+    if (optional?.height) this.height = optional.height as any;
+    Component.applyDate(optional, this);
   }
 
   onInit(): void {}
-  appendChilds(...childs: any[]): void {
-    childs.forEach((child) => {
-      try {
-        if (child && child instanceof Node) {
-          this.appendChild(child);
-        }
-      } catch (error) {}
-    });
-  }
+
   addClasName(...names: string[]): void {
     this.classList.add(...names);
   }
@@ -1425,6 +1346,518 @@ customElements.define("base-canvas-element", CanvasElement, {
   extends: "canvas",
 });
 
+// <caption>
+export class CaptionElement
+  extends HTMLTableCaptionElement
+  implements IComponent
+{
+  private _styleRef: CSSStyleRef = new CSSStyleRef(super.style);
+
+  constructor(optional?: StyleOptional) {
+    super();
+    Component.applyDate(optional, this);
+  }
+
+  public onInit(): void {}
+
+  public addClasName(...names: string[]): void {
+    this.classList.add(...names);
+  }
+
+  // @ts-ignore
+  public get style(): CSSStyleDeclarationRef {
+    // @ts-ignore
+    return this._styleRef;
+  }
+}
+
+// @ts-ignore
+customElements.define("base-caption-element", CaptionElement, {
+  extends: "caption",
+});
+
+// <cite>
+export class CiteElement extends HTMLElement implements IComponent {
+  private _styleRef: CSSStyleRef = new CSSStyleRef(super.style);
+
+  constructor(optional?: StyleOptional) {
+    super();
+    Component.applyDate(optional, this);
+  }
+
+  public onInit(): void {}
+
+  public addClasName(...names: string[]): void {
+    this.classList.add(...names);
+  }
+
+  // @ts-ignore
+  public get style(): CSSStyleDeclarationRef {
+    // @ts-ignore
+    return this._styleRef;
+  }
+}
+
+// @ts-ignore
+customElements.define("base-cite-element", CiteElement, { extends: "cite" });
+
+// <code>
+export class CodeElement extends HTMLElement implements IComponent {
+  private _styleRef: CSSStyleRef = new CSSStyleRef(super.style);
+
+  constructor(optional?: StyleOptional) {
+    super();
+    Component.applyDate(optional, this);
+  }
+
+  public onInit(): void {}
+
+  public addClasName(...names: string[]): void {
+    this.classList.add(...names);
+  }
+
+  // @ts-ignore
+  public get style(): CSSStyleDeclarationRef {
+    // @ts-ignore
+    return this._styleRef;
+  }
+}
+
+// @ts-ignore
+customElements.define("base-code-element", CodeElement, { extends: "code" });
+
+// <col>
+export class TableColElement extends HTMLTableColElement implements IComponent {
+  private _styleRef: CSSStyleRef = new CSSStyleRef(super.style);
+
+  constructor(
+    optional?: StyleOptional & {
+      span?: number;
+    },
+  ) {
+    super();
+    if (optional?.span) this.span = optional.span as any;
+    Component.applyDate(optional, this);
+  }
+
+  public onInit(): void {}
+
+  public addClasName(...names: string[]): void {
+    this.classList.add(...names);
+  }
+  // @ts-ignore
+  public get style(): CSSStyleDeclarationRef {
+    // @ts-ignore
+    return this._styleRef;
+  }
+}
+
+// @ts-ignore
+customElements.define("base-col-element", TableColElement, { extends: "col" });
+
+// <colgroup>
+export class TableColGroupElement
+  extends HTMLTableColElement
+  implements IComponent
+{
+  private _styleRef: CSSStyleRef = new CSSStyleRef(super.style);
+
+  constructor(
+    optional?: StyleOptional & {
+      span?: number;
+    },
+  ) {
+    super();
+    if (optional?.span) this.span = optional.span as any;
+    Component.applyDate(optional, this);
+  }
+
+  public onInit(): void {}
+
+  public addClasName(...names: string[]): void {
+    this.classList.add(...names);
+  }
+  // @ts-ignore
+  public get style(): CSSStyleDeclarationRef {
+    // @ts-ignore
+    return this._styleRef;
+  }
+}
+
+// @ts-ignore
+customElements.define("base-colgroup-element", TableColGroupElement, {
+  extends: "colgroup",
+});
+
+// <datalist>
+
+export class DataListElement extends HTMLDataListElement implements IComponent {
+  private _styleRef: CSSStyleRef = new CSSStyleRef(super.style);
+
+  constructor(optional?: StyleOptional) {
+    super();
+    Component.applyDate(optional, this);
+  }
+
+  public onInit(): void {}
+
+  public addClasName(...names: string[]): void {
+    this.classList.add(...names);
+  }
+  // @ts-ignore
+  public get style(): CSSStyleDeclarationRef {
+    // @ts-ignore
+    return this._styleRef;
+  }
+}
+
+// @ts-ignore
+customElements.define("base-datalist-element", DataListElement, {
+  extends: "datalist",
+});
+
+// <dd>
+export class DefinitionDescriptionElement
+  extends HTMLElement
+  implements IComponent
+{
+  private _styleRef: CSSStyleRef = new CSSStyleRef(super.style);
+
+  constructor(optional?: StyleOptional) {
+    super();
+    Component.applyDate(optional, this);
+  }
+
+  public onInit(): void {}
+
+  public addClasName(...names: string[]): void {
+    this.classList.add(...names);
+  }
+
+  // @ts-ignore
+  public get style(): CSSStyleDeclarationRef {
+    // @ts-ignore
+    return this._styleRef;
+  }
+}
+
+// @ts-ignore
+customElements.define("base-dd-element", DefinitionDescriptionElement, {
+  extends: "dd",
+});
+
+// <del>
+export class DeletedTextElement extends HTMLModElement implements IComponent {
+  private _styleRef: CSSStyleRef = new CSSStyleRef(super.style);
+
+  constructor(
+    optional?: StyleOptional & {
+      cite?: string;
+    },
+  ) {
+    super();
+    if (optional?.cite) this.cite = optional.cite as any;
+    Component.applyDate(optional, this);
+  }
+
+  public onInit(): void {}
+
+  public addClasName(...names: string[]): void {
+    this.classList.add(...names);
+  }
+  // @ts-ignore
+  public get style(): CSSStyleDeclarationRef {
+    // @ts-ignore
+    return this._styleRef;
+  }
+}
+
+// @ts-ignore
+customElements.define("base-del-element", DeletedTextElement, {
+  extends: "del",
+});
+
+// <details>
+export class DetailsElement extends HTMLDetailsElement implements IComponent {
+  private _styleRef: CSSStyleRef = new CSSStyleRef(super.style);
+
+  constructor(
+    optional?: StyleOptional & {
+      open?: boolean;
+      summary?: string | SummaryElement;
+    },
+  ) {
+    super();
+    Component.applyDate(optional, this);
+    if (optional?.open) this.open = optional.open as any;
+    if (optional?.summary) {
+      if (typeof optional.summary == "string") {
+        this.setSummary(new SummaryElement({ text: optional.summary }));
+      } else {
+        this.setSummary(optional.summary);
+      }
+    }
+  }
+
+  public onInit(): void {}
+
+  public addClasName(...names: string[]): void {
+    this.classList.add(...names);
+  }
+  // @ts-ignore
+  public get style(): CSSStyleDeclarationRef {
+    // @ts-ignore
+    return this._styleRef;
+  }
+
+  public setSummary(summary: SummaryElement) {
+    this.querySelector("summary")?.remove();
+    this.appendChild(summary);
+  }
+}
+
+// @ts-ignore
+customElements.define("base-details-element", DetailsElement, {
+  extends: "details",
+});
+
+// <dfn>
+
+export class DefinitionElement extends HTMLElement implements IComponent {
+  private _styleRef: CSSStyleRef = new CSSStyleRef(super.style);
+
+  constructor(optional?: StyleOptional) {
+    super();
+    Component.applyDate(optional, this);
+  }
+
+  public onInit(): void {}
+
+  public addClasName(...names: string[]): void {
+    this.classList.add(...names);
+  }
+  // @ts-ignore
+  public get style(): CSSStyleDeclarationRef {
+    // @ts-ignore
+    return this._styleRef;
+  }
+}
+
+// @ts-ignore
+customElements.define("base-dfn-element", DefinitionElement, {
+  extends: "dfn",
+});
+
+// <dialog>
+export class DialogElement extends HTMLDialogElement implements IComponent {
+  private _styleRef: CSSStyleRef = new CSSStyleRef(super.style);
+
+  constructor(
+    optional?: StyleOptional & {
+      open?: boolean;
+    },
+  ) {
+    super();
+    Component.applyDate(optional, this);
+    this.open = optional.open == undefined ? true : optional.open;
+  }
+
+  public onInit(): void {}
+
+  public addClasName(...names: string[]): void {
+    this.classList.add(...names);
+  }
+  // @ts-ignore
+  public get style(): CSSStyleDeclarationRef {
+    // @ts-ignore
+    return this._styleRef;
+  }
+}
+
+// @ts-ignore
+customElements.define("base-dialog-element", DialogElement, {
+  extends: "dialog",
+});
+
+// <embed>
+export class EmbedElement extends HTMLEmbedElement implements IComponent {
+  private _styleRef: CSSStyleRef = new CSSStyleRef(super.style);
+
+  constructor(
+    optional?: StyleOptional & {
+      height?: number;
+      src?: string;
+      type?: string;
+      width?: number;
+    },
+  ) {
+    super();
+    if (optional?.height) this.height = optional.height as any;
+    if (optional?.src) this.src = optional.src as any;
+    if (optional?.type) this.type = optional.type as any;
+    if (optional?.width) this.width = optional.width as any;
+    Component.applyDate(optional, this);
+  }
+
+  public onInit(): void {}
+
+  public addClasName(...names: string[]): void {
+    this.classList.add(...names);
+  }
+  // @ts-ignore
+  public get style(): CSSStyleDeclarationRef {
+    // @ts-ignore
+    return this._styleRef;
+  }
+}
+
+// @ts-ignore
+customElements.define("base-embed-element", EmbedElement, { extends: "embed" });
+
+//  <fieldset>
+export class FieldSetElement extends HTMLFieldSetElement implements IComponent {
+  private _styleRef: CSSStyleRef = new CSSStyleRef(super.style);
+
+  constructor(
+    optional?: StyleOptional & {
+      disabled?: boolean;
+      name?: string;
+      legend?: string | LegendElement;
+    },
+  ) {
+    super();
+    Component.applyDate(optional, this);
+    if (optional?.disabled) this.disabled = optional.disabled as any;
+    if (optional?.name) this.name = optional.name as any;
+    if (optional?.legend) {
+      if (typeof optional.legend == "string") {
+        this.setLegend(new LegendElement({ text: optional.legend }));
+      } else {
+        this.setLegend(optional.legend);
+      }
+    }
+  }
+
+  public onInit(): void {}
+
+  public addClasName(...names: string[]): void {
+    this.classList.add(...names);
+  }
+
+  // @ts-ignore
+  get style(): CSSStyleDeclarationRef {
+    // @ts-ignore
+    return this._styleRef;
+  }
+
+  public setLegend(legend: LegendElement) {
+    this.querySelector("legend")?.remove();
+    this.appendChild(legend);
+  }
+}
+
+// <footer>
+export class FooterElement extends HTMLElement implements IComponent {
+  private _styleRef: CSSStyleRef = new CSSStyleRef(super.style);
+
+  constructor(optional?: StyleOptional) {
+    super();
+    Component.applyDate(optional, this);
+  }
+
+  public onInit(): void {}
+
+  public addClasName(...names: string[]): void {
+    this.classList.add(...names);
+  }
+  // @ts-ignore
+  public get style(): CSSStyleDeclarationRef {
+    // @ts-ignore
+    return this._styleRef;
+  }
+}
+
+// @ts-ignore
+customElements.define("base-footer-element", FooterElement, {
+  extends: "footer",
+});
+
+export class FormElement extends HTMLFormElement implements IComponent {
+  private _styleRef: CSSStyleRef = new CSSStyleRef(super.style);
+
+  constructor(
+    optional?: StyleOptional & {
+      acceptCharset?: string;
+      action?: string;
+      enctype?: string;
+      method?: "get" | "post";
+      name?: string;
+      novalidate?: boolean;
+      rel?:
+        | "external"
+        | "help"
+        | "license"
+        | "next"
+        | "nofollow"
+        | "noopener"
+        | "noreferrer"
+        | "opener"
+        | "prev"
+        | "search";
+      target?: "_blank" | "_self" | "_parent" | "_top";
+    },
+  ) {
+    super();
+    Component.applyDate(optional, this);
+  }
+
+  onInit(): void {}
+
+  addClasName(...names: string[]): void {
+    this.classList.add(...names);
+  }
+
+  // @ts-ignore
+  get style(): CSSStyleDeclarationRef {
+    // @ts-ignore
+    return this._styleRef;
+  }
+}
+
+// @ts-ignore
+customElements.define("base-form-element", FormElement, { extends: "form" });
+
+// <legend>
+export class LegendElement extends HTMLLIElement implements IComponent {
+  private _styleRef: CSSStyleRef = new CSSStyleRef(super.style);
+
+  constructor(
+    optional?: StyleOptional & {
+      value?: number;
+    },
+  ) {
+    super();
+    Component.applyDate(optional, this);
+    if (optional?.value) this.value = optional.value as any;
+  }
+
+  public onInit(): void {}
+
+  public addClasName(...names: string[]): void {
+    this.classList.add(...names);
+  }
+  // @ts-ignore
+  public get style(): CSSStyleDeclarationRef {
+    // @ts-ignore
+    return this._styleRef;
+  }
+}
+
+// @ts-ignore
+customElements.define("base-legend-element", LegendElement, {
+  extends: "legend",
+});
+
 export class SvgElement extends SVGElement {
   constructor() {
     super();
@@ -1434,22 +1867,13 @@ export class SvgElement extends SVGElement {
 export class NavElement extends HTMLElement implements IComponent {
   private _styleRef: CSSStyleRef = new CSSStyleRef(super.style);
 
-  constructor(data?: DataElement) {
+  constructor(optional?: StyleOptional) {
     super();
-
-    Component.applyDate(data, this);
+    Component.applyDate(optional, this);
   }
 
   onInit(): void {}
-  appendChilds(...childs: any[]): void {
-    childs.forEach((child) => {
-      try {
-        if (child && child instanceof Node) {
-          this.appendChild(child);
-        }
-      } catch (error) {}
-    });
-  }
+
   addClasName(...names: string[]): void {
     this.classList.add(...names);
   }
@@ -1467,22 +1891,14 @@ customElements.define("base-nav-element", NavElement, { extends: "nav" });
 export class SectionElement extends HTMLElement implements IComponent {
   private _styleRef: CSSStyleRef = new CSSStyleRef(super.style);
 
-  constructor(data?: DataElement) {
+  constructor(optional?: StyleOptional) {
     super();
 
-    Component.applyDate(data, this);
+    Component.applyDate(optional, this);
   }
 
   onInit(): void {}
-  appendChilds(...childs: any[]): void {
-    childs.forEach((child) => {
-      try {
-        if (child && child instanceof Node) {
-          this.appendChild(child);
-        }
-      } catch (error) {}
-    });
-  }
+
   addClasName(...names: string[]): void {
     this.classList.add(...names);
   }
@@ -1502,22 +1918,14 @@ customElements.define("base-section-element", SectionElement, {
 export class ArticleElement extends HTMLElement implements IComponent {
   private _styleRef: CSSStyleRef = new CSSStyleRef(super.style);
 
-  constructor(data?: DataElement) {
+  constructor(optional?: StyleOptional) {
     super();
 
-    Component.applyDate(data, this);
+    Component.applyDate(optional, this);
   }
 
   onInit(): void {}
-  appendChilds(...childs: any[]): void {
-    childs.forEach((child) => {
-      try {
-        if (child && child instanceof Node) {
-          this.appendChild(child);
-        }
-      } catch (error) {}
-    });
-  }
+
   addClasName(...names: string[]): void {
     this.classList.add(...names);
   }
@@ -1537,22 +1945,14 @@ customElements.define("base-article-element", ArticleElement, {
 export class SummaryElement extends HTMLElement implements IComponent {
   private _styleRef: CSSStyleRef = new CSSStyleRef(super.style);
 
-  constructor(data?: DataElement) {
+  constructor(optional?: StyleOptional) {
     super();
 
-    Component.applyDate(data, this);
+    Component.applyDate(optional, this);
   }
 
   onInit(): void {}
-  appendChilds(...childs: any[]): void {
-    childs.forEach((child) => {
-      try {
-        if (child && child instanceof Node) {
-          this.appendChild(child);
-        }
-      } catch (error) {}
-    });
-  }
+
   addClasName(...names: string[]): void {
     this.classList.add(...names);
   }
@@ -1569,39 +1969,11 @@ customElements.define("base-summary-element", SummaryElement, {
   extends: "summary",
 });
 
-export class DetailsElement extends HTMLElement implements IComponent {
-  private _styleRef: CSSStyleRef = new CSSStyleRef(super.style);
-
-  constructor(data?: DataElement) {
-    super();
-
-    Component.applyDate(data, this);
-  }
-
-  onInit(): void {}
-
-  appendChilds(...childs: any[]): void {
-    childs.forEach((child) => {
-      try {
-        if (child && child instanceof Node) {
-          this.appendChild(child);
-        }
-      } catch (error) {}
-    });
-  }
-
-  addClasName(...names: string[]): void {
-    this.classList.add(...names);
-  }
-
-  // @ts-ignore
-  get style(): CSSStyleDeclarationRef {
-    // @ts-ignore
-    return this._styleRef;
+export class ILayout extends Component {
+  constructor(optional?: StyleOptional) {
+    super(optional);
   }
 }
 
 // @ts-ignore
-customElements.define("base-details-element", DetailsElement, {
-  extends: "details",
-});
+customElements.define("base-layout-element", ILayout);

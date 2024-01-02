@@ -1,11 +1,10 @@
-import { Component, type DataElement } from "..";
-import { Register } from "../../decorators";
+import { ILayout, type StyleOptional } from "..";
 
 export type FlowType = 1 | 2 | 3 | 4 | 5 | 6 | 7 | 8 | 9 | 10 | 11 | 12;
 
-export class FlowPane extends Component {
-  constructor(Data?: DataElement) {
-    super(Data);
+export class FlowPane extends ILayout {
+  constructor(optional?: StyleOptional) {
+    super(optional);
     this.addClasName("flow-pane");
   }
 

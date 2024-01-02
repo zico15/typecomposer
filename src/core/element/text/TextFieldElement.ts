@@ -22,27 +22,27 @@ export class TextFieldElement extends Component {
   private _icon?: IconElement | undefined = undefined;
   private iconPane = new DivElement({ className: "icon" });
 
-  constructor(data?: DataTextFieldElement) {
+  constructor(optional?: DataTextFieldElement) {
     super();
     this._input = new InputElement({
       type: "text",
       height: "auto",
       placeholder: " ",
     });
-    this.appendChilds(this.input);
+    this.appendChild(this.input);
     if (
-      data?.placeholderAnimation == true ||
-      data?.placeholderAnimation == undefined
+      optional?.placeholderAnimation == true ||
+      optional?.placeholderAnimation == undefined
     ) {
-      this._label = new LabelElement({ text: data?.placeholder || " " });
+      this._label = new LabelElement({ text: optional?.placeholder || " " });
       this._label.addEventListener("click", () => this.input.focus());
-      this.appendChilds(this.label);
-    } else this.input.placeholder = data?.placeholder || " ";
-    this.appendChilds(this.iconPane);
+      this.appendChild(this.label);
+    } else this.input.placeholder = optional?.placeholder || " ";
+    this.appendChild(this.iconPane);
     this.iconPane.addEventListener("click", () => this.input.focus());
     // @ts-ignore
-    Component.setVariant(this.input, data?.variant);
-    if (data?.icon != undefined) this.icon = data.icon;
+    Component.setVariant(this.input, optional?.variant);
+    if (optional?.icon != undefined) this.icon = optional.icon;
   }
 
   get input(): InputElement {

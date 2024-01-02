@@ -1,4 +1,4 @@
-import { Component, DataElement, DivElement, ImageElement } from "../..";
+import { Component, StyleOptional, DivElement, ImageElement } from "../..";
 import { Loader } from "@googlemaps/js-api-loader";
 
 export class GoogleMapElement extends Component {
@@ -22,8 +22,8 @@ export class GoogleMapElement extends Component {
   public loader: Loader;
   public map!: any;
 
-  constructor(apiKey: string, data?: DataElement) {
-    super({ display: "flex", ...data });
+  constructor(apiKey: string, optional?: StyleOptional) {
+    super({ display: "flex", ...optional });
     this.loader = new Loader({
       apiKey: apiKey,
       version: "weekly",

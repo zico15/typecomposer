@@ -1,4 +1,4 @@
-import { Component, DataElement, IComponent, router } from "..";
+import { Component, StyleOptional, IComponent, router } from "..";
 import { RoutePage } from "./Router";
 
 export class RouteView extends Component {
@@ -6,8 +6,8 @@ export class RouteView extends Component {
   private _url: string = "";
   private routePage: RoutePage | undefined = undefined;
 
-  constructor(data?: DataElement) {
-    super(data);
+  constructor(optional?: StyleOptional) {
+    super(optional);
     router["routeView"] = this;
   }
 

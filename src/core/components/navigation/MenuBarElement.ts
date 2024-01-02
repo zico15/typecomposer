@@ -1,7 +1,7 @@
 import {
   AnchorElement,
   Component,
-  DataElement,
+  StyleOptional,
   LabelElement,
   ListItemElement,
   NavElement,
@@ -10,7 +10,7 @@ import {
   InputElement,
 } from "../..";
 
-export interface DataMenuBarElement extends DataElement {
+export interface DataMenuBarElement extends StyleOptional {
   title?: string;
   variant?: Variant;
   logo?: HTMLElement | string;
@@ -30,15 +30,15 @@ export class MenuBarElement extends Component {
   });
   private _logo: HTMLElement | undefined;
 
-  constructor(data?: DataMenuBarElement) {
+  constructor(optional?: DataMenuBarElement) {
     super();
-    if (data?.logo) {
-      this.logo = data.logo;
+    if (optional?.logo) {
+      this.logo = optional.logo;
       this.append(this.logo);
-      delete data.logo;
+      delete optional.logo;
     }
-    Component.applyDate(data, this);
-    this._nav = new NavElement(data);
+    Component.applyDate(optional, this);
+    this._nav = new NavElement(optional);
     this.nav.append(this.checkbox, this.checkboxLabel, this._ul);
     this.append(this.nav);
     this.checkbox.addEventListener("change", () => {
@@ -73,14 +73,14 @@ export class MenuBarElement extends Component {
   public addMenu(
     menu: HTMLElement | string,
     isLogo: boolean = false,
-    styles?: DataElement,
+    optional?: StyleOptional,
   ): void {
     const li = new ListItemElement();
     if (this._ul.children.length === 0) li.classList.add("logo");
     if (isLogo && !(typeof menu === "string")) {
       li.appendChild(menu);
     } else {
-      const a = new AnchorElement(styles);
+      const a = new AnchorElement(optional);
       if (typeof menu === "string") {
         a.text = menu;
       } else {

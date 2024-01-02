@@ -1,9 +1,8 @@
-import { Component, type DataElement } from "..";
-import { Register } from "../../decorators";
+import { Component, ILayout, type StyleOptional } from "..";
 
-export class VBoxElement extends Component {
-  constructor(data?: DataElement) {
-    super(data);
+export class VBoxElement extends ILayout {
+  constructor(optional?: StyleOptional) {
+    super(optional);
     this.addClasName("vbox");
   }
 }

@@ -1,4 +1,9 @@
-import { type DataElement, Component, UListElement, ListItemElement } from "..";
+import {
+  type StyleOptional,
+  Component,
+  UListElement,
+  ListItemElement,
+} from "..";
 
 export class ListElement<T = any> extends Component {
   private itemSelected: {
@@ -8,8 +13,8 @@ export class ListElement<T = any> extends Component {
 
   private _container: UListElement = new UListElement();
 
-  constructor(data?: DataElement) {
-    super({ height: "100vh", ...data });
+  constructor(optional?: StyleOptional) {
+    super({ height: "100vh", ...optional });
     super.append(this.container);
   }
 

@@ -1,6 +1,6 @@
-import { CardElement, Component, DataElement, DivElement } from "../../element";
+import { CardElement, Component, StyleOptional } from "../../element";
 
-export class DialogElement extends Component {
+export class DialogPane extends Component {
   // @ts-ignore
   private _content: HTMLElement = new CardElement({
     className: "content",
@@ -8,9 +8,9 @@ export class DialogElement extends Component {
     height: "300px",
   });
 
-  constructor(data?: DataElement) {
-    super(data);
-    if (data?.display == undefined) this.style.display = "none";
+  constructor(optional?: StyleOptional) {
+    super(optional);
+    if (optional?.display == undefined) this.style.display = "none";
     this.append(this._content);
     this.addEventListener("click", (e) => {
       this.dismiss();
@@ -38,4 +38,4 @@ export class DialogElement extends Component {
   }
 }
 // @ts-ignore
-customElements.define("dialog-element", DialogElement);
+customElements.define("dialog-pane", DialogPane);

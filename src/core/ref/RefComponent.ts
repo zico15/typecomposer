@@ -4,7 +4,7 @@ import { Component } from "../element";
  * to remove the alert just add the underline (!) to the variable name
  * ex: name!: T;
  */
-export function RefComponent(data?: { id?: string } | string): any {
+export function RefComponent(optional?: { id?: string } | string): any {
   return function (target: any, propertyKey: string) {};
 }
 

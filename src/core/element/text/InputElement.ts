@@ -1,11 +1,10 @@
-import { DataElement, Layout } from "..";
+import { StyleOptional } from "..";
 
 //@ts-ignore
-export interface DataInputElement extends DataElement {
+export interface DataInputElement extends StyleOptional {
   id?: string;
   class?: string;
   style?: string;
-  layout?: Layout;
   width?: string;
   height?: string;
   value?: string;

@@ -1,12 +1,12 @@
-import { Register, Component, type DataElement, CanvasElement } from "../..";
+import { Register, Component, type StyleOptional, CanvasElement } from "../..";
 import { Chart, ChartConfiguration } from "chart.js/auto";
 
 export class ChartElement extends Component {
   private _canvas: CanvasElement = new CanvasElement();
   private _chart: Chart;
 
-  constructor(data?: DataElement) {
-    super(data);
+  constructor(optional?: StyleOptional) {
+    super(optional);
     const ctx = this._canvas.getContext("2d") as CanvasRenderingContext2D;
     this._chart = new Chart(ctx, ChartElement.ChartOptionsEmpty());
     this.addEventListener("resize", this.resize.bind(this));

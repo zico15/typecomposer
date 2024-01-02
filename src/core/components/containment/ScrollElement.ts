@@ -1,6 +1,6 @@
-import { Component, DataElement } from "../../element";
+import { Component, StyleOptional } from "../../element";
 
-export interface DataScrollElement extends DataElement {
+export interface DataScrollElement extends StyleOptional {
   horizontal?:
     | boolean
     | "auto"
@@ -22,11 +22,12 @@ export interface DataScrollElement extends DataElement {
 }
 
 export class ScrollElement extends Component {
-  constructor(data?: DataScrollElement) {
-    super(data);
-    if (data?.horizontal != undefined)
-      this.setScrollHorizontal(data.horizontal);
-    if (data?.vertical != undefined) this.setScrolVertical(data.vertical);
+  constructor(optional?: DataScrollElement) {
+    super(optional);
+    if (optional?.horizontal != undefined)
+      this.setScrollHorizontal(optional.horizontal);
+    if (optional?.vertical != undefined)
+      this.setScrolVertical(optional.vertical);
   }
 
   public setScrollHorizontal(

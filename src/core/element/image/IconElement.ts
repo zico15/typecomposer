@@ -8,9 +8,10 @@ export interface DataIconElement extends DataImageElement {
 export class IconElement extends Component {
   private _icon: Ref<string> = new Ref<string>("");
 
-  constructor(data?: DataIconElement) {
-    super(data);
-    if (data != undefined && data.icon != undefined) this.icon = data.icon;
+  constructor(optional?: DataIconElement) {
+    super(optional);
+    if (optional != undefined && optional.icon != undefined)
+      this.icon = optional.icon;
   }
 
   get icon(): string {

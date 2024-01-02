@@ -23,19 +23,19 @@ export class SelectBox<T = any> extends TextFieldElement {
   private elements = new Map<DivElement, T>();
   private itemValue: (e: T) => string = (e) => e as any;
 
-  constructor(data?: DataSelectBox<T>) {
-    super(data);
+  constructor(optional?: DataSelectBox<T>) {
+    super(optional);
     this.append(this.options);
     this.input.addEventListener("focus", () => {
       if (!this.options.classList.contains("active")) {
         this.options.classList.add("active");
-        if (data?.search) this.filterList(this.input.value);
+        if (optional?.search) this.filterList(this.input.value);
       }
     });
-    this.input.readOnly = !(data?.search || false);
+    this.input.readOnly = !(optional?.search || false);
     if (this.input.readOnly) this.input.style.userSelect = "none";
     this.input.addEventListener("input", () => {
-      if (data?.search) {
+      if (optional?.search) {
         this.filterList(this.input.value);
       }
     });
@@ -45,9 +45,9 @@ export class SelectBox<T = any> extends TextFieldElement {
           this.options.classList.remove("active");
       }, 100);
     });
-    if (data?.itemValue) this.itemValue = data.itemValue;
+    if (optional?.itemValue) this.itemValue = optional.itemValue;
     // @ts-ignore
-    Component.setVariant(this.options, data?.variant);
+    Component.setVariant(this.options, optional?.variant);
     console.log(this.itemValue);
   }
 

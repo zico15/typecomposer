@@ -1,11 +1,11 @@
-import { Register, CheckBox, DataElement } from "../..";
+import { Register, CheckBox, StyleOptional } from "../..";
 
-export interface DataToggleButton extends DataElement {}
+export interface DataToggleButton extends StyleOptional {}
 
 export class ToggleButton extends CheckBox {
-  constructor(data?: DataToggleButton) {
+  constructor(optional?: DataToggleButton) {
     // @ts-ignore
-    super({ ...data, color: data?.color || undefined });
+    super({ ...data, color: optional?.color || undefined });
     this.input.classList.remove("checkbox");
     const labelColor = this.label.style.backgroundColor;
     this.addEventListener("change", (e) => {

@@ -1,12 +1,11 @@
-import { Register } from "../../decorators";
-import { Component, type DataElement } from "../base/Elements";
+import { ILayout, StyleOptional } from "..";
 
-export class GridElement extends Component {
-  constructor(data?: DataElement) {
-    super(data);
+export class GridElement extends ILayout {
+  constructor(optional?: StyleOptional) {
+    super(optional);
     this.addClasName("grid-element");
-    if (data?.columns) this.columns = data.columns;
-    if (data?.rows) this.rows = data.rows;
+    if (optional?.columns) this.columns = optional.columns;
+    if (optional?.rows) this.rows = optional.rows;
   }
 
   //grid-template-columns: auto auto auto auto;

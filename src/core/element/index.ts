@@ -21,6 +21,7 @@ import { Variant } from "./base/CSSStyle";
 import { ChartElement } from "./action/ChartPane";
 import { CheckBox } from "./action/CheckBox";
 import { ToggleButton } from "./action/ToggleButton";
+import { ILayout, StyleOptional } from "./base/Elements";
 
 export {
   App,
@@ -52,6 +53,7 @@ export {
   PaneElement,
   BorderPaneElement,
   StyleLink,
+  ILayout,
 };
 
-export type { Variant };
+export type { Variant, StyleOptional };

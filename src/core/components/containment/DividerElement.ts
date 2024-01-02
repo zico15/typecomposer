@@ -1,17 +1,12 @@
-import { Component, DataElement } from "../..";
+import { Component, StyleOptional } from "../..";
 
-export interface DividerDataElement extends DataElement {
+export interface DividerStyleOptional extends StyleOptional {
   color?: string;
 }
 
 export class DividerElement extends Component {
-  constructor(data?: DividerDataElement) {
-    super();
-    if (data?.color) {
-      this.style.backgroundColor = data.color;
-      delete data.color;
-    }
-    Component.applyDate(data, this);
+  constructor(optional?: DividerStyleOptional) {
+    super(optional);
   }
 }
 // @ts-ignore

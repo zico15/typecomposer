@@ -17,16 +17,16 @@ export class CheckBox extends Component {
   private static serial = Math.round(Math.random() * 1000);
   checBoxType: ChecBoxType = "checkbox";
 
-  constructor(data?: DataTextFieldElement) {
-    super(data);
+  constructor(optional?: DataTextFieldElement) {
+    super(optional);
     this._input = new InputElement({
       type: this.checBoxType,
       className: this.checBoxType,
       id: `checkbox-${CheckBox.serial++}-${Math.round(Math.random() * 100)}`,
     });
-    this._label = new LabelElement({ text: data?.placeholder });
+    this._label = new LabelElement({ text: optional?.placeholder });
     this._label.setAttribute("for", this._input.id);
-    if (data?.color) this._input.style.accentColor = data.color;
+    if (optional?.color) this._input.style.accentColor = optional.color;
     this.append(this._input, this._label);
     const labelColor = this.label.style.color;
     this.input.addEventListener("change", (e) => {
