@@ -70,9 +70,9 @@ export class Component extends HTMLElement implements IComponent {
     if (optional != undefined) this.setStyle(optional);
   }
 
-  destructor() {}
+  destructor() { }
 
-  onInit(): void {}
+  onInit(): void { }
 
   addClasName(...names: string[]): void {
     this.classList.add(...names);
@@ -193,7 +193,7 @@ export class DivElement extends HTMLDivElement implements IComponent {
     Component.applyDate(optional, this);
   }
 
-  onInit(): void {}
+  onInit(): void { }
 
   addClasName(...names: string[]): void {
     this.classList.add(...names);
@@ -222,8 +222,7 @@ customElements.define("base-div-element", DivElement, { extends: "div" });
 
 export class ParagraphElement
   extends HTMLParagraphElement
-  implements IComponent
-{
+  implements IComponent {
   private _styleRef: CSSStyleRef = new CSSStyleRef(super.style);
 
   constructor(optional?: StyleOptional) {
@@ -232,7 +231,7 @@ export class ParagraphElement
     Component.applyDate(optional, this);
   }
 
-  onInit(): void {}
+  onInit(): void { }
 
   addClasName(...names: string[]): void {
     this.classList.add(...names);
@@ -266,29 +265,29 @@ export class AnchorElement extends HTMLAnchorElement implements IComponent {
       media?: string;
       ping?: string;
       referrerpolicy?:
-        | "no-referrer"
-        | "no-referrer-when-downgrade"
-        | "origin"
-        | "origin-when-cross-origin"
-        | "same-origin"
-        | "strict-origin"
-        | "strict-origin-when-cross-origin"
-        | "unsafe-url";
+      | "no-referrer"
+      | "no-referrer-when-downgrade"
+      | "origin"
+      | "origin-when-cross-origin"
+      | "same-origin"
+      | "strict-origin"
+      | "strict-origin-when-cross-origin"
+      | "unsafe-url";
       rel?:
-        | "alternate"
-        | "author"
-        | "bookmark"
-        | "external"
-        | "help"
-        | "license"
-        | "next"
-        | "nofollow"
-        | "noopener"
-        | "noreferrer"
-        | "opener"
-        | "prev"
-        | "search"
-        | "tag";
+      | "alternate"
+      | "author"
+      | "bookmark"
+      | "external"
+      | "help"
+      | "license"
+      | "next"
+      | "nofollow"
+      | "noopener"
+      | "noreferrer"
+      | "opener"
+      | "prev"
+      | "search"
+      | "tag";
       target?: "_blank" | "_self" | "_parent" | "_top";
       type?: string;
     },
@@ -309,7 +308,7 @@ export class AnchorElement extends HTMLAnchorElement implements IComponent {
     });
   }
 
-  onInit(): void {}
+  onInit(): void { }
 
   addClasName(...names: string[]): void {
     this.classList.add(...names);
@@ -346,7 +345,7 @@ export class AbbreviationElement extends HTMLElement implements IComponent {
     Component.applyDate(optional, this);
   }
 
-  onInit(): void {}
+  onInit(): void { }
 
   public addClasName(...names: string[]): void {
     this.classList.add(...names);
@@ -379,29 +378,29 @@ export class AreaElement extends HTMLAreaElement implements IComponent {
       media?: string;
       ping?: string;
       referrerpolicy?:
-        | "no-referrer"
-        | "no-referrer-when-downgrade"
-        | "origin"
-        | "origin-when-cross-origin"
-        | "same-origin"
-        | "strict-origin"
-        | "strict-origin-when-cross-origin"
-        | "unsafe-url";
+      | "no-referrer"
+      | "no-referrer-when-downgrade"
+      | "origin"
+      | "origin-when-cross-origin"
+      | "same-origin"
+      | "strict-origin"
+      | "strict-origin-when-cross-origin"
+      | "unsafe-url";
       rel?:
-        | "alternate"
-        | "author"
-        | "bookmark"
-        | "external"
-        | "help"
-        | "license"
-        | "next"
-        | "nofollow"
-        | "noopener"
-        | "noreferrer"
-        | "opener"
-        | "prev"
-        | "search"
-        | "tag";
+      | "alternate"
+      | "author"
+      | "bookmark"
+      | "external"
+      | "help"
+      | "license"
+      | "next"
+      | "nofollow"
+      | "noopener"
+      | "noreferrer"
+      | "opener"
+      | "prev"
+      | "search"
+      | "tag";
       shape?: "circle" | "default" | "poly" | "rect";
       target?: "_blank" | "_self" | "_parent" | "_top";
       type?: string;
@@ -411,7 +410,7 @@ export class AreaElement extends HTMLAreaElement implements IComponent {
     Component.applyDate(optional, this);
   }
 
-  onInit(): void {}
+  onInit(): void { }
 
   public addClasName(...names: string[]): void {
     this.classList.add(...names);
@@ -442,7 +441,7 @@ export class ImageElement extends HTMLImageElement implements IComponent {
     if (optional?.src != undefined) this.src = optional.src;
   }
 
-  onInit(): void {}
+  onInit(): void { }
 
   addClasName(...names: string[]): void {
     this.classList.add(...names);
@@ -467,7 +466,7 @@ export class UListElement extends HTMLUListElement implements IComponent {
     Component.applyDate(optional, this);
   }
 
-  onInit(): void {}
+  onInit(): void { }
 
   addClasName(...names: string[]): void {
     this.classList.add(...names);
@@ -492,7 +491,7 @@ export class OrderedListElement extends HTMLOListElement implements IComponent {
     Component.applyDate(optional, this);
   }
 
-  onInit(): void {}
+  onInit(): void { }
 
   addClasName(...names: string[]): void {
     this.classList.add(...names);
@@ -517,7 +516,7 @@ export class ListItemElement extends HTMLLIElement implements IComponent {
     Component.applyDate(optional, this);
   }
 
-  onInit(): void {}
+  onInit(): void { }
 
   addClasName(...names: string[]): void {
     this.classList.add(...names);
@@ -533,33 +532,6 @@ export class ListItemElement extends HTMLLIElement implements IComponent {
 // @ts-ignore
 customElements.define("base-li-element", ListItemElement, { extends: "li" });
 
-export class HeaderElement extends HTMLElement implements IComponent {
-  private _styleRef: CSSStyleRef = new CSSStyleRef(super.style);
-
-  constructor(optional?: StyleOptional) {
-    super();
-
-    Component.applyDate(optional, this);
-  }
-
-  onInit(): void {}
-
-  addClasName(...names: string[]): void {
-    this.classList.add(...names);
-  }
-
-  // @ts-ignore
-  get style(): CSSStyleDeclarationRef {
-    // @ts-ignore
-    return this._styleRef;
-  }
-}
-
-// @ts-ignore
-customElements.define("base-header-element", HeaderElement, {
-  extends: "header",
-});
-
 export class MainElement extends HTMLElement implements IComponent {
   private _styleRef: CSSStyleRef = new CSSStyleRef(super.style);
 
@@ -569,7 +541,7 @@ export class MainElement extends HTMLElement implements IComponent {
     Component.applyDate(optional, this);
   }
 
-  onInit(): void {}
+  onInit(): void { }
 
   addClasName(...names: string[]): void {
     this.classList.add(...names);
@@ -585,146 +557,10 @@ export class MainElement extends HTMLElement implements IComponent {
 // @ts-ignore
 customElements.define("base-main-element", MainElement, { extends: "main" });
 
-export interface DataHeadingElement extends StyleOptional {
-  text?: string | Ref<string>;
-  for?: string;
-}
-
-export class H1Element extends HTMLHeadingElement implements IComponent {
-  private _styleRef: CSSStyleRef = new CSSStyleRef(super.style);
-
-  constructor(optional?: DataHeadingElement) {
-    super();
-    Component.applyDate(optional, this);
-    if (optional?.text) this.innerText = optional.text.toString();
-  }
-
-  public onInit(): void {}
-
-  addClasName(...names: string[]): void {
-    this.classList.add(...names);
-  }
-
-  // @ts-ignore
-  get style(): CSSStyleDeclarationRef {
-    // @ts-ignore
-    return this._styleRef;
-  }
-}
-
-// @ts-ignore
-customElements.define("base-h1-element", H1Element, { extends: "h1" });
-
-export class H2Element extends HTMLHeadingElement implements IComponent {
-  private _styleRef: CSSStyleRef = new CSSStyleRef(super.style);
-
-  constructor(optional?: DataHeadingElement) {
-    super();
-    Component.applyDate(optional, this);
-    if (optional?.text) this.innerText = optional.text.toString();
-  }
-
-  public onInit(): void {}
-
-  addClasName(...names: string[]): void {
-    this.classList.add(...names);
-  }
-
-  // @ts-ignore
-  get style(): CSSStyleDeclarationRef {
-    // @ts-ignore
-    return this._styleRef;
-  }
-}
-
-// @ts-ignore
-customElements.define("base-h2-element", H2Element, { extends: "h2" });
-
-export class H3Element extends HTMLHeadingElement implements IComponent {
-  private _styleRef: CSSStyleRef = new CSSStyleRef(super.style);
-
-  constructor(optional?: DataHeadingElement) {
-    super();
-    Component.applyDate(optional, this);
-    if (optional?.text) this.text = optional.text;
-  }
-
-  get text(): string {
-    return this.innerText;
-  }
-
-  set text(value: string | Ref<string>) {
-    if (value instanceof Ref)
-      this["_styleRef"].appendStyleRef("text", this, value);
-    else this.innerText = value;
-  }
-
-  public onInit(): void {}
-
-  addClasName(...names: string[]): void {
-    this.classList.add(...names);
-  }
-
-  // @ts-ignore
-  get style(): CSSStyleDeclarationRef {
-    // @ts-ignore
-    return this._styleRef;
-  }
-}
-
-// @ts-ignore
-customElements.define("base-h3-element", H3Element, { extends: "h3" });
-
-export class H4Element extends H3Element implements IComponent {
-  constructor(optional?: DataHeadingElement) {
-    super();
-    Component.applyDate(optional, this);
-    if (optional?.text) this.innerText = optional.text.toString();
-  }
-
-  public onInit(): void {}
-
-  addClasName(...names: string[]): void {
-    this.classList.add(...names);
-  }
-}
-
-// @ts-ignore
-customElements.define("base-h4-element", H4Element, { extends: "h4" });
-
-export class H5Element extends H3Element implements IComponent {
-  constructor(optional?: DataHeadingElement) {
-    super();
-    Component.applyDate(optional, this);
-    if (optional?.text) this.innerText = optional.text.toString();
-  }
-
-  public onInit(): void {}
-
-  addClasName(...names: string[]): void {
-    this.classList.add(...names);
-  }
-}
-
-// @ts-ignore
-customElements.define("base-h5-element", H5Element, { extends: "h5" });
-
-export class H6Element extends H3Element implements IComponent {
-  constructor(optional?: DataHeadingElement) {
-    super();
-    Component.applyDate(optional, this);
-    if (optional?.text) this.innerText = optional.text.toString();
-  }
-
-  public onInit(): void {}
-
-  addClasName(...names: string[]): void {
-    this.classList.add(...names);
-  }
-}
-
-// @ts-ignore
-customElements.define("base-h6-element", H6Element, { extends: "h6" });
+// export interface DataHeadingElement extends StyleOptional {
+//   text?: string | Ref<string>;
+//   for?: string;
+// }
 
 export class SpanElement extends HTMLSpanElement implements IComponent {
   private _styleRef: CSSStyleRef = new CSSStyleRef(super.style);
@@ -735,7 +571,7 @@ export class SpanElement extends HTMLSpanElement implements IComponent {
     Component.applyDate(optional, this);
   }
 
-  public onInit(): void {}
+  public onInit(): void { }
 
   addClasName(...names: string[]): void {
     this.classList.add(...names);
@@ -760,7 +596,7 @@ export class StrongElement extends HTMLSpanElement implements IComponent {
     Component.applyDate(optional, this);
   }
 
-  public onInit(): void {}
+  public onInit(): void { }
 
   addClasName(...names: string[]): void {
     this.classList.add(...names);
@@ -787,7 +623,7 @@ export class EmElement extends HTMLEmbedElement implements IComponent {
     Component.applyDate(optional, this);
   }
 
-  public onInit(): void {}
+  public onInit(): void { }
 
   addClasName(...names: string[]): void {
     this.classList.add(...names);
@@ -811,7 +647,7 @@ export class BreakElement extends HTMLBRElement implements IComponent {
     Component.applyDate(optional, this);
   }
 
-  onInit(): void {}
+  onInit(): void { }
 
   addClasName(...names: string[]): void {
     this.classList.add(...names);
@@ -827,32 +663,6 @@ export class BreakElement extends HTMLBRElement implements IComponent {
 // @ts-ignore
 customElements.define("base-br-element", BreakElement, { extends: "br" });
 
-export class HorizontalRuleElement extends HTMLHRElement implements IComponent {
-  private _styleRef: CSSStyleRef = new CSSStyleRef(super.style);
-
-  constructor(optional?: StyleOptional) {
-    super();
-    Component.applyDate(optional, this);
-  }
-
-  onInit(): void {}
-
-  addClasName(...names: string[]): void {
-    this.classList.add(...names);
-  }
-
-  // @ts-ignore
-  get style(): CSSStyleDeclarationRef {
-    // @ts-ignore
-    return this._styleRef;
-  }
-}
-
-// @ts-ignore
-customElements.define("base-hr-element", HorizontalRuleElement, {
-  extends: "hr",
-});
-
 export class TableElement extends HTMLTableElement implements IComponent {
   private _styleRef: CSSStyleRef = new CSSStyleRef(super.style);
 
@@ -862,7 +672,7 @@ export class TableElement extends HTMLTableElement implements IComponent {
     Component.applyDate(optional, this);
   }
 
-  onInit(): void {}
+  onInit(): void { }
 
   addClasName(...names: string[]): void {
     this.classList.add(...names);
@@ -893,7 +703,7 @@ export class TableRowElement extends HTMLTableRowElement implements IComponent {
     Component.applyDate(optional, this);
   }
 
-  onInit(): void {}
+  onInit(): void { }
 
   addClasName(...names: string[]): void {
     this.classList.add(...names);
@@ -917,8 +727,7 @@ customElements.define("base-tr-element", TableRowElement, { extends: "tr" });
 
 export class TableCellElement
   extends HTMLTableCellElement
-  implements IComponent
-{
+  implements IComponent {
   private _styleRef: CSSStyleRef = new CSSStyleRef(super.style);
 
   constructor(optional?: StyleOptional) {
@@ -926,7 +735,7 @@ export class TableCellElement
     Component.applyDate(optional, this);
   }
 
-  onInit(): void {}
+  onInit(): void { }
   append(...childs: any[]): void {
     throw new Error("Method not implemented.");
   }
@@ -967,28 +776,28 @@ customElements.define("base-td-element", TableCellElement, { extends: "td" });
 export interface DataInputElement extends StyleOptional {
   id?: string;
   type?:
-    | "text"
-    | "password"
-    | "checkbox"
-    | "radio"
-    | "submit"
-    | "reset"
-    | "file"
-    | "hidden"
-    | "image"
-    | "button"
-    | "color"
-    | "date"
-    | "datetime-local"
-    | "email"
-    | "month"
-    | "number"
-    | "range"
-    | "search"
-    | "tel"
-    | "time"
-    | "url"
-    | "week";
+  | "text"
+  | "password"
+  | "checkbox"
+  | "radio"
+  | "submit"
+  | "reset"
+  | "file"
+  | "hidden"
+  | "image"
+  | "button"
+  | "color"
+  | "date"
+  | "datetime-local"
+  | "email"
+  | "month"
+  | "number"
+  | "range"
+  | "search"
+  | "tel"
+  | "time"
+  | "url"
+  | "week";
   name?: string;
   value?: string;
   placeholder?: string;
@@ -1002,7 +811,7 @@ export class InputElement extends HTMLInputElement implements IComponent {
     Component.applyDate(optional, this);
   }
 
-  onInit(): void {}
+  onInit(): void { }
 
   addClasName(...names: string[]): void {
     this.classList.add(...names);
@@ -1044,7 +853,7 @@ export class ButtonElement extends HTMLButtonElement implements IComponent {
     Component.applyDate(optional, this);
   }
 
-  onInit(): void {}
+  onInit(): void { }
 
   addClasName(...names: string[]): void {
     this.classList.add(...names);
@@ -1075,11 +884,10 @@ export class TextAreaElement extends HTMLTextAreaElement implements IComponent {
 
   constructor(optional?: StyleOptional) {
     super();
-
     Component.applyDate(optional, this);
   }
 
-  onInit(): void {}
+  onInit(): void { }
 
   addClasName(...names: string[]): void {
     this.classList.add(...names);
@@ -1100,12 +908,12 @@ customElements.define("base-textarea-element", TextAreaElement, {
 export class LabelElement extends HTMLLabelElement implements IComponent {
   private _styleRef: CSSStyleRef = new CSSStyleRef(super.style);
 
-  constructor(optional?: DataHeadingElement) {
+  constructor(optional?: StyleOptional & { for?: string; text?: string }) {
     super();
     Component.applyDate(optional, this);
   }
 
-  onInit(): void {}
+  onInit(): void { }
 
   addClasName(...names: string[]): void {
     this.classList.add(...names);
@@ -1130,7 +938,7 @@ export class SelectElement extends HTMLSelectElement implements IComponent {
     Component.applyDate(optional, this);
   }
 
-  onInit(): void {}
+  onInit(): void { }
 
   addClasName(...names: string[]): void {
     this.classList.add(...names);
@@ -1146,33 +954,6 @@ export class SelectElement extends HTMLSelectElement implements IComponent {
 // @ts-ignore
 customElements.define("base-select-element", SelectElement, {
   extends: "select",
-});
-
-export class IframeElement extends HTMLIFrameElement implements IComponent {
-  private _styleRef: CSSStyleRef = new CSSStyleRef(super.style);
-
-  constructor(optional?: StyleOptional) {
-    super();
-
-    Component.applyDate(optional, this);
-  }
-
-  onInit(): void {}
-
-  addClasName(...names: string[]): void {
-    this.classList.add(...names);
-  }
-
-  // @ts-ignore
-  get style(): CSSStyleDeclarationRef {
-    // @ts-ignore
-    return this._styleRef;
-  }
-}
-
-// @ts-ignore
-customElements.define("base-iframe-element", IframeElement, {
-  extends: "iframe",
 });
 
 export class AudioElement extends HTMLAudioElement implements IComponent {
@@ -1192,7 +973,7 @@ export class AudioElement extends HTMLAudioElement implements IComponent {
     Component.applyDate(optional, this);
   }
 
-  onInit(): void {}
+  onInit(): void { }
 
   addClasName(...names: string[]): void {
     this.classList.add(...names);
@@ -1216,7 +997,7 @@ export class BoldElement extends HTMLElement implements IComponent {
     Component.applyDate(optional, this);
   }
 
-  public onInit(): void {}
+  public onInit(): void { }
 
   public addClasName(...names: string[]): void {
     this.classList.add(...names);
@@ -1246,7 +1027,7 @@ export class BaseElement extends HTMLElement implements IComponent {
     Component.applyDate(optional, this);
   }
 
-  public onInit(): void {}
+  public onInit(): void { }
 
   public addClasName(...names: string[]): void {
     this.classList.add(...names);
@@ -1271,7 +1052,7 @@ export class BodyElement extends HTMLBodyElement implements IComponent {
     Component.applyDate(optional, this);
   }
 
-  public onInit(): void {}
+  public onInit(): void { }
 
   public addClasName(...names: string[]): void {
     this.classList.add(...names);
@@ -1297,7 +1078,7 @@ export class VideoElement extends HTMLVideoElement implements IComponent {
     Component.applyDate(optional, this);
   }
 
-  onInit(): void {}
+  onInit(): void { }
 
   addClasName(...names: string[]): void {
     this.classList.add(...names);
@@ -1328,7 +1109,7 @@ export class CanvasElement extends HTMLCanvasElement implements IComponent {
     Component.applyDate(optional, this);
   }
 
-  onInit(): void {}
+  onInit(): void { }
 
   addClasName(...names: string[]): void {
     this.classList.add(...names);
@@ -1349,8 +1130,7 @@ customElements.define("base-canvas-element", CanvasElement, {
 // <caption>
 export class CaptionElement
   extends HTMLTableCaptionElement
-  implements IComponent
-{
+  implements IComponent {
   private _styleRef: CSSStyleRef = new CSSStyleRef(super.style);
 
   constructor(optional?: StyleOptional) {
@@ -1358,7 +1138,7 @@ export class CaptionElement
     Component.applyDate(optional, this);
   }
 
-  public onInit(): void {}
+  public onInit(): void { }
 
   public addClasName(...names: string[]): void {
     this.classList.add(...names);
@@ -1385,7 +1165,7 @@ export class CiteElement extends HTMLElement implements IComponent {
     Component.applyDate(optional, this);
   }
 
-  public onInit(): void {}
+  public onInit(): void { }
 
   public addClasName(...names: string[]): void {
     this.classList.add(...names);
@@ -1410,7 +1190,7 @@ export class CodeElement extends HTMLElement implements IComponent {
     Component.applyDate(optional, this);
   }
 
-  public onInit(): void {}
+  public onInit(): void { }
 
   public addClasName(...names: string[]): void {
     this.classList.add(...names);
@@ -1440,7 +1220,7 @@ export class TableColElement extends HTMLTableColElement implements IComponent {
     Component.applyDate(optional, this);
   }
 
-  public onInit(): void {}
+  public onInit(): void { }
 
   public addClasName(...names: string[]): void {
     this.classList.add(...names);
@@ -1458,8 +1238,7 @@ customElements.define("base-col-element", TableColElement, { extends: "col" });
 // <colgroup>
 export class TableColGroupElement
   extends HTMLTableColElement
-  implements IComponent
-{
+  implements IComponent {
   private _styleRef: CSSStyleRef = new CSSStyleRef(super.style);
 
   constructor(
@@ -1472,7 +1251,7 @@ export class TableColGroupElement
     Component.applyDate(optional, this);
   }
 
-  public onInit(): void {}
+  public onInit(): void { }
 
   public addClasName(...names: string[]): void {
     this.classList.add(...names);
@@ -1499,7 +1278,7 @@ export class DataListElement extends HTMLDataListElement implements IComponent {
     Component.applyDate(optional, this);
   }
 
-  public onInit(): void {}
+  public onInit(): void { }
 
   public addClasName(...names: string[]): void {
     this.classList.add(...names);
@@ -1519,8 +1298,7 @@ customElements.define("base-datalist-element", DataListElement, {
 // <dd>
 export class DefinitionDescriptionElement
   extends HTMLElement
-  implements IComponent
-{
+  implements IComponent {
   private _styleRef: CSSStyleRef = new CSSStyleRef(super.style);
 
   constructor(optional?: StyleOptional) {
@@ -1528,7 +1306,7 @@ export class DefinitionDescriptionElement
     Component.applyDate(optional, this);
   }
 
-  public onInit(): void {}
+  public onInit(): void { }
 
   public addClasName(...names: string[]): void {
     this.classList.add(...names);
@@ -1560,7 +1338,7 @@ export class DeletedTextElement extends HTMLModElement implements IComponent {
     Component.applyDate(optional, this);
   }
 
-  public onInit(): void {}
+  public onInit(): void { }
 
   public addClasName(...names: string[]): void {
     this.classList.add(...names);
@@ -1599,7 +1377,7 @@ export class DetailsElement extends HTMLDetailsElement implements IComponent {
     }
   }
 
-  public onInit(): void {}
+  public onInit(): void { }
 
   public addClasName(...names: string[]): void {
     this.classList.add(...names);
@@ -1631,7 +1409,7 @@ export class DefinitionElement extends HTMLElement implements IComponent {
     Component.applyDate(optional, this);
   }
 
-  public onInit(): void {}
+  public onInit(): void { }
 
   public addClasName(...names: string[]): void {
     this.classList.add(...names);
@@ -1662,7 +1440,7 @@ export class DialogElement extends HTMLDialogElement implements IComponent {
     this.open = optional.open == undefined ? true : optional.open;
   }
 
-  public onInit(): void {}
+  public onInit(): void { }
 
   public addClasName(...names: string[]): void {
     this.classList.add(...names);
@@ -1699,7 +1477,7 @@ export class EmbedElement extends HTMLEmbedElement implements IComponent {
     Component.applyDate(optional, this);
   }
 
-  public onInit(): void {}
+  public onInit(): void { }
 
   public addClasName(...names: string[]): void {
     this.classList.add(...names);
@@ -1738,7 +1516,7 @@ export class FieldSetElement extends HTMLFieldSetElement implements IComponent {
     }
   }
 
-  public onInit(): void {}
+  public onInit(): void { }
 
   public addClasName(...names: string[]): void {
     this.classList.add(...names);
@@ -1765,7 +1543,7 @@ export class FooterElement extends HTMLElement implements IComponent {
     Component.applyDate(optional, this);
   }
 
-  public onInit(): void {}
+  public onInit(): void { }
 
   public addClasName(...names: string[]): void {
     this.classList.add(...names);
@@ -1794,16 +1572,16 @@ export class FormElement extends HTMLFormElement implements IComponent {
       name?: string;
       novalidate?: boolean;
       rel?:
-        | "external"
-        | "help"
-        | "license"
-        | "next"
-        | "nofollow"
-        | "noopener"
-        | "noreferrer"
-        | "opener"
-        | "prev"
-        | "search";
+      | "external"
+      | "help"
+      | "license"
+      | "next"
+      | "nofollow"
+      | "noopener"
+      | "noreferrer"
+      | "opener"
+      | "prev"
+      | "search";
       target?: "_blank" | "_self" | "_parent" | "_top";
     },
   ) {
@@ -1811,7 +1589,7 @@ export class FormElement extends HTMLFormElement implements IComponent {
     Component.applyDate(optional, this);
   }
 
-  onInit(): void {}
+  onInit(): void { }
 
   addClasName(...names: string[]): void {
     this.classList.add(...names);
@@ -1827,6 +1605,396 @@ export class FormElement extends HTMLFormElement implements IComponent {
 // @ts-ignore
 customElements.define("base-form-element", FormElement, { extends: "form" });
 
+export class H1Element extends HTMLHeadingElement implements IComponent {
+  private _styleRef: CSSStyleRef = new CSSStyleRef(super.style);
+
+  constructor(optional?: StyleOptional) {
+    super();
+    Component.applyDate(optional, this);
+    if (optional?.text) this.innerText = optional.text.toString();
+  }
+
+  public onInit(): void { }
+
+  addClasName(...names: string[]): void {
+    this.classList.add(...names);
+  }
+
+  // @ts-ignore
+  get style(): CSSStyleDeclarationRef {
+    // @ts-ignore
+    return this._styleRef;
+  }
+}
+
+// @ts-ignore
+customElements.define("base-h1-element", H1Element, { extends: "h1" });
+
+export class H2Element extends HTMLHeadingElement implements IComponent {
+  private _styleRef: CSSStyleRef = new CSSStyleRef(super.style);
+
+  constructor(optional?: StyleOptional) {
+    super();
+    Component.applyDate(optional, this);
+    if (optional?.text) this.innerText = optional.text.toString();
+  }
+
+  public onInit(): void { }
+
+  addClasName(...names: string[]): void {
+    this.classList.add(...names);
+  }
+
+  // @ts-ignore
+  get style(): CSSStyleDeclarationRef {
+    // @ts-ignore
+    return this._styleRef;
+  }
+}
+
+// @ts-ignore
+customElements.define("base-h2-element", H2Element, { extends: "h2" });
+
+export class H3Element extends HTMLHeadingElement implements IComponent {
+  private _styleRef: CSSStyleRef = new CSSStyleRef(super.style);
+
+  constructor(optional?: StyleOptional) {
+    super();
+    Component.applyDate(optional, this);
+    if (optional?.text) this.text = optional.text;
+  }
+
+  get text(): string {
+    return this.innerText;
+  }
+
+  set text(value: string | Ref<string>) {
+    if (value instanceof Ref)
+      this["_styleRef"].appendStyleRef("text", this, value);
+    else this.innerText = value;
+  }
+
+  public onInit(): void { }
+
+  addClasName(...names: string[]): void {
+    this.classList.add(...names);
+  }
+
+  // @ts-ignore
+  get style(): CSSStyleDeclarationRef {
+    // @ts-ignore
+    return this._styleRef;
+  }
+}
+
+// @ts-ignore
+customElements.define("base-h3-element", H3Element, { extends: "h3" });
+
+export class H4Element extends H3Element implements IComponent {
+  constructor(optional?: StyleOptional) {
+    super();
+    Component.applyDate(optional, this);
+    if (optional?.text) this.innerText = optional.text.toString();
+  }
+
+  public onInit(): void { }
+
+  addClasName(...names: string[]): void {
+    this.classList.add(...names);
+  }
+}
+
+// @ts-ignore
+customElements.define("base-h4-element", H4Element, { extends: "h4" });
+
+export class H5Element extends H3Element implements IComponent {
+  constructor(optional?: StyleOptional) {
+    super();
+    Component.applyDate(optional, this);
+    if (optional?.text) this.innerText = optional.text.toString();
+  }
+
+  public onInit(): void { }
+
+  addClasName(...names: string[]): void {
+    this.classList.add(...names);
+  }
+}
+
+// @ts-ignore
+customElements.define("base-h5-element", H5Element, { extends: "h5" });
+
+export class H6Element extends H3Element implements IComponent {
+  constructor(optional?: StyleOptional) {
+    super();
+    Component.applyDate(optional, this);
+    if (optional?.text) this.innerText = optional.text.toString();
+  }
+
+  public onInit(): void { }
+
+  addClasName(...names: string[]): void {
+    this.classList.add(...names);
+  }
+}
+
+// @ts-ignore
+customElements.define("base-h6-element", H6Element, { extends: "h6" });
+
+// <head>
+export class HeadElement extends HTMLHeadElement implements IComponent {
+  private _styleRef: CSSStyleRef = new CSSStyleRef(super.style);
+
+  constructor(optional?: StyleOptional) {
+    super();
+    Component.applyDate(optional, this);
+  }
+
+  public onInit(): void { }
+
+  public addClasName(...names: string[]): void {
+    this.classList.add(...names);
+  }
+  // @ts-ignore
+  public get style(): CSSStyleDeclarationRef {
+    // @ts-ignore
+    return this._styleRef;
+  }
+}
+
+// @ts-ignore
+customElements.define("base-head-element", HeadElement, { extends: "head" });
+
+// <header>
+export class HeaderElement extends HTMLElement implements IComponent {
+  private _styleRef: CSSStyleRef = new CSSStyleRef(super.style);
+
+  constructor(optional?: StyleOptional) {
+    super();
+    Component.applyDate(optional, this);
+  }
+
+  public onInit(): void { }
+
+  public addClasName(...names: string[]): void {
+    this.classList.add(...names);
+  }
+  // @ts-ignore
+  public get style(): CSSStyleDeclarationRef {
+    // @ts-ignore
+    return this._styleRef;
+  }
+}
+
+// @ts-ignore
+customElements.define("base-header-element", HeaderElement, {
+  extends: "header",
+});
+
+// <hr>
+export class HorizontalRuleElement extends HTMLHRElement implements IComponent {
+  private _styleRef: CSSStyleRef = new CSSStyleRef(super.style);
+
+  constructor(optional?: StyleOptional) {
+    super();
+    Component.applyDate(optional, this);
+  }
+
+  public onInit(): void { }
+
+  public addClasName(...names: string[]): void {
+    this.classList.add(...names);
+  }
+  // @ts-ignore
+  public get style(): CSSStyleDeclarationRef {
+    // @ts-ignore
+    return this._styleRef;
+  }
+}
+
+// @ts-ignore
+customElements.define("base-hr-element", HorizontalRuleElement, {
+  extends: "hr",
+});
+
+// <html>
+
+export class HtmlElement extends HTMLHtmlElement implements IComponent {
+  private _styleRef: CSSStyleRef = new CSSStyleRef(super.style);
+
+  constructor(
+    optional?: StyleOptional & {
+      manifest?: string;
+    },
+  ) {
+    super();
+    if (optional?.manifest) this.manifest = optional.manifest as any;
+    Component.applyDate(optional, this);
+  }
+
+  public onInit(): void { }
+
+  public addClasName(...names: string[]): void {
+    this.classList.add(...names);
+  }
+
+  set manifest(value: string) {
+    this.setAttribute("manifest", value);
+  }
+
+  get manifest(): string {
+    return this.getAttribute("manifest");
+  }
+
+  // @ts-ignore
+  public get style(): CSSStyleDeclarationRef {
+    // @ts-ignore
+    return this._styleRef;
+  }
+}
+
+// @ts-ignore
+customElements.define("base-html-element", HtmlElement, { extends: "html" });
+
+// <iframe>
+
+export class IFrameElement extends HTMLIFrameElement implements IComponent {
+  private _styleRef: CSSStyleRef = new CSSStyleRef(super.style);
+
+  constructor(
+    optional?: StyleOptional & {
+      allow?: string;
+      allowfullscreen?: boolean;
+      allowpaymentrequest?: boolean;
+      csp?: string;
+      height?: number;
+      importance?: "auto" | "high" | "low";
+      loading?: "eager" | "lazy";
+      name?: string;
+      referrerpolicy?:
+      | "no-referrer"
+      | "no-referrer-when-downgrade"
+      | "origin"
+      | "origin-when-cross-origin"
+      | "same-origin"
+      | "strict-origin"
+      | "strict-origin-when-cross-origin"
+      | "unsafe-url";
+      src?: string;
+      srcdoc?: string;
+      width?: number;
+    },
+  ) {
+    super();
+    if (optional?.allow) this.allow = optional.allow as any;
+    if (optional?.allowfullscreen)
+      this.allowfullscreen = optional.allowfullscreen as any;
+    if (optional?.allowpaymentrequest)
+      this.allowpaymentrequest = optional.allowpaymentrequest as any;
+    if (optional?.csp) this.csp = optional.csp as any;
+    if (optional?.height) this.height = optional.height as any;
+    if (optional?.importance) this.importance = optional.importance as any;
+    if (optional?.loading) this.loading = optional.loading as any;
+    if (optional?.name) this.name = optional.name as any;
+    if (optional?.referrerpolicy)
+      this.referrerpolicy = optional.referrerpolicy as any;
+    if (optional?.src) this.src = optional.src as any;
+    if (optional?.srcdoc) this.srcdoc = optional.srcdoc as any;
+    if (optional?.width) this.width = optional.width as any;
+    Component.applyDate(optional, this);
+  }
+
+  public set allowfullscreen(value: boolean) {
+    this.setAttribute("allowfullscreen", value.toString());
+  }
+
+  public get allowfullscreen(): boolean {
+    return this.getAttribute("allowfullscreen") == "true";
+  }
+
+  public set allowpaymentrequest(value: boolean) {
+    this.setAttribute("allowpaymentrequest", value.toString());
+  }
+
+  public get allowpaymentrequest(): boolean {
+    return this.getAttribute("allowpaymentrequest") == "true";
+  }
+
+  public set csp(value: string) {
+    this.setAttribute("csp", value);
+  }
+
+  public get csp(): string {
+    return this.getAttribute("csp");
+  }
+
+  public set importance(value: "auto" | "high" | "low") {
+    this.setAttribute("importance", value);
+  }
+
+  public get importance(): "auto" | "high" | "low" {
+    return this.getAttribute("importance") as any;
+  }
+
+  public set referrerpolicy(
+    value:
+      | "no-referrer"
+      | "no-referrer-when-downgrade"
+      | "origin"
+      | "origin-when-cross-origin"
+      | "same-origin"
+      | "strict-origin"
+      | "strict-origin-when-cross-origin"
+      | "unsafe-url",
+  ) {
+    this.setAttribute("referrerpolicy", value);
+  }
+
+  public get referrerpolicy(): string {
+    return this.getAttribute("referrerpolicy");
+  }
+
+  // public set sandbox(
+  //   value:
+  //     | "allow-downloads-without-user-activation"
+  //     | "allow-forms"
+  //     | "allow-modals"
+  //     | "allow-orientation-lock"
+  //     | "allow-pointer-lock"
+  //     | "allow-popups"
+  //     | "allow-popups-to-escape-sandbox"
+  //     | "allow-presentation"
+  //     | "allow-same-origin"
+  //     | "allow-scripts"
+  //     | "allow-storage-access-by-user-activation"
+  //     | "allow-top-navigation"
+  //     | "allow-top-navigation-by-user-activation",
+  // ) {
+  //   this.setAttribute("sandbox", value);
+  // }
+
+  // public get sandbox(): string {
+  //   return this.getAttribute("sandbox");
+  // }
+
+  onInit(): void { }
+
+  addClasName(...names: string[]): void {
+    this.classList.add(...names);
+  }
+
+  // @ts-ignore
+  get style(): CSSStyleDeclarationRef {
+    // @ts-ignore
+    return this._styleRef;
+  }
+}
+
+// @ts-ignore
+customElements.define("base-iframe-element", IFrameElement, {
+  extends: "iframe",
+});
+
 // <legend>
 export class LegendElement extends HTMLLIElement implements IComponent {
   private _styleRef: CSSStyleRef = new CSSStyleRef(super.style);
@@ -1841,7 +2009,7 @@ export class LegendElement extends HTMLLIElement implements IComponent {
     if (optional?.value) this.value = optional.value as any;
   }
 
-  public onInit(): void {}
+  public onInit(): void { }
 
   public addClasName(...names: string[]): void {
     this.classList.add(...names);
@@ -1872,7 +2040,7 @@ export class NavElement extends HTMLElement implements IComponent {
     Component.applyDate(optional, this);
   }
 
-  onInit(): void {}
+  onInit(): void { }
 
   addClasName(...names: string[]): void {
     this.classList.add(...names);
@@ -1897,7 +2065,7 @@ export class SectionElement extends HTMLElement implements IComponent {
     Component.applyDate(optional, this);
   }
 
-  onInit(): void {}
+  onInit(): void { }
 
   addClasName(...names: string[]): void {
     this.classList.add(...names);
@@ -1924,7 +2092,7 @@ export class ArticleElement extends HTMLElement implements IComponent {
     Component.applyDate(optional, this);
   }
 
-  onInit(): void {}
+  onInit(): void { }
 
   addClasName(...names: string[]): void {
     this.classList.add(...names);
@@ -1951,7 +2119,7 @@ export class SummaryElement extends HTMLElement implements IComponent {
     Component.applyDate(optional, this);
   }
 
-  onInit(): void {}
+  onInit(): void { }
 
   addClasName(...names: string[]): void {
     this.classList.add(...names);
