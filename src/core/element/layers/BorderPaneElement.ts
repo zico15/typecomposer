@@ -1,4 +1,3 @@
-import { th } from "date-fns/locale";
 import {
   type StyleOptional,
   DivElement,
@@ -7,15 +6,7 @@ import {
   ILayout,
 } from "..";
 
-export type Border = "top" | "left" | "center" | "right" | "bottom";
-
 export class BorderPaneElement extends ILayout {
-  public static readonly TOP: Border = "top";
-  public static readonly LEFT: Border = "left";
-  public static readonly CENTER: Border = "center";
-  public static readonly RIGHT: Border = "right";
-  public static readonly BOTTOM: Border = "bottom";
-
   private _top: IComponent = new DivElement();
   private _left: IComponent = new DivElement();
   private _center: GridElement = new GridElement();
