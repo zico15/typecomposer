@@ -18,14 +18,11 @@ export class BorderPaneElement extends ILayout {
 
   private _top: IComponent = new DivElement();
   private _left: IComponent = new DivElement();
-  private _center: GridElement = new GridElement({
-    gridTemplateColumns: "auto 1fr auto",
-    gridTemplateRows: "auto",
-  });
+  private _center: GridElement = new GridElement();
   private _centerPane: IComponent = new DivElement();
   private _right: IComponent = new DivElement();
   private _bottom: IComponent = new DivElement();
-  private variant: "primary" | "secondary";
+  private _variant: "primary" | "secondary";
 
   constructor(
     optional?: StyleOptional & {
@@ -35,19 +32,32 @@ export class BorderPaneElement extends ILayout {
     super(optional);
     this.variant = optional?.variant || "primary";
     this.addClasName("border-pane");
-    if (this.variant == "primary") {
+  }
+
+  get variant(): string {
+    return this._variant;
+  }
+
+  set variant(variant: "primary" | "secondary") {
+    this._variant = variant;
+    if (this._center == undefined) return;
+    if (variant == "primary") {
       this.style.gridTemplateRows = "auto 1fr auto";
       this.style.gridTemplateColumns = "auto";
       this._center.style.gridTemplateColumns = "auto 1fr auto";
       this._center.style.gridTemplateRows = "auto";
+      this.innerHTML = "";
       super.append(this.top, this._center, this.bottom);
+      this._center.innerHTML = "";
       this._center.append(this.left, this._centerPane, this.right);
     } else {
       this.style.gridTemplateRows = "auto";
       this.style.gridTemplateColumns = "auto 1fr auto";
       this._center.style.gridTemplateRows = "auto 1fr auto";
       this._center.style.gridTemplateColumns = "auto";
+      this.innerHTML = "";
       super.append(this.left, this._center, this.right);
+      this._center.innerHTML = "";
       this._center.append(this.top, this._centerPane, this.bottom);
     }
   }
