@@ -1,3 +1,4 @@
+import { th } from "date-fns/locale";
 import {
   type StyleOptional,
   DivElement,
@@ -24,12 +25,31 @@ export class BorderPaneElement extends ILayout {
   private _centerPane: IComponent = new DivElement();
   private _right: IComponent = new DivElement();
   private _bottom: IComponent = new DivElement();
+  private variant: "primary" | "secondary";
 
-  constructor(optional?: StyleOptional) {
+  constructor(
+    optional?: StyleOptional & {
+      variant?: "primary" | "secondary";
+    },
+  ) {
     super(optional);
+    this.variant = optional?.variant || "primary";
     this.addClasName("border-pane");
-    this.append(this.top, this._center, this.bottom);
-    this._center.append(this.left, this._centerPane, this.right);
+    if (this.variant == "primary") {
+      this.style.gridTemplateRows = "auto 1fr auto";
+      this.style.gridTemplateColumns = "auto";
+      this._center.style.gridTemplateColumns = "auto 1fr auto";
+      this._center.style.gridTemplateRows = "auto";
+      super.append(this.top, this._center, this.bottom);
+      this._center.append(this.left, this._centerPane, this.right);
+    } else {
+      this.style.gridTemplateRows = "auto";
+      this.style.gridTemplateColumns = "auto 1fr auto";
+      this._center.style.gridTemplateRows = "auto 1fr auto";
+      this._center.style.gridTemplateColumns = "auto";
+      super.append(this.left, this._center, this.right);
+      this._center.append(this.top, this._centerPane, this.bottom);
+    }
   }
 
   get top(): IComponent {
@@ -59,36 +79,58 @@ export class BorderPaneElement extends ILayout {
   set top(component: IComponent) {
     this._top?.remove();
     this._top = component;
-    this.innerHTML = "";
-    this.append(this.top, this._center, this.bottom);
+    if (this.variant == "primary") {
+      this.innerHTML = "";
+      super.append(this.top, this._center, this.bottom);
+    } else {
+      this._center.innerHTML = "";
+      this._center.append(this.top, this._centerPane, this.bottom);
+    }
   }
 
   set left(component: IComponent) {
     this._left?.remove();
     this._left = component;
-    this._center.innerHTML = "";
-    this._center.append(this.left, this._centerPane, this.right);
+    if (this.variant == "primary") {
+      this._center.innerHTML = "";
+      this._center.append(this.left, this._centerPane, this.right);
+    } else {
+      this.innerHTML = "";
+      this.append(this.left, this._center, this.right);
+    }
   }
 
   set center(component: IComponent) {
     this._centerPane.remove();
     this._centerPane = component;
     this._center.innerHTML = "";
-    this._center.append(this.left, this._centerPane, this.right);
+    if (this.variant == "primary")
+      this._center.append(this.left, this._centerPane, this.right);
+    else this._center.append(this.top, this._centerPane, this.bottom);
   }
 
   set right(component: IComponent) {
     this._right?.remove();
     this._right = component;
-    this._center.innerHTML = "";
-    this._center.append(this.left, this._centerPane, this.right);
+    if (this.variant == "primary") {
+      this._center.innerHTML = "";
+      this._center.append(this.left, this._centerPane, this.right);
+    } else {
+      this.innerHTML = "";
+      this.append(this.left, this._center, this.right);
+    }
   }
 
   set bottom(component: IComponent) {
     this._bottom?.remove();
     this._bottom = component;
-    this.innerHTML = "";
-    this.append(this.top, this._center, this.bottom);
+    if (this.variant == "primary") {
+      this.innerHTML = "";
+      super.append(this.top, this._center, this.bottom);
+    } else {
+      this._center.innerHTML = "";
+      this._center.append(this.top, this._centerPane, this.bottom);
+    }
   }
 }
 // @ts-ignore

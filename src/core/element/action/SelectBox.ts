@@ -51,7 +51,7 @@ export class SelectBox<T = any> extends TextFieldElement {
     console.log(this.itemValue);
   }
 
-  onInit(): void {
+  oninit(): void {
     this.options.style.marginTop = this.offsetTop + 14 + "px";
   }
 

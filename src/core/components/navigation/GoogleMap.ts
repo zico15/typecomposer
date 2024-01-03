@@ -36,10 +36,10 @@ export class GoogleMapElement extends Component {
   }
 
   connectedCallback() {
-    this.onInit();
+    this.oninit();
   }
 
-  onInit(): void {
+  oninit(): void {
     this.loader.load().then(async () => {
       /// @ts-ignore
       const { Map } = (await google.maps.importLibrary(

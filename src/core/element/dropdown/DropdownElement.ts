@@ -17,7 +17,7 @@ export class DropdownElement extends Component {
     this.addClasName("relative", "inline-block", "text-left");
   }
 
-  public onInit(): void {
+  public oninit(): void {
     // this.titleRef.value = this.dropdownTitle.innerHTML;
     // this.dropdownTitle.innerHTML = this.titleRef;
     // //"Dropdown";
