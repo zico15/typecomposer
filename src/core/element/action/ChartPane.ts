@@ -20,7 +20,7 @@ export class ChartElement extends Component {
     this.style.display = "block";
   }
 
-  oninit(): void {
+  onInit(): void {
     const data = {
       labels: ["Janeiro", "Fevereiro", "Março", "Abril", "Maio"],
       datasets: [

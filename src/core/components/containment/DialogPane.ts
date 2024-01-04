@@ -21,7 +21,7 @@ export class DialogPane extends Component {
     });
   }
 
-  oninit(): void {
+  onInit(): void {
     console.log("DialogElement");
   }
 

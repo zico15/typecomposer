@@ -14,7 +14,7 @@ export interface StyleOptional extends CSSStyleDeclarationOptional {
 }
 
 export interface IElement {
-  oninit(): void;
+  onInit(): void;
   append(...childs: any[]): void;
   addClasName(...names: string[]): void;
   // @ts-ignore
@@ -23,7 +23,7 @@ export interface IElement {
 
 // @ts-ignore
 export interface IComponent extends HTMLElement {
-  oninit(): void;
+  onInit(): void;
   unmount?(): void;
   addClasName(...names: string[]): void;
   // @ts-ignore
@@ -72,7 +72,7 @@ export class Component extends HTMLElement implements IComponent {
 
   destructor() {}
 
-  oninit(): void {}
+  onInit(): void {}
 
   addClasName(...names: string[]): void {
     this.classList.add(...names);
@@ -193,7 +193,7 @@ export class DivElement extends HTMLDivElement implements IComponent {
     Component.applyDate(optional, this);
   }
 
-  oninit(): void {}
+  onInit(): void {}
 
   addClasName(...names: string[]): void {
     this.classList.add(...names);
@@ -232,7 +232,7 @@ export class ParagraphElement
     Component.applyDate(optional, this);
   }
 
-  oninit(): void {}
+  onInit(): void {}
 
   addClasName(...names: string[]): void {
     this.classList.add(...names);
@@ -309,7 +309,7 @@ export class AnchorElement extends HTMLAnchorElement implements IComponent {
     });
   }
 
-  oninit(): void {}
+  onInit(): void {}
 
   addClasName(...names: string[]): void {
     this.classList.add(...names);
@@ -346,7 +346,7 @@ export class AbbreviationElement extends HTMLElement implements IComponent {
     Component.applyDate(optional, this);
   }
 
-  oninit(): void {}
+  onInit(): void {}
 
   public addClasName(...names: string[]): void {
     this.classList.add(...names);
@@ -411,7 +411,7 @@ export class AreaElement extends HTMLAreaElement implements IComponent {
     Component.applyDate(optional, this);
   }
 
-  oninit(): void {}
+  onInit(): void {}
 
   public addClasName(...names: string[]): void {
     this.classList.add(...names);
@@ -442,7 +442,7 @@ export class ImageElement extends HTMLImageElement implements IComponent {
     if (optional?.src != undefined) this.src = optional.src;
   }
 
-  oninit(): void {}
+  onInit(): void {}
 
   addClasName(...names: string[]): void {
     this.classList.add(...names);
@@ -467,7 +467,7 @@ export class UListElement extends HTMLUListElement implements IComponent {
     Component.applyDate(optional, this);
   }
 
-  oninit(): void {}
+  onInit(): void {}
 
   addClasName(...names: string[]): void {
     this.classList.add(...names);
@@ -492,7 +492,7 @@ export class OrderedListElement extends HTMLOListElement implements IComponent {
     Component.applyDate(optional, this);
   }
 
-  oninit(): void {}
+  onInit(): void {}
 
   addClasName(...names: string[]): void {
     this.classList.add(...names);
@@ -517,7 +517,7 @@ export class ListItemElement extends HTMLLIElement implements IComponent {
     Component.applyDate(optional, this);
   }
 
-  oninit(): void {}
+  onInit(): void {}
 
   addClasName(...names: string[]): void {
     this.classList.add(...names);
@@ -542,7 +542,7 @@ export class MainElement extends HTMLElement implements IComponent {
     Component.applyDate(optional, this);
   }
 
-  oninit(): void {}
+  onInit(): void {}
 
   addClasName(...names: string[]): void {
     this.classList.add(...names);
@@ -572,7 +572,7 @@ export class SpanElement extends HTMLSpanElement implements IComponent {
     Component.applyDate(optional, this);
   }
 
-  public oninit(): void {}
+  public onInit(): void {}
 
   addClasName(...names: string[]): void {
     this.classList.add(...names);
@@ -597,7 +597,7 @@ export class StrongElement extends HTMLSpanElement implements IComponent {
     Component.applyDate(optional, this);
   }
 
-  public oninit(): void {}
+  public onInit(): void {}
 
   addClasName(...names: string[]): void {
     this.classList.add(...names);
@@ -624,7 +624,7 @@ export class EmElement extends HTMLEmbedElement implements IComponent {
     Component.applyDate(optional, this);
   }
 
-  public oninit(): void {}
+  public onInit(): void {}
 
   addClasName(...names: string[]): void {
     this.classList.add(...names);
@@ -648,7 +648,7 @@ export class BreakElement extends HTMLBRElement implements IComponent {
     Component.applyDate(optional, this);
   }
 
-  oninit(): void {}
+  onInit(): void {}
 
   addClasName(...names: string[]): void {
     this.classList.add(...names);
@@ -673,7 +673,7 @@ export class TableElement extends HTMLTableElement implements IComponent {
     Component.applyDate(optional, this);
   }
 
-  oninit(): void {}
+  onInit(): void {}
 
   addClasName(...names: string[]): void {
     this.classList.add(...names);
@@ -704,7 +704,7 @@ export class TableRowElement extends HTMLTableRowElement implements IComponent {
     Component.applyDate(optional, this);
   }
 
-  oninit(): void {}
+  onInit(): void {}
 
   addClasName(...names: string[]): void {
     this.classList.add(...names);
@@ -737,7 +737,7 @@ export class TableCellElement
     Component.applyDate(optional, this);
   }
 
-  oninit(): void {}
+  onInit(): void {}
   append(...childs: any[]): void {
     throw new Error("Method not implemented.");
   }
@@ -813,7 +813,7 @@ export class InputElement extends HTMLInputElement implements IComponent {
     Component.applyDate(optional, this);
   }
 
-  oninit(): void {}
+  onInit(): void {}
 
   addClasName(...names: string[]): void {
     this.classList.add(...names);
@@ -855,7 +855,7 @@ export class ButtonElement extends HTMLButtonElement implements IComponent {
     Component.applyDate(optional, this);
   }
 
-  oninit(): void {}
+  onInit(): void {}
 
   addClasName(...names: string[]): void {
     this.classList.add(...names);
@@ -889,7 +889,7 @@ export class TextAreaElement extends HTMLTextAreaElement implements IComponent {
     Component.applyDate(optional, this);
   }
 
-  oninit(): void {}
+  onInit(): void {}
 
   addClasName(...names: string[]): void {
     this.classList.add(...names);
@@ -915,7 +915,7 @@ export class LabelElement extends HTMLLabelElement implements IComponent {
     Component.applyDate(optional, this);
   }
 
-  oninit(): void {}
+  onInit(): void {}
 
   addClasName(...names: string[]): void {
     this.classList.add(...names);
@@ -940,7 +940,7 @@ export class SelectElement extends HTMLSelectElement implements IComponent {
     Component.applyDate(optional, this);
   }
 
-  oninit(): void {}
+  onInit(): void {}
 
   addClasName(...names: string[]): void {
     this.classList.add(...names);
@@ -975,7 +975,7 @@ export class AudioElement extends HTMLAudioElement implements IComponent {
     Component.applyDate(optional, this);
   }
 
-  oninit(): void {}
+  onInit(): void {}
 
   addClasName(...names: string[]): void {
     this.classList.add(...names);
@@ -999,7 +999,7 @@ export class BoldElement extends HTMLElement implements IComponent {
     Component.applyDate(optional, this);
   }
 
-  public oninit(): void {}
+  public onInit(): void {}
 
   public addClasName(...names: string[]): void {
     this.classList.add(...names);
@@ -1029,7 +1029,7 @@ export class BaseElement extends HTMLElement implements IComponent {
     Component.applyDate(optional, this);
   }
 
-  public oninit(): void {}
+  public onInit(): void {}
 
   public addClasName(...names: string[]): void {
     this.classList.add(...names);
@@ -1054,7 +1054,7 @@ export class BodyElement extends HTMLBodyElement implements IComponent {
     Component.applyDate(optional, this);
   }
 
-  public oninit(): void {}
+  public onInit(): void {}
 
   public addClasName(...names: string[]): void {
     this.classList.add(...names);
@@ -1080,7 +1080,7 @@ export class VideoElement extends HTMLVideoElement implements IComponent {
     Component.applyDate(optional, this);
   }
 
-  oninit(): void {}
+  onInit(): void {}
 
   addClasName(...names: string[]): void {
     this.classList.add(...names);
@@ -1111,7 +1111,7 @@ export class CanvasElement extends HTMLCanvasElement implements IComponent {
     Component.applyDate(optional, this);
   }
 
-  oninit(): void {}
+  onInit(): void {}
 
   addClasName(...names: string[]): void {
     this.classList.add(...names);
@@ -1141,7 +1141,7 @@ export class CaptionElement
     Component.applyDate(optional, this);
   }
 
-  public oninit(): void {}
+  public onInit(): void {}
 
   public addClasName(...names: string[]): void {
     this.classList.add(...names);
@@ -1168,7 +1168,7 @@ export class CiteElement extends HTMLElement implements IComponent {
     Component.applyDate(optional, this);
   }
 
-  public oninit(): void {}
+  public onInit(): void {}
 
   public addClasName(...names: string[]): void {
     this.classList.add(...names);
@@ -1193,7 +1193,7 @@ export class CodeElement extends HTMLElement implements IComponent {
     Component.applyDate(optional, this);
   }
 
-  public oninit(): void {}
+  public onInit(): void {}
 
   public addClasName(...names: string[]): void {
     this.classList.add(...names);
@@ -1223,7 +1223,7 @@ export class TableColElement extends HTMLTableColElement implements IComponent {
     Component.applyDate(optional, this);
   }
 
-  public oninit(): void {}
+  public onInit(): void {}
 
   public addClasName(...names: string[]): void {
     this.classList.add(...names);
@@ -1255,7 +1255,7 @@ export class TableColGroupElement
     Component.applyDate(optional, this);
   }
 
-  public oninit(): void {}
+  public onInit(): void {}
 
   public addClasName(...names: string[]): void {
     this.classList.add(...names);
@@ -1282,7 +1282,7 @@ export class DataListElement extends HTMLDataListElement implements IComponent {
     Component.applyDate(optional, this);
   }
 
-  public oninit(): void {}
+  public onInit(): void {}
 
   public addClasName(...names: string[]): void {
     this.classList.add(...names);
@@ -1311,7 +1311,7 @@ export class DefinitionDescriptionElement
     Component.applyDate(optional, this);
   }
 
-  public oninit(): void {}
+  public onInit(): void {}
 
   public addClasName(...names: string[]): void {
     this.classList.add(...names);
@@ -1343,7 +1343,7 @@ export class DeletedTextElement extends HTMLModElement implements IComponent {
     Component.applyDate(optional, this);
   }
 
-  public oninit(): void {}
+  public onInit(): void {}
 
   public addClasName(...names: string[]): void {
     this.classList.add(...names);
@@ -1382,7 +1382,7 @@ export class DetailsElement extends HTMLDetailsElement implements IComponent {
     }
   }
 
-  public oninit(): void {}
+  public onInit(): void {}
 
   public addClasName(...names: string[]): void {
     this.classList.add(...names);
@@ -1413,7 +1413,7 @@ export class DefinitionElement extends HTMLElement implements IComponent {
     Component.applyDate(optional, this);
   }
 
-  public oninit(): void {}
+  public onInit(): void {}
 
   public addClasName(...names: string[]): void {
     this.classList.add(...names);
@@ -1444,7 +1444,7 @@ export class DialogElement extends HTMLDialogElement implements IComponent {
     this.open = optional.open == undefined ? true : optional.open;
   }
 
-  public oninit(): void {}
+  public onInit(): void {}
 
   public addClasName(...names: string[]): void {
     this.classList.add(...names);
@@ -1481,7 +1481,7 @@ export class EmbedElement extends HTMLEmbedElement implements IComponent {
     Component.applyDate(optional, this);
   }
 
-  public oninit(): void {}
+  public onInit(): void {}
 
   public addClasName(...names: string[]): void {
     this.classList.add(...names);
@@ -1520,7 +1520,7 @@ export class FieldSetElement extends HTMLFieldSetElement implements IComponent {
     }
   }
 
-  public oninit(): void {}
+  public onInit(): void {}
 
   public addClasName(...names: string[]): void {
     this.classList.add(...names);
@@ -1547,7 +1547,7 @@ export class FooterElement extends HTMLElement implements IComponent {
     Component.applyDate(optional, this);
   }
 
-  public oninit(): void {}
+  public onInit(): void {}
 
   public addClasName(...names: string[]): void {
     this.classList.add(...names);
@@ -1593,7 +1593,7 @@ export class FormElement extends HTMLFormElement implements IComponent {
     Component.applyDate(optional, this);
   }
 
-  oninit(): void {}
+  onInit(): void {}
 
   addClasName(...names: string[]): void {
     this.classList.add(...names);
@@ -1618,7 +1618,7 @@ export class H1Element extends HTMLHeadingElement implements IComponent {
     if (optional?.text) this.innerText = optional.text.toString();
   }
 
-  public oninit(): void {}
+  public onInit(): void {}
 
   addClasName(...names: string[]): void {
     this.classList.add(...names);
@@ -1643,7 +1643,7 @@ export class H2Element extends HTMLHeadingElement implements IComponent {
     if (optional?.text) this.innerText = optional.text.toString();
   }
 
-  public oninit(): void {}
+  public onInit(): void {}
 
   addClasName(...names: string[]): void {
     this.classList.add(...names);
@@ -1678,7 +1678,7 @@ export class H3Element extends HTMLHeadingElement implements IComponent {
     else this.innerText = value;
   }
 
-  public oninit(): void {}
+  public onInit(): void {}
 
   addClasName(...names: string[]): void {
     this.classList.add(...names);
@@ -1701,7 +1701,7 @@ export class H4Element extends H3Element implements IComponent {
     if (optional?.text) this.innerText = optional.text.toString();
   }
 
-  public oninit(): void {}
+  public onInit(): void {}
 
   addClasName(...names: string[]): void {
     this.classList.add(...names);
@@ -1718,7 +1718,7 @@ export class H5Element extends H3Element implements IComponent {
     if (optional?.text) this.innerText = optional.text.toString();
   }
 
-  public oninit(): void {}
+  public onInit(): void {}
 
   addClasName(...names: string[]): void {
     this.classList.add(...names);
@@ -1735,7 +1735,7 @@ export class H6Element extends H3Element implements IComponent {
     if (optional?.text) this.innerText = optional.text.toString();
   }
 
-  public oninit(): void {}
+  public onInit(): void {}
 
   addClasName(...names: string[]): void {
     this.classList.add(...names);
@@ -1754,7 +1754,7 @@ export class HeadElement extends HTMLHeadElement implements IComponent {
     Component.applyDate(optional, this);
   }
 
-  public oninit(): void {}
+  public onInit(): void {}
 
   public addClasName(...names: string[]): void {
     this.classList.add(...names);
@@ -1778,7 +1778,7 @@ export class HeaderElement extends HTMLElement implements IComponent {
     Component.applyDate(optional, this);
   }
 
-  public oninit(): void {}
+  public onInit(): void {}
 
   public addClasName(...names: string[]): void {
     this.classList.add(...names);
@@ -1804,7 +1804,7 @@ export class HorizontalRuleElement extends HTMLHRElement implements IComponent {
     Component.applyDate(optional, this);
   }
 
-  public oninit(): void {}
+  public onInit(): void {}
 
   public addClasName(...names: string[]): void {
     this.classList.add(...names);
@@ -1836,7 +1836,7 @@ export class HtmlElement extends HTMLHtmlElement implements IComponent {
     Component.applyDate(optional, this);
   }
 
-  public oninit(): void {}
+  public onInit(): void {}
 
   public addClasName(...names: string[]): void {
     this.classList.add(...names);
@@ -1981,7 +1981,7 @@ export class IFrameElement extends HTMLIFrameElement implements IComponent {
   //   return this.getAttribute("sandbox");
   // }
 
-  oninit(): void {}
+  onInit(): void {}
 
   addClasName(...names: string[]): void {
     this.classList.add(...names);
@@ -2013,7 +2013,7 @@ export class LegendElement extends HTMLLIElement implements IComponent {
     if (optional?.value) this.value = optional.value as any;
   }
 
-  public oninit(): void {}
+  public onInit(): void {}
 
   public addClasName(...names: string[]): void {
     this.classList.add(...names);
@@ -2044,7 +2044,7 @@ export class NavElement extends HTMLElement implements IComponent {
     Component.applyDate(optional, this);
   }
 
-  oninit(): void {}
+  onInit(): void {}
 
   addClasName(...names: string[]): void {
     this.classList.add(...names);
@@ -2069,7 +2069,7 @@ export class SectionElement extends HTMLElement implements IComponent {
     Component.applyDate(optional, this);
   }
 
-  oninit(): void {}
+  onInit(): void {}
 
   addClasName(...names: string[]): void {
     this.classList.add(...names);
@@ -2096,7 +2096,7 @@ export class ArticleElement extends HTMLElement implements IComponent {
     Component.applyDate(optional, this);
   }
 
-  oninit(): void {}
+  onInit(): void {}
 
   addClasName(...names: string[]): void {
     this.classList.add(...names);
@@ -2123,7 +2123,7 @@ export class SummaryElement extends HTMLElement implements IComponent {
     Component.applyDate(optional, this);
   }
 
-  oninit(): void {}
+  onInit(): void {}
 
   addClasName(...names: string[]): void {
     this.classList.add(...names);

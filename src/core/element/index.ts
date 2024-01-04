@@ -22,6 +22,7 @@ import { ChartElement } from "./action/ChartPane";
 import { CheckBox } from "./action/CheckBox";
 import { ToggleButton } from "./action/ToggleButton";
 import { ILayout, StyleOptional } from "./base/Elements";
+import { StackPane } from "./layers/StackPane";
 
 export {
   App,
@@ -54,6 +55,7 @@ export {
   BorderPaneElement,
   StyleLink,
   ILayout,
+  StackPane,
 };
 
 export type { Variant, StyleOptional };

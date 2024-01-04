@@ -799,6 +799,13 @@ menu-bar-element {
   }
 }
 
+.stack-pane {
+  position: relative;
+}
+
+.stack-pane > * {
+  position: absolute;
+}
 // menu-bar-element {
 //   padding: 0;
 //   margin: 0;
