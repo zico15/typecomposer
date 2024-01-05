@@ -398,7 +398,10 @@ select-box {
     top: 0.8rem;
     left: 1rem;
     cursor: text;
-    transition: top 200ms ease-in, left 200ms, font-size 200ms;
+    transition:
+      top 200ms ease-in,
+      left 200ms,
+      font-size 200ms;
   }
 
   input:focus ~ label,

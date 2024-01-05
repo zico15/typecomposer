@@ -44,10 +44,13 @@ export class ListElement<T = any> extends Component {
   }
 
   public addItem(element: T): ListItemElement {
-    const item = new ListItemElement();
+    const item =
+      element instanceof ListItemElement ? element : new ListItemElement();
     item.classList.add("list-element-item");
-    if (element instanceof HTMLElement) item.appendChild(element as Node);
-    else item.innerHTML = element as string;
+    if (!(element instanceof ListItemElement)) {
+      if (element instanceof HTMLElement) item.appendChild(element as Node);
+      else item.innerHTML = element as string;
+    }
     this.addItemEventListener(item as any, element);
     this.container.appendChild(item);
     return item;
