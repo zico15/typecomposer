@@ -19,7 +19,15 @@ class RouterController {
   public routePages: RoutePageBuild[] = [];
 
   constructor() {
-    window.onload = () => (this.route = this.route);
+    window.onload = () => {
+      if (this.route) {
+        // const view: RoutePageBuild = {...this.route.routes[0], parent: undefined, isFree: true};
+        // this.setView(view);
+
+        // console.log("onload: ", window.location.pathname);
+        // console.log("route: ", this.route);
+      }
+    };
     window.onpopstate = () => {
       console.log("popstate: ", window.location.pathname);
     };
@@ -27,6 +35,12 @@ class RouterController {
 
   get route(): Router | undefined {
     return this._route;
+  }
+
+  set route(value: Router | undefined) {
+    this._route = value;
+    console.log("onload: ", window.location.pathname);
+    console.log("route: ", this.route);
   }
 
   public addHistory(pathname: string) {
@@ -37,27 +51,16 @@ class RouterController {
     }
   }
 
-  set route(value: Router | undefined) {
-    this._route = value;
-    if (value) {
-      this.setRoutePages(window.location.pathname).then(() => {
-        const routeView = this.getRouteViewFree();
-        if (routeView == undefined) this.pageNotFound();
-        else this.setView(this.getView(routeView));
-      });
-    }
-  }
-
-  public async setRoutePages(path: string): Promise<RoutePageBuild[]> {
-    this.addHistory(path);
-    const partesDaUrl = path.split(/\/+/).filter(Boolean);
-    await this.getRoutePages(
-      ["/", ...partesDaUrl],
-      0,
-      this.route?.routes || [],
-    );
-    return this.routePages;
-  }
+  // public async setRoutePages(path: string): Promise<RoutePageBuild[]> {
+  //   this.addHistory(path);
+  //   const partesDaUrl = path.split(/\/+/).filter(Boolean);
+  //   await this.getRoutePages(
+  //     ["/", ...partesDaUrl],
+  //     0,
+  //     this.route?.routes || [],
+  //   );
+  //   return this.routePages;
+  // }
 
   public getRouteViewFree(): RoutePageBuild | undefined {
     const routePage = this.routePages.find((routePage) => routePage.isFree);
@@ -96,39 +99,39 @@ class RouterController {
     document.body.appendChild(view);
   }
 
-  private async getRoutePages(
-    paths: string[],
-    index: number,
-    routes: RoutePage[],
-  ) {
-    if (index == 0) this.routePages = [];
-    let routePage: RoutePage | undefined = undefined;
-    for (const route of routes) {
-      if (paths[index] == route.path || route.path == "*") {
-        routePage = route;
-        this.routePages.push({
-          ...routePage,
-          parent: this.routePages[index - 1],
-          isFree: true,
-        });
-        console.log("path: ", routePage);
-        break;
-      }
-    }
-    if (routePage)
-      this.getRoutePages(paths, index + 1, routePage.children || []);
-    else {
-      console.log(
-        "not found: ",
-        paths[index],
-        " paths: ",
-        paths.length,
-        " routes: ",
-        this.routePages.length,
-      );
-      console.log("routePages: ", this.routePages);
-    }
-  }
+  // private async getRoutePages(
+  //   paths: string[],
+  //   index: number,
+  //   routes: RoutePage[],
+  // ) {
+  //   if (index == 0) this.routePages = [];
+  //   let routePage: RoutePage | undefined = undefined;
+  //   for (const route of routes) {
+  //     if (paths[index] == route.path || route.path == "*") {
+  //       routePage = route;
+  //       this.routePages.push({
+  //         ...routePage,
+  //         parent: this.routePages[index - 1],
+  //         isFree: true,
+  //       });
+  //       console.log("path: ", routePage);
+  //       break;
+  //     }
+  //   }
+  //   if (routePage)
+  //     this.getRoutePages(paths, index + 1, routePage.children || []);
+  //   else {
+  //     console.log(
+  //       "not found: ",
+  //       paths[index],
+  //       " paths: ",
+  //       paths.length,
+  //       " routes: ",
+  //       this.routePages.length,
+  //     );
+  //     console.log("routePages: ", this.routePages);
+  //   }
+  // }
 }
 
 export class Router {
@@ -137,18 +140,22 @@ export class Router {
   constructor(
     public routes: RoutePage[] = [],
     public history: "hash" | "history" = "hash",
-  ) {}
+  ) { }
 
-  private static sortRoutes(routes: RoutePage[]): RoutePage[] {
-    const r = routes.sort((a, b) => {
-      if (a.path == "*") return 1;
-      if (b.path == "*") return -1;
-      return a.path.length - b.path.length;
-    });
-    for (const route of r) {
-      if (route.children) route.children = this.sortRoutes(route.children);
-    }
-    return r;
+  // private static sortRoutes(routes: RoutePage[]): RoutePage[] {
+  //   const r = routes.sort((a, b) => {
+  //     if (a.path == "*") return 1;
+  //     if (b.path == "*") return -1;
+  //     return a.path.length - b.path.length;
+  //   });
+  //   for (const route of r) {
+  //     if (route.children) route.children = this.sortRoutes(route.children);
+  //   }
+  //   return r;
+  // }
+
+  public beforeEach(callback: (to: RoutePage) => void) {
+    // console.log("beforeEach: ", callback);
   }
 
   public static create(data: {
@@ -159,40 +166,35 @@ export class Router {
     return new Router(data.routes, data.history);
   }
 
-  public beforeEach(callback: (to: RoutePage) => void) {
-    // console.log("beforeEach: ", callback);
-  }
-
   public static async use<T = any>(routerImport: () => Promise<T>) {
     const router: Router = ((await routerImport()) as any)?.default;
-    console.log("router: ", router);
     Router.controller.route = router;
   }
 
   public static async go(pathname: string, props: {} = {}) {
-    if (pathname.charAt(0) != "/") pathname = "/" + pathname;
-    const routePages = Router.controller.routePages;
-    this.controller.setRoutePages(pathname).then(async (pages) => {
-      let routePageBuild: RoutePageBuild | undefined = undefined;
-      let routePageBuildNext: RoutePageBuild | undefined = undefined;
-      for (let i: number = 0; i < pages.length; i++) {
-        if (routePages[i] && pages[i].path == routePages[i].path) {
-          pages[i].build = routePages[i].build;
-          pages[i].routeView = routePages[i].routeView;
-          pages[i].isFree = routePages[i].isFree;
-          routePageBuild = pages[i];
-        } else {
-          routePageBuildNext = pages[i];
-          break;
-        }
-      }
-      console.log("routePageBuild: ", routePageBuild);
-      console.log("routePageBuildNext: ", routePageBuildNext);
-      if (routePageBuild && routePageBuild.routeView) {
-        routePageBuild.routeView["updateView"](
-          routePageBuildNext || routePageBuild,
-        );
-      }
-    });
+    // if (pathname.charAt(0) != "/") pathname = "/" + pathname;
+    // const routePages = Router.controller.routePages;
+    // this.controller.setRoutePages(pathname).then(async (pages) => {
+    //   let routePageBuild: RoutePageBuild | undefined = undefined;
+    //   let routePageBuildNext: RoutePageBuild | undefined = undefined;
+    //   for (let i: number = 0; i < pages.length; i++) {
+    //     if (routePages[i] && pages[i].path == routePages[i].path) {
+    //       pages[i].build = routePages[i].build;
+    //       pages[i].routeView = routePages[i].routeView;
+    //       pages[i].isFree = routePages[i].isFree;
+    //       routePageBuild = pages[i];
+    //     } else {
+    //       routePageBuildNext = pages[i];
+    //       break;
+    //     }
+    //   }
+    //   console.log("routePageBuild: ", routePageBuild);
+    //   console.log("routePageBuildNext: ", routePageBuildNext);
+    //   if (routePageBuild && routePageBuild.routeView) {
+    //     routePageBuild.routeView["updateView"](
+    //       routePageBuildNext || routePageBuild,
+    //     );
+    //   }
+    // });
   }
 }
