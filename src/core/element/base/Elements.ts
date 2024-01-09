@@ -1,3 +1,4 @@
+import { Router } from "../..";
 import { Ref } from "../../ref";
 import {
   CSSStyleDeclarationOptional,
@@ -6,7 +7,6 @@ import {
   Variant,
 } from "./CSSStyle";
 import { EventComponent, EventHandler } from "./Event";
-import { router } from "../..";
 
 export interface StyleOptional extends CSSStyleDeclarationOptional {
   id?: string;
@@ -291,6 +291,7 @@ export class AnchorElement extends HTMLAnchorElement implements IComponent {
         | "tag";
       target?: "_blank" | "_self" | "_parent" | "_top";
       type?: string;
+      rlink?: string;
     },
   ) {
     super();
@@ -298,13 +299,13 @@ export class AnchorElement extends HTMLAnchorElement implements IComponent {
     this.addEventListener("click", (event) => {
       event.preventDefault();
       if (this._rlink != "") {
-        router.go(this._rlink);
+        Router.go(this._rlink);
       }
     });
     this.addEventListener("href", (event) => {
       if (this._rlink != "") {
         event.preventDefault();
-        router.go(this._rlink);
+        Router.go(this._rlink);
       }
     });
   }

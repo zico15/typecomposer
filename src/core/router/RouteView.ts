@@ -1,14 +1,17 @@
-import { Component, StyleOptional, IComponent, router } from "..";
-import { RoutePage } from "./Router";
+import { Component, StyleOptional, IComponent, Router } from "..";
 
 export class RouteView extends Component {
   private _view: IComponent | undefined = undefined;
   private _url: string = "";
-  private routePage: RoutePage | undefined = undefined;
+  private routePage: any | undefined;
 
-  constructor(optional?: StyleOptional) {
+  constructor(
+    optional?: StyleOptional & {
+      onUpdateView?: (view?: IComponent) => void;
+    },
+  ) {
     super(optional);
-    router["routeView"] = this;
+    if (optional?.onUpdateView) this.onUpdateView = optional.onUpdateView;
   }
 
   get url(): string {
@@ -16,27 +19,31 @@ export class RouteView extends Component {
   }
 
   connectedCallback() {
-    this.updateView();
+    this.routePage = Router.controller.getRouteViewFree() as any;
+    this.updateView(this.routePage);
   }
 
-  private updateView() {
-    this._url = window.location.pathname;
-    const routePage = router["nextRoutePage"]();
-    if (routePage != undefined) {
-      this.routePage = routePage;
-      this.routePage["routeView"] = this;
-      const routePageView = routePage.links?.find((link) =>
-        this.url.includes(link.pathname),
-      );
-      if (routePageView && routePageView.component) {
-        const component: any = new routePageView.component();
-        this.view = component;
-      }
+  private setRoutePage(routePage: any | undefined) {
+    this.routePage = routePage;
+    if (this.routePage != undefined) this._url = this.routePage?.path || "";
+    if (this.routePage != undefined && this.routePage.parent) {
+      this.routePage.parent.routeView = this;
     }
   }
 
+  private updateView(routePage: any) {
+    this.setRoutePage(routePage);
+    if (routePage) {
+      const view = Router.controller.getView(routePage);
+      console.log("RouteView: ", this._url, " view: ", view);
+      this.view = view;
+    } else this.view = undefined;
+  }
+
   disconnectedCallback() {
-    this.routePage["routeView"] = undefined;
+    if (this.routePage && this.routePage.parent) {
+      this.routePage.parent.routeView = undefined;
+    }
   }
 
   get view(): IComponent | undefined {
@@ -44,19 +51,17 @@ export class RouteView extends Component {
   }
 
   set view(value: IComponent | undefined) {
-    if (this._view != undefined) {
-      this._view.remove();
-    }
+    if (this._view == value) return;
     this._view = value;
-    if (value != undefined) {
-      this.append(value);
-    }
-    // if (value != undefined) {
-    //   this.style.display = "contents";
-    // } else {
-    //   this.style.removeProperty("display");
-    // }
+    if (value == undefined) {
+      for (const child of Array.from(this.children)) {
+        child.remove();
+      }
+    } else this.replaceChildren(value);
+    this.onUpdateView(value);
   }
+
+  public onUpdateView = (view?: IComponent) => {};
 }
 // @ts-ignore
 customElements.define("route-view", RouteView);

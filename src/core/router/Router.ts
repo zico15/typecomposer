@@ -1,157 +1,79 @@
-import { Component } from "../element";
-import { RouteView } from "./RouteView";
+import { IComponent, RouteView } from "..";
 
-export interface RoutePage {
-  pathname: string;
-  props?: {};
-  component: any;
-  links?: RoutePage[];
-  parent?: RoutePage;
+export interface RoutePage<IComponent = any> {
+  path: string;
+  component?: IComponent;
+  children?: RoutePage[];
+  redirect?: string;
 }
 
-class Router {
-  private routes: Map<string, RoutePage> = new Map();
-  private props: {} = {};
-  private index: number = 0;
-  private routeLinks: RoutePage[] = [];
+interface RoutePageBuild extends RoutePage {
+  parent: RoutePageBuild;
+  isFree: boolean;
+  build?: IComponent;
+  routeView?: RouteView;
+}
 
-  private routeView: RouteView | undefined = undefined;
+class RouterController {
+  private _route: Router | undefined = undefined;
+  public routePages: RoutePageBuild[] = [];
 
   constructor() {
-    window.onload = (ev) => {
-      this.loadPage(window.location.pathname);
-      ev.preventDefault();
-    };
-    window.onpopstate = (ev) => {
+    window.onload = () => (this.route = this.route);
+    window.onpopstate = () => {
       console.log("popstate: ", window.location.pathname);
-      this.loadPage(window.location.pathname);
-      ev.preventDefault();
     };
   }
 
-  private async getRoutePage(
-    pathname: string,
-  ): Promise<{ routePage: RoutePage; routeLinks: RoutePage[] }> {
-    let routePage = this.routes.get(pathname);
-    if (routePage == undefined) return { routePage: undefined, routeLinks: [] };
-    const routeLinks = [routePage];
-    while (routePage && routePage?.parent != undefined) {
-      routePage = routePage?.parent;
-      routeLinks.unshift(routePage);
-    }
-    return { routePage, routeLinks };
+  get route(): Router | undefined {
+    return this._route;
   }
 
-  private async loadPage(pathname: string = window.location.pathname) {
-    const { routePage, routeLinks } = await this.getRoutePage(pathname);
-    this.routeLinks = routeLinks;
-    this.index = 0;
+  public addHistory(pathname: string) {
+    if (this.route) {
+      if (this.route.history == "history")
+        window.history.pushState({}, "", pathname);
+      else if (this.route.history == "hash") window.location.hash = pathname;
+    }
+  }
 
-    if (routePage != undefined) {
-      const page = new routePage.component();
-      page.props = this.props;
-      this.setApp(page);
-      if (page.title != null) window.document.title = page.title;
-      else {
-        page.title = pathname.substring(
-          pathname.indexOf("/") + 1,
-          pathname.length,
-        );
-        window.document.title =
-          page.title != undefined
-            ? page.title
-            : page.title != undefined
-              ? page.title
-              : "home";
+  set route(value: Router | undefined) {
+    this._route = value;
+    if (value) {
+      this.setRoutePages(window.location.pathname).then(() => {
+        const routeView = this.getRouteViewFree();
+        if (routeView == undefined) this.pageNotFound();
+        else this.setView(this.getView(routeView));
+      });
+    }
+  }
+
+  public async setRoutePages(path: string): Promise<RoutePageBuild[]> {
+    this.addHistory(path);
+    const partesDaUrl = path.split(/\/+/).filter(Boolean);
+    await this.getRoutePages(
+      ["/", ...partesDaUrl],
+      0,
+      this.route?.routes || [],
+    );
+    return this.routePages;
+  }
+
+  public getRouteViewFree(): RoutePageBuild | undefined {
+    const routePage = this.routePages.find((routePage) => routePage.isFree);
+    if (routePage) routePage.isFree = false;
+    return routePage;
+  }
+
+  public getView(routeView: RoutePageBuild): IComponent | undefined {
+    if (routeView) {
+      if (routeView.build == undefined) {
+        console.log("build: ", routeView.component);
+        routeView.build = new routeView.component();
       }
-    } else this.pageNotFound();
-  }
-
-  protected nextRoutePage(): RoutePage | undefined {
-    return this.routeLinks[this.index++];
-  }
-
-  public async put<Component>(
-    pathname: string,
-    page: Component,
-    links: RoutePage[] = [],
-    parent?: RoutePage,
-  ): Promise<RoutePage> {
-    const route = {
-      pathname: pathname,
-      component: page,
-      links: links,
-      parent: parent,
-    };
-    this.routes.set(pathname, route);
-    if (links.length > 0) {
-      const pathname_parent = pathname.replace(/^\/+|\/+$/g, "");
-      for await (const link of links) {
-        link.pathname = `${pathname_parent}/${link.pathname.replace(
-          /^\/+|\/+$/g,
-          "",
-        )}`;
-        if (link.pathname.charAt(0) != "/") link.pathname = "/" + link.pathname;
-        await this.put(link.pathname, link.component, link.links || [], route);
-      }
+      return routeView.build;
     }
-    console.log("put: ", route);
-    return route;
-  }
-
-  public getPate(pathname: string): Component | undefined | null {
-    return this.routes.get(pathname).component;
-  }
-
-  public remove(route: Component) {
-    // this.routes.delete(route.pathname);
-  }
-
-  private async checkRouteLink(pathname: string): Promise<boolean> {
-    const { routePage, routeLinks } = await this.getRoutePage(pathname);
-    if (routePage != undefined) {
-      const isRouteLink = routeLinks[0] == this.routeLinks[0];
-      console.log("isRouteLink: ", isRouteLink);
-      if (!isRouteLink) return false;
-      let routeLinkLast = this.routeLinks[this.index];
-      this.index = 0;
-      for await (const routeLink of routeLinks) {
-        if (
-          this.index < this.routeLinks.length &&
-          routeLink == this.routeLinks[this.index]
-        ) {
-          routeLinkLast = routeLink;
-        } else break;
-        this.index++;
-      }
-      console.log("routeLinkLast: ", routeLinkLast);
-      if (routeLinkLast && routeLinkLast["routeView"] != undefined) {
-        this.routeLinks = routeLinks;
-        this.index > 0 && this.index--;
-        routeLinkLast["routeView"].updateView();
-      }
-      return true;
-    }
-    return false;
-  }
-
-  public async go(pathname: string, props: {} = {}) {
-    this.props = props;
-    if (pathname.charAt(0) != "/") pathname = "/" + pathname;
-    window.history.pushState({}, pathname, window.location.origin + pathname);
-    if (typeof pathname == "string") {
-      if (await this.checkRouteLink(pathname)) {
-      } else this.loadPage(pathname);
-    }
-  }
-
-  private setApp<T extends Component>(app: T) {
-    if (this.routeView != undefined) {
-      this.routeView.view = app;
-    } else {
-      document.body.removeChild(document.body.firstChild);
-      document.body.appendChild(app);
-    }
+    return undefined;
   }
 
   private pageNotFound(): void {
@@ -166,9 +88,111 @@ class Router {
       "<h1 style='text-shadow: 0 3px 0px $color-base, 0 6px 0px #333; color: #f54f59; font-size: 6em; font-weight: 700; line-height: 0.6em;'>404</h1>" +
       "<h1 style='text-shadow: 0 3px 0px $color-base, 0 6px 0px #333; color: #f54f59; font-size: 10; font-weight: 15; line-height: 0.6em;'>Page not found</h1>" +
       "</div>";
-    console.log(this.props);
     document.body = body;
+  }
+
+  private setView<T extends IComponent>(view: T) {
+    document.body.removeChild(document.body.firstChild);
+    document.body.appendChild(view);
+  }
+
+  private async getRoutePages(
+    paths: string[],
+    index: number,
+    routes: RoutePage[],
+  ) {
+    if (index == 0) this.routePages = [];
+    let routePage: RoutePage | undefined = undefined;
+    for (const route of routes) {
+      if (paths[index] == route.path || route.path == "*") {
+        routePage = route;
+        this.routePages.push({
+          ...routePage,
+          parent: this.routePages[index - 1],
+          isFree: true,
+        });
+        console.log("path: ", routePage);
+        break;
+      }
+    }
+    if (routePage)
+      this.getRoutePages(paths, index + 1, routePage.children || []);
+    else {
+      console.log(
+        "not found: ",
+        paths[index],
+        " paths: ",
+        paths.length,
+        " routes: ",
+        this.routePages.length,
+      );
+      console.log("routePages: ", this.routePages);
+    }
   }
 }
 
-export const router = new Router();
+export class Router {
+  public static controller: RouterController = new RouterController();
+
+  constructor(
+    public routes: RoutePage[] = [],
+    public history: "hash" | "history" = "hash",
+  ) {}
+
+  private static sortRoutes(routes: RoutePage[]): RoutePage[] {
+    const r = routes.sort((a, b) => {
+      if (a.path == "*") return 1;
+      if (b.path == "*") return -1;
+      return a.path.length - b.path.length;
+    });
+    for (const route of r) {
+      if (route.children) route.children = this.sortRoutes(route.children);
+    }
+    return r;
+  }
+
+  public static create(data: {
+    routes: RoutePage[];
+    history?: "hash" | "history";
+  }): Router {
+    // const routes = this.sortRoutes(data.routes);
+    return new Router(data.routes, data.history);
+  }
+
+  public beforeEach(callback: (to: RoutePage) => void) {
+    // console.log("beforeEach: ", callback);
+  }
+
+  public static async use<T = any>(routerImport: () => Promise<T>) {
+    const router: Router = ((await routerImport()) as any)?.default;
+    console.log("router: ", router);
+    Router.controller.route = router;
+  }
+
+  public static async go(pathname: string, props: {} = {}) {
+    if (pathname.charAt(0) != "/") pathname = "/" + pathname;
+    const routePages = Router.controller.routePages;
+    this.controller.setRoutePages(pathname).then(async (pages) => {
+      let routePageBuild: RoutePageBuild | undefined = undefined;
+      let routePageBuildNext: RoutePageBuild | undefined = undefined;
+      for (let i: number = 0; i < pages.length; i++) {
+        if (routePages[i] && pages[i].path == routePages[i].path) {
+          pages[i].build = routePages[i].build;
+          pages[i].routeView = routePages[i].routeView;
+          pages[i].isFree = routePages[i].isFree;
+          routePageBuild = pages[i];
+        } else {
+          routePageBuildNext = pages[i];
+          break;
+        }
+      }
+      console.log("routePageBuild: ", routePageBuild);
+      console.log("routePageBuildNext: ", routePageBuildNext);
+      if (routePageBuild && routePageBuild.routeView) {
+        routePageBuild.routeView["updateView"](
+          routePageBuildNext || routePageBuild,
+        );
+      }
+    });
+  }
+}

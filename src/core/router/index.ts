@@ -1,2 +1,2 @@
 export { RouteView } from "./RouteView";
-export { router } from "./Router";
+export { Router } from "./Router";

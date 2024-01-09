@@ -2101,7 +2101,14 @@ export interface CSSStyleDeclarationRef {
   /** [MDN Reference](https://developer.mozilla.org/docs/Web/CSS/direction) */
   direction: string | Ref<string>;
   /** [MDN Reference](https://developer.mozilla.org/docs/Web/CSS/display) */
-  display: string | Ref<string>;
+  display:
+    | string
+    | Ref<string>
+    | "absolute"
+    | "fixed"
+    | "relative"
+    | "static"
+    | "sticky";
   dominantBaseline: string | Ref<string>;
   /** [MDN Reference](https://developer.mozilla.org/docs/Web/CSS/empty-cells) */
   emptyCells: string | Ref<string>;
