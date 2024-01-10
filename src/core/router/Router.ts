@@ -1,4 +1,5 @@
 import { IComponent, RouteView } from "..";
+import { build } from "vite";
 
 export interface RoutePage<IComponent = any> {
   path: string;
@@ -17,20 +18,100 @@ interface RoutePageBuild extends RoutePage {
 class RouterController {
   private _route: Router | undefined = undefined;
   public routePages: RoutePageBuild[] = [];
+  private currentRoute: RoutePageBuild[] = [];
+  private previousRoute: RoutePageBuild[] = [];
 
   constructor() {
     window.onload = () => {
       if (this.route) {
         // const view: RoutePageBuild = {...this.route.routes[0], parent: undefined, isFree: true};
         // this.setView(view);
-
         // console.log("onload: ", window.location.pathname);
         // console.log("route: ", this.route);
       }
     };
     window.onpopstate = () => {
       console.log("popstate: ", window.location.pathname);
+      this.updateRoute(window.location.pathname);
     };
+  }
+
+  doRoutesMatch(route1: string, route2: string): boolean {
+    // Replace '*' with a regex pattern that matches any segment
+    const routePattern2 = route2.replace(/\*/g, "[a-zA-Z0-9-]+");
+
+    // Create regex patterns for the routes
+    const regex2 = new RegExp(`^${routePattern2}$`);
+
+    // Test if both routes match each other
+    return regex2.test(route1);
+  }
+
+  findCorrectRoute(
+    pathname: string,
+    routes: RoutePage[] = this.route?.routes,
+  ): string {
+    if (routes) {
+      for (const route of routes) {
+        if (this.doRoutesMatch(pathname, route.path)) {
+          this.currentRoute.push({
+            ...route,
+            isFree: true,
+            parent:
+              this.currentRoute.length > 0
+                ? this.currentRoute[this.currentRoute.length - 1]
+                : undefined,
+          });
+          return route.path;
+        }
+      }
+      for (const route of routes) {
+        if (route.children) {
+          this.currentRoute.push({
+            ...route,
+            isFree: true,
+            parent:
+              this.currentRoute.length > 0
+                ? this.currentRoute[this.currentRoute.length - 1]
+                : undefined,
+          });
+          const r = this.findCorrectRoute(pathname, route.children);
+          if (r != "/") return r;
+          else this.currentRoute.pop();
+        }
+      }
+    }
+    return "/";
+  }
+
+  buildRoute(routes: RoutePage[] = this.route?.routes, parent: string = "") {
+    if (routes) {
+      for (let route of routes) {
+        route.path = parent + route.path;
+        if (route.children) {
+          this.buildRoute(
+            route.children,
+            route.path == "/" ? route.path : route.path + "/",
+          );
+        }
+      }
+    }
+  }
+
+  buildPages() {
+    const toBuild = this.currentRoute[0];
+    toBuild.build = new toBuild.component();
+    toBuild.isFree = false;
+    this.setView(toBuild.build);
+  }
+
+  public updateRoute(pathname) {
+    this.previousRoute = [...this.currentRoute];
+    this.currentRoute = [];
+    this.findCorrectRoute(pathname);
+    this.addHistory(pathname);
+    if (this.currentRoute.length == 0) this.pageNotFound();
+    else this.buildPages();
   }
 
   get route(): Router | undefined {
@@ -39,8 +120,12 @@ class RouterController {
 
   set route(value: Router | undefined) {
     this._route = value;
-    console.log("onload: ", window.location.pathname);
-    console.log("route: ", this.route);
+    this.buildRoute();
+    let pathname = window.location.pathname;
+    if (pathname.charAt(pathname.length - 1) == "/") {
+      pathname = pathname.substring(0, pathname.length - 1) || "/";
+    }
+    this.updateRoute(pathname);
   }
 
   public addHistory(pathname: string) {
@@ -63,7 +148,7 @@ class RouterController {
   // }
 
   public getRouteViewFree(): RoutePageBuild | undefined {
-    const routePage = this.routePages.find((routePage) => routePage.isFree);
+    const routePage = this.currentRoute.find((routePage) => routePage.isFree);
     if (routePage) routePage.isFree = false;
     return routePage;
   }
@@ -81,7 +166,7 @@ class RouterController {
 
   private pageNotFound(): void {
     const body = document.createElement("body") as HTMLBodyElement;
-    body.style.backgroundColor = "#404853";
+    // body.style.backgroundColor = "#404853";
     body.style.width = "100%";
     body.style.height = "100%";
     body.style.overflow = "hidden";
@@ -95,7 +180,8 @@ class RouterController {
   }
 
   private setView<T extends IComponent>(view: T) {
-    document.body.removeChild(document.body.firstChild);
+    if (!(document.body.lastElementChild instanceof HTMLScriptElement))
+      document.body.lastElementChild.remove();
     document.body.appendChild(view);
   }
 
@@ -140,7 +226,7 @@ export class Router {
   constructor(
     public routes: RoutePage[] = [],
     public history: "hash" | "history" = "hash",
-  ) { }
+  ) {}
 
   // private static sortRoutes(routes: RoutePage[]): RoutePage[] {
   //   const r = routes.sort((a, b) => {
@@ -168,10 +254,14 @@ export class Router {
 
   public static async use<T = any>(routerImport: () => Promise<T>) {
     const router: Router = ((await routerImport()) as any)?.default;
+    console.log("use: ", router);
     Router.controller.route = router;
   }
 
   public static async go(pathname: string, props: {} = {}) {
+    console.log("go: ", pathname);
+    if (pathname.charAt(0) != "/") pathname = "/" + pathname;
+    this.controller.updateRoute(pathname);
     // if (pathname.charAt(0) != "/") pathname = "/" + pathname;
     // const routePages = Router.controller.routePages;
     // this.controller.setRoutePages(pathname).then(async (pages) => {
