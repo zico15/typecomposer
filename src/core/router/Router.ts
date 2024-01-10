@@ -11,8 +11,9 @@ export interface RoutePage<IComponent = any> {
 interface RoutePageBuild extends RoutePage {
   parent: RoutePageBuild;
   isFree: boolean;
-  build?: IComponent;
-  routeView?: RouteView;
+  build: IComponent;
+  routeView: RouteView | undefined;
+  id?: string;
 }
 
 class RouterController {
@@ -23,12 +24,7 @@ class RouterController {
 
   constructor() {
     window.onload = () => {
-      if (this.route) {
-        // const view: RoutePageBuild = {...this.route.routes[0], parent: undefined, isFree: true};
-        // this.setView(view);
-        // console.log("onload: ", window.location.pathname);
-        // console.log("route: ", this.route);
-      }
+      if (this.route) this.updateRoute(window.location.pathname);
     };
     window.onpopstate = () => {
       console.log("popstate: ", window.location.pathname);
@@ -56,6 +52,8 @@ class RouterController {
         if (this.doRoutesMatch(pathname, route.path)) {
           this.currentRoute.push({
             ...route,
+            build: undefined,
+            routeView: undefined,
             isFree: true,
             parent:
               this.currentRoute.length > 0
@@ -69,6 +67,8 @@ class RouterController {
         if (route.children) {
           this.currentRoute.push({
             ...route,
+            build: undefined,
+            routeView: undefined,
             isFree: true,
             parent:
               this.currentRoute.length > 0
@@ -99,14 +99,41 @@ class RouterController {
   }
 
   buildPages() {
+    for (let i: number = 0; i < this.currentRoute.length; i++) {
+      if (
+        this.previousRoute[i] != undefined &&
+        this.currentRoute[i].id == this.previousRoute[i].id
+      ) {
+        this.currentRoute[i] = this.previousRoute[i];
+        if (this.currentRoute[i + 1])
+          this.currentRoute[i + 1].parent = this.currentRoute[i];
+      }
+    }
     const toBuild = this.currentRoute[0];
-    toBuild.build = new toBuild.component();
-    toBuild.isFree = false;
-    this.setView(toBuild.build);
+    if (toBuild.build == undefined) {
+      toBuild.isFree = false;
+      toBuild.build = new toBuild.component();
+      this.setView(toBuild.build);
+    } else {
+      // console.log("toBuild: ", this.currentRoute);
+      for (let i = 1; i < this.currentRoute.length; i++) {
+        if (this.currentRoute[i].build == undefined) {
+          // console.log("updateView: ", this.currentRoute[i]);
+          if (this.currentRoute[i].parent.routeView) {
+            // console.log("updateView: chamada");
+            this.currentRoute[i].parent.routeView["updateView"](
+              this.currentRoute[i],
+            );
+          }
+          break;
+        }
+      }
+    }
+    this.previousRoute = this.currentRoute;
   }
 
-  public updateRoute(pathname) {
-    this.previousRoute = [...this.currentRoute];
+  public updateRoute(pathname: string) {
+    this.previousRoute = this.currentRoute;
     this.currentRoute = [];
     this.findCorrectRoute(pathname);
     this.addHistory(pathname);
@@ -136,17 +163,6 @@ class RouterController {
     }
   }
 
-  // public async setRoutePages(path: string): Promise<RoutePageBuild[]> {
-  //   this.addHistory(path);
-  //   const partesDaUrl = path.split(/\/+/).filter(Boolean);
-  //   await this.getRoutePages(
-  //     ["/", ...partesDaUrl],
-  //     0,
-  //     this.route?.routes || [],
-  //   );
-  //   return this.routePages;
-  // }
-
   public getRouteViewFree(): RoutePageBuild | undefined {
     const routePage = this.currentRoute.find((routePage) => routePage.isFree);
     if (routePage) routePage.isFree = false;
@@ -156,7 +172,6 @@ class RouterController {
   public getView(routeView: RoutePageBuild): IComponent | undefined {
     if (routeView) {
       if (routeView.build == undefined) {
-        console.log("build: ", routeView.component);
         routeView.build = new routeView.component();
       }
       return routeView.build;
@@ -166,7 +181,6 @@ class RouterController {
 
   private pageNotFound(): void {
     const body = document.createElement("body") as HTMLBodyElement;
-    // body.style.backgroundColor = "#404853";
     body.style.width = "100%";
     body.style.height = "100%";
     body.style.overflow = "hidden";
@@ -184,40 +198,6 @@ class RouterController {
       document.body.lastElementChild.remove();
     document.body.appendChild(view);
   }
-
-  // private async getRoutePages(
-  //   paths: string[],
-  //   index: number,
-  //   routes: RoutePage[],
-  // ) {
-  //   if (index == 0) this.routePages = [];
-  //   let routePage: RoutePage | undefined = undefined;
-  //   for (const route of routes) {
-  //     if (paths[index] == route.path || route.path == "*") {
-  //       routePage = route;
-  //       this.routePages.push({
-  //         ...routePage,
-  //         parent: this.routePages[index - 1],
-  //         isFree: true,
-  //       });
-  //       console.log("path: ", routePage);
-  //       break;
-  //     }
-  //   }
-  //   if (routePage)
-  //     this.getRoutePages(paths, index + 1, routePage.children || []);
-  //   else {
-  //     console.log(
-  //       "not found: ",
-  //       paths[index],
-  //       " paths: ",
-  //       paths.length,
-  //       " routes: ",
-  //       this.routePages.length,
-  //     );
-  //     console.log("routePages: ", this.routePages);
-  //   }
-  // }
 }
 
 export class Router {
@@ -226,19 +206,9 @@ export class Router {
   constructor(
     public routes: RoutePage[] = [],
     public history: "hash" | "history" = "hash",
-  ) {}
-
-  // private static sortRoutes(routes: RoutePage[]): RoutePage[] {
-  //   const r = routes.sort((a, b) => {
-  //     if (a.path == "*") return 1;
-  //     if (b.path == "*") return -1;
-  //     return a.path.length - b.path.length;
-  //   });
-  //   for (const route of r) {
-  //     if (route.children) route.children = this.sortRoutes(route.children);
-  //   }
-  //   return r;
-  // }
+  ) {
+    Router.createAutoId(this.routes, 0);
+  }
 
   public beforeEach(callback: (to: RoutePage) => void) {
     // console.log("beforeEach: ", callback);
@@ -248,43 +218,26 @@ export class Router {
     routes: RoutePage[];
     history?: "hash" | "history";
   }): Router {
-    // const routes = this.sortRoutes(data.routes);
     return new Router(data.routes, data.history);
+  }
+
+  private static createAutoId(routes: RoutePage[] = [], id: number) {
+    for (const route of routes) {
+      route["id"] = `${route.path}_${++id}`;
+      if (route.children) {
+        id = this.createAutoId(route.children, id);
+      }
+    }
+    return id;
   }
 
   public static async use<T = any>(routerImport: () => Promise<T>) {
     const router: Router = ((await routerImport()) as any)?.default;
-    console.log("use: ", router);
     Router.controller.route = router;
   }
 
   public static async go(pathname: string, props: {} = {}) {
-    console.log("go: ", pathname);
     if (pathname.charAt(0) != "/") pathname = "/" + pathname;
     this.controller.updateRoute(pathname);
-    // if (pathname.charAt(0) != "/") pathname = "/" + pathname;
-    // const routePages = Router.controller.routePages;
-    // this.controller.setRoutePages(pathname).then(async (pages) => {
-    //   let routePageBuild: RoutePageBuild | undefined = undefined;
-    //   let routePageBuildNext: RoutePageBuild | undefined = undefined;
-    //   for (let i: number = 0; i < pages.length; i++) {
-    //     if (routePages[i] && pages[i].path == routePages[i].path) {
-    //       pages[i].build = routePages[i].build;
-    //       pages[i].routeView = routePages[i].routeView;
-    //       pages[i].isFree = routePages[i].isFree;
-    //       routePageBuild = pages[i];
-    //     } else {
-    //       routePageBuildNext = pages[i];
-    //       break;
-    //     }
-    //   }
-    //   console.log("routePageBuild: ", routePageBuild);
-    //   console.log("routePageBuildNext: ", routePageBuildNext);
-    //   if (routePageBuild && routePageBuild.routeView) {
-    //     routePageBuild.routeView["updateView"](
-    //       routePageBuildNext || routePageBuild,
-    //     );
-    //   }
-    // });
   }
 }
