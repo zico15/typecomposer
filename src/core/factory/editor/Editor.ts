@@ -19,17 +19,17 @@ export class EditorFactory {
     // document.body.appendChild(this.pane);
     // this.pane.appendChild(this.root);
     // console.log(this.root);
-    App.appendStyleSheet(
-      "src/assets/styles/style-editor.scss",
-      "editor-stylesheet",
-    );
+    // App.appendStyleSheet(
+    //   "src/assets/styles/style-editor.scss",
+    //   "editor-stylesheet",
+    // );
     document.title = "Editor";
   }
 
   destroy() {
     // document.body.innerHTML = "";
     // document.body.appendChild(this.root);
-    App.removeStyleSheet("editor-stylesheet");
+    // App.removeStyleSheet("editor-stylesheet");
     document.title = this.title;
   }
 }
