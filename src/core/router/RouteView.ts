@@ -1,9 +1,18 @@
 import { Component, StyleOptional, IComponent, Router } from "..";
+import { RoutePage } from "./Router";
+
+interface RoutePageBuild extends RoutePage {
+  parent: RoutePageBuild;
+  isFree: boolean;
+  build?: IComponent;
+  routeView?: RouteView;
+  id?: string;
+}
 
 export class RouteView extends Component {
   private _view: IComponent | undefined = undefined;
   private _url: string = "";
-  private routePage: any | undefined;
+  private routePage: RoutePageBuild | undefined;
 
   constructor(
     optional?: StyleOptional & {
@@ -11,7 +20,6 @@ export class RouteView extends Component {
     },
   ) {
     super(optional);
-    if (optional?.onUpdateView) this.onUpdateView = optional.onUpdateView;
   }
 
   get url(): string {
@@ -19,31 +27,27 @@ export class RouteView extends Component {
   }
 
   connectedCallback() {
-    this.routePage = Router.controller.getRouteViewFree() as any;
-    this.updateView(this.routePage);
+    if (this.routePage == undefined)
+      this.updateView(Router.controller.getRouteViewFree());
   }
 
-  private setRoutePage(routePage: any | undefined) {
-    this.routePage = routePage;
-    if (this.routePage != undefined) this._url = this.routePage?.path || "";
-    if (this.routePage != undefined && this.routePage.parent) {
-      this.routePage.parent.routeView = this;
+  private updateView(routePage: RoutePageBuild | undefined) {
+    if (routePage == undefined) {
+      this.view = undefined;
+      return;
     }
-  }
-
-  private updateView(routePage: any) {
-    this.setRoutePage(routePage);
-    if (routePage) {
-      const view = Router.controller.getView(routePage);
-      console.log("RouteView: ", this._url, " view: ", view);
-      this.view = view;
-    } else this.view = undefined;
+    if (routePage.parent) routePage.parent.routeView = this;
+    routePage.isFree = false;
+    routePage.build = routePage.build || new routePage.component!();
+    this.routePage = routePage;
+    this.view = routePage.build;
   }
 
   disconnectedCallback() {
-    if (this.routePage && this.routePage.parent) {
+    if (this.routePage?.parent) {
       this.routePage.parent.routeView = undefined;
     }
+    this.routePage = undefined;
   }
 
   get view(): IComponent | undefined {
@@ -52,16 +56,14 @@ export class RouteView extends Component {
 
   set view(value: IComponent | undefined) {
     if (this._view == value) return;
+    if (this._view) this._view.remove();
     this._view = value;
-    if (value == undefined) {
-      for (const child of Array.from(this.children)) {
-        child.remove();
-      }
-    } else this.replaceChildren(value);
-    this.onUpdateView(value);
+    this.append(value);
   }
 
-  public onUpdateView = (view?: IComponent) => {};
+  public onUpdateView = (view?: IComponent) => {
+    this.view = view;
+  };
 }
 // @ts-ignore
 customElements.define("route-view", RouteView);

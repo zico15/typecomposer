@@ -128,7 +128,7 @@ class Router {
       if (routeLinkLast && routeLinkLast["routeView"] != undefined) {
         this.routeLinks = routeLinks;
         this.index > 0 && this.index--;
-        routeLinkLast["routeView"].updateView();
+        // routeLinkLast["routeView"].updateView();
       }
       return true;
     }
