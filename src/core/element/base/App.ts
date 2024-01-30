@@ -26,8 +26,4 @@ export class App {
   public static setLanguage(language: string): void {
     App.data.language = language;
   }
-
-  static setRouter<T = any>(routerImport: () => Promise<T>): Promise<void> {
-    return Router.use(routerImport);
-  }
 }

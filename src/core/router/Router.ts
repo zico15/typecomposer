@@ -217,8 +217,9 @@ export class Router {
   public static create(data: {
     routes: RoutePage[];
     history?: "hash" | "history";
-  }): Router {
-    return new Router(data.routes, data.history);
+  }): void {
+    // console.log("Dentro do create");
+    Router.controller.route = new Router(data.routes, data.history);
   }
 
   private static createAutoId(routes: RoutePage[] = [], id: number) {
@@ -231,10 +232,10 @@ export class Router {
     return id;
   }
 
-  public static async use<T = any>(routerImport: () => Promise<T>) {
-    const router: Router = ((await routerImport()) as any)?.default;
-    Router.controller.route = router;
-  }
+  // public static async use<T = any>(routerImport: () => Promise<T>) {
+  //   const router: Router = ((await routerImport()) as any)?.default;
+  //   Router.controller.route = router;
+  // }
 
   public static async go(pathname: string, props: {} = {}) {
     if (pathname.charAt(0) != "/") pathname = "/" + pathname;
