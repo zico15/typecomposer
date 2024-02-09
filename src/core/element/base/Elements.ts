@@ -1539,6 +1539,11 @@ export class FieldSetElement extends HTMLFieldSetElement implements IComponent {
   }
 }
 
+// @ts-ignore
+customElements.define("base-fieldset-element", FieldSetElement, {
+  extends: "fieldset",
+});
+
 // <footer>
 export class FooterElement extends HTMLElement implements IComponent {
   private _styleRef: CSSStyleRef = new CSSStyleRef(super.style);
@@ -2001,7 +2006,7 @@ customElements.define("base-iframe-element", IFrameElement, {
 });
 
 // <legend>
-export class LegendElement extends HTMLLIElement implements IComponent {
+export class LegendElement extends HTMLLegendElement implements IComponent {
   private _styleRef: CSSStyleRef = new CSSStyleRef(super.style);
 
   constructor(
@@ -2011,7 +2016,7 @@ export class LegendElement extends HTMLLIElement implements IComponent {
   ) {
     super();
     Component.applyDate(optional, this);
-    if (optional?.value) this.value = optional.value as any;
+    if (optional?.value) this.innerHTML = optional.value as any;
   }
 
   public onInit(): void {}

@@ -1,5 +1,5 @@
 export type theme = "light" | "dark" | string;
-import { Router } from "../..";
+import { IComponent, Router } from "../..";
 
 export class App {
   private static data: { theme: theme; language: string } = {
@@ -25,5 +25,10 @@ export class App {
 
   public static setLanguage(language: string): void {
     App.data.language = language;
+  }
+
+  public static setPage(page: IComponent): void {
+    document.body.innerHTML = "";
+    document.body.appendChild(page);
   }
 }

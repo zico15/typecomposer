@@ -218,7 +218,6 @@ export class Router {
     routes: RoutePage[];
     history?: "hash" | "history";
   }): void {
-    // console.log("Dentro do create");
     Router.controller.route = new Router(data.routes, data.history);
   }
 
@@ -231,12 +230,6 @@ export class Router {
     }
     return id;
   }
-
-  // public static async use<T = any>(routerImport: () => Promise<T>) {
-  //   const router: Router = ((await routerImport()) as any)?.default;
-  //   Router.controller.route = router;
-  // }
-
   public static async go(pathname: string, props: {} = {}) {
     if (pathname.charAt(0) != "/") pathname = "/" + pathname;
     this.controller.updateRoute(pathname);
