@@ -1,9 +1,9 @@
 {
-  "name": "typecompose",
-  "version": "0.0.83",
+  "name": "typecomposer",
+  "version": "0.0.1",
   "repository": {
     "type": "git",
-    "url": "https://github.com/joeythelantern/Component-Library.git"
+    "url": "https://github.com/zico15"
   },
   "description": "A component library for getting people started with easy to re-use components for everyday projects.",
   "main": "dist/cjs/index.js",
@@ -17,12 +17,15 @@
   ],
   "scripts": {
     "rm-styles": "rm -rf ./styles && cp -r ./src/assets/styles .",
-    "copy": "cp -r dist /Users/ezequiel/Documents/TypeCompose/vite-project/node_modules/typecompose",
+    "copy": "cp -r dist /Users/ezequiel/Documents/TypeCompose/vite-project/node_modules/typecomposer",
     "build": "npm run rm-styles && rm -rf dist/ && prettier --write src/ && npm run build:esm && npm run build:cjs && npm run copy",
     "build:esm": "tsc",
     "build:cjs": "tsc --module CommonJS --outDir dist/cjs",
     "pub": "npm run build && npm publish"
   },
+  "keywords": [
+    "typecomposer"
+  ],
   "preferGlobal": true,
   "author": "The Nerdy Canuck",
   "license": "MIT",
