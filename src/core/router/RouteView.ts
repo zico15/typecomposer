@@ -27,18 +27,21 @@ export class RouteView extends Component {
   }
 
   connectedCallback() {
-    if (this.routePage == undefined)
-      this.updateView(Router.controller.getRouteViewFree());
+    if (this.routePage == undefined) {
+      const routePage = Router.controller.getRouteViewFree();
+      const props = Router.controller.getProps(routePage);
+      this.updateView(routePage, props);
+    }
   }
 
-  private updateView(routePage: RoutePageBuild | undefined) {
+  private updateView(routePage: RoutePageBuild | undefined, props: any) {
     if (routePage == undefined) {
       this.view = undefined;
       return;
     }
     if (routePage.parent) routePage.parent.routeView = this;
     routePage.isFree = false;
-    routePage.build = routePage.build || new routePage.component!();
+    routePage.build = routePage.build || new routePage.component!(props);
     this.routePage = routePage;
     this.view = routePage.build;
   }

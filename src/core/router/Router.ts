@@ -1,5 +1,4 @@
 import { IComponent, RouteView } from "..";
-import { build } from "vite";
 
 export interface RoutePage<IComponent = any> {
   path: string;
@@ -21,6 +20,7 @@ class RouterController {
   public routePages: RoutePageBuild[] = [];
   private currentRoute: RoutePageBuild[] = [];
   private previousRoute: RoutePageBuild[] = [];
+  private static _props: any = {};
 
   constructor() {
     window.onload = () => {
@@ -120,9 +120,11 @@ class RouterController {
         if (this.currentRoute[i].build == undefined) {
           // console.log("updateView: ", this.currentRoute[i]);
           if (this.currentRoute[i].parent.routeView) {
+            const props = this.getProps(this.currentRoute[i]);
             // console.log("updateView: chamada");
             this.currentRoute[i].parent.routeView["updateView"](
               this.currentRoute[i],
+              props,
             );
           }
           break;
@@ -141,6 +143,14 @@ class RouterController {
     else this.buildPages();
   }
 
+  getProps(routePage: RoutePageBuild): any {
+    let props = {};
+    if (routePage) {
+      props = this.props[routePage.id.split("_")[0]] || {};
+    }
+    return props;
+  }
+
   get route(): Router | undefined {
     return this._route;
   }
@@ -153,6 +163,14 @@ class RouterController {
       pathname = pathname.substring(0, pathname.length - 1) || "/";
     }
     this.updateRoute(pathname);
+  }
+
+  get props(): any {
+    return RouterController._props;
+  }
+
+  set props(value: any) {
+    RouterController._props = value;
   }
 
   public addHistory(pathname: string) {
@@ -232,6 +250,7 @@ export class Router {
   }
   public static async go(pathname: string, props: {} = {}) {
     if (pathname.charAt(0) != "/") pathname = "/" + pathname;
+    this.controller.props = props;
     this.controller.updateRoute(pathname);
   }
 }
