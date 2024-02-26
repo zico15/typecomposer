@@ -120,11 +120,9 @@ class RouterController {
         if (this.currentRoute[i].build == undefined) {
           // console.log("updateView: ", this.currentRoute[i]);
           if (this.currentRoute[i].parent.routeView) {
-            const props = this.getProps(this.currentRoute[i]);
             // console.log("updateView: chamada");
             this.currentRoute[i].parent.routeView["updateView"](
               this.currentRoute[i],
-              props,
             );
           }
           break;
@@ -220,6 +218,7 @@ class RouterController {
 
 export class Router {
   public static controller: RouterController = new RouterController();
+  private static _props: any = {};
 
   constructor(
     public routes: RoutePage[] = [],
@@ -230,6 +229,10 @@ export class Router {
 
   public beforeEach(callback: (to: RoutePage) => void) {
     // console.log("beforeEach: ", callback);
+  }
+
+  public static get props(): any {
+    return Router._props;
   }
 
   public static create(data: {
@@ -250,7 +253,7 @@ export class Router {
   }
   public static async go(pathname: string, props: {} = {}) {
     if (pathname.charAt(0) != "/") pathname = "/" + pathname;
-    this.controller.props = props;
+    Router._props = props;
     this.controller.updateRoute(pathname);
   }
 }

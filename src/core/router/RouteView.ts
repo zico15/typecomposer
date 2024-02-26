@@ -28,20 +28,18 @@ export class RouteView extends Component {
 
   connectedCallback() {
     if (this.routePage == undefined) {
-      const routePage = Router.controller.getRouteViewFree();
-      const props = Router.controller.getProps(routePage);
-      this.updateView(routePage, props);
+      this.updateView(Router.controller.getRouteViewFree());
     }
   }
 
-  private updateView(routePage: RoutePageBuild | undefined, props: any) {
+  private updateView(routePage: RoutePageBuild | undefined) {
     if (routePage == undefined) {
       this.view = undefined;
       return;
     }
     if (routePage.parent) routePage.parent.routeView = this;
     routePage.isFree = false;
-    routePage.build = routePage.build || new routePage.component!(props);
+    routePage.build = routePage.build || new routePage.component!();
     this.routePage = routePage;
     this.view = routePage.build;
   }
