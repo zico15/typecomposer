@@ -27,8 +27,9 @@ export class RouteView extends Component {
   }
 
   connectedCallback() {
-    if (this.routePage == undefined)
+    if (this.routePage == undefined) {
       this.updateView(Router.controller.getRouteViewFree());
+    }
   }
 
   private updateView(routePage: RoutePageBuild | undefined) {
