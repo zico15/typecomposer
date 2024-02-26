@@ -211,7 +211,7 @@ class RouterController {
 
   private setView<T extends IComponent>(view: T) {
     if (!(document.body.lastElementChild instanceof HTMLScriptElement))
-      document.body.lastElementChild.remove();
+      document.body?.lastElementChild?.remove();
     document.body.appendChild(view);
   }
 }
