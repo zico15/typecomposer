@@ -22,6 +22,24 @@ class RouterController {
   private previousRoute: RoutePageBuild[] = [];
   private static _props: any = {};
 
+  constructor() {
+    window.addEventListener("load", () => {
+      this.updateRoute(
+        this.route.history == "history"
+          ? window.location.pathname
+          : window.location.hash,
+      );
+    });
+    window.addEventListener("popstate", () => {
+      console.log("popstate");
+      this.updateRoute(
+        this.route.history == "history"
+          ? window.location.pathname
+          : window.location.hash,
+      );
+    });
+  }
+
   doRoutesMatch(route1: string, route2: string): boolean {
     // Replace '*' with a regex pattern that matches any segment
     const routePattern2 = route2.replace(/\*/g, "[a-zA-Z0-9-]+");
@@ -113,13 +131,13 @@ class RouterController {
     this.previousRoute = this.currentRoute;
   }
 
-  public updateRoute(pathname: string) {
+  private updateRoute(pathname: string) {
     pathname = pathname.replace(/^#/, "");
     if (pathname.charAt(0) != "/") pathname = "/" + pathname;
+    console.log("updateRoute: ", pathname);
     this.previousRoute = this.currentRoute;
     this.currentRoute = [];
     this.findCorrectRoute(pathname);
-    this.addHistory(pathname);
     if (this.currentRoute.length == 0) this.pageNotFound();
     else this.buildPages();
   }
@@ -143,7 +161,7 @@ class RouterController {
     if (pathname.charAt(pathname.length - 1) == "/") {
       pathname = pathname.substring(0, pathname.length - 1) || "/";
     }
-    this.updateRoute(pathname);
+    this.addHistory(pathname);
   }
 
   get props(): any {
@@ -155,6 +173,8 @@ class RouterController {
   }
 
   public addHistory(pathname: string) {
+    pathname = pathname.replace(/^#/, "");
+    if (pathname.charAt(0) != "/") pathname = "/" + pathname;
     if (this.route.history == "hash") window.location.hash = "#" + pathname;
     else window.history.pushState({}, "", pathname);
   }
@@ -238,6 +258,6 @@ export class Router {
   }
   public static async go(pathname: string, props: {} = {}) {
     Router._props = props;
-    this.controller.updateRoute(pathname);
+    this.controller.addHistory(pathname);
   }
 }
