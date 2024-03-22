@@ -9,7 +9,7 @@ export interface RoutePage<IComponent = any> {
 
 interface RoutePageBuild extends RoutePage {
   parent: RoutePageBuild;
-  isFree: boolean;
+  // isFree: boolean;
   build: IComponent;
   routeView: RouteView | undefined;
   id?: string;
@@ -21,16 +21,6 @@ class RouterController {
   private currentRoute: RoutePageBuild[] = [];
   private previousRoute: RoutePageBuild[] = [];
   private static _props: any = {};
-
-  constructor() {
-    window.onload = () => {
-      if (this.route) this.updateRoute(window.location.pathname);
-    };
-    window.onpopstate = () => {
-      console.log("popstate: ", window.location.pathname);
-      this.updateRoute(window.location.pathname);
-    };
-  }
 
   doRoutesMatch(route1: string, route2: string): boolean {
     // Replace '*' with a regex pattern that matches any segment
@@ -45,7 +35,7 @@ class RouterController {
 
   findCorrectRoute(
     pathname: string,
-    routes: RoutePage[] = this.route?.routes,
+    routes: RoutePage[] = this.route?.routes || [],
   ): string {
     if (routes) {
       for (const route of routes) {
@@ -54,7 +44,6 @@ class RouterController {
             ...route,
             build: undefined,
             routeView: undefined,
-            isFree: true,
             parent:
               this.currentRoute.length > 0
                 ? this.currentRoute[this.currentRoute.length - 1]
@@ -69,7 +58,6 @@ class RouterController {
             ...route,
             build: undefined,
             routeView: undefined,
-            isFree: true,
             parent:
               this.currentRoute.length > 0
                 ? this.currentRoute[this.currentRoute.length - 1]
@@ -84,7 +72,10 @@ class RouterController {
     return "/";
   }
 
-  buildRoute(routes: RoutePage[] = this.route?.routes, parent: string = "") {
+  private buildRoute(
+    routes: RoutePage[] = this.route?.routes,
+    parent: string = "",
+  ) {
     if (routes) {
       for (let route of routes) {
         route.path = parent + route.path;
@@ -98,12 +89,14 @@ class RouterController {
     }
   }
 
-  buildPages() {
+  private buildPages() {
+    let routePageBuildLast: RoutePageBuild | undefined = undefined;
     for (let i: number = 0; i < this.currentRoute.length; i++) {
       if (
         this.previousRoute[i] != undefined &&
         this.currentRoute[i].id == this.previousRoute[i].id
       ) {
+        routePageBuildLast = this.previousRoute[i];
         this.currentRoute[i] = this.previousRoute[i];
         if (this.currentRoute[i + 1])
           this.currentRoute[i + 1].parent = this.currentRoute[i];
@@ -111,28 +104,18 @@ class RouterController {
     }
     const toBuild = this.currentRoute[0];
     if (toBuild.build == undefined) {
-      toBuild.isFree = false;
       toBuild.build = new toBuild.component();
       this.setView(toBuild.build);
-    } else {
-      // console.log("toBuild: ", this.currentRoute);
-      for (let i = 1; i < this.currentRoute.length; i++) {
-        if (this.currentRoute[i].build == undefined) {
-          // console.log("updateView: ", this.currentRoute[i]);
-          if (this.currentRoute[i].parent.routeView) {
-            // console.log("updateView: chamada");
-            this.currentRoute[i].parent.routeView["updateView"](
-              this.currentRoute[i],
-            );
-          }
-          break;
-        }
-      }
+    }
+    if (routePageBuildLast?.routeView) {
+      routePageBuildLast.routeView["updateView"]();
     }
     this.previousRoute = this.currentRoute;
   }
 
   public updateRoute(pathname: string) {
+    pathname = pathname.replace(/^#/, "");
+    if (pathname.charAt(0) != "/") pathname = "/" + pathname;
     this.previousRoute = this.currentRoute;
     this.currentRoute = [];
     this.findCorrectRoute(pathname);
@@ -172,17 +155,19 @@ class RouterController {
   }
 
   public addHistory(pathname: string) {
-    if (this.route) {
-      if (this.route.history == "history")
-        window.history.pushState({}, "", pathname);
-      else if (this.route.history == "hash") window.location.hash = pathname;
-    }
+    if (this.route.history == "hash") window.location.hash = "#" + pathname;
+    else window.history.pushState({}, "", pathname);
   }
 
-  public getRouteViewFree(): RoutePageBuild | undefined {
-    const routePage = this.currentRoute.find((routePage) => routePage.isFree);
-    if (routePage) routePage.isFree = false;
-    return routePage;
+  public getRouteViewFree(routeView: RouteView): RoutePageBuild | undefined {
+    let index = Array.from<RouteView>(
+      document.querySelectorAll("route-view") || [],
+    ).findIndex((r) => r == routeView);
+    if (index == -1 || index >= this.currentRoute.length) return undefined;
+    this.currentRoute[index++].routeView = routeView;
+    return this.currentRoute.length > index
+      ? this.currentRoute[index]
+      : undefined;
   }
 
   public getView(routeView: RoutePageBuild): IComponent | undefined {
@@ -222,7 +207,7 @@ export class Router {
 
   constructor(
     public routes: RoutePage[] = [],
-    public history: "hash" | "history" = "hash",
+    public history: "hash" | "history" = "history",
   ) {
     Router.createAutoId(this.routes, 0);
   }
@@ -252,7 +237,6 @@ export class Router {
     return id;
   }
   public static async go(pathname: string, props: {} = {}) {
-    if (pathname.charAt(0) != "/") pathname = "/" + pathname;
     Router._props = props;
     this.controller.updateRoute(pathname);
   }
