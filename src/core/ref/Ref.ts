@@ -74,9 +74,13 @@ export class Ref<T> {
     // );
   }
 
-  public onChange(fun: (value: T) => void) {
+  public onChange(fun: (value: T) => void, target?: {}) {
     const data = new WeakRef(fun);
-    const item = { target: data, propertyKey: "fun", fun: data };
+    const item = {
+      target: target ? new WeakRef(target) : data,
+      propertyKey: "fun",
+      fun: data,
+    };
     if (this.setValueToSubscriber(item)) {
       this._subscribers.push(item);
       this.registry.register(item.target, item);
