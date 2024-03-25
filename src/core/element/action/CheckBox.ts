@@ -1,12 +1,10 @@
 import {
   Component,
-  Register,
-  DivElement,
   InputElement,
-  TextFieldElement,
-  Variant,
-  type DataTextFieldElement,
   LabelElement,
+  StyleOptional,
+  Variant,
+  IconElement,
 } from "../..";
 
 type ChecBoxType = "checkbox" | "radio";
@@ -15,10 +13,19 @@ export class CheckBox extends Component {
   private _input: InputElement;
   private _label: LabelElement;
   private static serial = Math.round(Math.random() * 1000);
-  checBoxType: ChecBoxType = "checkbox";
+  private checBoxType: ChecBoxType = "checkbox";
 
-  constructor(optional?: DataTextFieldElement) {
+  constructor(
+    optional?: StyleOptional & {
+      variant?: Variant;
+      placeholder?: string;
+      icon?: IconElement;
+      placeholderAnimation?: boolean;
+      checBoxType: ChecBoxType;
+    },
+  ) {
     super(optional);
+    this.checBoxType = optional?.checBoxType || "checkbox";
     this._input = new InputElement({
       type: this.checBoxType,
       className: this.checBoxType,
@@ -33,8 +40,11 @@ export class CheckBox extends Component {
       if (this._input.checked) {
         this._label.style.color = this._input.style.accentColor;
       } else this._label.style.color = labelColor;
+      this.onChange(this._input.checked);
     });
   }
+
+  public onChange: (checked: boolean) => void = () => {};
 
   public get checked(): boolean {
     return this.input.checked;

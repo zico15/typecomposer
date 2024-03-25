@@ -78,7 +78,7 @@ export class Ref<T> {
     const data = new WeakRef(fun);
     const item = {
       target: target ? new WeakRef(target) : data,
-      propertyKey: "fun",
+      propertyKey: undefined,
       fun: data,
     };
     if (this.setValueToSubscriber(item)) {
