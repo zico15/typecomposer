@@ -1,6 +1,6 @@
 {
   "name": "typecomposer",
-  "version": "0.0.8",
+  "version": "0.0.9",
   "repository": {
     "type": "git",
     "url": "https://github.com/zico15"
@@ -17,7 +17,7 @@
   ],
   "scripts": {
     "rm-styles": "rm -rf ./styles && cp -r ./src/assets/styles .",
-    "copy": "cp -r dist /Users/ezequiel/Documents/TypeCompose/vite-project/node_modules/typecomposer",
+    "copy": "cp -r dist /Users/ezequiel/Documents/observatorios/frontend_tc/node_modules/typecomposer",
     "build": "npm run rm-styles && rm -rf dist/ && prettier --write src/ && npm run build:esm && npm run build:cjs && npm run copy",
     "build:esm": "tsc",
     "build:cjs": "tsc --module CommonJS --outDir dist/cjs",

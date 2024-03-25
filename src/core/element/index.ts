@@ -7,7 +7,6 @@ import { VBoxElement } from "./layers/VBoxElement";
 import { HBoxElement } from "./layers/HBoxElement";
 import { GridElement } from "./layers/GridElement";
 import { BorderPaneElement } from "./layers/BorderPaneElement";
-import { DropdownElement } from "./dropdown/DropdownElement";
 import { App } from "./base/App";
 import { FlowPane } from "./layers/FlowPane";
 import { ListElement } from "./action/ListElement";
@@ -16,10 +15,10 @@ import { IconElement } from "./image/IconElement";
 import { TabElement } from "./action/TabElement";
 import { PaneElement } from "./layers/PaneElement";
 import { SlidePane } from "./action/SlidePane";
-import { SelectBox } from "./action/SelectBox";
+import { DropDown } from "./action/DropDown";
 import { Variant } from "./base/CSSStyle";
 import { ChartElement } from "./action/ChartPane";
-import { CheckBox } from "./action/CheckBox";
+import { CheckBox, CheckBoxGroup } from "./action/CheckBox";
 import { ToggleButton } from "./action/ToggleButton";
 import { ILayout, StyleOptional } from "./base/Elements";
 import { StackPane } from "./layers/StackPane";
@@ -27,15 +26,15 @@ import { StackPane } from "./layers/StackPane";
 export {
   App,
   CardElement,
-  SelectBox,
   ChartElement,
   CheckBox,
+  CheckBoxGroup,
   ToggleButton,
   // BodyElement,
   // H1Element,
   // H2Element,
   // ButtonElement,
-  DropdownElement,
+  DropDown,
   // AnchorPane,
   // Pane,
   // SvgElement,

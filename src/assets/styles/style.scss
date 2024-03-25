@@ -806,18 +806,111 @@ menu-bar-element {
 .stack-pane > * {
   position: absolute;
 }
-// menu-bar-element {
-//   padding: 0;
-//   margin: 0;
-//   text-decoration: none;
-//   list-style: none;
-//   box-sizing: border-box;
-//   height: auto;
-//   display: flex;
-//   width: 100%;
-//   background-color: #1b9bff;
-//   padding: 10px 0px 10px 0px;
-//   flex-wrap: nowrap;
-//   flex-direction: row;
-//   align-items: center;
-// }
+
+.dropdown {
+  width: 100%;
+  position: relative; //  Container for absolute positioning
+  display: inline-block;
+
+  .input-and-button-div {
+    // Style the area holding the input & button
+    border: 1px solid #6a5acd;
+    border-radius: 8px;
+    padding: 12px;
+    display: flex;
+    justify-content: space-between;
+
+    .input {
+      border: none;
+      margin: 0;
+      display: flex;
+      justify-content: flex-start;
+      color: #a4a4a4;
+      width: 100%;
+    }
+    .arrow-down {
+      content: "";
+      position: relative;
+      width: 20px; // Width of the arrow
+      height: 20px; // Height of the arrow
+      transform-origin: center;
+      background: url("/icons/arrowdown.svg") no-repeat center center / contain;
+      pointer-events: none;
+      transition: transform 0.3s ease;
+
+      &.up {
+        transform: rotate(180deg);
+      }
+    }
+  }
+  .input-and-button-div.pressed + .dropdown-content {
+    max-height: 184px;
+    visibility: visible;
+  }
+
+  .dropdown-content {
+    box-sizing: border-box;
+    width: 100%;
+    padding: 8px;
+    margin-top: 10px;
+    border-radius: 8px;
+    display: block; // Initially hidden
+    position: absolute;
+    top: 100%; //  Place directly below the input area
+    background-color: #fff;
+    box-shadow: 7px 7px 10px 0px #00000026;
+
+    min-width: 120px;
+    z-index: 1; // Ensure dropdown is above other content
+    max-height: 0; /* Start with zero height */
+    visibility: hidden;
+    overflow-y: scroll; /* Prevent visible overflow */
+    transition:
+      max-height 0.3s ease-out,
+      visibility 0.22s; /* Transition for the slide effect */
+
+    // Style the scrollbar track
+    &::-webkit-scrollbar-track {
+      background: #f0f0f0; // Light grey track background
+      border-radius: 8px; // Rounded corners for the track
+    }
+
+    // Style the scrollbar thumb (the scrolling handle)
+    &::-webkit-scrollbar-thumb {
+      background-color: #320098; // The scrollbar color
+      border-radius: 10px; // Rounded corners for the thumb
+      border: 3px solid #f0f0f0; // Creates padding around the thumb
+
+      &:hover {
+        background: darken(#6a5acd, 10%); // Darkens the thumb on hover
+      }
+    }
+
+    // Style the scrollbar itself (width, etc.)
+    &::-webkit-scrollbar {
+      width: 8px; // The width of the scrollbar
+    }
+
+    .option {
+      display: flex;
+      justify-content: space-between;
+      padding: 12px;
+      border-radius: 8px;
+
+      &:hover {
+        background-color: #3970fe33;
+      }
+
+      &.selected {
+        color: #3970fe;
+
+        &::after {
+          content: "";
+          width: 16px;
+          justify-self: flex-end;
+          background: url("/Vector.svg") no-repeat center center / contain;
+        }
+      }
+    }
+  }
+}
