@@ -31,7 +31,6 @@ class RouterController {
       );
     });
     window.addEventListener("popstate", () => {
-      console.log("popstate");
       this.updateRoute(
         this.route.history == "history"
           ? window.location.pathname
@@ -134,7 +133,6 @@ class RouterController {
   private updateRoute(pathname: string) {
     pathname = pathname.replace(/^#/, "");
     if (pathname.charAt(0) != "/") pathname = "/" + pathname;
-    console.log("updateRoute: ", pathname);
     this.previousRoute = this.currentRoute;
     this.currentRoute = [];
     this.findCorrectRoute(pathname);
@@ -160,6 +158,9 @@ class RouterController {
     let pathname = window.location.pathname;
     if (pathname.charAt(pathname.length - 1) == "/") {
       pathname = pathname.substring(0, pathname.length - 1) || "/";
+    }
+    if (this.route.history == "hash") {
+      pathname = window.location.hash.replace(/^#/, "");
     }
     this.addHistory(pathname);
   }
