@@ -1,5 +1,5 @@
 export type theme = "light" | "dark" | string;
-import { IComponent, Router } from "../..";
+import { IComponent } from "../..";
 
 export class App {
   private static data: { theme: theme; language: string } = {

@@ -1,4 +1,4 @@
-import { Register, Component, type StyleOptional, CanvasElement } from "../..";
+import { Component, type StyleOptional, CanvasElement } from "../..";
 import { Chart, ChartConfiguration } from "chart.js/auto";
 
 export class ChartElement extends Component {
