@@ -39,23 +39,45 @@ export function ref<T>(target: T): {
     onChange,
     toString,
   };
-  const proxy = new Proxy(newTarget, {
-    get: function (newTarget, prop, receiver) {
-      return Reflect.get(newTarget, prop, receiver);
-    },
-    set: function (newTarget, prop, value, receiver) {
-      const resul = Reflect.set(newTarget, prop, value, receiver);
-      notify();
-      return resul;
-    },
-    deleteProperty: function (newTarget, prop) {
-      const resul = Reflect.deleteProperty(newTarget, prop);
-      notify();
-      return resul;
-    },
-  });
+  const proxy = initRef();
+
+  function initRef() {
+    const result = createProxy(newTarget);
+    if (typeof newTarget.value === "object") checkType(newTarget.value);
+    return result;
+  }
+
+  function checkType(value: object) {
+    for (let property in value) {
+      if (typeof value[property] === "object") {
+        value[property] = createProxy(value[property]);
+        checkType(value[property]);
+      }
+    }
+  }
+
+  function createProxy<TT extends object>(target: TT): TT {
+    console.log("createProxy: ", target, Object.keys(target));
+    return new Proxy(target, {
+      get: function (target, prop, receiver) {
+        return Reflect.get(target, prop, receiver);
+      },
+      set: function (target, prop, value, receiver) {
+        console.log("set: ", prop, value);
+        const resul = Reflect.set(target, prop, value, receiver);
+        notify();
+        return resul;
+      },
+      deleteProperty: function (target, prop) {
+        const resul = Reflect.deleteProperty(target, prop);
+        notify();
+        return resul;
+      },
+    });
+  }
 
   function notify() {
+    console.log("notify: ", _subscribers);
     const remove: CustomEvent[] = [];
     _subscribers.forEach((subscriber) => {
       if (!setValueToSubscriber(subscriber)) remove.push(subscriber);
@@ -102,7 +124,7 @@ export function ref<T>(target: T): {
       propertyKey: undefined,
       fun: data,
     };
-    if (setValueToSubscriber(item)) {
+    if (setValueToSubscriber(item) || fun) {
       _subscribers.push(item);
       registry.register(item.target, item);
     }
