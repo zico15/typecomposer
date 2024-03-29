@@ -6,7 +6,17 @@ declare global {
     getTheme(): string;
     setTheme(theme: string): void;
   }
+  // interface Proxy {
+  //   onChange(fun: (value: any) => void, target?: {}): void;
+  // }
 }
+
+// Proxy.prototype.onChange = function (
+//   fun: (value: any) => void,
+//   target?: {},
+// ): void {
+//   console.log("onChange: ", fun, target);
+// };
 
 Array.prototype.clear = function () {
   this.length = 0;

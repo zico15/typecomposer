@@ -1,4 +1,4 @@
-import { ref } from "../../ref";
+import { ref, RefString } from "../../ref";
 
 export type Variant =
   | "default"
@@ -4110,7 +4110,10 @@ export class CSSStyleref implements CSSStyleDeclarationref {
   }
 
   public set color(value: string | ref<string>) {
-    if (typeof value !== "string") this.setStylerefMap("color", value);
+    if (value instanceof RefString) {
+      console.log("color is ref");
+      this._style.color = value.toString();
+    } else if (typeof value !== "string") this.setStylerefMap("color", value);
     else this._style.color = value as any;
   }
 

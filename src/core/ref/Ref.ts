@@ -4,6 +4,19 @@ interface CustomEvent {
   fun?: WeakRef<Function>;
 }
 
+export class RefString extends String {
+  constructor(
+    valor: string,
+    public ref: ref<any>,
+  ) {
+    super(valor);
+  }
+
+  toString() {
+    return super.toString() + " - " + "teste";
+  }
+}
+
 export type ref<T> = {
   value: T;
   id: string;
@@ -56,6 +69,10 @@ export function ref<T>(target: T): {
         value[property] = createProxy(value[property]);
         console.log("checkType: ", value[property]);
         checkType(value[property]);
+      } else if (typeof value[property] === "string") {
+        value[property] = proxy
+          ? new RefString(value[property], proxy)
+          : value[property];
       }
     }
   }
@@ -67,6 +84,8 @@ export function ref<T>(target: T): {
         return Reflect.get(target, prop, receiver);
       },
       set: function (target, prop, value, receiver) {
+        console.log("prop: ", prop, " value: ", value, " receiver: ", receiver);
+        if (typeof value === "string") value = new RefString(value, proxy);
         console.log("set: ", prop, value);
         const resul = Reflect.set(target, prop, value, receiver);
         notify();

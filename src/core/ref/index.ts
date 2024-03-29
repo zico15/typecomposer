@@ -1,2 +1,2 @@
-export { ref } from "./Ref";
+export { ref, RefString } from "./Ref";
 export { RefComponent } from "./RefComponent";
