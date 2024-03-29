@@ -30,7 +30,6 @@ export function ref<T>(target: T): {
     },
   );
   let _subscribers: CustomEvent[] = [];
-
   const newTarget = {
     value: target,
     id: _id,
@@ -43,7 +42,11 @@ export function ref<T>(target: T): {
 
   function initRef() {
     const result = createProxy(newTarget);
-    if (typeof newTarget.value === "object") checkType(newTarget.value);
+    console.log("initRef: ", newTarget.value);
+    if (typeof newTarget.value === "object") {
+      newTarget.value = createProxy(newTarget.value as any);
+      checkType(newTarget.value as any);
+    }
     return result;
   }
 
@@ -51,6 +54,7 @@ export function ref<T>(target: T): {
     for (let property in value) {
       if (typeof value[property] === "object") {
         value[property] = createProxy(value[property]);
+        console.log("checkType: ", value[property]);
         checkType(value[property]);
       }
     }
