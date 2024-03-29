@@ -1,4 +1,4 @@
-import { Ref } from "../../ref";
+import { ref } from "../../ref";
 
 export type Variant =
   | "default"
@@ -504,7 +504,7 @@ const _styleAtributtes = [
   "webkitBoxOrdinalGroup",
   "webkitBoxOrient",
   "webkitBoxPack",
-  "webkitBoxReflect",
+  "webkitBoxreflect",
   "webkitBoxShadow",
   "webkitBoxSizing",
   "webkitClipPath",
@@ -624,2456 +624,2456 @@ const _styleAtributtes = [
 ];
 
 export interface CSSStyleDeclarationOptional {
-  /** [MDN Reference](https://developer.mozilla.org/docs/Web/CSS/accent-color) */
-  text?: string | Ref<string>;
-  accentColor?: string | Ref<string>;
-  /** [MDN Reference](https://developer.mozilla.org/docs/Web/CSS/align-content) */
-  alignContent?: string | Ref<string>;
-  /** [MDN Reference](https://developer.mozilla.org/docs/Web/CSS/align-items) */
-  alignItems?: string | Ref<string>;
-  /** [MDN Reference](https://developer.mozilla.org/docs/Web/CSS/align-self) */
-  alignSelf?: string | Ref<string>;
-  alignmentBaseline?: string | Ref<string>;
-  /** [MDN Reference](https://developer.mozilla.org/docs/Web/CSS/all) */
-  all?: string | Ref<string>;
-  /** [MDN Reference](https://developer.mozilla.org/docs/Web/CSS/animation) */
-  animation?: string | Ref<string>;
-  /** [MDN Reference](https://developer.mozilla.org/docs/Web/CSS/animation-composition) */
-  animationComposition?: string | Ref<string>;
-  /** [MDN Reference](https://developer.mozilla.org/docs/Web/CSS/animation-delay) */
-  animationDelay?: string | Ref<string>;
-  /** [MDN Reference](https://developer.mozilla.org/docs/Web/CSS/animation-direction) */
-  animationDirection?: string | Ref<string>;
-  /** [MDN Reference](https://developer.mozilla.org/docs/Web/CSS/animation-duration) */
-  animationDuration?: string | Ref<string>;
-  /** [MDN Reference](https://developer.mozilla.org/docs/Web/CSS/animation-fill-mode) */
-  animationFillMode?: string | Ref<string>;
-  /** [MDN Reference](https://developer.mozilla.org/docs/Web/CSS/animation-iteration-count) */
-  animationIterationCount?: string | Ref<string>;
-  /** [MDN Reference](https://developer.mozilla.org/docs/Web/CSS/animation-name) */
-  animationName?: string | Ref<string>;
-  /** [MDN Reference](https://developer.mozilla.org/docs/Web/CSS/animation-play-state) */
-  animationPlayState?: string | Ref<string>;
-  /** [MDN Reference](https://developer.mozilla.org/docs/Web/CSS/animation-timing-function) */
-  animationTimingFunction?: string | Ref<string>;
-  /** [MDN Reference](https://developer.mozilla.org/docs/Web/CSS/appearance) */
-  appearance?: string | Ref<string>;
-  /** [MDN Reference](https://developer.mozilla.org/docs/Web/CSS/aspect-ratio) */
-  aspectRatio?: string | Ref<string>;
-  /** [MDN Reference](https://developer.mozilla.org/docs/Web/CSS/backdrop-filter) */
-  backdropFilter?: string | Ref<string>;
-  /** [MDN Reference](https://developer.mozilla.org/docs/Web/CSS/backface-visibility) */
-  backfaceVisibility?: string | Ref<string>;
-  /** [MDN Reference](https://developer.mozilla.org/docs/Web/CSS/background) */
-  background?: string | Ref<string>;
-  /** [MDN Reference](https://developer.mozilla.org/docs/Web/CSS/background-attachment) */
-  backgroundAttachment?: string | Ref<string>;
-  /** [MDN Reference](https://developer.mozilla.org/docs/Web/CSS/background-blend-mode) */
-  backgroundBlendMode?: string | Ref<string>;
-  /** [MDN Reference](https://developer.mozilla.org/docs/Web/CSS/background-clip) */
-  backgroundClip?: string | Ref<string>;
-  /** [MDN Reference](https://developer.mozilla.org/docs/Web/CSS/background-color) */
-  backgroundColor?: string | Ref<string>;
-  /** [MDN Reference](https://developer.mozilla.org/docs/Web/CSS/background-image) */
-  backgroundImage?: string | Ref<string>;
-  /** [MDN Reference](https://developer.mozilla.org/docs/Web/CSS/background-origin) */
-  backgroundOrigin?: string | Ref<string>;
-  /** [MDN Reference](https://developer.mozilla.org/docs/Web/CSS/background-position) */
-  backgroundPosition?: string | Ref<string>;
-  /** [MDN Reference](https://developer.mozilla.org/docs/Web/CSS/background-position-x) */
-  backgroundPositionX?: string | Ref<string>;
-  /** [MDN Reference](https://developer.mozilla.org/docs/Web/CSS/background-position-y) */
-  backgroundPositionY?: string | Ref<string>;
-  /** [MDN Reference](https://developer.mozilla.org/docs/Web/CSS/background-repeat) */
-  backgroundRepeat?: string | Ref<string>;
-  /** [MDN Reference](https://developer.mozilla.org/docs/Web/CSS/background-size) */
-  backgroundSize?: string | Ref<string>;
-  baselineShift?: string | Ref<string>;
-  /** [MDN Reference](https://developer.mozilla.org/docs/Web/CSS/block-size) */
-  blockSize?: string | Ref<string>;
-  /** [MDN Reference](https://developer.mozilla.org/docs/Web/CSS/border) */
-  border?: string | Ref<string>;
-  /** [MDN Reference](https://developer.mozilla.org/docs/Web/CSS/border-block) */
-  borderBlock?: string | Ref<string>;
-  /** [MDN Reference](https://developer.mozilla.org/docs/Web/CSS/border-block-color) */
-  borderBlockColor?: string | Ref<string>;
-  /** [MDN Reference](https://developer.mozilla.org/docs/Web/CSS/border-block-end) */
-  borderBlockEnd?: string | Ref<string>;
-  /** [MDN Reference](https://developer.mozilla.org/docs/Web/CSS/border-block-end-color) */
-  borderBlockEndColor?: string | Ref<string>;
-  /** [MDN Reference](https://developer.mozilla.org/docs/Web/CSS/border-block-end-style) */
-  borderBlockEndStyle?: string | Ref<string>;
-  /** [MDN Reference](https://developer.mozilla.org/docs/Web/CSS/border-block-end-width) */
-  borderBlockEndWidth?: string | Ref<string>;
-  /** [MDN Reference](https://developer.mozilla.org/docs/Web/CSS/border-block-start) */
-  borderBlockStart?: string | Ref<string>;
-  /** [MDN Reference](https://developer.mozilla.org/docs/Web/CSS/border-block-start-color) */
-  borderBlockStartColor?: string | Ref<string>;
-  /** [MDN Reference](https://developer.mozilla.org/docs/Web/CSS/border-block-start-style) */
-  borderBlockStartStyle?: string | Ref<string>;
-  /** [MDN Reference](https://developer.mozilla.org/docs/Web/CSS/border-block-start-width) */
-  borderBlockStartWidth?: string | Ref<string>;
-  /** [MDN Reference](https://developer.mozilla.org/docs/Web/CSS/border-block-style) */
-  borderBlockStyle?: string | Ref<string>;
-  /** [MDN Reference](https://developer.mozilla.org/docs/Web/CSS/border-block-width) */
-  borderBlockWidth?: string | Ref<string>;
-  /** [MDN Reference](https://developer.mozilla.org/docs/Web/CSS/border-bottom) */
-  borderBottom?: string | Ref<string>;
-  /** [MDN Reference](https://developer.mozilla.org/docs/Web/CSS/border-bottom-color) */
-  borderBottomColor?: string | Ref<string>;
-  /** [MDN Reference](https://developer.mozilla.org/docs/Web/CSS/border-bottom-left-radius) */
-  borderBottomLeftRadius?: string | Ref<string>;
-  /** [MDN Reference](https://developer.mozilla.org/docs/Web/CSS/border-bottom-right-radius) */
-  borderBottomRightRadius?: string | Ref<string>;
-  /** [MDN Reference](https://developer.mozilla.org/docs/Web/CSS/border-bottom-style) */
-  borderBottomStyle?: string | Ref<string>;
-  /** [MDN Reference](https://developer.mozilla.org/docs/Web/CSS/border-bottom-width) */
-  borderBottomWidth?: string | Ref<string>;
-  /** [MDN Reference](https://developer.mozilla.org/docs/Web/CSS/border-collapse) */
-  borderCollapse?: string | Ref<string>;
-  /** [MDN Reference](https://developer.mozilla.org/docs/Web/CSS/border-color) */
-  borderColor?: string | Ref<string>;
-  /** [MDN Reference](https://developer.mozilla.org/docs/Web/CSS/border-end-end-radius) */
-  borderEndEndRadius?: string | Ref<string>;
-  /** [MDN Reference](https://developer.mozilla.org/docs/Web/CSS/border-end-start-radius) */
-  borderEndStartRadius?: string | Ref<string>;
-  /** [MDN Reference](https://developer.mozilla.org/docs/Web/CSS/border-image) */
-  borderImage?: string | Ref<string>;
-  /** [MDN Reference](https://developer.mozilla.org/docs/Web/CSS/border-image-outset) */
-  borderImageOutset?: string | Ref<string>;
-  /** [MDN Reference](https://developer.mozilla.org/docs/Web/CSS/border-image-repeat) */
-  borderImageRepeat?: string | Ref<string>;
-  /** [MDN Reference](https://developer.mozilla.org/docs/Web/CSS/border-image-slice) */
-  borderImageSlice?: string | Ref<string>;
-  /** [MDN Reference](https://developer.mozilla.org/docs/Web/CSS/border-image-source) */
-  borderImageSource?: string | Ref<string>;
-  /** [MDN Reference](https://developer.mozilla.org/docs/Web/CSS/border-image-width) */
-  borderImageWidth?: string | Ref<string>;
-  /** [MDN Reference](https://developer.mozilla.org/docs/Web/CSS/border-inline) */
-  borderInline?: string | Ref<string>;
-  /** [MDN Reference](https://developer.mozilla.org/docs/Web/CSS/border-inline-color) */
-  borderInlineColor?: string | Ref<string>;
-  /** [MDN Reference](https://developer.mozilla.org/docs/Web/CSS/border-inline-end) */
-  borderInlineEnd?: string | Ref<string>;
-  /** [MDN Reference](https://developer.mozilla.org/docs/Web/CSS/border-inline-end-color) */
-  borderInlineEndColor?: string | Ref<string>;
-  /** [MDN Reference](https://developer.mozilla.org/docs/Web/CSS/border-inline-end-style) */
-  borderInlineEndStyle?: string | Ref<string>;
-  /** [MDN Reference](https://developer.mozilla.org/docs/Web/CSS/border-inline-end-width) */
-  borderInlineEndWidth?: string | Ref<string>;
-  /** [MDN Reference](https://developer.mozilla.org/docs/Web/CSS/border-inline-start) */
-  borderInlineStart?: string | Ref<string>;
-  /** [MDN Reference](https://developer.mozilla.org/docs/Web/CSS/border-inline-start-color) */
-  borderInlineStartColor?: string | Ref<string>;
-  /** [MDN Reference](https://developer.mozilla.org/docs/Web/CSS/border-inline-start-style) */
-  borderInlineStartStyle?: string | Ref<string>;
-  /** [MDN Reference](https://developer.mozilla.org/docs/Web/CSS/border-inline-start-width) */
-  borderInlineStartWidth?: string | Ref<string>;
-  /** [MDN Reference](https://developer.mozilla.org/docs/Web/CSS/border-inline-style) */
-  borderInlineStyle?: string | Ref<string>;
-  /** [MDN Reference](https://developer.mozilla.org/docs/Web/CSS/border-inline-width) */
-  borderInlineWidth?: string | Ref<string>;
-  /** [MDN Reference](https://developer.mozilla.org/docs/Web/CSS/border-left) */
-  borderLeft?: string | Ref<string>;
-  /** [MDN Reference](https://developer.mozilla.org/docs/Web/CSS/border-left-color) */
-  borderLeftColor?: string | Ref<string>;
-  /** [MDN Reference](https://developer.mozilla.org/docs/Web/CSS/border-left-style) */
-  borderLeftStyle?: string | Ref<string>;
-  /** [MDN Reference](https://developer.mozilla.org/docs/Web/CSS/border-left-width) */
-  borderLeftWidth?: string | Ref<string>;
-  /** [MDN Reference](https://developer.mozilla.org/docs/Web/CSS/border-radius) */
-  borderRadius?: string | Ref<string>;
-  /** [MDN Reference](https://developer.mozilla.org/docs/Web/CSS/border-right) */
-  borderRight?: string | Ref<string>;
-  /** [MDN Reference](https://developer.mozilla.org/docs/Web/CSS/border-right-color) */
-  borderRightColor?: string | Ref<string>;
-  /** [MDN Reference](https://developer.mozilla.org/docs/Web/CSS/border-right-style) */
-  borderRightStyle?: string | Ref<string>;
-  /** [MDN Reference](https://developer.mozilla.org/docs/Web/CSS/border-right-width) */
-  borderRightWidth?: string | Ref<string>;
-  /** [MDN Reference](https://developer.mozilla.org/docs/Web/CSS/border-spacing) */
-  borderSpacing?: string | Ref<string>;
-  /** [MDN Reference](https://developer.mozilla.org/docs/Web/CSS/border-start-end-radius) */
-  borderStartEndRadius?: string | Ref<string>;
-  /** [MDN Reference](https://developer.mozilla.org/docs/Web/CSS/border-start-start-radius) */
-  borderStartStartRadius?: string | Ref<string>;
-  /** [MDN Reference](https://developer.mozilla.org/docs/Web/CSS/border-style) */
-  borderStyle?: string | Ref<string>;
-  /** [MDN Reference](https://developer.mozilla.org/docs/Web/CSS/border-top) */
-  borderTop?: string | Ref<string>;
-  /** [MDN Reference](https://developer.mozilla.org/docs/Web/CSS/border-top-color) */
-  borderTopColor?: string | Ref<string>;
-  /** [MDN Reference](https://developer.mozilla.org/docs/Web/CSS/border-top-left-radius) */
-  borderTopLeftRadius?: string | Ref<string>;
-  /** [MDN Reference](https://developer.mozilla.org/docs/Web/CSS/border-top-right-radius) */
-  borderTopRightRadius?: string | Ref<string>;
-  /** [MDN Reference](https://developer.mozilla.org/docs/Web/CSS/border-top-style) */
-  borderTopStyle?: string | Ref<string>;
-  /** [MDN Reference](https://developer.mozilla.org/docs/Web/CSS/border-top-width) */
-  borderTopWidth?: string | Ref<string>;
-  /** [MDN Reference](https://developer.mozilla.org/docs/Web/CSS/border-width) */
-  borderWidth?: string | Ref<string>;
-  /** [MDN Reference](https://developer.mozilla.org/docs/Web/CSS/bottom) */
-  bottom?: string | Ref<string>;
-  /** [MDN Reference](https://developer.mozilla.org/docs/Web/CSS/box-shadow) */
-  boxShadow?: string | Ref<string>;
-  /** [MDN Reference](https://developer.mozilla.org/docs/Web/CSS/box-sizing) */
-  boxSizing?: string | Ref<string>;
-  /** [MDN Reference](https://developer.mozilla.org/docs/Web/CSS/break-after) */
-  breakAfter?: string | Ref<string>;
-  /** [MDN Reference](https://developer.mozilla.org/docs/Web/CSS/break-before) */
-  breakBefore?: string | Ref<string>;
-  /** [MDN Reference](https://developer.mozilla.org/docs/Web/CSS/break-inside) */
-  breakInside?: string | Ref<string>;
-  /** [MDN Reference](https://developer.mozilla.org/docs/Web/CSS/caption-side) */
-  captionSide?: string | Ref<string>;
-  /** [MDN Reference](https://developer.mozilla.org/docs/Web/CSS/caret-color) */
-  caretColor?: string | Ref<string>;
-  /** [MDN Reference](https://developer.mozilla.org/docs/Web/CSS/clear) */
-  clear?: string | Ref<string>;
+  /** [MDN reference](https://developer.mozilla.org/docs/Web/CSS/accent-color) */
+  text?: string | ref<string>;
+  accentColor?: string | ref<string>;
+  /** [MDN reference](https://developer.mozilla.org/docs/Web/CSS/align-content) */
+  alignContent?: string | ref<string>;
+  /** [MDN reference](https://developer.mozilla.org/docs/Web/CSS/align-items) */
+  alignItems?: string | ref<string>;
+  /** [MDN reference](https://developer.mozilla.org/docs/Web/CSS/align-self) */
+  alignSelf?: string | ref<string>;
+  alignmentBaseline?: string | ref<string>;
+  /** [MDN reference](https://developer.mozilla.org/docs/Web/CSS/all) */
+  all?: string | ref<string>;
+  /** [MDN reference](https://developer.mozilla.org/docs/Web/CSS/animation) */
+  animation?: string | ref<string>;
+  /** [MDN reference](https://developer.mozilla.org/docs/Web/CSS/animation-composition) */
+  animationComposition?: string | ref<string>;
+  /** [MDN reference](https://developer.mozilla.org/docs/Web/CSS/animation-delay) */
+  animationDelay?: string | ref<string>;
+  /** [MDN reference](https://developer.mozilla.org/docs/Web/CSS/animation-direction) */
+  animationDirection?: string | ref<string>;
+  /** [MDN reference](https://developer.mozilla.org/docs/Web/CSS/animation-duration) */
+  animationDuration?: string | ref<string>;
+  /** [MDN reference](https://developer.mozilla.org/docs/Web/CSS/animation-fill-mode) */
+  animationFillMode?: string | ref<string>;
+  /** [MDN reference](https://developer.mozilla.org/docs/Web/CSS/animation-iteration-count) */
+  animationIterationCount?: string | ref<string>;
+  /** [MDN reference](https://developer.mozilla.org/docs/Web/CSS/animation-name) */
+  animationName?: string | ref<string>;
+  /** [MDN reference](https://developer.mozilla.org/docs/Web/CSS/animation-play-state) */
+  animationPlayState?: string | ref<string>;
+  /** [MDN reference](https://developer.mozilla.org/docs/Web/CSS/animation-timing-function) */
+  animationTimingFunction?: string | ref<string>;
+  /** [MDN reference](https://developer.mozilla.org/docs/Web/CSS/appearance) */
+  appearance?: string | ref<string>;
+  /** [MDN reference](https://developer.mozilla.org/docs/Web/CSS/aspect-ratio) */
+  aspectRatio?: string | ref<string>;
+  /** [MDN reference](https://developer.mozilla.org/docs/Web/CSS/backdrop-filter) */
+  backdropFilter?: string | ref<string>;
+  /** [MDN reference](https://developer.mozilla.org/docs/Web/CSS/backface-visibility) */
+  backfaceVisibility?: string | ref<string>;
+  /** [MDN reference](https://developer.mozilla.org/docs/Web/CSS/background) */
+  background?: string | ref<string>;
+  /** [MDN reference](https://developer.mozilla.org/docs/Web/CSS/background-attachment) */
+  backgroundAttachment?: string | ref<string>;
+  /** [MDN reference](https://developer.mozilla.org/docs/Web/CSS/background-blend-mode) */
+  backgroundBlendMode?: string | ref<string>;
+  /** [MDN reference](https://developer.mozilla.org/docs/Web/CSS/background-clip) */
+  backgroundClip?: string | ref<string>;
+  /** [MDN reference](https://developer.mozilla.org/docs/Web/CSS/background-color) */
+  backgroundColor?: string | ref<string>;
+  /** [MDN reference](https://developer.mozilla.org/docs/Web/CSS/background-image) */
+  backgroundImage?: string | ref<string>;
+  /** [MDN reference](https://developer.mozilla.org/docs/Web/CSS/background-origin) */
+  backgroundOrigin?: string | ref<string>;
+  /** [MDN reference](https://developer.mozilla.org/docs/Web/CSS/background-position) */
+  backgroundPosition?: string | ref<string>;
+  /** [MDN reference](https://developer.mozilla.org/docs/Web/CSS/background-position-x) */
+  backgroundPositionX?: string | ref<string>;
+  /** [MDN reference](https://developer.mozilla.org/docs/Web/CSS/background-position-y) */
+  backgroundPositionY?: string | ref<string>;
+  /** [MDN reference](https://developer.mozilla.org/docs/Web/CSS/background-repeat) */
+  backgroundRepeat?: string | ref<string>;
+  /** [MDN reference](https://developer.mozilla.org/docs/Web/CSS/background-size) */
+  backgroundSize?: string | ref<string>;
+  baselineShift?: string | ref<string>;
+  /** [MDN reference](https://developer.mozilla.org/docs/Web/CSS/block-size) */
+  blockSize?: string | ref<string>;
+  /** [MDN reference](https://developer.mozilla.org/docs/Web/CSS/border) */
+  border?: string | ref<string>;
+  /** [MDN reference](https://developer.mozilla.org/docs/Web/CSS/border-block) */
+  borderBlock?: string | ref<string>;
+  /** [MDN reference](https://developer.mozilla.org/docs/Web/CSS/border-block-color) */
+  borderBlockColor?: string | ref<string>;
+  /** [MDN reference](https://developer.mozilla.org/docs/Web/CSS/border-block-end) */
+  borderBlockEnd?: string | ref<string>;
+  /** [MDN reference](https://developer.mozilla.org/docs/Web/CSS/border-block-end-color) */
+  borderBlockEndColor?: string | ref<string>;
+  /** [MDN reference](https://developer.mozilla.org/docs/Web/CSS/border-block-end-style) */
+  borderBlockEndStyle?: string | ref<string>;
+  /** [MDN reference](https://developer.mozilla.org/docs/Web/CSS/border-block-end-width) */
+  borderBlockEndWidth?: string | ref<string>;
+  /** [MDN reference](https://developer.mozilla.org/docs/Web/CSS/border-block-start) */
+  borderBlockStart?: string | ref<string>;
+  /** [MDN reference](https://developer.mozilla.org/docs/Web/CSS/border-block-start-color) */
+  borderBlockStartColor?: string | ref<string>;
+  /** [MDN reference](https://developer.mozilla.org/docs/Web/CSS/border-block-start-style) */
+  borderBlockStartStyle?: string | ref<string>;
+  /** [MDN reference](https://developer.mozilla.org/docs/Web/CSS/border-block-start-width) */
+  borderBlockStartWidth?: string | ref<string>;
+  /** [MDN reference](https://developer.mozilla.org/docs/Web/CSS/border-block-style) */
+  borderBlockStyle?: string | ref<string>;
+  /** [MDN reference](https://developer.mozilla.org/docs/Web/CSS/border-block-width) */
+  borderBlockWidth?: string | ref<string>;
+  /** [MDN reference](https://developer.mozilla.org/docs/Web/CSS/border-bottom) */
+  borderBottom?: string | ref<string>;
+  /** [MDN reference](https://developer.mozilla.org/docs/Web/CSS/border-bottom-color) */
+  borderBottomColor?: string | ref<string>;
+  /** [MDN reference](https://developer.mozilla.org/docs/Web/CSS/border-bottom-left-radius) */
+  borderBottomLeftRadius?: string | ref<string>;
+  /** [MDN reference](https://developer.mozilla.org/docs/Web/CSS/border-bottom-right-radius) */
+  borderBottomRightRadius?: string | ref<string>;
+  /** [MDN reference](https://developer.mozilla.org/docs/Web/CSS/border-bottom-style) */
+  borderBottomStyle?: string | ref<string>;
+  /** [MDN reference](https://developer.mozilla.org/docs/Web/CSS/border-bottom-width) */
+  borderBottomWidth?: string | ref<string>;
+  /** [MDN reference](https://developer.mozilla.org/docs/Web/CSS/border-collapse) */
+  borderCollapse?: string | ref<string>;
+  /** [MDN reference](https://developer.mozilla.org/docs/Web/CSS/border-color) */
+  borderColor?: string | ref<string>;
+  /** [MDN reference](https://developer.mozilla.org/docs/Web/CSS/border-end-end-radius) */
+  borderEndEndRadius?: string | ref<string>;
+  /** [MDN reference](https://developer.mozilla.org/docs/Web/CSS/border-end-start-radius) */
+  borderEndStartRadius?: string | ref<string>;
+  /** [MDN reference](https://developer.mozilla.org/docs/Web/CSS/border-image) */
+  borderImage?: string | ref<string>;
+  /** [MDN reference](https://developer.mozilla.org/docs/Web/CSS/border-image-outset) */
+  borderImageOutset?: string | ref<string>;
+  /** [MDN reference](https://developer.mozilla.org/docs/Web/CSS/border-image-repeat) */
+  borderImageRepeat?: string | ref<string>;
+  /** [MDN reference](https://developer.mozilla.org/docs/Web/CSS/border-image-slice) */
+  borderImageSlice?: string | ref<string>;
+  /** [MDN reference](https://developer.mozilla.org/docs/Web/CSS/border-image-source) */
+  borderImageSource?: string | ref<string>;
+  /** [MDN reference](https://developer.mozilla.org/docs/Web/CSS/border-image-width) */
+  borderImageWidth?: string | ref<string>;
+  /** [MDN reference](https://developer.mozilla.org/docs/Web/CSS/border-inline) */
+  borderInline?: string | ref<string>;
+  /** [MDN reference](https://developer.mozilla.org/docs/Web/CSS/border-inline-color) */
+  borderInlineColor?: string | ref<string>;
+  /** [MDN reference](https://developer.mozilla.org/docs/Web/CSS/border-inline-end) */
+  borderInlineEnd?: string | ref<string>;
+  /** [MDN reference](https://developer.mozilla.org/docs/Web/CSS/border-inline-end-color) */
+  borderInlineEndColor?: string | ref<string>;
+  /** [MDN reference](https://developer.mozilla.org/docs/Web/CSS/border-inline-end-style) */
+  borderInlineEndStyle?: string | ref<string>;
+  /** [MDN reference](https://developer.mozilla.org/docs/Web/CSS/border-inline-end-width) */
+  borderInlineEndWidth?: string | ref<string>;
+  /** [MDN reference](https://developer.mozilla.org/docs/Web/CSS/border-inline-start) */
+  borderInlineStart?: string | ref<string>;
+  /** [MDN reference](https://developer.mozilla.org/docs/Web/CSS/border-inline-start-color) */
+  borderInlineStartColor?: string | ref<string>;
+  /** [MDN reference](https://developer.mozilla.org/docs/Web/CSS/border-inline-start-style) */
+  borderInlineStartStyle?: string | ref<string>;
+  /** [MDN reference](https://developer.mozilla.org/docs/Web/CSS/border-inline-start-width) */
+  borderInlineStartWidth?: string | ref<string>;
+  /** [MDN reference](https://developer.mozilla.org/docs/Web/CSS/border-inline-style) */
+  borderInlineStyle?: string | ref<string>;
+  /** [MDN reference](https://developer.mozilla.org/docs/Web/CSS/border-inline-width) */
+  borderInlineWidth?: string | ref<string>;
+  /** [MDN reference](https://developer.mozilla.org/docs/Web/CSS/border-left) */
+  borderLeft?: string | ref<string>;
+  /** [MDN reference](https://developer.mozilla.org/docs/Web/CSS/border-left-color) */
+  borderLeftColor?: string | ref<string>;
+  /** [MDN reference](https://developer.mozilla.org/docs/Web/CSS/border-left-style) */
+  borderLeftStyle?: string | ref<string>;
+  /** [MDN reference](https://developer.mozilla.org/docs/Web/CSS/border-left-width) */
+  borderLeftWidth?: string | ref<string>;
+  /** [MDN reference](https://developer.mozilla.org/docs/Web/CSS/border-radius) */
+  borderRadius?: string | ref<string>;
+  /** [MDN reference](https://developer.mozilla.org/docs/Web/CSS/border-right) */
+  borderRight?: string | ref<string>;
+  /** [MDN reference](https://developer.mozilla.org/docs/Web/CSS/border-right-color) */
+  borderRightColor?: string | ref<string>;
+  /** [MDN reference](https://developer.mozilla.org/docs/Web/CSS/border-right-style) */
+  borderRightStyle?: string | ref<string>;
+  /** [MDN reference](https://developer.mozilla.org/docs/Web/CSS/border-right-width) */
+  borderRightWidth?: string | ref<string>;
+  /** [MDN reference](https://developer.mozilla.org/docs/Web/CSS/border-spacing) */
+  borderSpacing?: string | ref<string>;
+  /** [MDN reference](https://developer.mozilla.org/docs/Web/CSS/border-start-end-radius) */
+  borderStartEndRadius?: string | ref<string>;
+  /** [MDN reference](https://developer.mozilla.org/docs/Web/CSS/border-start-start-radius) */
+  borderStartStartRadius?: string | ref<string>;
+  /** [MDN reference](https://developer.mozilla.org/docs/Web/CSS/border-style) */
+  borderStyle?: string | ref<string>;
+  /** [MDN reference](https://developer.mozilla.org/docs/Web/CSS/border-top) */
+  borderTop?: string | ref<string>;
+  /** [MDN reference](https://developer.mozilla.org/docs/Web/CSS/border-top-color) */
+  borderTopColor?: string | ref<string>;
+  /** [MDN reference](https://developer.mozilla.org/docs/Web/CSS/border-top-left-radius) */
+  borderTopLeftRadius?: string | ref<string>;
+  /** [MDN reference](https://developer.mozilla.org/docs/Web/CSS/border-top-right-radius) */
+  borderTopRightRadius?: string | ref<string>;
+  /** [MDN reference](https://developer.mozilla.org/docs/Web/CSS/border-top-style) */
+  borderTopStyle?: string | ref<string>;
+  /** [MDN reference](https://developer.mozilla.org/docs/Web/CSS/border-top-width) */
+  borderTopWidth?: string | ref<string>;
+  /** [MDN reference](https://developer.mozilla.org/docs/Web/CSS/border-width) */
+  borderWidth?: string | ref<string>;
+  /** [MDN reference](https://developer.mozilla.org/docs/Web/CSS/bottom) */
+  bottom?: string | ref<string>;
+  /** [MDN reference](https://developer.mozilla.org/docs/Web/CSS/box-shadow) */
+  boxShadow?: string | ref<string>;
+  /** [MDN reference](https://developer.mozilla.org/docs/Web/CSS/box-sizing) */
+  boxSizing?: string | ref<string>;
+  /** [MDN reference](https://developer.mozilla.org/docs/Web/CSS/break-after) */
+  breakAfter?: string | ref<string>;
+  /** [MDN reference](https://developer.mozilla.org/docs/Web/CSS/break-before) */
+  breakBefore?: string | ref<string>;
+  /** [MDN reference](https://developer.mozilla.org/docs/Web/CSS/break-inside) */
+  breakInside?: string | ref<string>;
+  /** [MDN reference](https://developer.mozilla.org/docs/Web/CSS/caption-side) */
+  captionSide?: string | ref<string>;
+  /** [MDN reference](https://developer.mozilla.org/docs/Web/CSS/caret-color) */
+  caretColor?: string | ref<string>;
+  /** [MDN reference](https://developer.mozilla.org/docs/Web/CSS/clear) */
+  clear?: string | ref<string>;
   /**
    * @deprecated
    *
-   * [MDN Reference](https://developer.mozilla.org/docs/Web/CSS/clip)
+   * [MDN reference](https://developer.mozilla.org/docs/Web/CSS/clip)
    */
-  clip?: string | Ref<string>;
-  /** [MDN Reference](https://developer.mozilla.org/docs/Web/CSS/clip-path) */
-  clipPath?: string | Ref<string>;
-  clipRule?: string | Ref<string>;
-  /** [MDN Reference](https://developer.mozilla.org/docs/Web/CSS/color) */
-  color?: string | Ref<string>;
-  colorInterpolation?: string | Ref<string>;
-  colorInterpolationFilters?: string | Ref<string>;
-  /** [MDN Reference](https://developer.mozilla.org/docs/Web/CSS/color-scheme) */
-  colorScheme?: string | Ref<string>;
-  /** [MDN Reference](https://developer.mozilla.org/docs/Web/CSS/column-count) */
-  columnCount?: string | Ref<string>;
-  /** [MDN Reference](https://developer.mozilla.org/docs/Web/CSS/column-fill) */
-  columnFill?: string | Ref<string>;
-  /** [MDN Reference](https://developer.mozilla.org/docs/Web/CSS/column-gap) */
-  columnGap?: string | Ref<string>;
-  /** [MDN Reference](https://developer.mozilla.org/docs/Web/CSS/column-rule) */
-  columnRule?: string | Ref<string>;
-  /** [MDN Reference](https://developer.mozilla.org/docs/Web/CSS/column-rule-color) */
-  columnRuleColor?: string | Ref<string>;
-  /** [MDN Reference](https://developer.mozilla.org/docs/Web/CSS/column-rule-style) */
-  columnRuleStyle?: string | Ref<string>;
-  /** [MDN Reference](https://developer.mozilla.org/docs/Web/CSS/column-rule-width) */
-  columnRuleWidth?: string | Ref<string>;
-  /** [MDN Reference](https://developer.mozilla.org/docs/Web/CSS/column-span) */
-  columnSpan?: string | Ref<string>;
-  /** [MDN Reference](https://developer.mozilla.org/docs/Web/CSS/column-width) */
-  columnWidth?: string | Ref<string>;
-  /** [MDN Reference](https://developer.mozilla.org/docs/Web/CSS/columns) */
+  clip?: string | ref<string>;
+  /** [MDN reference](https://developer.mozilla.org/docs/Web/CSS/clip-path) */
+  clipPath?: string | ref<string>;
+  clipRule?: string | ref<string>;
+  /** [MDN reference](https://developer.mozilla.org/docs/Web/CSS/color) */
+  color?: string | ref<string>;
+  colorInterpolation?: string | ref<string>;
+  colorInterpolationFilters?: string | ref<string>;
+  /** [MDN reference](https://developer.mozilla.org/docs/Web/CSS/color-scheme) */
+  colorScheme?: string | ref<string>;
+  /** [MDN reference](https://developer.mozilla.org/docs/Web/CSS/column-count) */
+  columnCount?: string | ref<string>;
+  /** [MDN reference](https://developer.mozilla.org/docs/Web/CSS/column-fill) */
+  columnFill?: string | ref<string>;
+  /** [MDN reference](https://developer.mozilla.org/docs/Web/CSS/column-gap) */
+  columnGap?: string | ref<string>;
+  /** [MDN reference](https://developer.mozilla.org/docs/Web/CSS/column-rule) */
+  columnRule?: string | ref<string>;
+  /** [MDN reference](https://developer.mozilla.org/docs/Web/CSS/column-rule-color) */
+  columnRuleColor?: string | ref<string>;
+  /** [MDN reference](https://developer.mozilla.org/docs/Web/CSS/column-rule-style) */
+  columnRuleStyle?: string | ref<string>;
+  /** [MDN reference](https://developer.mozilla.org/docs/Web/CSS/column-rule-width) */
+  columnRuleWidth?: string | ref<string>;
+  /** [MDN reference](https://developer.mozilla.org/docs/Web/CSS/column-span) */
+  columnSpan?: string | ref<string>;
+  /** [MDN reference](https://developer.mozilla.org/docs/Web/CSS/column-width) */
+  columnWidth?: string | ref<string>;
+  /** [MDN reference](https://developer.mozilla.org/docs/Web/CSS/columns) */
   columns?: string | number;
   rows?: string | number;
-  /** [MDN Reference](https://developer.mozilla.org/docs/Web/CSS/contain) */
-  contain?: string | Ref<string>;
-  /** [MDN Reference](https://developer.mozilla.org/docs/Web/CSS/contain-intrinsic-contain-intrinsic-block-size) */
-  containIntrinsicBlockSize?: string | Ref<string>;
-  /** [MDN Reference](https://developer.mozilla.org/docs/Web/CSS/contain-intrinsic-height) */
-  containIntrinsicHeight?: string | Ref<string>;
-  /** [MDN Reference](https://developer.mozilla.org/docs/Web/CSS/contain-intrinsic-contain-intrinsic-inline-size) */
-  containIntrinsicInlineSize?: string | Ref<string>;
-  /** [MDN Reference](https://developer.mozilla.org/docs/Web/CSS/contain-intrinsic-size) */
-  containIntrinsicSize?: string | Ref<string>;
-  /** [MDN Reference](https://developer.mozilla.org/docs/Web/CSS/contain-intrinsic-width) */
-  containIntrinsicWidth?: string | Ref<string>;
-  /** [MDN Reference](https://developer.mozilla.org/docs/Web/CSS/container) */
-  container?: string | Ref<string>;
-  /** [MDN Reference](https://developer.mozilla.org/docs/Web/CSS/container-name) */
-  containerName?: string | Ref<string>;
-  /** [MDN Reference](https://developer.mozilla.org/docs/Web/CSS/container-type) */
-  containerType?: string | Ref<string>;
-  /** [MDN Reference](https://developer.mozilla.org/docs/Web/CSS/content) */
-  content?: string | Ref<string>;
-  /** [MDN Reference](https://developer.mozilla.org/docs/Web/CSS/counter-increment) */
-  counterIncrement?: string | Ref<string>;
-  /** [MDN Reference](https://developer.mozilla.org/docs/Web/CSS/counter-reset) */
-  counterReset?: string | Ref<string>;
-  /** [MDN Reference](https://developer.mozilla.org/docs/Web/CSS/counter-set) */
-  counterSet?: string | Ref<string>;
-  /** [MDN Reference](https://developer.mozilla.org/docs/Web/API/CSSStyleDeclaration/cssFloat) */
-  cssFloat?: string | Ref<string>;
-  /** [MDN Reference](https://developer.mozilla.org/docs/Web/API/CSSStyleDeclaration/cssText) */
-  cssText?: string | Ref<string>;
-  /** [MDN Reference](https://developer.mozilla.org/docs/Web/CSS/cursor) */
-  cursor?: string | Ref<string>;
-  /** [MDN Reference](https://developer.mozilla.org/docs/Web/CSS/direction) */
-  direction?: string | Ref<string>;
-  /** [MDN Reference](https://developer.mozilla.org/docs/Web/CSS/display) */
-  display?: string | Ref<string>;
-  dominantBaseline?: string | Ref<string>;
-  /** [MDN Reference](https://developer.mozilla.org/docs/Web/CSS/empty-cells) */
-  emptyCells?: string | Ref<string>;
-  fill?: string | Ref<string>;
-  fillOpacity?: string | Ref<string>;
-  fillRule?: string | Ref<string>;
-  /** [MDN Reference](https://developer.mozilla.org/docs/Web/CSS/filter) */
-  filter?: string | Ref<string>;
-  /** [MDN Reference](https://developer.mozilla.org/docs/Web/CSS/flex) */
-  flex?: string | Ref<string>;
-  /** [MDN Reference](https://developer.mozilla.org/docs/Web/CSS/flex-basis) */
-  flexBasis?: string | Ref<string>;
-  /** [MDN Reference](https://developer.mozilla.org/docs/Web/CSS/flex-direction) */
-  flexDirection?: string | Ref<string>;
-  /** [MDN Reference](https://developer.mozilla.org/docs/Web/CSS/flex-flow) */
-  flexFlow?: string | Ref<string>;
-  /** [MDN Reference](https://developer.mozilla.org/docs/Web/CSS/flex-grow) */
-  flexGrow?: string | Ref<string>;
-  /** [MDN Reference](https://developer.mozilla.org/docs/Web/CSS/flex-shrink) */
-  flexShrink?: string | Ref<string>;
-  /** [MDN Reference](https://developer.mozilla.org/docs/Web/CSS/flex-wrap) */
-  flexWrap?: string | Ref<string>;
-  /** [MDN Reference](https://developer.mozilla.org/docs/Web/CSS/float) */
-  float?: string | Ref<string>;
-  floodColor?: string | Ref<string>;
-  floodOpacity?: string | Ref<string>;
-  /** [MDN Reference](https://developer.mozilla.org/docs/Web/CSS/font) */
-  font?: string | Ref<string>;
-  /** [MDN Reference](https://developer.mozilla.org/docs/Web/CSS/font-family) */
-  fontFamily?: string | Ref<string>;
-  /** [MDN Reference](https://developer.mozilla.org/docs/Web/CSS/font-feature-settings) */
-  fontFeatureSettings?: string | Ref<string>;
-  /** [MDN Reference](https://developer.mozilla.org/docs/Web/CSS/font-kerning) */
-  fontKerning?: string | Ref<string>;
-  /** [MDN Reference](https://developer.mozilla.org/docs/Web/CSS/font-optical-sizing) */
-  fontOpticalSizing?: string | Ref<string>;
-  /** [MDN Reference](https://developer.mozilla.org/docs/Web/CSS/font-palette) */
-  fontPalette?: string | Ref<string>;
-  /** [MDN Reference](https://developer.mozilla.org/docs/Web/CSS/font-size) */
-  fontSize?: string | Ref<string>;
-  /** [MDN Reference](https://developer.mozilla.org/docs/Web/CSS/font-size-adjust) */
-  fontSizeAdjust?: string | Ref<string>;
-  /** [MDN Reference](https://developer.mozilla.org/docs/Web/CSS/font-stretch) */
-  fontStretch?: string | Ref<string>;
-  /** [MDN Reference](https://developer.mozilla.org/docs/Web/CSS/font-style) */
-  fontStyle?: string | Ref<string>;
-  /** [MDN Reference](https://developer.mozilla.org/docs/Web/CSS/font-synthesis) */
-  fontSynthesis?: string | Ref<string>;
-  /** [MDN Reference](https://developer.mozilla.org/docs/Web/CSS/font-synthesis-small-caps) */
-  fontSynthesisSmallCaps?: string | Ref<string>;
-  /** [MDN Reference](https://developer.mozilla.org/docs/Web/CSS/font-synthesis-style) */
-  fontSynthesisStyle?: string | Ref<string>;
-  /** [MDN Reference](https://developer.mozilla.org/docs/Web/CSS/font-synthesis-weight) */
-  fontSynthesisWeight?: string | Ref<string>;
-  /** [MDN Reference](https://developer.mozilla.org/docs/Web/CSS/font-variant) */
-  fontVariant?: string | Ref<string>;
-  /** [MDN Reference](https://developer.mozilla.org/docs/Web/CSS/font-variant-alternates) */
-  fontVariantAlternates?: string | Ref<string>;
-  /** [MDN Reference](https://developer.mozilla.org/docs/Web/CSS/font-variant-caps) */
-  fontVariantCaps?: string | Ref<string>;
-  /** [MDN Reference](https://developer.mozilla.org/docs/Web/CSS/font-variant-east-asian) */
-  fontVariantEastAsian?: string | Ref<string>;
-  /** [MDN Reference](https://developer.mozilla.org/docs/Web/CSS/font-variant-ligatures) */
-  fontVariantLigatures?: string | Ref<string>;
-  /** [MDN Reference](https://developer.mozilla.org/docs/Web/CSS/font-variant-numeric) */
-  fontVariantNumeric?: string | Ref<string>;
-  /** [MDN Reference](https://developer.mozilla.org/docs/Web/CSS/font-variant-position) */
-  fontVariantPosition?: string | Ref<string>;
-  /** [MDN Reference](https://developer.mozilla.org/docs/Web/CSS/font-variation-settings) */
-  fontVariationSettings?: string | Ref<string>;
-  /** [MDN Reference](https://developer.mozilla.org/docs/Web/CSS/font-weight) */
-  fontWeight?: string | Ref<string>;
-  /** [MDN Reference](https://developer.mozilla.org/docs/Web/CSS/forced-color-adjust) */
-  forcedColorAdjust?: string | Ref<string>;
-  /** [MDN Reference](https://developer.mozilla.org/docs/Web/CSS/gap) */
-  gap?: string | Ref<string>;
-  /** [MDN Reference](https://developer.mozilla.org/docs/Web/CSS/grid) */
-  grid?: string | Ref<string>;
-  /** [MDN Reference](https://developer.mozilla.org/docs/Web/CSS/grid-area) */
-  gridArea?: string | Ref<string>;
-  /** [MDN Reference](https://developer.mozilla.org/docs/Web/CSS/grid-auto-columns) */
-  gridAutoColumns?: string | Ref<string>;
-  /** [MDN Reference](https://developer.mozilla.org/docs/Web/CSS/grid-auto-flow) */
-  gridAutoFlow?: string | Ref<string>;
-  /** [MDN Reference](https://developer.mozilla.org/docs/Web/CSS/grid-auto-rows) */
-  gridAutoRows?: string | Ref<string>;
-  /** [MDN Reference](https://developer.mozilla.org/docs/Web/CSS/grid-column) */
-  gridColumn?: string | Ref<string>;
-  /** [MDN Reference](https://developer.mozilla.org/docs/Web/CSS/grid-column-end) */
-  gridColumnEnd?: string | Ref<string>;
+  /** [MDN reference](https://developer.mozilla.org/docs/Web/CSS/contain) */
+  contain?: string | ref<string>;
+  /** [MDN reference](https://developer.mozilla.org/docs/Web/CSS/contain-intrinsic-contain-intrinsic-block-size) */
+  containIntrinsicBlockSize?: string | ref<string>;
+  /** [MDN reference](https://developer.mozilla.org/docs/Web/CSS/contain-intrinsic-height) */
+  containIntrinsicHeight?: string | ref<string>;
+  /** [MDN reference](https://developer.mozilla.org/docs/Web/CSS/contain-intrinsic-contain-intrinsic-inline-size) */
+  containIntrinsicInlineSize?: string | ref<string>;
+  /** [MDN reference](https://developer.mozilla.org/docs/Web/CSS/contain-intrinsic-size) */
+  containIntrinsicSize?: string | ref<string>;
+  /** [MDN reference](https://developer.mozilla.org/docs/Web/CSS/contain-intrinsic-width) */
+  containIntrinsicWidth?: string | ref<string>;
+  /** [MDN reference](https://developer.mozilla.org/docs/Web/CSS/container) */
+  container?: string | ref<string>;
+  /** [MDN reference](https://developer.mozilla.org/docs/Web/CSS/container-name) */
+  containerName?: string | ref<string>;
+  /** [MDN reference](https://developer.mozilla.org/docs/Web/CSS/container-type) */
+  containerType?: string | ref<string>;
+  /** [MDN reference](https://developer.mozilla.org/docs/Web/CSS/content) */
+  content?: string | ref<string>;
+  /** [MDN reference](https://developer.mozilla.org/docs/Web/CSS/counter-increment) */
+  counterIncrement?: string | ref<string>;
+  /** [MDN reference](https://developer.mozilla.org/docs/Web/CSS/counter-reset) */
+  counterReset?: string | ref<string>;
+  /** [MDN reference](https://developer.mozilla.org/docs/Web/CSS/counter-set) */
+  counterSet?: string | ref<string>;
+  /** [MDN reference](https://developer.mozilla.org/docs/Web/API/CSSStyleDeclaration/cssFloat) */
+  cssFloat?: string | ref<string>;
+  /** [MDN reference](https://developer.mozilla.org/docs/Web/API/CSSStyleDeclaration/cssText) */
+  cssText?: string | ref<string>;
+  /** [MDN reference](https://developer.mozilla.org/docs/Web/CSS/cursor) */
+  cursor?: string | ref<string>;
+  /** [MDN reference](https://developer.mozilla.org/docs/Web/CSS/direction) */
+  direction?: string | ref<string>;
+  /** [MDN reference](https://developer.mozilla.org/docs/Web/CSS/display) */
+  display?: string | ref<string>;
+  dominantBaseline?: string | ref<string>;
+  /** [MDN reference](https://developer.mozilla.org/docs/Web/CSS/empty-cells) */
+  emptyCells?: string | ref<string>;
+  fill?: string | ref<string>;
+  fillOpacity?: string | ref<string>;
+  fillRule?: string | ref<string>;
+  /** [MDN reference](https://developer.mozilla.org/docs/Web/CSS/filter) */
+  filter?: string | ref<string>;
+  /** [MDN reference](https://developer.mozilla.org/docs/Web/CSS/flex) */
+  flex?: string | ref<string>;
+  /** [MDN reference](https://developer.mozilla.org/docs/Web/CSS/flex-basis) */
+  flexBasis?: string | ref<string>;
+  /** [MDN reference](https://developer.mozilla.org/docs/Web/CSS/flex-direction) */
+  flexDirection?: string | ref<string>;
+  /** [MDN reference](https://developer.mozilla.org/docs/Web/CSS/flex-flow) */
+  flexFlow?: string | ref<string>;
+  /** [MDN reference](https://developer.mozilla.org/docs/Web/CSS/flex-grow) */
+  flexGrow?: string | ref<string>;
+  /** [MDN reference](https://developer.mozilla.org/docs/Web/CSS/flex-shrink) */
+  flexShrink?: string | ref<string>;
+  /** [MDN reference](https://developer.mozilla.org/docs/Web/CSS/flex-wrap) */
+  flexWrap?: string | ref<string>;
+  /** [MDN reference](https://developer.mozilla.org/docs/Web/CSS/float) */
+  float?: string | ref<string>;
+  floodColor?: string | ref<string>;
+  floodOpacity?: string | ref<string>;
+  /** [MDN reference](https://developer.mozilla.org/docs/Web/CSS/font) */
+  font?: string | ref<string>;
+  /** [MDN reference](https://developer.mozilla.org/docs/Web/CSS/font-family) */
+  fontFamily?: string | ref<string>;
+  /** [MDN reference](https://developer.mozilla.org/docs/Web/CSS/font-feature-settings) */
+  fontFeatureSettings?: string | ref<string>;
+  /** [MDN reference](https://developer.mozilla.org/docs/Web/CSS/font-kerning) */
+  fontKerning?: string | ref<string>;
+  /** [MDN reference](https://developer.mozilla.org/docs/Web/CSS/font-optical-sizing) */
+  fontOpticalSizing?: string | ref<string>;
+  /** [MDN reference](https://developer.mozilla.org/docs/Web/CSS/font-palette) */
+  fontPalette?: string | ref<string>;
+  /** [MDN reference](https://developer.mozilla.org/docs/Web/CSS/font-size) */
+  fontSize?: string | ref<string>;
+  /** [MDN reference](https://developer.mozilla.org/docs/Web/CSS/font-size-adjust) */
+  fontSizeAdjust?: string | ref<string>;
+  /** [MDN reference](https://developer.mozilla.org/docs/Web/CSS/font-stretch) */
+  fontStretch?: string | ref<string>;
+  /** [MDN reference](https://developer.mozilla.org/docs/Web/CSS/font-style) */
+  fontStyle?: string | ref<string>;
+  /** [MDN reference](https://developer.mozilla.org/docs/Web/CSS/font-synthesis) */
+  fontSynthesis?: string | ref<string>;
+  /** [MDN reference](https://developer.mozilla.org/docs/Web/CSS/font-synthesis-small-caps) */
+  fontSynthesisSmallCaps?: string | ref<string>;
+  /** [MDN reference](https://developer.mozilla.org/docs/Web/CSS/font-synthesis-style) */
+  fontSynthesisStyle?: string | ref<string>;
+  /** [MDN reference](https://developer.mozilla.org/docs/Web/CSS/font-synthesis-weight) */
+  fontSynthesisWeight?: string | ref<string>;
+  /** [MDN reference](https://developer.mozilla.org/docs/Web/CSS/font-variant) */
+  fontVariant?: string | ref<string>;
+  /** [MDN reference](https://developer.mozilla.org/docs/Web/CSS/font-variant-alternates) */
+  fontVariantAlternates?: string | ref<string>;
+  /** [MDN reference](https://developer.mozilla.org/docs/Web/CSS/font-variant-caps) */
+  fontVariantCaps?: string | ref<string>;
+  /** [MDN reference](https://developer.mozilla.org/docs/Web/CSS/font-variant-east-asian) */
+  fontVariantEastAsian?: string | ref<string>;
+  /** [MDN reference](https://developer.mozilla.org/docs/Web/CSS/font-variant-ligatures) */
+  fontVariantLigatures?: string | ref<string>;
+  /** [MDN reference](https://developer.mozilla.org/docs/Web/CSS/font-variant-numeric) */
+  fontVariantNumeric?: string | ref<string>;
+  /** [MDN reference](https://developer.mozilla.org/docs/Web/CSS/font-variant-position) */
+  fontVariantPosition?: string | ref<string>;
+  /** [MDN reference](https://developer.mozilla.org/docs/Web/CSS/font-variation-settings) */
+  fontVariationSettings?: string | ref<string>;
+  /** [MDN reference](https://developer.mozilla.org/docs/Web/CSS/font-weight) */
+  fontWeight?: string | ref<string>;
+  /** [MDN reference](https://developer.mozilla.org/docs/Web/CSS/forced-color-adjust) */
+  forcedColorAdjust?: string | ref<string>;
+  /** [MDN reference](https://developer.mozilla.org/docs/Web/CSS/gap) */
+  gap?: string | ref<string>;
+  /** [MDN reference](https://developer.mozilla.org/docs/Web/CSS/grid) */
+  grid?: string | ref<string>;
+  /** [MDN reference](https://developer.mozilla.org/docs/Web/CSS/grid-area) */
+  gridArea?: string | ref<string>;
+  /** [MDN reference](https://developer.mozilla.org/docs/Web/CSS/grid-auto-columns) */
+  gridAutoColumns?: string | ref<string>;
+  /** [MDN reference](https://developer.mozilla.org/docs/Web/CSS/grid-auto-flow) */
+  gridAutoFlow?: string | ref<string>;
+  /** [MDN reference](https://developer.mozilla.org/docs/Web/CSS/grid-auto-rows) */
+  gridAutoRows?: string | ref<string>;
+  /** [MDN reference](https://developer.mozilla.org/docs/Web/CSS/grid-column) */
+  gridColumn?: string | ref<string>;
+  /** [MDN reference](https://developer.mozilla.org/docs/Web/CSS/grid-column-end) */
+  gridColumnEnd?: string | ref<string>;
   /** @deprecated This is a legacy alias of `columnGap`. */
-  gridColumnGap?: string | Ref<string>;
-  /** [MDN Reference](https://developer.mozilla.org/docs/Web/CSS/grid-column-start) */
-  gridColumnStart?: string | Ref<string>;
+  gridColumnGap?: string | ref<string>;
+  /** [MDN reference](https://developer.mozilla.org/docs/Web/CSS/grid-column-start) */
+  gridColumnStart?: string | ref<string>;
   /** @deprecated This is a legacy alias of `gap`. */
-  gridGap?: string | Ref<string>;
-  /** [MDN Reference](https://developer.mozilla.org/docs/Web/CSS/grid-row) */
-  gridRow?: string | Ref<string>;
-  /** [MDN Reference](https://developer.mozilla.org/docs/Web/CSS/grid-row-end) */
-  gridRowEnd?: string | Ref<string>;
+  gridGap?: string | ref<string>;
+  /** [MDN reference](https://developer.mozilla.org/docs/Web/CSS/grid-row) */
+  gridRow?: string | ref<string>;
+  /** [MDN reference](https://developer.mozilla.org/docs/Web/CSS/grid-row-end) */
+  gridRowEnd?: string | ref<string>;
   /** @deprecated This is a legacy alias of `rowGap`. */
-  gridRowGap?: string | Ref<string>;
-  /** [MDN Reference](https://developer.mozilla.org/docs/Web/CSS/grid-row-start) */
-  gridRowStart?: string | Ref<string>;
-  /** [MDN Reference](https://developer.mozilla.org/docs/Web/CSS/grid-template) */
-  gridTemplate?: string | Ref<string>;
-  /** [MDN Reference](https://developer.mozilla.org/docs/Web/CSS/grid-template-areas) */
-  gridTemplateAreas?: string | Ref<string>;
-  /** [MDN Reference](https://developer.mozilla.org/docs/Web/CSS/grid-template-columns) */
-  gridTemplateColumns?: string | Ref<string>;
-  /** [MDN Reference](https://developer.mozilla.org/docs/Web/CSS/grid-template-rows) */
-  gridTemplateRows?: string | Ref<string>;
-  /** [MDN Reference](https://developer.mozilla.org/docs/Web/CSS/height) */
-  height?: string | Ref<string>;
-  /** [MDN Reference](https://developer.mozilla.org/docs/Web/CSS/hyphenate-character) */
-  hyphenateCharacter?: string | Ref<string>;
-  /** [MDN Reference](https://developer.mozilla.org/docs/Web/CSS/hyphens) */
-  hyphens?: string | Ref<string>;
+  gridRowGap?: string | ref<string>;
+  /** [MDN reference](https://developer.mozilla.org/docs/Web/CSS/grid-row-start) */
+  gridRowStart?: string | ref<string>;
+  /** [MDN reference](https://developer.mozilla.org/docs/Web/CSS/grid-template) */
+  gridTemplate?: string | ref<string>;
+  /** [MDN reference](https://developer.mozilla.org/docs/Web/CSS/grid-template-areas) */
+  gridTemplateAreas?: string | ref<string>;
+  /** [MDN reference](https://developer.mozilla.org/docs/Web/CSS/grid-template-columns) */
+  gridTemplateColumns?: string | ref<string>;
+  /** [MDN reference](https://developer.mozilla.org/docs/Web/CSS/grid-template-rows) */
+  gridTemplateRows?: string | ref<string>;
+  /** [MDN reference](https://developer.mozilla.org/docs/Web/CSS/height) */
+  height?: string | ref<string>;
+  /** [MDN reference](https://developer.mozilla.org/docs/Web/CSS/hyphenate-character) */
+  hyphenateCharacter?: string | ref<string>;
+  /** [MDN reference](https://developer.mozilla.org/docs/Web/CSS/hyphens) */
+  hyphens?: string | ref<string>;
   /**
    * @deprecated
    *
-   * [MDN Reference](https://developer.mozilla.org/docs/Web/CSS/image-orientation)
+   * [MDN reference](https://developer.mozilla.org/docs/Web/CSS/image-orientation)
    */
-  imageOrientation?: string | Ref<string>;
-  /** [MDN Reference](https://developer.mozilla.org/docs/Web/CSS/image-rendering) */
-  imageRendering?: string | Ref<string>;
-  /** [MDN Reference](https://developer.mozilla.org/docs/Web/CSS/inline-size) */
-  inlineSize?: string | Ref<string>;
-  /** [MDN Reference](https://developer.mozilla.org/docs/Web/CSS/inset) */
-  inset?: string | Ref<string>;
-  /** [MDN Reference](https://developer.mozilla.org/docs/Web/CSS/inset-block) */
-  insetBlock?: string | Ref<string>;
-  /** [MDN Reference](https://developer.mozilla.org/docs/Web/CSS/inset-block-end) */
-  insetBlockEnd?: string | Ref<string>;
-  /** [MDN Reference](https://developer.mozilla.org/docs/Web/CSS/inset-block-start) */
-  insetBlockStart?: string | Ref<string>;
-  /** [MDN Reference](https://developer.mozilla.org/docs/Web/CSS/inset-inline) */
-  insetInline?: string | Ref<string>;
-  /** [MDN Reference](https://developer.mozilla.org/docs/Web/CSS/inset-inline-end) */
-  insetInlineEnd?: string | Ref<string>;
-  /** [MDN Reference](https://developer.mozilla.org/docs/Web/CSS/inset-inline-start) */
-  insetInlineStart?: string | Ref<string>;
-  /** [MDN Reference](https://developer.mozilla.org/docs/Web/CSS/isolation) */
-  isolation?: string | Ref<string>;
-  /** [MDN Reference](https://developer.mozilla.org/docs/Web/CSS/justify-content) */
-  justifyContent?: string | Ref<string>;
-  /** [MDN Reference](https://developer.mozilla.org/docs/Web/CSS/justify-items) */
-  justifyItems?: string | Ref<string>;
-  /** [MDN Reference](https://developer.mozilla.org/docs/Web/CSS/justify-self) */
-  justifySelf?: string | Ref<string>;
-  /** [MDN Reference](https://developer.mozilla.org/docs/Web/CSS/left) */
-  left?: string | Ref<string>;
-  /** [MDN Reference](https://developer.mozilla.org/docs/Web/API/CSSStyleDeclaration/length) */
+  imageOrientation?: string | ref<string>;
+  /** [MDN reference](https://developer.mozilla.org/docs/Web/CSS/image-rendering) */
+  imageRendering?: string | ref<string>;
+  /** [MDN reference](https://developer.mozilla.org/docs/Web/CSS/inline-size) */
+  inlineSize?: string | ref<string>;
+  /** [MDN reference](https://developer.mozilla.org/docs/Web/CSS/inset) */
+  inset?: string | ref<string>;
+  /** [MDN reference](https://developer.mozilla.org/docs/Web/CSS/inset-block) */
+  insetBlock?: string | ref<string>;
+  /** [MDN reference](https://developer.mozilla.org/docs/Web/CSS/inset-block-end) */
+  insetBlockEnd?: string | ref<string>;
+  /** [MDN reference](https://developer.mozilla.org/docs/Web/CSS/inset-block-start) */
+  insetBlockStart?: string | ref<string>;
+  /** [MDN reference](https://developer.mozilla.org/docs/Web/CSS/inset-inline) */
+  insetInline?: string | ref<string>;
+  /** [MDN reference](https://developer.mozilla.org/docs/Web/CSS/inset-inline-end) */
+  insetInlineEnd?: string | ref<string>;
+  /** [MDN reference](https://developer.mozilla.org/docs/Web/CSS/inset-inline-start) */
+  insetInlineStart?: string | ref<string>;
+  /** [MDN reference](https://developer.mozilla.org/docs/Web/CSS/isolation) */
+  isolation?: string | ref<string>;
+  /** [MDN reference](https://developer.mozilla.org/docs/Web/CSS/justify-content) */
+  justifyContent?: string | ref<string>;
+  /** [MDN reference](https://developer.mozilla.org/docs/Web/CSS/justify-items) */
+  justifyItems?: string | ref<string>;
+  /** [MDN reference](https://developer.mozilla.org/docs/Web/CSS/justify-self) */
+  justifySelf?: string | ref<string>;
+  /** [MDN reference](https://developer.mozilla.org/docs/Web/CSS/left) */
+  left?: string | ref<string>;
+  /** [MDN reference](https://developer.mozilla.org/docs/Web/API/CSSStyleDeclaration/length) */
   readonly length?: number;
-  /** [MDN Reference](https://developer.mozilla.org/docs/Web/CSS/letter-spacing) */
-  letterSpacing?: string | Ref<string>;
-  lightingColor?: string | Ref<string>;
-  /** [MDN Reference](https://developer.mozilla.org/docs/Web/CSS/line-break) */
-  lineBreak?: string | Ref<string>;
-  /** [MDN Reference](https://developer.mozilla.org/docs/Web/CSS/line-height) */
-  lineHeight?: string | Ref<string>;
-  /** [MDN Reference](https://developer.mozilla.org/docs/Web/CSS/list-style) */
-  listStyle?: string | Ref<string>;
-  /** [MDN Reference](https://developer.mozilla.org/docs/Web/CSS/list-style-image) */
-  listStyleImage?: string | Ref<string>;
-  /** [MDN Reference](https://developer.mozilla.org/docs/Web/CSS/list-style-position) */
-  listStylePosition?: string | Ref<string>;
-  /** [MDN Reference](https://developer.mozilla.org/docs/Web/CSS/list-style-type) */
-  listStyleType?: string | Ref<string>;
-  /** [MDN Reference](https://developer.mozilla.org/docs/Web/CSS/margin) */
-  margin?: string | Ref<string>;
-  /** [MDN Reference](https://developer.mozilla.org/docs/Web/CSS/margin-block) */
-  marginBlock?: string | Ref<string>;
-  /** [MDN Reference](https://developer.mozilla.org/docs/Web/CSS/margin-block-end) */
-  marginBlockEnd?: string | Ref<string>;
-  /** [MDN Reference](https://developer.mozilla.org/docs/Web/CSS/margin-block-start) */
-  marginBlockStart?: string | Ref<string>;
-  /** [MDN Reference](https://developer.mozilla.org/docs/Web/CSS/margin-bottom) */
-  marginBottom?: string | Ref<string>;
-  /** [MDN Reference](https://developer.mozilla.org/docs/Web/CSS/margin-inline) */
-  marginInline?: string | Ref<string>;
-  /** [MDN Reference](https://developer.mozilla.org/docs/Web/CSS/margin-inline-end) */
-  marginInlineEnd?: string | Ref<string>;
-  /** [MDN Reference](https://developer.mozilla.org/docs/Web/CSS/margin-inline-start) */
-  marginInlineStart?: string | Ref<string>;
-  /** [MDN Reference](https://developer.mozilla.org/docs/Web/CSS/margin-left) */
-  marginLeft?: string | Ref<string>;
-  /** [MDN Reference](https://developer.mozilla.org/docs/Web/CSS/margin-right) */
-  marginRight?: string | Ref<string>;
-  /** [MDN Reference](https://developer.mozilla.org/docs/Web/CSS/margin-top) */
-  marginTop?: string | Ref<string>;
-  marker?: string | Ref<string>;
-  markerEnd?: string | Ref<string>;
-  markerMid?: string | Ref<string>;
-  markerStart?: string | Ref<string>;
-  /** [MDN Reference](https://developer.mozilla.org/docs/Web/CSS/mask) */
-  mask?: string | Ref<string>;
-  /** [MDN Reference](https://developer.mozilla.org/docs/Web/CSS/mask-clip) */
-  maskClip?: string | Ref<string>;
-  /** [MDN Reference](https://developer.mozilla.org/docs/Web/CSS/mask-composite) */
-  maskComposite?: string | Ref<string>;
-  /** [MDN Reference](https://developer.mozilla.org/docs/Web/CSS/mask-image) */
-  maskImage?: string | Ref<string>;
-  /** [MDN Reference](https://developer.mozilla.org/docs/Web/CSS/mask-mode) */
-  maskMode?: string | Ref<string>;
-  /** [MDN Reference](https://developer.mozilla.org/docs/Web/CSS/mask-origin) */
-  maskOrigin?: string | Ref<string>;
-  /** [MDN Reference](https://developer.mozilla.org/docs/Web/CSS/mask-position) */
-  maskPosition?: string | Ref<string>;
-  /** [MDN Reference](https://developer.mozilla.org/docs/Web/CSS/mask-repeat) */
-  maskRepeat?: string | Ref<string>;
-  /** [MDN Reference](https://developer.mozilla.org/docs/Web/CSS/mask-size) */
-  maskSize?: string | Ref<string>;
-  /** [MDN Reference](https://developer.mozilla.org/docs/Web/CSS/mask-type) */
-  maskType?: string | Ref<string>;
-  /** [MDN Reference](https://developer.mozilla.org/docs/Web/CSS/math-style) */
-  mathStyle?: string | Ref<string>;
-  /** [MDN Reference](https://developer.mozilla.org/docs/Web/CSS/max-block-size) */
-  maxBlockSize?: string | Ref<string>;
-  /** [MDN Reference](https://developer.mozilla.org/docs/Web/CSS/max-height) */
-  maxHeight?: string | Ref<string>;
-  /** [MDN Reference](https://developer.mozilla.org/docs/Web/CSS/max-inline-size) */
-  maxInlineSize?: string | Ref<string>;
-  /** [MDN Reference](https://developer.mozilla.org/docs/Web/CSS/max-width) */
-  maxWidth?: string | Ref<string>;
-  /** [MDN Reference](https://developer.mozilla.org/docs/Web/CSS/min-block-size) */
-  minBlockSize?: string | Ref<string>;
-  /** [MDN Reference](https://developer.mozilla.org/docs/Web/CSS/min-height) */
-  minHeight?: string | Ref<string>;
-  /** [MDN Reference](https://developer.mozilla.org/docs/Web/CSS/min-inline-size) */
-  minInlineSize?: string | Ref<string>;
-  /** [MDN Reference](https://developer.mozilla.org/docs/Web/CSS/min-width) */
-  minWidth?: string | Ref<string>;
-  /** [MDN Reference](https://developer.mozilla.org/docs/Web/CSS/mix-blend-mode) */
-  mixBlendMode?: string | Ref<string>;
-  /** [MDN Reference](https://developer.mozilla.org/docs/Web/CSS/object-fit) */
-  objectFit?: string | Ref<string>;
-  /** [MDN Reference](https://developer.mozilla.org/docs/Web/CSS/object-position) */
-  objectPosition?: string | Ref<string>;
-  /** [MDN Reference](https://developer.mozilla.org/docs/Web/CSS/offset) */
-  offset?: string | Ref<string>;
-  /** [MDN Reference](https://developer.mozilla.org/docs/Web/CSS/offset-distance) */
-  offsetDistance?: string | Ref<string>;
-  /** [MDN Reference](https://developer.mozilla.org/docs/Web/CSS/offset-path) */
-  offsetPath?: string | Ref<string>;
-  /** [MDN Reference](https://developer.mozilla.org/docs/Web/CSS/offset-rotate) */
-  offsetRotate?: string | Ref<string>;
-  /** [MDN Reference](https://developer.mozilla.org/docs/Web/CSS/opacity) */
-  opacity?: string | Ref<string>;
-  /** [MDN Reference](https://developer.mozilla.org/docs/Web/CSS/order) */
-  order?: string | Ref<string>;
-  /** [MDN Reference](https://developer.mozilla.org/docs/Web/CSS/orphans) */
-  orphans?: string | Ref<string>;
-  /** [MDN Reference](https://developer.mozilla.org/docs/Web/CSS/outline) */
-  outline?: string | Ref<string>;
-  /** [MDN Reference](https://developer.mozilla.org/docs/Web/CSS/outline-color) */
-  outlineColor?: string | Ref<string>;
-  /** [MDN Reference](https://developer.mozilla.org/docs/Web/CSS/outline-offset) */
-  outlineOffset?: string | Ref<string>;
-  /** [MDN Reference](https://developer.mozilla.org/docs/Web/CSS/outline-style) */
-  outlineStyle?: string | Ref<string>;
-  /** [MDN Reference](https://developer.mozilla.org/docs/Web/CSS/outline-width) */
-  outlineWidth?: string | Ref<string>;
-  /** [MDN Reference](https://developer.mozilla.org/docs/Web/CSS/overflow) */
-  overflow?: string | Ref<string>;
-  /** [MDN Reference](https://developer.mozilla.org/docs/Web/CSS/overflow-anchor) */
-  overflowAnchor?: string | Ref<string>;
-  /** [MDN Reference](https://developer.mozilla.org/docs/Web/CSS/overflow-clip-margin) */
-  overflowClipMargin?: string | Ref<string>;
-  /** [MDN Reference](https://developer.mozilla.org/docs/Web/CSS/overflow-wrap) */
-  overflowWrap?: string | Ref<string>;
-  /** [MDN Reference](https://developer.mozilla.org/docs/Web/CSS/overflow-x) */
-  overflowX?: string | Ref<string>;
-  /** [MDN Reference](https://developer.mozilla.org/docs/Web/CSS/overflow-y) */
-  overflowY?: string | Ref<string>;
-  /** [MDN Reference](https://developer.mozilla.org/docs/Web/CSS/overscroll-behavior) */
-  overscrollBehavior?: string | Ref<string>;
-  /** [MDN Reference](https://developer.mozilla.org/docs/Web/CSS/overscroll-behavior-block) */
-  overscrollBehaviorBlock?: string | Ref<string>;
-  /** [MDN Reference](https://developer.mozilla.org/docs/Web/CSS/overscroll-behavior-inline) */
-  overscrollBehaviorInline?: string | Ref<string>;
-  /** [MDN Reference](https://developer.mozilla.org/docs/Web/CSS/overscroll-behavior-x) */
-  overscrollBehaviorX?: string | Ref<string>;
-  /** [MDN Reference](https://developer.mozilla.org/docs/Web/CSS/overscroll-behavior-y) */
-  overscrollBehaviorY?: string | Ref<string>;
-  /** [MDN Reference](https://developer.mozilla.org/docs/Web/CSS/padding) */
-  padding?: string | Ref<string>;
-  /** [MDN Reference](https://developer.mozilla.org/docs/Web/CSS/padding-block) */
-  paddingBlock?: string | Ref<string>;
-  /** [MDN Reference](https://developer.mozilla.org/docs/Web/CSS/padding-block-end) */
-  paddingBlockEnd?: string | Ref<string>;
-  /** [MDN Reference](https://developer.mozilla.org/docs/Web/CSS/padding-block-start) */
-  paddingBlockStart?: string | Ref<string>;
-  /** [MDN Reference](https://developer.mozilla.org/docs/Web/CSS/padding-bottom) */
-  paddingBottom?: string | Ref<string>;
-  /** [MDN Reference](https://developer.mozilla.org/docs/Web/CSS/padding-inline) */
-  paddingInline?: string | Ref<string>;
-  /** [MDN Reference](https://developer.mozilla.org/docs/Web/CSS/padding-inline-end) */
-  paddingInlineEnd?: string | Ref<string>;
-  /** [MDN Reference](https://developer.mozilla.org/docs/Web/CSS/padding-inline-start) */
-  paddingInlineStart?: string | Ref<string>;
-  /** [MDN Reference](https://developer.mozilla.org/docs/Web/CSS/padding-left) */
-  paddingLeft?: string | Ref<string>;
-  /** [MDN Reference](https://developer.mozilla.org/docs/Web/CSS/padding-right) */
-  paddingRight?: string | Ref<string>;
-  /** [MDN Reference](https://developer.mozilla.org/docs/Web/CSS/padding-top) */
-  paddingTop?: string | Ref<string>;
-  /** [MDN Reference](https://developer.mozilla.org/docs/Web/CSS/page) */
-  page?: string | Ref<string>;
-  /** [MDN Reference](https://developer.mozilla.org/docs/Web/CSS/page-break-after) */
-  pageBreakAfter?: string | Ref<string>;
-  /** [MDN Reference](https://developer.mozilla.org/docs/Web/CSS/page-break-before) */
-  pageBreakBefore?: string | Ref<string>;
-  /** [MDN Reference](https://developer.mozilla.org/docs/Web/CSS/page-break-inside) */
-  pageBreakInside?: string | Ref<string>;
-  /** [MDN Reference](https://developer.mozilla.org/docs/Web/CSS/paint-order) */
-  paintOrder?: string | Ref<string>;
-  /** [MDN Reference](https://developer.mozilla.org/docs/Web/API/CSSStyleDeclaration/parentRule) */
+  /** [MDN reference](https://developer.mozilla.org/docs/Web/CSS/letter-spacing) */
+  letterSpacing?: string | ref<string>;
+  lightingColor?: string | ref<string>;
+  /** [MDN reference](https://developer.mozilla.org/docs/Web/CSS/line-break) */
+  lineBreak?: string | ref<string>;
+  /** [MDN reference](https://developer.mozilla.org/docs/Web/CSS/line-height) */
+  lineHeight?: string | ref<string>;
+  /** [MDN reference](https://developer.mozilla.org/docs/Web/CSS/list-style) */
+  listStyle?: string | ref<string>;
+  /** [MDN reference](https://developer.mozilla.org/docs/Web/CSS/list-style-image) */
+  listStyleImage?: string | ref<string>;
+  /** [MDN reference](https://developer.mozilla.org/docs/Web/CSS/list-style-position) */
+  listStylePosition?: string | ref<string>;
+  /** [MDN reference](https://developer.mozilla.org/docs/Web/CSS/list-style-type) */
+  listStyleType?: string | ref<string>;
+  /** [MDN reference](https://developer.mozilla.org/docs/Web/CSS/margin) */
+  margin?: string | ref<string>;
+  /** [MDN reference](https://developer.mozilla.org/docs/Web/CSS/margin-block) */
+  marginBlock?: string | ref<string>;
+  /** [MDN reference](https://developer.mozilla.org/docs/Web/CSS/margin-block-end) */
+  marginBlockEnd?: string | ref<string>;
+  /** [MDN reference](https://developer.mozilla.org/docs/Web/CSS/margin-block-start) */
+  marginBlockStart?: string | ref<string>;
+  /** [MDN reference](https://developer.mozilla.org/docs/Web/CSS/margin-bottom) */
+  marginBottom?: string | ref<string>;
+  /** [MDN reference](https://developer.mozilla.org/docs/Web/CSS/margin-inline) */
+  marginInline?: string | ref<string>;
+  /** [MDN reference](https://developer.mozilla.org/docs/Web/CSS/margin-inline-end) */
+  marginInlineEnd?: string | ref<string>;
+  /** [MDN reference](https://developer.mozilla.org/docs/Web/CSS/margin-inline-start) */
+  marginInlineStart?: string | ref<string>;
+  /** [MDN reference](https://developer.mozilla.org/docs/Web/CSS/margin-left) */
+  marginLeft?: string | ref<string>;
+  /** [MDN reference](https://developer.mozilla.org/docs/Web/CSS/margin-right) */
+  marginRight?: string | ref<string>;
+  /** [MDN reference](https://developer.mozilla.org/docs/Web/CSS/margin-top) */
+  marginTop?: string | ref<string>;
+  marker?: string | ref<string>;
+  markerEnd?: string | ref<string>;
+  markerMid?: string | ref<string>;
+  markerStart?: string | ref<string>;
+  /** [MDN reference](https://developer.mozilla.org/docs/Web/CSS/mask) */
+  mask?: string | ref<string>;
+  /** [MDN reference](https://developer.mozilla.org/docs/Web/CSS/mask-clip) */
+  maskClip?: string | ref<string>;
+  /** [MDN reference](https://developer.mozilla.org/docs/Web/CSS/mask-composite) */
+  maskComposite?: string | ref<string>;
+  /** [MDN reference](https://developer.mozilla.org/docs/Web/CSS/mask-image) */
+  maskImage?: string | ref<string>;
+  /** [MDN reference](https://developer.mozilla.org/docs/Web/CSS/mask-mode) */
+  maskMode?: string | ref<string>;
+  /** [MDN reference](https://developer.mozilla.org/docs/Web/CSS/mask-origin) */
+  maskOrigin?: string | ref<string>;
+  /** [MDN reference](https://developer.mozilla.org/docs/Web/CSS/mask-position) */
+  maskPosition?: string | ref<string>;
+  /** [MDN reference](https://developer.mozilla.org/docs/Web/CSS/mask-repeat) */
+  maskRepeat?: string | ref<string>;
+  /** [MDN reference](https://developer.mozilla.org/docs/Web/CSS/mask-size) */
+  maskSize?: string | ref<string>;
+  /** [MDN reference](https://developer.mozilla.org/docs/Web/CSS/mask-type) */
+  maskType?: string | ref<string>;
+  /** [MDN reference](https://developer.mozilla.org/docs/Web/CSS/math-style) */
+  mathStyle?: string | ref<string>;
+  /** [MDN reference](https://developer.mozilla.org/docs/Web/CSS/max-block-size) */
+  maxBlockSize?: string | ref<string>;
+  /** [MDN reference](https://developer.mozilla.org/docs/Web/CSS/max-height) */
+  maxHeight?: string | ref<string>;
+  /** [MDN reference](https://developer.mozilla.org/docs/Web/CSS/max-inline-size) */
+  maxInlineSize?: string | ref<string>;
+  /** [MDN reference](https://developer.mozilla.org/docs/Web/CSS/max-width) */
+  maxWidth?: string | ref<string>;
+  /** [MDN reference](https://developer.mozilla.org/docs/Web/CSS/min-block-size) */
+  minBlockSize?: string | ref<string>;
+  /** [MDN reference](https://developer.mozilla.org/docs/Web/CSS/min-height) */
+  minHeight?: string | ref<string>;
+  /** [MDN reference](https://developer.mozilla.org/docs/Web/CSS/min-inline-size) */
+  minInlineSize?: string | ref<string>;
+  /** [MDN reference](https://developer.mozilla.org/docs/Web/CSS/min-width) */
+  minWidth?: string | ref<string>;
+  /** [MDN reference](https://developer.mozilla.org/docs/Web/CSS/mix-blend-mode) */
+  mixBlendMode?: string | ref<string>;
+  /** [MDN reference](https://developer.mozilla.org/docs/Web/CSS/object-fit) */
+  objectFit?: string | ref<string>;
+  /** [MDN reference](https://developer.mozilla.org/docs/Web/CSS/object-position) */
+  objectPosition?: string | ref<string>;
+  /** [MDN reference](https://developer.mozilla.org/docs/Web/CSS/offset) */
+  offset?: string | ref<string>;
+  /** [MDN reference](https://developer.mozilla.org/docs/Web/CSS/offset-distance) */
+  offsetDistance?: string | ref<string>;
+  /** [MDN reference](https://developer.mozilla.org/docs/Web/CSS/offset-path) */
+  offsetPath?: string | ref<string>;
+  /** [MDN reference](https://developer.mozilla.org/docs/Web/CSS/offset-rotate) */
+  offsetRotate?: string | ref<string>;
+  /** [MDN reference](https://developer.mozilla.org/docs/Web/CSS/opacity) */
+  opacity?: string | ref<string>;
+  /** [MDN reference](https://developer.mozilla.org/docs/Web/CSS/order) */
+  order?: string | ref<string>;
+  /** [MDN reference](https://developer.mozilla.org/docs/Web/CSS/orphans) */
+  orphans?: string | ref<string>;
+  /** [MDN reference](https://developer.mozilla.org/docs/Web/CSS/outline) */
+  outline?: string | ref<string>;
+  /** [MDN reference](https://developer.mozilla.org/docs/Web/CSS/outline-color) */
+  outlineColor?: string | ref<string>;
+  /** [MDN reference](https://developer.mozilla.org/docs/Web/CSS/outline-offset) */
+  outlineOffset?: string | ref<string>;
+  /** [MDN reference](https://developer.mozilla.org/docs/Web/CSS/outline-style) */
+  outlineStyle?: string | ref<string>;
+  /** [MDN reference](https://developer.mozilla.org/docs/Web/CSS/outline-width) */
+  outlineWidth?: string | ref<string>;
+  /** [MDN reference](https://developer.mozilla.org/docs/Web/CSS/overflow) */
+  overflow?: string | ref<string>;
+  /** [MDN reference](https://developer.mozilla.org/docs/Web/CSS/overflow-anchor) */
+  overflowAnchor?: string | ref<string>;
+  /** [MDN reference](https://developer.mozilla.org/docs/Web/CSS/overflow-clip-margin) */
+  overflowClipMargin?: string | ref<string>;
+  /** [MDN reference](https://developer.mozilla.org/docs/Web/CSS/overflow-wrap) */
+  overflowWrap?: string | ref<string>;
+  /** [MDN reference](https://developer.mozilla.org/docs/Web/CSS/overflow-x) */
+  overflowX?: string | ref<string>;
+  /** [MDN reference](https://developer.mozilla.org/docs/Web/CSS/overflow-y) */
+  overflowY?: string | ref<string>;
+  /** [MDN reference](https://developer.mozilla.org/docs/Web/CSS/overscroll-behavior) */
+  overscrollBehavior?: string | ref<string>;
+  /** [MDN reference](https://developer.mozilla.org/docs/Web/CSS/overscroll-behavior-block) */
+  overscrollBehaviorBlock?: string | ref<string>;
+  /** [MDN reference](https://developer.mozilla.org/docs/Web/CSS/overscroll-behavior-inline) */
+  overscrollBehaviorInline?: string | ref<string>;
+  /** [MDN reference](https://developer.mozilla.org/docs/Web/CSS/overscroll-behavior-x) */
+  overscrollBehaviorX?: string | ref<string>;
+  /** [MDN reference](https://developer.mozilla.org/docs/Web/CSS/overscroll-behavior-y) */
+  overscrollBehaviorY?: string | ref<string>;
+  /** [MDN reference](https://developer.mozilla.org/docs/Web/CSS/padding) */
+  padding?: string | ref<string>;
+  /** [MDN reference](https://developer.mozilla.org/docs/Web/CSS/padding-block) */
+  paddingBlock?: string | ref<string>;
+  /** [MDN reference](https://developer.mozilla.org/docs/Web/CSS/padding-block-end) */
+  paddingBlockEnd?: string | ref<string>;
+  /** [MDN reference](https://developer.mozilla.org/docs/Web/CSS/padding-block-start) */
+  paddingBlockStart?: string | ref<string>;
+  /** [MDN reference](https://developer.mozilla.org/docs/Web/CSS/padding-bottom) */
+  paddingBottom?: string | ref<string>;
+  /** [MDN reference](https://developer.mozilla.org/docs/Web/CSS/padding-inline) */
+  paddingInline?: string | ref<string>;
+  /** [MDN reference](https://developer.mozilla.org/docs/Web/CSS/padding-inline-end) */
+  paddingInlineEnd?: string | ref<string>;
+  /** [MDN reference](https://developer.mozilla.org/docs/Web/CSS/padding-inline-start) */
+  paddingInlineStart?: string | ref<string>;
+  /** [MDN reference](https://developer.mozilla.org/docs/Web/CSS/padding-left) */
+  paddingLeft?: string | ref<string>;
+  /** [MDN reference](https://developer.mozilla.org/docs/Web/CSS/padding-right) */
+  paddingRight?: string | ref<string>;
+  /** [MDN reference](https://developer.mozilla.org/docs/Web/CSS/padding-top) */
+  paddingTop?: string | ref<string>;
+  /** [MDN reference](https://developer.mozilla.org/docs/Web/CSS/page) */
+  page?: string | ref<string>;
+  /** [MDN reference](https://developer.mozilla.org/docs/Web/CSS/page-break-after) */
+  pageBreakAfter?: string | ref<string>;
+  /** [MDN reference](https://developer.mozilla.org/docs/Web/CSS/page-break-before) */
+  pageBreakBefore?: string | ref<string>;
+  /** [MDN reference](https://developer.mozilla.org/docs/Web/CSS/page-break-inside) */
+  pageBreakInside?: string | ref<string>;
+  /** [MDN reference](https://developer.mozilla.org/docs/Web/CSS/paint-order) */
+  paintOrder?: string | ref<string>;
+  /** [MDN reference](https://developer.mozilla.org/docs/Web/API/CSSStyleDeclaration/parentRule) */
   readonly parentRule?: CSSRule | null;
-  /** [MDN Reference](https://developer.mozilla.org/docs/Web/CSS/perspective) */
-  perspective?: string | Ref<string>;
-  /** [MDN Reference](https://developer.mozilla.org/docs/Web/CSS/perspective-origin) */
-  perspectiveOrigin?: string | Ref<string>;
-  /** [MDN Reference](https://developer.mozilla.org/docs/Web/CSS/place-content) */
-  placeContent?: string | Ref<string>;
-  /** [MDN Reference](https://developer.mozilla.org/docs/Web/CSS/place-items) */
-  placeItems?: string | Ref<string>;
-  /** [MDN Reference](https://developer.mozilla.org/docs/Web/CSS/place-self) */
-  placeSelf?: string | Ref<string>;
-  /** [MDN Reference](https://developer.mozilla.org/docs/Web/CSS/pointer-events) */
-  pointerEvents?: string | Ref<string>;
-  /** [MDN Reference](https://developer.mozilla.org/docs/Web/CSS/position) */
-  position?: string | Ref<string>;
-  /** [MDN Reference](https://developer.mozilla.org/docs/Web/CSS/print-color-adjust) */
-  printColorAdjust?: string | Ref<string>;
-  /** [MDN Reference](https://developer.mozilla.org/docs/Web/CSS/quotes) */
-  quotes?: string | Ref<string>;
-  /** [MDN Reference](https://developer.mozilla.org/docs/Web/CSS/resize) */
-  resize?: string | Ref<string>;
-  /** [MDN Reference](https://developer.mozilla.org/docs/Web/CSS/right) */
-  right?: string | Ref<string>;
-  /** [MDN Reference](https://developer.mozilla.org/docs/Web/CSS/rotate) */
-  rotate?: string | Ref<string>;
-  /** [MDN Reference](https://developer.mozilla.org/docs/Web/CSS/row-gap) */
-  rowGap?: string | Ref<string>;
-  /** [MDN Reference](https://developer.mozilla.org/docs/Web/CSS/ruby-position) */
-  rubyPosition?: string | Ref<string>;
-  /** [MDN Reference](https://developer.mozilla.org/docs/Web/CSS/scale) */
-  scale?: string | Ref<string>;
-  /** [MDN Reference](https://developer.mozilla.org/docs/Web/CSS/scroll-behavior) */
-  scrollBehavior?: string | Ref<string>;
-  /** [MDN Reference](https://developer.mozilla.org/docs/Web/CSS/scroll-margin) */
-  scrollMargin?: string | Ref<string>;
-  /** [MDN Reference](https://developer.mozilla.org/docs/Web/CSS/scroll-margin-block) */
-  scrollMarginBlock?: string | Ref<string>;
-  /** [MDN Reference](https://developer.mozilla.org/docs/Web/CSS/scroll-margin-block-end) */
-  scrollMarginBlockEnd?: string | Ref<string>;
-  /** [MDN Reference](https://developer.mozilla.org/docs/Web/CSS/scroll-margin-block-start) */
-  scrollMarginBlockStart?: string | Ref<string>;
-  /** [MDN Reference](https://developer.mozilla.org/docs/Web/CSS/scroll-margin-bottom) */
-  scrollMarginBottom?: string | Ref<string>;
-  /** [MDN Reference](https://developer.mozilla.org/docs/Web/CSS/scroll-margin-inline) */
-  scrollMarginInline?: string | Ref<string>;
-  /** [MDN Reference](https://developer.mozilla.org/docs/Web/CSS/scroll-margin-inline-end) */
-  scrollMarginInlineEnd?: string | Ref<string>;
-  /** [MDN Reference](https://developer.mozilla.org/docs/Web/CSS/scroll-margin-inline-start) */
-  scrollMarginInlineStart?: string | Ref<string>;
-  /** [MDN Reference](https://developer.mozilla.org/docs/Web/CSS/scroll-margin-left) */
-  scrollMarginLeft?: string | Ref<string>;
-  /** [MDN Reference](https://developer.mozilla.org/docs/Web/CSS/scroll-margin-right) */
-  scrollMarginRight?: string | Ref<string>;
-  /** [MDN Reference](https://developer.mozilla.org/docs/Web/CSS/scroll-margin-top) */
-  scrollMarginTop?: string | Ref<string>;
-  /** [MDN Reference](https://developer.mozilla.org/docs/Web/CSS/scroll-padding) */
-  scrollPadding?: string | Ref<string>;
-  /** [MDN Reference](https://developer.mozilla.org/docs/Web/CSS/scroll-padding-block) */
-  scrollPaddingBlock?: string | Ref<string>;
-  /** [MDN Reference](https://developer.mozilla.org/docs/Web/CSS/scroll-padding-block-end) */
-  scrollPaddingBlockEnd?: string | Ref<string>;
-  /** [MDN Reference](https://developer.mozilla.org/docs/Web/CSS/scroll-padding-block-start) */
-  scrollPaddingBlockStart?: string | Ref<string>;
-  /** [MDN Reference](https://developer.mozilla.org/docs/Web/CSS/scroll-padding-bottom) */
-  scrollPaddingBottom?: string | Ref<string>;
-  /** [MDN Reference](https://developer.mozilla.org/docs/Web/CSS/scroll-padding-inline) */
-  scrollPaddingInline?: string | Ref<string>;
-  /** [MDN Reference](https://developer.mozilla.org/docs/Web/CSS/scroll-padding-inline-end) */
-  scrollPaddingInlineEnd?: string | Ref<string>;
-  /** [MDN Reference](https://developer.mozilla.org/docs/Web/CSS/scroll-padding-inline-start) */
-  scrollPaddingInlineStart?: string | Ref<string>;
-  /** [MDN Reference](https://developer.mozilla.org/docs/Web/CSS/scroll-padding-left) */
-  scrollPaddingLeft?: string | Ref<string>;
-  /** [MDN Reference](https://developer.mozilla.org/docs/Web/CSS/scroll-padding-right) */
-  scrollPaddingRight?: string | Ref<string>;
-  /** [MDN Reference](https://developer.mozilla.org/docs/Web/CSS/scroll-padding-top) */
-  scrollPaddingTop?: string | Ref<string>;
-  /** [MDN Reference](https://developer.mozilla.org/docs/Web/CSS/scroll-snap-align) */
-  scrollSnapAlign?: string | Ref<string>;
-  /** [MDN Reference](https://developer.mozilla.org/docs/Web/CSS/scroll-snap-stop) */
-  scrollSnapStop?: string | Ref<string>;
-  /** [MDN Reference](https://developer.mozilla.org/docs/Web/CSS/scroll-snap-type) */
-  scrollSnapType?: string | Ref<string>;
-  /** [MDN Reference](https://developer.mozilla.org/docs/Web/CSS/scrollbar-gutter) */
-  scrollbarGutter?: string | Ref<string>;
-  /** [MDN Reference](https://developer.mozilla.org/docs/Web/CSS/shape-image-threshold) */
-  shapeImageThreshold?: string | Ref<string>;
-  /** [MDN Reference](https://developer.mozilla.org/docs/Web/CSS/shape-margin) */
-  shapeMargin?: string | Ref<string>;
-  /** [MDN Reference](https://developer.mozilla.org/docs/Web/CSS/shape-outside) */
-  shapeOutside?: string | Ref<string>;
-  shapeRendering?: string | Ref<string>;
-  stopColor?: string | Ref<string>;
-  stopOpacity?: string | Ref<string>;
-  stroke?: string | Ref<string>;
-  strokeDasharray?: string | Ref<string>;
-  strokeDashoffset?: string | Ref<string>;
-  strokeLinecap?: string | Ref<string>;
-  strokeLinejoin?: string | Ref<string>;
-  strokeMiterlimit?: string | Ref<string>;
-  strokeOpacity?: string | Ref<string>;
-  strokeWidth?: string | Ref<string>;
-  /** [MDN Reference](https://developer.mozilla.org/docs/Web/CSS/tab-size) */
-  tabSize?: string | Ref<string>;
-  /** [MDN Reference](https://developer.mozilla.org/docs/Web/CSS/table-layout) */
-  tableLayout?: string | Ref<string>;
-  /** [MDN Reference](https://developer.mozilla.org/docs/Web/CSS/text-align) */
-  textAlign?: string | Ref<string>;
-  /** [MDN Reference](https://developer.mozilla.org/docs/Web/CSS/text-align-last) */
-  textAlignLast?: string | Ref<string>;
-  textAnchor?: string | Ref<string>;
-  /** [MDN Reference](https://developer.mozilla.org/docs/Web/CSS/text-combine-upright) */
-  textCombineUpright?: string | Ref<string>;
-  /** [MDN Reference](https://developer.mozilla.org/docs/Web/CSS/text-decoration) */
-  textDecoration?: string | Ref<string>;
-  /** [MDN Reference](https://developer.mozilla.org/docs/Web/CSS/text-decoration-color) */
-  textDecorationColor?: string | Ref<string>;
-  /** [MDN Reference](https://developer.mozilla.org/docs/Web/CSS/text-decoration-line) */
-  textDecorationLine?: string | Ref<string>;
-  /** [MDN Reference](https://developer.mozilla.org/docs/Web/CSS/text-decoration-skip-ink) */
-  textDecorationSkipInk?: string | Ref<string>;
-  /** [MDN Reference](https://developer.mozilla.org/docs/Web/CSS/text-decoration-style) */
-  textDecorationStyle?: string | Ref<string>;
-  /** [MDN Reference](https://developer.mozilla.org/docs/Web/CSS/text-decoration-thickness) */
-  textDecorationThickness?: string | Ref<string>;
-  /** [MDN Reference](https://developer.mozilla.org/docs/Web/CSS/text-emphasis) */
-  textEmphasis?: string | Ref<string>;
-  /** [MDN Reference](https://developer.mozilla.org/docs/Web/CSS/text-emphasis-color) */
-  textEmphasisColor?: string | Ref<string>;
-  /** [MDN Reference](https://developer.mozilla.org/docs/Web/CSS/text-emphasis-position) */
-  textEmphasisPosition?: string | Ref<string>;
-  /** [MDN Reference](https://developer.mozilla.org/docs/Web/CSS/text-emphasis-style) */
-  textEmphasisStyle?: string | Ref<string>;
-  /** [MDN Reference](https://developer.mozilla.org/docs/Web/CSS/text-indent) */
-  textIndent?: string | Ref<string>;
-  /** [MDN Reference](https://developer.mozilla.org/docs/Web/CSS/text-orientation) */
-  textOrientation?: string | Ref<string>;
-  /** [MDN Reference](https://developer.mozilla.org/docs/Web/CSS/text-overflow) */
-  textOverflow?: string | Ref<string>;
-  /** [MDN Reference](https://developer.mozilla.org/docs/Web/CSS/text-rendering) */
-  textRendering?: string | Ref<string>;
-  /** [MDN Reference](https://developer.mozilla.org/docs/Web/CSS/text-shadow) */
-  textShadow?: string | Ref<string>;
-  /** [MDN Reference](https://developer.mozilla.org/docs/Web/CSS/text-transform) */
-  textTransform?: string | Ref<string>;
-  /** [MDN Reference](https://developer.mozilla.org/docs/Web/CSS/text-underline-offset) */
-  textUnderlineOffset?: string | Ref<string>;
-  /** [MDN Reference](https://developer.mozilla.org/docs/Web/CSS/text-underline-position) */
-  textUnderlinePosition?: string | Ref<string>;
-  /** [MDN Reference](https://developer.mozilla.org/docs/Web/CSS/top) */
-  top?: string | Ref<string>;
-  /** [MDN Reference](https://developer.mozilla.org/docs/Web/CSS/touch-action) */
-  touchAction?: string | Ref<string>;
-  /** [MDN Reference](https://developer.mozilla.org/docs/Web/CSS/transform) */
-  transform?: string | Ref<string>;
-  /** [MDN Reference](https://developer.mozilla.org/docs/Web/CSS/transform-box) */
-  transformBox?: string | Ref<string>;
-  /** [MDN Reference](https://developer.mozilla.org/docs/Web/CSS/transform-origin) */
-  transformOrigin?: string | Ref<string>;
-  /** [MDN Reference](https://developer.mozilla.org/docs/Web/CSS/transform-style) */
-  transformStyle?: string | Ref<string>;
-  /** [MDN Reference](https://developer.mozilla.org/docs/Web/CSS/transition) */
-  transition?: string | Ref<string>;
-  /** [MDN Reference](https://developer.mozilla.org/docs/Web/CSS/transition-delay) */
-  transitionDelay?: string | Ref<string>;
-  /** [MDN Reference](https://developer.mozilla.org/docs/Web/CSS/transition-duration) */
-  transitionDuration?: string | Ref<string>;
-  /** [MDN Reference](https://developer.mozilla.org/docs/Web/CSS/transition-property) */
-  transitionProperty?: string | Ref<string>;
-  /** [MDN Reference](https://developer.mozilla.org/docs/Web/CSS/transition-timing-function) */
-  transitionTimingFunction?: string | Ref<string>;
-  /** [MDN Reference](https://developer.mozilla.org/docs/Web/CSS/translate) */
-  translate?: string | Ref<string>;
-  /** [MDN Reference](https://developer.mozilla.org/docs/Web/CSS/unicode-bidi) */
-  unicodeBidi?: string | Ref<string>;
-  /** [MDN Reference](https://developer.mozilla.org/docs/Web/CSS/user-select) */
-  userSelect?: string | Ref<string>;
-  /** [MDN Reference](https://developer.mozilla.org/docs/Web/CSS/vertical-align) */
-  verticalAlign?: string | Ref<string>;
-  /** [MDN Reference](https://developer.mozilla.org/docs/Web/CSS/visibility) */
-  visibility?: string | Ref<string>;
+  /** [MDN reference](https://developer.mozilla.org/docs/Web/CSS/perspective) */
+  perspective?: string | ref<string>;
+  /** [MDN reference](https://developer.mozilla.org/docs/Web/CSS/perspective-origin) */
+  perspectiveOrigin?: string | ref<string>;
+  /** [MDN reference](https://developer.mozilla.org/docs/Web/CSS/place-content) */
+  placeContent?: string | ref<string>;
+  /** [MDN reference](https://developer.mozilla.org/docs/Web/CSS/place-items) */
+  placeItems?: string | ref<string>;
+  /** [MDN reference](https://developer.mozilla.org/docs/Web/CSS/place-self) */
+  placeSelf?: string | ref<string>;
+  /** [MDN reference](https://developer.mozilla.org/docs/Web/CSS/pointer-events) */
+  pointerEvents?: string | ref<string>;
+  /** [MDN reference](https://developer.mozilla.org/docs/Web/CSS/position) */
+  position?: string | ref<string>;
+  /** [MDN reference](https://developer.mozilla.org/docs/Web/CSS/print-color-adjust) */
+  printColorAdjust?: string | ref<string>;
+  /** [MDN reference](https://developer.mozilla.org/docs/Web/CSS/quotes) */
+  quotes?: string | ref<string>;
+  /** [MDN reference](https://developer.mozilla.org/docs/Web/CSS/resize) */
+  resize?: string | ref<string>;
+  /** [MDN reference](https://developer.mozilla.org/docs/Web/CSS/right) */
+  right?: string | ref<string>;
+  /** [MDN reference](https://developer.mozilla.org/docs/Web/CSS/rotate) */
+  rotate?: string | ref<string>;
+  /** [MDN reference](https://developer.mozilla.org/docs/Web/CSS/row-gap) */
+  rowGap?: string | ref<string>;
+  /** [MDN reference](https://developer.mozilla.org/docs/Web/CSS/ruby-position) */
+  rubyPosition?: string | ref<string>;
+  /** [MDN reference](https://developer.mozilla.org/docs/Web/CSS/scale) */
+  scale?: string | ref<string>;
+  /** [MDN reference](https://developer.mozilla.org/docs/Web/CSS/scroll-behavior) */
+  scrollBehavior?: string | ref<string>;
+  /** [MDN reference](https://developer.mozilla.org/docs/Web/CSS/scroll-margin) */
+  scrollMargin?: string | ref<string>;
+  /** [MDN reference](https://developer.mozilla.org/docs/Web/CSS/scroll-margin-block) */
+  scrollMarginBlock?: string | ref<string>;
+  /** [MDN reference](https://developer.mozilla.org/docs/Web/CSS/scroll-margin-block-end) */
+  scrollMarginBlockEnd?: string | ref<string>;
+  /** [MDN reference](https://developer.mozilla.org/docs/Web/CSS/scroll-margin-block-start) */
+  scrollMarginBlockStart?: string | ref<string>;
+  /** [MDN reference](https://developer.mozilla.org/docs/Web/CSS/scroll-margin-bottom) */
+  scrollMarginBottom?: string | ref<string>;
+  /** [MDN reference](https://developer.mozilla.org/docs/Web/CSS/scroll-margin-inline) */
+  scrollMarginInline?: string | ref<string>;
+  /** [MDN reference](https://developer.mozilla.org/docs/Web/CSS/scroll-margin-inline-end) */
+  scrollMarginInlineEnd?: string | ref<string>;
+  /** [MDN reference](https://developer.mozilla.org/docs/Web/CSS/scroll-margin-inline-start) */
+  scrollMarginInlineStart?: string | ref<string>;
+  /** [MDN reference](https://developer.mozilla.org/docs/Web/CSS/scroll-margin-left) */
+  scrollMarginLeft?: string | ref<string>;
+  /** [MDN reference](https://developer.mozilla.org/docs/Web/CSS/scroll-margin-right) */
+  scrollMarginRight?: string | ref<string>;
+  /** [MDN reference](https://developer.mozilla.org/docs/Web/CSS/scroll-margin-top) */
+  scrollMarginTop?: string | ref<string>;
+  /** [MDN reference](https://developer.mozilla.org/docs/Web/CSS/scroll-padding) */
+  scrollPadding?: string | ref<string>;
+  /** [MDN reference](https://developer.mozilla.org/docs/Web/CSS/scroll-padding-block) */
+  scrollPaddingBlock?: string | ref<string>;
+  /** [MDN reference](https://developer.mozilla.org/docs/Web/CSS/scroll-padding-block-end) */
+  scrollPaddingBlockEnd?: string | ref<string>;
+  /** [MDN reference](https://developer.mozilla.org/docs/Web/CSS/scroll-padding-block-start) */
+  scrollPaddingBlockStart?: string | ref<string>;
+  /** [MDN reference](https://developer.mozilla.org/docs/Web/CSS/scroll-padding-bottom) */
+  scrollPaddingBottom?: string | ref<string>;
+  /** [MDN reference](https://developer.mozilla.org/docs/Web/CSS/scroll-padding-inline) */
+  scrollPaddingInline?: string | ref<string>;
+  /** [MDN reference](https://developer.mozilla.org/docs/Web/CSS/scroll-padding-inline-end) */
+  scrollPaddingInlineEnd?: string | ref<string>;
+  /** [MDN reference](https://developer.mozilla.org/docs/Web/CSS/scroll-padding-inline-start) */
+  scrollPaddingInlineStart?: string | ref<string>;
+  /** [MDN reference](https://developer.mozilla.org/docs/Web/CSS/scroll-padding-left) */
+  scrollPaddingLeft?: string | ref<string>;
+  /** [MDN reference](https://developer.mozilla.org/docs/Web/CSS/scroll-padding-right) */
+  scrollPaddingRight?: string | ref<string>;
+  /** [MDN reference](https://developer.mozilla.org/docs/Web/CSS/scroll-padding-top) */
+  scrollPaddingTop?: string | ref<string>;
+  /** [MDN reference](https://developer.mozilla.org/docs/Web/CSS/scroll-snap-align) */
+  scrollSnapAlign?: string | ref<string>;
+  /** [MDN reference](https://developer.mozilla.org/docs/Web/CSS/scroll-snap-stop) */
+  scrollSnapStop?: string | ref<string>;
+  /** [MDN reference](https://developer.mozilla.org/docs/Web/CSS/scroll-snap-type) */
+  scrollSnapType?: string | ref<string>;
+  /** [MDN reference](https://developer.mozilla.org/docs/Web/CSS/scrollbar-gutter) */
+  scrollbarGutter?: string | ref<string>;
+  /** [MDN reference](https://developer.mozilla.org/docs/Web/CSS/shape-image-threshold) */
+  shapeImageThreshold?: string | ref<string>;
+  /** [MDN reference](https://developer.mozilla.org/docs/Web/CSS/shape-margin) */
+  shapeMargin?: string | ref<string>;
+  /** [MDN reference](https://developer.mozilla.org/docs/Web/CSS/shape-outside) */
+  shapeOutside?: string | ref<string>;
+  shapeRendering?: string | ref<string>;
+  stopColor?: string | ref<string>;
+  stopOpacity?: string | ref<string>;
+  stroke?: string | ref<string>;
+  strokeDasharray?: string | ref<string>;
+  strokeDashoffset?: string | ref<string>;
+  strokeLinecap?: string | ref<string>;
+  strokeLinejoin?: string | ref<string>;
+  strokeMiterlimit?: string | ref<string>;
+  strokeOpacity?: string | ref<string>;
+  strokeWidth?: string | ref<string>;
+  /** [MDN reference](https://developer.mozilla.org/docs/Web/CSS/tab-size) */
+  tabSize?: string | ref<string>;
+  /** [MDN reference](https://developer.mozilla.org/docs/Web/CSS/table-layout) */
+  tableLayout?: string | ref<string>;
+  /** [MDN reference](https://developer.mozilla.org/docs/Web/CSS/text-align) */
+  textAlign?: string | ref<string>;
+  /** [MDN reference](https://developer.mozilla.org/docs/Web/CSS/text-align-last) */
+  textAlignLast?: string | ref<string>;
+  textAnchor?: string | ref<string>;
+  /** [MDN reference](https://developer.mozilla.org/docs/Web/CSS/text-combine-upright) */
+  textCombineUpright?: string | ref<string>;
+  /** [MDN reference](https://developer.mozilla.org/docs/Web/CSS/text-decoration) */
+  textDecoration?: string | ref<string>;
+  /** [MDN reference](https://developer.mozilla.org/docs/Web/CSS/text-decoration-color) */
+  textDecorationColor?: string | ref<string>;
+  /** [MDN reference](https://developer.mozilla.org/docs/Web/CSS/text-decoration-line) */
+  textDecorationLine?: string | ref<string>;
+  /** [MDN reference](https://developer.mozilla.org/docs/Web/CSS/text-decoration-skip-ink) */
+  textDecorationSkipInk?: string | ref<string>;
+  /** [MDN reference](https://developer.mozilla.org/docs/Web/CSS/text-decoration-style) */
+  textDecorationStyle?: string | ref<string>;
+  /** [MDN reference](https://developer.mozilla.org/docs/Web/CSS/text-decoration-thickness) */
+  textDecorationThickness?: string | ref<string>;
+  /** [MDN reference](https://developer.mozilla.org/docs/Web/CSS/text-emphasis) */
+  textEmphasis?: string | ref<string>;
+  /** [MDN reference](https://developer.mozilla.org/docs/Web/CSS/text-emphasis-color) */
+  textEmphasisColor?: string | ref<string>;
+  /** [MDN reference](https://developer.mozilla.org/docs/Web/CSS/text-emphasis-position) */
+  textEmphasisPosition?: string | ref<string>;
+  /** [MDN reference](https://developer.mozilla.org/docs/Web/CSS/text-emphasis-style) */
+  textEmphasisStyle?: string | ref<string>;
+  /** [MDN reference](https://developer.mozilla.org/docs/Web/CSS/text-indent) */
+  textIndent?: string | ref<string>;
+  /** [MDN reference](https://developer.mozilla.org/docs/Web/CSS/text-orientation) */
+  textOrientation?: string | ref<string>;
+  /** [MDN reference](https://developer.mozilla.org/docs/Web/CSS/text-overflow) */
+  textOverflow?: string | ref<string>;
+  /** [MDN reference](https://developer.mozilla.org/docs/Web/CSS/text-rendering) */
+  textRendering?: string | ref<string>;
+  /** [MDN reference](https://developer.mozilla.org/docs/Web/CSS/text-shadow) */
+  textShadow?: string | ref<string>;
+  /** [MDN reference](https://developer.mozilla.org/docs/Web/CSS/text-transform) */
+  textTransform?: string | ref<string>;
+  /** [MDN reference](https://developer.mozilla.org/docs/Web/CSS/text-underline-offset) */
+  textUnderlineOffset?: string | ref<string>;
+  /** [MDN reference](https://developer.mozilla.org/docs/Web/CSS/text-underline-position) */
+  textUnderlinePosition?: string | ref<string>;
+  /** [MDN reference](https://developer.mozilla.org/docs/Web/CSS/top) */
+  top?: string | ref<string>;
+  /** [MDN reference](https://developer.mozilla.org/docs/Web/CSS/touch-action) */
+  touchAction?: string | ref<string>;
+  /** [MDN reference](https://developer.mozilla.org/docs/Web/CSS/transform) */
+  transform?: string | ref<string>;
+  /** [MDN reference](https://developer.mozilla.org/docs/Web/CSS/transform-box) */
+  transformBox?: string | ref<string>;
+  /** [MDN reference](https://developer.mozilla.org/docs/Web/CSS/transform-origin) */
+  transformOrigin?: string | ref<string>;
+  /** [MDN reference](https://developer.mozilla.org/docs/Web/CSS/transform-style) */
+  transformStyle?: string | ref<string>;
+  /** [MDN reference](https://developer.mozilla.org/docs/Web/CSS/transition) */
+  transition?: string | ref<string>;
+  /** [MDN reference](https://developer.mozilla.org/docs/Web/CSS/transition-delay) */
+  transitionDelay?: string | ref<string>;
+  /** [MDN reference](https://developer.mozilla.org/docs/Web/CSS/transition-duration) */
+  transitionDuration?: string | ref<string>;
+  /** [MDN reference](https://developer.mozilla.org/docs/Web/CSS/transition-property) */
+  transitionProperty?: string | ref<string>;
+  /** [MDN reference](https://developer.mozilla.org/docs/Web/CSS/transition-timing-function) */
+  transitionTimingFunction?: string | ref<string>;
+  /** [MDN reference](https://developer.mozilla.org/docs/Web/CSS/translate) */
+  translate?: string | ref<string>;
+  /** [MDN reference](https://developer.mozilla.org/docs/Web/CSS/unicode-bidi) */
+  unicodeBidi?: string | ref<string>;
+  /** [MDN reference](https://developer.mozilla.org/docs/Web/CSS/user-select) */
+  userSelect?: string | ref<string>;
+  /** [MDN reference](https://developer.mozilla.org/docs/Web/CSS/vertical-align) */
+  verticalAlign?: string | ref<string>;
+  /** [MDN reference](https://developer.mozilla.org/docs/Web/CSS/visibility) */
+  visibility?: string | ref<string>;
   /**
    * @deprecated This is a legacy alias of `alignContent`.
    *
-   * [MDN Reference](https://developer.mozilla.org/docs/Web/CSS/align-content)
+   * [MDN reference](https://developer.mozilla.org/docs/Web/CSS/align-content)
    */
-  webkitAlignContent?: string | Ref<string>;
+  webkitAlignContent?: string | ref<string>;
   /**
    * @deprecated This is a legacy alias of `alignItems`.
    *
-   * [MDN Reference](https://developer.mozilla.org/docs/Web/CSS/align-items)
+   * [MDN reference](https://developer.mozilla.org/docs/Web/CSS/align-items)
    */
-  webkitAlignItems?: string | Ref<string>;
+  webkitAlignItems?: string | ref<string>;
   /**
    * @deprecated This is a legacy alias of `alignSelf`.
    *
-   * [MDN Reference](https://developer.mozilla.org/docs/Web/CSS/align-self)
+   * [MDN reference](https://developer.mozilla.org/docs/Web/CSS/align-self)
    */
-  webkitAlignSelf?: string | Ref<string>;
+  webkitAlignSelf?: string | ref<string>;
   /**
    * @deprecated This is a legacy alias of `animation`.
    *
-   * [MDN Reference](https://developer.mozilla.org/docs/Web/CSS/animation)
+   * [MDN reference](https://developer.mozilla.org/docs/Web/CSS/animation)
    */
-  webkitAnimation?: string | Ref<string>;
+  webkitAnimation?: string | ref<string>;
   /**
    * @deprecated This is a legacy alias of `animationDelay`.
    *
-   * [MDN Reference](https://developer.mozilla.org/docs/Web/CSS/animation-delay)
+   * [MDN reference](https://developer.mozilla.org/docs/Web/CSS/animation-delay)
    */
-  webkitAnimationDelay?: string | Ref<string>;
+  webkitAnimationDelay?: string | ref<string>;
   /**
    * @deprecated This is a legacy alias of `animationDirection`.
    *
-   * [MDN Reference](https://developer.mozilla.org/docs/Web/CSS/animation-direction)
+   * [MDN reference](https://developer.mozilla.org/docs/Web/CSS/animation-direction)
    */
-  webkitAnimationDirection?: string | Ref<string>;
+  webkitAnimationDirection?: string | ref<string>;
   /**
    * @deprecated This is a legacy alias of `animationDuration`.
    *
-   * [MDN Reference](https://developer.mozilla.org/docs/Web/CSS/animation-duration)
+   * [MDN reference](https://developer.mozilla.org/docs/Web/CSS/animation-duration)
    */
-  webkitAnimationDuration?: string | Ref<string>;
+  webkitAnimationDuration?: string | ref<string>;
   /**
    * @deprecated This is a legacy alias of `animationFillMode`.
    *
-   * [MDN Reference](https://developer.mozilla.org/docs/Web/CSS/animation-fill-mode)
+   * [MDN reference](https://developer.mozilla.org/docs/Web/CSS/animation-fill-mode)
    */
-  webkitAnimationFillMode?: string | Ref<string>;
+  webkitAnimationFillMode?: string | ref<string>;
   /**
    * @deprecated This is a legacy alias of `animationIterationCount`.
    *
-   * [MDN Reference](https://developer.mozilla.org/docs/Web/CSS/animation-iteration-count)
+   * [MDN reference](https://developer.mozilla.org/docs/Web/CSS/animation-iteration-count)
    */
-  webkitAnimationIterationCount?: string | Ref<string>;
+  webkitAnimationIterationCount?: string | ref<string>;
   /**
    * @deprecated This is a legacy alias of `animationName`.
    *
-   * [MDN Reference](https://developer.mozilla.org/docs/Web/CSS/animation-name)
+   * [MDN reference](https://developer.mozilla.org/docs/Web/CSS/animation-name)
    */
-  webkitAnimationName?: string | Ref<string>;
+  webkitAnimationName?: string | ref<string>;
   /**
    * @deprecated This is a legacy alias of `animationPlayState`.
    *
-   * [MDN Reference](https://developer.mozilla.org/docs/Web/CSS/animation-play-state)
+   * [MDN reference](https://developer.mozilla.org/docs/Web/CSS/animation-play-state)
    */
-  webkitAnimationPlayState?: string | Ref<string>;
+  webkitAnimationPlayState?: string | ref<string>;
   /**
    * @deprecated This is a legacy alias of `animationTimingFunction`.
    *
-   * [MDN Reference](https://developer.mozilla.org/docs/Web/CSS/animation-timing-function)
+   * [MDN reference](https://developer.mozilla.org/docs/Web/CSS/animation-timing-function)
    */
-  webkitAnimationTimingFunction?: string | Ref<string>;
+  webkitAnimationTimingFunction?: string | ref<string>;
   /**
    * @deprecated This is a legacy alias of `appearance`.
    *
-   * [MDN Reference](https://developer.mozilla.org/docs/Web/CSS/appearance)
+   * [MDN reference](https://developer.mozilla.org/docs/Web/CSS/appearance)
    */
-  webkitAppearance?: string | Ref<string>;
+  webkitAppearance?: string | ref<string>;
   /**
    * @deprecated This is a legacy alias of `backfaceVisibility`.
    *
-   * [MDN Reference](https://developer.mozilla.org/docs/Web/CSS/backface-visibility)
+   * [MDN reference](https://developer.mozilla.org/docs/Web/CSS/backface-visibility)
    */
-  webkitBackfaceVisibility?: string | Ref<string>;
+  webkitBackfaceVisibility?: string | ref<string>;
   /**
    * @deprecated This is a legacy alias of `backgroundClip`.
    *
-   * [MDN Reference](https://developer.mozilla.org/docs/Web/CSS/background-clip)
+   * [MDN reference](https://developer.mozilla.org/docs/Web/CSS/background-clip)
    */
-  webkitBackgroundClip?: string | Ref<string>;
+  webkitBackgroundClip?: string | ref<string>;
   /**
    * @deprecated This is a legacy alias of `backgroundOrigin`.
    *
-   * [MDN Reference](https://developer.mozilla.org/docs/Web/CSS/background-origin)
+   * [MDN reference](https://developer.mozilla.org/docs/Web/CSS/background-origin)
    */
-  webkitBackgroundOrigin?: string | Ref<string>;
+  webkitBackgroundOrigin?: string | ref<string>;
   /**
    * @deprecated This is a legacy alias of `backgroundSize`.
    *
-   * [MDN Reference](https://developer.mozilla.org/docs/Web/CSS/background-size)
+   * [MDN reference](https://developer.mozilla.org/docs/Web/CSS/background-size)
    */
-  webkitBackgroundSize?: string | Ref<string>;
+  webkitBackgroundSize?: string | ref<string>;
   /**
    * @deprecated This is a legacy alias of `borderBottomLeftRadius`.
    *
-   * [MDN Reference](https://developer.mozilla.org/docs/Web/CSS/border-bottom-left-radius)
+   * [MDN reference](https://developer.mozilla.org/docs/Web/CSS/border-bottom-left-radius)
    */
-  webkitBorderBottomLeftRadius?: string | Ref<string>;
+  webkitBorderBottomLeftRadius?: string | ref<string>;
   /**
    * @deprecated This is a legacy alias of `borderBottomRightRadius`.
    *
-   * [MDN Reference](https://developer.mozilla.org/docs/Web/CSS/border-bottom-right-radius)
+   * [MDN reference](https://developer.mozilla.org/docs/Web/CSS/border-bottom-right-radius)
    */
-  webkitBorderBottomRightRadius?: string | Ref<string>;
+  webkitBorderBottomRightRadius?: string | ref<string>;
   /**
    * @deprecated This is a legacy alias of `borderRadius`.
    *
-   * [MDN Reference](https://developer.mozilla.org/docs/Web/CSS/border-radius)
+   * [MDN reference](https://developer.mozilla.org/docs/Web/CSS/border-radius)
    */
-  webkitBorderRadius?: string | Ref<string>;
+  webkitBorderRadius?: string | ref<string>;
   /**
    * @deprecated This is a legacy alias of `borderTopLeftRadius`.
    *
-   * [MDN Reference](https://developer.mozilla.org/docs/Web/CSS/border-top-left-radius)
+   * [MDN reference](https://developer.mozilla.org/docs/Web/CSS/border-top-left-radius)
    */
-  webkitBorderTopLeftRadius?: string | Ref<string>;
+  webkitBorderTopLeftRadius?: string | ref<string>;
   /**
    * @deprecated This is a legacy alias of `borderTopRightRadius`.
    *
-   * [MDN Reference](https://developer.mozilla.org/docs/Web/CSS/border-top-right-radius)
+   * [MDN reference](https://developer.mozilla.org/docs/Web/CSS/border-top-right-radius)
    */
-  webkitBorderTopRightRadius?: string | Ref<string>;
+  webkitBorderTopRightRadius?: string | ref<string>;
   /**
    * @deprecated This is a legacy alias of `boxAlign`.
    *
-   * [MDN Reference](https://developer.mozilla.org/docs/Web/CSS/box-align)
+   * [MDN reference](https://developer.mozilla.org/docs/Web/CSS/box-align)
    */
-  webkitBoxAlign?: string | Ref<string>;
+  webkitBoxAlign?: string | ref<string>;
   /**
    * @deprecated This is a legacy alias of `boxFlex`.
    *
-   * [MDN Reference](https://developer.mozilla.org/docs/Web/CSS/box-flex)
+   * [MDN reference](https://developer.mozilla.org/docs/Web/CSS/box-flex)
    */
-  webkitBoxFlex?: string | Ref<string>;
+  webkitBoxFlex?: string | ref<string>;
   /**
    * @deprecated This is a legacy alias of `boxOrdinalGroup`.
    *
-   * [MDN Reference](https://developer.mozilla.org/docs/Web/CSS/box-ordinal-group)
+   * [MDN reference](https://developer.mozilla.org/docs/Web/CSS/box-ordinal-group)
    */
-  webkitBoxOrdinalGroup?: string | Ref<string>;
+  webkitBoxOrdinalGroup?: string | ref<string>;
   /**
    * @deprecated This is a legacy alias of `boxOrient`.
    *
-   * [MDN Reference](https://developer.mozilla.org/docs/Web/CSS/box-orient)
+   * [MDN reference](https://developer.mozilla.org/docs/Web/CSS/box-orient)
    */
-  webkitBoxOrient?: string | Ref<string>;
+  webkitBoxOrient?: string | ref<string>;
   /**
    * @deprecated This is a legacy alias of `boxPack`.
    *
-   * [MDN Reference](https://developer.mozilla.org/docs/Web/CSS/box-pack)
+   * [MDN reference](https://developer.mozilla.org/docs/Web/CSS/box-pack)
    */
-  webkitBoxPack?: string | Ref<string>;
+  webkitBoxPack?: string | ref<string>;
   /**
    * @deprecated This is a legacy alias of `boxShadow`.
    *
-   * [MDN Reference](https://developer.mozilla.org/docs/Web/CSS/box-shadow)
+   * [MDN reference](https://developer.mozilla.org/docs/Web/CSS/box-shadow)
    */
-  webkitBoxShadow?: string | Ref<string>;
+  webkitBoxShadow?: string | ref<string>;
   /**
    * @deprecated This is a legacy alias of `boxSizing`.
    *
-   * [MDN Reference](https://developer.mozilla.org/docs/Web/CSS/box-sizing)
+   * [MDN reference](https://developer.mozilla.org/docs/Web/CSS/box-sizing)
    */
-  webkitBoxSizing?: string | Ref<string>;
+  webkitBoxSizing?: string | ref<string>;
   /**
    * @deprecated This is a legacy alias of `filter`.
    *
-   * [MDN Reference](https://developer.mozilla.org/docs/Web/CSS/filter)
+   * [MDN reference](https://developer.mozilla.org/docs/Web/CSS/filter)
    */
-  webkitFilter?: string | Ref<string>;
+  webkitFilter?: string | ref<string>;
   /**
    * @deprecated This is a legacy alias of `flex`.
    *
-   * [MDN Reference](https://developer.mozilla.org/docs/Web/CSS/flex)
+   * [MDN reference](https://developer.mozilla.org/docs/Web/CSS/flex)
    */
-  webkitFlex?: string | Ref<string>;
+  webkitFlex?: string | ref<string>;
   /**
    * @deprecated This is a legacy alias of `flexBasis`.
    *
-   * [MDN Reference](https://developer.mozilla.org/docs/Web/CSS/flex-basis)
+   * [MDN reference](https://developer.mozilla.org/docs/Web/CSS/flex-basis)
    */
-  webkitFlexBasis?: string | Ref<string>;
+  webkitFlexBasis?: string | ref<string>;
   /**
    * @deprecated This is a legacy alias of `flexDirection`.
    *
-   * [MDN Reference](https://developer.mozilla.org/docs/Web/CSS/flex-direction)
+   * [MDN reference](https://developer.mozilla.org/docs/Web/CSS/flex-direction)
    */
-  webkitFlexDirection?: string | Ref<string>;
+  webkitFlexDirection?: string | ref<string>;
   /**
    * @deprecated This is a legacy alias of `flexFlow`.
    *
-   * [MDN Reference](https://developer.mozilla.org/docs/Web/CSS/flex-flow)
+   * [MDN reference](https://developer.mozilla.org/docs/Web/CSS/flex-flow)
    */
-  webkitFlexFlow?: string | Ref<string>;
+  webkitFlexFlow?: string | ref<string>;
   /**
    * @deprecated This is a legacy alias of `flexGrow`.
    *
-   * [MDN Reference](https://developer.mozilla.org/docs/Web/CSS/flex-grow)
+   * [MDN reference](https://developer.mozilla.org/docs/Web/CSS/flex-grow)
    */
-  webkitFlexGrow?: string | Ref<string>;
+  webkitFlexGrow?: string | ref<string>;
   /**
    * @deprecated This is a legacy alias of `flexShrink`.
    *
-   * [MDN Reference](https://developer.mozilla.org/docs/Web/CSS/flex-shrink)
+   * [MDN reference](https://developer.mozilla.org/docs/Web/CSS/flex-shrink)
    */
-  webkitFlexShrink?: string | Ref<string>;
+  webkitFlexShrink?: string | ref<string>;
   /**
    * @deprecated This is a legacy alias of `flexWrap`.
    *
-   * [MDN Reference](https://developer.mozilla.org/docs/Web/CSS/flex-wrap)
+   * [MDN reference](https://developer.mozilla.org/docs/Web/CSS/flex-wrap)
    */
-  webkitFlexWrap?: string | Ref<string>;
+  webkitFlexWrap?: string | ref<string>;
   /**
    * @deprecated This is a legacy alias of `justifyContent`.
    *
-   * [MDN Reference](https://developer.mozilla.org/docs/Web/CSS/justify-content)
+   * [MDN reference](https://developer.mozilla.org/docs/Web/CSS/justify-content)
    */
-  webkitJustifyContent?: string | Ref<string>;
-  /** [MDN Reference](https://developer.mozilla.org/docs/Web/CSS/-webkit-line-clamp) */
-  webkitLineClamp?: string | Ref<string>;
+  webkitJustifyContent?: string | ref<string>;
+  /** [MDN reference](https://developer.mozilla.org/docs/Web/CSS/-webkit-line-clamp) */
+  webkitLineClamp?: string | ref<string>;
   /**
    * @deprecated This is a legacy alias of `mask`.
    *
-   * [MDN Reference](https://developer.mozilla.org/docs/Web/CSS/mask)
+   * [MDN reference](https://developer.mozilla.org/docs/Web/CSS/mask)
    */
-  webkitMask?: string | Ref<string>;
+  webkitMask?: string | ref<string>;
   /**
    * @deprecated This is a legacy alias of `maskBorder`.
    *
-   * [MDN Reference](https://developer.mozilla.org/docs/Web/CSS/mask-border)
+   * [MDN reference](https://developer.mozilla.org/docs/Web/CSS/mask-border)
    */
-  webkitMaskBoxImage?: string | Ref<string>;
+  webkitMaskBoxImage?: string | ref<string>;
   /**
    * @deprecated This is a legacy alias of `maskBorderOutset`.
    *
-   * [MDN Reference](https://developer.mozilla.org/docs/Web/CSS/mask-border-outset)
+   * [MDN reference](https://developer.mozilla.org/docs/Web/CSS/mask-border-outset)
    */
-  webkitMaskBoxImageOutset?: string | Ref<string>;
+  webkitMaskBoxImageOutset?: string | ref<string>;
   /**
    * @deprecated This is a legacy alias of `maskBorderRepeat`.
    *
-   * [MDN Reference](https://developer.mozilla.org/docs/Web/CSS/mask-border-repeat)
+   * [MDN reference](https://developer.mozilla.org/docs/Web/CSS/mask-border-repeat)
    */
-  webkitMaskBoxImageRepeat?: string | Ref<string>;
+  webkitMaskBoxImageRepeat?: string | ref<string>;
   /**
    * @deprecated This is a legacy alias of `maskBorderSlice`.
    *
-   * [MDN Reference](https://developer.mozilla.org/docs/Web/CSS/mask-border-slice)
+   * [MDN reference](https://developer.mozilla.org/docs/Web/CSS/mask-border-slice)
    */
-  webkitMaskBoxImageSlice?: string | Ref<string>;
+  webkitMaskBoxImageSlice?: string | ref<string>;
   /**
    * @deprecated This is a legacy alias of `maskBorderSource`.
    *
-   * [MDN Reference](https://developer.mozilla.org/docs/Web/CSS/mask-border-source)
+   * [MDN reference](https://developer.mozilla.org/docs/Web/CSS/mask-border-source)
    */
-  webkitMaskBoxImageSource?: string | Ref<string>;
+  webkitMaskBoxImageSource?: string | ref<string>;
   /**
    * @deprecated This is a legacy alias of `maskBorderWidth`.
    *
-   * [MDN Reference](https://developer.mozilla.org/docs/Web/CSS/mask-border-width)
+   * [MDN reference](https://developer.mozilla.org/docs/Web/CSS/mask-border-width)
    */
-  webkitMaskBoxImageWidth?: string | Ref<string>;
+  webkitMaskBoxImageWidth?: string | ref<string>;
   /**
    * @deprecated This is a legacy alias of `maskClip`.
    *
-   * [MDN Reference](https://developer.mozilla.org/docs/Web/CSS/mask-clip)
+   * [MDN reference](https://developer.mozilla.org/docs/Web/CSS/mask-clip)
    */
-  webkitMaskClip?: string | Ref<string>;
-  /** [MDN Reference](https://developer.mozilla.org/docs/Web/CSS/-webkit-mask-composite) */
-  webkitMaskComposite?: string | Ref<string>;
+  webkitMaskClip?: string | ref<string>;
+  /** [MDN reference](https://developer.mozilla.org/docs/Web/CSS/-webkit-mask-composite) */
+  webkitMaskComposite?: string | ref<string>;
   /**
    * @deprecated This is a legacy alias of `maskImage`.
    *
-   * [MDN Reference](https://developer.mozilla.org/docs/Web/CSS/mask-image)
+   * [MDN reference](https://developer.mozilla.org/docs/Web/CSS/mask-image)
    */
-  webkitMaskImage?: string | Ref<string>;
+  webkitMaskImage?: string | ref<string>;
   /**
    * @deprecated This is a legacy alias of `maskOrigin`.
    *
-   * [MDN Reference](https://developer.mozilla.org/docs/Web/CSS/mask-origin)
+   * [MDN reference](https://developer.mozilla.org/docs/Web/CSS/mask-origin)
    */
-  webkitMaskOrigin?: string | Ref<string>;
+  webkitMaskOrigin?: string | ref<string>;
   /**
    * @deprecated This is a legacy alias of `maskPosition`.
    *
-   * [MDN Reference](https://developer.mozilla.org/docs/Web/CSS/mask-position)
+   * [MDN reference](https://developer.mozilla.org/docs/Web/CSS/mask-position)
    */
-  webkitMaskPosition?: string | Ref<string>;
+  webkitMaskPosition?: string | ref<string>;
   /**
    * @deprecated This is a legacy alias of `maskRepeat`.
    *
-   * [MDN Reference](https://developer.mozilla.org/docs/Web/CSS/mask-repeat)
+   * [MDN reference](https://developer.mozilla.org/docs/Web/CSS/mask-repeat)
    */
-  webkitMaskRepeat?: string | Ref<string>;
+  webkitMaskRepeat?: string | ref<string>;
   /**
    * @deprecated This is a legacy alias of `maskSize`.
    *
-   * [MDN Reference](https://developer.mozilla.org/docs/Web/CSS/mask-size)
+   * [MDN reference](https://developer.mozilla.org/docs/Web/CSS/mask-size)
    */
-  webkitMaskSize?: string | Ref<string>;
+  webkitMaskSize?: string | ref<string>;
   /**
    * @deprecated This is a legacy alias of `order`.
    *
-   * [MDN Reference](https://developer.mozilla.org/docs/Web/CSS/order)
+   * [MDN reference](https://developer.mozilla.org/docs/Web/CSS/order)
    */
-  webkitOrder?: string | Ref<string>;
+  webkitOrder?: string | ref<string>;
   /**
    * @deprecated This is a legacy alias of `perspective`.
    *
-   * [MDN Reference](https://developer.mozilla.org/docs/Web/CSS/perspective)
+   * [MDN reference](https://developer.mozilla.org/docs/Web/CSS/perspective)
    */
-  webkitPerspective?: string | Ref<string>;
+  webkitPerspective?: string | ref<string>;
   /**
    * @deprecated This is a legacy alias of `perspectiveOrigin`.
    *
-   * [MDN Reference](https://developer.mozilla.org/docs/Web/CSS/perspective-origin)
+   * [MDN reference](https://developer.mozilla.org/docs/Web/CSS/perspective-origin)
    */
-  webkitPerspectiveOrigin?: string | Ref<string>;
-  /** [MDN Reference](https://developer.mozilla.org/docs/Web/CSS/-webkit-text-fill-color) */
-  webkitTextFillColor?: string | Ref<string>;
+  webkitPerspectiveOrigin?: string | ref<string>;
+  /** [MDN reference](https://developer.mozilla.org/docs/Web/CSS/-webkit-text-fill-color) */
+  webkitTextFillColor?: string | ref<string>;
   /**
    * @deprecated This is a legacy alias of `textSizeAdjust`.
    *
-   * [MDN Reference](https://developer.mozilla.org/docs/Web/CSS/text-size-adjust)
+   * [MDN reference](https://developer.mozilla.org/docs/Web/CSS/text-size-adjust)
    */
-  webkitTextSizeAdjust?: string | Ref<string>;
-  /** [MDN Reference](https://developer.mozilla.org/docs/Web/CSS/-webkit-text-stroke) */
-  webkitTextStroke?: string | Ref<string>;
-  /** [MDN Reference](https://developer.mozilla.org/docs/Web/CSS/-webkit-text-stroke-color) */
-  webkitTextStrokeColor?: string | Ref<string>;
-  /** [MDN Reference](https://developer.mozilla.org/docs/Web/CSS/-webkit-text-stroke-width) */
-  webkitTextStrokeWidth?: string | Ref<string>;
+  webkitTextSizeAdjust?: string | ref<string>;
+  /** [MDN reference](https://developer.mozilla.org/docs/Web/CSS/-webkit-text-stroke) */
+  webkitTextStroke?: string | ref<string>;
+  /** [MDN reference](https://developer.mozilla.org/docs/Web/CSS/-webkit-text-stroke-color) */
+  webkitTextStrokeColor?: string | ref<string>;
+  /** [MDN reference](https://developer.mozilla.org/docs/Web/CSS/-webkit-text-stroke-width) */
+  webkitTextStrokeWidth?: string | ref<string>;
   /**
    * @deprecated This is a legacy alias of `transform`.
    *
-   * [MDN Reference](https://developer.mozilla.org/docs/Web/CSS/transform)
+   * [MDN reference](https://developer.mozilla.org/docs/Web/CSS/transform)
    */
-  webkitTransform?: string | Ref<string>;
+  webkitTransform?: string | ref<string>;
   /**
    * @deprecated This is a legacy alias of `transformOrigin`.
    *
-   * [MDN Reference](https://developer.mozilla.org/docs/Web/CSS/transform-origin)
+   * [MDN reference](https://developer.mozilla.org/docs/Web/CSS/transform-origin)
    */
-  webkitTransformOrigin?: string | Ref<string>;
+  webkitTransformOrigin?: string | ref<string>;
   /**
    * @deprecated This is a legacy alias of `transformStyle`.
    *
-   * [MDN Reference](https://developer.mozilla.org/docs/Web/CSS/transform-style)
+   * [MDN reference](https://developer.mozilla.org/docs/Web/CSS/transform-style)
    */
-  webkitTransformStyle?: string | Ref<string>;
+  webkitTransformStyle?: string | ref<string>;
   /**
    * @deprecated This is a legacy alias of `transition`.
    *
-   * [MDN Reference](https://developer.mozilla.org/docs/Web/CSS/transition)
+   * [MDN reference](https://developer.mozilla.org/docs/Web/CSS/transition)
    */
-  webkitTransition?: string | Ref<string>;
+  webkitTransition?: string | ref<string>;
   /**
    * @deprecated This is a legacy alias of `transitionDelay`.
    *
-   * [MDN Reference](https://developer.mozilla.org/docs/Web/CSS/transition-delay)
+   * [MDN reference](https://developer.mozilla.org/docs/Web/CSS/transition-delay)
    */
-  webkitTransitionDelay?: string | Ref<string>;
+  webkitTransitionDelay?: string | ref<string>;
   /**
    * @deprecated This is a legacy alias of `transitionDuration`.
    *
-   * [MDN Reference](https://developer.mozilla.org/docs/Web/CSS/transition-duration)
+   * [MDN reference](https://developer.mozilla.org/docs/Web/CSS/transition-duration)
    */
-  webkitTransitionDuration?: string | Ref<string>;
+  webkitTransitionDuration?: string | ref<string>;
   /**
    * @deprecated This is a legacy alias of `transitionProperty`.
    *
-   * [MDN Reference](https://developer.mozilla.org/docs/Web/CSS/transition-property)
+   * [MDN reference](https://developer.mozilla.org/docs/Web/CSS/transition-property)
    */
-  webkitTransitionProperty?: string | Ref<string>;
+  webkitTransitionProperty?: string | ref<string>;
   /**
    * @deprecated This is a legacy alias of `transitionTimingFunction`.
    *
-   * [MDN Reference](https://developer.mozilla.org/docs/Web/CSS/transition-timing-function)
+   * [MDN reference](https://developer.mozilla.org/docs/Web/CSS/transition-timing-function)
    */
-  webkitTransitionTimingFunction?: string | Ref<string>;
+  webkitTransitionTimingFunction?: string | ref<string>;
   /**
    * @deprecated This is a legacy alias of `userSelect`.
    *
-   * [MDN Reference](https://developer.mozilla.org/docs/Web/CSS/user-select)
+   * [MDN reference](https://developer.mozilla.org/docs/Web/CSS/user-select)
    */
-  webkitUserSelect?: string | Ref<string>;
-  /** [MDN Reference](https://developer.mozilla.org/docs/Web/CSS/white-space) */
-  whiteSpace?: string | Ref<string>;
-  /** [MDN Reference](https://developer.mozilla.org/docs/Web/CSS/widows) */
-  widows?: string | Ref<string>;
-  /** [MDN Reference](https://developer.mozilla.org/docs/Web/CSS/width) */
-  width?: string | Ref<string>;
-  /** [MDN Reference](https://developer.mozilla.org/docs/Web/CSS/will-change) */
-  willChange?: string | Ref<string>;
-  /** [MDN Reference](https://developer.mozilla.org/docs/Web/CSS/word-break) */
-  wordBreak?: string | Ref<string>;
-  /** [MDN Reference](https://developer.mozilla.org/docs/Web/CSS/word-spacing) */
-  wordSpacing?: string | Ref<string>;
+  webkitUserSelect?: string | ref<string>;
+  /** [MDN reference](https://developer.mozilla.org/docs/Web/CSS/white-space) */
+  whiteSpace?: string | ref<string>;
+  /** [MDN reference](https://developer.mozilla.org/docs/Web/CSS/widows) */
+  widows?: string | ref<string>;
+  /** [MDN reference](https://developer.mozilla.org/docs/Web/CSS/width) */
+  width?: string | ref<string>;
+  /** [MDN reference](https://developer.mozilla.org/docs/Web/CSS/will-change) */
+  willChange?: string | ref<string>;
+  /** [MDN reference](https://developer.mozilla.org/docs/Web/CSS/word-break) */
+  wordBreak?: string | ref<string>;
+  /** [MDN reference](https://developer.mozilla.org/docs/Web/CSS/word-spacing) */
+  wordSpacing?: string | ref<string>;
   /**
    * @deprecated
    *
-   * [MDN Reference](https://developer.mozilla.org/docs/Web/CSS/overflow-wrap)
+   * [MDN reference](https://developer.mozilla.org/docs/Web/CSS/overflow-wrap)
    */
-  wordWrap?: string | Ref<string>;
-  /** [MDN Reference](https://developer.mozilla.org/docs/Web/CSS/writing-mode) */
-  writingMode?: string | Ref<string>;
-  /** [MDN Reference](https://developer.mozilla.org/docs/Web/CSS/z-index) */
-  zIndex?: string | Ref<string>;
+  wordWrap?: string | ref<string>;
+  /** [MDN reference](https://developer.mozilla.org/docs/Web/CSS/writing-mode) */
+  writingMode?: string | ref<string>;
+  /** [MDN reference](https://developer.mozilla.org/docs/Web/CSS/z-index) */
+  zIndex?: string | ref<string>;
 }
 
-export interface CSSStyleDeclarationRef {
+export interface CSSStyleDeclarationref {
   get accentColor(): string;
-  set accentColor(value: string | Ref<string>);
-  text?: string | Ref<string>;
-  /** [MDN Reference](https://developer.mozilla.org/docs/Web/CSS/accent-color) */
-  /** [MDN Reference](https://developer.mozilla.org/docs/Web/CSS/align-content) */
-  alignContent: string | Ref<string>;
-  /** [MDN Reference](https://developer.mozilla.org/docs/Web/CSS/align-items) */
-  alignItems: string | Ref<string>;
-  /** [MDN Reference](https://developer.mozilla.org/docs/Web/CSS/align-self) */
-  alignSelf: string | Ref<string>;
-  alignmentBaseline: string | Ref<string>;
-  /** [MDN Reference](https://developer.mozilla.org/docs/Web/CSS/all) */
-  all: string | Ref<string>;
-  /** [MDN Reference](https://developer.mozilla.org/docs/Web/CSS/animation) */
-  animation: string | Ref<string>;
-  /** [MDN Reference](https://developer.mozilla.org/docs/Web/CSS/animation-composition) */
-  animationComposition: string | Ref<string>;
-  /** [MDN Reference](https://developer.mozilla.org/docs/Web/CSS/animation-delay) */
-  animationDelay: string | Ref<string>;
-  /** [MDN Reference](https://developer.mozilla.org/docs/Web/CSS/animation-direction) */
-  animationDirection: string | Ref<string>;
-  /** [MDN Reference](https://developer.mozilla.org/docs/Web/CSS/animation-duration) */
-  animationDuration: string | Ref<string>;
-  /** [MDN Reference](https://developer.mozilla.org/docs/Web/CSS/animation-fill-mode) */
-  animationFillMode: string | Ref<string>;
-  /** [MDN Reference](https://developer.mozilla.org/docs/Web/CSS/animation-iteration-count) */
-  animationIterationCount: string | Ref<string>;
-  /** [MDN Reference](https://developer.mozilla.org/docs/Web/CSS/animation-name) */
-  animationName: string | Ref<string>;
-  /** [MDN Reference](https://developer.mozilla.org/docs/Web/CSS/animation-play-state) */
-  animationPlayState: string | Ref<string>;
-  /** [MDN Reference](https://developer.mozilla.org/docs/Web/CSS/animation-timing-function) */
-  animationTimingFunction: string | Ref<string>;
-  /** [MDN Reference](https://developer.mozilla.org/docs/Web/CSS/appearance) */
-  appearance: string | Ref<string>;
-  /** [MDN Reference](https://developer.mozilla.org/docs/Web/CSS/aspect-ratio) */
-  aspectRatio: string | Ref<string>;
-  /** [MDN Reference](https://developer.mozilla.org/docs/Web/CSS/backdrop-filter) */
-  backdropFilter: string | Ref<string>;
-  /** [MDN Reference](https://developer.mozilla.org/docs/Web/CSS/backface-visibility) */
-  backfaceVisibility: string | Ref<string>;
-  /** [MDN Reference](https://developer.mozilla.org/docs/Web/CSS/background) */
-  background: string | Ref<string>;
-  /** [MDN Reference](https://developer.mozilla.org/docs/Web/CSS/background-attachment) */
-  backgroundAttachment: string | Ref<string>;
-  /** [MDN Reference](https://developer.mozilla.org/docs/Web/CSS/background-blend-mode) */
-  backgroundBlendMode: string | Ref<string>;
-  /** [MDN Reference](https://developer.mozilla.org/docs/Web/CSS/background-clip) */
-  backgroundClip: string | Ref<string>;
-  /** [MDN Reference](https://developer.mozilla.org/docs/Web/CSS/background-color) */
-  backgroundColor: string | Ref<string>;
-  /** [MDN Reference](https://developer.mozilla.org/docs/Web/CSS/background-image) */
-  backgroundImage: string | Ref<string>;
-  /** [MDN Reference](https://developer.mozilla.org/docs/Web/CSS/background-origin) */
-  backgroundOrigin: string | Ref<string>;
-  /** [MDN Reference](https://developer.mozilla.org/docs/Web/CSS/background-position) */
-  backgroundPosition: string | Ref<string>;
-  /** [MDN Reference](https://developer.mozilla.org/docs/Web/CSS/background-position-x) */
-  backgroundPositionX: string | Ref<string>;
-  /** [MDN Reference](https://developer.mozilla.org/docs/Web/CSS/background-position-y) */
-  backgroundPositionY: string | Ref<string>;
-  /** [MDN Reference](https://developer.mozilla.org/docs/Web/CSS/background-repeat) */
-  backgroundRepeat: string | Ref<string>;
-  /** [MDN Reference](https://developer.mozilla.org/docs/Web/CSS/background-size) */
-  backgroundSize: string | Ref<string>;
-  baselineShift: string | Ref<string>;
-  /** [MDN Reference](https://developer.mozilla.org/docs/Web/CSS/block-size) */
-  blockSize: string | Ref<string>;
-  /** [MDN Reference](https://developer.mozilla.org/docs/Web/CSS/border) */
-  border: string | Ref<string>;
-  /** [MDN Reference](https://developer.mozilla.org/docs/Web/CSS/border-block) */
-  borderBlock: string | Ref<string>;
-  /** [MDN Reference](https://developer.mozilla.org/docs/Web/CSS/border-block-color) */
-  borderBlockColor: string | Ref<string>;
-  /** [MDN Reference](https://developer.mozilla.org/docs/Web/CSS/border-block-end) */
-  borderBlockEnd: string | Ref<string>;
-  /** [MDN Reference](https://developer.mozilla.org/docs/Web/CSS/border-block-end-color) */
-  borderBlockEndColor: string | Ref<string>;
-  /** [MDN Reference](https://developer.mozilla.org/docs/Web/CSS/border-block-end-style) */
-  borderBlockEndStyle: string | Ref<string>;
-  /** [MDN Reference](https://developer.mozilla.org/docs/Web/CSS/border-block-end-width) */
-  borderBlockEndWidth: string | Ref<string>;
-  /** [MDN Reference](https://developer.mozilla.org/docs/Web/CSS/border-block-start) */
-  borderBlockStart: string | Ref<string>;
-  /** [MDN Reference](https://developer.mozilla.org/docs/Web/CSS/border-block-start-color) */
-  borderBlockStartColor: string | Ref<string>;
-  /** [MDN Reference](https://developer.mozilla.org/docs/Web/CSS/border-block-start-style) */
-  borderBlockStartStyle: string | Ref<string>;
-  /** [MDN Reference](https://developer.mozilla.org/docs/Web/CSS/border-block-start-width) */
-  borderBlockStartWidth: string | Ref<string>;
-  /** [MDN Reference](https://developer.mozilla.org/docs/Web/CSS/border-block-style) */
-  borderBlockStyle: string | Ref<string>;
-  /** [MDN Reference](https://developer.mozilla.org/docs/Web/CSS/border-block-width) */
-  borderBlockWidth: string | Ref<string>;
-  /** [MDN Reference](https://developer.mozilla.org/docs/Web/CSS/border-bottom) */
-  borderBottom: string | Ref<string>;
-  /** [MDN Reference](https://developer.mozilla.org/docs/Web/CSS/border-bottom-color) */
-  borderBottomColor: string | Ref<string>;
-  /** [MDN Reference](https://developer.mozilla.org/docs/Web/CSS/border-bottom-left-radius) */
-  borderBottomLeftRadius: string | Ref<string>;
-  /** [MDN Reference](https://developer.mozilla.org/docs/Web/CSS/border-bottom-right-radius) */
-  borderBottomRightRadius: string | Ref<string>;
-  /** [MDN Reference](https://developer.mozilla.org/docs/Web/CSS/border-bottom-style) */
-  borderBottomStyle: string | Ref<string>;
-  /** [MDN Reference](https://developer.mozilla.org/docs/Web/CSS/border-bottom-width) */
-  borderBottomWidth: string | Ref<string>;
-  /** [MDN Reference](https://developer.mozilla.org/docs/Web/CSS/border-collapse) */
-  borderCollapse: string | Ref<string>;
-  /** [MDN Reference](https://developer.mozilla.org/docs/Web/CSS/border-color) */
-  borderColor: string | Ref<string>;
-  /** [MDN Reference](https://developer.mozilla.org/docs/Web/CSS/border-end-end-radius) */
-  borderEndEndRadius: string | Ref<string>;
-  /** [MDN Reference](https://developer.mozilla.org/docs/Web/CSS/border-end-start-radius) */
-  borderEndStartRadius: string | Ref<string>;
-  /** [MDN Reference](https://developer.mozilla.org/docs/Web/CSS/border-image) */
-  borderImage: string | Ref<string>;
-  /** [MDN Reference](https://developer.mozilla.org/docs/Web/CSS/border-image-outset) */
-  borderImageOutset: string | Ref<string>;
-  /** [MDN Reference](https://developer.mozilla.org/docs/Web/CSS/border-image-repeat) */
-  borderImageRepeat: string | Ref<string>;
-  /** [MDN Reference](https://developer.mozilla.org/docs/Web/CSS/border-image-slice) */
-  borderImageSlice: string | Ref<string>;
-  /** [MDN Reference](https://developer.mozilla.org/docs/Web/CSS/border-image-source) */
-  borderImageSource: string | Ref<string>;
-  /** [MDN Reference](https://developer.mozilla.org/docs/Web/CSS/border-image-width) */
-  borderImageWidth: string | Ref<string>;
-  /** [MDN Reference](https://developer.mozilla.org/docs/Web/CSS/border-inline) */
-  borderInline: string | Ref<string>;
-  /** [MDN Reference](https://developer.mozilla.org/docs/Web/CSS/border-inline-color) */
-  borderInlineColor: string | Ref<string>;
-  /** [MDN Reference](https://developer.mozilla.org/docs/Web/CSS/border-inline-end) */
-  borderInlineEnd: string | Ref<string>;
-  /** [MDN Reference](https://developer.mozilla.org/docs/Web/CSS/border-inline-end-color) */
-  borderInlineEndColor: string | Ref<string>;
-  /** [MDN Reference](https://developer.mozilla.org/docs/Web/CSS/border-inline-end-style) */
-  borderInlineEndStyle: string | Ref<string>;
-  /** [MDN Reference](https://developer.mozilla.org/docs/Web/CSS/border-inline-end-width) */
-  borderInlineEndWidth: string | Ref<string>;
-  /** [MDN Reference](https://developer.mozilla.org/docs/Web/CSS/border-inline-start) */
-  borderInlineStart: string | Ref<string>;
-  /** [MDN Reference](https://developer.mozilla.org/docs/Web/CSS/border-inline-start-color) */
-  borderInlineStartColor: string | Ref<string>;
-  /** [MDN Reference](https://developer.mozilla.org/docs/Web/CSS/border-inline-start-style) */
-  borderInlineStartStyle: string | Ref<string>;
-  /** [MDN Reference](https://developer.mozilla.org/docs/Web/CSS/border-inline-start-width) */
-  borderInlineStartWidth: string | Ref<string>;
-  /** [MDN Reference](https://developer.mozilla.org/docs/Web/CSS/border-inline-style) */
-  borderInlineStyle: string | Ref<string>;
-  /** [MDN Reference](https://developer.mozilla.org/docs/Web/CSS/border-inline-width) */
-  borderInlineWidth: string | Ref<string>;
-  /** [MDN Reference](https://developer.mozilla.org/docs/Web/CSS/border-left) */
-  borderLeft: string | Ref<string>;
-  /** [MDN Reference](https://developer.mozilla.org/docs/Web/CSS/border-left-color) */
-  borderLeftColor: string | Ref<string>;
-  /** [MDN Reference](https://developer.mozilla.org/docs/Web/CSS/border-left-style) */
-  borderLeftStyle: string | Ref<string>;
-  /** [MDN Reference](https://developer.mozilla.org/docs/Web/CSS/border-left-width) */
-  borderLeftWidth: string | Ref<string>;
-  /** [MDN Reference](https://developer.mozilla.org/docs/Web/CSS/border-radius) */
-  borderRadius: string | Ref<string>;
-  /** [MDN Reference](https://developer.mozilla.org/docs/Web/CSS/border-right) */
-  borderRight: string | Ref<string>;
-  /** [MDN Reference](https://developer.mozilla.org/docs/Web/CSS/border-right-color) */
-  borderRightColor: string | Ref<string>;
-  /** [MDN Reference](https://developer.mozilla.org/docs/Web/CSS/border-right-style) */
-  borderRightStyle: string | Ref<string>;
-  /** [MDN Reference](https://developer.mozilla.org/docs/Web/CSS/border-right-width) */
-  borderRightWidth: string | Ref<string>;
-  /** [MDN Reference](https://developer.mozilla.org/docs/Web/CSS/border-spacing) */
-  borderSpacing: string | Ref<string>;
-  /** [MDN Reference](https://developer.mozilla.org/docs/Web/CSS/border-start-end-radius) */
-  borderStartEndRadius: string | Ref<string>;
-  /** [MDN Reference](https://developer.mozilla.org/docs/Web/CSS/border-start-start-radius) */
-  borderStartStartRadius: string | Ref<string>;
-  /** [MDN Reference](https://developer.mozilla.org/docs/Web/CSS/border-style) */
-  borderStyle: string | Ref<string>;
-  /** [MDN Reference](https://developer.mozilla.org/docs/Web/CSS/border-top) */
-  borderTop: string | Ref<string>;
-  /** [MDN Reference](https://developer.mozilla.org/docs/Web/CSS/border-top-color) */
-  borderTopColor: string | Ref<string>;
-  /** [MDN Reference](https://developer.mozilla.org/docs/Web/CSS/border-top-left-radius) */
-  borderTopLeftRadius: string | Ref<string>;
-  /** [MDN Reference](https://developer.mozilla.org/docs/Web/CSS/border-top-right-radius) */
-  borderTopRightRadius: string | Ref<string>;
-  /** [MDN Reference](https://developer.mozilla.org/docs/Web/CSS/border-top-style) */
-  borderTopStyle: string | Ref<string>;
-  /** [MDN Reference](https://developer.mozilla.org/docs/Web/CSS/border-top-width) */
-  borderTopWidth: string | Ref<string>;
-  /** [MDN Reference](https://developer.mozilla.org/docs/Web/CSS/border-width) */
-  borderWidth: string | Ref<string>;
-  /** [MDN Reference](https://developer.mozilla.org/docs/Web/CSS/bottom) */
-  bottom: string | Ref<string>;
-  /** [MDN Reference](https://developer.mozilla.org/docs/Web/CSS/box-shadow) */
-  boxShadow: string | Ref<string>;
-  /** [MDN Reference](https://developer.mozilla.org/docs/Web/CSS/box-sizing) */
-  boxSizing: string | Ref<string>;
-  /** [MDN Reference](https://developer.mozilla.org/docs/Web/CSS/break-after) */
-  breakAfter: string | Ref<string>;
-  /** [MDN Reference](https://developer.mozilla.org/docs/Web/CSS/break-before) */
-  breakBefore: string | Ref<string>;
-  /** [MDN Reference](https://developer.mozilla.org/docs/Web/CSS/break-inside) */
-  breakInside: string | Ref<string>;
-  /** [MDN Reference](https://developer.mozilla.org/docs/Web/CSS/caption-side) */
-  captionSide: string | Ref<string>;
-  /** [MDN Reference](https://developer.mozilla.org/docs/Web/CSS/caret-color) */
-  caretColor: string | Ref<string>;
-  /** [MDN Reference](https://developer.mozilla.org/docs/Web/CSS/clear) */
-  clear: string | Ref<string>;
+  set accentColor(value: string | ref<string>);
+  text?: string | ref<string>;
+  /** [MDN reference](https://developer.mozilla.org/docs/Web/CSS/accent-color) */
+  /** [MDN reference](https://developer.mozilla.org/docs/Web/CSS/align-content) */
+  alignContent: string | ref<string>;
+  /** [MDN reference](https://developer.mozilla.org/docs/Web/CSS/align-items) */
+  alignItems: string | ref<string>;
+  /** [MDN reference](https://developer.mozilla.org/docs/Web/CSS/align-self) */
+  alignSelf: string | ref<string>;
+  alignmentBaseline: string | ref<string>;
+  /** [MDN reference](https://developer.mozilla.org/docs/Web/CSS/all) */
+  all: string | ref<string>;
+  /** [MDN reference](https://developer.mozilla.org/docs/Web/CSS/animation) */
+  animation: string | ref<string>;
+  /** [MDN reference](https://developer.mozilla.org/docs/Web/CSS/animation-composition) */
+  animationComposition: string | ref<string>;
+  /** [MDN reference](https://developer.mozilla.org/docs/Web/CSS/animation-delay) */
+  animationDelay: string | ref<string>;
+  /** [MDN reference](https://developer.mozilla.org/docs/Web/CSS/animation-direction) */
+  animationDirection: string | ref<string>;
+  /** [MDN reference](https://developer.mozilla.org/docs/Web/CSS/animation-duration) */
+  animationDuration: string | ref<string>;
+  /** [MDN reference](https://developer.mozilla.org/docs/Web/CSS/animation-fill-mode) */
+  animationFillMode: string | ref<string>;
+  /** [MDN reference](https://developer.mozilla.org/docs/Web/CSS/animation-iteration-count) */
+  animationIterationCount: string | ref<string>;
+  /** [MDN reference](https://developer.mozilla.org/docs/Web/CSS/animation-name) */
+  animationName: string | ref<string>;
+  /** [MDN reference](https://developer.mozilla.org/docs/Web/CSS/animation-play-state) */
+  animationPlayState: string | ref<string>;
+  /** [MDN reference](https://developer.mozilla.org/docs/Web/CSS/animation-timing-function) */
+  animationTimingFunction: string | ref<string>;
+  /** [MDN reference](https://developer.mozilla.org/docs/Web/CSS/appearance) */
+  appearance: string | ref<string>;
+  /** [MDN reference](https://developer.mozilla.org/docs/Web/CSS/aspect-ratio) */
+  aspectRatio: string | ref<string>;
+  /** [MDN reference](https://developer.mozilla.org/docs/Web/CSS/backdrop-filter) */
+  backdropFilter: string | ref<string>;
+  /** [MDN reference](https://developer.mozilla.org/docs/Web/CSS/backface-visibility) */
+  backfaceVisibility: string | ref<string>;
+  /** [MDN reference](https://developer.mozilla.org/docs/Web/CSS/background) */
+  background: string | ref<string>;
+  /** [MDN reference](https://developer.mozilla.org/docs/Web/CSS/background-attachment) */
+  backgroundAttachment: string | ref<string>;
+  /** [MDN reference](https://developer.mozilla.org/docs/Web/CSS/background-blend-mode) */
+  backgroundBlendMode: string | ref<string>;
+  /** [MDN reference](https://developer.mozilla.org/docs/Web/CSS/background-clip) */
+  backgroundClip: string | ref<string>;
+  /** [MDN reference](https://developer.mozilla.org/docs/Web/CSS/background-color) */
+  backgroundColor: string | ref<string>;
+  /** [MDN reference](https://developer.mozilla.org/docs/Web/CSS/background-image) */
+  backgroundImage: string | ref<string>;
+  /** [MDN reference](https://developer.mozilla.org/docs/Web/CSS/background-origin) */
+  backgroundOrigin: string | ref<string>;
+  /** [MDN reference](https://developer.mozilla.org/docs/Web/CSS/background-position) */
+  backgroundPosition: string | ref<string>;
+  /** [MDN reference](https://developer.mozilla.org/docs/Web/CSS/background-position-x) */
+  backgroundPositionX: string | ref<string>;
+  /** [MDN reference](https://developer.mozilla.org/docs/Web/CSS/background-position-y) */
+  backgroundPositionY: string | ref<string>;
+  /** [MDN reference](https://developer.mozilla.org/docs/Web/CSS/background-repeat) */
+  backgroundRepeat: string | ref<string>;
+  /** [MDN reference](https://developer.mozilla.org/docs/Web/CSS/background-size) */
+  backgroundSize: string | ref<string>;
+  baselineShift: string | ref<string>;
+  /** [MDN reference](https://developer.mozilla.org/docs/Web/CSS/block-size) */
+  blockSize: string | ref<string>;
+  /** [MDN reference](https://developer.mozilla.org/docs/Web/CSS/border) */
+  border: string | ref<string>;
+  /** [MDN reference](https://developer.mozilla.org/docs/Web/CSS/border-block) */
+  borderBlock: string | ref<string>;
+  /** [MDN reference](https://developer.mozilla.org/docs/Web/CSS/border-block-color) */
+  borderBlockColor: string | ref<string>;
+  /** [MDN reference](https://developer.mozilla.org/docs/Web/CSS/border-block-end) */
+  borderBlockEnd: string | ref<string>;
+  /** [MDN reference](https://developer.mozilla.org/docs/Web/CSS/border-block-end-color) */
+  borderBlockEndColor: string | ref<string>;
+  /** [MDN reference](https://developer.mozilla.org/docs/Web/CSS/border-block-end-style) */
+  borderBlockEndStyle: string | ref<string>;
+  /** [MDN reference](https://developer.mozilla.org/docs/Web/CSS/border-block-end-width) */
+  borderBlockEndWidth: string | ref<string>;
+  /** [MDN reference](https://developer.mozilla.org/docs/Web/CSS/border-block-start) */
+  borderBlockStart: string | ref<string>;
+  /** [MDN reference](https://developer.mozilla.org/docs/Web/CSS/border-block-start-color) */
+  borderBlockStartColor: string | ref<string>;
+  /** [MDN reference](https://developer.mozilla.org/docs/Web/CSS/border-block-start-style) */
+  borderBlockStartStyle: string | ref<string>;
+  /** [MDN reference](https://developer.mozilla.org/docs/Web/CSS/border-block-start-width) */
+  borderBlockStartWidth: string | ref<string>;
+  /** [MDN reference](https://developer.mozilla.org/docs/Web/CSS/border-block-style) */
+  borderBlockStyle: string | ref<string>;
+  /** [MDN reference](https://developer.mozilla.org/docs/Web/CSS/border-block-width) */
+  borderBlockWidth: string | ref<string>;
+  /** [MDN reference](https://developer.mozilla.org/docs/Web/CSS/border-bottom) */
+  borderBottom: string | ref<string>;
+  /** [MDN reference](https://developer.mozilla.org/docs/Web/CSS/border-bottom-color) */
+  borderBottomColor: string | ref<string>;
+  /** [MDN reference](https://developer.mozilla.org/docs/Web/CSS/border-bottom-left-radius) */
+  borderBottomLeftRadius: string | ref<string>;
+  /** [MDN reference](https://developer.mozilla.org/docs/Web/CSS/border-bottom-right-radius) */
+  borderBottomRightRadius: string | ref<string>;
+  /** [MDN reference](https://developer.mozilla.org/docs/Web/CSS/border-bottom-style) */
+  borderBottomStyle: string | ref<string>;
+  /** [MDN reference](https://developer.mozilla.org/docs/Web/CSS/border-bottom-width) */
+  borderBottomWidth: string | ref<string>;
+  /** [MDN reference](https://developer.mozilla.org/docs/Web/CSS/border-collapse) */
+  borderCollapse: string | ref<string>;
+  /** [MDN reference](https://developer.mozilla.org/docs/Web/CSS/border-color) */
+  borderColor: string | ref<string>;
+  /** [MDN reference](https://developer.mozilla.org/docs/Web/CSS/border-end-end-radius) */
+  borderEndEndRadius: string | ref<string>;
+  /** [MDN reference](https://developer.mozilla.org/docs/Web/CSS/border-end-start-radius) */
+  borderEndStartRadius: string | ref<string>;
+  /** [MDN reference](https://developer.mozilla.org/docs/Web/CSS/border-image) */
+  borderImage: string | ref<string>;
+  /** [MDN reference](https://developer.mozilla.org/docs/Web/CSS/border-image-outset) */
+  borderImageOutset: string | ref<string>;
+  /** [MDN reference](https://developer.mozilla.org/docs/Web/CSS/border-image-repeat) */
+  borderImageRepeat: string | ref<string>;
+  /** [MDN reference](https://developer.mozilla.org/docs/Web/CSS/border-image-slice) */
+  borderImageSlice: string | ref<string>;
+  /** [MDN reference](https://developer.mozilla.org/docs/Web/CSS/border-image-source) */
+  borderImageSource: string | ref<string>;
+  /** [MDN reference](https://developer.mozilla.org/docs/Web/CSS/border-image-width) */
+  borderImageWidth: string | ref<string>;
+  /** [MDN reference](https://developer.mozilla.org/docs/Web/CSS/border-inline) */
+  borderInline: string | ref<string>;
+  /** [MDN reference](https://developer.mozilla.org/docs/Web/CSS/border-inline-color) */
+  borderInlineColor: string | ref<string>;
+  /** [MDN reference](https://developer.mozilla.org/docs/Web/CSS/border-inline-end) */
+  borderInlineEnd: string | ref<string>;
+  /** [MDN reference](https://developer.mozilla.org/docs/Web/CSS/border-inline-end-color) */
+  borderInlineEndColor: string | ref<string>;
+  /** [MDN reference](https://developer.mozilla.org/docs/Web/CSS/border-inline-end-style) */
+  borderInlineEndStyle: string | ref<string>;
+  /** [MDN reference](https://developer.mozilla.org/docs/Web/CSS/border-inline-end-width) */
+  borderInlineEndWidth: string | ref<string>;
+  /** [MDN reference](https://developer.mozilla.org/docs/Web/CSS/border-inline-start) */
+  borderInlineStart: string | ref<string>;
+  /** [MDN reference](https://developer.mozilla.org/docs/Web/CSS/border-inline-start-color) */
+  borderInlineStartColor: string | ref<string>;
+  /** [MDN reference](https://developer.mozilla.org/docs/Web/CSS/border-inline-start-style) */
+  borderInlineStartStyle: string | ref<string>;
+  /** [MDN reference](https://developer.mozilla.org/docs/Web/CSS/border-inline-start-width) */
+  borderInlineStartWidth: string | ref<string>;
+  /** [MDN reference](https://developer.mozilla.org/docs/Web/CSS/border-inline-style) */
+  borderInlineStyle: string | ref<string>;
+  /** [MDN reference](https://developer.mozilla.org/docs/Web/CSS/border-inline-width) */
+  borderInlineWidth: string | ref<string>;
+  /** [MDN reference](https://developer.mozilla.org/docs/Web/CSS/border-left) */
+  borderLeft: string | ref<string>;
+  /** [MDN reference](https://developer.mozilla.org/docs/Web/CSS/border-left-color) */
+  borderLeftColor: string | ref<string>;
+  /** [MDN reference](https://developer.mozilla.org/docs/Web/CSS/border-left-style) */
+  borderLeftStyle: string | ref<string>;
+  /** [MDN reference](https://developer.mozilla.org/docs/Web/CSS/border-left-width) */
+  borderLeftWidth: string | ref<string>;
+  /** [MDN reference](https://developer.mozilla.org/docs/Web/CSS/border-radius) */
+  borderRadius: string | ref<string>;
+  /** [MDN reference](https://developer.mozilla.org/docs/Web/CSS/border-right) */
+  borderRight: string | ref<string>;
+  /** [MDN reference](https://developer.mozilla.org/docs/Web/CSS/border-right-color) */
+  borderRightColor: string | ref<string>;
+  /** [MDN reference](https://developer.mozilla.org/docs/Web/CSS/border-right-style) */
+  borderRightStyle: string | ref<string>;
+  /** [MDN reference](https://developer.mozilla.org/docs/Web/CSS/border-right-width) */
+  borderRightWidth: string | ref<string>;
+  /** [MDN reference](https://developer.mozilla.org/docs/Web/CSS/border-spacing) */
+  borderSpacing: string | ref<string>;
+  /** [MDN reference](https://developer.mozilla.org/docs/Web/CSS/border-start-end-radius) */
+  borderStartEndRadius: string | ref<string>;
+  /** [MDN reference](https://developer.mozilla.org/docs/Web/CSS/border-start-start-radius) */
+  borderStartStartRadius: string | ref<string>;
+  /** [MDN reference](https://developer.mozilla.org/docs/Web/CSS/border-style) */
+  borderStyle: string | ref<string>;
+  /** [MDN reference](https://developer.mozilla.org/docs/Web/CSS/border-top) */
+  borderTop: string | ref<string>;
+  /** [MDN reference](https://developer.mozilla.org/docs/Web/CSS/border-top-color) */
+  borderTopColor: string | ref<string>;
+  /** [MDN reference](https://developer.mozilla.org/docs/Web/CSS/border-top-left-radius) */
+  borderTopLeftRadius: string | ref<string>;
+  /** [MDN reference](https://developer.mozilla.org/docs/Web/CSS/border-top-right-radius) */
+  borderTopRightRadius: string | ref<string>;
+  /** [MDN reference](https://developer.mozilla.org/docs/Web/CSS/border-top-style) */
+  borderTopStyle: string | ref<string>;
+  /** [MDN reference](https://developer.mozilla.org/docs/Web/CSS/border-top-width) */
+  borderTopWidth: string | ref<string>;
+  /** [MDN reference](https://developer.mozilla.org/docs/Web/CSS/border-width) */
+  borderWidth: string | ref<string>;
+  /** [MDN reference](https://developer.mozilla.org/docs/Web/CSS/bottom) */
+  bottom: string | ref<string>;
+  /** [MDN reference](https://developer.mozilla.org/docs/Web/CSS/box-shadow) */
+  boxShadow: string | ref<string>;
+  /** [MDN reference](https://developer.mozilla.org/docs/Web/CSS/box-sizing) */
+  boxSizing: string | ref<string>;
+  /** [MDN reference](https://developer.mozilla.org/docs/Web/CSS/break-after) */
+  breakAfter: string | ref<string>;
+  /** [MDN reference](https://developer.mozilla.org/docs/Web/CSS/break-before) */
+  breakBefore: string | ref<string>;
+  /** [MDN reference](https://developer.mozilla.org/docs/Web/CSS/break-inside) */
+  breakInside: string | ref<string>;
+  /** [MDN reference](https://developer.mozilla.org/docs/Web/CSS/caption-side) */
+  captionSide: string | ref<string>;
+  /** [MDN reference](https://developer.mozilla.org/docs/Web/CSS/caret-color) */
+  caretColor: string | ref<string>;
+  /** [MDN reference](https://developer.mozilla.org/docs/Web/CSS/clear) */
+  clear: string | ref<string>;
   /**
    * @deprecated
    *
-   * [MDN Reference](https://developer.mozilla.org/docs/Web/CSS/clip)
+   * [MDN reference](https://developer.mozilla.org/docs/Web/CSS/clip)
    */
-  clip: string | Ref<string>;
-  /** [MDN Reference](https://developer.mozilla.org/docs/Web/CSS/clip-path) */
-  clipPath: string | Ref<string>;
-  clipRule: string | Ref<string>;
-  /** [MDN Reference](https://developer.mozilla.org/docs/Web/CSS/color) */
-  color: string | Ref<string>;
-  colorInterpolation: string | Ref<string>;
-  colorInterpolationFilters: string | Ref<string>;
-  /** [MDN Reference](https://developer.mozilla.org/docs/Web/CSS/color-scheme) */
-  colorScheme: string | Ref<string>;
-  /** [MDN Reference](https://developer.mozilla.org/docs/Web/CSS/column-count) */
-  columnCount: string | Ref<string>;
-  /** [MDN Reference](https://developer.mozilla.org/docs/Web/CSS/column-fill) */
-  columnFill: string | Ref<string>;
-  /** [MDN Reference](https://developer.mozilla.org/docs/Web/CSS/column-gap) */
-  columnGap: string | Ref<string>;
-  /** [MDN Reference](https://developer.mozilla.org/docs/Web/CSS/column-rule) */
-  columnRule: string | Ref<string>;
-  /** [MDN Reference](https://developer.mozilla.org/docs/Web/CSS/column-rule-color) */
-  columnRuleColor: string | Ref<string>;
-  /** [MDN Reference](https://developer.mozilla.org/docs/Web/CSS/column-rule-style) */
-  columnRuleStyle: string | Ref<string>;
-  /** [MDN Reference](https://developer.mozilla.org/docs/Web/CSS/column-rule-width) */
-  columnRuleWidth: string | Ref<string>;
-  /** [MDN Reference](https://developer.mozilla.org/docs/Web/CSS/column-span) */
-  columnSpan: string | Ref<string>;
-  /** [MDN Reference](https://developer.mozilla.org/docs/Web/CSS/column-width) */
-  columnWidth: string | Ref<string>;
-  /** [MDN Reference](https://developer.mozilla.org/docs/Web/CSS/columns) */
-  columns: string | Ref<string>;
-  /** [MDN Reference](https://developer.mozilla.org/docs/Web/CSS/contain) */
-  contain: string | Ref<string>;
-  /** [MDN Reference](https://developer.mozilla.org/docs/Web/CSS/contain-intrinsic-contain-intrinsic-block-size) */
-  containIntrinsicBlockSize: string | Ref<string>;
-  /** [MDN Reference](https://developer.mozilla.org/docs/Web/CSS/contain-intrinsic-height) */
-  containIntrinsicHeight: string | Ref<string>;
-  /** [MDN Reference](https://developer.mozilla.org/docs/Web/CSS/contain-intrinsic-contain-intrinsic-inline-size) */
-  containIntrinsicInlineSize: string | Ref<string>;
-  /** [MDN Reference](https://developer.mozilla.org/docs/Web/CSS/contain-intrinsic-size) */
-  containIntrinsicSize: string | Ref<string>;
-  /** [MDN Reference](https://developer.mozilla.org/docs/Web/CSS/contain-intrinsic-width) */
-  containIntrinsicWidth: string | Ref<string>;
-  /** [MDN Reference](https://developer.mozilla.org/docs/Web/CSS/container) */
-  container: string | Ref<string>;
-  /** [MDN Reference](https://developer.mozilla.org/docs/Web/CSS/container-name) */
-  containerName: string | Ref<string>;
-  /** [MDN Reference](https://developer.mozilla.org/docs/Web/CSS/container-type) */
-  containerType: string | Ref<string>;
-  /** [MDN Reference](https://developer.mozilla.org/docs/Web/CSS/content) */
-  content: string | Ref<string>;
-  /** [MDN Reference](https://developer.mozilla.org/docs/Web/CSS/counter-increment) */
-  counterIncrement: string | Ref<string>;
-  /** [MDN Reference](https://developer.mozilla.org/docs/Web/CSS/counter-reset) */
-  counterReset: string | Ref<string>;
-  /** [MDN Reference](https://developer.mozilla.org/docs/Web/CSS/counter-set) */
-  counterSet: string | Ref<string>;
-  /** [MDN Reference](https://developer.mozilla.org/docs/Web/API/CSSStyleDeclaration/cssFloat) */
-  cssFloat: string | Ref<string>;
-  /** [MDN Reference](https://developer.mozilla.org/docs/Web/API/CSSStyleDeclaration/cssText) */
-  cssText: string | Ref<string>;
-  /** [MDN Reference](https://developer.mozilla.org/docs/Web/CSS/cursor) */
-  cursor: string | Ref<string>;
-  /** [MDN Reference](https://developer.mozilla.org/docs/Web/CSS/direction) */
-  direction: string | Ref<string>;
-  /** [MDN Reference](https://developer.mozilla.org/docs/Web/CSS/display) */
+  clip: string | ref<string>;
+  /** [MDN reference](https://developer.mozilla.org/docs/Web/CSS/clip-path) */
+  clipPath: string | ref<string>;
+  clipRule: string | ref<string>;
+  /** [MDN reference](https://developer.mozilla.org/docs/Web/CSS/color) */
+  color: string | ref<string>;
+  colorInterpolation: string | ref<string>;
+  colorInterpolationFilters: string | ref<string>;
+  /** [MDN reference](https://developer.mozilla.org/docs/Web/CSS/color-scheme) */
+  colorScheme: string | ref<string>;
+  /** [MDN reference](https://developer.mozilla.org/docs/Web/CSS/column-count) */
+  columnCount: string | ref<string>;
+  /** [MDN reference](https://developer.mozilla.org/docs/Web/CSS/column-fill) */
+  columnFill: string | ref<string>;
+  /** [MDN reference](https://developer.mozilla.org/docs/Web/CSS/column-gap) */
+  columnGap: string | ref<string>;
+  /** [MDN reference](https://developer.mozilla.org/docs/Web/CSS/column-rule) */
+  columnRule: string | ref<string>;
+  /** [MDN reference](https://developer.mozilla.org/docs/Web/CSS/column-rule-color) */
+  columnRuleColor: string | ref<string>;
+  /** [MDN reference](https://developer.mozilla.org/docs/Web/CSS/column-rule-style) */
+  columnRuleStyle: string | ref<string>;
+  /** [MDN reference](https://developer.mozilla.org/docs/Web/CSS/column-rule-width) */
+  columnRuleWidth: string | ref<string>;
+  /** [MDN reference](https://developer.mozilla.org/docs/Web/CSS/column-span) */
+  columnSpan: string | ref<string>;
+  /** [MDN reference](https://developer.mozilla.org/docs/Web/CSS/column-width) */
+  columnWidth: string | ref<string>;
+  /** [MDN reference](https://developer.mozilla.org/docs/Web/CSS/columns) */
+  columns: string | ref<string>;
+  /** [MDN reference](https://developer.mozilla.org/docs/Web/CSS/contain) */
+  contain: string | ref<string>;
+  /** [MDN reference](https://developer.mozilla.org/docs/Web/CSS/contain-intrinsic-contain-intrinsic-block-size) */
+  containIntrinsicBlockSize: string | ref<string>;
+  /** [MDN reference](https://developer.mozilla.org/docs/Web/CSS/contain-intrinsic-height) */
+  containIntrinsicHeight: string | ref<string>;
+  /** [MDN reference](https://developer.mozilla.org/docs/Web/CSS/contain-intrinsic-contain-intrinsic-inline-size) */
+  containIntrinsicInlineSize: string | ref<string>;
+  /** [MDN reference](https://developer.mozilla.org/docs/Web/CSS/contain-intrinsic-size) */
+  containIntrinsicSize: string | ref<string>;
+  /** [MDN reference](https://developer.mozilla.org/docs/Web/CSS/contain-intrinsic-width) */
+  containIntrinsicWidth: string | ref<string>;
+  /** [MDN reference](https://developer.mozilla.org/docs/Web/CSS/container) */
+  container: string | ref<string>;
+  /** [MDN reference](https://developer.mozilla.org/docs/Web/CSS/container-name) */
+  containerName: string | ref<string>;
+  /** [MDN reference](https://developer.mozilla.org/docs/Web/CSS/container-type) */
+  containerType: string | ref<string>;
+  /** [MDN reference](https://developer.mozilla.org/docs/Web/CSS/content) */
+  content: string | ref<string>;
+  /** [MDN reference](https://developer.mozilla.org/docs/Web/CSS/counter-increment) */
+  counterIncrement: string | ref<string>;
+  /** [MDN reference](https://developer.mozilla.org/docs/Web/CSS/counter-reset) */
+  counterReset: string | ref<string>;
+  /** [MDN reference](https://developer.mozilla.org/docs/Web/CSS/counter-set) */
+  counterSet: string | ref<string>;
+  /** [MDN reference](https://developer.mozilla.org/docs/Web/API/CSSStyleDeclaration/cssFloat) */
+  cssFloat: string | ref<string>;
+  /** [MDN reference](https://developer.mozilla.org/docs/Web/API/CSSStyleDeclaration/cssText) */
+  cssText: string | ref<string>;
+  /** [MDN reference](https://developer.mozilla.org/docs/Web/CSS/cursor) */
+  cursor: string | ref<string>;
+  /** [MDN reference](https://developer.mozilla.org/docs/Web/CSS/direction) */
+  direction: string | ref<string>;
+  /** [MDN reference](https://developer.mozilla.org/docs/Web/CSS/display) */
   display:
     | string
-    | Ref<string>
+    | ref<string>
     | "absolute"
     | "fixed"
     | "relative"
     | "static"
     | "sticky";
-  dominantBaseline: string | Ref<string>;
-  /** [MDN Reference](https://developer.mozilla.org/docs/Web/CSS/empty-cells) */
-  emptyCells: string | Ref<string>;
-  fill: string | Ref<string>;
-  fillOpacity: string | Ref<string>;
-  fillRule: string | Ref<string>;
-  /** [MDN Reference](https://developer.mozilla.org/docs/Web/CSS/filter) */
-  filter: string | Ref<string>;
-  /** [MDN Reference](https://developer.mozilla.org/docs/Web/CSS/flex) */
-  flex: string | Ref<string>;
-  /** [MDN Reference](https://developer.mozilla.org/docs/Web/CSS/flex-basis) */
-  flexBasis: string | Ref<string>;
-  /** [MDN Reference](https://developer.mozilla.org/docs/Web/CSS/flex-direction) */
-  flexDirection: string | Ref<string>;
-  /** [MDN Reference](https://developer.mozilla.org/docs/Web/CSS/flex-flow) */
-  flexFlow: string | Ref<string>;
-  /** [MDN Reference](https://developer.mozilla.org/docs/Web/CSS/flex-grow) */
-  flexGrow: string | Ref<string>;
-  /** [MDN Reference](https://developer.mozilla.org/docs/Web/CSS/flex-shrink) */
-  flexShrink: string | Ref<string>;
-  /** [MDN Reference](https://developer.mozilla.org/docs/Web/CSS/flex-wrap) */
-  flexWrap: string | Ref<string>;
-  /** [MDN Reference](https://developer.mozilla.org/docs/Web/CSS/float) */
-  float: string | Ref<string>;
-  floodColor: string | Ref<string>;
-  floodOpacity: string | Ref<string>;
-  /** [MDN Reference](https://developer.mozilla.org/docs/Web/CSS/font) */
-  font: string | Ref<string>;
-  /** [MDN Reference](https://developer.mozilla.org/docs/Web/CSS/font-family) */
-  fontFamily: string | Ref<string>;
-  /** [MDN Reference](https://developer.mozilla.org/docs/Web/CSS/font-feature-settings) */
-  fontFeatureSettings: string | Ref<string>;
-  /** [MDN Reference](https://developer.mozilla.org/docs/Web/CSS/font-kerning) */
-  fontKerning: string | Ref<string>;
-  /** [MDN Reference](https://developer.mozilla.org/docs/Web/CSS/font-optical-sizing) */
-  fontOpticalSizing: string | Ref<string>;
-  /** [MDN Reference](https://developer.mozilla.org/docs/Web/CSS/font-palette) */
-  fontPalette: string | Ref<string>;
-  /** [MDN Reference](https://developer.mozilla.org/docs/Web/CSS/font-size) */
-  fontSize: string | Ref<string>;
-  /** [MDN Reference](https://developer.mozilla.org/docs/Web/CSS/font-size-adjust) */
-  fontSizeAdjust: string | Ref<string>;
-  /** [MDN Reference](https://developer.mozilla.org/docs/Web/CSS/font-stretch) */
-  fontStretch: string | Ref<string>;
-  /** [MDN Reference](https://developer.mozilla.org/docs/Web/CSS/font-style) */
-  fontStyle: string | Ref<string>;
-  /** [MDN Reference](https://developer.mozilla.org/docs/Web/CSS/font-synthesis) */
-  fontSynthesis: string | Ref<string>;
-  /** [MDN Reference](https://developer.mozilla.org/docs/Web/CSS/font-synthesis-small-caps) */
-  fontSynthesisSmallCaps: string | Ref<string>;
-  /** [MDN Reference](https://developer.mozilla.org/docs/Web/CSS/font-synthesis-style) */
-  fontSynthesisStyle: string | Ref<string>;
-  /** [MDN Reference](https://developer.mozilla.org/docs/Web/CSS/font-synthesis-weight) */
-  fontSynthesisWeight: string | Ref<string>;
-  /** [MDN Reference](https://developer.mozilla.org/docs/Web/CSS/font-variant) */
-  fontVariant: string | Ref<string>;
-  /** [MDN Reference](https://developer.mozilla.org/docs/Web/CSS/font-variant-alternates) */
-  fontVariantAlternates: string | Ref<string>;
-  /** [MDN Reference](https://developer.mozilla.org/docs/Web/CSS/font-variant-caps) */
-  fontVariantCaps: string | Ref<string>;
-  /** [MDN Reference](https://developer.mozilla.org/docs/Web/CSS/font-variant-east-asian) */
-  fontVariantEastAsian: string | Ref<string>;
-  /** [MDN Reference](https://developer.mozilla.org/docs/Web/CSS/font-variant-ligatures) */
-  fontVariantLigatures: string | Ref<string>;
-  /** [MDN Reference](https://developer.mozilla.org/docs/Web/CSS/font-variant-numeric) */
-  fontVariantNumeric: string | Ref<string>;
-  /** [MDN Reference](https://developer.mozilla.org/docs/Web/CSS/font-variant-position) */
-  fontVariantPosition: string | Ref<string>;
-  /** [MDN Reference](https://developer.mozilla.org/docs/Web/CSS/font-variation-settings) */
-  fontVariationSettings: string | Ref<string>;
-  /** [MDN Reference](https://developer.mozilla.org/docs/Web/CSS/font-weight) */
-  fontWeight: string | Ref<string>;
-  /** [MDN Reference](https://developer.mozilla.org/docs/Web/CSS/forced-color-adjust) */
-  forcedColorAdjust: string | Ref<string>;
-  /** [MDN Reference](https://developer.mozilla.org/docs/Web/CSS/gap) */
-  gap: string | Ref<string>;
-  /** [MDN Reference](https://developer.mozilla.org/docs/Web/CSS/grid) */
-  grid: string | Ref<string>;
-  /** [MDN Reference](https://developer.mozilla.org/docs/Web/CSS/grid-area) */
-  gridArea: string | Ref<string>;
-  /** [MDN Reference](https://developer.mozilla.org/docs/Web/CSS/grid-auto-columns) */
-  gridAutoColumns: string | Ref<string>;
-  /** [MDN Reference](https://developer.mozilla.org/docs/Web/CSS/grid-auto-flow) */
-  gridAutoFlow: string | Ref<string>;
-  /** [MDN Reference](https://developer.mozilla.org/docs/Web/CSS/grid-auto-rows) */
-  gridAutoRows: string | Ref<string>;
-  /** [MDN Reference](https://developer.mozilla.org/docs/Web/CSS/grid-column) */
-  gridColumn: string | Ref<string>;
-  /** [MDN Reference](https://developer.mozilla.org/docs/Web/CSS/grid-column-end) */
-  gridColumnEnd: string | Ref<string>;
+  dominantBaseline: string | ref<string>;
+  /** [MDN reference](https://developer.mozilla.org/docs/Web/CSS/empty-cells) */
+  emptyCells: string | ref<string>;
+  fill: string | ref<string>;
+  fillOpacity: string | ref<string>;
+  fillRule: string | ref<string>;
+  /** [MDN reference](https://developer.mozilla.org/docs/Web/CSS/filter) */
+  filter: string | ref<string>;
+  /** [MDN reference](https://developer.mozilla.org/docs/Web/CSS/flex) */
+  flex: string | ref<string>;
+  /** [MDN reference](https://developer.mozilla.org/docs/Web/CSS/flex-basis) */
+  flexBasis: string | ref<string>;
+  /** [MDN reference](https://developer.mozilla.org/docs/Web/CSS/flex-direction) */
+  flexDirection: string | ref<string>;
+  /** [MDN reference](https://developer.mozilla.org/docs/Web/CSS/flex-flow) */
+  flexFlow: string | ref<string>;
+  /** [MDN reference](https://developer.mozilla.org/docs/Web/CSS/flex-grow) */
+  flexGrow: string | ref<string>;
+  /** [MDN reference](https://developer.mozilla.org/docs/Web/CSS/flex-shrink) */
+  flexShrink: string | ref<string>;
+  /** [MDN reference](https://developer.mozilla.org/docs/Web/CSS/flex-wrap) */
+  flexWrap: string | ref<string>;
+  /** [MDN reference](https://developer.mozilla.org/docs/Web/CSS/float) */
+  float: string | ref<string>;
+  floodColor: string | ref<string>;
+  floodOpacity: string | ref<string>;
+  /** [MDN reference](https://developer.mozilla.org/docs/Web/CSS/font) */
+  font: string | ref<string>;
+  /** [MDN reference](https://developer.mozilla.org/docs/Web/CSS/font-family) */
+  fontFamily: string | ref<string>;
+  /** [MDN reference](https://developer.mozilla.org/docs/Web/CSS/font-feature-settings) */
+  fontFeatureSettings: string | ref<string>;
+  /** [MDN reference](https://developer.mozilla.org/docs/Web/CSS/font-kerning) */
+  fontKerning: string | ref<string>;
+  /** [MDN reference](https://developer.mozilla.org/docs/Web/CSS/font-optical-sizing) */
+  fontOpticalSizing: string | ref<string>;
+  /** [MDN reference](https://developer.mozilla.org/docs/Web/CSS/font-palette) */
+  fontPalette: string | ref<string>;
+  /** [MDN reference](https://developer.mozilla.org/docs/Web/CSS/font-size) */
+  fontSize: string | ref<string>;
+  /** [MDN reference](https://developer.mozilla.org/docs/Web/CSS/font-size-adjust) */
+  fontSizeAdjust: string | ref<string>;
+  /** [MDN reference](https://developer.mozilla.org/docs/Web/CSS/font-stretch) */
+  fontStretch: string | ref<string>;
+  /** [MDN reference](https://developer.mozilla.org/docs/Web/CSS/font-style) */
+  fontStyle: string | ref<string>;
+  /** [MDN reference](https://developer.mozilla.org/docs/Web/CSS/font-synthesis) */
+  fontSynthesis: string | ref<string>;
+  /** [MDN reference](https://developer.mozilla.org/docs/Web/CSS/font-synthesis-small-caps) */
+  fontSynthesisSmallCaps: string | ref<string>;
+  /** [MDN reference](https://developer.mozilla.org/docs/Web/CSS/font-synthesis-style) */
+  fontSynthesisStyle: string | ref<string>;
+  /** [MDN reference](https://developer.mozilla.org/docs/Web/CSS/font-synthesis-weight) */
+  fontSynthesisWeight: string | ref<string>;
+  /** [MDN reference](https://developer.mozilla.org/docs/Web/CSS/font-variant) */
+  fontVariant: string | ref<string>;
+  /** [MDN reference](https://developer.mozilla.org/docs/Web/CSS/font-variant-alternates) */
+  fontVariantAlternates: string | ref<string>;
+  /** [MDN reference](https://developer.mozilla.org/docs/Web/CSS/font-variant-caps) */
+  fontVariantCaps: string | ref<string>;
+  /** [MDN reference](https://developer.mozilla.org/docs/Web/CSS/font-variant-east-asian) */
+  fontVariantEastAsian: string | ref<string>;
+  /** [MDN reference](https://developer.mozilla.org/docs/Web/CSS/font-variant-ligatures) */
+  fontVariantLigatures: string | ref<string>;
+  /** [MDN reference](https://developer.mozilla.org/docs/Web/CSS/font-variant-numeric) */
+  fontVariantNumeric: string | ref<string>;
+  /** [MDN reference](https://developer.mozilla.org/docs/Web/CSS/font-variant-position) */
+  fontVariantPosition: string | ref<string>;
+  /** [MDN reference](https://developer.mozilla.org/docs/Web/CSS/font-variation-settings) */
+  fontVariationSettings: string | ref<string>;
+  /** [MDN reference](https://developer.mozilla.org/docs/Web/CSS/font-weight) */
+  fontWeight: string | ref<string>;
+  /** [MDN reference](https://developer.mozilla.org/docs/Web/CSS/forced-color-adjust) */
+  forcedColorAdjust: string | ref<string>;
+  /** [MDN reference](https://developer.mozilla.org/docs/Web/CSS/gap) */
+  gap: string | ref<string>;
+  /** [MDN reference](https://developer.mozilla.org/docs/Web/CSS/grid) */
+  grid: string | ref<string>;
+  /** [MDN reference](https://developer.mozilla.org/docs/Web/CSS/grid-area) */
+  gridArea: string | ref<string>;
+  /** [MDN reference](https://developer.mozilla.org/docs/Web/CSS/grid-auto-columns) */
+  gridAutoColumns: string | ref<string>;
+  /** [MDN reference](https://developer.mozilla.org/docs/Web/CSS/grid-auto-flow) */
+  gridAutoFlow: string | ref<string>;
+  /** [MDN reference](https://developer.mozilla.org/docs/Web/CSS/grid-auto-rows) */
+  gridAutoRows: string | ref<string>;
+  /** [MDN reference](https://developer.mozilla.org/docs/Web/CSS/grid-column) */
+  gridColumn: string | ref<string>;
+  /** [MDN reference](https://developer.mozilla.org/docs/Web/CSS/grid-column-end) */
+  gridColumnEnd: string | ref<string>;
   /** @deprecated This is a legacy alias of `columnGap`. */
-  gridColumnGap: string | Ref<string>;
-  /** [MDN Reference](https://developer.mozilla.org/docs/Web/CSS/grid-column-start) */
-  gridColumnStart: string | Ref<string>;
+  gridColumnGap: string | ref<string>;
+  /** [MDN reference](https://developer.mozilla.org/docs/Web/CSS/grid-column-start) */
+  gridColumnStart: string | ref<string>;
   /** @deprecated This is a legacy alias of `gap`. */
-  gridGap: string | Ref<string>;
-  /** [MDN Reference](https://developer.mozilla.org/docs/Web/CSS/grid-row) */
-  gridRow: string | Ref<string>;
-  /** [MDN Reference](https://developer.mozilla.org/docs/Web/CSS/grid-row-end) */
-  gridRowEnd: string | Ref<string>;
+  gridGap: string | ref<string>;
+  /** [MDN reference](https://developer.mozilla.org/docs/Web/CSS/grid-row) */
+  gridRow: string | ref<string>;
+  /** [MDN reference](https://developer.mozilla.org/docs/Web/CSS/grid-row-end) */
+  gridRowEnd: string | ref<string>;
   /** @deprecated This is a legacy alias of `rowGap`. */
-  gridRowGap: string | Ref<string>;
-  /** [MDN Reference](https://developer.mozilla.org/docs/Web/CSS/grid-row-start) */
-  gridRowStart: string | Ref<string>;
-  /** [MDN Reference](https://developer.mozilla.org/docs/Web/CSS/grid-template) */
-  gridTemplate: string | Ref<string>;
-  /** [MDN Reference](https://developer.mozilla.org/docs/Web/CSS/grid-template-areas) */
-  gridTemplateAreas: string | Ref<string>;
-  /** [MDN Reference](https://developer.mozilla.org/docs/Web/CSS/grid-template-columns) */
-  gridTemplateColumns: string | Ref<string>;
-  /** [MDN Reference](https://developer.mozilla.org/docs/Web/CSS/grid-template-rows) */
-  gridTemplateRows: string | Ref<string>;
-  /** [MDN Reference](https://developer.mozilla.org/docs/Web/CSS/height) */
-  height: string | Ref<string>;
-  /** [MDN Reference](https://developer.mozilla.org/docs/Web/CSS/hyphenate-character) */
-  hyphenateCharacter: string | Ref<string>;
-  /** [MDN Reference](https://developer.mozilla.org/docs/Web/CSS/hyphens) */
-  hyphens: string | Ref<string>;
+  gridRowGap: string | ref<string>;
+  /** [MDN reference](https://developer.mozilla.org/docs/Web/CSS/grid-row-start) */
+  gridRowStart: string | ref<string>;
+  /** [MDN reference](https://developer.mozilla.org/docs/Web/CSS/grid-template) */
+  gridTemplate: string | ref<string>;
+  /** [MDN reference](https://developer.mozilla.org/docs/Web/CSS/grid-template-areas) */
+  gridTemplateAreas: string | ref<string>;
+  /** [MDN reference](https://developer.mozilla.org/docs/Web/CSS/grid-template-columns) */
+  gridTemplateColumns: string | ref<string>;
+  /** [MDN reference](https://developer.mozilla.org/docs/Web/CSS/grid-template-rows) */
+  gridTemplateRows: string | ref<string>;
+  /** [MDN reference](https://developer.mozilla.org/docs/Web/CSS/height) */
+  height: string | ref<string>;
+  /** [MDN reference](https://developer.mozilla.org/docs/Web/CSS/hyphenate-character) */
+  hyphenateCharacter: string | ref<string>;
+  /** [MDN reference](https://developer.mozilla.org/docs/Web/CSS/hyphens) */
+  hyphens: string | ref<string>;
   /**
    * @deprecated
    *
-   * [MDN Reference](https://developer.mozilla.org/docs/Web/CSS/image-orientation)
+   * [MDN reference](https://developer.mozilla.org/docs/Web/CSS/image-orientation)
    */
-  imageOrientation: string | Ref<string>;
-  /** [MDN Reference](https://developer.mozilla.org/docs/Web/CSS/image-rendering) */
-  imageRendering: string | Ref<string>;
-  /** [MDN Reference](https://developer.mozilla.org/docs/Web/CSS/inline-size) */
-  inlineSize: string | Ref<string>;
-  /** [MDN Reference](https://developer.mozilla.org/docs/Web/CSS/inset) */
-  inset: string | Ref<string>;
-  /** [MDN Reference](https://developer.mozilla.org/docs/Web/CSS/inset-block) */
-  insetBlock: string | Ref<string>;
-  /** [MDN Reference](https://developer.mozilla.org/docs/Web/CSS/inset-block-end) */
-  insetBlockEnd: string | Ref<string>;
-  /** [MDN Reference](https://developer.mozilla.org/docs/Web/CSS/inset-block-start) */
-  insetBlockStart: string | Ref<string>;
-  /** [MDN Reference](https://developer.mozilla.org/docs/Web/CSS/inset-inline) */
-  insetInline: string | Ref<string>;
-  /** [MDN Reference](https://developer.mozilla.org/docs/Web/CSS/inset-inline-end) */
-  insetInlineEnd: string | Ref<string>;
-  /** [MDN Reference](https://developer.mozilla.org/docs/Web/CSS/inset-inline-start) */
-  insetInlineStart: string | Ref<string>;
-  /** [MDN Reference](https://developer.mozilla.org/docs/Web/CSS/isolation) */
-  isolation: string | Ref<string>;
-  /** [MDN Reference](https://developer.mozilla.org/docs/Web/CSS/justify-content) */
-  justifyContent: string | Ref<string>;
-  /** [MDN Reference](https://developer.mozilla.org/docs/Web/CSS/justify-items) */
-  justifyItems: string | Ref<string>;
-  /** [MDN Reference](https://developer.mozilla.org/docs/Web/CSS/justify-self) */
-  justifySelf: string | Ref<string>;
-  /** [MDN Reference](https://developer.mozilla.org/docs/Web/CSS/left) */
-  left: string | Ref<string>;
-  /** [MDN Reference](https://developer.mozilla.org/docs/Web/API/CSSStyleDeclaration/length) */
+  imageOrientation: string | ref<string>;
+  /** [MDN reference](https://developer.mozilla.org/docs/Web/CSS/image-rendering) */
+  imageRendering: string | ref<string>;
+  /** [MDN reference](https://developer.mozilla.org/docs/Web/CSS/inline-size) */
+  inlineSize: string | ref<string>;
+  /** [MDN reference](https://developer.mozilla.org/docs/Web/CSS/inset) */
+  inset: string | ref<string>;
+  /** [MDN reference](https://developer.mozilla.org/docs/Web/CSS/inset-block) */
+  insetBlock: string | ref<string>;
+  /** [MDN reference](https://developer.mozilla.org/docs/Web/CSS/inset-block-end) */
+  insetBlockEnd: string | ref<string>;
+  /** [MDN reference](https://developer.mozilla.org/docs/Web/CSS/inset-block-start) */
+  insetBlockStart: string | ref<string>;
+  /** [MDN reference](https://developer.mozilla.org/docs/Web/CSS/inset-inline) */
+  insetInline: string | ref<string>;
+  /** [MDN reference](https://developer.mozilla.org/docs/Web/CSS/inset-inline-end) */
+  insetInlineEnd: string | ref<string>;
+  /** [MDN reference](https://developer.mozilla.org/docs/Web/CSS/inset-inline-start) */
+  insetInlineStart: string | ref<string>;
+  /** [MDN reference](https://developer.mozilla.org/docs/Web/CSS/isolation) */
+  isolation: string | ref<string>;
+  /** [MDN reference](https://developer.mozilla.org/docs/Web/CSS/justify-content) */
+  justifyContent: string | ref<string>;
+  /** [MDN reference](https://developer.mozilla.org/docs/Web/CSS/justify-items) */
+  justifyItems: string | ref<string>;
+  /** [MDN reference](https://developer.mozilla.org/docs/Web/CSS/justify-self) */
+  justifySelf: string | ref<string>;
+  /** [MDN reference](https://developer.mozilla.org/docs/Web/CSS/left) */
+  left: string | ref<string>;
+  /** [MDN reference](https://developer.mozilla.org/docs/Web/API/CSSStyleDeclaration/length) */
   readonly length: number;
-  /** [MDN Reference](https://developer.mozilla.org/docs/Web/CSS/letter-spacing) */
-  letterSpacing: string | Ref<string>;
-  lightingColor: string | Ref<string>;
-  /** [MDN Reference](https://developer.mozilla.org/docs/Web/CSS/line-break) */
-  lineBreak: string | Ref<string>;
-  /** [MDN Reference](https://developer.mozilla.org/docs/Web/CSS/line-height) */
-  lineHeight: string | Ref<string>;
-  /** [MDN Reference](https://developer.mozilla.org/docs/Web/CSS/list-style) */
-  listStyle: string | Ref<string>;
-  /** [MDN Reference](https://developer.mozilla.org/docs/Web/CSS/list-style-image) */
-  listStyleImage: string | Ref<string>;
-  /** [MDN Reference](https://developer.mozilla.org/docs/Web/CSS/list-style-position) */
-  listStylePosition: string | Ref<string>;
-  /** [MDN Reference](https://developer.mozilla.org/docs/Web/CSS/list-style-type) */
-  listStyleType: string | Ref<string>;
-  /** [MDN Reference](https://developer.mozilla.org/docs/Web/CSS/margin) */
-  margin: string | Ref<string>;
-  /** [MDN Reference](https://developer.mozilla.org/docs/Web/CSS/margin-block) */
-  marginBlock: string | Ref<string>;
-  /** [MDN Reference](https://developer.mozilla.org/docs/Web/CSS/margin-block-end) */
-  marginBlockEnd: string | Ref<string>;
-  /** [MDN Reference](https://developer.mozilla.org/docs/Web/CSS/margin-block-start) */
-  marginBlockStart: string | Ref<string>;
-  /** [MDN Reference](https://developer.mozilla.org/docs/Web/CSS/margin-bottom) */
-  marginBottom: string | Ref<string>;
-  /** [MDN Reference](https://developer.mozilla.org/docs/Web/CSS/margin-inline) */
-  marginInline: string | Ref<string>;
-  /** [MDN Reference](https://developer.mozilla.org/docs/Web/CSS/margin-inline-end) */
-  marginInlineEnd: string | Ref<string>;
-  /** [MDN Reference](https://developer.mozilla.org/docs/Web/CSS/margin-inline-start) */
-  marginInlineStart: string | Ref<string>;
-  /** [MDN Reference](https://developer.mozilla.org/docs/Web/CSS/margin-left) */
-  marginLeft: string | Ref<string>;
-  /** [MDN Reference](https://developer.mozilla.org/docs/Web/CSS/margin-right) */
-  marginRight: string | Ref<string>;
-  /** [MDN Reference](https://developer.mozilla.org/docs/Web/CSS/margin-top) */
-  marginTop: string | Ref<string>;
-  marker: string | Ref<string>;
-  markerEnd: string | Ref<string>;
-  markerMid: string | Ref<string>;
-  markerStart: string | Ref<string>;
-  /** [MDN Reference](https://developer.mozilla.org/docs/Web/CSS/mask) */
-  mask: string | Ref<string>;
-  /** [MDN Reference](https://developer.mozilla.org/docs/Web/CSS/mask-clip) */
-  maskClip: string | Ref<string>;
-  /** [MDN Reference](https://developer.mozilla.org/docs/Web/CSS/mask-composite) */
-  maskComposite: string | Ref<string>;
-  /** [MDN Reference](https://developer.mozilla.org/docs/Web/CSS/mask-image) */
-  maskImage: string | Ref<string>;
-  /** [MDN Reference](https://developer.mozilla.org/docs/Web/CSS/mask-mode) */
-  maskMode: string | Ref<string>;
-  /** [MDN Reference](https://developer.mozilla.org/docs/Web/CSS/mask-origin) */
-  maskOrigin: string | Ref<string>;
-  /** [MDN Reference](https://developer.mozilla.org/docs/Web/CSS/mask-position) */
-  maskPosition: string | Ref<string>;
-  /** [MDN Reference](https://developer.mozilla.org/docs/Web/CSS/mask-repeat) */
-  maskRepeat: string | Ref<string>;
-  /** [MDN Reference](https://developer.mozilla.org/docs/Web/CSS/mask-size) */
-  maskSize: string | Ref<string>;
-  /** [MDN Reference](https://developer.mozilla.org/docs/Web/CSS/mask-type) */
-  maskType: string | Ref<string>;
-  /** [MDN Reference](https://developer.mozilla.org/docs/Web/CSS/math-style) */
-  mathStyle: string | Ref<string>;
-  /** [MDN Reference](https://developer.mozilla.org/docs/Web/CSS/max-block-size) */
-  maxBlockSize: string | Ref<string>;
-  /** [MDN Reference](https://developer.mozilla.org/docs/Web/CSS/max-height) */
-  maxHeight: string | Ref<string>;
-  /** [MDN Reference](https://developer.mozilla.org/docs/Web/CSS/max-inline-size) */
-  maxInlineSize: string | Ref<string>;
-  /** [MDN Reference](https://developer.mozilla.org/docs/Web/CSS/max-width) */
-  maxWidth: string | Ref<string>;
-  /** [MDN Reference](https://developer.mozilla.org/docs/Web/CSS/min-block-size) */
-  minBlockSize: string | Ref<string>;
-  /** [MDN Reference](https://developer.mozilla.org/docs/Web/CSS/min-height) */
-  minHeight: string | Ref<string>;
-  /** [MDN Reference](https://developer.mozilla.org/docs/Web/CSS/min-inline-size) */
-  minInlineSize: string | Ref<string>;
-  /** [MDN Reference](https://developer.mozilla.org/docs/Web/CSS/min-width) */
-  minWidth: string | Ref<string>;
-  /** [MDN Reference](https://developer.mozilla.org/docs/Web/CSS/mix-blend-mode) */
-  mixBlendMode: string | Ref<string>;
-  /** [MDN Reference](https://developer.mozilla.org/docs/Web/CSS/object-fit) */
-  objectFit: string | Ref<string>;
-  /** [MDN Reference](https://developer.mozilla.org/docs/Web/CSS/object-position) */
-  objectPosition: string | Ref<string>;
-  /** [MDN Reference](https://developer.mozilla.org/docs/Web/CSS/offset) */
-  offset: string | Ref<string>;
-  /** [MDN Reference](https://developer.mozilla.org/docs/Web/CSS/offset-distance) */
-  offsetDistance: string | Ref<string>;
-  /** [MDN Reference](https://developer.mozilla.org/docs/Web/CSS/offset-path) */
-  offsetPath: string | Ref<string>;
-  /** [MDN Reference](https://developer.mozilla.org/docs/Web/CSS/offset-rotate) */
-  offsetRotate: string | Ref<string>;
-  /** [MDN Reference](https://developer.mozilla.org/docs/Web/CSS/opacity) */
-  opacity: string | Ref<string>;
-  /** [MDN Reference](https://developer.mozilla.org/docs/Web/CSS/order) */
-  order: string | Ref<string>;
-  /** [MDN Reference](https://developer.mozilla.org/docs/Web/CSS/orphans) */
-  orphans: string | Ref<string>;
-  /** [MDN Reference](https://developer.mozilla.org/docs/Web/CSS/outline) */
-  outline: string | Ref<string>;
-  /** [MDN Reference](https://developer.mozilla.org/docs/Web/CSS/outline-color) */
-  outlineColor: string | Ref<string>;
-  /** [MDN Reference](https://developer.mozilla.org/docs/Web/CSS/outline-offset) */
-  outlineOffset: string | Ref<string>;
-  /** [MDN Reference](https://developer.mozilla.org/docs/Web/CSS/outline-style) */
-  outlineStyle: string | Ref<string>;
-  /** [MDN Reference](https://developer.mozilla.org/docs/Web/CSS/outline-width) */
-  outlineWidth: string | Ref<string>;
-  /** [MDN Reference](https://developer.mozilla.org/docs/Web/CSS/overflow) */
-  overflow: string | Ref<string>;
-  /** [MDN Reference](https://developer.mozilla.org/docs/Web/CSS/overflow-anchor) */
-  overflowAnchor: string | Ref<string>;
-  /** [MDN Reference](https://developer.mozilla.org/docs/Web/CSS/overflow-clip-margin) */
-  overflowClipMargin: string | Ref<string>;
-  /** [MDN Reference](https://developer.mozilla.org/docs/Web/CSS/overflow-wrap) */
-  overflowWrap: string | Ref<string>;
-  /** [MDN Reference](https://developer.mozilla.org/docs/Web/CSS/overflow-x) */
-  overflowX: string | Ref<string>;
-  /** [MDN Reference](https://developer.mozilla.org/docs/Web/CSS/overflow-y) */
-  overflowY: string | Ref<string>;
-  /** [MDN Reference](https://developer.mozilla.org/docs/Web/CSS/overscroll-behavior) */
-  overscrollBehavior: string | Ref<string>;
-  /** [MDN Reference](https://developer.mozilla.org/docs/Web/CSS/overscroll-behavior-block) */
-  overscrollBehaviorBlock: string | Ref<string>;
-  /** [MDN Reference](https://developer.mozilla.org/docs/Web/CSS/overscroll-behavior-inline) */
-  overscrollBehaviorInline: string | Ref<string>;
-  /** [MDN Reference](https://developer.mozilla.org/docs/Web/CSS/overscroll-behavior-x) */
-  overscrollBehaviorX: string | Ref<string>;
-  /** [MDN Reference](https://developer.mozilla.org/docs/Web/CSS/overscroll-behavior-y) */
-  overscrollBehaviorY: string | Ref<string>;
-  /** [MDN Reference](https://developer.mozilla.org/docs/Web/CSS/padding) */
-  padding: string | Ref<string>;
-  /** [MDN Reference](https://developer.mozilla.org/docs/Web/CSS/padding-block) */
-  paddingBlock: string | Ref<string>;
-  /** [MDN Reference](https://developer.mozilla.org/docs/Web/CSS/padding-block-end) */
-  paddingBlockEnd: string | Ref<string>;
-  /** [MDN Reference](https://developer.mozilla.org/docs/Web/CSS/padding-block-start) */
-  paddingBlockStart: string | Ref<string>;
-  /** [MDN Reference](https://developer.mozilla.org/docs/Web/CSS/padding-bottom) */
-  paddingBottom: string | Ref<string>;
-  /** [MDN Reference](https://developer.mozilla.org/docs/Web/CSS/padding-inline) */
-  paddingInline: string | Ref<string>;
-  /** [MDN Reference](https://developer.mozilla.org/docs/Web/CSS/padding-inline-end) */
-  paddingInlineEnd: string | Ref<string>;
-  /** [MDN Reference](https://developer.mozilla.org/docs/Web/CSS/padding-inline-start) */
-  paddingInlineStart: string | Ref<string>;
-  /** [MDN Reference](https://developer.mozilla.org/docs/Web/CSS/padding-left) */
-  paddingLeft: string | Ref<string>;
-  /** [MDN Reference](https://developer.mozilla.org/docs/Web/CSS/padding-right) */
-  paddingRight: string | Ref<string>;
-  /** [MDN Reference](https://developer.mozilla.org/docs/Web/CSS/padding-top) */
-  paddingTop: string | Ref<string>;
-  /** [MDN Reference](https://developer.mozilla.org/docs/Web/CSS/page) */
-  page: string | Ref<string>;
-  /** [MDN Reference](https://developer.mozilla.org/docs/Web/CSS/page-break-after) */
-  pageBreakAfter: string | Ref<string>;
-  /** [MDN Reference](https://developer.mozilla.org/docs/Web/CSS/page-break-before) */
-  pageBreakBefore: string | Ref<string>;
-  /** [MDN Reference](https://developer.mozilla.org/docs/Web/CSS/page-break-inside) */
-  pageBreakInside: string | Ref<string>;
-  /** [MDN Reference](https://developer.mozilla.org/docs/Web/CSS/paint-order) */
-  paintOrder: string | Ref<string>;
-  /** [MDN Reference](https://developer.mozilla.org/docs/Web/API/CSSStyleDeclaration/parentRule) */
+  /** [MDN reference](https://developer.mozilla.org/docs/Web/CSS/letter-spacing) */
+  letterSpacing: string | ref<string>;
+  lightingColor: string | ref<string>;
+  /** [MDN reference](https://developer.mozilla.org/docs/Web/CSS/line-break) */
+  lineBreak: string | ref<string>;
+  /** [MDN reference](https://developer.mozilla.org/docs/Web/CSS/line-height) */
+  lineHeight: string | ref<string>;
+  /** [MDN reference](https://developer.mozilla.org/docs/Web/CSS/list-style) */
+  listStyle: string | ref<string>;
+  /** [MDN reference](https://developer.mozilla.org/docs/Web/CSS/list-style-image) */
+  listStyleImage: string | ref<string>;
+  /** [MDN reference](https://developer.mozilla.org/docs/Web/CSS/list-style-position) */
+  listStylePosition: string | ref<string>;
+  /** [MDN reference](https://developer.mozilla.org/docs/Web/CSS/list-style-type) */
+  listStyleType: string | ref<string>;
+  /** [MDN reference](https://developer.mozilla.org/docs/Web/CSS/margin) */
+  margin: string | ref<string>;
+  /** [MDN reference](https://developer.mozilla.org/docs/Web/CSS/margin-block) */
+  marginBlock: string | ref<string>;
+  /** [MDN reference](https://developer.mozilla.org/docs/Web/CSS/margin-block-end) */
+  marginBlockEnd: string | ref<string>;
+  /** [MDN reference](https://developer.mozilla.org/docs/Web/CSS/margin-block-start) */
+  marginBlockStart: string | ref<string>;
+  /** [MDN reference](https://developer.mozilla.org/docs/Web/CSS/margin-bottom) */
+  marginBottom: string | ref<string>;
+  /** [MDN reference](https://developer.mozilla.org/docs/Web/CSS/margin-inline) */
+  marginInline: string | ref<string>;
+  /** [MDN reference](https://developer.mozilla.org/docs/Web/CSS/margin-inline-end) */
+  marginInlineEnd: string | ref<string>;
+  /** [MDN reference](https://developer.mozilla.org/docs/Web/CSS/margin-inline-start) */
+  marginInlineStart: string | ref<string>;
+  /** [MDN reference](https://developer.mozilla.org/docs/Web/CSS/margin-left) */
+  marginLeft: string | ref<string>;
+  /** [MDN reference](https://developer.mozilla.org/docs/Web/CSS/margin-right) */
+  marginRight: string | ref<string>;
+  /** [MDN reference](https://developer.mozilla.org/docs/Web/CSS/margin-top) */
+  marginTop: string | ref<string>;
+  marker: string | ref<string>;
+  markerEnd: string | ref<string>;
+  markerMid: string | ref<string>;
+  markerStart: string | ref<string>;
+  /** [MDN reference](https://developer.mozilla.org/docs/Web/CSS/mask) */
+  mask: string | ref<string>;
+  /** [MDN reference](https://developer.mozilla.org/docs/Web/CSS/mask-clip) */
+  maskClip: string | ref<string>;
+  /** [MDN reference](https://developer.mozilla.org/docs/Web/CSS/mask-composite) */
+  maskComposite: string | ref<string>;
+  /** [MDN reference](https://developer.mozilla.org/docs/Web/CSS/mask-image) */
+  maskImage: string | ref<string>;
+  /** [MDN reference](https://developer.mozilla.org/docs/Web/CSS/mask-mode) */
+  maskMode: string | ref<string>;
+  /** [MDN reference](https://developer.mozilla.org/docs/Web/CSS/mask-origin) */
+  maskOrigin: string | ref<string>;
+  /** [MDN reference](https://developer.mozilla.org/docs/Web/CSS/mask-position) */
+  maskPosition: string | ref<string>;
+  /** [MDN reference](https://developer.mozilla.org/docs/Web/CSS/mask-repeat) */
+  maskRepeat: string | ref<string>;
+  /** [MDN reference](https://developer.mozilla.org/docs/Web/CSS/mask-size) */
+  maskSize: string | ref<string>;
+  /** [MDN reference](https://developer.mozilla.org/docs/Web/CSS/mask-type) */
+  maskType: string | ref<string>;
+  /** [MDN reference](https://developer.mozilla.org/docs/Web/CSS/math-style) */
+  mathStyle: string | ref<string>;
+  /** [MDN reference](https://developer.mozilla.org/docs/Web/CSS/max-block-size) */
+  maxBlockSize: string | ref<string>;
+  /** [MDN reference](https://developer.mozilla.org/docs/Web/CSS/max-height) */
+  maxHeight: string | ref<string>;
+  /** [MDN reference](https://developer.mozilla.org/docs/Web/CSS/max-inline-size) */
+  maxInlineSize: string | ref<string>;
+  /** [MDN reference](https://developer.mozilla.org/docs/Web/CSS/max-width) */
+  maxWidth: string | ref<string>;
+  /** [MDN reference](https://developer.mozilla.org/docs/Web/CSS/min-block-size) */
+  minBlockSize: string | ref<string>;
+  /** [MDN reference](https://developer.mozilla.org/docs/Web/CSS/min-height) */
+  minHeight: string | ref<string>;
+  /** [MDN reference](https://developer.mozilla.org/docs/Web/CSS/min-inline-size) */
+  minInlineSize: string | ref<string>;
+  /** [MDN reference](https://developer.mozilla.org/docs/Web/CSS/min-width) */
+  minWidth: string | ref<string>;
+  /** [MDN reference](https://developer.mozilla.org/docs/Web/CSS/mix-blend-mode) */
+  mixBlendMode: string | ref<string>;
+  /** [MDN reference](https://developer.mozilla.org/docs/Web/CSS/object-fit) */
+  objectFit: string | ref<string>;
+  /** [MDN reference](https://developer.mozilla.org/docs/Web/CSS/object-position) */
+  objectPosition: string | ref<string>;
+  /** [MDN reference](https://developer.mozilla.org/docs/Web/CSS/offset) */
+  offset: string | ref<string>;
+  /** [MDN reference](https://developer.mozilla.org/docs/Web/CSS/offset-distance) */
+  offsetDistance: string | ref<string>;
+  /** [MDN reference](https://developer.mozilla.org/docs/Web/CSS/offset-path) */
+  offsetPath: string | ref<string>;
+  /** [MDN reference](https://developer.mozilla.org/docs/Web/CSS/offset-rotate) */
+  offsetRotate: string | ref<string>;
+  /** [MDN reference](https://developer.mozilla.org/docs/Web/CSS/opacity) */
+  opacity: string | ref<string>;
+  /** [MDN reference](https://developer.mozilla.org/docs/Web/CSS/order) */
+  order: string | ref<string>;
+  /** [MDN reference](https://developer.mozilla.org/docs/Web/CSS/orphans) */
+  orphans: string | ref<string>;
+  /** [MDN reference](https://developer.mozilla.org/docs/Web/CSS/outline) */
+  outline: string | ref<string>;
+  /** [MDN reference](https://developer.mozilla.org/docs/Web/CSS/outline-color) */
+  outlineColor: string | ref<string>;
+  /** [MDN reference](https://developer.mozilla.org/docs/Web/CSS/outline-offset) */
+  outlineOffset: string | ref<string>;
+  /** [MDN reference](https://developer.mozilla.org/docs/Web/CSS/outline-style) */
+  outlineStyle: string | ref<string>;
+  /** [MDN reference](https://developer.mozilla.org/docs/Web/CSS/outline-width) */
+  outlineWidth: string | ref<string>;
+  /** [MDN reference](https://developer.mozilla.org/docs/Web/CSS/overflow) */
+  overflow: string | ref<string>;
+  /** [MDN reference](https://developer.mozilla.org/docs/Web/CSS/overflow-anchor) */
+  overflowAnchor: string | ref<string>;
+  /** [MDN reference](https://developer.mozilla.org/docs/Web/CSS/overflow-clip-margin) */
+  overflowClipMargin: string | ref<string>;
+  /** [MDN reference](https://developer.mozilla.org/docs/Web/CSS/overflow-wrap) */
+  overflowWrap: string | ref<string>;
+  /** [MDN reference](https://developer.mozilla.org/docs/Web/CSS/overflow-x) */
+  overflowX: string | ref<string>;
+  /** [MDN reference](https://developer.mozilla.org/docs/Web/CSS/overflow-y) */
+  overflowY: string | ref<string>;
+  /** [MDN reference](https://developer.mozilla.org/docs/Web/CSS/overscroll-behavior) */
+  overscrollBehavior: string | ref<string>;
+  /** [MDN reference](https://developer.mozilla.org/docs/Web/CSS/overscroll-behavior-block) */
+  overscrollBehaviorBlock: string | ref<string>;
+  /** [MDN reference](https://developer.mozilla.org/docs/Web/CSS/overscroll-behavior-inline) */
+  overscrollBehaviorInline: string | ref<string>;
+  /** [MDN reference](https://developer.mozilla.org/docs/Web/CSS/overscroll-behavior-x) */
+  overscrollBehaviorX: string | ref<string>;
+  /** [MDN reference](https://developer.mozilla.org/docs/Web/CSS/overscroll-behavior-y) */
+  overscrollBehaviorY: string | ref<string>;
+  /** [MDN reference](https://developer.mozilla.org/docs/Web/CSS/padding) */
+  padding: string | ref<string>;
+  /** [MDN reference](https://developer.mozilla.org/docs/Web/CSS/padding-block) */
+  paddingBlock: string | ref<string>;
+  /** [MDN reference](https://developer.mozilla.org/docs/Web/CSS/padding-block-end) */
+  paddingBlockEnd: string | ref<string>;
+  /** [MDN reference](https://developer.mozilla.org/docs/Web/CSS/padding-block-start) */
+  paddingBlockStart: string | ref<string>;
+  /** [MDN reference](https://developer.mozilla.org/docs/Web/CSS/padding-bottom) */
+  paddingBottom: string | ref<string>;
+  /** [MDN reference](https://developer.mozilla.org/docs/Web/CSS/padding-inline) */
+  paddingInline: string | ref<string>;
+  /** [MDN reference](https://developer.mozilla.org/docs/Web/CSS/padding-inline-end) */
+  paddingInlineEnd: string | ref<string>;
+  /** [MDN reference](https://developer.mozilla.org/docs/Web/CSS/padding-inline-start) */
+  paddingInlineStart: string | ref<string>;
+  /** [MDN reference](https://developer.mozilla.org/docs/Web/CSS/padding-left) */
+  paddingLeft: string | ref<string>;
+  /** [MDN reference](https://developer.mozilla.org/docs/Web/CSS/padding-right) */
+  paddingRight: string | ref<string>;
+  /** [MDN reference](https://developer.mozilla.org/docs/Web/CSS/padding-top) */
+  paddingTop: string | ref<string>;
+  /** [MDN reference](https://developer.mozilla.org/docs/Web/CSS/page) */
+  page: string | ref<string>;
+  /** [MDN reference](https://developer.mozilla.org/docs/Web/CSS/page-break-after) */
+  pageBreakAfter: string | ref<string>;
+  /** [MDN reference](https://developer.mozilla.org/docs/Web/CSS/page-break-before) */
+  pageBreakBefore: string | ref<string>;
+  /** [MDN reference](https://developer.mozilla.org/docs/Web/CSS/page-break-inside) */
+  pageBreakInside: string | ref<string>;
+  /** [MDN reference](https://developer.mozilla.org/docs/Web/CSS/paint-order) */
+  paintOrder: string | ref<string>;
+  /** [MDN reference](https://developer.mozilla.org/docs/Web/API/CSSStyleDeclaration/parentRule) */
   readonly parentRule: CSSRule | null;
-  /** [MDN Reference](https://developer.mozilla.org/docs/Web/CSS/perspective) */
-  perspective: string | Ref<string>;
-  /** [MDN Reference](https://developer.mozilla.org/docs/Web/CSS/perspective-origin) */
-  perspectiveOrigin: string | Ref<string>;
-  /** [MDN Reference](https://developer.mozilla.org/docs/Web/CSS/place-content) */
-  placeContent: string | Ref<string>;
-  /** [MDN Reference](https://developer.mozilla.org/docs/Web/CSS/place-items) */
-  placeItems: string | Ref<string>;
-  /** [MDN Reference](https://developer.mozilla.org/docs/Web/CSS/place-self) */
-  placeSelf: string | Ref<string>;
-  /** [MDN Reference](https://developer.mozilla.org/docs/Web/CSS/pointer-events) */
-  pointerEvents: string | Ref<string>;
-  /** [MDN Reference](https://developer.mozilla.org/docs/Web/CSS/position) */
-  position: string | Ref<string>;
-  /** [MDN Reference](https://developer.mozilla.org/docs/Web/CSS/print-color-adjust) */
-  printColorAdjust: string | Ref<string>;
-  /** [MDN Reference](https://developer.mozilla.org/docs/Web/CSS/quotes) */
-  quotes: string | Ref<string>;
-  /** [MDN Reference](https://developer.mozilla.org/docs/Web/CSS/resize) */
-  resize: string | Ref<string>;
-  /** [MDN Reference](https://developer.mozilla.org/docs/Web/CSS/right) */
-  right: string | Ref<string>;
-  /** [MDN Reference](https://developer.mozilla.org/docs/Web/CSS/rotate) */
-  rotate: string | Ref<string>;
-  /** [MDN Reference](https://developer.mozilla.org/docs/Web/CSS/row-gap) */
-  rowGap: string | Ref<string>;
-  /** [MDN Reference](https://developer.mozilla.org/docs/Web/CSS/ruby-position) */
-  rubyPosition: string | Ref<string>;
-  /** [MDN Reference](https://developer.mozilla.org/docs/Web/CSS/scale) */
-  scale: string | Ref<string>;
-  /** [MDN Reference](https://developer.mozilla.org/docs/Web/CSS/scroll-behavior) */
-  scrollBehavior: string | Ref<string>;
-  /** [MDN Reference](https://developer.mozilla.org/docs/Web/CSS/scroll-margin) */
-  scrollMargin: string | Ref<string>;
-  /** [MDN Reference](https://developer.mozilla.org/docs/Web/CSS/scroll-margin-block) */
-  scrollMarginBlock: string | Ref<string>;
-  /** [MDN Reference](https://developer.mozilla.org/docs/Web/CSS/scroll-margin-block-end) */
-  scrollMarginBlockEnd: string | Ref<string>;
-  /** [MDN Reference](https://developer.mozilla.org/docs/Web/CSS/scroll-margin-block-start) */
-  scrollMarginBlockStart: string | Ref<string>;
-  /** [MDN Reference](https://developer.mozilla.org/docs/Web/CSS/scroll-margin-bottom) */
-  scrollMarginBottom: string | Ref<string>;
-  /** [MDN Reference](https://developer.mozilla.org/docs/Web/CSS/scroll-margin-inline) */
-  scrollMarginInline: string | Ref<string>;
-  /** [MDN Reference](https://developer.mozilla.org/docs/Web/CSS/scroll-margin-inline-end) */
-  scrollMarginInlineEnd: string | Ref<string>;
-  /** [MDN Reference](https://developer.mozilla.org/docs/Web/CSS/scroll-margin-inline-start) */
-  scrollMarginInlineStart: string | Ref<string>;
-  /** [MDN Reference](https://developer.mozilla.org/docs/Web/CSS/scroll-margin-left) */
-  scrollMarginLeft: string | Ref<string>;
-  /** [MDN Reference](https://developer.mozilla.org/docs/Web/CSS/scroll-margin-right) */
-  scrollMarginRight: string | Ref<string>;
-  /** [MDN Reference](https://developer.mozilla.org/docs/Web/CSS/scroll-margin-top) */
-  scrollMarginTop: string | Ref<string>;
-  /** [MDN Reference](https://developer.mozilla.org/docs/Web/CSS/scroll-padding) */
-  scrollPadding: string | Ref<string>;
-  /** [MDN Reference](https://developer.mozilla.org/docs/Web/CSS/scroll-padding-block) */
-  scrollPaddingBlock: string | Ref<string>;
-  /** [MDN Reference](https://developer.mozilla.org/docs/Web/CSS/scroll-padding-block-end) */
-  scrollPaddingBlockEnd: string | Ref<string>;
-  /** [MDN Reference](https://developer.mozilla.org/docs/Web/CSS/scroll-padding-block-start) */
-  scrollPaddingBlockStart: string | Ref<string>;
-  /** [MDN Reference](https://developer.mozilla.org/docs/Web/CSS/scroll-padding-bottom) */
-  scrollPaddingBottom: string | Ref<string>;
-  /** [MDN Reference](https://developer.mozilla.org/docs/Web/CSS/scroll-padding-inline) */
-  scrollPaddingInline: string | Ref<string>;
-  /** [MDN Reference](https://developer.mozilla.org/docs/Web/CSS/scroll-padding-inline-end) */
-  scrollPaddingInlineEnd: string | Ref<string>;
-  /** [MDN Reference](https://developer.mozilla.org/docs/Web/CSS/scroll-padding-inline-start) */
-  scrollPaddingInlineStart: string | Ref<string>;
-  /** [MDN Reference](https://developer.mozilla.org/docs/Web/CSS/scroll-padding-left) */
-  scrollPaddingLeft: string | Ref<string>;
-  /** [MDN Reference](https://developer.mozilla.org/docs/Web/CSS/scroll-padding-right) */
-  scrollPaddingRight: string | Ref<string>;
-  /** [MDN Reference](https://developer.mozilla.org/docs/Web/CSS/scroll-padding-top) */
-  scrollPaddingTop: string | Ref<string>;
-  /** [MDN Reference](https://developer.mozilla.org/docs/Web/CSS/scroll-snap-align) */
-  scrollSnapAlign: string | Ref<string>;
-  /** [MDN Reference](https://developer.mozilla.org/docs/Web/CSS/scroll-snap-stop) */
-  scrollSnapStop: string | Ref<string>;
-  /** [MDN Reference](https://developer.mozilla.org/docs/Web/CSS/scroll-snap-type) */
-  scrollSnapType: string | Ref<string>;
-  /** [MDN Reference](https://developer.mozilla.org/docs/Web/CSS/scrollbar-gutter) */
-  scrollbarGutter: string | Ref<string>;
-  /** [MDN Reference](https://developer.mozilla.org/docs/Web/CSS/shape-image-threshold) */
-  shapeImageThreshold: string | Ref<string>;
-  /** [MDN Reference](https://developer.mozilla.org/docs/Web/CSS/shape-margin) */
-  shapeMargin: string | Ref<string>;
-  /** [MDN Reference](https://developer.mozilla.org/docs/Web/CSS/shape-outside) */
-  shapeOutside: string | Ref<string>;
-  shapeRendering: string | Ref<string>;
-  stopColor: string | Ref<string>;
-  stopOpacity: string | Ref<string>;
-  stroke: string | Ref<string>;
-  strokeDasharray: string | Ref<string>;
-  strokeDashoffset: string | Ref<string>;
-  strokeLinecap: string | Ref<string>;
-  strokeLinejoin: string | Ref<string>;
-  strokeMiterlimit: string | Ref<string>;
-  strokeOpacity: string | Ref<string>;
-  strokeWidth: string | Ref<string>;
-  /** [MDN Reference](https://developer.mozilla.org/docs/Web/CSS/tab-size) */
-  tabSize: string | Ref<string>;
-  /** [MDN Reference](https://developer.mozilla.org/docs/Web/CSS/table-layout) */
-  tableLayout: string | Ref<string>;
-  /** [MDN Reference](https://developer.mozilla.org/docs/Web/CSS/text-align) */
-  textAlign: string | Ref<string>;
-  /** [MDN Reference](https://developer.mozilla.org/docs/Web/CSS/text-align-last) */
-  textAlignLast: string | Ref<string>;
-  textAnchor: string | Ref<string>;
-  /** [MDN Reference](https://developer.mozilla.org/docs/Web/CSS/text-combine-upright) */
-  textCombineUpright: string | Ref<string>;
-  /** [MDN Reference](https://developer.mozilla.org/docs/Web/CSS/text-decoration) */
-  textDecoration: string | Ref<string>;
-  /** [MDN Reference](https://developer.mozilla.org/docs/Web/CSS/text-decoration-color) */
-  textDecorationColor: string | Ref<string>;
-  /** [MDN Reference](https://developer.mozilla.org/docs/Web/CSS/text-decoration-line) */
-  textDecorationLine: string | Ref<string>;
-  /** [MDN Reference](https://developer.mozilla.org/docs/Web/CSS/text-decoration-skip-ink) */
-  textDecorationSkipInk: string | Ref<string>;
-  /** [MDN Reference](https://developer.mozilla.org/docs/Web/CSS/text-decoration-style) */
-  textDecorationStyle: string | Ref<string>;
-  /** [MDN Reference](https://developer.mozilla.org/docs/Web/CSS/text-decoration-thickness) */
-  textDecorationThickness: string | Ref<string>;
-  /** [MDN Reference](https://developer.mozilla.org/docs/Web/CSS/text-emphasis) */
-  textEmphasis: string | Ref<string>;
-  /** [MDN Reference](https://developer.mozilla.org/docs/Web/CSS/text-emphasis-color) */
-  textEmphasisColor: string | Ref<string>;
-  /** [MDN Reference](https://developer.mozilla.org/docs/Web/CSS/text-emphasis-position) */
-  textEmphasisPosition: string | Ref<string>;
-  /** [MDN Reference](https://developer.mozilla.org/docs/Web/CSS/text-emphasis-style) */
-  textEmphasisStyle: string | Ref<string>;
-  /** [MDN Reference](https://developer.mozilla.org/docs/Web/CSS/text-indent) */
-  textIndent: string | Ref<string>;
-  /** [MDN Reference](https://developer.mozilla.org/docs/Web/CSS/text-orientation) */
-  textOrientation: string | Ref<string>;
-  /** [MDN Reference](https://developer.mozilla.org/docs/Web/CSS/text-overflow) */
-  textOverflow: string | Ref<string>;
-  /** [MDN Reference](https://developer.mozilla.org/docs/Web/CSS/text-rendering) */
-  textRendering: string | Ref<string>;
-  /** [MDN Reference](https://developer.mozilla.org/docs/Web/CSS/text-shadow) */
-  textShadow: string | Ref<string>;
-  /** [MDN Reference](https://developer.mozilla.org/docs/Web/CSS/text-transform) */
-  textTransform: string | Ref<string>;
-  /** [MDN Reference](https://developer.mozilla.org/docs/Web/CSS/text-underline-offset) */
-  textUnderlineOffset: string | Ref<string>;
-  /** [MDN Reference](https://developer.mozilla.org/docs/Web/CSS/text-underline-position) */
-  textUnderlinePosition: string | Ref<string>;
-  /** [MDN Reference](https://developer.mozilla.org/docs/Web/CSS/top) */
-  top: string | Ref<string>;
-  /** [MDN Reference](https://developer.mozilla.org/docs/Web/CSS/touch-action) */
-  touchAction: string | Ref<string>;
-  /** [MDN Reference](https://developer.mozilla.org/docs/Web/CSS/transform) */
-  transform: string | Ref<string>;
-  /** [MDN Reference](https://developer.mozilla.org/docs/Web/CSS/transform-box) */
-  transformBox: string | Ref<string>;
-  /** [MDN Reference](https://developer.mozilla.org/docs/Web/CSS/transform-origin) */
-  transformOrigin: string | Ref<string>;
-  /** [MDN Reference](https://developer.mozilla.org/docs/Web/CSS/transform-style) */
-  transformStyle: string | Ref<string>;
-  /** [MDN Reference](https://developer.mozilla.org/docs/Web/CSS/transition) */
-  transition: string | Ref<string>;
-  /** [MDN Reference](https://developer.mozilla.org/docs/Web/CSS/transition-delay) */
-  transitionDelay: string | Ref<string>;
-  /** [MDN Reference](https://developer.mozilla.org/docs/Web/CSS/transition-duration) */
-  transitionDuration: string | Ref<string>;
-  /** [MDN Reference](https://developer.mozilla.org/docs/Web/CSS/transition-property) */
-  transitionProperty: string | Ref<string>;
-  /** [MDN Reference](https://developer.mozilla.org/docs/Web/CSS/transition-timing-function) */
-  transitionTimingFunction: string | Ref<string>;
-  /** [MDN Reference](https://developer.mozilla.org/docs/Web/CSS/translate) */
-  translate: string | Ref<string>;
-  /** [MDN Reference](https://developer.mozilla.org/docs/Web/CSS/unicode-bidi) */
-  unicodeBidi: string | Ref<string>;
-  /** [MDN Reference](https://developer.mozilla.org/docs/Web/CSS/user-select) */
-  userSelect: string | Ref<string>;
-  /** [MDN Reference](https://developer.mozilla.org/docs/Web/CSS/vertical-align) */
-  verticalAlign: string | Ref<string>;
-  /** [MDN Reference](https://developer.mozilla.org/docs/Web/CSS/visibility) */
-  visibility: string | Ref<string>;
+  /** [MDN reference](https://developer.mozilla.org/docs/Web/CSS/perspective) */
+  perspective: string | ref<string>;
+  /** [MDN reference](https://developer.mozilla.org/docs/Web/CSS/perspective-origin) */
+  perspectiveOrigin: string | ref<string>;
+  /** [MDN reference](https://developer.mozilla.org/docs/Web/CSS/place-content) */
+  placeContent: string | ref<string>;
+  /** [MDN reference](https://developer.mozilla.org/docs/Web/CSS/place-items) */
+  placeItems: string | ref<string>;
+  /** [MDN reference](https://developer.mozilla.org/docs/Web/CSS/place-self) */
+  placeSelf: string | ref<string>;
+  /** [MDN reference](https://developer.mozilla.org/docs/Web/CSS/pointer-events) */
+  pointerEvents: string | ref<string>;
+  /** [MDN reference](https://developer.mozilla.org/docs/Web/CSS/position) */
+  position: string | ref<string>;
+  /** [MDN reference](https://developer.mozilla.org/docs/Web/CSS/print-color-adjust) */
+  printColorAdjust: string | ref<string>;
+  /** [MDN reference](https://developer.mozilla.org/docs/Web/CSS/quotes) */
+  quotes: string | ref<string>;
+  /** [MDN reference](https://developer.mozilla.org/docs/Web/CSS/resize) */
+  resize: string | ref<string>;
+  /** [MDN reference](https://developer.mozilla.org/docs/Web/CSS/right) */
+  right: string | ref<string>;
+  /** [MDN reference](https://developer.mozilla.org/docs/Web/CSS/rotate) */
+  rotate: string | ref<string>;
+  /** [MDN reference](https://developer.mozilla.org/docs/Web/CSS/row-gap) */
+  rowGap: string | ref<string>;
+  /** [MDN reference](https://developer.mozilla.org/docs/Web/CSS/ruby-position) */
+  rubyPosition: string | ref<string>;
+  /** [MDN reference](https://developer.mozilla.org/docs/Web/CSS/scale) */
+  scale: string | ref<string>;
+  /** [MDN reference](https://developer.mozilla.org/docs/Web/CSS/scroll-behavior) */
+  scrollBehavior: string | ref<string>;
+  /** [MDN reference](https://developer.mozilla.org/docs/Web/CSS/scroll-margin) */
+  scrollMargin: string | ref<string>;
+  /** [MDN reference](https://developer.mozilla.org/docs/Web/CSS/scroll-margin-block) */
+  scrollMarginBlock: string | ref<string>;
+  /** [MDN reference](https://developer.mozilla.org/docs/Web/CSS/scroll-margin-block-end) */
+  scrollMarginBlockEnd: string | ref<string>;
+  /** [MDN reference](https://developer.mozilla.org/docs/Web/CSS/scroll-margin-block-start) */
+  scrollMarginBlockStart: string | ref<string>;
+  /** [MDN reference](https://developer.mozilla.org/docs/Web/CSS/scroll-margin-bottom) */
+  scrollMarginBottom: string | ref<string>;
+  /** [MDN reference](https://developer.mozilla.org/docs/Web/CSS/scroll-margin-inline) */
+  scrollMarginInline: string | ref<string>;
+  /** [MDN reference](https://developer.mozilla.org/docs/Web/CSS/scroll-margin-inline-end) */
+  scrollMarginInlineEnd: string | ref<string>;
+  /** [MDN reference](https://developer.mozilla.org/docs/Web/CSS/scroll-margin-inline-start) */
+  scrollMarginInlineStart: string | ref<string>;
+  /** [MDN reference](https://developer.mozilla.org/docs/Web/CSS/scroll-margin-left) */
+  scrollMarginLeft: string | ref<string>;
+  /** [MDN reference](https://developer.mozilla.org/docs/Web/CSS/scroll-margin-right) */
+  scrollMarginRight: string | ref<string>;
+  /** [MDN reference](https://developer.mozilla.org/docs/Web/CSS/scroll-margin-top) */
+  scrollMarginTop: string | ref<string>;
+  /** [MDN reference](https://developer.mozilla.org/docs/Web/CSS/scroll-padding) */
+  scrollPadding: string | ref<string>;
+  /** [MDN reference](https://developer.mozilla.org/docs/Web/CSS/scroll-padding-block) */
+  scrollPaddingBlock: string | ref<string>;
+  /** [MDN reference](https://developer.mozilla.org/docs/Web/CSS/scroll-padding-block-end) */
+  scrollPaddingBlockEnd: string | ref<string>;
+  /** [MDN reference](https://developer.mozilla.org/docs/Web/CSS/scroll-padding-block-start) */
+  scrollPaddingBlockStart: string | ref<string>;
+  /** [MDN reference](https://developer.mozilla.org/docs/Web/CSS/scroll-padding-bottom) */
+  scrollPaddingBottom: string | ref<string>;
+  /** [MDN reference](https://developer.mozilla.org/docs/Web/CSS/scroll-padding-inline) */
+  scrollPaddingInline: string | ref<string>;
+  /** [MDN reference](https://developer.mozilla.org/docs/Web/CSS/scroll-padding-inline-end) */
+  scrollPaddingInlineEnd: string | ref<string>;
+  /** [MDN reference](https://developer.mozilla.org/docs/Web/CSS/scroll-padding-inline-start) */
+  scrollPaddingInlineStart: string | ref<string>;
+  /** [MDN reference](https://developer.mozilla.org/docs/Web/CSS/scroll-padding-left) */
+  scrollPaddingLeft: string | ref<string>;
+  /** [MDN reference](https://developer.mozilla.org/docs/Web/CSS/scroll-padding-right) */
+  scrollPaddingRight: string | ref<string>;
+  /** [MDN reference](https://developer.mozilla.org/docs/Web/CSS/scroll-padding-top) */
+  scrollPaddingTop: string | ref<string>;
+  /** [MDN reference](https://developer.mozilla.org/docs/Web/CSS/scroll-snap-align) */
+  scrollSnapAlign: string | ref<string>;
+  /** [MDN reference](https://developer.mozilla.org/docs/Web/CSS/scroll-snap-stop) */
+  scrollSnapStop: string | ref<string>;
+  /** [MDN reference](https://developer.mozilla.org/docs/Web/CSS/scroll-snap-type) */
+  scrollSnapType: string | ref<string>;
+  /** [MDN reference](https://developer.mozilla.org/docs/Web/CSS/scrollbar-gutter) */
+  scrollbarGutter: string | ref<string>;
+  /** [MDN reference](https://developer.mozilla.org/docs/Web/CSS/shape-image-threshold) */
+  shapeImageThreshold: string | ref<string>;
+  /** [MDN reference](https://developer.mozilla.org/docs/Web/CSS/shape-margin) */
+  shapeMargin: string | ref<string>;
+  /** [MDN reference](https://developer.mozilla.org/docs/Web/CSS/shape-outside) */
+  shapeOutside: string | ref<string>;
+  shapeRendering: string | ref<string>;
+  stopColor: string | ref<string>;
+  stopOpacity: string | ref<string>;
+  stroke: string | ref<string>;
+  strokeDasharray: string | ref<string>;
+  strokeDashoffset: string | ref<string>;
+  strokeLinecap: string | ref<string>;
+  strokeLinejoin: string | ref<string>;
+  strokeMiterlimit: string | ref<string>;
+  strokeOpacity: string | ref<string>;
+  strokeWidth: string | ref<string>;
+  /** [MDN reference](https://developer.mozilla.org/docs/Web/CSS/tab-size) */
+  tabSize: string | ref<string>;
+  /** [MDN reference](https://developer.mozilla.org/docs/Web/CSS/table-layout) */
+  tableLayout: string | ref<string>;
+  /** [MDN reference](https://developer.mozilla.org/docs/Web/CSS/text-align) */
+  textAlign: string | ref<string>;
+  /** [MDN reference](https://developer.mozilla.org/docs/Web/CSS/text-align-last) */
+  textAlignLast: string | ref<string>;
+  textAnchor: string | ref<string>;
+  /** [MDN reference](https://developer.mozilla.org/docs/Web/CSS/text-combine-upright) */
+  textCombineUpright: string | ref<string>;
+  /** [MDN reference](https://developer.mozilla.org/docs/Web/CSS/text-decoration) */
+  textDecoration: string | ref<string>;
+  /** [MDN reference](https://developer.mozilla.org/docs/Web/CSS/text-decoration-color) */
+  textDecorationColor: string | ref<string>;
+  /** [MDN reference](https://developer.mozilla.org/docs/Web/CSS/text-decoration-line) */
+  textDecorationLine: string | ref<string>;
+  /** [MDN reference](https://developer.mozilla.org/docs/Web/CSS/text-decoration-skip-ink) */
+  textDecorationSkipInk: string | ref<string>;
+  /** [MDN reference](https://developer.mozilla.org/docs/Web/CSS/text-decoration-style) */
+  textDecorationStyle: string | ref<string>;
+  /** [MDN reference](https://developer.mozilla.org/docs/Web/CSS/text-decoration-thickness) */
+  textDecorationThickness: string | ref<string>;
+  /** [MDN reference](https://developer.mozilla.org/docs/Web/CSS/text-emphasis) */
+  textEmphasis: string | ref<string>;
+  /** [MDN reference](https://developer.mozilla.org/docs/Web/CSS/text-emphasis-color) */
+  textEmphasisColor: string | ref<string>;
+  /** [MDN reference](https://developer.mozilla.org/docs/Web/CSS/text-emphasis-position) */
+  textEmphasisPosition: string | ref<string>;
+  /** [MDN reference](https://developer.mozilla.org/docs/Web/CSS/text-emphasis-style) */
+  textEmphasisStyle: string | ref<string>;
+  /** [MDN reference](https://developer.mozilla.org/docs/Web/CSS/text-indent) */
+  textIndent: string | ref<string>;
+  /** [MDN reference](https://developer.mozilla.org/docs/Web/CSS/text-orientation) */
+  textOrientation: string | ref<string>;
+  /** [MDN reference](https://developer.mozilla.org/docs/Web/CSS/text-overflow) */
+  textOverflow: string | ref<string>;
+  /** [MDN reference](https://developer.mozilla.org/docs/Web/CSS/text-rendering) */
+  textRendering: string | ref<string>;
+  /** [MDN reference](https://developer.mozilla.org/docs/Web/CSS/text-shadow) */
+  textShadow: string | ref<string>;
+  /** [MDN reference](https://developer.mozilla.org/docs/Web/CSS/text-transform) */
+  textTransform: string | ref<string>;
+  /** [MDN reference](https://developer.mozilla.org/docs/Web/CSS/text-underline-offset) */
+  textUnderlineOffset: string | ref<string>;
+  /** [MDN reference](https://developer.mozilla.org/docs/Web/CSS/text-underline-position) */
+  textUnderlinePosition: string | ref<string>;
+  /** [MDN reference](https://developer.mozilla.org/docs/Web/CSS/top) */
+  top: string | ref<string>;
+  /** [MDN reference](https://developer.mozilla.org/docs/Web/CSS/touch-action) */
+  touchAction: string | ref<string>;
+  /** [MDN reference](https://developer.mozilla.org/docs/Web/CSS/transform) */
+  transform: string | ref<string>;
+  /** [MDN reference](https://developer.mozilla.org/docs/Web/CSS/transform-box) */
+  transformBox: string | ref<string>;
+  /** [MDN reference](https://developer.mozilla.org/docs/Web/CSS/transform-origin) */
+  transformOrigin: string | ref<string>;
+  /** [MDN reference](https://developer.mozilla.org/docs/Web/CSS/transform-style) */
+  transformStyle: string | ref<string>;
+  /** [MDN reference](https://developer.mozilla.org/docs/Web/CSS/transition) */
+  transition: string | ref<string>;
+  /** [MDN reference](https://developer.mozilla.org/docs/Web/CSS/transition-delay) */
+  transitionDelay: string | ref<string>;
+  /** [MDN reference](https://developer.mozilla.org/docs/Web/CSS/transition-duration) */
+  transitionDuration: string | ref<string>;
+  /** [MDN reference](https://developer.mozilla.org/docs/Web/CSS/transition-property) */
+  transitionProperty: string | ref<string>;
+  /** [MDN reference](https://developer.mozilla.org/docs/Web/CSS/transition-timing-function) */
+  transitionTimingFunction: string | ref<string>;
+  /** [MDN reference](https://developer.mozilla.org/docs/Web/CSS/translate) */
+  translate: string | ref<string>;
+  /** [MDN reference](https://developer.mozilla.org/docs/Web/CSS/unicode-bidi) */
+  unicodeBidi: string | ref<string>;
+  /** [MDN reference](https://developer.mozilla.org/docs/Web/CSS/user-select) */
+  userSelect: string | ref<string>;
+  /** [MDN reference](https://developer.mozilla.org/docs/Web/CSS/vertical-align) */
+  verticalAlign: string | ref<string>;
+  /** [MDN reference](https://developer.mozilla.org/docs/Web/CSS/visibility) */
+  visibility: string | ref<string>;
   /**
    * @deprecated This is a legacy alias of `alignContent`.
    *
-   * [MDN Reference](https://developer.mozilla.org/docs/Web/CSS/align-content)
+   * [MDN reference](https://developer.mozilla.org/docs/Web/CSS/align-content)
    */
-  webkitAlignContent: string | Ref<string>;
+  webkitAlignContent: string | ref<string>;
   /**
    * @deprecated This is a legacy alias of `alignItems`.
    *
-   * [MDN Reference](https://developer.mozilla.org/docs/Web/CSS/align-items)
+   * [MDN reference](https://developer.mozilla.org/docs/Web/CSS/align-items)
    */
-  webkitAlignItems: string | Ref<string>;
+  webkitAlignItems: string | ref<string>;
   /**
    * @deprecated This is a legacy alias of `alignSelf`.
    *
-   * [MDN Reference](https://developer.mozilla.org/docs/Web/CSS/align-self)
+   * [MDN reference](https://developer.mozilla.org/docs/Web/CSS/align-self)
    */
-  webkitAlignSelf: string | Ref<string>;
+  webkitAlignSelf: string | ref<string>;
   /**
    * @deprecated This is a legacy alias of `animation`.
    *
-   * [MDN Reference](https://developer.mozilla.org/docs/Web/CSS/animation)
+   * [MDN reference](https://developer.mozilla.org/docs/Web/CSS/animation)
    */
-  webkitAnimation: string | Ref<string>;
+  webkitAnimation: string | ref<string>;
   /**
    * @deprecated This is a legacy alias of `animationDelay`.
    *
-   * [MDN Reference](https://developer.mozilla.org/docs/Web/CSS/animation-delay)
+   * [MDN reference](https://developer.mozilla.org/docs/Web/CSS/animation-delay)
    */
-  webkitAnimationDelay: string | Ref<string>;
+  webkitAnimationDelay: string | ref<string>;
   /**
    * @deprecated This is a legacy alias of `animationDirection`.
    *
-   * [MDN Reference](https://developer.mozilla.org/docs/Web/CSS/animation-direction)
+   * [MDN reference](https://developer.mozilla.org/docs/Web/CSS/animation-direction)
    */
-  webkitAnimationDirection: string | Ref<string>;
+  webkitAnimationDirection: string | ref<string>;
   /**
    * @deprecated This is a legacy alias of `animationDuration`.
    *
-   * [MDN Reference](https://developer.mozilla.org/docs/Web/CSS/animation-duration)
+   * [MDN reference](https://developer.mozilla.org/docs/Web/CSS/animation-duration)
    */
-  webkitAnimationDuration: string | Ref<string>;
+  webkitAnimationDuration: string | ref<string>;
   /**
    * @deprecated This is a legacy alias of `animationFillMode`.
    *
-   * [MDN Reference](https://developer.mozilla.org/docs/Web/CSS/animation-fill-mode)
+   * [MDN reference](https://developer.mozilla.org/docs/Web/CSS/animation-fill-mode)
    */
-  webkitAnimationFillMode: string | Ref<string>;
+  webkitAnimationFillMode: string | ref<string>;
   /**
    * @deprecated This is a legacy alias of `animationIterationCount`.
    *
-   * [MDN Reference](https://developer.mozilla.org/docs/Web/CSS/animation-iteration-count)
+   * [MDN reference](https://developer.mozilla.org/docs/Web/CSS/animation-iteration-count)
    */
-  webkitAnimationIterationCount: string | Ref<string>;
+  webkitAnimationIterationCount: string | ref<string>;
   /**
    * @deprecated This is a legacy alias of `animationName`.
    *
-   * [MDN Reference](https://developer.mozilla.org/docs/Web/CSS/animation-name)
+   * [MDN reference](https://developer.mozilla.org/docs/Web/CSS/animation-name)
    */
-  webkitAnimationName: string | Ref<string>;
+  webkitAnimationName: string | ref<string>;
   /**
    * @deprecated This is a legacy alias of `animationPlayState`.
    *
-   * [MDN Reference](https://developer.mozilla.org/docs/Web/CSS/animation-play-state)
+   * [MDN reference](https://developer.mozilla.org/docs/Web/CSS/animation-play-state)
    */
-  webkitAnimationPlayState: string | Ref<string>;
+  webkitAnimationPlayState: string | ref<string>;
   /**
    * @deprecated This is a legacy alias of `animationTimingFunction`.
    *
-   * [MDN Reference](https://developer.mozilla.org/docs/Web/CSS/animation-timing-function)
+   * [MDN reference](https://developer.mozilla.org/docs/Web/CSS/animation-timing-function)
    */
-  webkitAnimationTimingFunction: string | Ref<string>;
+  webkitAnimationTimingFunction: string | ref<string>;
   /**
    * @deprecated This is a legacy alias of `appearance`.
    *
-   * [MDN Reference](https://developer.mozilla.org/docs/Web/CSS/appearance)
+   * [MDN reference](https://developer.mozilla.org/docs/Web/CSS/appearance)
    */
-  webkitAppearance: string | Ref<string>;
+  webkitAppearance: string | ref<string>;
   /**
    * @deprecated This is a legacy alias of `backfaceVisibility`.
    *
-   * [MDN Reference](https://developer.mozilla.org/docs/Web/CSS/backface-visibility)
+   * [MDN reference](https://developer.mozilla.org/docs/Web/CSS/backface-visibility)
    */
-  webkitBackfaceVisibility: string | Ref<string>;
+  webkitBackfaceVisibility: string | ref<string>;
   /**
    * @deprecated This is a legacy alias of `backgroundClip`.
    *
-   * [MDN Reference](https://developer.mozilla.org/docs/Web/CSS/background-clip)
+   * [MDN reference](https://developer.mozilla.org/docs/Web/CSS/background-clip)
    */
-  webkitBackgroundClip: string | Ref<string>;
+  webkitBackgroundClip: string | ref<string>;
   /**
    * @deprecated This is a legacy alias of `backgroundOrigin`.
    *
-   * [MDN Reference](https://developer.mozilla.org/docs/Web/CSS/background-origin)
+   * [MDN reference](https://developer.mozilla.org/docs/Web/CSS/background-origin)
    */
-  webkitBackgroundOrigin: string | Ref<string>;
+  webkitBackgroundOrigin: string | ref<string>;
   /**
    * @deprecated This is a legacy alias of `backgroundSize`.
    *
-   * [MDN Reference](https://developer.mozilla.org/docs/Web/CSS/background-size)
+   * [MDN reference](https://developer.mozilla.org/docs/Web/CSS/background-size)
    */
-  webkitBackgroundSize: string | Ref<string>;
+  webkitBackgroundSize: string | ref<string>;
   /**
    * @deprecated This is a legacy alias of `borderBottomLeftRadius`.
    *
-   * [MDN Reference](https://developer.mozilla.org/docs/Web/CSS/border-bottom-left-radius)
+   * [MDN reference](https://developer.mozilla.org/docs/Web/CSS/border-bottom-left-radius)
    */
-  webkitBorderBottomLeftRadius: string | Ref<string>;
+  webkitBorderBottomLeftRadius: string | ref<string>;
   /**
    * @deprecated This is a legacy alias of `borderBottomRightRadius`.
    *
-   * [MDN Reference](https://developer.mozilla.org/docs/Web/CSS/border-bottom-right-radius)
+   * [MDN reference](https://developer.mozilla.org/docs/Web/CSS/border-bottom-right-radius)
    */
-  webkitBorderBottomRightRadius: string | Ref<string>;
+  webkitBorderBottomRightRadius: string | ref<string>;
   /**
    * @deprecated This is a legacy alias of `borderRadius`.
    *
-   * [MDN Reference](https://developer.mozilla.org/docs/Web/CSS/border-radius)
+   * [MDN reference](https://developer.mozilla.org/docs/Web/CSS/border-radius)
    */
-  webkitBorderRadius: string | Ref<string>;
+  webkitBorderRadius: string | ref<string>;
   /**
    * @deprecated This is a legacy alias of `borderTopLeftRadius`.
    *
-   * [MDN Reference](https://developer.mozilla.org/docs/Web/CSS/border-top-left-radius)
+   * [MDN reference](https://developer.mozilla.org/docs/Web/CSS/border-top-left-radius)
    */
-  webkitBorderTopLeftRadius: string | Ref<string>;
+  webkitBorderTopLeftRadius: string | ref<string>;
   /**
    * @deprecated This is a legacy alias of `borderTopRightRadius`.
    *
-   * [MDN Reference](https://developer.mozilla.org/docs/Web/CSS/border-top-right-radius)
+   * [MDN reference](https://developer.mozilla.org/docs/Web/CSS/border-top-right-radius)
    */
-  webkitBorderTopRightRadius: string | Ref<string>;
+  webkitBorderTopRightRadius: string | ref<string>;
   /**
    * @deprecated This is a legacy alias of `boxAlign`.
    *
-   * [MDN Reference](https://developer.mozilla.org/docs/Web/CSS/box-align)
+   * [MDN reference](https://developer.mozilla.org/docs/Web/CSS/box-align)
    */
-  webkitBoxAlign: string | Ref<string>;
+  webkitBoxAlign: string | ref<string>;
   /**
    * @deprecated This is a legacy alias of `boxFlex`.
    *
-   * [MDN Reference](https://developer.mozilla.org/docs/Web/CSS/box-flex)
+   * [MDN reference](https://developer.mozilla.org/docs/Web/CSS/box-flex)
    */
-  webkitBoxFlex: string | Ref<string>;
+  webkitBoxFlex: string | ref<string>;
   /**
    * @deprecated This is a legacy alias of `boxOrdinalGroup`.
    *
-   * [MDN Reference](https://developer.mozilla.org/docs/Web/CSS/box-ordinal-group)
+   * [MDN reference](https://developer.mozilla.org/docs/Web/CSS/box-ordinal-group)
    */
-  webkitBoxOrdinalGroup: string | Ref<string>;
+  webkitBoxOrdinalGroup: string | ref<string>;
   /**
    * @deprecated This is a legacy alias of `boxOrient`.
    *
-   * [MDN Reference](https://developer.mozilla.org/docs/Web/CSS/box-orient)
+   * [MDN reference](https://developer.mozilla.org/docs/Web/CSS/box-orient)
    */
-  webkitBoxOrient: string | Ref<string>;
+  webkitBoxOrient: string | ref<string>;
   /**
    * @deprecated This is a legacy alias of `boxPack`.
    *
-   * [MDN Reference](https://developer.mozilla.org/docs/Web/CSS/box-pack)
+   * [MDN reference](https://developer.mozilla.org/docs/Web/CSS/box-pack)
    */
-  webkitBoxPack: string | Ref<string>;
+  webkitBoxPack: string | ref<string>;
   /**
    * @deprecated This is a legacy alias of `boxShadow`.
    *
-   * [MDN Reference](https://developer.mozilla.org/docs/Web/CSS/box-shadow)
+   * [MDN reference](https://developer.mozilla.org/docs/Web/CSS/box-shadow)
    */
-  webkitBoxShadow: string | Ref<string>;
+  webkitBoxShadow: string | ref<string>;
   /**
    * @deprecated This is a legacy alias of `boxSizing`.
    *
-   * [MDN Reference](https://developer.mozilla.org/docs/Web/CSS/box-sizing)
+   * [MDN reference](https://developer.mozilla.org/docs/Web/CSS/box-sizing)
    */
-  webkitBoxSizing: string | Ref<string>;
+  webkitBoxSizing: string | ref<string>;
   /**
    * @deprecated This is a legacy alias of `filter`.
    *
-   * [MDN Reference](https://developer.mozilla.org/docs/Web/CSS/filter)
+   * [MDN reference](https://developer.mozilla.org/docs/Web/CSS/filter)
    */
-  webkitFilter: string | Ref<string>;
+  webkitFilter: string | ref<string>;
   /**
    * @deprecated This is a legacy alias of `flex`.
    *
-   * [MDN Reference](https://developer.mozilla.org/docs/Web/CSS/flex)
+   * [MDN reference](https://developer.mozilla.org/docs/Web/CSS/flex)
    */
-  webkitFlex: string | Ref<string>;
+  webkitFlex: string | ref<string>;
   /**
    * @deprecated This is a legacy alias of `flexBasis`.
    *
-   * [MDN Reference](https://developer.mozilla.org/docs/Web/CSS/flex-basis)
+   * [MDN reference](https://developer.mozilla.org/docs/Web/CSS/flex-basis)
    */
-  webkitFlexBasis: string | Ref<string>;
+  webkitFlexBasis: string | ref<string>;
   /**
    * @deprecated This is a legacy alias of `flexDirection`.
    *
-   * [MDN Reference](https://developer.mozilla.org/docs/Web/CSS/flex-direction)
+   * [MDN reference](https://developer.mozilla.org/docs/Web/CSS/flex-direction)
    */
-  webkitFlexDirection: string | Ref<string>;
+  webkitFlexDirection: string | ref<string>;
   /**
    * @deprecated This is a legacy alias of `flexFlow`.
    *
-   * [MDN Reference](https://developer.mozilla.org/docs/Web/CSS/flex-flow)
+   * [MDN reference](https://developer.mozilla.org/docs/Web/CSS/flex-flow)
    */
-  webkitFlexFlow: string | Ref<string>;
+  webkitFlexFlow: string | ref<string>;
   /**
    * @deprecated This is a legacy alias of `flexGrow`.
    *
-   * [MDN Reference](https://developer.mozilla.org/docs/Web/CSS/flex-grow)
+   * [MDN reference](https://developer.mozilla.org/docs/Web/CSS/flex-grow)
    */
-  webkitFlexGrow: string | Ref<string>;
+  webkitFlexGrow: string | ref<string>;
   /**
    * @deprecated This is a legacy alias of `flexShrink`.
    *
-   * [MDN Reference](https://developer.mozilla.org/docs/Web/CSS/flex-shrink)
+   * [MDN reference](https://developer.mozilla.org/docs/Web/CSS/flex-shrink)
    */
-  webkitFlexShrink: string | Ref<string>;
+  webkitFlexShrink: string | ref<string>;
   /**
    * @deprecated This is a legacy alias of `flexWrap`.
    *
-   * [MDN Reference](https://developer.mozilla.org/docs/Web/CSS/flex-wrap)
+   * [MDN reference](https://developer.mozilla.org/docs/Web/CSS/flex-wrap)
    */
-  webkitFlexWrap: string | Ref<string>;
+  webkitFlexWrap: string | ref<string>;
   /**
    * @deprecated This is a legacy alias of `justifyContent`.
    *
-   * [MDN Reference](https://developer.mozilla.org/docs/Web/CSS/justify-content)
+   * [MDN reference](https://developer.mozilla.org/docs/Web/CSS/justify-content)
    */
-  webkitJustifyContent: string | Ref<string>;
-  /** [MDN Reference](https://developer.mozilla.org/docs/Web/CSS/-webkit-line-clamp) */
-  webkitLineClamp: string | Ref<string>;
+  webkitJustifyContent: string | ref<string>;
+  /** [MDN reference](https://developer.mozilla.org/docs/Web/CSS/-webkit-line-clamp) */
+  webkitLineClamp: string | ref<string>;
   /**
    * @deprecated This is a legacy alias of `mask`.
    *
-   * [MDN Reference](https://developer.mozilla.org/docs/Web/CSS/mask)
+   * [MDN reference](https://developer.mozilla.org/docs/Web/CSS/mask)
    */
-  webkitMask: string | Ref<string>;
+  webkitMask: string | ref<string>;
   /**
    * @deprecated This is a legacy alias of `maskBorder`.
    *
-   * [MDN Reference](https://developer.mozilla.org/docs/Web/CSS/mask-border)
+   * [MDN reference](https://developer.mozilla.org/docs/Web/CSS/mask-border)
    */
-  webkitMaskBoxImage: string | Ref<string>;
+  webkitMaskBoxImage: string | ref<string>;
   /**
    * @deprecated This is a legacy alias of `maskBorderOutset`.
    *
-   * [MDN Reference](https://developer.mozilla.org/docs/Web/CSS/mask-border-outset)
+   * [MDN reference](https://developer.mozilla.org/docs/Web/CSS/mask-border-outset)
    */
-  webkitMaskBoxImageOutset: string | Ref<string>;
+  webkitMaskBoxImageOutset: string | ref<string>;
   /**
    * @deprecated This is a legacy alias of `maskBorderRepeat`.
    *
-   * [MDN Reference](https://developer.mozilla.org/docs/Web/CSS/mask-border-repeat)
+   * [MDN reference](https://developer.mozilla.org/docs/Web/CSS/mask-border-repeat)
    */
-  webkitMaskBoxImageRepeat: string | Ref<string>;
+  webkitMaskBoxImageRepeat: string | ref<string>;
   /**
    * @deprecated This is a legacy alias of `maskBorderSlice`.
    *
-   * [MDN Reference](https://developer.mozilla.org/docs/Web/CSS/mask-border-slice)
+   * [MDN reference](https://developer.mozilla.org/docs/Web/CSS/mask-border-slice)
    */
-  webkitMaskBoxImageSlice: string | Ref<string>;
+  webkitMaskBoxImageSlice: string | ref<string>;
   /**
    * @deprecated This is a legacy alias of `maskBorderSource`.
    *
-   * [MDN Reference](https://developer.mozilla.org/docs/Web/CSS/mask-border-source)
+   * [MDN reference](https://developer.mozilla.org/docs/Web/CSS/mask-border-source)
    */
-  webkitMaskBoxImageSource: string | Ref<string>;
+  webkitMaskBoxImageSource: string | ref<string>;
   /**
    * @deprecated This is a legacy alias of `maskBorderWidth`.
    *
-   * [MDN Reference](https://developer.mozilla.org/docs/Web/CSS/mask-border-width)
+   * [MDN reference](https://developer.mozilla.org/docs/Web/CSS/mask-border-width)
    */
-  webkitMaskBoxImageWidth: string | Ref<string>;
+  webkitMaskBoxImageWidth: string | ref<string>;
   /**
    * @deprecated This is a legacy alias of `maskClip`.
    *
-   * [MDN Reference](https://developer.mozilla.org/docs/Web/CSS/mask-clip)
+   * [MDN reference](https://developer.mozilla.org/docs/Web/CSS/mask-clip)
    */
-  webkitMaskClip: string | Ref<string>;
-  /** [MDN Reference](https://developer.mozilla.org/docs/Web/CSS/-webkit-mask-composite) */
-  webkitMaskComposite: string | Ref<string>;
+  webkitMaskClip: string | ref<string>;
+  /** [MDN reference](https://developer.mozilla.org/docs/Web/CSS/-webkit-mask-composite) */
+  webkitMaskComposite: string | ref<string>;
   /**
    * @deprecated This is a legacy alias of `maskImage`.
    *
-   * [MDN Reference](https://developer.mozilla.org/docs/Web/CSS/mask-image)
+   * [MDN reference](https://developer.mozilla.org/docs/Web/CSS/mask-image)
    */
-  webkitMaskImage: string | Ref<string>;
+  webkitMaskImage: string | ref<string>;
   /**
    * @deprecated This is a legacy alias of `maskOrigin`.
    *
-   * [MDN Reference](https://developer.mozilla.org/docs/Web/CSS/mask-origin)
+   * [MDN reference](https://developer.mozilla.org/docs/Web/CSS/mask-origin)
    */
-  webkitMaskOrigin: string | Ref<string>;
+  webkitMaskOrigin: string | ref<string>;
   /**
    * @deprecated This is a legacy alias of `maskPosition`.
    *
-   * [MDN Reference](https://developer.mozilla.org/docs/Web/CSS/mask-position)
+   * [MDN reference](https://developer.mozilla.org/docs/Web/CSS/mask-position)
    */
-  webkitMaskPosition: string | Ref<string>;
+  webkitMaskPosition: string | ref<string>;
   /**
    * @deprecated This is a legacy alias of `maskRepeat`.
    *
-   * [MDN Reference](https://developer.mozilla.org/docs/Web/CSS/mask-repeat)
+   * [MDN reference](https://developer.mozilla.org/docs/Web/CSS/mask-repeat)
    */
-  webkitMaskRepeat: string | Ref<string>;
+  webkitMaskRepeat: string | ref<string>;
   /**
    * @deprecated This is a legacy alias of `maskSize`.
    *
-   * [MDN Reference](https://developer.mozilla.org/docs/Web/CSS/mask-size)
+   * [MDN reference](https://developer.mozilla.org/docs/Web/CSS/mask-size)
    */
-  webkitMaskSize: string | Ref<string>;
+  webkitMaskSize: string | ref<string>;
   /**
    * @deprecated This is a legacy alias of `order`.
    *
-   * [MDN Reference](https://developer.mozilla.org/docs/Web/CSS/order)
+   * [MDN reference](https://developer.mozilla.org/docs/Web/CSS/order)
    */
-  webkitOrder: string | Ref<string>;
+  webkitOrder: string | ref<string>;
   /**
    * @deprecated This is a legacy alias of `perspective`.
    *
-   * [MDN Reference](https://developer.mozilla.org/docs/Web/CSS/perspective)
+   * [MDN reference](https://developer.mozilla.org/docs/Web/CSS/perspective)
    */
-  webkitPerspective: string | Ref<string>;
+  webkitPerspective: string | ref<string>;
   /**
    * @deprecated This is a legacy alias of `perspectiveOrigin`.
    *
-   * [MDN Reference](https://developer.mozilla.org/docs/Web/CSS/perspective-origin)
+   * [MDN reference](https://developer.mozilla.org/docs/Web/CSS/perspective-origin)
    */
-  webkitPerspectiveOrigin: string | Ref<string>;
-  /** [MDN Reference](https://developer.mozilla.org/docs/Web/CSS/-webkit-text-fill-color) */
-  webkitTextFillColor: string | Ref<string>;
+  webkitPerspectiveOrigin: string | ref<string>;
+  /** [MDN reference](https://developer.mozilla.org/docs/Web/CSS/-webkit-text-fill-color) */
+  webkitTextFillColor: string | ref<string>;
   /**
    * @deprecated This is a legacy alias of `textSizeAdjust`.
    *
-   * [MDN Reference](https://developer.mozilla.org/docs/Web/CSS/text-size-adjust)
+   * [MDN reference](https://developer.mozilla.org/docs/Web/CSS/text-size-adjust)
    */
-  webkitTextSizeAdjust: string | Ref<string>;
-  /** [MDN Reference](https://developer.mozilla.org/docs/Web/CSS/-webkit-text-stroke) */
-  webkitTextStroke: string | Ref<string>;
-  /** [MDN Reference](https://developer.mozilla.org/docs/Web/CSS/-webkit-text-stroke-color) */
-  webkitTextStrokeColor: string | Ref<string>;
-  /** [MDN Reference](https://developer.mozilla.org/docs/Web/CSS/-webkit-text-stroke-width) */
-  webkitTextStrokeWidth: string | Ref<string>;
+  webkitTextSizeAdjust: string | ref<string>;
+  /** [MDN reference](https://developer.mozilla.org/docs/Web/CSS/-webkit-text-stroke) */
+  webkitTextStroke: string | ref<string>;
+  /** [MDN reference](https://developer.mozilla.org/docs/Web/CSS/-webkit-text-stroke-color) */
+  webkitTextStrokeColor: string | ref<string>;
+  /** [MDN reference](https://developer.mozilla.org/docs/Web/CSS/-webkit-text-stroke-width) */
+  webkitTextStrokeWidth: string | ref<string>;
   /**
    * @deprecated This is a legacy alias of `transform`.
    *
-   * [MDN Reference](https://developer.mozilla.org/docs/Web/CSS/transform)
+   * [MDN reference](https://developer.mozilla.org/docs/Web/CSS/transform)
    */
-  webkitTransform: string | Ref<string>;
+  webkitTransform: string | ref<string>;
   /**
    * @deprecated This is a legacy alias of `transformOrigin`.
    *
-   * [MDN Reference](https://developer.mozilla.org/docs/Web/CSS/transform-origin)
+   * [MDN reference](https://developer.mozilla.org/docs/Web/CSS/transform-origin)
    */
-  webkitTransformOrigin: string | Ref<string>;
+  webkitTransformOrigin: string | ref<string>;
   /**
    * @deprecated This is a legacy alias of `transformStyle`.
    *
-   * [MDN Reference](https://developer.mozilla.org/docs/Web/CSS/transform-style)
+   * [MDN reference](https://developer.mozilla.org/docs/Web/CSS/transform-style)
    */
-  webkitTransformStyle: string | Ref<string>;
+  webkitTransformStyle: string | ref<string>;
   /**
    * @deprecated This is a legacy alias of `transition`.
    *
-   * [MDN Reference](https://developer.mozilla.org/docs/Web/CSS/transition)
+   * [MDN reference](https://developer.mozilla.org/docs/Web/CSS/transition)
    */
-  webkitTransition: string | Ref<string>;
+  webkitTransition: string | ref<string>;
   /**
    * @deprecated This is a legacy alias of `transitionDelay`.
    *
-   * [MDN Reference](https://developer.mozilla.org/docs/Web/CSS/transition-delay)
+   * [MDN reference](https://developer.mozilla.org/docs/Web/CSS/transition-delay)
    */
-  webkitTransitionDelay: string | Ref<string>;
+  webkitTransitionDelay: string | ref<string>;
   /**
    * @deprecated This is a legacy alias of `transitionDuration`.
    *
-   * [MDN Reference](https://developer.mozilla.org/docs/Web/CSS/transition-duration)
+   * [MDN reference](https://developer.mozilla.org/docs/Web/CSS/transition-duration)
    */
-  webkitTransitionDuration: string | Ref<string>;
+  webkitTransitionDuration: string | ref<string>;
   /**
    * @deprecated This is a legacy alias of `transitionProperty`.
    *
-   * [MDN Reference](https://developer.mozilla.org/docs/Web/CSS/transition-property)
+   * [MDN reference](https://developer.mozilla.org/docs/Web/CSS/transition-property)
    */
-  webkitTransitionProperty: string | Ref<string>;
+  webkitTransitionProperty: string | ref<string>;
   /**
    * @deprecated This is a legacy alias of `transitionTimingFunction`.
    *
-   * [MDN Reference](https://developer.mozilla.org/docs/Web/CSS/transition-timing-function)
+   * [MDN reference](https://developer.mozilla.org/docs/Web/CSS/transition-timing-function)
    */
-  webkitTransitionTimingFunction: string | Ref<string>;
+  webkitTransitionTimingFunction: string | ref<string>;
   /**
    * @deprecated This is a legacy alias of `userSelect`.
    *
-   * [MDN Reference](https://developer.mozilla.org/docs/Web/CSS/user-select)
+   * [MDN reference](https://developer.mozilla.org/docs/Web/CSS/user-select)
    */
-  webkitUserSelect: string | Ref<string>;
-  /** [MDN Reference](https://developer.mozilla.org/docs/Web/CSS/white-space) */
-  whiteSpace: string | Ref<string>;
-  /** [MDN Reference](https://developer.mozilla.org/docs/Web/CSS/widows) */
-  widows: string | Ref<string>;
-  /** [MDN Reference](https://developer.mozilla.org/docs/Web/CSS/width) */
-  width: string | Ref<string>;
-  /** [MDN Reference](https://developer.mozilla.org/docs/Web/CSS/will-change) */
-  willChange: string | Ref<string>;
-  /** [MDN Reference](https://developer.mozilla.org/docs/Web/CSS/word-break) */
-  wordBreak: string | Ref<string>;
-  /** [MDN Reference](https://developer.mozilla.org/docs/Web/CSS/word-spacing) */
-  wordSpacing: string | Ref<string>;
+  webkitUserSelect: string | ref<string>;
+  /** [MDN reference](https://developer.mozilla.org/docs/Web/CSS/white-space) */
+  whiteSpace: string | ref<string>;
+  /** [MDN reference](https://developer.mozilla.org/docs/Web/CSS/widows) */
+  widows: string | ref<string>;
+  /** [MDN reference](https://developer.mozilla.org/docs/Web/CSS/width) */
+  width: string | ref<string>;
+  /** [MDN reference](https://developer.mozilla.org/docs/Web/CSS/will-change) */
+  willChange: string | ref<string>;
+  /** [MDN reference](https://developer.mozilla.org/docs/Web/CSS/word-break) */
+  wordBreak: string | ref<string>;
+  /** [MDN reference](https://developer.mozilla.org/docs/Web/CSS/word-spacing) */
+  wordSpacing: string | ref<string>;
   /**
    * @deprecated
    *
-   * [MDN Reference](https://developer.mozilla.org/docs/Web/CSS/overflow-wrap)
+   * [MDN reference](https://developer.mozilla.org/docs/Web/CSS/overflow-wrap)
    */
-  wordWrap: string | Ref<string>;
-  /** [MDN Reference](https://developer.mozilla.org/docs/Web/CSS/writing-mode) */
-  writingMode: string | Ref<string>;
-  /** [MDN Reference](https://developer.mozilla.org/docs/Web/CSS/z-index) */
-  zIndex: string | Ref<string>;
-  /** [MDN Reference](https://developer.mozilla.org/docs/Web/API/CSSStyleDeclaration/getPropertyPriority) */
-  getPropertyPriority(property: string): string | Ref<string>;
-  /** [MDN Reference](https://developer.mozilla.org/docs/Web/API/CSSStyleDeclaration/getPropertyValue) */
-  getPropertyValue(property: string): string | Ref<string>;
-  /** [MDN Reference](https://developer.mozilla.org/docs/Web/API/CSSStyleDeclaration/item) */
-  item(index: number): string | Ref<string>;
-  /** [MDN Reference](https://developer.mozilla.org/docs/Web/API/CSSStyleDeclaration/removeProperty) */
-  removeProperty(property: string): string | Ref<string>;
-  /** [MDN Reference](https://developer.mozilla.org/docs/Web/API/CSSStyleDeclaration/setProperty) */
+  wordWrap: string | ref<string>;
+  /** [MDN reference](https://developer.mozilla.org/docs/Web/CSS/writing-mode) */
+  writingMode: string | ref<string>;
+  /** [MDN reference](https://developer.mozilla.org/docs/Web/CSS/z-index) */
+  zIndex: string | ref<string>;
+  /** [MDN reference](https://developer.mozilla.org/docs/Web/API/CSSStyleDeclaration/getPropertyPriority) */
+  getPropertyPriority(property: string): string | ref<string>;
+  /** [MDN reference](https://developer.mozilla.org/docs/Web/API/CSSStyleDeclaration/getPropertyValue) */
+  getPropertyValue(property: string): string | ref<string>;
+  /** [MDN reference](https://developer.mozilla.org/docs/Web/API/CSSStyleDeclaration/item) */
+  item(index: number): string | ref<string>;
+  /** [MDN reference](https://developer.mozilla.org/docs/Web/API/CSSStyleDeclaration/removeProperty) */
+  removeProperty(property: string): string | ref<string>;
+  /** [MDN reference](https://developer.mozilla.org/docs/Web/API/CSSStyleDeclaration/setProperty) */
   setProperty(
     property: string,
-    value: string | Ref<string> | null,
+    value: string | ref<string> | null,
     priority?: string,
   ): void;
-  [index: number]: string | Ref<string>;
+  [index: number]: string | ref<string>;
 
   hasOwnProperty?(key: string): boolean;
 }
 
-declare var CSSStyleDeclarationRef: {
-  prototype: CSSStyleDeclarationRef;
-  new (): CSSStyleDeclarationRef;
+declare var CSSStyleDeclarationref: {
+  prototype: CSSStyleDeclarationref;
+  new (): CSSStyleDeclarationref;
 };
 
-export class CSSStyleRef implements CSSStyleDeclarationRef {
+export class CSSStyleref implements CSSStyleDeclarationref {
   [index: number]: any;
   private _style: CSSStyleDeclaration;
-  private styleRefMap = new Map<
+  private stylerefMap = new Map<
     string,
-    { data: { ref: any; name: string }; ref: Ref<any> }
+    { data: { ref: any; name: string }; ref: ref<any> }
   >();
 
-  private setStyleRefMap(propertyKey: string, ref: Ref<any>) {
-    let oldRef = this.styleRefMap.get(propertyKey);
-    if (oldRef) oldRef.ref.unsubscribe(oldRef.data);
-    else oldRef = { data: { ref: this._style, name: propertyKey }, ref: ref };
+  private setStylerefMap(propertyKey: string, ref: ref<any>) {
+    let oldref = this.stylerefMap.get(propertyKey);
+    if (oldref) oldref.ref.unsubscribe(oldref.data);
+    else oldref = { data: { ref: this._style, name: propertyKey }, ref: ref };
     ref.subscriber(this._style, propertyKey);
   }
 
-  public appendStyleRef(propertyKey: string, element: any, ref: Ref<any>) {
-    let oldRef = this.styleRefMap.get(propertyKey);
-    if (oldRef) oldRef.ref.unsubscribe(oldRef.data);
-    else oldRef = { data: { ref: element, name: propertyKey }, ref: ref };
+  public appendStyleref(propertyKey: string, element: any, ref: ref<any>) {
+    let oldref = this.stylerefMap.get(propertyKey);
+    if (oldref) oldref.ref.unsubscribe(oldref.data);
+    else oldref = { data: { ref: element, name: propertyKey }, ref: ref };
     ref.subscriber(this._style, propertyKey);
   }
 
   public disconnectedCallback() {
-    // this.styleRefMap.forEach((value) => {
+    // this.stylerefMap.forEach((value) => {
     //   value.ref.unsubscribe(value.data);
     // });
   }
@@ -3085,8 +3085,8 @@ export class CSSStyleRef implements CSSStyleDeclarationRef {
   get accentColor(): string {
     return this._style.accentColor;
   }
-  set accentColor(value: string | Ref<string>) {
-    if (value instanceof Ref) this.setStyleRefMap("accentColor", value);
+  set accentColor(value: string | ref<string>) {
+    if (typeof value !== "string") this.setStylerefMap("accentColor", value);
     else this._style.accentColor = value as any;
   }
 
@@ -3094,8 +3094,8 @@ export class CSSStyleRef implements CSSStyleDeclarationRef {
     return this._style.alignContent;
   }
 
-  public set alignContent(value: string | Ref<string>) {
-    if (value instanceof Ref) this.setStyleRefMap("alignContent", value);
+  public set alignContent(value: string | ref<string>) {
+    if (typeof value !== "string") this.setStylerefMap("alignContent", value);
     else this._style.alignContent = value as any;
   }
 
@@ -3103,8 +3103,8 @@ export class CSSStyleRef implements CSSStyleDeclarationRef {
     return this._style.alignItems;
   }
 
-  public set alignItems(value: string | Ref<string>) {
-    if (value instanceof Ref) this.setStyleRefMap("alignItems", value);
+  public set alignItems(value: string | ref<string>) {
+    if (typeof value !== "string") this.setStylerefMap("alignItems", value);
     else this._style.alignItems = value as any;
   }
 
@@ -3112,8 +3112,8 @@ export class CSSStyleRef implements CSSStyleDeclarationRef {
     return this._style.alignSelf;
   }
 
-  public set alignSelf(value: string | Ref<string>) {
-    if (value instanceof Ref) this.setStyleRefMap("alignSelf", value);
+  public set alignSelf(value: string | ref<string>) {
+    if (typeof value !== "string") this.setStylerefMap("alignSelf", value);
     else this._style.alignSelf = value as any;
   }
 
@@ -3121,8 +3121,9 @@ export class CSSStyleRef implements CSSStyleDeclarationRef {
     return this._style.alignmentBaseline;
   }
 
-  public set alignmentBaseline(value: string | Ref<string>) {
-    if (value instanceof Ref) this.setStyleRefMap("alignmentBaseline", value);
+  public set alignmentBaseline(value: string | ref<string>) {
+    if (typeof value !== "string")
+      this.setStylerefMap("alignmentBaseline", value);
     else this._style.alignmentBaseline = value as any;
   }
 
@@ -3130,8 +3131,8 @@ export class CSSStyleRef implements CSSStyleDeclarationRef {
     return this._style.all;
   }
 
-  public set all(value: string | Ref<string>) {
-    if (value instanceof Ref) this.setStyleRefMap("all", value);
+  public set all(value: string | ref<string>) {
+    if (typeof value !== "string") this.setStylerefMap("all", value);
     else this._style.all = value as any;
   }
 
@@ -3139,8 +3140,8 @@ export class CSSStyleRef implements CSSStyleDeclarationRef {
     return this._style.animation;
   }
 
-  public set animation(value: string | Ref<string>) {
-    if (value instanceof Ref) this.setStyleRefMap("animation", value);
+  public set animation(value: string | ref<string>) {
+    if (typeof value !== "string") this.setStylerefMap("animation", value);
     else this._style.animation = value as any;
   }
 
@@ -3148,9 +3149,9 @@ export class CSSStyleRef implements CSSStyleDeclarationRef {
     return this._style.animationComposition;
   }
 
-  public set animationComposition(value: string | Ref<string>) {
-    if (value instanceof Ref)
-      this.setStyleRefMap("animationComposition", value);
+  public set animationComposition(value: string | ref<string>) {
+    if (typeof value !== "string")
+      this.setStylerefMap("animationComposition", value);
     else this._style.animationComposition = value as any;
   }
 
@@ -3158,8 +3159,8 @@ export class CSSStyleRef implements CSSStyleDeclarationRef {
     return this._style.animationDelay;
   }
 
-  public set animationDelay(value: string | Ref<string>) {
-    if (value instanceof Ref) this.setStyleRefMap("animationDelay", value);
+  public set animationDelay(value: string | ref<string>) {
+    if (typeof value !== "string") this.setStylerefMap("animationDelay", value);
     else this._style.animationDelay = value as any;
   }
 
@@ -3167,8 +3168,9 @@ export class CSSStyleRef implements CSSStyleDeclarationRef {
     return this._style.animationDirection;
   }
 
-  public set animationDirection(value: string | Ref<string>) {
-    if (value instanceof Ref) this.setStyleRefMap("animationDirection", value);
+  public set animationDirection(value: string | ref<string>) {
+    if (typeof value !== "string")
+      this.setStylerefMap("animationDirection", value);
     else this._style.animationDirection = value as any;
   }
 
@@ -3176,8 +3178,9 @@ export class CSSStyleRef implements CSSStyleDeclarationRef {
     return this._style.animationDuration;
   }
 
-  public set animationDuration(value: string | Ref<string>) {
-    if (value instanceof Ref) this.setStyleRefMap("animationDuration", value);
+  public set animationDuration(value: string | ref<string>) {
+    if (typeof value !== "string")
+      this.setStylerefMap("animationDuration", value);
     else this._style.animationDuration = value as any;
   }
 
@@ -3185,8 +3188,9 @@ export class CSSStyleRef implements CSSStyleDeclarationRef {
     return this._style.animationFillMode;
   }
 
-  public set animationFillMode(value: string | Ref<string>) {
-    if (value instanceof Ref) this.setStyleRefMap("animationFillMode", value);
+  public set animationFillMode(value: string | ref<string>) {
+    if (typeof value !== "string")
+      this.setStylerefMap("animationFillMode", value);
     else this._style.animationFillMode = value as any;
   }
 
@@ -3194,9 +3198,9 @@ export class CSSStyleRef implements CSSStyleDeclarationRef {
     return this._style.animationIterationCount;
   }
 
-  public set animationIterationCount(value: string | Ref<string>) {
-    if (value instanceof Ref)
-      this.setStyleRefMap("animationIterationCount", value);
+  public set animationIterationCount(value: string | ref<string>) {
+    if (typeof value !== "string")
+      this.setStylerefMap("animationIterationCount", value);
     else this._style.animationIterationCount = value as any;
   }
 
@@ -3204,8 +3208,8 @@ export class CSSStyleRef implements CSSStyleDeclarationRef {
     return this._style.animationName;
   }
 
-  public set animationName(value: string | Ref<string>) {
-    if (value instanceof Ref) this.setStyleRefMap("animationName", value);
+  public set animationName(value: string | ref<string>) {
+    if (typeof value !== "string") this.setStylerefMap("animationName", value);
     else this._style.animationName = value as any;
   }
 
@@ -3213,8 +3217,9 @@ export class CSSStyleRef implements CSSStyleDeclarationRef {
     return this._style.animationPlayState;
   }
 
-  public set animationPlayState(value: string | Ref<string>) {
-    if (value instanceof Ref) this.setStyleRefMap("animationPlayState", value);
+  public set animationPlayState(value: string | ref<string>) {
+    if (typeof value !== "string")
+      this.setStylerefMap("animationPlayState", value);
     else this._style.animationPlayState = value as any;
   }
 
@@ -3222,9 +3227,9 @@ export class CSSStyleRef implements CSSStyleDeclarationRef {
     return this._style.animationTimingFunction;
   }
 
-  public set animationTimingFunction(value: string | Ref<string>) {
-    if (value instanceof Ref)
-      this.setStyleRefMap("animationTimingFunction", value);
+  public set animationTimingFunction(value: string | ref<string>) {
+    if (typeof value !== "string")
+      this.setStylerefMap("animationTimingFunction", value);
     else this._style.animationTimingFunction = value as any;
   }
 
@@ -3232,8 +3237,8 @@ export class CSSStyleRef implements CSSStyleDeclarationRef {
     return this._style.appearance;
   }
 
-  public set appearance(value: string | Ref<string>) {
-    if (value instanceof Ref) this.setStyleRefMap("appearance", value);
+  public set appearance(value: string | ref<string>) {
+    if (typeof value !== "string") this.setStylerefMap("appearance", value);
     else this._style.appearance = value as any;
   }
 
@@ -3241,8 +3246,8 @@ export class CSSStyleRef implements CSSStyleDeclarationRef {
     return this._style.aspectRatio;
   }
 
-  public set aspectRatio(value: string | Ref<string>) {
-    if (value instanceof Ref) this.setStyleRefMap("aspectRatio", value);
+  public set aspectRatio(value: string | ref<string>) {
+    if (typeof value !== "string") this.setStylerefMap("aspectRatio", value);
     else this._style.aspectRatio = value as any;
   }
 
@@ -3250,8 +3255,8 @@ export class CSSStyleRef implements CSSStyleDeclarationRef {
     return this._style.backdropFilter;
   }
 
-  public set backdropFilter(value: string | Ref<string>) {
-    if (value instanceof Ref) this.setStyleRefMap("backdropFilter", value);
+  public set backdropFilter(value: string | ref<string>) {
+    if (typeof value !== "string") this.setStylerefMap("backdropFilter", value);
     else this._style.backdropFilter = value as any;
   }
 
@@ -3259,8 +3264,9 @@ export class CSSStyleRef implements CSSStyleDeclarationRef {
     return this._style.backfaceVisibility;
   }
 
-  public set backfaceVisibility(value: string | Ref<string>) {
-    if (value instanceof Ref) this.setStyleRefMap("backfaceVisibility", value);
+  public set backfaceVisibility(value: string | ref<string>) {
+    if (typeof value !== "string")
+      this.setStylerefMap("backfaceVisibility", value);
     else this._style.backfaceVisibility = value as any;
   }
 
@@ -3268,8 +3274,8 @@ export class CSSStyleRef implements CSSStyleDeclarationRef {
     return this._style.background;
   }
 
-  public set background(value: string | Ref<string>) {
-    if (value instanceof Ref) this.setStyleRefMap("background", value);
+  public set background(value: string | ref<string>) {
+    if (typeof value !== "string") this.setStylerefMap("background", value);
     else this._style.background = value as any;
   }
 
@@ -3277,9 +3283,9 @@ export class CSSStyleRef implements CSSStyleDeclarationRef {
     return this._style.backgroundAttachment;
   }
 
-  public set backgroundAttachment(value: string | Ref<string>) {
-    if (value instanceof Ref)
-      this.setStyleRefMap("backgroundAttachment", value);
+  public set backgroundAttachment(value: string | ref<string>) {
+    if (typeof value !== "string")
+      this.setStylerefMap("backgroundAttachment", value);
     else this._style.backgroundAttachment = value as any;
   }
 
@@ -3287,8 +3293,9 @@ export class CSSStyleRef implements CSSStyleDeclarationRef {
     return this._style.backgroundBlendMode;
   }
 
-  public set backgroundBlendMode(value: string | Ref<string>) {
-    if (value instanceof Ref) this.setStyleRefMap("backgroundBlendMode", value);
+  public set backgroundBlendMode(value: string | ref<string>) {
+    if (typeof value !== "string")
+      this.setStylerefMap("backgroundBlendMode", value);
     else this._style.backgroundBlendMode = value as any;
   }
 
@@ -3296,8 +3303,8 @@ export class CSSStyleRef implements CSSStyleDeclarationRef {
     return this._style.backgroundClip;
   }
 
-  public set backgroundClip(value: string | Ref<string>) {
-    if (value instanceof Ref) this.setStyleRefMap("backgroundClip", value);
+  public set backgroundClip(value: string | ref<string>) {
+    if (typeof value !== "string") this.setStylerefMap("backgroundClip", value);
     else this._style.backgroundClip = value as any;
   }
 
@@ -3305,8 +3312,9 @@ export class CSSStyleRef implements CSSStyleDeclarationRef {
     return this._style.backgroundColor;
   }
 
-  public set backgroundColor(value: string | Ref<string>) {
-    if (value instanceof Ref) this.setStyleRefMap("backgroundColor", value);
+  public set backgroundColor(value: string | ref<string>) {
+    if (typeof value !== "string")
+      this.setStylerefMap("backgroundColor", value);
     else this._style.backgroundColor = value as any;
   }
 
@@ -3314,8 +3322,9 @@ export class CSSStyleRef implements CSSStyleDeclarationRef {
     return this._style.backgroundImage;
   }
 
-  public set backgroundImage(value: string | Ref<string>) {
-    if (value instanceof Ref) this.setStyleRefMap("backgroundImage", value);
+  public set backgroundImage(value: string | ref<string>) {
+    if (typeof value !== "string")
+      this.setStylerefMap("backgroundImage", value);
     else this._style.backgroundImage = value as any;
   }
 
@@ -3323,8 +3332,9 @@ export class CSSStyleRef implements CSSStyleDeclarationRef {
     return this._style.backgroundOrigin;
   }
 
-  public set backgroundOrigin(value: string | Ref<string>) {
-    if (value instanceof Ref) this.setStyleRefMap("backgroundOrigin", value);
+  public set backgroundOrigin(value: string | ref<string>) {
+    if (typeof value !== "string")
+      this.setStylerefMap("backgroundOrigin", value);
     else this._style.backgroundOrigin = value as any;
   }
 
@@ -3332,8 +3342,9 @@ export class CSSStyleRef implements CSSStyleDeclarationRef {
     return this._style.backgroundPosition;
   }
 
-  public set backgroundPosition(value: string | Ref<string>) {
-    if (value instanceof Ref) this.setStyleRefMap("backgroundPosition", value);
+  public set backgroundPosition(value: string | ref<string>) {
+    if (typeof value !== "string")
+      this.setStylerefMap("backgroundPosition", value);
     else this._style.backgroundPosition = value as any;
   }
 
@@ -3341,8 +3352,9 @@ export class CSSStyleRef implements CSSStyleDeclarationRef {
     return this._style.backgroundPositionX;
   }
 
-  public set backgroundPositionX(value: string | Ref<string>) {
-    if (value instanceof Ref) this.setStyleRefMap("backgroundPositionX", value);
+  public set backgroundPositionX(value: string | ref<string>) {
+    if (typeof value !== "string")
+      this.setStylerefMap("backgroundPositionX", value);
     else this._style.backgroundPositionX = value as any;
   }
 
@@ -3350,8 +3362,9 @@ export class CSSStyleRef implements CSSStyleDeclarationRef {
     return this._style.backgroundPositionY;
   }
 
-  public set backgroundPositionY(value: string | Ref<string>) {
-    if (value instanceof Ref) this.setStyleRefMap("backgroundPositionY", value);
+  public set backgroundPositionY(value: string | ref<string>) {
+    if (typeof value !== "string")
+      this.setStylerefMap("backgroundPositionY", value);
     else this._style.backgroundPositionY = value as any;
   }
 
@@ -3359,8 +3372,9 @@ export class CSSStyleRef implements CSSStyleDeclarationRef {
     return this._style.backgroundRepeat;
   }
 
-  public set backgroundRepeat(value: string | Ref<string>) {
-    if (value instanceof Ref) this.setStyleRefMap("backgroundRepeat", value);
+  public set backgroundRepeat(value: string | ref<string>) {
+    if (typeof value !== "string")
+      this.setStylerefMap("backgroundRepeat", value);
     else this._style.backgroundRepeat = value as any;
   }
 
@@ -3368,8 +3382,8 @@ export class CSSStyleRef implements CSSStyleDeclarationRef {
     return this._style.backgroundSize;
   }
 
-  public set backgroundSize(value: string | Ref<string>) {
-    if (value instanceof Ref) this.setStyleRefMap("backgroundSize", value);
+  public set backgroundSize(value: string | ref<string>) {
+    if (typeof value !== "string") this.setStylerefMap("backgroundSize", value);
     else this._style.backgroundSize = value as any;
   }
 
@@ -3377,8 +3391,8 @@ export class CSSStyleRef implements CSSStyleDeclarationRef {
     return this._style.baselineShift;
   }
 
-  public set baselineShift(value: string | Ref<string>) {
-    if (value instanceof Ref) this.setStyleRefMap("baselineShift", value);
+  public set baselineShift(value: string | ref<string>) {
+    if (typeof value !== "string") this.setStylerefMap("baselineShift", value);
     else this._style.baselineShift = value as any;
   }
 
@@ -3386,8 +3400,8 @@ export class CSSStyleRef implements CSSStyleDeclarationRef {
     return this._style.blockSize;
   }
 
-  public set blockSize(value: string | Ref<string>) {
-    if (value instanceof Ref) this.setStyleRefMap("blockSize", value);
+  public set blockSize(value: string | ref<string>) {
+    if (typeof value !== "string") this.setStylerefMap("blockSize", value);
     else this._style.blockSize = value as any;
   }
 
@@ -3395,8 +3409,8 @@ export class CSSStyleRef implements CSSStyleDeclarationRef {
     return this._style.border;
   }
 
-  public set border(value: string | Ref<string>) {
-    if (value instanceof Ref) this.setStyleRefMap("border", value);
+  public set border(value: string | ref<string>) {
+    if (typeof value !== "string") this.setStylerefMap("border", value);
     else this._style.border = value as any;
   }
 
@@ -3404,8 +3418,8 @@ export class CSSStyleRef implements CSSStyleDeclarationRef {
     return this._style.borderBlock;
   }
 
-  public set borderBlock(value: string | Ref<string>) {
-    if (value instanceof Ref) this.setStyleRefMap("borderBlock", value);
+  public set borderBlock(value: string | ref<string>) {
+    if (typeof value !== "string") this.setStylerefMap("borderBlock", value);
     else this._style.borderBlock = value as any;
   }
 
@@ -3413,8 +3427,9 @@ export class CSSStyleRef implements CSSStyleDeclarationRef {
     return this._style.borderBlockColor;
   }
 
-  public set borderBlockColor(value: string | Ref<string>) {
-    if (value instanceof Ref) this.setStyleRefMap("borderBlockColor", value);
+  public set borderBlockColor(value: string | ref<string>) {
+    if (typeof value !== "string")
+      this.setStylerefMap("borderBlockColor", value);
     else this._style.borderBlockColor = value as any;
   }
 
@@ -3422,8 +3437,8 @@ export class CSSStyleRef implements CSSStyleDeclarationRef {
     return this._style.borderBlockEnd;
   }
 
-  public set borderBlockEnd(value: string | Ref<string>) {
-    if (value instanceof Ref) this.setStyleRefMap("borderBlockEnd", value);
+  public set borderBlockEnd(value: string | ref<string>) {
+    if (typeof value !== "string") this.setStylerefMap("borderBlockEnd", value);
     else this._style.borderBlockEnd = value as any;
   }
 
@@ -3431,8 +3446,9 @@ export class CSSStyleRef implements CSSStyleDeclarationRef {
     return this._style.borderBlockEndColor;
   }
 
-  public set borderBlockEndColor(value: string | Ref<string>) {
-    if (value instanceof Ref) this.setStyleRefMap("borderBlockEndColor", value);
+  public set borderBlockEndColor(value: string | ref<string>) {
+    if (typeof value !== "string")
+      this.setStylerefMap("borderBlockEndColor", value);
     else this._style.borderBlockEndColor = value as any;
   }
 
@@ -3440,8 +3456,9 @@ export class CSSStyleRef implements CSSStyleDeclarationRef {
     return this._style.borderBlockEndStyle;
   }
 
-  public set borderBlockEndStyle(value: string | Ref<string>) {
-    if (value instanceof Ref) this.setStyleRefMap("borderBlockEndStyle", value);
+  public set borderBlockEndStyle(value: string | ref<string>) {
+    if (typeof value !== "string")
+      this.setStylerefMap("borderBlockEndStyle", value);
     else this._style.borderBlockEndStyle = value as any;
   }
 
@@ -3449,8 +3466,9 @@ export class CSSStyleRef implements CSSStyleDeclarationRef {
     return this._style.borderBlockEndWidth;
   }
 
-  public set borderBlockEndWidth(value: string | Ref<string>) {
-    if (value instanceof Ref) this.setStyleRefMap("borderBlockEndWidth", value);
+  public set borderBlockEndWidth(value: string | ref<string>) {
+    if (typeof value !== "string")
+      this.setStylerefMap("borderBlockEndWidth", value);
     else this._style.borderBlockEndWidth = value as any;
   }
 
@@ -3458,8 +3476,9 @@ export class CSSStyleRef implements CSSStyleDeclarationRef {
     return this._style.borderBlockStart;
   }
 
-  public set borderBlockStart(value: string | Ref<string>) {
-    if (value instanceof Ref) this.setStyleRefMap("borderBlockStart", value);
+  public set borderBlockStart(value: string | ref<string>) {
+    if (typeof value !== "string")
+      this.setStylerefMap("borderBlockStart", value);
     else this._style.borderBlockStart = value as any;
   }
 
@@ -3467,9 +3486,9 @@ export class CSSStyleRef implements CSSStyleDeclarationRef {
     return this._style.borderBlockStartColor;
   }
 
-  public set borderBlockStartColor(value: string | Ref<string>) {
-    if (value instanceof Ref)
-      this.setStyleRefMap("borderBlockStartColor", value);
+  public set borderBlockStartColor(value: string | ref<string>) {
+    if (typeof value !== "string")
+      this.setStylerefMap("borderBlockStartColor", value);
     else this._style.borderBlockStartColor = value as any;
   }
 
@@ -3477,9 +3496,9 @@ export class CSSStyleRef implements CSSStyleDeclarationRef {
     return this._style.borderBlockStartStyle;
   }
 
-  public set borderBlockStartStyle(value: string | Ref<string>) {
-    if (value instanceof Ref)
-      this.setStyleRefMap("borderBlockStartStyle", value);
+  public set borderBlockStartStyle(value: string | ref<string>) {
+    if (typeof value !== "string")
+      this.setStylerefMap("borderBlockStartStyle", value);
     else this._style.borderBlockStartStyle = value as any;
   }
 
@@ -3487,9 +3506,9 @@ export class CSSStyleRef implements CSSStyleDeclarationRef {
     return this._style.borderBlockStartWidth;
   }
 
-  public set borderBlockStartWidth(value: string | Ref<string>) {
-    if (value instanceof Ref)
-      this.setStyleRefMap("borderBlockStartWidth", value);
+  public set borderBlockStartWidth(value: string | ref<string>) {
+    if (typeof value !== "string")
+      this.setStylerefMap("borderBlockStartWidth", value);
     else this._style.borderBlockStartWidth = value as any;
   }
 
@@ -3497,8 +3516,9 @@ export class CSSStyleRef implements CSSStyleDeclarationRef {
     return this._style.borderBlockStyle;
   }
 
-  public set borderBlockStyle(value: string | Ref<string>) {
-    if (value instanceof Ref) this.setStyleRefMap("borderBlockStyle", value);
+  public set borderBlockStyle(value: string | ref<string>) {
+    if (typeof value !== "string")
+      this.setStylerefMap("borderBlockStyle", value);
     else this._style.borderBlockStyle = value as any;
   }
 
@@ -3506,8 +3526,9 @@ export class CSSStyleRef implements CSSStyleDeclarationRef {
     return this._style.borderBlockWidth;
   }
 
-  public set borderBlockWidth(value: string | Ref<string>) {
-    if (value instanceof Ref) this.setStyleRefMap("borderBlockWidth", value);
+  public set borderBlockWidth(value: string | ref<string>) {
+    if (typeof value !== "string")
+      this.setStylerefMap("borderBlockWidth", value);
     else this._style.borderBlockWidth = value as any;
   }
 
@@ -3515,8 +3536,8 @@ export class CSSStyleRef implements CSSStyleDeclarationRef {
     return this._style.borderBottom;
   }
 
-  public set borderBottom(value: string | Ref<string>) {
-    if (value instanceof Ref) this.setStyleRefMap("borderBottom", value);
+  public set borderBottom(value: string | ref<string>) {
+    if (typeof value !== "string") this.setStylerefMap("borderBottom", value);
     else this._style.borderBottom = value as any;
   }
 
@@ -3524,8 +3545,9 @@ export class CSSStyleRef implements CSSStyleDeclarationRef {
     return this._style.borderBottomColor;
   }
 
-  public set borderBottomColor(value: string | Ref<string>) {
-    if (value instanceof Ref) this.setStyleRefMap("borderBottomColor", value);
+  public set borderBottomColor(value: string | ref<string>) {
+    if (typeof value !== "string")
+      this.setStylerefMap("borderBottomColor", value);
     else this._style.borderBottomColor = value as any;
   }
 
@@ -3533,9 +3555,9 @@ export class CSSStyleRef implements CSSStyleDeclarationRef {
     return this._style.borderBottomLeftRadius;
   }
 
-  public set borderBottomLeftRadius(value: string | Ref<string>) {
-    if (value instanceof Ref)
-      this.setStyleRefMap("borderBottomLeftRadius", value);
+  public set borderBottomLeftRadius(value: string | ref<string>) {
+    if (typeof value !== "string")
+      this.setStylerefMap("borderBottomLeftRadius", value);
     else this._style.borderBottomLeftRadius = value as any;
   }
 
@@ -3543,9 +3565,9 @@ export class CSSStyleRef implements CSSStyleDeclarationRef {
     return this._style.borderBottomRightRadius;
   }
 
-  public set borderBottomRightRadius(value: string | Ref<string>) {
-    if (value instanceof Ref)
-      this.setStyleRefMap("borderBottomRightRadius", value);
+  public set borderBottomRightRadius(value: string | ref<string>) {
+    if (typeof value !== "string")
+      this.setStylerefMap("borderBottomRightRadius", value);
     else this._style.borderBottomRightRadius = value as any;
   }
 
@@ -3553,8 +3575,9 @@ export class CSSStyleRef implements CSSStyleDeclarationRef {
     return this._style.borderBottomStyle;
   }
 
-  public set borderBottomStyle(value: string | Ref<string>) {
-    if (value instanceof Ref) this.setStyleRefMap("borderBottomStyle", value);
+  public set borderBottomStyle(value: string | ref<string>) {
+    if (typeof value !== "string")
+      this.setStylerefMap("borderBottomStyle", value);
     else this._style.borderBottomStyle = value as any;
   }
 
@@ -3562,8 +3585,9 @@ export class CSSStyleRef implements CSSStyleDeclarationRef {
     return this._style.borderBottomWidth;
   }
 
-  public set borderBottomWidth(value: string | Ref<string>) {
-    if (value instanceof Ref) this.setStyleRefMap("borderBottomWidth", value);
+  public set borderBottomWidth(value: string | ref<string>) {
+    if (typeof value !== "string")
+      this.setStylerefMap("borderBottomWidth", value);
     else this._style.borderBottomWidth = value as any;
   }
 
@@ -3571,8 +3595,8 @@ export class CSSStyleRef implements CSSStyleDeclarationRef {
     return this._style.borderCollapse;
   }
 
-  public set borderCollapse(value: string | Ref<string>) {
-    if (value instanceof Ref) this.setStyleRefMap("borderCollapse", value);
+  public set borderCollapse(value: string | ref<string>) {
+    if (typeof value !== "string") this.setStylerefMap("borderCollapse", value);
     else this._style.borderCollapse = value as any;
   }
 
@@ -3580,8 +3604,8 @@ export class CSSStyleRef implements CSSStyleDeclarationRef {
     return this._style.borderColor;
   }
 
-  public set borderColor(value: string | Ref<string>) {
-    if (value instanceof Ref) this.setStyleRefMap("borderColor", value);
+  public set borderColor(value: string | ref<string>) {
+    if (typeof value !== "string") this.setStylerefMap("borderColor", value);
     else this._style.borderColor = value as any;
   }
 
@@ -3589,8 +3613,9 @@ export class CSSStyleRef implements CSSStyleDeclarationRef {
     return this._style.borderEndEndRadius;
   }
 
-  public set borderEndEndRadius(value: string | Ref<string>) {
-    if (value instanceof Ref) this.setStyleRefMap("borderEndEndRadius", value);
+  public set borderEndEndRadius(value: string | ref<string>) {
+    if (typeof value !== "string")
+      this.setStylerefMap("borderEndEndRadius", value);
     else this._style.borderEndEndRadius = value as any;
   }
 
@@ -3598,9 +3623,9 @@ export class CSSStyleRef implements CSSStyleDeclarationRef {
     return this._style.borderEndStartRadius;
   }
 
-  public set borderEndStartRadius(value: string | Ref<string>) {
-    if (value instanceof Ref)
-      this.setStyleRefMap("borderEndStartRadius", value);
+  public set borderEndStartRadius(value: string | ref<string>) {
+    if (typeof value !== "string")
+      this.setStylerefMap("borderEndStartRadius", value);
     else this._style.borderEndStartRadius = value as any;
   }
 
@@ -3608,8 +3633,8 @@ export class CSSStyleRef implements CSSStyleDeclarationRef {
     return this._style.borderImage;
   }
 
-  public set borderImage(value: string | Ref<string>) {
-    if (value instanceof Ref) this.setStyleRefMap("borderImage", value);
+  public set borderImage(value: string | ref<string>) {
+    if (typeof value !== "string") this.setStylerefMap("borderImage", value);
     else this._style.borderImage = value as any;
   }
 
@@ -3617,8 +3642,9 @@ export class CSSStyleRef implements CSSStyleDeclarationRef {
     return this._style.borderImageOutset;
   }
 
-  public set borderImageOutset(value: string | Ref<string>) {
-    if (value instanceof Ref) this.setStyleRefMap("borderImageOutset", value);
+  public set borderImageOutset(value: string | ref<string>) {
+    if (typeof value !== "string")
+      this.setStylerefMap("borderImageOutset", value);
     else this._style.borderImageOutset = value as any;
   }
 
@@ -3626,8 +3652,9 @@ export class CSSStyleRef implements CSSStyleDeclarationRef {
     return this._style.borderImageRepeat;
   }
 
-  public set borderImageRepeat(value: string | Ref<string>) {
-    if (value instanceof Ref) this.setStyleRefMap("borderImageRepeat", value);
+  public set borderImageRepeat(value: string | ref<string>) {
+    if (typeof value !== "string")
+      this.setStylerefMap("borderImageRepeat", value);
     else this._style.borderImageRepeat = value as any;
   }
 
@@ -3635,8 +3662,9 @@ export class CSSStyleRef implements CSSStyleDeclarationRef {
     return this._style.borderImageSlice;
   }
 
-  public set borderImageSlice(value: string | Ref<string>) {
-    if (value instanceof Ref) this.setStyleRefMap("borderImageSlice", value);
+  public set borderImageSlice(value: string | ref<string>) {
+    if (typeof value !== "string")
+      this.setStylerefMap("borderImageSlice", value);
     else this._style.borderImageSlice = value as any;
   }
 
@@ -3644,8 +3672,9 @@ export class CSSStyleRef implements CSSStyleDeclarationRef {
     return this._style.borderImageSource;
   }
 
-  public set borderImageSource(value: string | Ref<string>) {
-    if (value instanceof Ref) this.setStyleRefMap("borderImageSource", value);
+  public set borderImageSource(value: string | ref<string>) {
+    if (typeof value !== "string")
+      this.setStylerefMap("borderImageSource", value);
     else this._style.borderImageSource = value as any;
   }
 
@@ -3653,8 +3682,9 @@ export class CSSStyleRef implements CSSStyleDeclarationRef {
     return this._style.borderImageWidth;
   }
 
-  public set borderImageWidth(value: string | Ref<string>) {
-    if (value instanceof Ref) this.setStyleRefMap("borderImageWidth", value);
+  public set borderImageWidth(value: string | ref<string>) {
+    if (typeof value !== "string")
+      this.setStylerefMap("borderImageWidth", value);
     else this._style.borderImageWidth = value as any;
   }
 
@@ -3662,8 +3692,8 @@ export class CSSStyleRef implements CSSStyleDeclarationRef {
     return this._style.borderInline;
   }
 
-  public set borderInline(value: string | Ref<string>) {
-    if (value instanceof Ref) this.setStyleRefMap("borderInline", value);
+  public set borderInline(value: string | ref<string>) {
+    if (typeof value !== "string") this.setStylerefMap("borderInline", value);
     else this._style.borderInline = value as any;
   }
 
@@ -3671,8 +3701,9 @@ export class CSSStyleRef implements CSSStyleDeclarationRef {
     return this._style.borderInlineColor;
   }
 
-  public set borderInlineColor(value: string | Ref<string>) {
-    if (value instanceof Ref) this.setStyleRefMap("borderInlineColor", value);
+  public set borderInlineColor(value: string | ref<string>) {
+    if (typeof value !== "string")
+      this.setStylerefMap("borderInlineColor", value);
     else this._style.borderInlineColor = value as any;
   }
 
@@ -3680,8 +3711,9 @@ export class CSSStyleRef implements CSSStyleDeclarationRef {
     return this._style.borderInlineEnd;
   }
 
-  public set borderInlineEnd(value: string | Ref<string>) {
-    if (value instanceof Ref) this.setStyleRefMap("borderInlineEnd", value);
+  public set borderInlineEnd(value: string | ref<string>) {
+    if (typeof value !== "string")
+      this.setStylerefMap("borderInlineEnd", value);
     else this._style.borderInlineEnd = value as any;
   }
 
@@ -3689,9 +3721,9 @@ export class CSSStyleRef implements CSSStyleDeclarationRef {
     return this._style.borderInlineEndColor;
   }
 
-  public set borderInlineEndColor(value: string | Ref<string>) {
-    if (value instanceof Ref)
-      this.setStyleRefMap("borderInlineEndColor", value);
+  public set borderInlineEndColor(value: string | ref<string>) {
+    if (typeof value !== "string")
+      this.setStylerefMap("borderInlineEndColor", value);
     else this._style.borderInlineEndColor = value as any;
   }
 
@@ -3699,9 +3731,9 @@ export class CSSStyleRef implements CSSStyleDeclarationRef {
     return this._style.borderInlineEndStyle;
   }
 
-  public set borderInlineEndStyle(value: string | Ref<string>) {
-    if (value instanceof Ref)
-      this.setStyleRefMap("borderInlineEndStyle", value);
+  public set borderInlineEndStyle(value: string | ref<string>) {
+    if (typeof value !== "string")
+      this.setStylerefMap("borderInlineEndStyle", value);
     else this._style.borderInlineEndStyle = value as any;
   }
 
@@ -3709,9 +3741,9 @@ export class CSSStyleRef implements CSSStyleDeclarationRef {
     return this._style.borderInlineEndWidth;
   }
 
-  public set borderInlineEndWidth(value: string | Ref<string>) {
-    if (value instanceof Ref)
-      this.setStyleRefMap("borderInlineEndWidth", value);
+  public set borderInlineEndWidth(value: string | ref<string>) {
+    if (typeof value !== "string")
+      this.setStylerefMap("borderInlineEndWidth", value);
     else this._style.borderInlineEndWidth = value as any;
   }
 
@@ -3719,8 +3751,9 @@ export class CSSStyleRef implements CSSStyleDeclarationRef {
     return this._style.borderInlineStart;
   }
 
-  public set borderInlineStart(value: string | Ref<string>) {
-    if (value instanceof Ref) this.setStyleRefMap("borderInlineStart", value);
+  public set borderInlineStart(value: string | ref<string>) {
+    if (typeof value !== "string")
+      this.setStylerefMap("borderInlineStart", value);
     else this._style.borderInlineStart = value as any;
   }
 
@@ -3728,9 +3761,9 @@ export class CSSStyleRef implements CSSStyleDeclarationRef {
     return this._style.borderInlineStartColor;
   }
 
-  public set borderInlineStartColor(value: string | Ref<string>) {
-    if (value instanceof Ref)
-      this.setStyleRefMap("borderInlineStartColor", value);
+  public set borderInlineStartColor(value: string | ref<string>) {
+    if (typeof value !== "string")
+      this.setStylerefMap("borderInlineStartColor", value);
     else this._style.borderInlineStartColor = value as any;
   }
 
@@ -3738,9 +3771,9 @@ export class CSSStyleRef implements CSSStyleDeclarationRef {
     return this._style.borderInlineStartStyle;
   }
 
-  public set borderInlineStartStyle(value: string | Ref<string>) {
-    if (value instanceof Ref)
-      this.setStyleRefMap("borderInlineStartStyle", value);
+  public set borderInlineStartStyle(value: string | ref<string>) {
+    if (typeof value !== "string")
+      this.setStylerefMap("borderInlineStartStyle", value);
     else this._style.borderInlineStartStyle = value as any;
   }
 
@@ -3748,9 +3781,9 @@ export class CSSStyleRef implements CSSStyleDeclarationRef {
     return this._style.borderInlineStartWidth;
   }
 
-  public set borderInlineStartWidth(value: string | Ref<string>) {
-    if (value instanceof Ref)
-      this.setStyleRefMap("borderInlineStartWidth", value);
+  public set borderInlineStartWidth(value: string | ref<string>) {
+    if (typeof value !== "string")
+      this.setStylerefMap("borderInlineStartWidth", value);
     else this._style.borderInlineStartWidth = value as any;
   }
 
@@ -3758,8 +3791,9 @@ export class CSSStyleRef implements CSSStyleDeclarationRef {
     return this._style.borderInlineStyle;
   }
 
-  public set borderInlineStyle(value: string | Ref<string>) {
-    if (value instanceof Ref) this.setStyleRefMap("borderInlineStyle", value);
+  public set borderInlineStyle(value: string | ref<string>) {
+    if (typeof value !== "string")
+      this.setStylerefMap("borderInlineStyle", value);
     else this._style.borderInlineStyle = value as any;
   }
 
@@ -3767,8 +3801,9 @@ export class CSSStyleRef implements CSSStyleDeclarationRef {
     return this._style.borderInlineWidth;
   }
 
-  public set borderInlineWidth(value: string | Ref<string>) {
-    if (value instanceof Ref) this.setStyleRefMap("borderInlineWidth", value);
+  public set borderInlineWidth(value: string | ref<string>) {
+    if (typeof value !== "string")
+      this.setStylerefMap("borderInlineWidth", value);
     else this._style.borderInlineWidth = value as any;
   }
 
@@ -3776,8 +3811,8 @@ export class CSSStyleRef implements CSSStyleDeclarationRef {
     return this._style.borderLeft;
   }
 
-  public set borderLeft(value: string | Ref<string>) {
-    if (value instanceof Ref) this.setStyleRefMap("borderLeft", value);
+  public set borderLeft(value: string | ref<string>) {
+    if (typeof value !== "string") this.setStylerefMap("borderLeft", value);
     else this._style.borderLeft = value as any;
   }
 
@@ -3785,8 +3820,9 @@ export class CSSStyleRef implements CSSStyleDeclarationRef {
     return this._style.borderLeftColor;
   }
 
-  public set borderLeftColor(value: string | Ref<string>) {
-    if (value instanceof Ref) this.setStyleRefMap("borderLeftColor", value);
+  public set borderLeftColor(value: string | ref<string>) {
+    if (typeof value !== "string")
+      this.setStylerefMap("borderLeftColor", value);
     else this._style.borderLeftColor = value as any;
   }
 
@@ -3794,8 +3830,9 @@ export class CSSStyleRef implements CSSStyleDeclarationRef {
     return this._style.borderLeftStyle;
   }
 
-  public set borderLeftStyle(value: string | Ref<string>) {
-    if (value instanceof Ref) this.setStyleRefMap("borderLeftStyle", value);
+  public set borderLeftStyle(value: string | ref<string>) {
+    if (typeof value !== "string")
+      this.setStylerefMap("borderLeftStyle", value);
     else this._style.borderLeftStyle = value as any;
   }
 
@@ -3803,8 +3840,9 @@ export class CSSStyleRef implements CSSStyleDeclarationRef {
     return this._style.borderLeftWidth;
   }
 
-  public set borderLeftWidth(value: string | Ref<string>) {
-    if (value instanceof Ref) this.setStyleRefMap("borderLeftWidth", value);
+  public set borderLeftWidth(value: string | ref<string>) {
+    if (typeof value !== "string")
+      this.setStylerefMap("borderLeftWidth", value);
     else this._style.borderLeftWidth = value as any;
   }
 
@@ -3812,8 +3850,8 @@ export class CSSStyleRef implements CSSStyleDeclarationRef {
     return this._style.borderRadius;
   }
 
-  public set borderRadius(value: string | Ref<string>) {
-    if (value instanceof Ref) this.setStyleRefMap("borderRadius", value);
+  public set borderRadius(value: string | ref<string>) {
+    if (typeof value !== "string") this.setStylerefMap("borderRadius", value);
     else this._style.borderRadius = value as any;
   }
 
@@ -3821,8 +3859,8 @@ export class CSSStyleRef implements CSSStyleDeclarationRef {
     return this._style.borderRight;
   }
 
-  public set borderRight(value: string | Ref<string>) {
-    if (value instanceof Ref) this.setStyleRefMap("borderRight", value);
+  public set borderRight(value: string | ref<string>) {
+    if (typeof value !== "string") this.setStylerefMap("borderRight", value);
     else this._style.borderRight = value as any;
   }
 
@@ -3830,8 +3868,9 @@ export class CSSStyleRef implements CSSStyleDeclarationRef {
     return this._style.borderRightColor;
   }
 
-  public set borderRightColor(value: string | Ref<string>) {
-    if (value instanceof Ref) this.setStyleRefMap("borderRightColor", value);
+  public set borderRightColor(value: string | ref<string>) {
+    if (typeof value !== "string")
+      this.setStylerefMap("borderRightColor", value);
     else this._style.borderRightColor = value as any;
   }
 
@@ -3839,8 +3878,9 @@ export class CSSStyleRef implements CSSStyleDeclarationRef {
     return this._style.borderRightStyle;
   }
 
-  public set borderRightStyle(value: string | Ref<string>) {
-    if (value instanceof Ref) this.setStyleRefMap("borderRightStyle", value);
+  public set borderRightStyle(value: string | ref<string>) {
+    if (typeof value !== "string")
+      this.setStylerefMap("borderRightStyle", value);
     else this._style.borderRightStyle = value as any;
   }
 
@@ -3848,8 +3888,9 @@ export class CSSStyleRef implements CSSStyleDeclarationRef {
     return this._style.borderRightWidth;
   }
 
-  public set borderRightWidth(value: string | Ref<string>) {
-    if (value instanceof Ref) this.setStyleRefMap("borderRightWidth", value);
+  public set borderRightWidth(value: string | ref<string>) {
+    if (typeof value !== "string")
+      this.setStylerefMap("borderRightWidth", value);
     else this._style.borderRightWidth = value as any;
   }
 
@@ -3857,8 +3898,8 @@ export class CSSStyleRef implements CSSStyleDeclarationRef {
     return this._style.borderSpacing;
   }
 
-  public set borderSpacing(value: string | Ref<string>) {
-    if (value instanceof Ref) this.setStyleRefMap("borderSpacing", value);
+  public set borderSpacing(value: string | ref<string>) {
+    if (typeof value !== "string") this.setStylerefMap("borderSpacing", value);
     else this._style.borderSpacing = value as any;
   }
 
@@ -3866,9 +3907,9 @@ export class CSSStyleRef implements CSSStyleDeclarationRef {
     return this._style.borderStartEndRadius;
   }
 
-  public set borderStartEndRadius(value: string | Ref<string>) {
-    if (value instanceof Ref)
-      this.setStyleRefMap("borderStartEndRadius", value);
+  public set borderStartEndRadius(value: string | ref<string>) {
+    if (typeof value !== "string")
+      this.setStylerefMap("borderStartEndRadius", value);
     else this._style.borderStartEndRadius = value as any;
   }
 
@@ -3876,9 +3917,9 @@ export class CSSStyleRef implements CSSStyleDeclarationRef {
     return this._style.borderStartStartRadius;
   }
 
-  public set borderStartStartRadius(value: string | Ref<string>) {
-    if (value instanceof Ref)
-      this.setStyleRefMap("borderStartStartRadius", value);
+  public set borderStartStartRadius(value: string | ref<string>) {
+    if (typeof value !== "string")
+      this.setStylerefMap("borderStartStartRadius", value);
     else this._style.borderStartStartRadius = value as any;
   }
 
@@ -3886,8 +3927,8 @@ export class CSSStyleRef implements CSSStyleDeclarationRef {
     return this._style.borderStyle;
   }
 
-  public set borderStyle(value: string | Ref<string>) {
-    if (value instanceof Ref) this.setStyleRefMap("borderStyle", value);
+  public set borderStyle(value: string | ref<string>) {
+    if (typeof value !== "string") this.setStylerefMap("borderStyle", value);
     else this._style.borderStyle = value as any;
   }
 
@@ -3895,8 +3936,8 @@ export class CSSStyleRef implements CSSStyleDeclarationRef {
     return this._style.borderTop;
   }
 
-  public set borderTop(value: string | Ref<string>) {
-    if (value instanceof Ref) this.setStyleRefMap("borderTop", value);
+  public set borderTop(value: string | ref<string>) {
+    if (typeof value !== "string") this.setStylerefMap("borderTop", value);
     else this._style.borderTop = value as any;
   }
 
@@ -3904,8 +3945,8 @@ export class CSSStyleRef implements CSSStyleDeclarationRef {
     return this._style.borderTopColor;
   }
 
-  public set borderTopColor(value: string | Ref<string>) {
-    if (value instanceof Ref) this.setStyleRefMap("borderTopColor", value);
+  public set borderTopColor(value: string | ref<string>) {
+    if (typeof value !== "string") this.setStylerefMap("borderTopColor", value);
     else this._style.borderTopColor = value as any;
   }
 
@@ -3913,8 +3954,9 @@ export class CSSStyleRef implements CSSStyleDeclarationRef {
     return this._style.borderTopLeftRadius;
   }
 
-  public set borderTopLeftRadius(value: string | Ref<string>) {
-    if (value instanceof Ref) this.setStyleRefMap("borderTopLeftRadius", value);
+  public set borderTopLeftRadius(value: string | ref<string>) {
+    if (typeof value !== "string")
+      this.setStylerefMap("borderTopLeftRadius", value);
     else this._style.borderTopLeftRadius = value as any;
   }
 
@@ -3922,9 +3964,9 @@ export class CSSStyleRef implements CSSStyleDeclarationRef {
     return this._style.borderTopRightRadius;
   }
 
-  public set borderTopRightRadius(value: string | Ref<string>) {
-    if (value instanceof Ref)
-      this.setStyleRefMap("borderTopRightRadius", value);
+  public set borderTopRightRadius(value: string | ref<string>) {
+    if (typeof value !== "string")
+      this.setStylerefMap("borderTopRightRadius", value);
     else this._style.borderTopRightRadius = value as any;
   }
 
@@ -3932,8 +3974,8 @@ export class CSSStyleRef implements CSSStyleDeclarationRef {
     return this._style.borderTopStyle;
   }
 
-  public set borderTopStyle(value: string | Ref<string>) {
-    if (value instanceof Ref) this.setStyleRefMap("borderTopStyle", value);
+  public set borderTopStyle(value: string | ref<string>) {
+    if (typeof value !== "string") this.setStylerefMap("borderTopStyle", value);
     else this._style.borderTopStyle = value as any;
   }
 
@@ -3941,8 +3983,8 @@ export class CSSStyleRef implements CSSStyleDeclarationRef {
     return this._style.borderTopWidth;
   }
 
-  public set borderTopWidth(value: string | Ref<string>) {
-    if (value instanceof Ref) this.setStyleRefMap("borderTopWidth", value);
+  public set borderTopWidth(value: string | ref<string>) {
+    if (typeof value !== "string") this.setStylerefMap("borderTopWidth", value);
     else this._style.borderTopWidth = value as any;
   }
 
@@ -3950,8 +3992,8 @@ export class CSSStyleRef implements CSSStyleDeclarationRef {
     return this._style.borderWidth;
   }
 
-  public set borderWidth(value: string | Ref<string>) {
-    if (value instanceof Ref) this.setStyleRefMap("borderWidth", value);
+  public set borderWidth(value: string | ref<string>) {
+    if (typeof value !== "string") this.setStylerefMap("borderWidth", value);
     else this._style.borderWidth = value as any;
   }
 
@@ -3959,8 +4001,8 @@ export class CSSStyleRef implements CSSStyleDeclarationRef {
     return this._style.bottom;
   }
 
-  public set bottom(value: string | Ref<string>) {
-    if (value instanceof Ref) this.setStyleRefMap("bottom", value);
+  public set bottom(value: string | ref<string>) {
+    if (typeof value !== "string") this.setStylerefMap("bottom", value);
     else this._style.bottom = value as any;
   }
 
@@ -3968,8 +4010,8 @@ export class CSSStyleRef implements CSSStyleDeclarationRef {
     return this._style.boxShadow;
   }
 
-  public set boxShadow(value: string | Ref<string>) {
-    if (value instanceof Ref) this.setStyleRefMap("boxShadow", value);
+  public set boxShadow(value: string | ref<string>) {
+    if (typeof value !== "string") this.setStylerefMap("boxShadow", value);
     else this._style.boxShadow = value as any;
   }
 
@@ -3977,8 +4019,8 @@ export class CSSStyleRef implements CSSStyleDeclarationRef {
     return this._style.boxSizing;
   }
 
-  public set boxSizing(value: string | Ref<string>) {
-    if (value instanceof Ref) this.setStyleRefMap("boxSizing", value);
+  public set boxSizing(value: string | ref<string>) {
+    if (typeof value !== "string") this.setStylerefMap("boxSizing", value);
     else this._style.boxSizing = value as any;
   }
 
@@ -3986,8 +4028,8 @@ export class CSSStyleRef implements CSSStyleDeclarationRef {
     return this._style.breakAfter;
   }
 
-  public set breakAfter(value: string | Ref<string>) {
-    if (value instanceof Ref) this.setStyleRefMap("breakAfter", value);
+  public set breakAfter(value: string | ref<string>) {
+    if (typeof value !== "string") this.setStylerefMap("breakAfter", value);
     else this._style.breakAfter = value as any;
   }
 
@@ -3995,8 +4037,8 @@ export class CSSStyleRef implements CSSStyleDeclarationRef {
     return this._style.breakBefore;
   }
 
-  public set breakBefore(value: string | Ref<string>) {
-    if (value instanceof Ref) this.setStyleRefMap("breakBefore", value);
+  public set breakBefore(value: string | ref<string>) {
+    if (typeof value !== "string") this.setStylerefMap("breakBefore", value);
     else this._style.breakBefore = value as any;
   }
 
@@ -4004,8 +4046,8 @@ export class CSSStyleRef implements CSSStyleDeclarationRef {
     return this._style.breakInside;
   }
 
-  public set breakInside(value: string | Ref<string>) {
-    if (value instanceof Ref) this.setStyleRefMap("breakInside", value);
+  public set breakInside(value: string | ref<string>) {
+    if (typeof value !== "string") this.setStylerefMap("breakInside", value);
     else this._style.breakInside = value as any;
   }
 
@@ -4013,8 +4055,8 @@ export class CSSStyleRef implements CSSStyleDeclarationRef {
     return this._style.captionSide;
   }
 
-  public set captionSide(value: string | Ref<string>) {
-    if (value instanceof Ref) this.setStyleRefMap("captionSide", value);
+  public set captionSide(value: string | ref<string>) {
+    if (typeof value !== "string") this.setStylerefMap("captionSide", value);
     else this._style.captionSide = value as any;
   }
 
@@ -4022,8 +4064,8 @@ export class CSSStyleRef implements CSSStyleDeclarationRef {
     return this._style.caretColor;
   }
 
-  public set caretColor(value: string | Ref<string>) {
-    if (value instanceof Ref) this.setStyleRefMap("caretColor", value);
+  public set caretColor(value: string | ref<string>) {
+    if (typeof value !== "string") this.setStylerefMap("caretColor", value);
     else this._style.caretColor = value as any;
   }
 
@@ -4031,8 +4073,8 @@ export class CSSStyleRef implements CSSStyleDeclarationRef {
     return this._style.clear;
   }
 
-  public set clear(value: string | Ref<string>) {
-    if (value instanceof Ref) this.setStyleRefMap("clear", value);
+  public set clear(value: string | ref<string>) {
+    if (typeof value !== "string") this.setStylerefMap("clear", value);
     else this._style.clear = value as any;
   }
 
@@ -4040,8 +4082,8 @@ export class CSSStyleRef implements CSSStyleDeclarationRef {
     return this._style.clip;
   }
 
-  public set clip(value: string | Ref<string>) {
-    if (value instanceof Ref) this.setStyleRefMap("clip", value);
+  public set clip(value: string | ref<string>) {
+    if (typeof value !== "string") this.setStylerefMap("clip", value);
     else this._style.clip = value as any;
   }
 
@@ -4049,8 +4091,8 @@ export class CSSStyleRef implements CSSStyleDeclarationRef {
     return this._style.clipPath;
   }
 
-  public set clipPath(value: string | Ref<string>) {
-    if (value instanceof Ref) this.setStyleRefMap("clipPath", value);
+  public set clipPath(value: string | ref<string>) {
+    if (typeof value !== "string") this.setStylerefMap("clipPath", value);
     else this._style.clipPath = value as any;
   }
 
@@ -4058,8 +4100,8 @@ export class CSSStyleRef implements CSSStyleDeclarationRef {
     return this._style.clipRule;
   }
 
-  public set clipRule(value: string | Ref<string>) {
-    if (value instanceof Ref) this.setStyleRefMap("clipRule", value);
+  public set clipRule(value: string | ref<string>) {
+    if (typeof value !== "string") this.setStylerefMap("clipRule", value);
     else this._style.clipRule = value as any;
   }
 
@@ -4067,8 +4109,8 @@ export class CSSStyleRef implements CSSStyleDeclarationRef {
     return this._style.color;
   }
 
-  public set color(value: string | Ref<string>) {
-    if (value instanceof Ref) this.setStyleRefMap("color", value);
+  public set color(value: string | ref<string>) {
+    if (typeof value !== "string") this.setStylerefMap("color", value);
     else this._style.color = value as any;
   }
 
@@ -4076,8 +4118,9 @@ export class CSSStyleRef implements CSSStyleDeclarationRef {
     return this._style.colorInterpolation;
   }
 
-  public set colorInterpolation(value: string | Ref<string>) {
-    if (value instanceof Ref) this.setStyleRefMap("colorInterpolation", value);
+  public set colorInterpolation(value: string | ref<string>) {
+    if (typeof value !== "string")
+      this.setStylerefMap("colorInterpolation", value);
     else this._style.colorInterpolation = value as any;
   }
 
@@ -4085,9 +4128,9 @@ export class CSSStyleRef implements CSSStyleDeclarationRef {
     return this._style.colorInterpolationFilters;
   }
 
-  public set colorInterpolationFilters(value: string | Ref<string>) {
-    if (value instanceof Ref)
-      this.setStyleRefMap("colorInterpolationFilters", value);
+  public set colorInterpolationFilters(value: string | ref<string>) {
+    if (typeof value !== "string")
+      this.setStylerefMap("colorInterpolationFilters", value);
     else this._style.colorInterpolationFilters = value as any;
   }
 
@@ -4095,8 +4138,8 @@ export class CSSStyleRef implements CSSStyleDeclarationRef {
     return this._style.colorScheme;
   }
 
-  public set colorScheme(value: string | Ref<string>) {
-    if (value instanceof Ref) this.setStyleRefMap("colorScheme", value);
+  public set colorScheme(value: string | ref<string>) {
+    if (typeof value !== "string") this.setStylerefMap("colorScheme", value);
     else this._style.colorScheme = value as any;
   }
 
@@ -4104,8 +4147,8 @@ export class CSSStyleRef implements CSSStyleDeclarationRef {
     return this._style.columnCount;
   }
 
-  public set columnCount(value: string | Ref<string>) {
-    if (value instanceof Ref) this.setStyleRefMap("columnCount", value);
+  public set columnCount(value: string | ref<string>) {
+    if (typeof value !== "string") this.setStylerefMap("columnCount", value);
     else this._style.columnCount = value as any;
   }
 
@@ -4113,8 +4156,8 @@ export class CSSStyleRef implements CSSStyleDeclarationRef {
     return this._style.columnFill;
   }
 
-  public set columnFill(value: string | Ref<string>) {
-    if (value instanceof Ref) this.setStyleRefMap("columnFill", value);
+  public set columnFill(value: string | ref<string>) {
+    if (typeof value !== "string") this.setStylerefMap("columnFill", value);
     else this._style.columnFill = value as any;
   }
 
@@ -4122,8 +4165,8 @@ export class CSSStyleRef implements CSSStyleDeclarationRef {
     return this._style.columnGap;
   }
 
-  public set columnGap(value: string | Ref<string>) {
-    if (value instanceof Ref) this.setStyleRefMap("columnGap", value);
+  public set columnGap(value: string | ref<string>) {
+    if (typeof value !== "string") this.setStylerefMap("columnGap", value);
     else this._style.columnGap = value as any;
   }
 
@@ -4131,8 +4174,8 @@ export class CSSStyleRef implements CSSStyleDeclarationRef {
     return this._style.columnRule;
   }
 
-  public set columnRule(value: string | Ref<string>) {
-    if (value instanceof Ref) this.setStyleRefMap("columnRule", value);
+  public set columnRule(value: string | ref<string>) {
+    if (typeof value !== "string") this.setStylerefMap("columnRule", value);
     else this._style.columnRule = value as any;
   }
 
@@ -4140,8 +4183,9 @@ export class CSSStyleRef implements CSSStyleDeclarationRef {
     return this._style.columnRuleColor;
   }
 
-  public set columnRuleColor(value: string | Ref<string>) {
-    if (value instanceof Ref) this.setStyleRefMap("columnRuleColor", value);
+  public set columnRuleColor(value: string | ref<string>) {
+    if (typeof value !== "string")
+      this.setStylerefMap("columnRuleColor", value);
     else this._style.columnRuleColor = value as any;
   }
 
@@ -4149,8 +4193,9 @@ export class CSSStyleRef implements CSSStyleDeclarationRef {
     return this._style.columnRuleStyle;
   }
 
-  public set columnRuleStyle(value: string | Ref<string>) {
-    if (value instanceof Ref) this.setStyleRefMap("columnRuleStyle", value);
+  public set columnRuleStyle(value: string | ref<string>) {
+    if (typeof value !== "string")
+      this.setStylerefMap("columnRuleStyle", value);
     else this._style.columnRuleStyle = value as any;
   }
 
@@ -4158,8 +4203,9 @@ export class CSSStyleRef implements CSSStyleDeclarationRef {
     return this._style.columnRuleWidth;
   }
 
-  public set columnRuleWidth(value: string | Ref<string>) {
-    if (value instanceof Ref) this.setStyleRefMap("columnRuleWidth", value);
+  public set columnRuleWidth(value: string | ref<string>) {
+    if (typeof value !== "string")
+      this.setStylerefMap("columnRuleWidth", value);
     else this._style.columnRuleWidth = value as any;
   }
 
@@ -4167,8 +4213,8 @@ export class CSSStyleRef implements CSSStyleDeclarationRef {
     return this._style.columnSpan;
   }
 
-  public set columnSpan(value: string | Ref<string>) {
-    if (value instanceof Ref) this.setStyleRefMap("columnSpan", value);
+  public set columnSpan(value: string | ref<string>) {
+    if (typeof value !== "string") this.setStylerefMap("columnSpan", value);
     else this._style.columnSpan = value as any;
   }
 
@@ -4176,8 +4222,8 @@ export class CSSStyleRef implements CSSStyleDeclarationRef {
     return this._style.columnWidth;
   }
 
-  public set columnWidth(value: string | Ref<string>) {
-    if (value instanceof Ref) this.setStyleRefMap("columnWidth", value);
+  public set columnWidth(value: string | ref<string>) {
+    if (typeof value !== "string") this.setStylerefMap("columnWidth", value);
     else this._style.columnWidth = value as any;
   }
 
@@ -4185,8 +4231,8 @@ export class CSSStyleRef implements CSSStyleDeclarationRef {
     return this._style.columns;
   }
 
-  public set columns(value: string | Ref<string>) {
-    if (value instanceof Ref) this.setStyleRefMap("columns", value);
+  public set columns(value: string | ref<string>) {
+    if (typeof value !== "string") this.setStylerefMap("columns", value);
     else this._style.columns = value as any;
   }
 
@@ -4194,8 +4240,8 @@ export class CSSStyleRef implements CSSStyleDeclarationRef {
     return this._style.contain;
   }
 
-  public set contain(value: string | Ref<string>) {
-    if (value instanceof Ref) this.setStyleRefMap("contain", value);
+  public set contain(value: string | ref<string>) {
+    if (typeof value !== "string") this.setStylerefMap("contain", value);
     else this._style.contain = value as any;
   }
 
@@ -4203,9 +4249,9 @@ export class CSSStyleRef implements CSSStyleDeclarationRef {
     return this._style.containIntrinsicBlockSize;
   }
 
-  public set containIntrinsicBlockSize(value: string | Ref<string>) {
-    if (value instanceof Ref)
-      this.setStyleRefMap("containIntrinsicBlockSize", value);
+  public set containIntrinsicBlockSize(value: string | ref<string>) {
+    if (typeof value !== "string")
+      this.setStylerefMap("containIntrinsicBlockSize", value);
     else this._style.containIntrinsicBlockSize = value as any;
   }
 
@@ -4213,9 +4259,9 @@ export class CSSStyleRef implements CSSStyleDeclarationRef {
     return this._style.containIntrinsicHeight;
   }
 
-  public set containIntrinsicHeight(value: string | Ref<string>) {
-    if (value instanceof Ref)
-      this.setStyleRefMap("containIntrinsicHeight", value);
+  public set containIntrinsicHeight(value: string | ref<string>) {
+    if (typeof value !== "string")
+      this.setStylerefMap("containIntrinsicHeight", value);
     else this._style.containIntrinsicHeight = value as any;
   }
 
@@ -4223,9 +4269,9 @@ export class CSSStyleRef implements CSSStyleDeclarationRef {
     return this._style.containIntrinsicInlineSize;
   }
 
-  public set containIntrinsicInlineSize(value: string | Ref<string>) {
-    if (value instanceof Ref)
-      this.setStyleRefMap("containIntrinsicInlineSize", value);
+  public set containIntrinsicInlineSize(value: string | ref<string>) {
+    if (typeof value !== "string")
+      this.setStylerefMap("containIntrinsicInlineSize", value);
     else this._style.containIntrinsicInlineSize = value as any;
   }
 
@@ -4233,9 +4279,9 @@ export class CSSStyleRef implements CSSStyleDeclarationRef {
     return this._style.containIntrinsicSize;
   }
 
-  public set containIntrinsicSize(value: string | Ref<string>) {
-    if (value instanceof Ref)
-      this.setStyleRefMap("containIntrinsicSize", value);
+  public set containIntrinsicSize(value: string | ref<string>) {
+    if (typeof value !== "string")
+      this.setStylerefMap("containIntrinsicSize", value);
     else this._style.containIntrinsicSize = value as any;
   }
 
@@ -4243,9 +4289,9 @@ export class CSSStyleRef implements CSSStyleDeclarationRef {
     return this._style.containIntrinsicWidth;
   }
 
-  public set containIntrinsicWidth(value: string | Ref<string>) {
-    if (value instanceof Ref)
-      this.setStyleRefMap("containIntrinsicWidth", value);
+  public set containIntrinsicWidth(value: string | ref<string>) {
+    if (typeof value !== "string")
+      this.setStylerefMap("containIntrinsicWidth", value);
     else this._style.containIntrinsicWidth = value as any;
   }
 
@@ -4253,8 +4299,8 @@ export class CSSStyleRef implements CSSStyleDeclarationRef {
     return this._style.container;
   }
 
-  public set container(value: string | Ref<string>) {
-    if (value instanceof Ref) this.setStyleRefMap("container", value);
+  public set container(value: string | ref<string>) {
+    if (typeof value !== "string") this.setStylerefMap("container", value);
     else this._style.container = value as any;
   }
 
@@ -4262,8 +4308,8 @@ export class CSSStyleRef implements CSSStyleDeclarationRef {
     return this._style.containerName;
   }
 
-  public set containerName(value: string | Ref<string>) {
-    if (value instanceof Ref) this.setStyleRefMap("containerName", value);
+  public set containerName(value: string | ref<string>) {
+    if (typeof value !== "string") this.setStylerefMap("containerName", value);
     else this._style.containerName = value as any;
   }
 
@@ -4271,8 +4317,8 @@ export class CSSStyleRef implements CSSStyleDeclarationRef {
     return this._style.containerType;
   }
 
-  public set containerType(value: string | Ref<string>) {
-    if (value instanceof Ref) this.setStyleRefMap("containerType", value);
+  public set containerType(value: string | ref<string>) {
+    if (typeof value !== "string") this.setStylerefMap("containerType", value);
     else this._style.containerType = value as any;
   }
 
@@ -4280,8 +4326,8 @@ export class CSSStyleRef implements CSSStyleDeclarationRef {
     return this._style.content;
   }
 
-  public set content(value: string | Ref<string>) {
-    if (value instanceof Ref) this.setStyleRefMap("content", value);
+  public set content(value: string | ref<string>) {
+    if (typeof value !== "string") this.setStylerefMap("content", value);
     else this._style.content = value as any;
   }
 
@@ -4289,8 +4335,9 @@ export class CSSStyleRef implements CSSStyleDeclarationRef {
     return this._style.counterIncrement;
   }
 
-  public set counterIncrement(value: string | Ref<string>) {
-    if (value instanceof Ref) this.setStyleRefMap("counterIncrement", value);
+  public set counterIncrement(value: string | ref<string>) {
+    if (typeof value !== "string")
+      this.setStylerefMap("counterIncrement", value);
     else this._style.counterIncrement = value as any;
   }
 
@@ -4298,8 +4345,8 @@ export class CSSStyleRef implements CSSStyleDeclarationRef {
     return this._style.counterReset;
   }
 
-  public set counterReset(value: string | Ref<string>) {
-    if (value instanceof Ref) this.setStyleRefMap("counterReset", value);
+  public set counterReset(value: string | ref<string>) {
+    if (typeof value !== "string") this.setStylerefMap("counterReset", value);
     else this._style.counterReset = value as any;
   }
 
@@ -4307,8 +4354,8 @@ export class CSSStyleRef implements CSSStyleDeclarationRef {
     return this._style.counterSet;
   }
 
-  public set counterSet(value: string | Ref<string>) {
-    if (value instanceof Ref) this.setStyleRefMap("counterSet", value);
+  public set counterSet(value: string | ref<string>) {
+    if (typeof value !== "string") this.setStylerefMap("counterSet", value);
     else this._style.counterSet = value as any;
   }
 
@@ -4316,8 +4363,8 @@ export class CSSStyleRef implements CSSStyleDeclarationRef {
     return this._style.cssFloat;
   }
 
-  public set cssFloat(value: string | Ref<string>) {
-    if (value instanceof Ref) this.setStyleRefMap("cssFloat", value);
+  public set cssFloat(value: string | ref<string>) {
+    if (typeof value !== "string") this.setStylerefMap("cssFloat", value);
     else this._style.cssFloat = value as any;
   }
 
@@ -4325,8 +4372,8 @@ export class CSSStyleRef implements CSSStyleDeclarationRef {
     return this._style.cssText;
   }
 
-  public set cssText(value: string | Ref<string>) {
-    if (value instanceof Ref) this.setStyleRefMap("cssText", value);
+  public set cssText(value: string | ref<string>) {
+    if (typeof value !== "string") this.setStylerefMap("cssText", value);
     else this._style.cssText = value as any;
   }
 
@@ -4334,8 +4381,8 @@ export class CSSStyleRef implements CSSStyleDeclarationRef {
     return this._style.cursor;
   }
 
-  public set cursor(value: string | Ref<string>) {
-    if (value instanceof Ref) this.setStyleRefMap("cursor", value);
+  public set cursor(value: string | ref<string>) {
+    if (typeof value !== "string") this.setStylerefMap("cursor", value);
     else this._style.cursor = value as any;
   }
 
@@ -4343,8 +4390,8 @@ export class CSSStyleRef implements CSSStyleDeclarationRef {
     return this._style.direction;
   }
 
-  public set direction(value: string | Ref<string>) {
-    if (value instanceof Ref) this.setStyleRefMap("direction", value);
+  public set direction(value: string | ref<string>) {
+    if (typeof value !== "string") this.setStylerefMap("direction", value);
     else this._style.direction = value as any;
   }
 
@@ -4352,8 +4399,8 @@ export class CSSStyleRef implements CSSStyleDeclarationRef {
     return this._style.display;
   }
 
-  public set display(value: string | Ref<string>) {
-    if (value instanceof Ref) this.setStyleRefMap("display", value);
+  public set display(value: string | ref<string>) {
+    if (typeof value !== "string") this.setStylerefMap("display", value);
     else this._style.display = value as any;
   }
 
@@ -4361,8 +4408,9 @@ export class CSSStyleRef implements CSSStyleDeclarationRef {
     return this._style.dominantBaseline;
   }
 
-  public set dominantBaseline(value: string | Ref<string>) {
-    if (value instanceof Ref) this.setStyleRefMap("dominantBaseline", value);
+  public set dominantBaseline(value: string | ref<string>) {
+    if (typeof value !== "string")
+      this.setStylerefMap("dominantBaseline", value);
     else this._style.dominantBaseline = value as any;
   }
 
@@ -4370,8 +4418,8 @@ export class CSSStyleRef implements CSSStyleDeclarationRef {
     return this._style.emptyCells;
   }
 
-  public set emptyCells(value: string | Ref<string>) {
-    if (value instanceof Ref) this.setStyleRefMap("emptyCells", value);
+  public set emptyCells(value: string | ref<string>) {
+    if (typeof value !== "string") this.setStylerefMap("emptyCells", value);
     else this._style.emptyCells = value as any;
   }
 
@@ -4379,8 +4427,8 @@ export class CSSStyleRef implements CSSStyleDeclarationRef {
     return this._style.fill;
   }
 
-  public set fill(value: string | Ref<string>) {
-    if (value instanceof Ref) this.setStyleRefMap("fill", value);
+  public set fill(value: string | ref<string>) {
+    if (typeof value !== "string") this.setStylerefMap("fill", value);
     else this._style.fill = value as any;
   }
 
@@ -4388,8 +4436,8 @@ export class CSSStyleRef implements CSSStyleDeclarationRef {
     return this._style.fillOpacity;
   }
 
-  public set fillOpacity(value: string | Ref<string>) {
-    if (value instanceof Ref) this.setStyleRefMap("fillOpacity", value);
+  public set fillOpacity(value: string | ref<string>) {
+    if (typeof value !== "string") this.setStylerefMap("fillOpacity", value);
     else this._style.fillOpacity = value as any;
   }
 
@@ -4397,8 +4445,8 @@ export class CSSStyleRef implements CSSStyleDeclarationRef {
     return this._style.fillRule;
   }
 
-  public set fillRule(value: string | Ref<string>) {
-    if (value instanceof Ref) this.setStyleRefMap("fillRule", value);
+  public set fillRule(value: string | ref<string>) {
+    if (typeof value !== "string") this.setStylerefMap("fillRule", value);
     else this._style.fillRule = value as any;
   }
 
@@ -4406,8 +4454,8 @@ export class CSSStyleRef implements CSSStyleDeclarationRef {
     return this._style.filter;
   }
 
-  public set filter(value: string | Ref<string>) {
-    if (value instanceof Ref) this.setStyleRefMap("filter", value);
+  public set filter(value: string | ref<string>) {
+    if (typeof value !== "string") this.setStylerefMap("filter", value);
     else this._style.filter = value as any;
   }
 
@@ -4415,8 +4463,8 @@ export class CSSStyleRef implements CSSStyleDeclarationRef {
     return this._style.flex;
   }
 
-  public set flex(value: string | Ref<string>) {
-    if (value instanceof Ref) this.setStyleRefMap("flex", value);
+  public set flex(value: string | ref<string>) {
+    if (typeof value !== "string") this.setStylerefMap("flex", value);
     else this._style.flex = value as any;
   }
 
@@ -4424,8 +4472,8 @@ export class CSSStyleRef implements CSSStyleDeclarationRef {
     return this._style.flexBasis;
   }
 
-  public set flexBasis(value: string | Ref<string>) {
-    if (value instanceof Ref) this.setStyleRefMap("flexBasis", value);
+  public set flexBasis(value: string | ref<string>) {
+    if (typeof value !== "string") this.setStylerefMap("flexBasis", value);
     else this._style.flexBasis = value as any;
   }
 
@@ -4433,8 +4481,8 @@ export class CSSStyleRef implements CSSStyleDeclarationRef {
     return this._style.flexDirection;
   }
 
-  public set flexDirection(value: string | Ref<string>) {
-    if (value instanceof Ref) this.setStyleRefMap("flexDirection", value);
+  public set flexDirection(value: string | ref<string>) {
+    if (typeof value !== "string") this.setStylerefMap("flexDirection", value);
     else this._style.flexDirection = value as any;
   }
 
@@ -4442,8 +4490,8 @@ export class CSSStyleRef implements CSSStyleDeclarationRef {
     return this._style.flexFlow;
   }
 
-  public set flexFlow(value: string | Ref<string>) {
-    if (value instanceof Ref) this.setStyleRefMap("flexFlow", value);
+  public set flexFlow(value: string | ref<string>) {
+    if (typeof value !== "string") this.setStylerefMap("flexFlow", value);
     else this._style.flexFlow = value as any;
   }
 
@@ -4451,8 +4499,8 @@ export class CSSStyleRef implements CSSStyleDeclarationRef {
     return this._style.flexGrow;
   }
 
-  public set flexGrow(value: string | Ref<string>) {
-    if (value instanceof Ref) this.setStyleRefMap("flexGrow", value);
+  public set flexGrow(value: string | ref<string>) {
+    if (typeof value !== "string") this.setStylerefMap("flexGrow", value);
     else this._style.flexGrow = value as any;
   }
 
@@ -4460,8 +4508,8 @@ export class CSSStyleRef implements CSSStyleDeclarationRef {
     return this._style.flexShrink;
   }
 
-  public set flexShrink(value: string | Ref<string>) {
-    if (value instanceof Ref) this.setStyleRefMap("flexShrink", value);
+  public set flexShrink(value: string | ref<string>) {
+    if (typeof value !== "string") this.setStylerefMap("flexShrink", value);
     else this._style.flexShrink = value as any;
   }
 
@@ -4469,8 +4517,8 @@ export class CSSStyleRef implements CSSStyleDeclarationRef {
     return this._style.flexWrap;
   }
 
-  public set flexWrap(value: string | Ref<string>) {
-    if (value instanceof Ref) this.setStyleRefMap("flexWrap", value);
+  public set flexWrap(value: string | ref<string>) {
+    if (typeof value !== "string") this.setStylerefMap("flexWrap", value);
     else this._style.flexWrap = value as any;
   }
 
@@ -4478,8 +4526,8 @@ export class CSSStyleRef implements CSSStyleDeclarationRef {
     return this._style.float;
   }
 
-  public set float(value: string | Ref<string>) {
-    if (value instanceof Ref) this.setStyleRefMap("float", value);
+  public set float(value: string | ref<string>) {
+    if (typeof value !== "string") this.setStylerefMap("float", value);
     else this._style.float = value as any;
   }
 
@@ -4487,8 +4535,8 @@ export class CSSStyleRef implements CSSStyleDeclarationRef {
     return this._style.floodColor;
   }
 
-  public set floodColor(value: string | Ref<string>) {
-    if (value instanceof Ref) this.setStyleRefMap("floodColor", value);
+  public set floodColor(value: string | ref<string>) {
+    if (typeof value !== "string") this.setStylerefMap("floodColor", value);
     else this._style.floodColor = value as any;
   }
 
@@ -4496,8 +4544,8 @@ export class CSSStyleRef implements CSSStyleDeclarationRef {
     return this._style.floodOpacity;
   }
 
-  public set floodOpacity(value: string | Ref<string>) {
-    if (value instanceof Ref) this.setStyleRefMap("floodOpacity", value);
+  public set floodOpacity(value: string | ref<string>) {
+    if (typeof value !== "string") this.setStylerefMap("floodOpacity", value);
     else this._style.floodOpacity = value as any;
   }
 
@@ -4505,8 +4553,8 @@ export class CSSStyleRef implements CSSStyleDeclarationRef {
     return this._style.font;
   }
 
-  public set font(value: string | Ref<string>) {
-    if (value instanceof Ref) this.setStyleRefMap("font", value);
+  public set font(value: string | ref<string>) {
+    if (typeof value !== "string") this.setStylerefMap("font", value);
     else this._style.font = value as any;
   }
 
@@ -4514,8 +4562,8 @@ export class CSSStyleRef implements CSSStyleDeclarationRef {
     return this._style.fontFamily;
   }
 
-  public set fontFamily(value: string | Ref<string>) {
-    if (value instanceof Ref) this.setStyleRefMap("fontFamily", value);
+  public set fontFamily(value: string | ref<string>) {
+    if (typeof value !== "string") this.setStylerefMap("fontFamily", value);
     else this._style.fontFamily = value as any;
   }
 
@@ -4523,8 +4571,9 @@ export class CSSStyleRef implements CSSStyleDeclarationRef {
     return this._style.fontFeatureSettings;
   }
 
-  public set fontFeatureSettings(value: string | Ref<string>) {
-    if (value instanceof Ref) this.setStyleRefMap("fontFeatureSettings", value);
+  public set fontFeatureSettings(value: string | ref<string>) {
+    if (typeof value !== "string")
+      this.setStylerefMap("fontFeatureSettings", value);
     else this._style.fontFeatureSettings = value as any;
   }
 
@@ -4532,8 +4581,8 @@ export class CSSStyleRef implements CSSStyleDeclarationRef {
     return this._style.fontKerning;
   }
 
-  public set fontKerning(value: string | Ref<string>) {
-    if (value instanceof Ref) this.setStyleRefMap("fontKerning", value);
+  public set fontKerning(value: string | ref<string>) {
+    if (typeof value !== "string") this.setStylerefMap("fontKerning", value);
     else this._style.fontKerning = value as any;
   }
 
@@ -4541,8 +4590,9 @@ export class CSSStyleRef implements CSSStyleDeclarationRef {
     return this._style.fontOpticalSizing;
   }
 
-  public set fontOpticalSizing(value: string | Ref<string>) {
-    if (value instanceof Ref) this.setStyleRefMap("fontOpticalSizing", value);
+  public set fontOpticalSizing(value: string | ref<string>) {
+    if (typeof value !== "string")
+      this.setStylerefMap("fontOpticalSizing", value);
     else this._style.fontOpticalSizing = value as any;
   }
 
@@ -4550,8 +4600,8 @@ export class CSSStyleRef implements CSSStyleDeclarationRef {
     return this._style.fontPalette;
   }
 
-  public set fontPalette(value: string | Ref<string>) {
-    if (value instanceof Ref) this.setStyleRefMap("fontPalette", value);
+  public set fontPalette(value: string | ref<string>) {
+    if (typeof value !== "string") this.setStylerefMap("fontPalette", value);
     else this._style.fontPalette = value as any;
   }
 
@@ -4559,8 +4609,8 @@ export class CSSStyleRef implements CSSStyleDeclarationRef {
     return this._style.fontSize;
   }
 
-  public set fontSize(value: string | Ref<string>) {
-    if (value instanceof Ref) this.setStyleRefMap("fontSize", value);
+  public set fontSize(value: string | ref<string>) {
+    if (typeof value !== "string") this.setStylerefMap("fontSize", value);
     else this._style.fontSize = value as any;
   }
 
@@ -4568,8 +4618,8 @@ export class CSSStyleRef implements CSSStyleDeclarationRef {
     return this._style.fontSizeAdjust;
   }
 
-  public set fontSizeAdjust(value: string | Ref<string>) {
-    if (value instanceof Ref) this.setStyleRefMap("fontSizeAdjust", value);
+  public set fontSizeAdjust(value: string | ref<string>) {
+    if (typeof value !== "string") this.setStylerefMap("fontSizeAdjust", value);
     else this._style.fontSizeAdjust = value as any;
   }
 
@@ -4577,8 +4627,8 @@ export class CSSStyleRef implements CSSStyleDeclarationRef {
     return this._style.fontStretch;
   }
 
-  public set fontStretch(value: string | Ref<string>) {
-    if (value instanceof Ref) this.setStyleRefMap("fontStretch", value);
+  public set fontStretch(value: string | ref<string>) {
+    if (typeof value !== "string") this.setStylerefMap("fontStretch", value);
     else this._style.fontStretch = value as any;
   }
 
@@ -4586,8 +4636,8 @@ export class CSSStyleRef implements CSSStyleDeclarationRef {
     return this._style.fontStyle;
   }
 
-  public set fontStyle(value: string | Ref<string>) {
-    if (value instanceof Ref) this.setStyleRefMap("fontStyle", value);
+  public set fontStyle(value: string | ref<string>) {
+    if (typeof value !== "string") this.setStylerefMap("fontStyle", value);
     else this._style.fontStyle = value as any;
   }
 
@@ -4595,8 +4645,8 @@ export class CSSStyleRef implements CSSStyleDeclarationRef {
     return this._style.fontSynthesis;
   }
 
-  public set fontSynthesis(value: string | Ref<string>) {
-    if (value instanceof Ref) this.setStyleRefMap("fontSynthesis", value);
+  public set fontSynthesis(value: string | ref<string>) {
+    if (typeof value !== "string") this.setStylerefMap("fontSynthesis", value);
     else this._style.fontSynthesis = value as any;
   }
 
@@ -4604,9 +4654,9 @@ export class CSSStyleRef implements CSSStyleDeclarationRef {
     return this._style.fontSynthesisSmallCaps;
   }
 
-  public set fontSynthesisSmallCaps(value: string | Ref<string>) {
-    if (value instanceof Ref)
-      this.setStyleRefMap("fontSynthesisSmallCaps", value);
+  public set fontSynthesisSmallCaps(value: string | ref<string>) {
+    if (typeof value !== "string")
+      this.setStylerefMap("fontSynthesisSmallCaps", value);
     else this._style.fontSynthesisSmallCaps = value as any;
   }
 
@@ -4614,8 +4664,9 @@ export class CSSStyleRef implements CSSStyleDeclarationRef {
     return this._style.fontSynthesisStyle;
   }
 
-  public set fontSynthesisStyle(value: string | Ref<string>) {
-    if (value instanceof Ref) this.setStyleRefMap("fontSynthesisStyle", value);
+  public set fontSynthesisStyle(value: string | ref<string>) {
+    if (typeof value !== "string")
+      this.setStylerefMap("fontSynthesisStyle", value);
     else this._style.fontSynthesisStyle = value as any;
   }
 
@@ -4623,8 +4674,9 @@ export class CSSStyleRef implements CSSStyleDeclarationRef {
     return this._style.fontSynthesisWeight;
   }
 
-  public set fontSynthesisWeight(value: string | Ref<string>) {
-    if (value instanceof Ref) this.setStyleRefMap("fontSynthesisWeight", value);
+  public set fontSynthesisWeight(value: string | ref<string>) {
+    if (typeof value !== "string")
+      this.setStylerefMap("fontSynthesisWeight", value);
     else this._style.fontSynthesisWeight = value as any;
   }
 
@@ -4632,8 +4684,8 @@ export class CSSStyleRef implements CSSStyleDeclarationRef {
     return this._style.fontVariant;
   }
 
-  public set fontVariant(value: string | Ref<string>) {
-    if (value instanceof Ref) this.setStyleRefMap("fontVariant", value);
+  public set fontVariant(value: string | ref<string>) {
+    if (typeof value !== "string") this.setStylerefMap("fontVariant", value);
     else this._style.fontVariant = value as any;
   }
 
@@ -4641,9 +4693,9 @@ export class CSSStyleRef implements CSSStyleDeclarationRef {
     return this._style.fontVariantAlternates;
   }
 
-  public set fontVariantAlternates(value: string | Ref<string>) {
-    if (value instanceof Ref)
-      this.setStyleRefMap("fontVariantAlternates", value);
+  public set fontVariantAlternates(value: string | ref<string>) {
+    if (typeof value !== "string")
+      this.setStylerefMap("fontVariantAlternates", value);
     else this._style.fontVariantAlternates = value as any;
   }
 
@@ -4651,8 +4703,9 @@ export class CSSStyleRef implements CSSStyleDeclarationRef {
     return this._style.fontVariantCaps;
   }
 
-  public set fontVariantCaps(value: string | Ref<string>) {
-    if (value instanceof Ref) this.setStyleRefMap("fontVariantCaps", value);
+  public set fontVariantCaps(value: string | ref<string>) {
+    if (typeof value !== "string")
+      this.setStylerefMap("fontVariantCaps", value);
     else this._style.fontVariantCaps = value as any;
   }
 
@@ -4660,9 +4713,9 @@ export class CSSStyleRef implements CSSStyleDeclarationRef {
     return this._style.fontVariantEastAsian;
   }
 
-  public set fontVariantEastAsian(value: string | Ref<string>) {
-    if (value instanceof Ref)
-      this.setStyleRefMap("fontVariantEastAsian", value);
+  public set fontVariantEastAsian(value: string | ref<string>) {
+    if (typeof value !== "string")
+      this.setStylerefMap("fontVariantEastAsian", value);
     else this._style.fontVariantEastAsian = value as any;
   }
 
@@ -4670,9 +4723,9 @@ export class CSSStyleRef implements CSSStyleDeclarationRef {
     return this._style.fontVariantLigatures;
   }
 
-  public set fontVariantLigatures(value: string | Ref<string>) {
-    if (value instanceof Ref)
-      this.setStyleRefMap("fontVariantLigatures", value);
+  public set fontVariantLigatures(value: string | ref<string>) {
+    if (typeof value !== "string")
+      this.setStylerefMap("fontVariantLigatures", value);
     else this._style.fontVariantLigatures = value as any;
   }
 
@@ -4680,8 +4733,9 @@ export class CSSStyleRef implements CSSStyleDeclarationRef {
     return this._style.fontVariantNumeric;
   }
 
-  public set fontVariantNumeric(value: string | Ref<string>) {
-    if (value instanceof Ref) this.setStyleRefMap("fontVariantNumeric", value);
+  public set fontVariantNumeric(value: string | ref<string>) {
+    if (typeof value !== "string")
+      this.setStylerefMap("fontVariantNumeric", value);
     else this._style.fontVariantNumeric = value as any;
   }
 
@@ -4689,8 +4743,9 @@ export class CSSStyleRef implements CSSStyleDeclarationRef {
     return this._style.fontVariantPosition;
   }
 
-  public set fontVariantPosition(value: string | Ref<string>) {
-    if (value instanceof Ref) this.setStyleRefMap("fontVariantPosition", value);
+  public set fontVariantPosition(value: string | ref<string>) {
+    if (typeof value !== "string")
+      this.setStylerefMap("fontVariantPosition", value);
     else this._style.fontVariantPosition = value as any;
   }
 
@@ -4698,9 +4753,9 @@ export class CSSStyleRef implements CSSStyleDeclarationRef {
     return this._style.fontVariationSettings;
   }
 
-  public set fontVariationSettings(value: string | Ref<string>) {
-    if (value instanceof Ref)
-      this.setStyleRefMap("fontVariationSettings", value);
+  public set fontVariationSettings(value: string | ref<string>) {
+    if (typeof value !== "string")
+      this.setStylerefMap("fontVariationSettings", value);
     else this._style.fontVariationSettings = value as any;
   }
 
@@ -4708,8 +4763,8 @@ export class CSSStyleRef implements CSSStyleDeclarationRef {
     return this._style.fontWeight;
   }
 
-  public set fontWeight(value: string | Ref<string>) {
-    if (value instanceof Ref) this.setStyleRefMap("fontWeight", value);
+  public set fontWeight(value: string | ref<string>) {
+    if (typeof value !== "string") this.setStylerefMap("fontWeight", value);
     else this._style.fontWeight = value as any;
   }
 
@@ -4717,8 +4772,9 @@ export class CSSStyleRef implements CSSStyleDeclarationRef {
     return this._style.forcedColorAdjust;
   }
 
-  public set forcedColorAdjust(value: string | Ref<string>) {
-    if (value instanceof Ref) this.setStyleRefMap("forcedColorAdjust", value);
+  public set forcedColorAdjust(value: string | ref<string>) {
+    if (typeof value !== "string")
+      this.setStylerefMap("forcedColorAdjust", value);
     else this._style.forcedColorAdjust = value as any;
   }
 
@@ -4726,8 +4782,8 @@ export class CSSStyleRef implements CSSStyleDeclarationRef {
     return this._style.gap;
   }
 
-  public set gap(value: string | Ref<string>) {
-    if (value instanceof Ref) this.setStyleRefMap("gap", value);
+  public set gap(value: string | ref<string>) {
+    if (typeof value !== "string") this.setStylerefMap("gap", value);
     else this._style.gap = value as any;
   }
 
@@ -4735,8 +4791,8 @@ export class CSSStyleRef implements CSSStyleDeclarationRef {
     return this._style.grid;
   }
 
-  public set grid(value: string | Ref<string>) {
-    if (value instanceof Ref) this.setStyleRefMap("grid", value);
+  public set grid(value: string | ref<string>) {
+    if (typeof value !== "string") this.setStylerefMap("grid", value);
     else this._style.grid = value as any;
   }
 
@@ -4744,8 +4800,8 @@ export class CSSStyleRef implements CSSStyleDeclarationRef {
     return this._style.gridArea;
   }
 
-  public set gridArea(value: string | Ref<string>) {
-    if (value instanceof Ref) this.setStyleRefMap("gridArea", value);
+  public set gridArea(value: string | ref<string>) {
+    if (typeof value !== "string") this.setStylerefMap("gridArea", value);
     else this._style.gridArea = value as any;
   }
 
@@ -4753,8 +4809,9 @@ export class CSSStyleRef implements CSSStyleDeclarationRef {
     return this._style.gridAutoColumns;
   }
 
-  public set gridAutoColumns(value: string | Ref<string>) {
-    if (value instanceof Ref) this.setStyleRefMap("gridAutoColumns", value);
+  public set gridAutoColumns(value: string | ref<string>) {
+    if (typeof value !== "string")
+      this.setStylerefMap("gridAutoColumns", value);
     else this._style.gridAutoColumns = value as any;
   }
 
@@ -4762,8 +4819,8 @@ export class CSSStyleRef implements CSSStyleDeclarationRef {
     return this._style.gridAutoFlow;
   }
 
-  public set gridAutoFlow(value: string | Ref<string>) {
-    if (value instanceof Ref) this.setStyleRefMap("gridAutoFlow", value);
+  public set gridAutoFlow(value: string | ref<string>) {
+    if (typeof value !== "string") this.setStylerefMap("gridAutoFlow", value);
     else this._style.gridAutoFlow = value as any;
   }
 
@@ -4771,8 +4828,8 @@ export class CSSStyleRef implements CSSStyleDeclarationRef {
     return this._style.gridAutoRows;
   }
 
-  public set gridAutoRows(value: string | Ref<string>) {
-    if (value instanceof Ref) this.setStyleRefMap("gridAutoRows", value);
+  public set gridAutoRows(value: string | ref<string>) {
+    if (typeof value !== "string") this.setStylerefMap("gridAutoRows", value);
     else this._style.gridAutoRows = value as any;
   }
 
@@ -4780,8 +4837,8 @@ export class CSSStyleRef implements CSSStyleDeclarationRef {
     return this._style.gridColumn;
   }
 
-  public set gridColumn(value: string | Ref<string>) {
-    if (value instanceof Ref) this.setStyleRefMap("gridColumn", value);
+  public set gridColumn(value: string | ref<string>) {
+    if (typeof value !== "string") this.setStylerefMap("gridColumn", value);
     else this._style.gridColumn = value as any;
   }
 
@@ -4789,8 +4846,8 @@ export class CSSStyleRef implements CSSStyleDeclarationRef {
     return this._style.gridColumnEnd;
   }
 
-  public set gridColumnEnd(value: string | Ref<string>) {
-    if (value instanceof Ref) this.setStyleRefMap("gridColumnEnd", value);
+  public set gridColumnEnd(value: string | ref<string>) {
+    if (typeof value !== "string") this.setStylerefMap("gridColumnEnd", value);
     else this._style.gridColumnEnd = value as any;
   }
 
@@ -4798,8 +4855,8 @@ export class CSSStyleRef implements CSSStyleDeclarationRef {
     return this._style.gridColumnGap;
   }
 
-  public set gridColumnGap(value: string | Ref<string>) {
-    if (value instanceof Ref) this.setStyleRefMap("gridColumnGap", value);
+  public set gridColumnGap(value: string | ref<string>) {
+    if (typeof value !== "string") this.setStylerefMap("gridColumnGap", value);
     else this._style.gridColumnGap = value as any;
   }
 
@@ -4807,8 +4864,9 @@ export class CSSStyleRef implements CSSStyleDeclarationRef {
     return this._style.gridColumnStart;
   }
 
-  public set gridColumnStart(value: string | Ref<string>) {
-    if (value instanceof Ref) this.setStyleRefMap("gridColumnStart", value);
+  public set gridColumnStart(value: string | ref<string>) {
+    if (typeof value !== "string")
+      this.setStylerefMap("gridColumnStart", value);
     else this._style.gridColumnStart = value as any;
   }
 
@@ -4816,8 +4874,8 @@ export class CSSStyleRef implements CSSStyleDeclarationRef {
     return this._style.gridGap;
   }
 
-  public set gridGap(value: string | Ref<string>) {
-    if (value instanceof Ref) this.setStyleRefMap("gridGap", value);
+  public set gridGap(value: string | ref<string>) {
+    if (typeof value !== "string") this.setStylerefMap("gridGap", value);
     else this._style.gridGap = value as any;
   }
 
@@ -4825,8 +4883,8 @@ export class CSSStyleRef implements CSSStyleDeclarationRef {
     return this._style.gridRow;
   }
 
-  public set gridRow(value: string | Ref<string>) {
-    if (value instanceof Ref) this.setStyleRefMap("gridRow", value);
+  public set gridRow(value: string | ref<string>) {
+    if (typeof value !== "string") this.setStylerefMap("gridRow", value);
     else this._style.gridRow = value as any;
   }
 
@@ -4834,8 +4892,8 @@ export class CSSStyleRef implements CSSStyleDeclarationRef {
     return this._style.gridRowEnd;
   }
 
-  public set gridRowEnd(value: string | Ref<string>) {
-    if (value instanceof Ref) this.setStyleRefMap("gridRowEnd", value);
+  public set gridRowEnd(value: string | ref<string>) {
+    if (typeof value !== "string") this.setStylerefMap("gridRowEnd", value);
     else this._style.gridRowEnd = value as any;
   }
 
@@ -4843,8 +4901,8 @@ export class CSSStyleRef implements CSSStyleDeclarationRef {
     return this._style.gridRowGap;
   }
 
-  public set gridRowGap(value: string | Ref<string>) {
-    if (value instanceof Ref) this.setStyleRefMap("gridRowGap", value);
+  public set gridRowGap(value: string | ref<string>) {
+    if (typeof value !== "string") this.setStylerefMap("gridRowGap", value);
     else this._style.gridRowGap = value as any;
   }
 
@@ -4852,8 +4910,8 @@ export class CSSStyleRef implements CSSStyleDeclarationRef {
     return this._style.gridRowStart;
   }
 
-  public set gridRowStart(value: string | Ref<string>) {
-    if (value instanceof Ref) this.setStyleRefMap("gridRowStart", value);
+  public set gridRowStart(value: string | ref<string>) {
+    if (typeof value !== "string") this.setStylerefMap("gridRowStart", value);
     else this._style.gridRowStart = value as any;
   }
 
@@ -4861,8 +4919,8 @@ export class CSSStyleRef implements CSSStyleDeclarationRef {
     return this._style.gridTemplate;
   }
 
-  public set gridTemplate(value: string | Ref<string>) {
-    if (value instanceof Ref) this.setStyleRefMap("gridTemplate", value);
+  public set gridTemplate(value: string | ref<string>) {
+    if (typeof value !== "string") this.setStylerefMap("gridTemplate", value);
     else this._style.gridTemplate = value as any;
   }
 
@@ -4870,8 +4928,9 @@ export class CSSStyleRef implements CSSStyleDeclarationRef {
     return this._style.gridTemplateAreas;
   }
 
-  public set gridTemplateAreas(value: string | Ref<string>) {
-    if (value instanceof Ref) this.setStyleRefMap("gridTemplateAreas", value);
+  public set gridTemplateAreas(value: string | ref<string>) {
+    if (typeof value !== "string")
+      this.setStylerefMap("gridTemplateAreas", value);
     else this._style.gridTemplateAreas = value as any;
   }
 
@@ -4879,8 +4938,9 @@ export class CSSStyleRef implements CSSStyleDeclarationRef {
     return this._style.gridTemplateColumns;
   }
 
-  public set gridTemplateColumns(value: string | Ref<string>) {
-    if (value instanceof Ref) this.setStyleRefMap("gridTemplateColumns", value);
+  public set gridTemplateColumns(value: string | ref<string>) {
+    if (typeof value !== "string")
+      this.setStylerefMap("gridTemplateColumns", value);
     else this._style.gridTemplateColumns = value as any;
   }
 
@@ -4888,8 +4948,9 @@ export class CSSStyleRef implements CSSStyleDeclarationRef {
     return this._style.gridTemplateRows;
   }
 
-  public set gridTemplateRows(value: string | Ref<string>) {
-    if (value instanceof Ref) this.setStyleRefMap("gridTemplateRows", value);
+  public set gridTemplateRows(value: string | ref<string>) {
+    if (typeof value !== "string")
+      this.setStylerefMap("gridTemplateRows", value);
     else this._style.gridTemplateRows = value as any;
   }
 
@@ -4897,8 +4958,8 @@ export class CSSStyleRef implements CSSStyleDeclarationRef {
     return this._style.height;
   }
 
-  public set height(value: string | Ref<string>) {
-    if (value instanceof Ref) this.setStyleRefMap("height", value);
+  public set height(value: string | ref<string>) {
+    if (typeof value !== "string") this.setStylerefMap("height", value);
     else this._style.height = value as any;
   }
 
@@ -4906,8 +4967,9 @@ export class CSSStyleRef implements CSSStyleDeclarationRef {
     return this._style.hyphenateCharacter;
   }
 
-  public set hyphenateCharacter(value: string | Ref<string>) {
-    if (value instanceof Ref) this.setStyleRefMap("hyphenateCharacter", value);
+  public set hyphenateCharacter(value: string | ref<string>) {
+    if (typeof value !== "string")
+      this.setStylerefMap("hyphenateCharacter", value);
     else this._style.hyphenateCharacter = value as any;
   }
 
@@ -4915,8 +4977,8 @@ export class CSSStyleRef implements CSSStyleDeclarationRef {
     return this._style.hyphens;
   }
 
-  public set hyphens(value: string | Ref<string>) {
-    if (value instanceof Ref) this.setStyleRefMap("hyphens", value);
+  public set hyphens(value: string | ref<string>) {
+    if (typeof value !== "string") this.setStylerefMap("hyphens", value);
     else this._style.hyphens = value as any;
   }
 
@@ -4924,8 +4986,9 @@ export class CSSStyleRef implements CSSStyleDeclarationRef {
     return this._style.imageOrientation;
   }
 
-  public set imageOrientation(value: string | Ref<string>) {
-    if (value instanceof Ref) this.setStyleRefMap("imageOrientation", value);
+  public set imageOrientation(value: string | ref<string>) {
+    if (typeof value !== "string")
+      this.setStylerefMap("imageOrientation", value);
     else this._style.imageOrientation = value as any;
   }
 
@@ -4933,8 +4996,8 @@ export class CSSStyleRef implements CSSStyleDeclarationRef {
     return this._style.imageRendering;
   }
 
-  public set imageRendering(value: string | Ref<string>) {
-    if (value instanceof Ref) this.setStyleRefMap("imageRendering", value);
+  public set imageRendering(value: string | ref<string>) {
+    if (typeof value !== "string") this.setStylerefMap("imageRendering", value);
     else this._style.imageRendering = value as any;
   }
 
@@ -4942,8 +5005,8 @@ export class CSSStyleRef implements CSSStyleDeclarationRef {
     return this._style.inlineSize;
   }
 
-  public set inlineSize(value: string | Ref<string>) {
-    if (value instanceof Ref) this.setStyleRefMap("inlineSize", value);
+  public set inlineSize(value: string | ref<string>) {
+    if (typeof value !== "string") this.setStylerefMap("inlineSize", value);
     else this._style.inlineSize = value as any;
   }
 
@@ -4951,8 +5014,8 @@ export class CSSStyleRef implements CSSStyleDeclarationRef {
     return this._style.inset;
   }
 
-  public set inset(value: string | Ref<string>) {
-    if (value instanceof Ref) this.setStyleRefMap("inset", value);
+  public set inset(value: string | ref<string>) {
+    if (typeof value !== "string") this.setStylerefMap("inset", value);
     else this._style.inset = value as any;
   }
 
@@ -4960,8 +5023,8 @@ export class CSSStyleRef implements CSSStyleDeclarationRef {
     return this._style.insetBlock;
   }
 
-  public set insetBlock(value: string | Ref<string>) {
-    if (value instanceof Ref) this.setStyleRefMap("insetBlock", value);
+  public set insetBlock(value: string | ref<string>) {
+    if (typeof value !== "string") this.setStylerefMap("insetBlock", value);
     else this._style.insetBlock = value as any;
   }
 
@@ -4969,8 +5032,8 @@ export class CSSStyleRef implements CSSStyleDeclarationRef {
     return this._style.insetBlockEnd;
   }
 
-  public set insetBlockEnd(value: string | Ref<string>) {
-    if (value instanceof Ref) this.setStyleRefMap("insetBlockEnd", value);
+  public set insetBlockEnd(value: string | ref<string>) {
+    if (typeof value !== "string") this.setStylerefMap("insetBlockEnd", value);
     else this._style.insetBlockEnd = value as any;
   }
 
@@ -4978,8 +5041,9 @@ export class CSSStyleRef implements CSSStyleDeclarationRef {
     return this._style.insetBlockStart;
   }
 
-  public set insetBlockStart(value: string | Ref<string>) {
-    if (value instanceof Ref) this.setStyleRefMap("insetBlockStart", value);
+  public set insetBlockStart(value: string | ref<string>) {
+    if (typeof value !== "string")
+      this.setStylerefMap("insetBlockStart", value);
     else this._style.insetBlockStart = value as any;
   }
 
@@ -4987,8 +5051,8 @@ export class CSSStyleRef implements CSSStyleDeclarationRef {
     return this._style.insetInline;
   }
 
-  public set insetInline(value: string | Ref<string>) {
-    if (value instanceof Ref) this.setStyleRefMap("insetInline", value);
+  public set insetInline(value: string | ref<string>) {
+    if (typeof value !== "string") this.setStylerefMap("insetInline", value);
     else this._style.insetInline = value as any;
   }
 
@@ -4996,8 +5060,8 @@ export class CSSStyleRef implements CSSStyleDeclarationRef {
     return this._style.insetInlineEnd;
   }
 
-  public set insetInlineEnd(value: string | Ref<string>) {
-    if (value instanceof Ref) this.setStyleRefMap("insetInlineEnd", value);
+  public set insetInlineEnd(value: string | ref<string>) {
+    if (typeof value !== "string") this.setStylerefMap("insetInlineEnd", value);
     else this._style.insetInlineEnd = value as any;
   }
 
@@ -5005,8 +5069,9 @@ export class CSSStyleRef implements CSSStyleDeclarationRef {
     return this._style.insetInlineStart;
   }
 
-  public set insetInlineStart(value: string | Ref<string>) {
-    if (value instanceof Ref) this.setStyleRefMap("insetInlineStart", value);
+  public set insetInlineStart(value: string | ref<string>) {
+    if (typeof value !== "string")
+      this.setStylerefMap("insetInlineStart", value);
     else this._style.insetInlineStart = value as any;
   }
 
@@ -5014,8 +5079,8 @@ export class CSSStyleRef implements CSSStyleDeclarationRef {
     return this._style.isolation;
   }
 
-  public set isolation(value: string | Ref<string>) {
-    if (value instanceof Ref) this.setStyleRefMap("isolation", value);
+  public set isolation(value: string | ref<string>) {
+    if (typeof value !== "string") this.setStylerefMap("isolation", value);
     else this._style.isolation = value as any;
   }
 
@@ -5023,8 +5088,8 @@ export class CSSStyleRef implements CSSStyleDeclarationRef {
     return this._style.justifyContent;
   }
 
-  public set justifyContent(value: string | Ref<string>) {
-    if (value instanceof Ref) this.setStyleRefMap("justifyContent", value);
+  public set justifyContent(value: string | ref<string>) {
+    if (typeof value !== "string") this.setStylerefMap("justifyContent", value);
     else this._style.justifyContent = value as any;
   }
 
@@ -5032,8 +5097,8 @@ export class CSSStyleRef implements CSSStyleDeclarationRef {
     return this._style.justifyItems;
   }
 
-  public set justifyItems(value: string | Ref<string>) {
-    if (value instanceof Ref) this.setStyleRefMap("justifyItems", value);
+  public set justifyItems(value: string | ref<string>) {
+    if (typeof value !== "string") this.setStylerefMap("justifyItems", value);
     else this._style.justifyItems = value as any;
   }
 
@@ -5041,8 +5106,8 @@ export class CSSStyleRef implements CSSStyleDeclarationRef {
     return this._style.justifySelf;
   }
 
-  public set justifySelf(value: string | Ref<string>) {
-    if (value instanceof Ref) this.setStyleRefMap("justifySelf", value);
+  public set justifySelf(value: string | ref<string>) {
+    if (typeof value !== "string") this.setStylerefMap("justifySelf", value);
     else this._style.justifySelf = value as any;
   }
 
@@ -5050,8 +5115,8 @@ export class CSSStyleRef implements CSSStyleDeclarationRef {
     return this._style.left;
   }
 
-  public set left(value: string | Ref<string>) {
-    if (value instanceof Ref) this.setStyleRefMap("left", value);
+  public set left(value: string | ref<string>) {
+    if (typeof value !== "string") this.setStylerefMap("left", value);
     else this._style.left = value as any;
   }
 
@@ -5063,8 +5128,8 @@ export class CSSStyleRef implements CSSStyleDeclarationRef {
     return this._style.letterSpacing;
   }
 
-  public set letterSpacing(value: string | Ref<string>) {
-    if (value instanceof Ref) this.setStyleRefMap("letterSpacing", value);
+  public set letterSpacing(value: string | ref<string>) {
+    if (typeof value !== "string") this.setStylerefMap("letterSpacing", value);
     else this._style.letterSpacing = value as any;
   }
 
@@ -5072,8 +5137,8 @@ export class CSSStyleRef implements CSSStyleDeclarationRef {
     return this._style.lightingColor;
   }
 
-  public set lightingColor(value: string | Ref<string>) {
-    if (value instanceof Ref) this.setStyleRefMap("lightingColor", value);
+  public set lightingColor(value: string | ref<string>) {
+    if (typeof value !== "string") this.setStylerefMap("lightingColor", value);
     else this._style.lightingColor = value as any;
   }
 
@@ -5081,8 +5146,8 @@ export class CSSStyleRef implements CSSStyleDeclarationRef {
     return this._style.lineBreak;
   }
 
-  public set lineBreak(value: string | Ref<string>) {
-    if (value instanceof Ref) this.setStyleRefMap("lineBreak", value);
+  public set lineBreak(value: string | ref<string>) {
+    if (typeof value !== "string") this.setStylerefMap("lineBreak", value);
     else this._style.lineBreak = value as any;
   }
 
@@ -5090,8 +5155,8 @@ export class CSSStyleRef implements CSSStyleDeclarationRef {
     return this._style.lineHeight;
   }
 
-  public set lineHeight(value: string | Ref<string>) {
-    if (value instanceof Ref) this.setStyleRefMap("lineHeight", value);
+  public set lineHeight(value: string | ref<string>) {
+    if (typeof value !== "string") this.setStylerefMap("lineHeight", value);
     else this._style.lineHeight = value as any;
   }
 
@@ -5099,8 +5164,8 @@ export class CSSStyleRef implements CSSStyleDeclarationRef {
     return this._style.listStyle;
   }
 
-  public set listStyle(value: string | Ref<string>) {
-    if (value instanceof Ref) this.setStyleRefMap("listStyle", value);
+  public set listStyle(value: string | ref<string>) {
+    if (typeof value !== "string") this.setStylerefMap("listStyle", value);
     else this._style.listStyle = value as any;
   }
 
@@ -5108,8 +5173,8 @@ export class CSSStyleRef implements CSSStyleDeclarationRef {
     return this._style.listStyleImage;
   }
 
-  public set listStyleImage(value: string | Ref<string>) {
-    if (value instanceof Ref) this.setStyleRefMap("listStyleImage", value);
+  public set listStyleImage(value: string | ref<string>) {
+    if (typeof value !== "string") this.setStylerefMap("listStyleImage", value);
     else this._style.listStyleImage = value as any;
   }
 
@@ -5117,8 +5182,9 @@ export class CSSStyleRef implements CSSStyleDeclarationRef {
     return this._style.listStylePosition;
   }
 
-  public set listStylePosition(value: string | Ref<string>) {
-    if (value instanceof Ref) this.setStyleRefMap("listStylePosition", value);
+  public set listStylePosition(value: string | ref<string>) {
+    if (typeof value !== "string")
+      this.setStylerefMap("listStylePosition", value);
     else this._style.listStylePosition = value as any;
   }
 
@@ -5126,8 +5192,8 @@ export class CSSStyleRef implements CSSStyleDeclarationRef {
     return this._style.listStyleType;
   }
 
-  public set listStyleType(value: string | Ref<string>) {
-    if (value instanceof Ref) this.setStyleRefMap("listStyleType", value);
+  public set listStyleType(value: string | ref<string>) {
+    if (typeof value !== "string") this.setStylerefMap("listStyleType", value);
     else this._style.listStyleType = value as any;
   }
 
@@ -5135,8 +5201,8 @@ export class CSSStyleRef implements CSSStyleDeclarationRef {
     return this._style.margin;
   }
 
-  public set margin(value: string | Ref<string>) {
-    if (value instanceof Ref) this.setStyleRefMap("margin", value);
+  public set margin(value: string | ref<string>) {
+    if (typeof value !== "string") this.setStylerefMap("margin", value);
     else this._style.margin = value as any;
   }
 
@@ -5144,8 +5210,8 @@ export class CSSStyleRef implements CSSStyleDeclarationRef {
     return this._style.marginBlock;
   }
 
-  public set marginBlock(value: string | Ref<string>) {
-    if (value instanceof Ref) this.setStyleRefMap("marginBlock", value);
+  public set marginBlock(value: string | ref<string>) {
+    if (typeof value !== "string") this.setStylerefMap("marginBlock", value);
     else this._style.marginBlock = value as any;
   }
 
@@ -5153,8 +5219,8 @@ export class CSSStyleRef implements CSSStyleDeclarationRef {
     return this._style.marginBlockEnd;
   }
 
-  public set marginBlockEnd(value: string | Ref<string>) {
-    if (value instanceof Ref) this.setStyleRefMap("marginBlockEnd", value);
+  public set marginBlockEnd(value: string | ref<string>) {
+    if (typeof value !== "string") this.setStylerefMap("marginBlockEnd", value);
     else this._style.marginBlockEnd = value as any;
   }
 
@@ -5162,8 +5228,9 @@ export class CSSStyleRef implements CSSStyleDeclarationRef {
     return this._style.marginBlockStart;
   }
 
-  public set marginBlockStart(value: string | Ref<string>) {
-    if (value instanceof Ref) this.setStyleRefMap("marginBlockStart", value);
+  public set marginBlockStart(value: string | ref<string>) {
+    if (typeof value !== "string")
+      this.setStylerefMap("marginBlockStart", value);
     else this._style.marginBlockStart = value as any;
   }
 
@@ -5171,8 +5238,8 @@ export class CSSStyleRef implements CSSStyleDeclarationRef {
     return this._style.marginBottom;
   }
 
-  public set marginBottom(value: string | Ref<string>) {
-    if (value instanceof Ref) this.setStyleRefMap("marginBottom", value);
+  public set marginBottom(value: string | ref<string>) {
+    if (typeof value !== "string") this.setStylerefMap("marginBottom", value);
     else this._style.marginBottom = value as any;
   }
 
@@ -5180,8 +5247,8 @@ export class CSSStyleRef implements CSSStyleDeclarationRef {
     return this._style.marginInline;
   }
 
-  public set marginInline(value: string | Ref<string>) {
-    if (value instanceof Ref) this.setStyleRefMap("marginInline", value);
+  public set marginInline(value: string | ref<string>) {
+    if (typeof value !== "string") this.setStylerefMap("marginInline", value);
     else this._style.marginInline = value as any;
   }
 
@@ -5189,8 +5256,9 @@ export class CSSStyleRef implements CSSStyleDeclarationRef {
     return this._style.marginInlineEnd;
   }
 
-  public set marginInlineEnd(value: string | Ref<string>) {
-    if (value instanceof Ref) this.setStyleRefMap("marginInlineEnd", value);
+  public set marginInlineEnd(value: string | ref<string>) {
+    if (typeof value !== "string")
+      this.setStylerefMap("marginInlineEnd", value);
     else this._style.marginInlineEnd = value as any;
   }
 
@@ -5198,8 +5266,9 @@ export class CSSStyleRef implements CSSStyleDeclarationRef {
     return this._style.marginInlineStart;
   }
 
-  public set marginInlineStart(value: string | Ref<string>) {
-    if (value instanceof Ref) this.setStyleRefMap("marginInlineStart", value);
+  public set marginInlineStart(value: string | ref<string>) {
+    if (typeof value !== "string")
+      this.setStylerefMap("marginInlineStart", value);
     else this._style.marginInlineStart = value as any;
   }
 
@@ -5207,8 +5276,8 @@ export class CSSStyleRef implements CSSStyleDeclarationRef {
     return this._style.marginLeft;
   }
 
-  public set marginLeft(value: string | Ref<string>) {
-    if (value instanceof Ref) this.setStyleRefMap("marginLeft", value);
+  public set marginLeft(value: string | ref<string>) {
+    if (typeof value !== "string") this.setStylerefMap("marginLeft", value);
     else this._style.marginLeft = value as any;
   }
 
@@ -5216,8 +5285,8 @@ export class CSSStyleRef implements CSSStyleDeclarationRef {
     return this._style.marginRight;
   }
 
-  public set marginRight(value: string | Ref<string>) {
-    if (value instanceof Ref) this.setStyleRefMap("marginRight", value);
+  public set marginRight(value: string | ref<string>) {
+    if (typeof value !== "string") this.setStylerefMap("marginRight", value);
     else this._style.marginRight = value as any;
   }
 
@@ -5225,8 +5294,8 @@ export class CSSStyleRef implements CSSStyleDeclarationRef {
     return this._style.marginTop;
   }
 
-  public set marginTop(value: string | Ref<string>) {
-    if (value instanceof Ref) this.setStyleRefMap("marginTop", value);
+  public set marginTop(value: string | ref<string>) {
+    if (typeof value !== "string") this.setStylerefMap("marginTop", value);
     else this._style.marginTop = value as any;
   }
 
@@ -5234,8 +5303,8 @@ export class CSSStyleRef implements CSSStyleDeclarationRef {
     return this._style.marker;
   }
 
-  public set marker(value: string | Ref<string>) {
-    if (value instanceof Ref) this.setStyleRefMap("marker", value);
+  public set marker(value: string | ref<string>) {
+    if (typeof value !== "string") this.setStylerefMap("marker", value);
     else this._style.marker = value as any;
   }
 
@@ -5243,8 +5312,8 @@ export class CSSStyleRef implements CSSStyleDeclarationRef {
     return this._style.markerEnd;
   }
 
-  public set markerEnd(value: string | Ref<string>) {
-    if (value instanceof Ref) this.setStyleRefMap("markerEnd", value);
+  public set markerEnd(value: string | ref<string>) {
+    if (typeof value !== "string") this.setStylerefMap("markerEnd", value);
     else this._style.markerEnd = value as any;
   }
 
@@ -5252,8 +5321,8 @@ export class CSSStyleRef implements CSSStyleDeclarationRef {
     return this._style.markerMid;
   }
 
-  public set markerMid(value: string | Ref<string>) {
-    if (value instanceof Ref) this.setStyleRefMap("markerMid", value);
+  public set markerMid(value: string | ref<string>) {
+    if (typeof value !== "string") this.setStylerefMap("markerMid", value);
     else this._style.markerMid = value as any;
   }
 
@@ -5261,8 +5330,8 @@ export class CSSStyleRef implements CSSStyleDeclarationRef {
     return this._style.markerStart;
   }
 
-  public set markerStart(value: string | Ref<string>) {
-    if (value instanceof Ref) this.setStyleRefMap("markerStart", value);
+  public set markerStart(value: string | ref<string>) {
+    if (typeof value !== "string") this.setStylerefMap("markerStart", value);
     else this._style.markerStart = value as any;
   }
 
@@ -5270,8 +5339,8 @@ export class CSSStyleRef implements CSSStyleDeclarationRef {
     return this._style.mask;
   }
 
-  public set mask(value: string | Ref<string>) {
-    if (value instanceof Ref) this.setStyleRefMap("mask", value);
+  public set mask(value: string | ref<string>) {
+    if (typeof value !== "string") this.setStylerefMap("mask", value);
     else this._style.mask = value as any;
   }
 
@@ -5279,8 +5348,8 @@ export class CSSStyleRef implements CSSStyleDeclarationRef {
     return this._style.maskClip;
   }
 
-  public set maskClip(value: string | Ref<string>) {
-    if (value instanceof Ref) this.setStyleRefMap("maskClip", value);
+  public set maskClip(value: string | ref<string>) {
+    if (typeof value !== "string") this.setStylerefMap("maskClip", value);
     else this._style.maskClip = value as any;
   }
 
@@ -5288,8 +5357,8 @@ export class CSSStyleRef implements CSSStyleDeclarationRef {
     return this._style.maskComposite;
   }
 
-  public set maskComposite(value: string | Ref<string>) {
-    if (value instanceof Ref) this.setStyleRefMap("maskComposite", value);
+  public set maskComposite(value: string | ref<string>) {
+    if (typeof value !== "string") this.setStylerefMap("maskComposite", value);
     else this._style.maskComposite = value as any;
   }
 
@@ -5297,8 +5366,8 @@ export class CSSStyleRef implements CSSStyleDeclarationRef {
     return this._style.maskImage;
   }
 
-  public set maskImage(value: string | Ref<string>) {
-    if (value instanceof Ref) this.setStyleRefMap("maskImage", value);
+  public set maskImage(value: string | ref<string>) {
+    if (typeof value !== "string") this.setStylerefMap("maskImage", value);
     else this._style.maskImage = value as any;
   }
 
@@ -5306,8 +5375,8 @@ export class CSSStyleRef implements CSSStyleDeclarationRef {
     return this._style.maskMode;
   }
 
-  public set maskMode(value: string | Ref<string>) {
-    if (value instanceof Ref) this.setStyleRefMap("maskMode", value);
+  public set maskMode(value: string | ref<string>) {
+    if (typeof value !== "string") this.setStylerefMap("maskMode", value);
     else this._style.maskMode = value as any;
   }
 
@@ -5315,8 +5384,8 @@ export class CSSStyleRef implements CSSStyleDeclarationRef {
     return this._style.maskOrigin;
   }
 
-  public set maskOrigin(value: string | Ref<string>) {
-    if (value instanceof Ref) this.setStyleRefMap("maskOrigin", value);
+  public set maskOrigin(value: string | ref<string>) {
+    if (typeof value !== "string") this.setStylerefMap("maskOrigin", value);
     else this._style.maskOrigin = value as any;
   }
 
@@ -5324,8 +5393,8 @@ export class CSSStyleRef implements CSSStyleDeclarationRef {
     return this._style.maskPosition;
   }
 
-  public set maskPosition(value: string | Ref<string>) {
-    if (value instanceof Ref) this.setStyleRefMap("maskPosition", value);
+  public set maskPosition(value: string | ref<string>) {
+    if (typeof value !== "string") this.setStylerefMap("maskPosition", value);
     else this._style.maskPosition = value as any;
   }
 
@@ -5333,8 +5402,8 @@ export class CSSStyleRef implements CSSStyleDeclarationRef {
     return this._style.maskRepeat;
   }
 
-  public set maskRepeat(value: string | Ref<string>) {
-    if (value instanceof Ref) this.setStyleRefMap("maskRepeat", value);
+  public set maskRepeat(value: string | ref<string>) {
+    if (typeof value !== "string") this.setStylerefMap("maskRepeat", value);
     else this._style.maskRepeat = value as any;
   }
 
@@ -5342,8 +5411,8 @@ export class CSSStyleRef implements CSSStyleDeclarationRef {
     return this._style.maskSize;
   }
 
-  public set maskSize(value: string | Ref<string>) {
-    if (value instanceof Ref) this.setStyleRefMap("maskSize", value);
+  public set maskSize(value: string | ref<string>) {
+    if (typeof value !== "string") this.setStylerefMap("maskSize", value);
     else this._style.maskSize = value as any;
   }
 
@@ -5351,8 +5420,8 @@ export class CSSStyleRef implements CSSStyleDeclarationRef {
     return this._style.maskType;
   }
 
-  public set maskType(value: string | Ref<string>) {
-    if (value instanceof Ref) this.setStyleRefMap("maskType", value);
+  public set maskType(value: string | ref<string>) {
+    if (typeof value !== "string") this.setStylerefMap("maskType", value);
     else this._style.maskType = value as any;
   }
 
@@ -5360,8 +5429,8 @@ export class CSSStyleRef implements CSSStyleDeclarationRef {
     return this._style.mathStyle;
   }
 
-  public set mathStyle(value: string | Ref<string>) {
-    if (value instanceof Ref) this.setStyleRefMap("mathStyle", value);
+  public set mathStyle(value: string | ref<string>) {
+    if (typeof value !== "string") this.setStylerefMap("mathStyle", value);
     else this._style.mathStyle = value as any;
   }
 
@@ -5369,8 +5438,8 @@ export class CSSStyleRef implements CSSStyleDeclarationRef {
     return this._style.maxBlockSize;
   }
 
-  public set maxBlockSize(value: string | Ref<string>) {
-    if (value instanceof Ref) this.setStyleRefMap("maxBlockSize", value);
+  public set maxBlockSize(value: string | ref<string>) {
+    if (typeof value !== "string") this.setStylerefMap("maxBlockSize", value);
     else this._style.maxBlockSize = value as any;
   }
 
@@ -5378,8 +5447,8 @@ export class CSSStyleRef implements CSSStyleDeclarationRef {
     return this._style.maxHeight;
   }
 
-  public set maxHeight(value: string | Ref<string>) {
-    if (value instanceof Ref) this.setStyleRefMap("maxHeight", value);
+  public set maxHeight(value: string | ref<string>) {
+    if (typeof value !== "string") this.setStylerefMap("maxHeight", value);
     else this._style.maxHeight = value as any;
   }
 
@@ -5387,8 +5456,8 @@ export class CSSStyleRef implements CSSStyleDeclarationRef {
     return this._style.maxInlineSize;
   }
 
-  public set maxInlineSize(value: string | Ref<string>) {
-    if (value instanceof Ref) this.setStyleRefMap("maxInlineSize", value);
+  public set maxInlineSize(value: string | ref<string>) {
+    if (typeof value !== "string") this.setStylerefMap("maxInlineSize", value);
     else this._style.maxInlineSize = value as any;
   }
 
@@ -5396,8 +5465,8 @@ export class CSSStyleRef implements CSSStyleDeclarationRef {
     return this._style.maxWidth;
   }
 
-  public set maxWidth(value: string | Ref<string>) {
-    if (value instanceof Ref) this.setStyleRefMap("maxWidth", value);
+  public set maxWidth(value: string | ref<string>) {
+    if (typeof value !== "string") this.setStylerefMap("maxWidth", value);
     else this._style.maxWidth = value as any;
   }
 
@@ -5405,8 +5474,8 @@ export class CSSStyleRef implements CSSStyleDeclarationRef {
     return this._style.minBlockSize;
   }
 
-  public set minBlockSize(value: string | Ref<string>) {
-    if (value instanceof Ref) this.setStyleRefMap("minBlockSize", value);
+  public set minBlockSize(value: string | ref<string>) {
+    if (typeof value !== "string") this.setStylerefMap("minBlockSize", value);
     else this._style.minBlockSize = value as any;
   }
 
@@ -5414,8 +5483,8 @@ export class CSSStyleRef implements CSSStyleDeclarationRef {
     return this._style.minHeight;
   }
 
-  public set minHeight(value: string | Ref<string>) {
-    if (value instanceof Ref) this.setStyleRefMap("minHeight", value);
+  public set minHeight(value: string | ref<string>) {
+    if (typeof value !== "string") this.setStylerefMap("minHeight", value);
     else this._style.minHeight = value as any;
   }
 
@@ -5423,8 +5492,8 @@ export class CSSStyleRef implements CSSStyleDeclarationRef {
     return this._style.minInlineSize;
   }
 
-  public set minInlineSize(value: string | Ref<string>) {
-    if (value instanceof Ref) this.setStyleRefMap("minInlineSize", value);
+  public set minInlineSize(value: string | ref<string>) {
+    if (typeof value !== "string") this.setStylerefMap("minInlineSize", value);
     else this._style.minInlineSize = value as any;
   }
 
@@ -5432,8 +5501,8 @@ export class CSSStyleRef implements CSSStyleDeclarationRef {
     return this._style.minWidth;
   }
 
-  public set minWidth(value: string | Ref<string>) {
-    if (value instanceof Ref) this.setStyleRefMap("minWidth", value);
+  public set minWidth(value: string | ref<string>) {
+    if (typeof value !== "string") this.setStylerefMap("minWidth", value);
     else this._style.minWidth = value as any;
   }
 
@@ -5441,8 +5510,8 @@ export class CSSStyleRef implements CSSStyleDeclarationRef {
     return this._style.mixBlendMode;
   }
 
-  public set mixBlendMode(value: string | Ref<string>) {
-    if (value instanceof Ref) this.setStyleRefMap("mixBlendMode", value);
+  public set mixBlendMode(value: string | ref<string>) {
+    if (typeof value !== "string") this.setStylerefMap("mixBlendMode", value);
     else this._style.mixBlendMode = value as any;
   }
 
@@ -5450,8 +5519,8 @@ export class CSSStyleRef implements CSSStyleDeclarationRef {
     return this._style.objectFit;
   }
 
-  public set objectFit(value: string | Ref<string>) {
-    if (value instanceof Ref) this.setStyleRefMap("objectFit", value);
+  public set objectFit(value: string | ref<string>) {
+    if (typeof value !== "string") this.setStylerefMap("objectFit", value);
     else this._style.objectFit = value as any;
   }
 
@@ -5459,8 +5528,8 @@ export class CSSStyleRef implements CSSStyleDeclarationRef {
     return this._style.objectPosition;
   }
 
-  public set objectPosition(value: string | Ref<string>) {
-    if (value instanceof Ref) this.setStyleRefMap("objectPosition", value);
+  public set objectPosition(value: string | ref<string>) {
+    if (typeof value !== "string") this.setStylerefMap("objectPosition", value);
     else this._style.objectPosition = value as any;
   }
 
@@ -5468,8 +5537,8 @@ export class CSSStyleRef implements CSSStyleDeclarationRef {
     return this._style.offset;
   }
 
-  public set offset(value: string | Ref<string>) {
-    if (value instanceof Ref) this.setStyleRefMap("offset", value);
+  public set offset(value: string | ref<string>) {
+    if (typeof value !== "string") this.setStylerefMap("offset", value);
     else this._style.offset = value as any;
   }
 
@@ -5477,8 +5546,8 @@ export class CSSStyleRef implements CSSStyleDeclarationRef {
     return this._style.offsetDistance;
   }
 
-  public set offsetDistance(value: string | Ref<string>) {
-    if (value instanceof Ref) this.setStyleRefMap("offsetDistance", value);
+  public set offsetDistance(value: string | ref<string>) {
+    if (typeof value !== "string") this.setStylerefMap("offsetDistance", value);
     else this._style.offsetDistance = value as any;
   }
 
@@ -5486,8 +5555,8 @@ export class CSSStyleRef implements CSSStyleDeclarationRef {
     return this._style.offsetPath;
   }
 
-  public set offsetPath(value: string | Ref<string>) {
-    if (value instanceof Ref) this.setStyleRefMap("offsetPath", value);
+  public set offsetPath(value: string | ref<string>) {
+    if (typeof value !== "string") this.setStylerefMap("offsetPath", value);
     else this._style.offsetPath = value as any;
   }
 
@@ -5495,8 +5564,8 @@ export class CSSStyleRef implements CSSStyleDeclarationRef {
     return this._style.offsetRotate;
   }
 
-  public set offsetRotate(value: string | Ref<string>) {
-    if (value instanceof Ref) this.setStyleRefMap("offsetRotate", value);
+  public set offsetRotate(value: string | ref<string>) {
+    if (typeof value !== "string") this.setStylerefMap("offsetRotate", value);
     else this._style.offsetRotate = value as any;
   }
 
@@ -5504,8 +5573,8 @@ export class CSSStyleRef implements CSSStyleDeclarationRef {
     return this._style.opacity;
   }
 
-  public set opacity(value: string | Ref<string>) {
-    if (value instanceof Ref) this.setStyleRefMap("opacity", value);
+  public set opacity(value: string | ref<string>) {
+    if (typeof value !== "string") this.setStylerefMap("opacity", value);
     else this._style.opacity = value as any;
   }
 
@@ -5513,8 +5582,8 @@ export class CSSStyleRef implements CSSStyleDeclarationRef {
     return this._style.order;
   }
 
-  public set order(value: string | Ref<string>) {
-    if (value instanceof Ref) this.setStyleRefMap("order", value);
+  public set order(value: string | ref<string>) {
+    if (typeof value !== "string") this.setStylerefMap("order", value);
     else this._style.order = value as any;
   }
 
@@ -5522,8 +5591,8 @@ export class CSSStyleRef implements CSSStyleDeclarationRef {
     return this._style.orphans;
   }
 
-  public set orphans(value: string | Ref<string>) {
-    if (value instanceof Ref) this.setStyleRefMap("orphans", value);
+  public set orphans(value: string | ref<string>) {
+    if (typeof value !== "string") this.setStylerefMap("orphans", value);
     else this._style.orphans = value as any;
   }
 
@@ -5531,8 +5600,8 @@ export class CSSStyleRef implements CSSStyleDeclarationRef {
     return this._style.outline;
   }
 
-  public set outline(value: string | Ref<string>) {
-    if (value instanceof Ref) this.setStyleRefMap("outline", value);
+  public set outline(value: string | ref<string>) {
+    if (typeof value !== "string") this.setStylerefMap("outline", value);
     else this._style.outline = value as any;
   }
 
@@ -5540,8 +5609,8 @@ export class CSSStyleRef implements CSSStyleDeclarationRef {
     return this._style.outlineColor;
   }
 
-  public set outlineColor(value: string | Ref<string>) {
-    if (value instanceof Ref) this.setStyleRefMap("outlineColor", value);
+  public set outlineColor(value: string | ref<string>) {
+    if (typeof value !== "string") this.setStylerefMap("outlineColor", value);
     else this._style.outlineColor = value as any;
   }
 
@@ -5549,8 +5618,8 @@ export class CSSStyleRef implements CSSStyleDeclarationRef {
     return this._style.outlineOffset;
   }
 
-  public set outlineOffset(value: string | Ref<string>) {
-    if (value instanceof Ref) this.setStyleRefMap("outlineOffset", value);
+  public set outlineOffset(value: string | ref<string>) {
+    if (typeof value !== "string") this.setStylerefMap("outlineOffset", value);
     else this._style.outlineOffset = value as any;
   }
 
@@ -5558,8 +5627,8 @@ export class CSSStyleRef implements CSSStyleDeclarationRef {
     return this._style.outlineStyle;
   }
 
-  public set outlineStyle(value: string | Ref<string>) {
-    if (value instanceof Ref) this.setStyleRefMap("outlineStyle", value);
+  public set outlineStyle(value: string | ref<string>) {
+    if (typeof value !== "string") this.setStylerefMap("outlineStyle", value);
     else this._style.outlineStyle = value as any;
   }
 
@@ -5567,8 +5636,8 @@ export class CSSStyleRef implements CSSStyleDeclarationRef {
     return this._style.outlineWidth;
   }
 
-  public set outlineWidth(value: string | Ref<string>) {
-    if (value instanceof Ref) this.setStyleRefMap("outlineWidth", value);
+  public set outlineWidth(value: string | ref<string>) {
+    if (typeof value !== "string") this.setStylerefMap("outlineWidth", value);
     else this._style.outlineWidth = value as any;
   }
 
@@ -5576,8 +5645,8 @@ export class CSSStyleRef implements CSSStyleDeclarationRef {
     return this._style.overflow;
   }
 
-  public set overflow(value: string | Ref<string>) {
-    if (value instanceof Ref) this.setStyleRefMap("overflow", value);
+  public set overflow(value: string | ref<string>) {
+    if (typeof value !== "string") this.setStylerefMap("overflow", value);
     else this._style.overflow = value as any;
   }
 
@@ -5585,8 +5654,8 @@ export class CSSStyleRef implements CSSStyleDeclarationRef {
     return this._style.overflowAnchor;
   }
 
-  public set overflowAnchor(value: string | Ref<string>) {
-    if (value instanceof Ref) this.setStyleRefMap("overflowAnchor", value);
+  public set overflowAnchor(value: string | ref<string>) {
+    if (typeof value !== "string") this.setStylerefMap("overflowAnchor", value);
     else this._style.overflowAnchor = value as any;
   }
 
@@ -5594,8 +5663,9 @@ export class CSSStyleRef implements CSSStyleDeclarationRef {
     return this._style.overflowClipMargin;
   }
 
-  public set overflowClipMargin(value: string | Ref<string>) {
-    if (value instanceof Ref) this.setStyleRefMap("overflowClipMargin", value);
+  public set overflowClipMargin(value: string | ref<string>) {
+    if (typeof value !== "string")
+      this.setStylerefMap("overflowClipMargin", value);
     else this._style.overflowClipMargin = value as any;
   }
 
@@ -5603,8 +5673,8 @@ export class CSSStyleRef implements CSSStyleDeclarationRef {
     return this._style.overflowWrap;
   }
 
-  public set overflowWrap(value: string | Ref<string>) {
-    if (value instanceof Ref) this.setStyleRefMap("overflowWrap", value);
+  public set overflowWrap(value: string | ref<string>) {
+    if (typeof value !== "string") this.setStylerefMap("overflowWrap", value);
     else this._style.overflowWrap = value as any;
   }
 
@@ -5612,8 +5682,8 @@ export class CSSStyleRef implements CSSStyleDeclarationRef {
     return this._style.overflowX;
   }
 
-  public set overflowX(value: string | Ref<string>) {
-    if (value instanceof Ref) this.setStyleRefMap("overflowX", value);
+  public set overflowX(value: string | ref<string>) {
+    if (typeof value !== "string") this.setStylerefMap("overflowX", value);
     else this._style.overflowX = value as any;
   }
 
@@ -5621,8 +5691,8 @@ export class CSSStyleRef implements CSSStyleDeclarationRef {
     return this._style.overflowY;
   }
 
-  public set overflowY(value: string | Ref<string>) {
-    if (value instanceof Ref) this.setStyleRefMap("overflowY", value);
+  public set overflowY(value: string | ref<string>) {
+    if (typeof value !== "string") this.setStylerefMap("overflowY", value);
     else this._style.overflowY = value as any;
   }
 
@@ -5630,8 +5700,9 @@ export class CSSStyleRef implements CSSStyleDeclarationRef {
     return this._style.overscrollBehavior;
   }
 
-  public set overscrollBehavior(value: string | Ref<string>) {
-    if (value instanceof Ref) this.setStyleRefMap("overscrollBehavior", value);
+  public set overscrollBehavior(value: string | ref<string>) {
+    if (typeof value !== "string")
+      this.setStylerefMap("overscrollBehavior", value);
     else this._style.overscrollBehavior = value as any;
   }
 
@@ -5639,9 +5710,9 @@ export class CSSStyleRef implements CSSStyleDeclarationRef {
     return this._style.overscrollBehaviorBlock;
   }
 
-  public set overscrollBehaviorBlock(value: string | Ref<string>) {
-    if (value instanceof Ref)
-      this.setStyleRefMap("overscrollBehaviorBlock", value);
+  public set overscrollBehaviorBlock(value: string | ref<string>) {
+    if (typeof value !== "string")
+      this.setStylerefMap("overscrollBehaviorBlock", value);
     else this._style.overscrollBehaviorBlock = value as any;
   }
 
@@ -5649,9 +5720,9 @@ export class CSSStyleRef implements CSSStyleDeclarationRef {
     return this._style.overscrollBehaviorInline;
   }
 
-  public set overscrollBehaviorInline(value: string | Ref<string>) {
-    if (value instanceof Ref)
-      this.setStyleRefMap("overscrollBehaviorInline", value);
+  public set overscrollBehaviorInline(value: string | ref<string>) {
+    if (typeof value !== "string")
+      this.setStylerefMap("overscrollBehaviorInline", value);
     else this._style.overscrollBehaviorInline = value as any;
   }
 
@@ -5659,8 +5730,9 @@ export class CSSStyleRef implements CSSStyleDeclarationRef {
     return this._style.overscrollBehaviorX;
   }
 
-  public set overscrollBehaviorX(value: string | Ref<string>) {
-    if (value instanceof Ref) this.setStyleRefMap("overscrollBehaviorX", value);
+  public set overscrollBehaviorX(value: string | ref<string>) {
+    if (typeof value !== "string")
+      this.setStylerefMap("overscrollBehaviorX", value);
     else this._style.overscrollBehaviorX = value as any;
   }
 
@@ -5668,8 +5740,9 @@ export class CSSStyleRef implements CSSStyleDeclarationRef {
     return this._style.overscrollBehaviorY;
   }
 
-  public set overscrollBehaviorY(value: string | Ref<string>) {
-    if (value instanceof Ref) this.setStyleRefMap("overscrollBehaviorY", value);
+  public set overscrollBehaviorY(value: string | ref<string>) {
+    if (typeof value !== "string")
+      this.setStylerefMap("overscrollBehaviorY", value);
     else this._style.overscrollBehaviorY = value as any;
   }
 
@@ -5677,8 +5750,8 @@ export class CSSStyleRef implements CSSStyleDeclarationRef {
     return this._style.padding;
   }
 
-  public set padding(value: string | Ref<string>) {
-    if (value instanceof Ref) this.setStyleRefMap("padding", value);
+  public set padding(value: string | ref<string>) {
+    if (typeof value !== "string") this.setStylerefMap("padding", value);
     else this._style.padding = value as any;
   }
 
@@ -5686,8 +5759,8 @@ export class CSSStyleRef implements CSSStyleDeclarationRef {
     return this._style.paddingBlock;
   }
 
-  public set paddingBlock(value: string | Ref<string>) {
-    if (value instanceof Ref) this.setStyleRefMap("paddingBlock", value);
+  public set paddingBlock(value: string | ref<string>) {
+    if (typeof value !== "string") this.setStylerefMap("paddingBlock", value);
     else this._style.paddingBlock = value as any;
   }
 
@@ -5695,8 +5768,9 @@ export class CSSStyleRef implements CSSStyleDeclarationRef {
     return this._style.paddingBlockEnd;
   }
 
-  public set paddingBlockEnd(value: string | Ref<string>) {
-    if (value instanceof Ref) this.setStyleRefMap("paddingBlockEnd", value);
+  public set paddingBlockEnd(value: string | ref<string>) {
+    if (typeof value !== "string")
+      this.setStylerefMap("paddingBlockEnd", value);
     else this._style.paddingBlockEnd = value as any;
   }
 
@@ -5704,8 +5778,9 @@ export class CSSStyleRef implements CSSStyleDeclarationRef {
     return this._style.paddingBlockStart;
   }
 
-  public set paddingBlockStart(value: string | Ref<string>) {
-    if (value instanceof Ref) this.setStyleRefMap("paddingBlockStart", value);
+  public set paddingBlockStart(value: string | ref<string>) {
+    if (typeof value !== "string")
+      this.setStylerefMap("paddingBlockStart", value);
     else this._style.paddingBlockStart = value as any;
   }
 
@@ -5713,8 +5788,8 @@ export class CSSStyleRef implements CSSStyleDeclarationRef {
     return this._style.paddingBottom;
   }
 
-  public set paddingBottom(value: string | Ref<string>) {
-    if (value instanceof Ref) this.setStyleRefMap("paddingBottom", value);
+  public set paddingBottom(value: string | ref<string>) {
+    if (typeof value !== "string") this.setStylerefMap("paddingBottom", value);
     else this._style.paddingBottom = value as any;
   }
 
@@ -5722,8 +5797,8 @@ export class CSSStyleRef implements CSSStyleDeclarationRef {
     return this._style.paddingInline;
   }
 
-  public set paddingInline(value: string | Ref<string>) {
-    if (value instanceof Ref) this.setStyleRefMap("paddingInline", value);
+  public set paddingInline(value: string | ref<string>) {
+    if (typeof value !== "string") this.setStylerefMap("paddingInline", value);
     else this._style.paddingInline = value as any;
   }
 
@@ -5731,8 +5806,9 @@ export class CSSStyleRef implements CSSStyleDeclarationRef {
     return this._style.paddingInlineEnd;
   }
 
-  public set paddingInlineEnd(value: string | Ref<string>) {
-    if (value instanceof Ref) this.setStyleRefMap("paddingInlineEnd", value);
+  public set paddingInlineEnd(value: string | ref<string>) {
+    if (typeof value !== "string")
+      this.setStylerefMap("paddingInlineEnd", value);
     else this._style.paddingInlineEnd = value as any;
   }
 
@@ -5740,8 +5816,9 @@ export class CSSStyleRef implements CSSStyleDeclarationRef {
     return this._style.paddingInlineStart;
   }
 
-  public set paddingInlineStart(value: string | Ref<string>) {
-    if (value instanceof Ref) this.setStyleRefMap("paddingInlineStart", value);
+  public set paddingInlineStart(value: string | ref<string>) {
+    if (typeof value !== "string")
+      this.setStylerefMap("paddingInlineStart", value);
     else this._style.paddingInlineStart = value as any;
   }
 
@@ -5749,8 +5826,8 @@ export class CSSStyleRef implements CSSStyleDeclarationRef {
     return this._style.paddingLeft;
   }
 
-  public set paddingLeft(value: string | Ref<string>) {
-    if (value instanceof Ref) this.setStyleRefMap("paddingLeft", value);
+  public set paddingLeft(value: string | ref<string>) {
+    if (typeof value !== "string") this.setStylerefMap("paddingLeft", value);
     else this._style.paddingLeft = value as any;
   }
 
@@ -5758,8 +5835,8 @@ export class CSSStyleRef implements CSSStyleDeclarationRef {
     return this._style.paddingRight;
   }
 
-  public set paddingRight(value: string | Ref<string>) {
-    if (value instanceof Ref) this.setStyleRefMap("paddingRight", value);
+  public set paddingRight(value: string | ref<string>) {
+    if (typeof value !== "string") this.setStylerefMap("paddingRight", value);
     else this._style.paddingRight = value as any;
   }
 
@@ -5767,8 +5844,8 @@ export class CSSStyleRef implements CSSStyleDeclarationRef {
     return this._style.paddingTop;
   }
 
-  public set paddingTop(value: string | Ref<string>) {
-    if (value instanceof Ref) this.setStyleRefMap("paddingTop", value);
+  public set paddingTop(value: string | ref<string>) {
+    if (typeof value !== "string") this.setStylerefMap("paddingTop", value);
     else this._style.paddingTop = value as any;
   }
 
@@ -5776,8 +5853,8 @@ export class CSSStyleRef implements CSSStyleDeclarationRef {
     return this._style.page;
   }
 
-  public set page(value: string | Ref<string>) {
-    if (value instanceof Ref) this.setStyleRefMap("page", value);
+  public set page(value: string | ref<string>) {
+    if (typeof value !== "string") this.setStylerefMap("page", value);
     else this._style.page = value as any;
   }
 
@@ -5785,8 +5862,8 @@ export class CSSStyleRef implements CSSStyleDeclarationRef {
     return this._style.pageBreakAfter;
   }
 
-  public set pageBreakAfter(value: string | Ref<string>) {
-    if (value instanceof Ref) this.setStyleRefMap("pageBreakAfter", value);
+  public set pageBreakAfter(value: string | ref<string>) {
+    if (typeof value !== "string") this.setStylerefMap("pageBreakAfter", value);
     else this._style.pageBreakAfter = value as any;
   }
 
@@ -5794,8 +5871,9 @@ export class CSSStyleRef implements CSSStyleDeclarationRef {
     return this._style.pageBreakBefore;
   }
 
-  public set pageBreakBefore(value: string | Ref<string>) {
-    if (value instanceof Ref) this.setStyleRefMap("pageBreakBefore", value);
+  public set pageBreakBefore(value: string | ref<string>) {
+    if (typeof value !== "string")
+      this.setStylerefMap("pageBreakBefore", value);
     else this._style.pageBreakBefore = value as any;
   }
 
@@ -5803,8 +5881,9 @@ export class CSSStyleRef implements CSSStyleDeclarationRef {
     return this._style.pageBreakInside;
   }
 
-  public set pageBreakInside(value: string | Ref<string>) {
-    if (value instanceof Ref) this.setStyleRefMap("pageBreakInside", value);
+  public set pageBreakInside(value: string | ref<string>) {
+    if (typeof value !== "string")
+      this.setStylerefMap("pageBreakInside", value);
     else this._style.pageBreakInside = value as any;
   }
 
@@ -5812,8 +5891,8 @@ export class CSSStyleRef implements CSSStyleDeclarationRef {
     return this._style.paintOrder;
   }
 
-  public set paintOrder(value: string | Ref<string>) {
-    if (value instanceof Ref) this.setStyleRefMap("paintOrder", value);
+  public set paintOrder(value: string | ref<string>) {
+    if (typeof value !== "string") this.setStylerefMap("paintOrder", value);
     else this._style.paintOrder = value as any;
   }
 
@@ -5825,8 +5904,8 @@ export class CSSStyleRef implements CSSStyleDeclarationRef {
     return this._style.perspective;
   }
 
-  public set perspective(value: string | Ref<string>) {
-    if (value instanceof Ref) this.setStyleRefMap("perspective", value);
+  public set perspective(value: string | ref<string>) {
+    if (typeof value !== "string") this.setStylerefMap("perspective", value);
     else this._style.perspective = value as any;
   }
 
@@ -5834,8 +5913,9 @@ export class CSSStyleRef implements CSSStyleDeclarationRef {
     return this._style.perspectiveOrigin;
   }
 
-  public set perspectiveOrigin(value: string | Ref<string>) {
-    if (value instanceof Ref) this.setStyleRefMap("perspectiveOrigin", value);
+  public set perspectiveOrigin(value: string | ref<string>) {
+    if (typeof value !== "string")
+      this.setStylerefMap("perspectiveOrigin", value);
     else this._style.perspectiveOrigin = value as any;
   }
 
@@ -5843,8 +5923,8 @@ export class CSSStyleRef implements CSSStyleDeclarationRef {
     return this._style.placeContent;
   }
 
-  public set placeContent(value: string | Ref<string>) {
-    if (value instanceof Ref) this.setStyleRefMap("placeContent", value);
+  public set placeContent(value: string | ref<string>) {
+    if (typeof value !== "string") this.setStylerefMap("placeContent", value);
     else this._style.placeContent = value as any;
   }
 
@@ -5852,8 +5932,8 @@ export class CSSStyleRef implements CSSStyleDeclarationRef {
     return this._style.placeItems;
   }
 
-  public set placeItems(value: string | Ref<string>) {
-    if (value instanceof Ref) this.setStyleRefMap("placeItems", value);
+  public set placeItems(value: string | ref<string>) {
+    if (typeof value !== "string") this.setStylerefMap("placeItems", value);
     else this._style.placeItems = value as any;
   }
 
@@ -5861,8 +5941,8 @@ export class CSSStyleRef implements CSSStyleDeclarationRef {
     return this._style.placeSelf;
   }
 
-  public set placeSelf(value: string | Ref<string>) {
-    if (value instanceof Ref) this.setStyleRefMap("placeSelf", value);
+  public set placeSelf(value: string | ref<string>) {
+    if (typeof value !== "string") this.setStylerefMap("placeSelf", value);
     else this._style.placeSelf = value as any;
   }
 
@@ -5870,8 +5950,8 @@ export class CSSStyleRef implements CSSStyleDeclarationRef {
     return this._style.pointerEvents;
   }
 
-  public set pointerEvents(value: string | Ref<string>) {
-    if (value instanceof Ref) this.setStyleRefMap("pointerEvents", value);
+  public set pointerEvents(value: string | ref<string>) {
+    if (typeof value !== "string") this.setStylerefMap("pointerEvents", value);
     else this._style.pointerEvents = value as any;
   }
 
@@ -5879,8 +5959,8 @@ export class CSSStyleRef implements CSSStyleDeclarationRef {
     return this._style.position;
   }
 
-  public set position(value: string | Ref<string>) {
-    if (value instanceof Ref) this.setStyleRefMap("position", value);
+  public set position(value: string | ref<string>) {
+    if (typeof value !== "string") this.setStylerefMap("position", value);
     else this._style.position = value as any;
   }
 
@@ -5888,8 +5968,9 @@ export class CSSStyleRef implements CSSStyleDeclarationRef {
     return this._style.printColorAdjust;
   }
 
-  public set printColorAdjust(value: string | Ref<string>) {
-    if (value instanceof Ref) this.setStyleRefMap("printColorAdjust", value);
+  public set printColorAdjust(value: string | ref<string>) {
+    if (typeof value !== "string")
+      this.setStylerefMap("printColorAdjust", value);
     else this._style.printColorAdjust = value as any;
   }
 
@@ -5897,8 +5978,8 @@ export class CSSStyleRef implements CSSStyleDeclarationRef {
     return this._style.quotes;
   }
 
-  public set quotes(value: string | Ref<string>) {
-    if (value instanceof Ref) this.setStyleRefMap("quotes", value);
+  public set quotes(value: string | ref<string>) {
+    if (typeof value !== "string") this.setStylerefMap("quotes", value);
     else this._style.quotes = value as any;
   }
 
@@ -5906,8 +5987,8 @@ export class CSSStyleRef implements CSSStyleDeclarationRef {
     return this._style.resize;
   }
 
-  public set resize(value: string | Ref<string>) {
-    if (value instanceof Ref) this.setStyleRefMap("resize", value);
+  public set resize(value: string | ref<string>) {
+    if (typeof value !== "string") this.setStylerefMap("resize", value);
     else this._style.resize = value as any;
   }
 
@@ -5915,8 +5996,8 @@ export class CSSStyleRef implements CSSStyleDeclarationRef {
     return this._style.right;
   }
 
-  public set right(value: string | Ref<string>) {
-    if (value instanceof Ref) this.setStyleRefMap("right", value);
+  public set right(value: string | ref<string>) {
+    if (typeof value !== "string") this.setStylerefMap("right", value);
     else this._style.right = value as any;
   }
 
@@ -5924,8 +6005,8 @@ export class CSSStyleRef implements CSSStyleDeclarationRef {
     return this._style.rotate;
   }
 
-  public set rotate(value: string | Ref<string>) {
-    if (value instanceof Ref) this.setStyleRefMap("rotate", value);
+  public set rotate(value: string | ref<string>) {
+    if (typeof value !== "string") this.setStylerefMap("rotate", value);
     else this._style.rotate = value as any;
   }
 
@@ -5933,8 +6014,8 @@ export class CSSStyleRef implements CSSStyleDeclarationRef {
     return this._style.rowGap;
   }
 
-  public set rowGap(value: string | Ref<string>) {
-    if (value instanceof Ref) this.setStyleRefMap("rowGap", value);
+  public set rowGap(value: string | ref<string>) {
+    if (typeof value !== "string") this.setStylerefMap("rowGap", value);
     else this._style.rowGap = value as any;
   }
 
@@ -5942,8 +6023,8 @@ export class CSSStyleRef implements CSSStyleDeclarationRef {
     return this._style.rubyPosition;
   }
 
-  public set rubyPosition(value: string | Ref<string>) {
-    if (value instanceof Ref) this.setStyleRefMap("rubyPosition", value);
+  public set rubyPosition(value: string | ref<string>) {
+    if (typeof value !== "string") this.setStylerefMap("rubyPosition", value);
     else this._style.rubyPosition = value as any;
   }
 
@@ -5951,8 +6032,8 @@ export class CSSStyleRef implements CSSStyleDeclarationRef {
     return this._style.scale;
   }
 
-  public set scale(value: string | Ref<string>) {
-    if (value instanceof Ref) this.setStyleRefMap("scale", value);
+  public set scale(value: string | ref<string>) {
+    if (typeof value !== "string") this.setStylerefMap("scale", value);
     else this._style.scale = value as any;
   }
 
@@ -5960,8 +6041,8 @@ export class CSSStyleRef implements CSSStyleDeclarationRef {
     return this._style.scrollBehavior;
   }
 
-  public set scrollBehavior(value: string | Ref<string>) {
-    if (value instanceof Ref) this.setStyleRefMap("scrollBehavior", value);
+  public set scrollBehavior(value: string | ref<string>) {
+    if (typeof value !== "string") this.setStylerefMap("scrollBehavior", value);
     else this._style.scrollBehavior = value as any;
   }
 
@@ -5969,8 +6050,8 @@ export class CSSStyleRef implements CSSStyleDeclarationRef {
     return this._style.scrollMargin;
   }
 
-  public set scrollMargin(value: string | Ref<string>) {
-    if (value instanceof Ref) this.setStyleRefMap("scrollMargin", value);
+  public set scrollMargin(value: string | ref<string>) {
+    if (typeof value !== "string") this.setStylerefMap("scrollMargin", value);
     else this._style.scrollMargin = value as any;
   }
 
@@ -5978,8 +6059,9 @@ export class CSSStyleRef implements CSSStyleDeclarationRef {
     return this._style.scrollMarginBlock;
   }
 
-  public set scrollMarginBlock(value: string | Ref<string>) {
-    if (value instanceof Ref) this.setStyleRefMap("scrollMarginBlock", value);
+  public set scrollMarginBlock(value: string | ref<string>) {
+    if (typeof value !== "string")
+      this.setStylerefMap("scrollMarginBlock", value);
     else this._style.scrollMarginBlock = value as any;
   }
 
@@ -5987,9 +6069,9 @@ export class CSSStyleRef implements CSSStyleDeclarationRef {
     return this._style.scrollMarginBlockEnd;
   }
 
-  public set scrollMarginBlockEnd(value: string | Ref<string>) {
-    if (value instanceof Ref)
-      this.setStyleRefMap("scrollMarginBlockEnd", value);
+  public set scrollMarginBlockEnd(value: string | ref<string>) {
+    if (typeof value !== "string")
+      this.setStylerefMap("scrollMarginBlockEnd", value);
     else this._style.scrollMarginBlockEnd = value as any;
   }
 
@@ -5997,9 +6079,9 @@ export class CSSStyleRef implements CSSStyleDeclarationRef {
     return this._style.scrollMarginBlockStart;
   }
 
-  public set scrollMarginBlockStart(value: string | Ref<string>) {
-    if (value instanceof Ref)
-      this.setStyleRefMap("scrollMarginBlockStart", value);
+  public set scrollMarginBlockStart(value: string | ref<string>) {
+    if (typeof value !== "string")
+      this.setStylerefMap("scrollMarginBlockStart", value);
     else this._style.scrollMarginBlockStart = value as any;
   }
 
@@ -6007,8 +6089,9 @@ export class CSSStyleRef implements CSSStyleDeclarationRef {
     return this._style.scrollMarginBottom;
   }
 
-  public set scrollMarginBottom(value: string | Ref<string>) {
-    if (value instanceof Ref) this.setStyleRefMap("scrollMarginBottom", value);
+  public set scrollMarginBottom(value: string | ref<string>) {
+    if (typeof value !== "string")
+      this.setStylerefMap("scrollMarginBottom", value);
     else this._style.scrollMarginBottom = value as any;
   }
 
@@ -6016,8 +6099,9 @@ export class CSSStyleRef implements CSSStyleDeclarationRef {
     return this._style.scrollMarginInline;
   }
 
-  public set scrollMarginInline(value: string | Ref<string>) {
-    if (value instanceof Ref) this.setStyleRefMap("scrollMarginInline", value);
+  public set scrollMarginInline(value: string | ref<string>) {
+    if (typeof value !== "string")
+      this.setStylerefMap("scrollMarginInline", value);
     else this._style.scrollMarginInline = value as any;
   }
 
@@ -6025,9 +6109,9 @@ export class CSSStyleRef implements CSSStyleDeclarationRef {
     return this._style.scrollMarginInlineEnd;
   }
 
-  public set scrollMarginInlineEnd(value: string | Ref<string>) {
-    if (value instanceof Ref)
-      this.setStyleRefMap("scrollMarginInlineEnd", value);
+  public set scrollMarginInlineEnd(value: string | ref<string>) {
+    if (typeof value !== "string")
+      this.setStylerefMap("scrollMarginInlineEnd", value);
     else this._style.scrollMarginInlineEnd = value as any;
   }
 
@@ -6035,9 +6119,9 @@ export class CSSStyleRef implements CSSStyleDeclarationRef {
     return this._style.scrollMarginInlineStart;
   }
 
-  public set scrollMarginInlineStart(value: string | Ref<string>) {
-    if (value instanceof Ref)
-      this.setStyleRefMap("scrollMarginInlineStart", value);
+  public set scrollMarginInlineStart(value: string | ref<string>) {
+    if (typeof value !== "string")
+      this.setStylerefMap("scrollMarginInlineStart", value);
     else this._style.scrollMarginInlineStart = value as any;
   }
 
@@ -6045,8 +6129,9 @@ export class CSSStyleRef implements CSSStyleDeclarationRef {
     return this._style.scrollMarginLeft;
   }
 
-  public set scrollMarginLeft(value: string | Ref<string>) {
-    if (value instanceof Ref) this.setStyleRefMap("scrollMarginLeft", value);
+  public set scrollMarginLeft(value: string | ref<string>) {
+    if (typeof value !== "string")
+      this.setStylerefMap("scrollMarginLeft", value);
     else this._style.scrollMarginLeft = value as any;
   }
 
@@ -6054,8 +6139,9 @@ export class CSSStyleRef implements CSSStyleDeclarationRef {
     return this._style.scrollMarginRight;
   }
 
-  public set scrollMarginRight(value: string | Ref<string>) {
-    if (value instanceof Ref) this.setStyleRefMap("scrollMarginRight", value);
+  public set scrollMarginRight(value: string | ref<string>) {
+    if (typeof value !== "string")
+      this.setStylerefMap("scrollMarginRight", value);
     else this._style.scrollMarginRight = value as any;
   }
 
@@ -6063,8 +6149,9 @@ export class CSSStyleRef implements CSSStyleDeclarationRef {
     return this._style.scrollMarginTop;
   }
 
-  public set scrollMarginTop(value: string | Ref<string>) {
-    if (value instanceof Ref) this.setStyleRefMap("scrollMarginTop", value);
+  public set scrollMarginTop(value: string | ref<string>) {
+    if (typeof value !== "string")
+      this.setStylerefMap("scrollMarginTop", value);
     else this._style.scrollMarginTop = value as any;
   }
 
@@ -6072,8 +6159,8 @@ export class CSSStyleRef implements CSSStyleDeclarationRef {
     return this._style.scrollPadding;
   }
 
-  public set scrollPadding(value: string | Ref<string>) {
-    if (value instanceof Ref) this.setStyleRefMap("scrollPadding", value);
+  public set scrollPadding(value: string | ref<string>) {
+    if (typeof value !== "string") this.setStylerefMap("scrollPadding", value);
     else this._style.scrollPadding = value as any;
   }
 
@@ -6081,8 +6168,9 @@ export class CSSStyleRef implements CSSStyleDeclarationRef {
     return this._style.scrollPaddingBlock;
   }
 
-  public set scrollPaddingBlock(value: string | Ref<string>) {
-    if (value instanceof Ref) this.setStyleRefMap("scrollPaddingBlock", value);
+  public set scrollPaddingBlock(value: string | ref<string>) {
+    if (typeof value !== "string")
+      this.setStylerefMap("scrollPaddingBlock", value);
     else this._style.scrollPaddingBlock = value as any;
   }
 
@@ -6090,9 +6178,9 @@ export class CSSStyleRef implements CSSStyleDeclarationRef {
     return this._style.scrollPaddingBlockEnd;
   }
 
-  public set scrollPaddingBlockEnd(value: string | Ref<string>) {
-    if (value instanceof Ref)
-      this.setStyleRefMap("scrollPaddingBlockEnd", value);
+  public set scrollPaddingBlockEnd(value: string | ref<string>) {
+    if (typeof value !== "string")
+      this.setStylerefMap("scrollPaddingBlockEnd", value);
     else this._style.scrollPaddingBlockEnd = value as any;
   }
 
@@ -6100,9 +6188,9 @@ export class CSSStyleRef implements CSSStyleDeclarationRef {
     return this._style.scrollPaddingBlockStart;
   }
 
-  public set scrollPaddingBlockStart(value: string | Ref<string>) {
-    if (value instanceof Ref)
-      this.setStyleRefMap("scrollPaddingBlockStart", value);
+  public set scrollPaddingBlockStart(value: string | ref<string>) {
+    if (typeof value !== "string")
+      this.setStylerefMap("scrollPaddingBlockStart", value);
     else this._style.scrollPaddingBlockStart = value as any;
   }
 
@@ -6110,8 +6198,9 @@ export class CSSStyleRef implements CSSStyleDeclarationRef {
     return this._style.scrollPaddingBottom;
   }
 
-  public set scrollPaddingBottom(value: string | Ref<string>) {
-    if (value instanceof Ref) this.setStyleRefMap("scrollPaddingBottom", value);
+  public set scrollPaddingBottom(value: string | ref<string>) {
+    if (typeof value !== "string")
+      this.setStylerefMap("scrollPaddingBottom", value);
     else this._style.scrollPaddingBottom = value as any;
   }
 
@@ -6119,8 +6208,9 @@ export class CSSStyleRef implements CSSStyleDeclarationRef {
     return this._style.scrollPaddingInline;
   }
 
-  public set scrollPaddingInline(value: string | Ref<string>) {
-    if (value instanceof Ref) this.setStyleRefMap("scrollPaddingInline", value);
+  public set scrollPaddingInline(value: string | ref<string>) {
+    if (typeof value !== "string")
+      this.setStylerefMap("scrollPaddingInline", value);
     else this._style.scrollPaddingInline = value as any;
   }
 
@@ -6128,9 +6218,9 @@ export class CSSStyleRef implements CSSStyleDeclarationRef {
     return this._style.scrollPaddingInlineEnd;
   }
 
-  public set scrollPaddingInlineEnd(value: string | Ref<string>) {
-    if (value instanceof Ref)
-      this.setStyleRefMap("scrollPaddingInlineEnd", value);
+  public set scrollPaddingInlineEnd(value: string | ref<string>) {
+    if (typeof value !== "string")
+      this.setStylerefMap("scrollPaddingInlineEnd", value);
     else this._style.scrollPaddingInlineEnd = value as any;
   }
 
@@ -6138,9 +6228,9 @@ export class CSSStyleRef implements CSSStyleDeclarationRef {
     return this._style.scrollPaddingInlineStart;
   }
 
-  public set scrollPaddingInlineStart(value: string | Ref<string>) {
-    if (value instanceof Ref)
-      this.setStyleRefMap("scrollPaddingInlineStart", value);
+  public set scrollPaddingInlineStart(value: string | ref<string>) {
+    if (typeof value !== "string")
+      this.setStylerefMap("scrollPaddingInlineStart", value);
     else this._style.scrollPaddingInlineStart = value as any;
   }
 
@@ -6148,8 +6238,9 @@ export class CSSStyleRef implements CSSStyleDeclarationRef {
     return this._style.scrollPaddingLeft;
   }
 
-  public set scrollPaddingLeft(value: string | Ref<string>) {
-    if (value instanceof Ref) this.setStyleRefMap("scrollPaddingLeft", value);
+  public set scrollPaddingLeft(value: string | ref<string>) {
+    if (typeof value !== "string")
+      this.setStylerefMap("scrollPaddingLeft", value);
     else this._style.scrollPaddingLeft = value as any;
   }
 
@@ -6157,8 +6248,9 @@ export class CSSStyleRef implements CSSStyleDeclarationRef {
     return this._style.scrollPaddingRight;
   }
 
-  public set scrollPaddingRight(value: string | Ref<string>) {
-    if (value instanceof Ref) this.setStyleRefMap("scrollPaddingRight", value);
+  public set scrollPaddingRight(value: string | ref<string>) {
+    if (typeof value !== "string")
+      this.setStylerefMap("scrollPaddingRight", value);
     else this._style.scrollPaddingRight = value as any;
   }
 
@@ -6166,8 +6258,9 @@ export class CSSStyleRef implements CSSStyleDeclarationRef {
     return this._style.scrollPaddingTop;
   }
 
-  public set scrollPaddingTop(value: string | Ref<string>) {
-    if (value instanceof Ref) this.setStyleRefMap("scrollPaddingTop", value);
+  public set scrollPaddingTop(value: string | ref<string>) {
+    if (typeof value !== "string")
+      this.setStylerefMap("scrollPaddingTop", value);
     else this._style.scrollPaddingTop = value as any;
   }
 
@@ -6175,8 +6268,9 @@ export class CSSStyleRef implements CSSStyleDeclarationRef {
     return this._style.scrollSnapAlign;
   }
 
-  public set scrollSnapAlign(value: string | Ref<string>) {
-    if (value instanceof Ref) this.setStyleRefMap("scrollSnapAlign", value);
+  public set scrollSnapAlign(value: string | ref<string>) {
+    if (typeof value !== "string")
+      this.setStylerefMap("scrollSnapAlign", value);
     else this._style.scrollSnapAlign = value as any;
   }
 
@@ -6184,8 +6278,8 @@ export class CSSStyleRef implements CSSStyleDeclarationRef {
     return this._style.scrollSnapStop;
   }
 
-  public set scrollSnapStop(value: string | Ref<string>) {
-    if (value instanceof Ref) this.setStyleRefMap("scrollSnapStop", value);
+  public set scrollSnapStop(value: string | ref<string>) {
+    if (typeof value !== "string") this.setStylerefMap("scrollSnapStop", value);
     else this._style.scrollSnapStop = value as any;
   }
 
@@ -6193,8 +6287,8 @@ export class CSSStyleRef implements CSSStyleDeclarationRef {
     return this._style.scrollSnapType;
   }
 
-  public set scrollSnapType(value: string | Ref<string>) {
-    if (value instanceof Ref) this.setStyleRefMap("scrollSnapType", value);
+  public set scrollSnapType(value: string | ref<string>) {
+    if (typeof value !== "string") this.setStylerefMap("scrollSnapType", value);
     else this._style.scrollSnapType = value as any;
   }
 
@@ -6202,8 +6296,9 @@ export class CSSStyleRef implements CSSStyleDeclarationRef {
     return this._style.scrollbarGutter;
   }
 
-  public set scrollbarGutter(value: string | Ref<string>) {
-    if (value instanceof Ref) this.setStyleRefMap("scrollbarGutter", value);
+  public set scrollbarGutter(value: string | ref<string>) {
+    if (typeof value !== "string")
+      this.setStylerefMap("scrollbarGutter", value);
     else this._style.scrollbarGutter = value as any;
   }
 
@@ -6211,8 +6306,9 @@ export class CSSStyleRef implements CSSStyleDeclarationRef {
     return this._style.shapeImageThreshold;
   }
 
-  public set shapeImageThreshold(value: string | Ref<string>) {
-    if (value instanceof Ref) this.setStyleRefMap("shapeImageThreshold", value);
+  public set shapeImageThreshold(value: string | ref<string>) {
+    if (typeof value !== "string")
+      this.setStylerefMap("shapeImageThreshold", value);
     else this._style.shapeImageThreshold = value as any;
   }
 
@@ -6220,8 +6316,8 @@ export class CSSStyleRef implements CSSStyleDeclarationRef {
     return this._style.shapeMargin;
   }
 
-  public set shapeMargin(value: string | Ref<string>) {
-    if (value instanceof Ref) this.setStyleRefMap("shapeMargin", value);
+  public set shapeMargin(value: string | ref<string>) {
+    if (typeof value !== "string") this.setStylerefMap("shapeMargin", value);
     else this._style.shapeMargin = value as any;
   }
 
@@ -6229,8 +6325,8 @@ export class CSSStyleRef implements CSSStyleDeclarationRef {
     return this._style.shapeOutside;
   }
 
-  public set shapeOutside(value: string | Ref<string>) {
-    if (value instanceof Ref) this.setStyleRefMap("shapeOutside", value);
+  public set shapeOutside(value: string | ref<string>) {
+    if (typeof value !== "string") this.setStylerefMap("shapeOutside", value);
     else this._style.shapeOutside = value as any;
   }
 
@@ -6238,8 +6334,8 @@ export class CSSStyleRef implements CSSStyleDeclarationRef {
     return this._style.shapeRendering;
   }
 
-  public set shapeRendering(value: string | Ref<string>) {
-    if (value instanceof Ref) this.setStyleRefMap("shapeRendering", value);
+  public set shapeRendering(value: string | ref<string>) {
+    if (typeof value !== "string") this.setStylerefMap("shapeRendering", value);
     else this._style.shapeRendering = value as any;
   }
 
@@ -6247,8 +6343,8 @@ export class CSSStyleRef implements CSSStyleDeclarationRef {
     return this._style.stopColor;
   }
 
-  public set stopColor(value: string | Ref<string>) {
-    if (value instanceof Ref) this.setStyleRefMap("stopColor", value);
+  public set stopColor(value: string | ref<string>) {
+    if (typeof value !== "string") this.setStylerefMap("stopColor", value);
     else this._style.stopColor = value as any;
   }
 
@@ -6256,8 +6352,8 @@ export class CSSStyleRef implements CSSStyleDeclarationRef {
     return this._style.stopOpacity;
   }
 
-  public set stopOpacity(value: string | Ref<string>) {
-    if (value instanceof Ref) this.setStyleRefMap("stopOpacity", value);
+  public set stopOpacity(value: string | ref<string>) {
+    if (typeof value !== "string") this.setStylerefMap("stopOpacity", value);
     else this._style.stopOpacity = value as any;
   }
 
@@ -6265,8 +6361,8 @@ export class CSSStyleRef implements CSSStyleDeclarationRef {
     return this._style.stroke;
   }
 
-  public set stroke(value: string | Ref<string>) {
-    if (value instanceof Ref) this.setStyleRefMap("stroke", value);
+  public set stroke(value: string | ref<string>) {
+    if (typeof value !== "string") this.setStylerefMap("stroke", value);
     else this._style.stroke = value as any;
   }
 
@@ -6274,8 +6370,9 @@ export class CSSStyleRef implements CSSStyleDeclarationRef {
     return this._style.strokeDasharray;
   }
 
-  public set strokeDasharray(value: string | Ref<string>) {
-    if (value instanceof Ref) this.setStyleRefMap("strokeDasharray", value);
+  public set strokeDasharray(value: string | ref<string>) {
+    if (typeof value !== "string")
+      this.setStylerefMap("strokeDasharray", value);
     else this._style.strokeDasharray = value as any;
   }
 
@@ -6283,8 +6380,9 @@ export class CSSStyleRef implements CSSStyleDeclarationRef {
     return this._style.strokeDashoffset;
   }
 
-  public set strokeDashoffset(value: string | Ref<string>) {
-    if (value instanceof Ref) this.setStyleRefMap("strokeDashoffset", value);
+  public set strokeDashoffset(value: string | ref<string>) {
+    if (typeof value !== "string")
+      this.setStylerefMap("strokeDashoffset", value);
     else this._style.strokeDashoffset = value as any;
   }
 
@@ -6292,8 +6390,8 @@ export class CSSStyleRef implements CSSStyleDeclarationRef {
     return this._style.strokeLinecap;
   }
 
-  public set strokeLinecap(value: string | Ref<string>) {
-    if (value instanceof Ref) this.setStyleRefMap("strokeLinecap", value);
+  public set strokeLinecap(value: string | ref<string>) {
+    if (typeof value !== "string") this.setStylerefMap("strokeLinecap", value);
     else this._style.strokeLinecap = value as any;
   }
 
@@ -6301,8 +6399,8 @@ export class CSSStyleRef implements CSSStyleDeclarationRef {
     return this._style.strokeLinejoin;
   }
 
-  public set strokeLinejoin(value: string | Ref<string>) {
-    if (value instanceof Ref) this.setStyleRefMap("strokeLinejoin", value);
+  public set strokeLinejoin(value: string | ref<string>) {
+    if (typeof value !== "string") this.setStylerefMap("strokeLinejoin", value);
     else this._style.strokeLinejoin = value as any;
   }
 
@@ -6310,8 +6408,9 @@ export class CSSStyleRef implements CSSStyleDeclarationRef {
     return this._style.strokeMiterlimit;
   }
 
-  public set strokeMiterlimit(value: string | Ref<string>) {
-    if (value instanceof Ref) this.setStyleRefMap("strokeMiterlimit", value);
+  public set strokeMiterlimit(value: string | ref<string>) {
+    if (typeof value !== "string")
+      this.setStylerefMap("strokeMiterlimit", value);
     else this._style.strokeMiterlimit = value as any;
   }
 
@@ -6319,8 +6418,8 @@ export class CSSStyleRef implements CSSStyleDeclarationRef {
     return this._style.strokeOpacity;
   }
 
-  public set strokeOpacity(value: string | Ref<string>) {
-    if (value instanceof Ref) this.setStyleRefMap("strokeOpacity", value);
+  public set strokeOpacity(value: string | ref<string>) {
+    if (typeof value !== "string") this.setStylerefMap("strokeOpacity", value);
     else this._style.strokeOpacity = value as any;
   }
 
@@ -6328,8 +6427,8 @@ export class CSSStyleRef implements CSSStyleDeclarationRef {
     return this._style.strokeWidth;
   }
 
-  public set strokeWidth(value: string | Ref<string>) {
-    if (value instanceof Ref) this.setStyleRefMap("strokeWidth", value);
+  public set strokeWidth(value: string | ref<string>) {
+    if (typeof value !== "string") this.setStylerefMap("strokeWidth", value);
     else this._style.strokeWidth = value as any;
   }
 
@@ -6337,8 +6436,8 @@ export class CSSStyleRef implements CSSStyleDeclarationRef {
     return this._style.tabSize;
   }
 
-  public set tabSize(value: string | Ref<string>) {
-    if (value instanceof Ref) this.setStyleRefMap("tabSize", value);
+  public set tabSize(value: string | ref<string>) {
+    if (typeof value !== "string") this.setStylerefMap("tabSize", value);
     else this._style.tabSize = value as any;
   }
 
@@ -6346,8 +6445,8 @@ export class CSSStyleRef implements CSSStyleDeclarationRef {
     return this._style.tableLayout;
   }
 
-  public set tableLayout(value: string | Ref<string>) {
-    if (value instanceof Ref) this.setStyleRefMap("tableLayout", value);
+  public set tableLayout(value: string | ref<string>) {
+    if (typeof value !== "string") this.setStylerefMap("tableLayout", value);
     else this._style.tableLayout = value as any;
   }
 
@@ -6355,8 +6454,8 @@ export class CSSStyleRef implements CSSStyleDeclarationRef {
     return this._style.textAlign;
   }
 
-  public set textAlign(value: string | Ref<string>) {
-    if (value instanceof Ref) this.setStyleRefMap("textAlign", value);
+  public set textAlign(value: string | ref<string>) {
+    if (typeof value !== "string") this.setStylerefMap("textAlign", value);
     else this._style.textAlign = value as any;
   }
 
@@ -6364,8 +6463,8 @@ export class CSSStyleRef implements CSSStyleDeclarationRef {
     return this._style.textAlignLast;
   }
 
-  public set textAlignLast(value: string | Ref<string>) {
-    if (value instanceof Ref) this.setStyleRefMap("textAlignLast", value);
+  public set textAlignLast(value: string | ref<string>) {
+    if (typeof value !== "string") this.setStylerefMap("textAlignLast", value);
     else this._style.textAlignLast = value as any;
   }
 
@@ -6373,8 +6472,8 @@ export class CSSStyleRef implements CSSStyleDeclarationRef {
     return this._style.textAnchor;
   }
 
-  public set textAnchor(value: string | Ref<string>) {
-    if (value instanceof Ref) this.setStyleRefMap("textAnchor", value);
+  public set textAnchor(value: string | ref<string>) {
+    if (typeof value !== "string") this.setStylerefMap("textAnchor", value);
     else this._style.textAnchor = value as any;
   }
 
@@ -6382,8 +6481,9 @@ export class CSSStyleRef implements CSSStyleDeclarationRef {
     return this._style.textCombineUpright;
   }
 
-  public set textCombineUpright(value: string | Ref<string>) {
-    if (value instanceof Ref) this.setStyleRefMap("textCombineUpright", value);
+  public set textCombineUpright(value: string | ref<string>) {
+    if (typeof value !== "string")
+      this.setStylerefMap("textCombineUpright", value);
     else this._style.textCombineUpright = value as any;
   }
 
@@ -6391,8 +6491,8 @@ export class CSSStyleRef implements CSSStyleDeclarationRef {
     return this._style.textDecoration;
   }
 
-  public set textDecoration(value: string | Ref<string>) {
-    if (value instanceof Ref) this.setStyleRefMap("textDecoration", value);
+  public set textDecoration(value: string | ref<string>) {
+    if (typeof value !== "string") this.setStylerefMap("textDecoration", value);
     else this._style.textDecoration = value as any;
   }
 
@@ -6400,8 +6500,9 @@ export class CSSStyleRef implements CSSStyleDeclarationRef {
     return this._style.textDecorationColor;
   }
 
-  public set textDecorationColor(value: string | Ref<string>) {
-    if (value instanceof Ref) this.setStyleRefMap("textDecorationColor", value);
+  public set textDecorationColor(value: string | ref<string>) {
+    if (typeof value !== "string")
+      this.setStylerefMap("textDecorationColor", value);
     else this._style.textDecorationColor = value as any;
   }
 
@@ -6409,8 +6510,9 @@ export class CSSStyleRef implements CSSStyleDeclarationRef {
     return this._style.textDecorationLine;
   }
 
-  public set textDecorationLine(value: string | Ref<string>) {
-    if (value instanceof Ref) this.setStyleRefMap("textDecorationLine", value);
+  public set textDecorationLine(value: string | ref<string>) {
+    if (typeof value !== "string")
+      this.setStylerefMap("textDecorationLine", value);
     else this._style.textDecorationLine = value as any;
   }
 
@@ -6418,9 +6520,9 @@ export class CSSStyleRef implements CSSStyleDeclarationRef {
     return this._style.textDecorationSkipInk;
   }
 
-  public set textDecorationSkipInk(value: string | Ref<string>) {
-    if (value instanceof Ref)
-      this.setStyleRefMap("textDecorationSkipInk", value);
+  public set textDecorationSkipInk(value: string | ref<string>) {
+    if (typeof value !== "string")
+      this.setStylerefMap("textDecorationSkipInk", value);
     else this._style.textDecorationSkipInk = value as any;
   }
 
@@ -6428,8 +6530,9 @@ export class CSSStyleRef implements CSSStyleDeclarationRef {
     return this._style.textDecorationStyle;
   }
 
-  public set textDecorationStyle(value: string | Ref<string>) {
-    if (value instanceof Ref) this.setStyleRefMap("textDecorationStyle", value);
+  public set textDecorationStyle(value: string | ref<string>) {
+    if (typeof value !== "string")
+      this.setStylerefMap("textDecorationStyle", value);
     else this._style.textDecorationStyle = value as any;
   }
 
@@ -6437,9 +6540,9 @@ export class CSSStyleRef implements CSSStyleDeclarationRef {
     return this._style.textDecorationThickness;
   }
 
-  public set textDecorationThickness(value: string | Ref<string>) {
-    if (value instanceof Ref)
-      this.setStyleRefMap("textDecorationThickness", value);
+  public set textDecorationThickness(value: string | ref<string>) {
+    if (typeof value !== "string")
+      this.setStylerefMap("textDecorationThickness", value);
     else this._style.textDecorationThickness = value as any;
   }
 
@@ -6447,8 +6550,8 @@ export class CSSStyleRef implements CSSStyleDeclarationRef {
     return this._style.textEmphasis;
   }
 
-  public set textEmphasis(value: string | Ref<string>) {
-    if (value instanceof Ref) this.setStyleRefMap("textEmphasis", value);
+  public set textEmphasis(value: string | ref<string>) {
+    if (typeof value !== "string") this.setStylerefMap("textEmphasis", value);
     else this._style.textEmphasis = value as any;
   }
 
@@ -6456,8 +6559,9 @@ export class CSSStyleRef implements CSSStyleDeclarationRef {
     return this._style.textEmphasisColor;
   }
 
-  public set textEmphasisColor(value: string | Ref<string>) {
-    if (value instanceof Ref) this.setStyleRefMap("textEmphasisColor", value);
+  public set textEmphasisColor(value: string | ref<string>) {
+    if (typeof value !== "string")
+      this.setStylerefMap("textEmphasisColor", value);
     else this._style.textEmphasisColor = value as any;
   }
 
@@ -6465,9 +6569,9 @@ export class CSSStyleRef implements CSSStyleDeclarationRef {
     return this._style.textEmphasisPosition;
   }
 
-  public set textEmphasisPosition(value: string | Ref<string>) {
-    if (value instanceof Ref)
-      this.setStyleRefMap("textEmphasisPosition", value);
+  public set textEmphasisPosition(value: string | ref<string>) {
+    if (typeof value !== "string")
+      this.setStylerefMap("textEmphasisPosition", value);
     else this._style.textEmphasisPosition = value as any;
   }
 
@@ -6475,8 +6579,9 @@ export class CSSStyleRef implements CSSStyleDeclarationRef {
     return this._style.textEmphasisStyle;
   }
 
-  public set textEmphasisStyle(value: string | Ref<string>) {
-    if (value instanceof Ref) this.setStyleRefMap("textEmphasisStyle", value);
+  public set textEmphasisStyle(value: string | ref<string>) {
+    if (typeof value !== "string")
+      this.setStylerefMap("textEmphasisStyle", value);
     else this._style.textEmphasisStyle = value as any;
   }
 
@@ -6484,8 +6589,8 @@ export class CSSStyleRef implements CSSStyleDeclarationRef {
     return this._style.textIndent;
   }
 
-  public set textIndent(value: string | Ref<string>) {
-    if (value instanceof Ref) this.setStyleRefMap("textIndent", value);
+  public set textIndent(value: string | ref<string>) {
+    if (typeof value !== "string") this.setStylerefMap("textIndent", value);
     else this._style.textIndent = value as any;
   }
 
@@ -6493,8 +6598,9 @@ export class CSSStyleRef implements CSSStyleDeclarationRef {
     return this._style.textOrientation;
   }
 
-  public set textOrientation(value: string | Ref<string>) {
-    if (value instanceof Ref) this.setStyleRefMap("textOrientation", value);
+  public set textOrientation(value: string | ref<string>) {
+    if (typeof value !== "string")
+      this.setStylerefMap("textOrientation", value);
     else this._style.textOrientation = value as any;
   }
 
@@ -6502,8 +6608,8 @@ export class CSSStyleRef implements CSSStyleDeclarationRef {
     return this._style.textOverflow;
   }
 
-  public set textOverflow(value: string | Ref<string>) {
-    if (value instanceof Ref) this.setStyleRefMap("textOverflow", value);
+  public set textOverflow(value: string | ref<string>) {
+    if (typeof value !== "string") this.setStylerefMap("textOverflow", value);
     else this._style.textOverflow = value as any;
   }
 
@@ -6511,8 +6617,8 @@ export class CSSStyleRef implements CSSStyleDeclarationRef {
     return this._style.textRendering;
   }
 
-  public set textRendering(value: string | Ref<string>) {
-    if (value instanceof Ref) this.setStyleRefMap("textRendering", value);
+  public set textRendering(value: string | ref<string>) {
+    if (typeof value !== "string") this.setStylerefMap("textRendering", value);
     else this._style.textRendering = value as any;
   }
 
@@ -6520,8 +6626,8 @@ export class CSSStyleRef implements CSSStyleDeclarationRef {
     return this._style.textShadow;
   }
 
-  public set textShadow(value: string | Ref<string>) {
-    if (value instanceof Ref) this.setStyleRefMap("textShadow", value);
+  public set textShadow(value: string | ref<string>) {
+    if (typeof value !== "string") this.setStylerefMap("textShadow", value);
     else this._style.textShadow = value as any;
   }
 
@@ -6529,8 +6635,8 @@ export class CSSStyleRef implements CSSStyleDeclarationRef {
     return this._style.textTransform;
   }
 
-  public set textTransform(value: string | Ref<string>) {
-    if (value instanceof Ref) this.setStyleRefMap("textTransform", value);
+  public set textTransform(value: string | ref<string>) {
+    if (typeof value !== "string") this.setStylerefMap("textTransform", value);
     else this._style.textTransform = value as any;
   }
 
@@ -6538,8 +6644,9 @@ export class CSSStyleRef implements CSSStyleDeclarationRef {
     return this._style.textUnderlineOffset;
   }
 
-  public set textUnderlineOffset(value: string | Ref<string>) {
-    if (value instanceof Ref) this.setStyleRefMap("textUnderlineOffset", value);
+  public set textUnderlineOffset(value: string | ref<string>) {
+    if (typeof value !== "string")
+      this.setStylerefMap("textUnderlineOffset", value);
     else this._style.textUnderlineOffset = value as any;
   }
 
@@ -6547,9 +6654,9 @@ export class CSSStyleRef implements CSSStyleDeclarationRef {
     return this._style.textUnderlinePosition;
   }
 
-  public set textUnderlinePosition(value: string | Ref<string>) {
-    if (value instanceof Ref)
-      this.setStyleRefMap("textUnderlinePosition", value);
+  public set textUnderlinePosition(value: string | ref<string>) {
+    if (typeof value !== "string")
+      this.setStylerefMap("textUnderlinePosition", value);
     else this._style.textUnderlinePosition = value as any;
   }
 
@@ -6557,8 +6664,8 @@ export class CSSStyleRef implements CSSStyleDeclarationRef {
     return this._style.top;
   }
 
-  public set top(value: string | Ref<string>) {
-    if (value instanceof Ref) this.setStyleRefMap("top", value);
+  public set top(value: string | ref<string>) {
+    if (typeof value !== "string") this.setStylerefMap("top", value);
     else this._style.top = value as any;
   }
 
@@ -6566,8 +6673,8 @@ export class CSSStyleRef implements CSSStyleDeclarationRef {
     return this._style.touchAction;
   }
 
-  public set touchAction(value: string | Ref<string>) {
-    if (value instanceof Ref) this.setStyleRefMap("touchAction", value);
+  public set touchAction(value: string | ref<string>) {
+    if (typeof value !== "string") this.setStylerefMap("touchAction", value);
     else this._style.touchAction = value as any;
   }
 
@@ -6575,8 +6682,8 @@ export class CSSStyleRef implements CSSStyleDeclarationRef {
     return this._style.transform;
   }
 
-  public set transform(value: string | Ref<string>) {
-    if (value instanceof Ref) this.setStyleRefMap("transform", value);
+  public set transform(value: string | ref<string>) {
+    if (typeof value !== "string") this.setStylerefMap("transform", value);
     else this._style.transform = value as any;
   }
 
@@ -6584,8 +6691,8 @@ export class CSSStyleRef implements CSSStyleDeclarationRef {
     return this._style.transformBox;
   }
 
-  public set transformBox(value: string | Ref<string>) {
-    if (value instanceof Ref) this.setStyleRefMap("transformBox", value);
+  public set transformBox(value: string | ref<string>) {
+    if (typeof value !== "string") this.setStylerefMap("transformBox", value);
     else this._style.transformBox = value as any;
   }
 
@@ -6593,8 +6700,9 @@ export class CSSStyleRef implements CSSStyleDeclarationRef {
     return this._style.transformOrigin;
   }
 
-  public set transformOrigin(value: string | Ref<string>) {
-    if (value instanceof Ref) this.setStyleRefMap("transformOrigin", value);
+  public set transformOrigin(value: string | ref<string>) {
+    if (typeof value !== "string")
+      this.setStylerefMap("transformOrigin", value);
     else this._style.transformOrigin = value as any;
   }
 
@@ -6602,8 +6710,8 @@ export class CSSStyleRef implements CSSStyleDeclarationRef {
     return this._style.transformStyle;
   }
 
-  public set transformStyle(value: string | Ref<string>) {
-    if (value instanceof Ref) this.setStyleRefMap("transformStyle", value);
+  public set transformStyle(value: string | ref<string>) {
+    if (typeof value !== "string") this.setStylerefMap("transformStyle", value);
     else this._style.transformStyle = value as any;
   }
 
@@ -6611,8 +6719,8 @@ export class CSSStyleRef implements CSSStyleDeclarationRef {
     return this._style.transition;
   }
 
-  public set transition(value: string | Ref<string>) {
-    if (value instanceof Ref) this.setStyleRefMap("transition", value);
+  public set transition(value: string | ref<string>) {
+    if (typeof value !== "string") this.setStylerefMap("transition", value);
     else this._style.transition = value as any;
   }
 
@@ -6620,8 +6728,9 @@ export class CSSStyleRef implements CSSStyleDeclarationRef {
     return this._style.transitionDelay;
   }
 
-  public set transitionDelay(value: string | Ref<string>) {
-    if (value instanceof Ref) this.setStyleRefMap("transitionDelay", value);
+  public set transitionDelay(value: string | ref<string>) {
+    if (typeof value !== "string")
+      this.setStylerefMap("transitionDelay", value);
     else this._style.transitionDelay = value as any;
   }
 
@@ -6629,8 +6738,9 @@ export class CSSStyleRef implements CSSStyleDeclarationRef {
     return this._style.transitionDuration;
   }
 
-  public set transitionDuration(value: string | Ref<string>) {
-    if (value instanceof Ref) this.setStyleRefMap("transitionDuration", value);
+  public set transitionDuration(value: string | ref<string>) {
+    if (typeof value !== "string")
+      this.setStylerefMap("transitionDuration", value);
     else this._style.transitionDuration = value as any;
   }
 
@@ -6638,8 +6748,9 @@ export class CSSStyleRef implements CSSStyleDeclarationRef {
     return this._style.transitionProperty;
   }
 
-  public set transitionProperty(value: string | Ref<string>) {
-    if (value instanceof Ref) this.setStyleRefMap("transitionProperty", value);
+  public set transitionProperty(value: string | ref<string>) {
+    if (typeof value !== "string")
+      this.setStylerefMap("transitionProperty", value);
     else this._style.transitionProperty = value as any;
   }
 
@@ -6647,9 +6758,9 @@ export class CSSStyleRef implements CSSStyleDeclarationRef {
     return this._style.transitionTimingFunction;
   }
 
-  public set transitionTimingFunction(value: string | Ref<string>) {
-    if (value instanceof Ref)
-      this.setStyleRefMap("transitionTimingFunction", value);
+  public set transitionTimingFunction(value: string | ref<string>) {
+    if (typeof value !== "string")
+      this.setStylerefMap("transitionTimingFunction", value);
     else this._style.transitionTimingFunction = value as any;
   }
 
@@ -6657,8 +6768,8 @@ export class CSSStyleRef implements CSSStyleDeclarationRef {
     return this._style.translate;
   }
 
-  public set translate(value: string | Ref<string>) {
-    if (value instanceof Ref) this.setStyleRefMap("translate", value);
+  public set translate(value: string | ref<string>) {
+    if (typeof value !== "string") this.setStylerefMap("translate", value);
     else this._style.translate = value as any;
   }
 
@@ -6666,8 +6777,8 @@ export class CSSStyleRef implements CSSStyleDeclarationRef {
     return this._style.unicodeBidi;
   }
 
-  public set unicodeBidi(value: string | Ref<string>) {
-    if (value instanceof Ref) this.setStyleRefMap("unicodeBidi", value);
+  public set unicodeBidi(value: string | ref<string>) {
+    if (typeof value !== "string") this.setStylerefMap("unicodeBidi", value);
     else this._style.unicodeBidi = value as any;
   }
 
@@ -6675,8 +6786,8 @@ export class CSSStyleRef implements CSSStyleDeclarationRef {
     return this._style.userSelect;
   }
 
-  public set userSelect(value: string | Ref<string>) {
-    if (value instanceof Ref) this.setStyleRefMap("userSelect", value);
+  public set userSelect(value: string | ref<string>) {
+    if (typeof value !== "string") this.setStylerefMap("userSelect", value);
     else this._style.userSelect = value as any;
   }
 
@@ -6684,8 +6795,8 @@ export class CSSStyleRef implements CSSStyleDeclarationRef {
     return this._style.verticalAlign;
   }
 
-  public set verticalAlign(value: string | Ref<string>) {
-    if (value instanceof Ref) this.setStyleRefMap("verticalAlign", value);
+  public set verticalAlign(value: string | ref<string>) {
+    if (typeof value !== "string") this.setStylerefMap("verticalAlign", value);
     else this._style.verticalAlign = value as any;
   }
 
@@ -6693,8 +6804,8 @@ export class CSSStyleRef implements CSSStyleDeclarationRef {
     return this._style.visibility;
   }
 
-  public set visibility(value: string | Ref<string>) {
-    if (value instanceof Ref) this.setStyleRefMap("visibility", value);
+  public set visibility(value: string | ref<string>) {
+    if (typeof value !== "string") this.setStylerefMap("visibility", value);
     else this._style.visibility = value as any;
   }
 
@@ -6702,8 +6813,9 @@ export class CSSStyleRef implements CSSStyleDeclarationRef {
     return this._style.webkitAlignContent;
   }
 
-  public set webkitAlignContent(value: string | Ref<string>) {
-    if (value instanceof Ref) this.setStyleRefMap("webkitAlignContent", value);
+  public set webkitAlignContent(value: string | ref<string>) {
+    if (typeof value !== "string")
+      this.setStylerefMap("webkitAlignContent", value);
     else this._style.webkitAlignContent = value as any;
   }
 
@@ -6711,8 +6823,9 @@ export class CSSStyleRef implements CSSStyleDeclarationRef {
     return this._style.webkitAlignItems;
   }
 
-  public set webkitAlignItems(value: string | Ref<string>) {
-    if (value instanceof Ref) this.setStyleRefMap("webkitAlignItems", value);
+  public set webkitAlignItems(value: string | ref<string>) {
+    if (typeof value !== "string")
+      this.setStylerefMap("webkitAlignItems", value);
     else this._style.webkitAlignItems = value as any;
   }
 
@@ -6720,8 +6833,9 @@ export class CSSStyleRef implements CSSStyleDeclarationRef {
     return this._style.webkitAlignSelf;
   }
 
-  public set webkitAlignSelf(value: string | Ref<string>) {
-    if (value instanceof Ref) this.setStyleRefMap("webkitAlignSelf", value);
+  public set webkitAlignSelf(value: string | ref<string>) {
+    if (typeof value !== "string")
+      this.setStylerefMap("webkitAlignSelf", value);
     else this._style.webkitAlignSelf = value as any;
   }
 
@@ -6729,8 +6843,9 @@ export class CSSStyleRef implements CSSStyleDeclarationRef {
     return this._style.webkitAnimation;
   }
 
-  public set webkitAnimation(value: string | Ref<string>) {
-    if (value instanceof Ref) this.setStyleRefMap("webkitAnimation", value);
+  public set webkitAnimation(value: string | ref<string>) {
+    if (typeof value !== "string")
+      this.setStylerefMap("webkitAnimation", value);
     else this._style.webkitAnimation = value as any;
   }
 
@@ -6738,9 +6853,9 @@ export class CSSStyleRef implements CSSStyleDeclarationRef {
     return this._style.webkitAnimationDelay;
   }
 
-  public set webkitAnimationDelay(value: string | Ref<string>) {
-    if (value instanceof Ref)
-      this.setStyleRefMap("webkitAnimationDelay", value);
+  public set webkitAnimationDelay(value: string | ref<string>) {
+    if (typeof value !== "string")
+      this.setStylerefMap("webkitAnimationDelay", value);
     else this._style.webkitAnimationDelay = value as any;
   }
 
@@ -6748,9 +6863,9 @@ export class CSSStyleRef implements CSSStyleDeclarationRef {
     return this._style.webkitAnimationDirection;
   }
 
-  public set webkitAnimationDirection(value: string | Ref<string>) {
-    if (value instanceof Ref)
-      this.setStyleRefMap("webkitAnimationDirection", value);
+  public set webkitAnimationDirection(value: string | ref<string>) {
+    if (typeof value !== "string")
+      this.setStylerefMap("webkitAnimationDirection", value);
     else this._style.webkitAnimationDirection = value as any;
   }
 
@@ -6758,9 +6873,9 @@ export class CSSStyleRef implements CSSStyleDeclarationRef {
     return this._style.webkitAnimationDuration;
   }
 
-  public set webkitAnimationDuration(value: string | Ref<string>) {
-    if (value instanceof Ref)
-      this.setStyleRefMap("webkitAnimationDuration", value);
+  public set webkitAnimationDuration(value: string | ref<string>) {
+    if (typeof value !== "string")
+      this.setStylerefMap("webkitAnimationDuration", value);
     else this._style.webkitAnimationDuration = value as any;
   }
 
@@ -6768,9 +6883,9 @@ export class CSSStyleRef implements CSSStyleDeclarationRef {
     return this._style.webkitAnimationFillMode;
   }
 
-  public set webkitAnimationFillMode(value: string | Ref<string>) {
-    if (value instanceof Ref)
-      this.setStyleRefMap("webkitAnimationFillMode", value);
+  public set webkitAnimationFillMode(value: string | ref<string>) {
+    if (typeof value !== "string")
+      this.setStylerefMap("webkitAnimationFillMode", value);
     else this._style.webkitAnimationFillMode = value as any;
   }
 
@@ -6778,9 +6893,9 @@ export class CSSStyleRef implements CSSStyleDeclarationRef {
     return this._style.webkitAnimationIterationCount;
   }
 
-  public set webkitAnimationIterationCount(value: string | Ref<string>) {
-    if (value instanceof Ref)
-      this.setStyleRefMap("webkitAnimationIterationCount", value);
+  public set webkitAnimationIterationCount(value: string | ref<string>) {
+    if (typeof value !== "string")
+      this.setStylerefMap("webkitAnimationIterationCount", value);
     else this._style.webkitAnimationIterationCount = value as any;
   }
 
@@ -6788,8 +6903,9 @@ export class CSSStyleRef implements CSSStyleDeclarationRef {
     return this._style.webkitAnimationName;
   }
 
-  public set webkitAnimationName(value: string | Ref<string>) {
-    if (value instanceof Ref) this.setStyleRefMap("webkitAnimationName", value);
+  public set webkitAnimationName(value: string | ref<string>) {
+    if (typeof value !== "string")
+      this.setStylerefMap("webkitAnimationName", value);
     else this._style.webkitAnimationName = value as any;
   }
 
@@ -6797,9 +6913,9 @@ export class CSSStyleRef implements CSSStyleDeclarationRef {
     return this._style.webkitAnimationPlayState;
   }
 
-  public set webkitAnimationPlayState(value: string | Ref<string>) {
-    if (value instanceof Ref)
-      this.setStyleRefMap("webkitAnimationPlayState", value);
+  public set webkitAnimationPlayState(value: string | ref<string>) {
+    if (typeof value !== "string")
+      this.setStylerefMap("webkitAnimationPlayState", value);
     else this._style.webkitAnimationPlayState = value as any;
   }
 
@@ -6807,9 +6923,9 @@ export class CSSStyleRef implements CSSStyleDeclarationRef {
     return this._style.webkitAnimationTimingFunction;
   }
 
-  public set webkitAnimationTimingFunction(value: string | Ref<string>) {
-    if (value instanceof Ref)
-      this.setStyleRefMap("webkitAnimationTimingFunction", value);
+  public set webkitAnimationTimingFunction(value: string | ref<string>) {
+    if (typeof value !== "string")
+      this.setStylerefMap("webkitAnimationTimingFunction", value);
     else this._style.webkitAnimationTimingFunction = value as any;
   }
 
@@ -6817,8 +6933,9 @@ export class CSSStyleRef implements CSSStyleDeclarationRef {
     return this._style.webkitAppearance;
   }
 
-  public set webkitAppearance(value: string | Ref<string>) {
-    if (value instanceof Ref) this.setStyleRefMap("webkitAppearance", value);
+  public set webkitAppearance(value: string | ref<string>) {
+    if (typeof value !== "string")
+      this.setStylerefMap("webkitAppearance", value);
     else this._style.webkitAppearance = value as any;
   }
 
@@ -6826,9 +6943,9 @@ export class CSSStyleRef implements CSSStyleDeclarationRef {
     return this._style.webkitBackfaceVisibility;
   }
 
-  public set webkitBackfaceVisibility(value: string | Ref<string>) {
-    if (value instanceof Ref)
-      this.setStyleRefMap("webkitBackfaceVisibility", value);
+  public set webkitBackfaceVisibility(value: string | ref<string>) {
+    if (typeof value !== "string")
+      this.setStylerefMap("webkitBackfaceVisibility", value);
     else this._style.webkitBackfaceVisibility = value as any;
   }
 
@@ -6836,9 +6953,9 @@ export class CSSStyleRef implements CSSStyleDeclarationRef {
     return this._style.webkitBackgroundClip;
   }
 
-  public set webkitBackgroundClip(value: string | Ref<string>) {
-    if (value instanceof Ref)
-      this.setStyleRefMap("webkitBackgroundClip", value);
+  public set webkitBackgroundClip(value: string | ref<string>) {
+    if (typeof value !== "string")
+      this.setStylerefMap("webkitBackgroundClip", value);
     else this._style.webkitBackgroundClip = value as any;
   }
 
@@ -6846,9 +6963,9 @@ export class CSSStyleRef implements CSSStyleDeclarationRef {
     return this._style.webkitBackgroundOrigin;
   }
 
-  public set webkitBackgroundOrigin(value: string | Ref<string>) {
-    if (value instanceof Ref)
-      this.setStyleRefMap("webkitBackgroundOrigin", value);
+  public set webkitBackgroundOrigin(value: string | ref<string>) {
+    if (typeof value !== "string")
+      this.setStylerefMap("webkitBackgroundOrigin", value);
     else this._style.webkitBackgroundOrigin = value as any;
   }
 
@@ -6856,9 +6973,9 @@ export class CSSStyleRef implements CSSStyleDeclarationRef {
     return this._style.webkitBackgroundSize;
   }
 
-  public set webkitBackgroundSize(value: string | Ref<string>) {
-    if (value instanceof Ref)
-      this.setStyleRefMap("webkitBackgroundSize", value);
+  public set webkitBackgroundSize(value: string | ref<string>) {
+    if (typeof value !== "string")
+      this.setStylerefMap("webkitBackgroundSize", value);
     else this._style.webkitBackgroundSize = value as any;
   }
 
@@ -6866,9 +6983,9 @@ export class CSSStyleRef implements CSSStyleDeclarationRef {
     return this._style.webkitBorderBottomLeftRadius;
   }
 
-  public set webkitBorderBottomLeftRadius(value: string | Ref<string>) {
-    if (value instanceof Ref)
-      this.setStyleRefMap("webkitBorderBottomLeftRadius", value);
+  public set webkitBorderBottomLeftRadius(value: string | ref<string>) {
+    if (typeof value !== "string")
+      this.setStylerefMap("webkitBorderBottomLeftRadius", value);
     else this._style.webkitBorderBottomLeftRadius = value as any;
   }
 
@@ -6876,9 +6993,9 @@ export class CSSStyleRef implements CSSStyleDeclarationRef {
     return this._style.webkitBorderBottomRightRadius;
   }
 
-  public set webkitBorderBottomRightRadius(value: string | Ref<string>) {
-    if (value instanceof Ref)
-      this.setStyleRefMap("webkitBorderBottomRightRadius", value);
+  public set webkitBorderBottomRightRadius(value: string | ref<string>) {
+    if (typeof value !== "string")
+      this.setStylerefMap("webkitBorderBottomRightRadius", value);
     else this._style.webkitBorderBottomRightRadius = value as any;
   }
 
@@ -6886,8 +7003,9 @@ export class CSSStyleRef implements CSSStyleDeclarationRef {
     return this._style.webkitBorderRadius;
   }
 
-  public set webkitBorderRadius(value: string | Ref<string>) {
-    if (value instanceof Ref) this.setStyleRefMap("webkitBorderRadius", value);
+  public set webkitBorderRadius(value: string | ref<string>) {
+    if (typeof value !== "string")
+      this.setStylerefMap("webkitBorderRadius", value);
     else this._style.webkitBorderRadius = value as any;
   }
 
@@ -6895,9 +7013,9 @@ export class CSSStyleRef implements CSSStyleDeclarationRef {
     return this._style.webkitBorderTopLeftRadius;
   }
 
-  public set webkitBorderTopLeftRadius(value: string | Ref<string>) {
-    if (value instanceof Ref)
-      this.setStyleRefMap("webkitBorderTopLeftRadius", value);
+  public set webkitBorderTopLeftRadius(value: string | ref<string>) {
+    if (typeof value !== "string")
+      this.setStylerefMap("webkitBorderTopLeftRadius", value);
     else this._style.webkitBorderTopLeftRadius = value as any;
   }
 
@@ -6905,9 +7023,9 @@ export class CSSStyleRef implements CSSStyleDeclarationRef {
     return this._style.webkitBorderTopRightRadius;
   }
 
-  public set webkitBorderTopRightRadius(value: string | Ref<string>) {
-    if (value instanceof Ref)
-      this.setStyleRefMap("webkitBorderTopRightRadius", value);
+  public set webkitBorderTopRightRadius(value: string | ref<string>) {
+    if (typeof value !== "string")
+      this.setStylerefMap("webkitBorderTopRightRadius", value);
     else this._style.webkitBorderTopRightRadius = value as any;
   }
 
@@ -6915,8 +7033,8 @@ export class CSSStyleRef implements CSSStyleDeclarationRef {
     return this._style.webkitBoxAlign;
   }
 
-  public set webkitBoxAlign(value: string | Ref<string>) {
-    if (value instanceof Ref) this.setStyleRefMap("webkitBoxAlign", value);
+  public set webkitBoxAlign(value: string | ref<string>) {
+    if (typeof value !== "string") this.setStylerefMap("webkitBoxAlign", value);
     else this._style.webkitBoxAlign = value as any;
   }
 
@@ -6924,8 +7042,8 @@ export class CSSStyleRef implements CSSStyleDeclarationRef {
     return this._style.webkitBoxFlex;
   }
 
-  public set webkitBoxFlex(value: string | Ref<string>) {
-    if (value instanceof Ref) this.setStyleRefMap("webkitBoxFlex", value);
+  public set webkitBoxFlex(value: string | ref<string>) {
+    if (typeof value !== "string") this.setStylerefMap("webkitBoxFlex", value);
     else this._style.webkitBoxFlex = value as any;
   }
 
@@ -6933,9 +7051,9 @@ export class CSSStyleRef implements CSSStyleDeclarationRef {
     return this._style.webkitBoxOrdinalGroup;
   }
 
-  public set webkitBoxOrdinalGroup(value: string | Ref<string>) {
-    if (value instanceof Ref)
-      this.setStyleRefMap("webkitBoxOrdinalGroup", value);
+  public set webkitBoxOrdinalGroup(value: string | ref<string>) {
+    if (typeof value !== "string")
+      this.setStylerefMap("webkitBoxOrdinalGroup", value);
     else this._style.webkitBoxOrdinalGroup = value as any;
   }
 
@@ -6943,8 +7061,9 @@ export class CSSStyleRef implements CSSStyleDeclarationRef {
     return this._style.webkitBoxOrient;
   }
 
-  public set webkitBoxOrient(value: string | Ref<string>) {
-    if (value instanceof Ref) this.setStyleRefMap("webkitBoxOrient", value);
+  public set webkitBoxOrient(value: string | ref<string>) {
+    if (typeof value !== "string")
+      this.setStylerefMap("webkitBoxOrient", value);
     else this._style.webkitBoxOrient = value as any;
   }
 
@@ -6952,8 +7071,8 @@ export class CSSStyleRef implements CSSStyleDeclarationRef {
     return this._style.webkitBoxPack;
   }
 
-  public set webkitBoxPack(value: string | Ref<string>) {
-    if (value instanceof Ref) this.setStyleRefMap("webkitBoxPack", value);
+  public set webkitBoxPack(value: string | ref<string>) {
+    if (typeof value !== "string") this.setStylerefMap("webkitBoxPack", value);
     else this._style.webkitBoxPack = value as any;
   }
 
@@ -6961,8 +7080,9 @@ export class CSSStyleRef implements CSSStyleDeclarationRef {
     return this._style.webkitBoxShadow;
   }
 
-  public set webkitBoxShadow(value: string | Ref<string>) {
-    if (value instanceof Ref) this.setStyleRefMap("webkitBoxShadow", value);
+  public set webkitBoxShadow(value: string | ref<string>) {
+    if (typeof value !== "string")
+      this.setStylerefMap("webkitBoxShadow", value);
     else this._style.webkitBoxShadow = value as any;
   }
 
@@ -6970,8 +7090,9 @@ export class CSSStyleRef implements CSSStyleDeclarationRef {
     return this._style.webkitBoxSizing;
   }
 
-  public set webkitBoxSizing(value: string | Ref<string>) {
-    if (value instanceof Ref) this.setStyleRefMap("webkitBoxSizing", value);
+  public set webkitBoxSizing(value: string | ref<string>) {
+    if (typeof value !== "string")
+      this.setStylerefMap("webkitBoxSizing", value);
     else this._style.webkitBoxSizing = value as any;
   }
 
@@ -6979,8 +7100,8 @@ export class CSSStyleRef implements CSSStyleDeclarationRef {
     return this._style.webkitFilter;
   }
 
-  public set webkitFilter(value: string | Ref<string>) {
-    if (value instanceof Ref) this.setStyleRefMap("webkitFilter", value);
+  public set webkitFilter(value: string | ref<string>) {
+    if (typeof value !== "string") this.setStylerefMap("webkitFilter", value);
     else this._style.webkitFilter = value as any;
   }
 
@@ -6988,8 +7109,8 @@ export class CSSStyleRef implements CSSStyleDeclarationRef {
     return this._style.webkitFlex;
   }
 
-  public set webkitFlex(value: string | Ref<string>) {
-    if (value instanceof Ref) this.setStyleRefMap("webkitFlex", value);
+  public set webkitFlex(value: string | ref<string>) {
+    if (typeof value !== "string") this.setStylerefMap("webkitFlex", value);
     else this._style.webkitFlex = value as any;
   }
 
@@ -6997,8 +7118,9 @@ export class CSSStyleRef implements CSSStyleDeclarationRef {
     return this._style.webkitFlexBasis;
   }
 
-  public set webkitFlexBasis(value: string | Ref<string>) {
-    if (value instanceof Ref) this.setStyleRefMap("webkitFlexBasis", value);
+  public set webkitFlexBasis(value: string | ref<string>) {
+    if (typeof value !== "string")
+      this.setStylerefMap("webkitFlexBasis", value);
     else this._style.webkitFlexBasis = value as any;
   }
 
@@ -7006,8 +7128,9 @@ export class CSSStyleRef implements CSSStyleDeclarationRef {
     return this._style.webkitFlexDirection;
   }
 
-  public set webkitFlexDirection(value: string | Ref<string>) {
-    if (value instanceof Ref) this.setStyleRefMap("webkitFlexDirection", value);
+  public set webkitFlexDirection(value: string | ref<string>) {
+    if (typeof value !== "string")
+      this.setStylerefMap("webkitFlexDirection", value);
     else this._style.webkitFlexDirection = value as any;
   }
 
@@ -7015,8 +7138,8 @@ export class CSSStyleRef implements CSSStyleDeclarationRef {
     return this._style.webkitFlexFlow;
   }
 
-  public set webkitFlexFlow(value: string | Ref<string>) {
-    if (value instanceof Ref) this.setStyleRefMap("webkitFlexFlow", value);
+  public set webkitFlexFlow(value: string | ref<string>) {
+    if (typeof value !== "string") this.setStylerefMap("webkitFlexFlow", value);
     else this._style.webkitFlexFlow = value as any;
   }
 
@@ -7024,8 +7147,8 @@ export class CSSStyleRef implements CSSStyleDeclarationRef {
     return this._style.webkitFlexGrow;
   }
 
-  public set webkitFlexGrow(value: string | Ref<string>) {
-    if (value instanceof Ref) this.setStyleRefMap("webkitFlexGrow", value);
+  public set webkitFlexGrow(value: string | ref<string>) {
+    if (typeof value !== "string") this.setStylerefMap("webkitFlexGrow", value);
     else this._style.webkitFlexGrow = value as any;
   }
 
@@ -7033,8 +7156,9 @@ export class CSSStyleRef implements CSSStyleDeclarationRef {
     return this._style.webkitFlexShrink;
   }
 
-  public set webkitFlexShrink(value: string | Ref<string>) {
-    if (value instanceof Ref) this.setStyleRefMap("webkitFlexShrink", value);
+  public set webkitFlexShrink(value: string | ref<string>) {
+    if (typeof value !== "string")
+      this.setStylerefMap("webkitFlexShrink", value);
     else this._style.webkitFlexShrink = value as any;
   }
 
@@ -7042,8 +7166,8 @@ export class CSSStyleRef implements CSSStyleDeclarationRef {
     return this._style.webkitFlexWrap;
   }
 
-  public set webkitFlexWrap(value: string | Ref<string>) {
-    if (value instanceof Ref) this.setStyleRefMap("webkitFlexWrap", value);
+  public set webkitFlexWrap(value: string | ref<string>) {
+    if (typeof value !== "string") this.setStylerefMap("webkitFlexWrap", value);
     else this._style.webkitFlexWrap = value as any;
   }
 
@@ -7051,9 +7175,9 @@ export class CSSStyleRef implements CSSStyleDeclarationRef {
     return this._style.webkitJustifyContent;
   }
 
-  public set webkitJustifyContent(value: string | Ref<string>) {
-    if (value instanceof Ref)
-      this.setStyleRefMap("webkitJustifyContent", value);
+  public set webkitJustifyContent(value: string | ref<string>) {
+    if (typeof value !== "string")
+      this.setStylerefMap("webkitJustifyContent", value);
     else this._style.webkitJustifyContent = value as any;
   }
 
@@ -7061,8 +7185,9 @@ export class CSSStyleRef implements CSSStyleDeclarationRef {
     return this._style.webkitLineClamp;
   }
 
-  public set webkitLineClamp(value: string | Ref<string>) {
-    if (value instanceof Ref) this.setStyleRefMap("webkitLineClamp", value);
+  public set webkitLineClamp(value: string | ref<string>) {
+    if (typeof value !== "string")
+      this.setStylerefMap("webkitLineClamp", value);
     else this._style.webkitLineClamp = value as any;
   }
 
@@ -7070,8 +7195,8 @@ export class CSSStyleRef implements CSSStyleDeclarationRef {
     return this._style.webkitMask;
   }
 
-  public set webkitMask(value: string | Ref<string>) {
-    if (value instanceof Ref) this.setStyleRefMap("webkitMask", value);
+  public set webkitMask(value: string | ref<string>) {
+    if (typeof value !== "string") this.setStylerefMap("webkitMask", value);
     else this._style.webkitMask = value as any;
   }
 
@@ -7079,8 +7204,9 @@ export class CSSStyleRef implements CSSStyleDeclarationRef {
     return this._style.webkitMaskBoxImage;
   }
 
-  public set webkitMaskBoxImage(value: string | Ref<string>) {
-    if (value instanceof Ref) this.setStyleRefMap("webkitMaskBoxImage", value);
+  public set webkitMaskBoxImage(value: string | ref<string>) {
+    if (typeof value !== "string")
+      this.setStylerefMap("webkitMaskBoxImage", value);
     else this._style.webkitMaskBoxImage = value as any;
   }
 
@@ -7088,9 +7214,9 @@ export class CSSStyleRef implements CSSStyleDeclarationRef {
     return this._style.webkitMaskBoxImageOutset;
   }
 
-  public set webkitMaskBoxImageOutset(value: string | Ref<string>) {
-    if (value instanceof Ref)
-      this.setStyleRefMap("webkitMaskBoxImageOutset", value);
+  public set webkitMaskBoxImageOutset(value: string | ref<string>) {
+    if (typeof value !== "string")
+      this.setStylerefMap("webkitMaskBoxImageOutset", value);
     else this._style.webkitMaskBoxImageOutset = value as any;
   }
 
@@ -7098,9 +7224,9 @@ export class CSSStyleRef implements CSSStyleDeclarationRef {
     return this._style.webkitMaskBoxImageRepeat;
   }
 
-  public set webkitMaskBoxImageRepeat(value: string | Ref<string>) {
-    if (value instanceof Ref)
-      this.setStyleRefMap("webkitMaskBoxImageRepeat", value);
+  public set webkitMaskBoxImageRepeat(value: string | ref<string>) {
+    if (typeof value !== "string")
+      this.setStylerefMap("webkitMaskBoxImageRepeat", value);
     else this._style.webkitMaskBoxImageRepeat = value as any;
   }
 
@@ -7108,9 +7234,9 @@ export class CSSStyleRef implements CSSStyleDeclarationRef {
     return this._style.webkitMaskBoxImageSlice;
   }
 
-  public set webkitMaskBoxImageSlice(value: string | Ref<string>) {
-    if (value instanceof Ref)
-      this.setStyleRefMap("webkitMaskBoxImageSlice", value);
+  public set webkitMaskBoxImageSlice(value: string | ref<string>) {
+    if (typeof value !== "string")
+      this.setStylerefMap("webkitMaskBoxImageSlice", value);
     else this._style.webkitMaskBoxImageSlice = value as any;
   }
 
@@ -7118,9 +7244,9 @@ export class CSSStyleRef implements CSSStyleDeclarationRef {
     return this._style.webkitMaskBoxImageSource;
   }
 
-  public set webkitMaskBoxImageSource(value: string | Ref<string>) {
-    if (value instanceof Ref)
-      this.setStyleRefMap("webkitMaskBoxImageSource", value);
+  public set webkitMaskBoxImageSource(value: string | ref<string>) {
+    if (typeof value !== "string")
+      this.setStylerefMap("webkitMaskBoxImageSource", value);
     else this._style.webkitMaskBoxImageSource = value as any;
   }
 
@@ -7128,9 +7254,9 @@ export class CSSStyleRef implements CSSStyleDeclarationRef {
     return this._style.webkitMaskBoxImageWidth;
   }
 
-  public set webkitMaskBoxImageWidth(value: string | Ref<string>) {
-    if (value instanceof Ref)
-      this.setStyleRefMap("webkitMaskBoxImageWidth", value);
+  public set webkitMaskBoxImageWidth(value: string | ref<string>) {
+    if (typeof value !== "string")
+      this.setStylerefMap("webkitMaskBoxImageWidth", value);
     else this._style.webkitMaskBoxImageWidth = value as any;
   }
 
@@ -7138,8 +7264,8 @@ export class CSSStyleRef implements CSSStyleDeclarationRef {
     return this._style.webkitMaskClip;
   }
 
-  public set webkitMaskClip(value: string | Ref<string>) {
-    if (value instanceof Ref) this.setStyleRefMap("webkitMaskClip", value);
+  public set webkitMaskClip(value: string | ref<string>) {
+    if (typeof value !== "string") this.setStylerefMap("webkitMaskClip", value);
     else this._style.webkitMaskClip = value as any;
   }
 
@@ -7147,8 +7273,9 @@ export class CSSStyleRef implements CSSStyleDeclarationRef {
     return this._style.webkitMaskComposite;
   }
 
-  public set webkitMaskComposite(value: string | Ref<string>) {
-    if (value instanceof Ref) this.setStyleRefMap("webkitMaskComposite", value);
+  public set webkitMaskComposite(value: string | ref<string>) {
+    if (typeof value !== "string")
+      this.setStylerefMap("webkitMaskComposite", value);
     else this._style.webkitMaskComposite = value as any;
   }
 
@@ -7156,8 +7283,9 @@ export class CSSStyleRef implements CSSStyleDeclarationRef {
     return this._style.webkitMaskImage;
   }
 
-  public set webkitMaskImage(value: string | Ref<string>) {
-    if (value instanceof Ref) this.setStyleRefMap("webkitMaskImage", value);
+  public set webkitMaskImage(value: string | ref<string>) {
+    if (typeof value !== "string")
+      this.setStylerefMap("webkitMaskImage", value);
     else this._style.webkitMaskImage = value as any;
   }
 
@@ -7165,8 +7293,9 @@ export class CSSStyleRef implements CSSStyleDeclarationRef {
     return this._style.webkitMaskOrigin;
   }
 
-  public set webkitMaskOrigin(value: string | Ref<string>) {
-    if (value instanceof Ref) this.setStyleRefMap("webkitMaskOrigin", value);
+  public set webkitMaskOrigin(value: string | ref<string>) {
+    if (typeof value !== "string")
+      this.setStylerefMap("webkitMaskOrigin", value);
     else this._style.webkitMaskOrigin = value as any;
   }
 
@@ -7174,8 +7303,9 @@ export class CSSStyleRef implements CSSStyleDeclarationRef {
     return this._style.webkitMaskPosition;
   }
 
-  public set webkitMaskPosition(value: string | Ref<string>) {
-    if (value instanceof Ref) this.setStyleRefMap("webkitMaskPosition", value);
+  public set webkitMaskPosition(value: string | ref<string>) {
+    if (typeof value !== "string")
+      this.setStylerefMap("webkitMaskPosition", value);
     else this._style.webkitMaskPosition = value as any;
   }
 
@@ -7183,8 +7313,9 @@ export class CSSStyleRef implements CSSStyleDeclarationRef {
     return this._style.webkitMaskRepeat;
   }
 
-  public set webkitMaskRepeat(value: string | Ref<string>) {
-    if (value instanceof Ref) this.setStyleRefMap("webkitMaskRepeat", value);
+  public set webkitMaskRepeat(value: string | ref<string>) {
+    if (typeof value !== "string")
+      this.setStylerefMap("webkitMaskRepeat", value);
     else this._style.webkitMaskRepeat = value as any;
   }
 
@@ -7192,8 +7323,8 @@ export class CSSStyleRef implements CSSStyleDeclarationRef {
     return this._style.webkitMaskSize;
   }
 
-  public set webkitMaskSize(value: string | Ref<string>) {
-    if (value instanceof Ref) this.setStyleRefMap("webkitMaskSize", value);
+  public set webkitMaskSize(value: string | ref<string>) {
+    if (typeof value !== "string") this.setStylerefMap("webkitMaskSize", value);
     else this._style.webkitMaskSize = value as any;
   }
 
@@ -7201,8 +7332,8 @@ export class CSSStyleRef implements CSSStyleDeclarationRef {
     return this._style.webkitOrder;
   }
 
-  public set webkitOrder(value: string | Ref<string>) {
-    if (value instanceof Ref) this.setStyleRefMap("webkitOrder", value);
+  public set webkitOrder(value: string | ref<string>) {
+    if (typeof value !== "string") this.setStylerefMap("webkitOrder", value);
     else this._style.webkitOrder = value as any;
   }
 
@@ -7210,8 +7341,9 @@ export class CSSStyleRef implements CSSStyleDeclarationRef {
     return this._style.webkitPerspective;
   }
 
-  public set webkitPerspective(value: string | Ref<string>) {
-    if (value instanceof Ref) this.setStyleRefMap("webkitPerspective", value);
+  public set webkitPerspective(value: string | ref<string>) {
+    if (typeof value !== "string")
+      this.setStylerefMap("webkitPerspective", value);
     else this._style.webkitPerspective = value as any;
   }
 
@@ -7219,9 +7351,9 @@ export class CSSStyleRef implements CSSStyleDeclarationRef {
     return this._style.webkitPerspectiveOrigin;
   }
 
-  public set webkitPerspectiveOrigin(value: string | Ref<string>) {
-    if (value instanceof Ref)
-      this.setStyleRefMap("webkitPerspectiveOrigin", value);
+  public set webkitPerspectiveOrigin(value: string | ref<string>) {
+    if (typeof value !== "string")
+      this.setStylerefMap("webkitPerspectiveOrigin", value);
     else this._style.webkitPerspectiveOrigin = value as any;
   }
 
@@ -7229,8 +7361,9 @@ export class CSSStyleRef implements CSSStyleDeclarationRef {
     return this._style.webkitTextFillColor;
   }
 
-  public set webkitTextFillColor(value: string | Ref<string>) {
-    if (value instanceof Ref) this.setStyleRefMap("webkitTextFillColor", value);
+  public set webkitTextFillColor(value: string | ref<string>) {
+    if (typeof value !== "string")
+      this.setStylerefMap("webkitTextFillColor", value);
     else this._style.webkitTextFillColor = value as any;
   }
 
@@ -7238,9 +7371,9 @@ export class CSSStyleRef implements CSSStyleDeclarationRef {
     return this._style.webkitTextSizeAdjust;
   }
 
-  public set webkitTextSizeAdjust(value: string | Ref<string>) {
-    if (value instanceof Ref)
-      this.setStyleRefMap("webkitTextSizeAdjust", value);
+  public set webkitTextSizeAdjust(value: string | ref<string>) {
+    if (typeof value !== "string")
+      this.setStylerefMap("webkitTextSizeAdjust", value);
     else this._style.webkitTextSizeAdjust = value as any;
   }
 
@@ -7248,8 +7381,9 @@ export class CSSStyleRef implements CSSStyleDeclarationRef {
     return this._style.webkitTextStroke;
   }
 
-  public set webkitTextStroke(value: string | Ref<string>) {
-    if (value instanceof Ref) this.setStyleRefMap("webkitTextStroke", value);
+  public set webkitTextStroke(value: string | ref<string>) {
+    if (typeof value !== "string")
+      this.setStylerefMap("webkitTextStroke", value);
     else this._style.webkitTextStroke = value as any;
   }
 
@@ -7257,9 +7391,9 @@ export class CSSStyleRef implements CSSStyleDeclarationRef {
     return this._style.webkitTextStrokeColor;
   }
 
-  public set webkitTextStrokeColor(value: string | Ref<string>) {
-    if (value instanceof Ref)
-      this.setStyleRefMap("webkitTextStrokeColor", value);
+  public set webkitTextStrokeColor(value: string | ref<string>) {
+    if (typeof value !== "string")
+      this.setStylerefMap("webkitTextStrokeColor", value);
     else this._style.webkitTextStrokeColor = value as any;
   }
 
@@ -7267,9 +7401,9 @@ export class CSSStyleRef implements CSSStyleDeclarationRef {
     return this._style.webkitTextStrokeWidth;
   }
 
-  public set webkitTextStrokeWidth(value: string | Ref<string>) {
-    if (value instanceof Ref)
-      this.setStyleRefMap("webkitTextStrokeWidth", value);
+  public set webkitTextStrokeWidth(value: string | ref<string>) {
+    if (typeof value !== "string")
+      this.setStylerefMap("webkitTextStrokeWidth", value);
     else this._style.webkitTextStrokeWidth = value as any;
   }
 
@@ -7277,8 +7411,9 @@ export class CSSStyleRef implements CSSStyleDeclarationRef {
     return this._style.webkitTransform;
   }
 
-  public set webkitTransform(value: string | Ref<string>) {
-    if (value instanceof Ref) this.setStyleRefMap("webkitTransform", value);
+  public set webkitTransform(value: string | ref<string>) {
+    if (typeof value !== "string")
+      this.setStylerefMap("webkitTransform", value);
     else this._style.webkitTransform = value as any;
   }
 
@@ -7286,9 +7421,9 @@ export class CSSStyleRef implements CSSStyleDeclarationRef {
     return this._style.webkitTransformOrigin;
   }
 
-  public set webkitTransformOrigin(value: string | Ref<string>) {
-    if (value instanceof Ref)
-      this.setStyleRefMap("webkitTransformOrigin", value);
+  public set webkitTransformOrigin(value: string | ref<string>) {
+    if (typeof value !== "string")
+      this.setStylerefMap("webkitTransformOrigin", value);
     else this._style.webkitTransformOrigin = value as any;
   }
 
@@ -7296,9 +7431,9 @@ export class CSSStyleRef implements CSSStyleDeclarationRef {
     return this._style.webkitTransformStyle;
   }
 
-  public set webkitTransformStyle(value: string | Ref<string>) {
-    if (value instanceof Ref)
-      this.setStyleRefMap("webkitTransformStyle", value);
+  public set webkitTransformStyle(value: string | ref<string>) {
+    if (typeof value !== "string")
+      this.setStylerefMap("webkitTransformStyle", value);
     else this._style.webkitTransformStyle = value as any;
   }
 
@@ -7306,8 +7441,9 @@ export class CSSStyleRef implements CSSStyleDeclarationRef {
     return this._style.webkitTransition;
   }
 
-  public set webkitTransition(value: string | Ref<string>) {
-    if (value instanceof Ref) this.setStyleRefMap("webkitTransition", value);
+  public set webkitTransition(value: string | ref<string>) {
+    if (typeof value !== "string")
+      this.setStylerefMap("webkitTransition", value);
     else this._style.webkitTransition = value as any;
   }
 
@@ -7315,9 +7451,9 @@ export class CSSStyleRef implements CSSStyleDeclarationRef {
     return this._style.webkitTransitionDelay;
   }
 
-  public set webkitTransitionDelay(value: string | Ref<string>) {
-    if (value instanceof Ref)
-      this.setStyleRefMap("webkitTransitionDelay", value);
+  public set webkitTransitionDelay(value: string | ref<string>) {
+    if (typeof value !== "string")
+      this.setStylerefMap("webkitTransitionDelay", value);
     else this._style.webkitTransitionDelay = value as any;
   }
 
@@ -7325,9 +7461,9 @@ export class CSSStyleRef implements CSSStyleDeclarationRef {
     return this._style.webkitTransitionDuration;
   }
 
-  public set webkitTransitionDuration(value: string | Ref<string>) {
-    if (value instanceof Ref)
-      this.setStyleRefMap("webkitTransitionDuration", value);
+  public set webkitTransitionDuration(value: string | ref<string>) {
+    if (typeof value !== "string")
+      this.setStylerefMap("webkitTransitionDuration", value);
     else this._style.webkitTransitionDuration = value as any;
   }
 
@@ -7335,9 +7471,9 @@ export class CSSStyleRef implements CSSStyleDeclarationRef {
     return this._style.webkitTransitionProperty;
   }
 
-  public set webkitTransitionProperty(value: string | Ref<string>) {
-    if (value instanceof Ref)
-      this.setStyleRefMap("webkitTransitionProperty", value);
+  public set webkitTransitionProperty(value: string | ref<string>) {
+    if (typeof value !== "string")
+      this.setStylerefMap("webkitTransitionProperty", value);
     else this._style.webkitTransitionProperty = value as any;
   }
 
@@ -7345,9 +7481,9 @@ export class CSSStyleRef implements CSSStyleDeclarationRef {
     return this._style.webkitTransitionTimingFunction;
   }
 
-  public set webkitTransitionTimingFunction(value: string | Ref<string>) {
-    if (value instanceof Ref)
-      this.setStyleRefMap("webkitTransitionTimingFunction", value);
+  public set webkitTransitionTimingFunction(value: string | ref<string>) {
+    if (typeof value !== "string")
+      this.setStylerefMap("webkitTransitionTimingFunction", value);
     else this._style.webkitTransitionTimingFunction = value as any;
   }
 
@@ -7355,8 +7491,9 @@ export class CSSStyleRef implements CSSStyleDeclarationRef {
     return this._style.webkitUserSelect;
   }
 
-  public set webkitUserSelect(value: string | Ref<string>) {
-    if (value instanceof Ref) this.setStyleRefMap("webkitUserSelect", value);
+  public set webkitUserSelect(value: string | ref<string>) {
+    if (typeof value !== "string")
+      this.setStylerefMap("webkitUserSelect", value);
     else this._style.webkitUserSelect = value as any;
   }
 
@@ -7364,8 +7501,8 @@ export class CSSStyleRef implements CSSStyleDeclarationRef {
     return this._style.whiteSpace;
   }
 
-  public set whiteSpace(value: string | Ref<string>) {
-    if (value instanceof Ref) this.setStyleRefMap("whiteSpace", value);
+  public set whiteSpace(value: string | ref<string>) {
+    if (typeof value !== "string") this.setStylerefMap("whiteSpace", value);
     else this._style.whiteSpace = value as any;
   }
 
@@ -7373,8 +7510,8 @@ export class CSSStyleRef implements CSSStyleDeclarationRef {
     return this._style.widows;
   }
 
-  public set widows(value: string | Ref<string>) {
-    if (value instanceof Ref) this.setStyleRefMap("widows", value);
+  public set widows(value: string | ref<string>) {
+    if (typeof value !== "string") this.setStylerefMap("widows", value);
     else this._style.widows = value as any;
   }
 
@@ -7382,8 +7519,8 @@ export class CSSStyleRef implements CSSStyleDeclarationRef {
     return this._style.width;
   }
 
-  public set width(value: string | Ref<string>) {
-    if (value instanceof Ref) this.setStyleRefMap("width", value);
+  public set width(value: string | ref<string>) {
+    if (typeof value !== "string") this.setStylerefMap("width", value);
     else this._style.width = value as any;
   }
 
@@ -7391,8 +7528,8 @@ export class CSSStyleRef implements CSSStyleDeclarationRef {
     return this._style.willChange;
   }
 
-  public set willChange(value: string | Ref<string>) {
-    if (value instanceof Ref) this.setStyleRefMap("willChange", value);
+  public set willChange(value: string | ref<string>) {
+    if (typeof value !== "string") this.setStylerefMap("willChange", value);
     else this._style.willChange = value as any;
   }
 
@@ -7400,8 +7537,8 @@ export class CSSStyleRef implements CSSStyleDeclarationRef {
     return this._style.wordBreak;
   }
 
-  public set wordBreak(value: string | Ref<string>) {
-    if (value instanceof Ref) this.setStyleRefMap("wordBreak", value);
+  public set wordBreak(value: string | ref<string>) {
+    if (typeof value !== "string") this.setStylerefMap("wordBreak", value);
     else this._style.wordBreak = value as any;
   }
 
@@ -7409,8 +7546,8 @@ export class CSSStyleRef implements CSSStyleDeclarationRef {
     return this._style.wordSpacing;
   }
 
-  public set wordSpacing(value: string | Ref<string>) {
-    if (value instanceof Ref) this.setStyleRefMap("wordSpacing", value);
+  public set wordSpacing(value: string | ref<string>) {
+    if (typeof value !== "string") this.setStylerefMap("wordSpacing", value);
     else this._style.wordSpacing = value as any;
   }
 
@@ -7418,8 +7555,8 @@ export class CSSStyleRef implements CSSStyleDeclarationRef {
     return this._style.wordWrap;
   }
 
-  public set wordWrap(value: string | Ref<string>) {
-    if (value instanceof Ref) this.setStyleRefMap("wordWrap", value);
+  public set wordWrap(value: string | ref<string>) {
+    if (typeof value !== "string") this.setStylerefMap("wordWrap", value);
     else this._style.wordWrap = value as any;
   }
 
@@ -7427,8 +7564,8 @@ export class CSSStyleRef implements CSSStyleDeclarationRef {
     return this._style.writingMode;
   }
 
-  public set writingMode(value: string | Ref<string>) {
-    if (value instanceof Ref) this.setStyleRefMap("writingMode", value);
+  public set writingMode(value: string | ref<string>) {
+    if (typeof value !== "string") this.setStylerefMap("writingMode", value);
     else this._style.writingMode = value as any;
   }
 
@@ -7436,8 +7573,8 @@ export class CSSStyleRef implements CSSStyleDeclarationRef {
     return this._style.zIndex;
   }
 
-  public set zIndex(value: string | Ref<string>) {
-    if (value instanceof Ref) this.setStyleRefMap("zIndex", value);
+  public set zIndex(value: string | ref<string>) {
+    if (typeof value !== "string") this.setStylerefMap("zIndex", value);
     else this._style.zIndex = value as any;
   }
 
@@ -7458,10 +7595,10 @@ export class CSSStyleRef implements CSSStyleDeclarationRef {
 
   // @ts-ignore
   removeProperty(property: string) {
-    if (this.styleRefMap.has(property)) {
-      const data = this.styleRefMap.get(property);
+    if (this.stylerefMap.has(property)) {
+      const data = this.stylerefMap.get(property);
       data?.ref.unsubscribe(data.data);
-      this.styleRefMap.delete(property);
+      this.stylerefMap.delete(property);
       return;
     }
     this._style.removeProperty(property);

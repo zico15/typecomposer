@@ -1,15 +1,18 @@
 import { IComponent, RouteView } from "..";
+import { RouterGuard } from "./RouterGuard";
 
-export interface RoutePage<IComponent = any> {
+type Component = new () => IComponent;
+
+export interface RoutePage {
   path: string;
-  component?: IComponent;
+  component?: Component;
   children?: RoutePage[];
   redirect?: string;
+  guard?: RouterGuard;
 }
 
 interface RoutePageBuild extends RoutePage {
   parent: RoutePageBuild;
-  // isFree: boolean;
   build: IComponent;
   routeView: RouteView | undefined;
   id?: string;
@@ -21,6 +24,7 @@ class RouterController {
   private currentRoute: RoutePageBuild[] = [];
   private previousRoute: RoutePageBuild[] = [];
   private static _props: any = {};
+  private urlLast: string = "";
 
   constructor() {
     window.addEventListener("load", () => {
@@ -89,10 +93,10 @@ class RouterController {
     return "/";
   }
 
-  private buildRoute(
+  private async buildRoute(
     routes: RoutePage[] = this.route?.routes,
     parent: string = "",
-  ) {
+  ): Promise<boolean> {
     if (routes) {
       for (let route of routes) {
         route.path = parent + route.path;
@@ -104,9 +108,10 @@ class RouterController {
         }
       }
     }
+    return true;
   }
 
-  private buildPages() {
+  private async buildPages() {
     let routePageBuildLast: RoutePageBuild | undefined = undefined;
     for (let i: number = 0; i < this.currentRoute.length; i++) {
       if (
@@ -117,6 +122,15 @@ class RouterController {
         this.currentRoute[i] = this.previousRoute[i];
         if (this.currentRoute[i + 1])
           this.currentRoute[i + 1].parent = this.currentRoute[i];
+      } else if (this.currentRoute[i].guard) {
+        const fallbackRoute = this.currentRoute[i].guard.fallbackRoute;
+        const result = await this.currentRoute[i].guard.beforeEach();
+        if (!result) {
+          this.currentRoute = this.previousRoute;
+          console.log("Fallback route: ", fallbackRoute);
+          Router.go(fallbackRoute || this.urlLast);
+          return;
+        }
       }
     }
     const toBuild = this.currentRoute[0];
@@ -128,6 +142,7 @@ class RouterController {
       routePageBuildLast.routeView["updateView"]();
     }
     this.previousRoute = this.currentRoute;
+    this.urlLast = window.location.pathname;
   }
 
   private updateRoute(pathname: string) {
@@ -154,7 +169,7 @@ class RouterController {
 
   set route(value: Router | undefined) {
     this._route = value;
-    this.buildRoute();
+    const isHistory = this.buildRoute();
     let pathname = window.location.pathname;
     if (pathname.charAt(pathname.length - 1) == "/") {
       pathname = pathname.substring(0, pathname.length - 1) || "/";
@@ -162,7 +177,7 @@ class RouterController {
     if (this.route.history == "hash") {
       pathname = window.location.hash.replace(/^#/, "");
     }
-    this.addHistory(pathname);
+    if (isHistory) this.addHistory(pathname);
   }
 
   get props(): any {
@@ -202,17 +217,20 @@ class RouterController {
   }
 
   private pageNotFound(): void {
-    const body = document.createElement("body") as HTMLBodyElement;
-    body.style.width = "100%";
-    body.style.height = "100%";
-    body.style.overflow = "hidden";
-    body.style.position = "fixed";
-    body.innerHTML =
-      "<div style='text-align: center;'>" +
-      "<h1 style='text-shadow: 0 3px 0px $color-base, 0 6px 0px #333; color: #f54f59; font-size: 6em; font-weight: 700; line-height: 0.6em;'>404</h1>" +
-      "<h1 style='text-shadow: 0 3px 0px $color-base, 0 6px 0px #333; color: #f54f59; font-size: 10; font-weight: 15; line-height: 0.6em;'>Page not found</h1>" +
-      "</div>";
-    document.body = body;
+    if (this.route?.pageNotFound) this.setView(new this.route.pageNotFound());
+    else {
+      const body = document.createElement("body") as HTMLBodyElement;
+      body.style.width = "100%";
+      body.style.height = "100%";
+      body.style.overflow = "hidden";
+      body.style.position = "fixed";
+      body.innerHTML =
+        "<div style='text-align: center;'>" +
+        "<h1 style='text-shadow: 0 3px 0px $color-base, 0 6px 0px #333; color: #f54f59; font-size: 6em; font-weight: 700; line-height: 0.6em;'>404</h1>" +
+        "<h1 style='text-shadow: 0 3px 0px $color-base, 0 6px 0px #333; color: #f54f59; font-size: 10; font-weight: 15; line-height: 0.6em;'>Page not found</h1>" +
+        "</div>";
+      document.body = body;
+    }
   }
 
   private setView<T extends IComponent>(view: T) {
@@ -229,6 +247,7 @@ export class Router {
   constructor(
     public routes: RoutePage[] = [],
     public history: "hash" | "history" = "history",
+    public pageNotFound: Component = undefined,
   ) {
     Router.createAutoId(this.routes, 0);
   }
@@ -241,11 +260,17 @@ export class Router {
     return Router._props;
   }
 
-  public static create(data: {
+  static create(data: {
     routes: RoutePage[];
     history?: "hash" | "history";
+    pageNotFound?: Component;
   }): void {
-    Router.controller.route = new Router(data.routes, data.history);
+    if (Router.controller.route) throw new Error("Router already exists");
+    Router.controller.route = new Router(
+      data.routes,
+      data.history,
+      data.pageNotFound,
+    );
   }
 
   private static createAutoId(routes: RoutePage[] = [], id: number) {

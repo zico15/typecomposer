@@ -4,55 +4,76 @@ interface CustomEvent {
   fun?: WeakRef<Function>;
 }
 
-export class Ref<T> {
-  private _id: string = Math.random().toString(36).substr(2, 9);
-  private _value: T;
-  private registry: FinalizationRegistry<any>;
-  private _subscribers: CustomEvent[] = [];
+export type ref<T> = {
+  value: T;
+  id: string;
+  subscriber: (target: {}, propertyKey: string | symbol) => void;
+  unsubscribe: (data: { ref: any; name: string; fun?: Function }) => void;
+  onChange: (fun: (value: T) => void, target?: {}) => void;
+  toString: () => string;
+};
 
-  constructor(value: T) {
-    this._value = value;
-    this._value = value;
-    this.registry = new FinalizationRegistry((target: WeakRef<any>) => {
-      this._subscribers = this._subscribers.filter(
+export function ref<T>(target: T): {
+  value: T;
+  id: string;
+  subscriber: (target: {}, propertyKey: string | symbol) => void;
+  unsubscribe: (data: { ref: any; name: string; fun?: Function }) => void;
+  onChange: (fun: (value: T) => void, target?: {}) => void;
+  toString: () => string;
+} {
+  const _id: string = Math.random().toString(36).substr(2, 9);
+  const registry: FinalizationRegistry<any> = new FinalizationRegistry(
+    (target: WeakRef<any>) => {
+      _subscribers = _subscribers.filter(
         (subscriber) => subscriber.target != target,
       );
-      console.log("registry: ", target);
-    });
-  }
+    },
+  );
+  let _subscribers: CustomEvent[] = [];
 
-  get value(): T {
-    return this._value;
-  }
+  const newTarget = {
+    value: target,
+    id: _id,
+    subscriber,
+    unsubscribe,
+    onChange,
+    toString,
+  };
+  const proxy = new Proxy(newTarget, {
+    get: function (newTarget, prop, receiver) {
+      return Reflect.get(newTarget, prop, receiver);
+    },
+    set: function (newTarget, prop, value, receiver) {
+      const resul = Reflect.set(newTarget, prop, value, receiver);
+      notify();
+      return resul;
+    },
+    deleteProperty: function (newTarget, prop) {
+      const resul = Reflect.deleteProperty(newTarget, prop);
+      notify();
+      return resul;
+    },
+  });
 
-  set value(v: T) {
-    this._value = v;
-    this.notify();
-  }
-
-  get id(): string {
-    return this._id;
-  }
-
-  private notify() {
+  function notify() {
     const remove: CustomEvent[] = [];
-    this._subscribers.forEach((subscriber) => {
-      if (!this.setValueToSubscriber(subscriber)) remove.push(subscriber);
+    _subscribers.forEach((subscriber) => {
+      if (!setValueToSubscriber(subscriber)) remove.push(subscriber);
     });
-    this._subscribers = this._subscribers.filter(
+    _subscribers = _subscribers.filter(
       (subscriber) => !remove.includes(subscriber),
     );
   }
 
-  private setValueToSubscriber(subscriber: CustomEvent): boolean {
+  function setValueToSubscriber(subscriber: CustomEvent): boolean {
     try {
       const target = subscriber.target?.deref();
       if (target) {
         if (subscriber.fun) {
           const fun = subscriber.fun?.deref();
-          if (fun) fun(this._value);
+          if (fun) fun(newTarget.value);
           else return false;
-        } else target[subscriber.propertyKey] = this._value;
+        } else target[subscriber.propertyKey] = newTarget.value;
       } else return false;
     } catch (error) {
       return false;
@@ -60,34 +81,36 @@ export class Ref<T> {
     return true;
   }
 
-  public subscriber(target: {}, propertyKey: string | symbol) {
+  function subscriber(target: {}, propertyKey: string | symbol) {
     const item = { target: new WeakRef(target), propertyKey };
-    if (this.setValueToSubscriber(item)) {
-      this._subscribers.push(item);
-      this.registry.register(item.target, item);
+    if (setValueToSubscriber(item)) {
+      _subscribers.push(item);
+      registry.register(item.target, item);
     }
   }
 
-  public unsubscribe(data: { ref: any; name: string; fun?: Function }) {
-    // this._subscribers = this._subscribers.filter(
+  function unsubscribe(data: { ref: any; name: string; fun?: Function }) {
+    // _subscribers = _subscribers.filter(
     //   (subscriber) => subscriber != data,
     // );
   }
 
-  public onChange(fun: (value: T) => void, target?: {}) {
+  function onChange(fun: (value: T) => void, target?: {}) {
     const data = new WeakRef(fun);
     const item = {
       target: target ? new WeakRef(target) : data,
       propertyKey: undefined,
       fun: data,
     };
-    if (this.setValueToSubscriber(item)) {
-      this._subscribers.push(item);
-      this.registry.register(item.target, item);
+    if (setValueToSubscriber(item)) {
+      _subscribers.push(item);
+      registry.register(item.target, item);
     }
   }
 
-  toString(): string {
-    return this._value?.toString() || "";
+  function toString(): string {
+    return newTarget.value?.toString() || "";
   }
+
+  return proxy;
 }

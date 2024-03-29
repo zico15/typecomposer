@@ -1,12 +1,11 @@
-import { Component, DataImageElement } from "..";
-import { Ref } from "../../ref";
+import { Component, DataImageElement, ref } from "../..";
 
 export interface DataIconElement extends DataImageElement {
-  icon?: string | Ref<string>;
+  icon?: string | ref<string>;
 }
 
 export class IconElement extends Component {
-  private _icon: Ref<string> = new Ref<string>("");
+  private _icon: ref<string> = ref("");
 
   constructor(optional?: DataIconElement) {
     super(optional);
@@ -18,9 +17,9 @@ export class IconElement extends Component {
     return this._icon.value;
   }
 
-  set icon(value: string | Ref<string>) {
-    if (value instanceof Ref)
-      this["_styleRef"].appendStyleRef("icon", this, value);
+  set icon(value: string | ref<string>) {
+    if (typeof value !== "string")
+      this["_styleref"].appendStyleref("icon", this, value);
     else {
       const splice = value.split(" ");
       splice.forEach((v) => {
@@ -34,7 +33,7 @@ export class IconElement extends Component {
     return this.style.color;
   }
 
-  set color(value: string | Ref<string>) {
+  set color(value: string | ref<string>) {
     this.style.color = value;
   }
 }

@@ -1,6 +1,10 @@
 import { Component, type StyleOptional, CanvasElement } from "../..";
 import { Chart, ChartConfiguration } from "chart.js/auto";
 
+/**
+ * ChartElement
+ * https://www.chartjs.org/docs/latest/charts
+ */
 export class ChartElement extends Component {
   private _canvas: CanvasElement = new CanvasElement();
   private _chart: Chart;

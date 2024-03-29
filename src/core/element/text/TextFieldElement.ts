@@ -7,7 +7,6 @@ import {
   InputElement,
   LabelElement,
 } from "..";
-import { Register } from "../../decorators";
 
 export interface DataTextFieldElement extends DataInputElement {
   variant?: Variant;

@@ -36,7 +36,7 @@ export class VFor {
     const elements = this.component.querySelectorAll(`[key-for="${this.key}"]`);
     elements?.forEach((element) => element.remove());
     if (this.parent) {
-      // const value: Ref<any> = (this.component as any)[this.vfor[2]];
+      // const value: ref<any> = (this.component as any)[this.vfor[2]];
       this.setData((this.component as any)[this.vfor[2]].value);
       (this.component as any)[this.vfor[2]].subscriber({
         ref: this,

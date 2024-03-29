@@ -1,5 +1,5 @@
 import { type StyleOptional, DivElement, ILayout } from "..";
-import { CSSStyleDeclarationRef } from "../base/CSSStyle";
+import { CSSStyleDeclarationref } from "../base/CSSStyle";
 
 export class PaneElement extends ILayout {
   private ___element_pane__: DivElement;
@@ -16,7 +16,7 @@ export class PaneElement extends ILayout {
     return this.___element_pane__.appendChild(node);
   }
 
-  get style(): CSSStyleDeclarationRef {
+  get style(): CSSStyleDeclarationref {
     return this.___element_pane__.style;
   }
 }
