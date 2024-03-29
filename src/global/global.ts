@@ -6,6 +6,16 @@ declare global {
     getTheme(): string;
     setTheme(theme: string): void;
   }
+  // interface CSSStyleDeclaration {
+  //   // @ts-ignore
+  //   get color(): string | ref<string>;
+  //   // @ts-ignore
+  //   set color(value: string | ref<string>);
+  // }
+
+  // interface ElementCSSInlineStyle {
+  //   readonly style: CSSStyleDeclaration;
+  // }
   // interface Proxy {
   //   onChange(fun: (value: any) => void, target?: {}): void;
   // }

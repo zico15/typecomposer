@@ -1,19 +1,23 @@
-interface CustomEvent {
+import { createProxyRef } from "./RefProxyHandler";
+
+export interface CustomEvent {
   target: WeakRef<any>;
   propertyKey: string | symbol;
+  refPropertyKey: string | symbol;
   fun?: WeakRef<Function>;
 }
 
 export class RefString extends String {
   constructor(
     valor: string,
-    public ref: ref<any>,
+    public refPropertyKey: string | symbol,
+    public refTarget: any,
   ) {
     super(valor);
   }
 
-  toString() {
-    return super.toString() + " - " + "teste";
+  toString(): string {
+    return super.toString();
   }
 }
 
@@ -55,7 +59,7 @@ export function ref<T>(target: T): {
 
   function initRef() {
     const result = createProxy(newTarget);
-    console.log("initRef: ", newTarget.value);
+    // console.log("initRef: ", newTarget.value);
     if (typeof newTarget.value === "object") {
       newTarget.value = createProxy(newTarget.value as any);
       checkType(newTarget.value as any);
@@ -65,42 +69,23 @@ export function ref<T>(target: T): {
 
   function checkType(value: object) {
     for (let property in value) {
-      if (typeof value[property] === "object") {
+      const descriptor = Object.getOwnPropertyDescriptor(value, property);
+      if (
+        descriptor &&
+        descriptor.writable &&
+        typeof value[property] === "object"
+      ) {
         value[property] = createProxy(value[property]);
-        console.log("checkType: ", value[property]);
-        checkType(value[property]);
-      } else if (typeof value[property] === "string") {
-        value[property] = proxy
-          ? new RefString(value[property], proxy)
-          : value[property];
       }
     }
   }
 
-  function createProxy<TT extends object>(target: TT): TT {
-    console.log("createProxy: ", target, Object.keys(target));
-    return new Proxy(target, {
-      get: function (target, prop, receiver) {
-        return Reflect.get(target, prop, receiver);
-      },
-      set: function (target, prop, value, receiver) {
-        console.log("prop: ", prop, " value: ", value, " receiver: ", receiver);
-        if (typeof value === "string") value = new RefString(value, proxy);
-        console.log("set: ", prop, value);
-        const resul = Reflect.set(target, prop, value, receiver);
-        notify();
-        return resul;
-      },
-      deleteProperty: function (target, prop) {
-        const resul = Reflect.deleteProperty(target, prop);
-        notify();
-        return resul;
-      },
-    });
+  function createProxy(target: {}): any {
+    // console.log("createProxy: ", target, Object.keys(target));
+    return createProxyRef(target, notify);
   }
 
   function notify() {
-    console.log("notify: ", _subscribers);
     const remove: CustomEvent[] = [];
     _subscribers.forEach((subscriber) => {
       if (!setValueToSubscriber(subscriber)) remove.push(subscriber);
@@ -118,7 +103,7 @@ export function ref<T>(target: T): {
           const fun = subscriber.fun?.deref();
           if (fun) fun(newTarget.value);
           else return false;
-        } else target[subscriber.propertyKey] = newTarget.value;
+        }
       } else return false;
     } catch (error) {
       return false;
@@ -127,11 +112,11 @@ export function ref<T>(target: T): {
   }
 
   function subscriber(target: {}, propertyKey: string | symbol) {
-    const item = { target: new WeakRef(target), propertyKey };
-    if (setValueToSubscriber(item)) {
-      _subscribers.push(item);
-      registry.register(item.target, item);
-    }
+    // const item = { target: new WeakRef(target), propertyKey };
+    // if (setValueToSubscriber(item)) {
+    //   _subscribers.push(item);
+    //   registry.register(item.target, item);
+    // }
   }
 
   function unsubscribe(data: { ref: any; name: string; fun?: Function }) {
@@ -145,6 +130,7 @@ export function ref<T>(target: T): {
     const item = {
       target: target ? new WeakRef(target) : data,
       propertyKey: undefined,
+      refPropertyKey: undefined,
       fun: data,
     };
     if (setValueToSubscriber(item) || fun) {

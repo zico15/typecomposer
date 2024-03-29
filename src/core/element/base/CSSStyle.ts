@@ -3058,7 +3058,11 @@ export class CSSStyleref implements CSSStyleDeclarationref {
     { data: { ref: any; name: string }; ref: ref<any> }
   >();
 
-  private setStylerefMap(propertyKey: string, ref: ref<any>) {
+  private setStylerefMap(propertyKey: string, ref: any) {
+    if (ref instanceof RefString) {
+      ref.refTarget.subscriber(this._style, propertyKey, ref.refPropertyKey);
+      return;
+    }
     let oldref = this.stylerefMap.get(propertyKey);
     if (oldref) oldref.ref.unsubscribe(oldref.data);
     else oldref = { data: { ref: this._style, name: propertyKey }, ref: ref };
@@ -4110,10 +4114,7 @@ export class CSSStyleref implements CSSStyleDeclarationref {
   }
 
   public set color(value: string | ref<string>) {
-    if (value instanceof RefString) {
-      console.log("color is ref");
-      this._style.color = value.toString();
-    } else if (typeof value !== "string") this.setStylerefMap("color", value);
+    if (typeof value !== "string") this.setStylerefMap("color", value);
     else this._style.color = value as any;
   }
 
