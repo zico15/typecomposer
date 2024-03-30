@@ -1,3 +1,4 @@
+import { de, el } from "date-fns/locale";
 import { Router } from "../..";
 import { ref } from "../../ref";
 import {
@@ -776,42 +777,62 @@ customElements.define("base-td-element", TableCellElement, { extends: "td" });
 //   target?: "_blank" | "_self" | "_parent" | "_top";
 // }
 
-export interface DataInputElement extends StyleOptional {
-  id?: string;
-  type?:
-    | "text"
-    | "password"
-    | "checkbox"
-    | "radio"
-    | "submit"
-    | "reset"
-    | "file"
-    | "hidden"
-    | "image"
-    | "button"
-    | "color"
-    | "date"
-    | "datetime-local"
-    | "email"
-    | "month"
-    | "number"
-    | "range"
-    | "search"
-    | "tel"
-    | "time"
-    | "url"
-    | "week";
-  name?: string;
-  value?: string;
-  placeholder?: string;
-}
+export type InputType =
+  | "text"
+  | "password"
+  | "checkbox"
+  | "radio"
+  | "submit"
+  | "reset"
+  | "file"
+  | "hidden"
+  | "image"
+  | "button"
+  | "color"
+  | "date"
+  | "datetime-local"
+  | "email"
+  | "month"
+  | "number"
+  | "range"
+  | "search"
+  | "tel"
+  | "time"
+  | "url"
+  | "week";
 
 export class InputElement extends HTMLInputElement implements IComponent {
   private _styleref: CSSStyleref = new CSSStyleref(super.style);
 
-  constructor(optional?: DataInputElement) {
+  constructor(
+    optional?: StyleOptional & {
+      id?: string;
+      type?: InputType;
+      name?: string;
+      value?: string | ref<string>;
+      placeholder?: string;
+    },
+  ) {
     super();
+    const v = optional?.value;
+    delete optional?.value;
     Component.applyDate(optional, this);
+    if (v) {
+      if (typeof v == "string") this.value = v;
+      else {
+        const ref: ref<string> = v;
+        console.log("input:ref: ", ref);
+        ref.subscriber(this, "value", ref["refPropertyKey"]);
+        this.addEventListener("input", (event) => {
+          console.log("input:ref: ", ref);
+          ref.setValue(this.value, ref["refPropertyKey"]);
+          // ref.value = this.value;
+        });
+        // ref.onChange((value) => {
+        //   this.value = value;
+        // });
+      }
+    }
   }
 
   onInit(): void {}

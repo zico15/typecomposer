@@ -11,9 +11,29 @@ export class RefString extends String {
   constructor(
     valor: string,
     public refPropertyKey: string | symbol,
-    public refTarget: any,
+    public refTarget: any | undefined = undefined,
   ) {
     super(valor);
+  }
+
+  setValue(value: string, propertyKey: string | symbol) {
+    if (this.refTarget) this.refTarget[propertyKey] = value;
+  }
+
+  subscriber(
+    target: {},
+    propertyKey: string | symbol,
+    refPropertyKey: string | symbol = undefined,
+  ) {
+    if (this.refTarget) {
+      this.refTarget.subscriber(target, propertyKey, refPropertyKey);
+    }
+  }
+
+  onChange(fun: (value: any) => void, target?: {}) {
+    if (this.refTarget) {
+      this.refTarget.onChange(fun, target);
+    }
   }
 
   toString(): string {
@@ -24,10 +44,15 @@ export class RefString extends String {
 export type ref<T> = {
   value: T;
   id: string;
-  subscriber: (target: {}, propertyKey: string | symbol) => void;
+  subscriber: (
+    target: {},
+    propertyKey: string | symbol,
+    refPropertyKey?: string | symbol,
+  ) => void;
   unsubscribe: (data: { ref: any; name: string; fun?: Function }) => void;
   onChange: (fun: (value: T) => void, target?: {}) => void;
   toString: () => string;
+  setValue: (value: any, propertyKey?: string | symbol) => void;
 };
 
 export function ref<T>(target: T): {
@@ -37,6 +62,7 @@ export function ref<T>(target: T): {
   unsubscribe: (data: { ref: any; name: string; fun?: Function }) => void;
   onChange: (fun: (value: T) => void, target?: {}) => void;
   toString: () => string;
+  setValue: (value: any, propertyKey?: string | symbol) => void;
 } {
   const _id: string = Math.random().toString(36).substr(2, 9);
   const registry: FinalizationRegistry<any> = new FinalizationRegistry(
@@ -59,11 +85,10 @@ export function ref<T>(target: T): {
 
   function initRef() {
     const result = createProxy(newTarget);
-    // console.log("initRef: ", newTarget.value);
     if (typeof newTarget.value === "object") {
       newTarget.value = createProxy(newTarget.value as any);
       checkType(newTarget.value as any);
-    }
+    } else result["refPropertyKey"] = "value";
     return result;
   }
 
@@ -82,7 +107,7 @@ export function ref<T>(target: T): {
 
   function createProxy(target: {}): any {
     // console.log("createProxy: ", target, Object.keys(target));
-    return createProxyRef(target, notify);
+    return createProxyRef(target, notify, onChange);
   }
 
   function notify() {

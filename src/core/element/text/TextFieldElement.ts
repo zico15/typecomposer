@@ -1,19 +1,14 @@
 import { Variant } from "../base/CSSStyle";
-import { DataInputElement } from "./InputElement";
 import {
   Component,
   DivElement,
   IconElement,
   InputElement,
+  InputType,
   LabelElement,
+  StyleOptional,
 } from "..";
-
-export interface DataTextFieldElement extends DataInputElement {
-  variant?: Variant;
-  placeholder?: string;
-  icon?: IconElement;
-  placeholderAnimation?: boolean;
-}
+import { ref } from "src/core/ref";
 
 export class TextFieldElement extends Component {
   private _input: InputElement;
@@ -21,13 +16,23 @@ export class TextFieldElement extends Component {
   private _icon?: IconElement | undefined = undefined;
   private iconPane = new DivElement({ className: "icon" });
 
-  constructor(optional?: DataTextFieldElement) {
+  constructor(
+    optional?: StyleOptional & {
+      variant?: Variant;
+      type?: InputType;
+      placeholder?: string;
+      icon?: IconElement;
+      placeholderAnimation?: boolean;
+      value?: string | ref<string>;
+    },
+  ) {
     super();
     this._input = new InputElement({
-      type: "text",
+      type: optional?.type || "text",
       height: "auto",
       width: "100%",
       placeholder: " ",
+      value: optional?.value,
     });
     this.appendChild(this.input);
     if (

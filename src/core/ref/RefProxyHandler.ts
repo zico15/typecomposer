@@ -2,7 +2,8 @@ import { CustomEvent, RefString } from "./Ref";
 
 export function createProxyRef<T extends object>(
   target: T,
-  onChange: () => void,
+  onNotity: () => void,
+  onChange: (fun: (value: T) => void, target?: {}) => void,
 ): T {
   const handler = {};
   const proxy = new Proxy(target, handler);
@@ -90,12 +91,12 @@ export function createProxyRef<T extends object>(
       //   console.log("set: ", prop, value);
       const resul = Reflect.set(target, prop, value, receiver);
       notify(prop, value);
-      onChange();
+      onNotity();
       return resul;
     },
     deleteProperty: function (target, prop) {
       const resul = Reflect.deleteProperty(target, prop);
-      onChange();
+      onNotity();
       return resul;
     },
   };
@@ -120,6 +121,13 @@ export function createProxyRef<T extends object>(
   proxy["toString"] = function (): string {
     return proxy["value"]?.toString() || "";
   };
+  proxy["onChange"] = onChange;
+
+  proxy["setValue"] = function (value: any, propertyKey: string | symbol) {
+    if (propertyKey) proxy[propertyKey] = value;
+    else proxy["value"] = value;
+  };
+  proxy["refPropertyKey"] = undefined;
   Object.setPrototypeOf(handler, proxyHandler);
   return proxy;
 }
