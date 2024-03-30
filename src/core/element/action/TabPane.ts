@@ -5,13 +5,6 @@ import {
   TabElement,
   type StyleOptional,
 } from "..";
-import { Register } from "../../decorators";
-
-export interface DataTabPane extends StyleOptional {
-  type?: "min" | "max";
-  closeable?: boolean;
-  alignTab?: "left" | "right" | "center";
-}
 
 export class TabPane extends BorderPaneElement {
   private tabs: DivElement = new DivElement();
@@ -19,7 +12,11 @@ export class TabPane extends BorderPaneElement {
   private type: string = "min";
   private _closeable: boolean = false;
 
-  constructor(optional?: DataTabPane) {
+  constructor(optional?: StyleOptional & {
+    type?: "min" | "max";
+    closeable?: boolean;
+    alignTab?: "left" | "right" | "center";
+  }) {
     super(optional);
     this.addClasName("tab-pane");
     this.style.width = "100%";
@@ -88,8 +85,8 @@ export class TabPane extends BorderPaneElement {
     if (this.slectTabItem) this.slectTabItem.unselect();
     if (item) {
       item.select();
-      this.onSelectTab(item.title, item.content);
       this.slectTabItem = item;
+      this.onSelectTab(item.title, item.content, Array.from(this.tabs.children).indexOf(item));
     }
   }
 
@@ -101,7 +98,11 @@ export class TabPane extends BorderPaneElement {
     return this.tabs.children.item(index) as TabElement;
   }
 
-  public onSelectTab: (title: string, content: HTMLElement) => void = () => {};
+  get select(): TabElement | null {
+    return this.slectTabItem;
+  }
+
+  public onSelectTab: (title: string, content: HTMLElement, index?: number) => void = () => { };
 }
 // @ts-ignore
 customElements.define("tab-pane", TabPane);

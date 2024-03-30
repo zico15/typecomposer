@@ -34,6 +34,7 @@ export class TextFieldElement extends Component {
       placeholder: " ",
       value: optional?.value,
     });
+    delete optional?.value;
     this.appendChild(this.input);
     if (
       optional?.placeholderAnimation == true ||
@@ -78,6 +79,14 @@ export class TextFieldElement extends Component {
       this.iconPane.style.right = "1rem";
       this.iconPane.style.justifyContent = "end";
     }
+  }
+
+  get value(): string {
+    return this.input.value;
+  }
+
+  set value(value: string) {
+    this.input.value = value;
   }
 }
 // @ts-ignore
