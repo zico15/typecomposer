@@ -72,4 +72,4 @@ export class TabItem extends Component {
   }
 }
 // @ts-ignore
-customElements.define("tab-element", TabElement);
+customElements.define("tab-item", TabItem);

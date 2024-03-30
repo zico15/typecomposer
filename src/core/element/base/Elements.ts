@@ -785,22 +785,12 @@ export class InputElement extends HTMLInputElement implements IComponent {
       if (typeof v == "string") this.value = v;
       else {
         const ref: ref<string> = v;
-        console.log("input:ref: ", ref);
         ref.subscriber(this, "value", ref["refPropertyKey"]);
-        // this.addEventListener("input", (event) => {
-        //   console.log("input:ref: ", ref);
-        //   ref.setValue(this.value, ref["refPropertyKey"]);
-        // });
+        this.addEventListener("input", (event) => {
+          ref.setValue(this.value, ref["refPropertyKey"]);
+        });
       }
     }
-  }
-  get value(): string {
-    return super.value;
-  }
-
-  set value(_value: string) {
-    super.value = _value;
-    console.log("set:input:value: ", super.value);
   }
 
   onInit(): void {}
