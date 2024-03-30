@@ -1,10 +1,4 @@
-import {
-  type StyleOptional,
-  DivElement,
-  GridElement,
-  IComponent,
-  ILayout,
-} from "..";
+import { type StyleOptional, DivElement, GridElement, IComponent, ILayout } from "..";
 
 export class BorderPaneElement extends ILayout {
   private _top: IComponent = new DivElement();
@@ -105,8 +99,7 @@ export class BorderPaneElement extends ILayout {
     this._centerPane.remove();
     this._centerPane = component;
     this._center.innerHTML = "";
-    if (this.variant == "primary")
-      this._center.append(this.left, this._centerPane, this.right);
+    if (this.variant == "primary") this._center.append(this.left, this._centerPane, this.right);
     else this._center.append(this.top, this._centerPane, this.bottom);
   }
 

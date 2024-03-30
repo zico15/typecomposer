@@ -9,8 +9,7 @@ export class IconElement extends Component {
 
   constructor(optional?: DataIconElement) {
     super(optional);
-    if (optional != undefined && optional.icon != undefined)
-      this.icon = optional.icon;
+    if (optional != undefined && optional.icon != undefined) this.icon = optional.icon;
   }
 
   get icon(): string {
@@ -18,8 +17,7 @@ export class IconElement extends Component {
   }
 
   set icon(value: string | ref<string>) {
-    if (typeof value !== "string")
-      this["_styleref"].appendStyleref("icon", this, value);
+    if (typeof value !== "string") this["_styleref"].appendStyleref("icon", this, value);
     else {
       const splice = value.split(" ");
       splice.forEach((v) => {

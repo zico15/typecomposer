@@ -6,10 +6,7 @@ export class EventComponent extends Event {
   public data: any[] = [];
   public isInit: boolean = false;
   private static events: Map<string, EventComponent> = new Map();
-  private eventsListener: Map<
-    IComponent,
-    EventListenerOrEventListenerObject[]
-  > = new Map();
+  private eventsListener: Map<IComponent, EventListenerOrEventListenerObject[]> = new Map();
   private static serialize: string = "event-component-";
 
   constructor(type: string, options?: EventInit) {
@@ -41,12 +38,7 @@ export class EventComponent extends Event {
     return EventComponent.createEventBase(type, ...data) !== null;
   }
 
-  public static addEventListener(
-    component: IComponent,
-    type: string,
-    listener: EventHandler,
-    options?: boolean | AddEventListenerOptions | undefined,
-  ) {
+  public static addEventListener(component: IComponent, type: string, listener: EventHandler, options?: boolean | AddEventListenerOptions | undefined) {
     const e = EventComponent.createEventBase(type);
     if (e) {
       const eventListener = function (event: EventComponent) {

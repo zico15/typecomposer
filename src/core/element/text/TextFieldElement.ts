@@ -1,13 +1,5 @@
 import { Variant } from "../base/CSSStyle";
-import {
-  Component,
-  DivElement,
-  IconElement,
-  InputElement,
-  InputType,
-  LabelElement,
-  StyleOptional,
-} from "..";
+import { Component, DivElement, IconElement, InputElement, InputType, LabelElement, StyleOptional } from "..";
 import { ref } from "src/core/ref";
 
 export class TextFieldElement extends Component {
@@ -36,10 +28,7 @@ export class TextFieldElement extends Component {
     });
     delete optional?.value;
     this.appendChild(this.input);
-    if (
-      optional?.placeholderAnimation == true ||
-      optional?.placeholderAnimation == undefined
-    ) {
+    if (optional?.placeholderAnimation == true || optional?.placeholderAnimation == undefined) {
       this._label = new LabelElement({ text: optional?.placeholder || " " });
       this._label.addEventListener("click", () => this.input.focus());
       this.appendChild(this.label);
@@ -68,8 +57,7 @@ export class TextFieldElement extends Component {
     this._icon = value;
     this.iconPane.append(value);
     if (value.style.order == "" || value.style.order == "0") {
-      if (this.label != undefined)
-        this.label.style.marginLeft = this.iconPane.offsetWidth + 30 + "px";
+      if (this.label != undefined) this.label.style.marginLeft = this.iconPane.offsetWidth + 30 + "px";
       this.input.style.paddingLeft = this.iconPane.offsetWidth + 40 + "px";
       this.iconPane.style.left = "1rem";
       this.iconPane.style.justifyContent = "center";

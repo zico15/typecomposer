@@ -4,10 +4,4 @@ import { ScrollElement } from "./containment/ScrollElement";
 import { GoogleMapElement } from "./navigation/GoogleMap";
 import { MenuBarElement } from "./navigation/MenuBarElement";
 
-export {
-  DialogPane,
-  DividerElement,
-  MenuBarElement,
-  ScrollElement,
-  GoogleMapElement,
-};
+export { DialogPane, DividerElement, MenuBarElement, ScrollElement, GoogleMapElement };

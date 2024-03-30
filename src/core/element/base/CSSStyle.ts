@@ -1,11 +1,6 @@
 import { ref, RefString } from "../../ref";
 
-export type Variant =
-  | "default"
-  | "outline"
-  | "solo"
-  | "standard"
-  | "underlined";
+export type Variant = "default" | "outline" | "solo" | "standard" | "underlined";
 
 const _styleAtributtes = [
   "accentColor",
@@ -2101,14 +2096,7 @@ export interface CSSStyleDeclarationref {
   /** [MDN reference](https://developer.mozilla.org/docs/Web/CSS/direction) */
   direction: string | ref<string>;
   /** [MDN reference](https://developer.mozilla.org/docs/Web/CSS/display) */
-  display:
-    | string
-    | ref<string>
-    | "absolute"
-    | "fixed"
-    | "relative"
-    | "static"
-    | "sticky";
+  display: string | ref<string> | "absolute" | "fixed" | "relative" | "static" | "sticky";
   dominantBaseline: string | ref<string>;
   /** [MDN reference](https://developer.mozilla.org/docs/Web/CSS/empty-cells) */
   emptyCells: string | ref<string>;
@@ -3035,11 +3023,7 @@ export interface CSSStyleDeclarationref {
   /** [MDN reference](https://developer.mozilla.org/docs/Web/API/CSSStyleDeclaration/removeProperty) */
   removeProperty(property: string): string | ref<string>;
   /** [MDN reference](https://developer.mozilla.org/docs/Web/API/CSSStyleDeclaration/setProperty) */
-  setProperty(
-    property: string,
-    value: string | ref<string> | null,
-    priority?: string,
-  ): void;
+  setProperty(property: string, value: string | ref<string> | null, priority?: string): void;
   [index: number]: string | ref<string>;
 
   hasOwnProperty?(key: string): boolean;
@@ -3053,10 +3037,7 @@ declare var CSSStyleDeclarationref: {
 export class CSSStyleref implements CSSStyleDeclarationref {
   [index: number]: any;
   private _style: CSSStyleDeclaration;
-  private stylerefMap = new Map<
-    string,
-    { data: { ref: any; name: string }; ref: ref<any> }
-  >();
+  private stylerefMap = new Map<string, { data: { ref: any; name: string }; ref: ref<any> }>();
 
   private setStylerefMap(propertyKey: string, ref: any) {
     if (ref instanceof RefString) {
@@ -3126,8 +3107,7 @@ export class CSSStyleref implements CSSStyleDeclarationref {
   }
 
   public set alignmentBaseline(value: string | ref<string>) {
-    if (typeof value !== "string")
-      this.setStylerefMap("alignmentBaseline", value);
+    if (typeof value !== "string") this.setStylerefMap("alignmentBaseline", value);
     else this._style.alignmentBaseline = value as any;
   }
 
@@ -3154,8 +3134,7 @@ export class CSSStyleref implements CSSStyleDeclarationref {
   }
 
   public set animationComposition(value: string | ref<string>) {
-    if (typeof value !== "string")
-      this.setStylerefMap("animationComposition", value);
+    if (typeof value !== "string") this.setStylerefMap("animationComposition", value);
     else this._style.animationComposition = value as any;
   }
 
@@ -3173,8 +3152,7 @@ export class CSSStyleref implements CSSStyleDeclarationref {
   }
 
   public set animationDirection(value: string | ref<string>) {
-    if (typeof value !== "string")
-      this.setStylerefMap("animationDirection", value);
+    if (typeof value !== "string") this.setStylerefMap("animationDirection", value);
     else this._style.animationDirection = value as any;
   }
 
@@ -3183,8 +3161,7 @@ export class CSSStyleref implements CSSStyleDeclarationref {
   }
 
   public set animationDuration(value: string | ref<string>) {
-    if (typeof value !== "string")
-      this.setStylerefMap("animationDuration", value);
+    if (typeof value !== "string") this.setStylerefMap("animationDuration", value);
     else this._style.animationDuration = value as any;
   }
 
@@ -3193,8 +3170,7 @@ export class CSSStyleref implements CSSStyleDeclarationref {
   }
 
   public set animationFillMode(value: string | ref<string>) {
-    if (typeof value !== "string")
-      this.setStylerefMap("animationFillMode", value);
+    if (typeof value !== "string") this.setStylerefMap("animationFillMode", value);
     else this._style.animationFillMode = value as any;
   }
 
@@ -3203,8 +3179,7 @@ export class CSSStyleref implements CSSStyleDeclarationref {
   }
 
   public set animationIterationCount(value: string | ref<string>) {
-    if (typeof value !== "string")
-      this.setStylerefMap("animationIterationCount", value);
+    if (typeof value !== "string") this.setStylerefMap("animationIterationCount", value);
     else this._style.animationIterationCount = value as any;
   }
 
@@ -3222,8 +3197,7 @@ export class CSSStyleref implements CSSStyleDeclarationref {
   }
 
   public set animationPlayState(value: string | ref<string>) {
-    if (typeof value !== "string")
-      this.setStylerefMap("animationPlayState", value);
+    if (typeof value !== "string") this.setStylerefMap("animationPlayState", value);
     else this._style.animationPlayState = value as any;
   }
 
@@ -3232,8 +3206,7 @@ export class CSSStyleref implements CSSStyleDeclarationref {
   }
 
   public set animationTimingFunction(value: string | ref<string>) {
-    if (typeof value !== "string")
-      this.setStylerefMap("animationTimingFunction", value);
+    if (typeof value !== "string") this.setStylerefMap("animationTimingFunction", value);
     else this._style.animationTimingFunction = value as any;
   }
 
@@ -3269,8 +3242,7 @@ export class CSSStyleref implements CSSStyleDeclarationref {
   }
 
   public set backfaceVisibility(value: string | ref<string>) {
-    if (typeof value !== "string")
-      this.setStylerefMap("backfaceVisibility", value);
+    if (typeof value !== "string") this.setStylerefMap("backfaceVisibility", value);
     else this._style.backfaceVisibility = value as any;
   }
 
@@ -3288,8 +3260,7 @@ export class CSSStyleref implements CSSStyleDeclarationref {
   }
 
   public set backgroundAttachment(value: string | ref<string>) {
-    if (typeof value !== "string")
-      this.setStylerefMap("backgroundAttachment", value);
+    if (typeof value !== "string") this.setStylerefMap("backgroundAttachment", value);
     else this._style.backgroundAttachment = value as any;
   }
 
@@ -3298,8 +3269,7 @@ export class CSSStyleref implements CSSStyleDeclarationref {
   }
 
   public set backgroundBlendMode(value: string | ref<string>) {
-    if (typeof value !== "string")
-      this.setStylerefMap("backgroundBlendMode", value);
+    if (typeof value !== "string") this.setStylerefMap("backgroundBlendMode", value);
     else this._style.backgroundBlendMode = value as any;
   }
 
@@ -3317,8 +3287,7 @@ export class CSSStyleref implements CSSStyleDeclarationref {
   }
 
   public set backgroundColor(value: string | ref<string>) {
-    if (typeof value !== "string")
-      this.setStylerefMap("backgroundColor", value);
+    if (typeof value !== "string") this.setStylerefMap("backgroundColor", value);
     else this._style.backgroundColor = value as any;
   }
 
@@ -3327,8 +3296,7 @@ export class CSSStyleref implements CSSStyleDeclarationref {
   }
 
   public set backgroundImage(value: string | ref<string>) {
-    if (typeof value !== "string")
-      this.setStylerefMap("backgroundImage", value);
+    if (typeof value !== "string") this.setStylerefMap("backgroundImage", value);
     else this._style.backgroundImage = value as any;
   }
 
@@ -3337,8 +3305,7 @@ export class CSSStyleref implements CSSStyleDeclarationref {
   }
 
   public set backgroundOrigin(value: string | ref<string>) {
-    if (typeof value !== "string")
-      this.setStylerefMap("backgroundOrigin", value);
+    if (typeof value !== "string") this.setStylerefMap("backgroundOrigin", value);
     else this._style.backgroundOrigin = value as any;
   }
 
@@ -3347,8 +3314,7 @@ export class CSSStyleref implements CSSStyleDeclarationref {
   }
 
   public set backgroundPosition(value: string | ref<string>) {
-    if (typeof value !== "string")
-      this.setStylerefMap("backgroundPosition", value);
+    if (typeof value !== "string") this.setStylerefMap("backgroundPosition", value);
     else this._style.backgroundPosition = value as any;
   }
 
@@ -3357,8 +3323,7 @@ export class CSSStyleref implements CSSStyleDeclarationref {
   }
 
   public set backgroundPositionX(value: string | ref<string>) {
-    if (typeof value !== "string")
-      this.setStylerefMap("backgroundPositionX", value);
+    if (typeof value !== "string") this.setStylerefMap("backgroundPositionX", value);
     else this._style.backgroundPositionX = value as any;
   }
 
@@ -3367,8 +3332,7 @@ export class CSSStyleref implements CSSStyleDeclarationref {
   }
 
   public set backgroundPositionY(value: string | ref<string>) {
-    if (typeof value !== "string")
-      this.setStylerefMap("backgroundPositionY", value);
+    if (typeof value !== "string") this.setStylerefMap("backgroundPositionY", value);
     else this._style.backgroundPositionY = value as any;
   }
 
@@ -3377,8 +3341,7 @@ export class CSSStyleref implements CSSStyleDeclarationref {
   }
 
   public set backgroundRepeat(value: string | ref<string>) {
-    if (typeof value !== "string")
-      this.setStylerefMap("backgroundRepeat", value);
+    if (typeof value !== "string") this.setStylerefMap("backgroundRepeat", value);
     else this._style.backgroundRepeat = value as any;
   }
 
@@ -3432,8 +3395,7 @@ export class CSSStyleref implements CSSStyleDeclarationref {
   }
 
   public set borderBlockColor(value: string | ref<string>) {
-    if (typeof value !== "string")
-      this.setStylerefMap("borderBlockColor", value);
+    if (typeof value !== "string") this.setStylerefMap("borderBlockColor", value);
     else this._style.borderBlockColor = value as any;
   }
 
@@ -3451,8 +3413,7 @@ export class CSSStyleref implements CSSStyleDeclarationref {
   }
 
   public set borderBlockEndColor(value: string | ref<string>) {
-    if (typeof value !== "string")
-      this.setStylerefMap("borderBlockEndColor", value);
+    if (typeof value !== "string") this.setStylerefMap("borderBlockEndColor", value);
     else this._style.borderBlockEndColor = value as any;
   }
 
@@ -3461,8 +3422,7 @@ export class CSSStyleref implements CSSStyleDeclarationref {
   }
 
   public set borderBlockEndStyle(value: string | ref<string>) {
-    if (typeof value !== "string")
-      this.setStylerefMap("borderBlockEndStyle", value);
+    if (typeof value !== "string") this.setStylerefMap("borderBlockEndStyle", value);
     else this._style.borderBlockEndStyle = value as any;
   }
 
@@ -3471,8 +3431,7 @@ export class CSSStyleref implements CSSStyleDeclarationref {
   }
 
   public set borderBlockEndWidth(value: string | ref<string>) {
-    if (typeof value !== "string")
-      this.setStylerefMap("borderBlockEndWidth", value);
+    if (typeof value !== "string") this.setStylerefMap("borderBlockEndWidth", value);
     else this._style.borderBlockEndWidth = value as any;
   }
 
@@ -3481,8 +3440,7 @@ export class CSSStyleref implements CSSStyleDeclarationref {
   }
 
   public set borderBlockStart(value: string | ref<string>) {
-    if (typeof value !== "string")
-      this.setStylerefMap("borderBlockStart", value);
+    if (typeof value !== "string") this.setStylerefMap("borderBlockStart", value);
     else this._style.borderBlockStart = value as any;
   }
 
@@ -3491,8 +3449,7 @@ export class CSSStyleref implements CSSStyleDeclarationref {
   }
 
   public set borderBlockStartColor(value: string | ref<string>) {
-    if (typeof value !== "string")
-      this.setStylerefMap("borderBlockStartColor", value);
+    if (typeof value !== "string") this.setStylerefMap("borderBlockStartColor", value);
     else this._style.borderBlockStartColor = value as any;
   }
 
@@ -3501,8 +3458,7 @@ export class CSSStyleref implements CSSStyleDeclarationref {
   }
 
   public set borderBlockStartStyle(value: string | ref<string>) {
-    if (typeof value !== "string")
-      this.setStylerefMap("borderBlockStartStyle", value);
+    if (typeof value !== "string") this.setStylerefMap("borderBlockStartStyle", value);
     else this._style.borderBlockStartStyle = value as any;
   }
 
@@ -3511,8 +3467,7 @@ export class CSSStyleref implements CSSStyleDeclarationref {
   }
 
   public set borderBlockStartWidth(value: string | ref<string>) {
-    if (typeof value !== "string")
-      this.setStylerefMap("borderBlockStartWidth", value);
+    if (typeof value !== "string") this.setStylerefMap("borderBlockStartWidth", value);
     else this._style.borderBlockStartWidth = value as any;
   }
 
@@ -3521,8 +3476,7 @@ export class CSSStyleref implements CSSStyleDeclarationref {
   }
 
   public set borderBlockStyle(value: string | ref<string>) {
-    if (typeof value !== "string")
-      this.setStylerefMap("borderBlockStyle", value);
+    if (typeof value !== "string") this.setStylerefMap("borderBlockStyle", value);
     else this._style.borderBlockStyle = value as any;
   }
 
@@ -3531,8 +3485,7 @@ export class CSSStyleref implements CSSStyleDeclarationref {
   }
 
   public set borderBlockWidth(value: string | ref<string>) {
-    if (typeof value !== "string")
-      this.setStylerefMap("borderBlockWidth", value);
+    if (typeof value !== "string") this.setStylerefMap("borderBlockWidth", value);
     else this._style.borderBlockWidth = value as any;
   }
 
@@ -3550,8 +3503,7 @@ export class CSSStyleref implements CSSStyleDeclarationref {
   }
 
   public set borderBottomColor(value: string | ref<string>) {
-    if (typeof value !== "string")
-      this.setStylerefMap("borderBottomColor", value);
+    if (typeof value !== "string") this.setStylerefMap("borderBottomColor", value);
     else this._style.borderBottomColor = value as any;
   }
 
@@ -3560,8 +3512,7 @@ export class CSSStyleref implements CSSStyleDeclarationref {
   }
 
   public set borderBottomLeftRadius(value: string | ref<string>) {
-    if (typeof value !== "string")
-      this.setStylerefMap("borderBottomLeftRadius", value);
+    if (typeof value !== "string") this.setStylerefMap("borderBottomLeftRadius", value);
     else this._style.borderBottomLeftRadius = value as any;
   }
 
@@ -3570,8 +3521,7 @@ export class CSSStyleref implements CSSStyleDeclarationref {
   }
 
   public set borderBottomRightRadius(value: string | ref<string>) {
-    if (typeof value !== "string")
-      this.setStylerefMap("borderBottomRightRadius", value);
+    if (typeof value !== "string") this.setStylerefMap("borderBottomRightRadius", value);
     else this._style.borderBottomRightRadius = value as any;
   }
 
@@ -3580,8 +3530,7 @@ export class CSSStyleref implements CSSStyleDeclarationref {
   }
 
   public set borderBottomStyle(value: string | ref<string>) {
-    if (typeof value !== "string")
-      this.setStylerefMap("borderBottomStyle", value);
+    if (typeof value !== "string") this.setStylerefMap("borderBottomStyle", value);
     else this._style.borderBottomStyle = value as any;
   }
 
@@ -3590,8 +3539,7 @@ export class CSSStyleref implements CSSStyleDeclarationref {
   }
 
   public set borderBottomWidth(value: string | ref<string>) {
-    if (typeof value !== "string")
-      this.setStylerefMap("borderBottomWidth", value);
+    if (typeof value !== "string") this.setStylerefMap("borderBottomWidth", value);
     else this._style.borderBottomWidth = value as any;
   }
 
@@ -3618,8 +3566,7 @@ export class CSSStyleref implements CSSStyleDeclarationref {
   }
 
   public set borderEndEndRadius(value: string | ref<string>) {
-    if (typeof value !== "string")
-      this.setStylerefMap("borderEndEndRadius", value);
+    if (typeof value !== "string") this.setStylerefMap("borderEndEndRadius", value);
     else this._style.borderEndEndRadius = value as any;
   }
 
@@ -3628,8 +3575,7 @@ export class CSSStyleref implements CSSStyleDeclarationref {
   }
 
   public set borderEndStartRadius(value: string | ref<string>) {
-    if (typeof value !== "string")
-      this.setStylerefMap("borderEndStartRadius", value);
+    if (typeof value !== "string") this.setStylerefMap("borderEndStartRadius", value);
     else this._style.borderEndStartRadius = value as any;
   }
 
@@ -3647,8 +3593,7 @@ export class CSSStyleref implements CSSStyleDeclarationref {
   }
 
   public set borderImageOutset(value: string | ref<string>) {
-    if (typeof value !== "string")
-      this.setStylerefMap("borderImageOutset", value);
+    if (typeof value !== "string") this.setStylerefMap("borderImageOutset", value);
     else this._style.borderImageOutset = value as any;
   }
 
@@ -3657,8 +3602,7 @@ export class CSSStyleref implements CSSStyleDeclarationref {
   }
 
   public set borderImageRepeat(value: string | ref<string>) {
-    if (typeof value !== "string")
-      this.setStylerefMap("borderImageRepeat", value);
+    if (typeof value !== "string") this.setStylerefMap("borderImageRepeat", value);
     else this._style.borderImageRepeat = value as any;
   }
 
@@ -3667,8 +3611,7 @@ export class CSSStyleref implements CSSStyleDeclarationref {
   }
 
   public set borderImageSlice(value: string | ref<string>) {
-    if (typeof value !== "string")
-      this.setStylerefMap("borderImageSlice", value);
+    if (typeof value !== "string") this.setStylerefMap("borderImageSlice", value);
     else this._style.borderImageSlice = value as any;
   }
 
@@ -3677,8 +3620,7 @@ export class CSSStyleref implements CSSStyleDeclarationref {
   }
 
   public set borderImageSource(value: string | ref<string>) {
-    if (typeof value !== "string")
-      this.setStylerefMap("borderImageSource", value);
+    if (typeof value !== "string") this.setStylerefMap("borderImageSource", value);
     else this._style.borderImageSource = value as any;
   }
 
@@ -3687,8 +3629,7 @@ export class CSSStyleref implements CSSStyleDeclarationref {
   }
 
   public set borderImageWidth(value: string | ref<string>) {
-    if (typeof value !== "string")
-      this.setStylerefMap("borderImageWidth", value);
+    if (typeof value !== "string") this.setStylerefMap("borderImageWidth", value);
     else this._style.borderImageWidth = value as any;
   }
 
@@ -3706,8 +3647,7 @@ export class CSSStyleref implements CSSStyleDeclarationref {
   }
 
   public set borderInlineColor(value: string | ref<string>) {
-    if (typeof value !== "string")
-      this.setStylerefMap("borderInlineColor", value);
+    if (typeof value !== "string") this.setStylerefMap("borderInlineColor", value);
     else this._style.borderInlineColor = value as any;
   }
 
@@ -3716,8 +3656,7 @@ export class CSSStyleref implements CSSStyleDeclarationref {
   }
 
   public set borderInlineEnd(value: string | ref<string>) {
-    if (typeof value !== "string")
-      this.setStylerefMap("borderInlineEnd", value);
+    if (typeof value !== "string") this.setStylerefMap("borderInlineEnd", value);
     else this._style.borderInlineEnd = value as any;
   }
 
@@ -3726,8 +3665,7 @@ export class CSSStyleref implements CSSStyleDeclarationref {
   }
 
   public set borderInlineEndColor(value: string | ref<string>) {
-    if (typeof value !== "string")
-      this.setStylerefMap("borderInlineEndColor", value);
+    if (typeof value !== "string") this.setStylerefMap("borderInlineEndColor", value);
     else this._style.borderInlineEndColor = value as any;
   }
 
@@ -3736,8 +3674,7 @@ export class CSSStyleref implements CSSStyleDeclarationref {
   }
 
   public set borderInlineEndStyle(value: string | ref<string>) {
-    if (typeof value !== "string")
-      this.setStylerefMap("borderInlineEndStyle", value);
+    if (typeof value !== "string") this.setStylerefMap("borderInlineEndStyle", value);
     else this._style.borderInlineEndStyle = value as any;
   }
 
@@ -3746,8 +3683,7 @@ export class CSSStyleref implements CSSStyleDeclarationref {
   }
 
   public set borderInlineEndWidth(value: string | ref<string>) {
-    if (typeof value !== "string")
-      this.setStylerefMap("borderInlineEndWidth", value);
+    if (typeof value !== "string") this.setStylerefMap("borderInlineEndWidth", value);
     else this._style.borderInlineEndWidth = value as any;
   }
 
@@ -3756,8 +3692,7 @@ export class CSSStyleref implements CSSStyleDeclarationref {
   }
 
   public set borderInlineStart(value: string | ref<string>) {
-    if (typeof value !== "string")
-      this.setStylerefMap("borderInlineStart", value);
+    if (typeof value !== "string") this.setStylerefMap("borderInlineStart", value);
     else this._style.borderInlineStart = value as any;
   }
 
@@ -3766,8 +3701,7 @@ export class CSSStyleref implements CSSStyleDeclarationref {
   }
 
   public set borderInlineStartColor(value: string | ref<string>) {
-    if (typeof value !== "string")
-      this.setStylerefMap("borderInlineStartColor", value);
+    if (typeof value !== "string") this.setStylerefMap("borderInlineStartColor", value);
     else this._style.borderInlineStartColor = value as any;
   }
 
@@ -3776,8 +3710,7 @@ export class CSSStyleref implements CSSStyleDeclarationref {
   }
 
   public set borderInlineStartStyle(value: string | ref<string>) {
-    if (typeof value !== "string")
-      this.setStylerefMap("borderInlineStartStyle", value);
+    if (typeof value !== "string") this.setStylerefMap("borderInlineStartStyle", value);
     else this._style.borderInlineStartStyle = value as any;
   }
 
@@ -3786,8 +3719,7 @@ export class CSSStyleref implements CSSStyleDeclarationref {
   }
 
   public set borderInlineStartWidth(value: string | ref<string>) {
-    if (typeof value !== "string")
-      this.setStylerefMap("borderInlineStartWidth", value);
+    if (typeof value !== "string") this.setStylerefMap("borderInlineStartWidth", value);
     else this._style.borderInlineStartWidth = value as any;
   }
 
@@ -3796,8 +3728,7 @@ export class CSSStyleref implements CSSStyleDeclarationref {
   }
 
   public set borderInlineStyle(value: string | ref<string>) {
-    if (typeof value !== "string")
-      this.setStylerefMap("borderInlineStyle", value);
+    if (typeof value !== "string") this.setStylerefMap("borderInlineStyle", value);
     else this._style.borderInlineStyle = value as any;
   }
 
@@ -3806,8 +3737,7 @@ export class CSSStyleref implements CSSStyleDeclarationref {
   }
 
   public set borderInlineWidth(value: string | ref<string>) {
-    if (typeof value !== "string")
-      this.setStylerefMap("borderInlineWidth", value);
+    if (typeof value !== "string") this.setStylerefMap("borderInlineWidth", value);
     else this._style.borderInlineWidth = value as any;
   }
 
@@ -3825,8 +3755,7 @@ export class CSSStyleref implements CSSStyleDeclarationref {
   }
 
   public set borderLeftColor(value: string | ref<string>) {
-    if (typeof value !== "string")
-      this.setStylerefMap("borderLeftColor", value);
+    if (typeof value !== "string") this.setStylerefMap("borderLeftColor", value);
     else this._style.borderLeftColor = value as any;
   }
 
@@ -3835,8 +3764,7 @@ export class CSSStyleref implements CSSStyleDeclarationref {
   }
 
   public set borderLeftStyle(value: string | ref<string>) {
-    if (typeof value !== "string")
-      this.setStylerefMap("borderLeftStyle", value);
+    if (typeof value !== "string") this.setStylerefMap("borderLeftStyle", value);
     else this._style.borderLeftStyle = value as any;
   }
 
@@ -3845,8 +3773,7 @@ export class CSSStyleref implements CSSStyleDeclarationref {
   }
 
   public set borderLeftWidth(value: string | ref<string>) {
-    if (typeof value !== "string")
-      this.setStylerefMap("borderLeftWidth", value);
+    if (typeof value !== "string") this.setStylerefMap("borderLeftWidth", value);
     else this._style.borderLeftWidth = value as any;
   }
 
@@ -3873,8 +3800,7 @@ export class CSSStyleref implements CSSStyleDeclarationref {
   }
 
   public set borderRightColor(value: string | ref<string>) {
-    if (typeof value !== "string")
-      this.setStylerefMap("borderRightColor", value);
+    if (typeof value !== "string") this.setStylerefMap("borderRightColor", value);
     else this._style.borderRightColor = value as any;
   }
 
@@ -3883,8 +3809,7 @@ export class CSSStyleref implements CSSStyleDeclarationref {
   }
 
   public set borderRightStyle(value: string | ref<string>) {
-    if (typeof value !== "string")
-      this.setStylerefMap("borderRightStyle", value);
+    if (typeof value !== "string") this.setStylerefMap("borderRightStyle", value);
     else this._style.borderRightStyle = value as any;
   }
 
@@ -3893,8 +3818,7 @@ export class CSSStyleref implements CSSStyleDeclarationref {
   }
 
   public set borderRightWidth(value: string | ref<string>) {
-    if (typeof value !== "string")
-      this.setStylerefMap("borderRightWidth", value);
+    if (typeof value !== "string") this.setStylerefMap("borderRightWidth", value);
     else this._style.borderRightWidth = value as any;
   }
 
@@ -3912,8 +3836,7 @@ export class CSSStyleref implements CSSStyleDeclarationref {
   }
 
   public set borderStartEndRadius(value: string | ref<string>) {
-    if (typeof value !== "string")
-      this.setStylerefMap("borderStartEndRadius", value);
+    if (typeof value !== "string") this.setStylerefMap("borderStartEndRadius", value);
     else this._style.borderStartEndRadius = value as any;
   }
 
@@ -3922,8 +3845,7 @@ export class CSSStyleref implements CSSStyleDeclarationref {
   }
 
   public set borderStartStartRadius(value: string | ref<string>) {
-    if (typeof value !== "string")
-      this.setStylerefMap("borderStartStartRadius", value);
+    if (typeof value !== "string") this.setStylerefMap("borderStartStartRadius", value);
     else this._style.borderStartStartRadius = value as any;
   }
 
@@ -3959,8 +3881,7 @@ export class CSSStyleref implements CSSStyleDeclarationref {
   }
 
   public set borderTopLeftRadius(value: string | ref<string>) {
-    if (typeof value !== "string")
-      this.setStylerefMap("borderTopLeftRadius", value);
+    if (typeof value !== "string") this.setStylerefMap("borderTopLeftRadius", value);
     else this._style.borderTopLeftRadius = value as any;
   }
 
@@ -3969,8 +3890,7 @@ export class CSSStyleref implements CSSStyleDeclarationref {
   }
 
   public set borderTopRightRadius(value: string | ref<string>) {
-    if (typeof value !== "string")
-      this.setStylerefMap("borderTopRightRadius", value);
+    if (typeof value !== "string") this.setStylerefMap("borderTopRightRadius", value);
     else this._style.borderTopRightRadius = value as any;
   }
 
@@ -4123,8 +4043,7 @@ export class CSSStyleref implements CSSStyleDeclarationref {
   }
 
   public set colorInterpolation(value: string | ref<string>) {
-    if (typeof value !== "string")
-      this.setStylerefMap("colorInterpolation", value);
+    if (typeof value !== "string") this.setStylerefMap("colorInterpolation", value);
     else this._style.colorInterpolation = value as any;
   }
 
@@ -4133,8 +4052,7 @@ export class CSSStyleref implements CSSStyleDeclarationref {
   }
 
   public set colorInterpolationFilters(value: string | ref<string>) {
-    if (typeof value !== "string")
-      this.setStylerefMap("colorInterpolationFilters", value);
+    if (typeof value !== "string") this.setStylerefMap("colorInterpolationFilters", value);
     else this._style.colorInterpolationFilters = value as any;
   }
 
@@ -4188,8 +4106,7 @@ export class CSSStyleref implements CSSStyleDeclarationref {
   }
 
   public set columnRuleColor(value: string | ref<string>) {
-    if (typeof value !== "string")
-      this.setStylerefMap("columnRuleColor", value);
+    if (typeof value !== "string") this.setStylerefMap("columnRuleColor", value);
     else this._style.columnRuleColor = value as any;
   }
 
@@ -4198,8 +4115,7 @@ export class CSSStyleref implements CSSStyleDeclarationref {
   }
 
   public set columnRuleStyle(value: string | ref<string>) {
-    if (typeof value !== "string")
-      this.setStylerefMap("columnRuleStyle", value);
+    if (typeof value !== "string") this.setStylerefMap("columnRuleStyle", value);
     else this._style.columnRuleStyle = value as any;
   }
 
@@ -4208,8 +4124,7 @@ export class CSSStyleref implements CSSStyleDeclarationref {
   }
 
   public set columnRuleWidth(value: string | ref<string>) {
-    if (typeof value !== "string")
-      this.setStylerefMap("columnRuleWidth", value);
+    if (typeof value !== "string") this.setStylerefMap("columnRuleWidth", value);
     else this._style.columnRuleWidth = value as any;
   }
 
@@ -4254,8 +4169,7 @@ export class CSSStyleref implements CSSStyleDeclarationref {
   }
 
   public set containIntrinsicBlockSize(value: string | ref<string>) {
-    if (typeof value !== "string")
-      this.setStylerefMap("containIntrinsicBlockSize", value);
+    if (typeof value !== "string") this.setStylerefMap("containIntrinsicBlockSize", value);
     else this._style.containIntrinsicBlockSize = value as any;
   }
 
@@ -4264,8 +4178,7 @@ export class CSSStyleref implements CSSStyleDeclarationref {
   }
 
   public set containIntrinsicHeight(value: string | ref<string>) {
-    if (typeof value !== "string")
-      this.setStylerefMap("containIntrinsicHeight", value);
+    if (typeof value !== "string") this.setStylerefMap("containIntrinsicHeight", value);
     else this._style.containIntrinsicHeight = value as any;
   }
 
@@ -4274,8 +4187,7 @@ export class CSSStyleref implements CSSStyleDeclarationref {
   }
 
   public set containIntrinsicInlineSize(value: string | ref<string>) {
-    if (typeof value !== "string")
-      this.setStylerefMap("containIntrinsicInlineSize", value);
+    if (typeof value !== "string") this.setStylerefMap("containIntrinsicInlineSize", value);
     else this._style.containIntrinsicInlineSize = value as any;
   }
 
@@ -4284,8 +4196,7 @@ export class CSSStyleref implements CSSStyleDeclarationref {
   }
 
   public set containIntrinsicSize(value: string | ref<string>) {
-    if (typeof value !== "string")
-      this.setStylerefMap("containIntrinsicSize", value);
+    if (typeof value !== "string") this.setStylerefMap("containIntrinsicSize", value);
     else this._style.containIntrinsicSize = value as any;
   }
 
@@ -4294,8 +4205,7 @@ export class CSSStyleref implements CSSStyleDeclarationref {
   }
 
   public set containIntrinsicWidth(value: string | ref<string>) {
-    if (typeof value !== "string")
-      this.setStylerefMap("containIntrinsicWidth", value);
+    if (typeof value !== "string") this.setStylerefMap("containIntrinsicWidth", value);
     else this._style.containIntrinsicWidth = value as any;
   }
 
@@ -4340,8 +4250,7 @@ export class CSSStyleref implements CSSStyleDeclarationref {
   }
 
   public set counterIncrement(value: string | ref<string>) {
-    if (typeof value !== "string")
-      this.setStylerefMap("counterIncrement", value);
+    if (typeof value !== "string") this.setStylerefMap("counterIncrement", value);
     else this._style.counterIncrement = value as any;
   }
 
@@ -4413,8 +4322,7 @@ export class CSSStyleref implements CSSStyleDeclarationref {
   }
 
   public set dominantBaseline(value: string | ref<string>) {
-    if (typeof value !== "string")
-      this.setStylerefMap("dominantBaseline", value);
+    if (typeof value !== "string") this.setStylerefMap("dominantBaseline", value);
     else this._style.dominantBaseline = value as any;
   }
 
@@ -4576,8 +4484,7 @@ export class CSSStyleref implements CSSStyleDeclarationref {
   }
 
   public set fontFeatureSettings(value: string | ref<string>) {
-    if (typeof value !== "string")
-      this.setStylerefMap("fontFeatureSettings", value);
+    if (typeof value !== "string") this.setStylerefMap("fontFeatureSettings", value);
     else this._style.fontFeatureSettings = value as any;
   }
 
@@ -4595,8 +4502,7 @@ export class CSSStyleref implements CSSStyleDeclarationref {
   }
 
   public set fontOpticalSizing(value: string | ref<string>) {
-    if (typeof value !== "string")
-      this.setStylerefMap("fontOpticalSizing", value);
+    if (typeof value !== "string") this.setStylerefMap("fontOpticalSizing", value);
     else this._style.fontOpticalSizing = value as any;
   }
 
@@ -4659,8 +4565,7 @@ export class CSSStyleref implements CSSStyleDeclarationref {
   }
 
   public set fontSynthesisSmallCaps(value: string | ref<string>) {
-    if (typeof value !== "string")
-      this.setStylerefMap("fontSynthesisSmallCaps", value);
+    if (typeof value !== "string") this.setStylerefMap("fontSynthesisSmallCaps", value);
     else this._style.fontSynthesisSmallCaps = value as any;
   }
 
@@ -4669,8 +4574,7 @@ export class CSSStyleref implements CSSStyleDeclarationref {
   }
 
   public set fontSynthesisStyle(value: string | ref<string>) {
-    if (typeof value !== "string")
-      this.setStylerefMap("fontSynthesisStyle", value);
+    if (typeof value !== "string") this.setStylerefMap("fontSynthesisStyle", value);
     else this._style.fontSynthesisStyle = value as any;
   }
 
@@ -4679,8 +4583,7 @@ export class CSSStyleref implements CSSStyleDeclarationref {
   }
 
   public set fontSynthesisWeight(value: string | ref<string>) {
-    if (typeof value !== "string")
-      this.setStylerefMap("fontSynthesisWeight", value);
+    if (typeof value !== "string") this.setStylerefMap("fontSynthesisWeight", value);
     else this._style.fontSynthesisWeight = value as any;
   }
 
@@ -4698,8 +4601,7 @@ export class CSSStyleref implements CSSStyleDeclarationref {
   }
 
   public set fontVariantAlternates(value: string | ref<string>) {
-    if (typeof value !== "string")
-      this.setStylerefMap("fontVariantAlternates", value);
+    if (typeof value !== "string") this.setStylerefMap("fontVariantAlternates", value);
     else this._style.fontVariantAlternates = value as any;
   }
 
@@ -4708,8 +4610,7 @@ export class CSSStyleref implements CSSStyleDeclarationref {
   }
 
   public set fontVariantCaps(value: string | ref<string>) {
-    if (typeof value !== "string")
-      this.setStylerefMap("fontVariantCaps", value);
+    if (typeof value !== "string") this.setStylerefMap("fontVariantCaps", value);
     else this._style.fontVariantCaps = value as any;
   }
 
@@ -4718,8 +4619,7 @@ export class CSSStyleref implements CSSStyleDeclarationref {
   }
 
   public set fontVariantEastAsian(value: string | ref<string>) {
-    if (typeof value !== "string")
-      this.setStylerefMap("fontVariantEastAsian", value);
+    if (typeof value !== "string") this.setStylerefMap("fontVariantEastAsian", value);
     else this._style.fontVariantEastAsian = value as any;
   }
 
@@ -4728,8 +4628,7 @@ export class CSSStyleref implements CSSStyleDeclarationref {
   }
 
   public set fontVariantLigatures(value: string | ref<string>) {
-    if (typeof value !== "string")
-      this.setStylerefMap("fontVariantLigatures", value);
+    if (typeof value !== "string") this.setStylerefMap("fontVariantLigatures", value);
     else this._style.fontVariantLigatures = value as any;
   }
 
@@ -4738,8 +4637,7 @@ export class CSSStyleref implements CSSStyleDeclarationref {
   }
 
   public set fontVariantNumeric(value: string | ref<string>) {
-    if (typeof value !== "string")
-      this.setStylerefMap("fontVariantNumeric", value);
+    if (typeof value !== "string") this.setStylerefMap("fontVariantNumeric", value);
     else this._style.fontVariantNumeric = value as any;
   }
 
@@ -4748,8 +4646,7 @@ export class CSSStyleref implements CSSStyleDeclarationref {
   }
 
   public set fontVariantPosition(value: string | ref<string>) {
-    if (typeof value !== "string")
-      this.setStylerefMap("fontVariantPosition", value);
+    if (typeof value !== "string") this.setStylerefMap("fontVariantPosition", value);
     else this._style.fontVariantPosition = value as any;
   }
 
@@ -4758,8 +4655,7 @@ export class CSSStyleref implements CSSStyleDeclarationref {
   }
 
   public set fontVariationSettings(value: string | ref<string>) {
-    if (typeof value !== "string")
-      this.setStylerefMap("fontVariationSettings", value);
+    if (typeof value !== "string") this.setStylerefMap("fontVariationSettings", value);
     else this._style.fontVariationSettings = value as any;
   }
 
@@ -4777,8 +4673,7 @@ export class CSSStyleref implements CSSStyleDeclarationref {
   }
 
   public set forcedColorAdjust(value: string | ref<string>) {
-    if (typeof value !== "string")
-      this.setStylerefMap("forcedColorAdjust", value);
+    if (typeof value !== "string") this.setStylerefMap("forcedColorAdjust", value);
     else this._style.forcedColorAdjust = value as any;
   }
 
@@ -4814,8 +4709,7 @@ export class CSSStyleref implements CSSStyleDeclarationref {
   }
 
   public set gridAutoColumns(value: string | ref<string>) {
-    if (typeof value !== "string")
-      this.setStylerefMap("gridAutoColumns", value);
+    if (typeof value !== "string") this.setStylerefMap("gridAutoColumns", value);
     else this._style.gridAutoColumns = value as any;
   }
 
@@ -4869,8 +4763,7 @@ export class CSSStyleref implements CSSStyleDeclarationref {
   }
 
   public set gridColumnStart(value: string | ref<string>) {
-    if (typeof value !== "string")
-      this.setStylerefMap("gridColumnStart", value);
+    if (typeof value !== "string") this.setStylerefMap("gridColumnStart", value);
     else this._style.gridColumnStart = value as any;
   }
 
@@ -4933,8 +4826,7 @@ export class CSSStyleref implements CSSStyleDeclarationref {
   }
 
   public set gridTemplateAreas(value: string | ref<string>) {
-    if (typeof value !== "string")
-      this.setStylerefMap("gridTemplateAreas", value);
+    if (typeof value !== "string") this.setStylerefMap("gridTemplateAreas", value);
     else this._style.gridTemplateAreas = value as any;
   }
 
@@ -4943,8 +4835,7 @@ export class CSSStyleref implements CSSStyleDeclarationref {
   }
 
   public set gridTemplateColumns(value: string | ref<string>) {
-    if (typeof value !== "string")
-      this.setStylerefMap("gridTemplateColumns", value);
+    if (typeof value !== "string") this.setStylerefMap("gridTemplateColumns", value);
     else this._style.gridTemplateColumns = value as any;
   }
 
@@ -4953,8 +4844,7 @@ export class CSSStyleref implements CSSStyleDeclarationref {
   }
 
   public set gridTemplateRows(value: string | ref<string>) {
-    if (typeof value !== "string")
-      this.setStylerefMap("gridTemplateRows", value);
+    if (typeof value !== "string") this.setStylerefMap("gridTemplateRows", value);
     else this._style.gridTemplateRows = value as any;
   }
 
@@ -4972,8 +4862,7 @@ export class CSSStyleref implements CSSStyleDeclarationref {
   }
 
   public set hyphenateCharacter(value: string | ref<string>) {
-    if (typeof value !== "string")
-      this.setStylerefMap("hyphenateCharacter", value);
+    if (typeof value !== "string") this.setStylerefMap("hyphenateCharacter", value);
     else this._style.hyphenateCharacter = value as any;
   }
 
@@ -4991,8 +4880,7 @@ export class CSSStyleref implements CSSStyleDeclarationref {
   }
 
   public set imageOrientation(value: string | ref<string>) {
-    if (typeof value !== "string")
-      this.setStylerefMap("imageOrientation", value);
+    if (typeof value !== "string") this.setStylerefMap("imageOrientation", value);
     else this._style.imageOrientation = value as any;
   }
 
@@ -5046,8 +4934,7 @@ export class CSSStyleref implements CSSStyleDeclarationref {
   }
 
   public set insetBlockStart(value: string | ref<string>) {
-    if (typeof value !== "string")
-      this.setStylerefMap("insetBlockStart", value);
+    if (typeof value !== "string") this.setStylerefMap("insetBlockStart", value);
     else this._style.insetBlockStart = value as any;
   }
 
@@ -5074,8 +4961,7 @@ export class CSSStyleref implements CSSStyleDeclarationref {
   }
 
   public set insetInlineStart(value: string | ref<string>) {
-    if (typeof value !== "string")
-      this.setStylerefMap("insetInlineStart", value);
+    if (typeof value !== "string") this.setStylerefMap("insetInlineStart", value);
     else this._style.insetInlineStart = value as any;
   }
 
@@ -5187,8 +5073,7 @@ export class CSSStyleref implements CSSStyleDeclarationref {
   }
 
   public set listStylePosition(value: string | ref<string>) {
-    if (typeof value !== "string")
-      this.setStylerefMap("listStylePosition", value);
+    if (typeof value !== "string") this.setStylerefMap("listStylePosition", value);
     else this._style.listStylePosition = value as any;
   }
 
@@ -5233,8 +5118,7 @@ export class CSSStyleref implements CSSStyleDeclarationref {
   }
 
   public set marginBlockStart(value: string | ref<string>) {
-    if (typeof value !== "string")
-      this.setStylerefMap("marginBlockStart", value);
+    if (typeof value !== "string") this.setStylerefMap("marginBlockStart", value);
     else this._style.marginBlockStart = value as any;
   }
 
@@ -5261,8 +5145,7 @@ export class CSSStyleref implements CSSStyleDeclarationref {
   }
 
   public set marginInlineEnd(value: string | ref<string>) {
-    if (typeof value !== "string")
-      this.setStylerefMap("marginInlineEnd", value);
+    if (typeof value !== "string") this.setStylerefMap("marginInlineEnd", value);
     else this._style.marginInlineEnd = value as any;
   }
 
@@ -5271,8 +5154,7 @@ export class CSSStyleref implements CSSStyleDeclarationref {
   }
 
   public set marginInlineStart(value: string | ref<string>) {
-    if (typeof value !== "string")
-      this.setStylerefMap("marginInlineStart", value);
+    if (typeof value !== "string") this.setStylerefMap("marginInlineStart", value);
     else this._style.marginInlineStart = value as any;
   }
 
@@ -5668,8 +5550,7 @@ export class CSSStyleref implements CSSStyleDeclarationref {
   }
 
   public set overflowClipMargin(value: string | ref<string>) {
-    if (typeof value !== "string")
-      this.setStylerefMap("overflowClipMargin", value);
+    if (typeof value !== "string") this.setStylerefMap("overflowClipMargin", value);
     else this._style.overflowClipMargin = value as any;
   }
 
@@ -5705,8 +5586,7 @@ export class CSSStyleref implements CSSStyleDeclarationref {
   }
 
   public set overscrollBehavior(value: string | ref<string>) {
-    if (typeof value !== "string")
-      this.setStylerefMap("overscrollBehavior", value);
+    if (typeof value !== "string") this.setStylerefMap("overscrollBehavior", value);
     else this._style.overscrollBehavior = value as any;
   }
 
@@ -5715,8 +5595,7 @@ export class CSSStyleref implements CSSStyleDeclarationref {
   }
 
   public set overscrollBehaviorBlock(value: string | ref<string>) {
-    if (typeof value !== "string")
-      this.setStylerefMap("overscrollBehaviorBlock", value);
+    if (typeof value !== "string") this.setStylerefMap("overscrollBehaviorBlock", value);
     else this._style.overscrollBehaviorBlock = value as any;
   }
 
@@ -5725,8 +5604,7 @@ export class CSSStyleref implements CSSStyleDeclarationref {
   }
 
   public set overscrollBehaviorInline(value: string | ref<string>) {
-    if (typeof value !== "string")
-      this.setStylerefMap("overscrollBehaviorInline", value);
+    if (typeof value !== "string") this.setStylerefMap("overscrollBehaviorInline", value);
     else this._style.overscrollBehaviorInline = value as any;
   }
 
@@ -5735,8 +5613,7 @@ export class CSSStyleref implements CSSStyleDeclarationref {
   }
 
   public set overscrollBehaviorX(value: string | ref<string>) {
-    if (typeof value !== "string")
-      this.setStylerefMap("overscrollBehaviorX", value);
+    if (typeof value !== "string") this.setStylerefMap("overscrollBehaviorX", value);
     else this._style.overscrollBehaviorX = value as any;
   }
 
@@ -5745,8 +5622,7 @@ export class CSSStyleref implements CSSStyleDeclarationref {
   }
 
   public set overscrollBehaviorY(value: string | ref<string>) {
-    if (typeof value !== "string")
-      this.setStylerefMap("overscrollBehaviorY", value);
+    if (typeof value !== "string") this.setStylerefMap("overscrollBehaviorY", value);
     else this._style.overscrollBehaviorY = value as any;
   }
 
@@ -5773,8 +5649,7 @@ export class CSSStyleref implements CSSStyleDeclarationref {
   }
 
   public set paddingBlockEnd(value: string | ref<string>) {
-    if (typeof value !== "string")
-      this.setStylerefMap("paddingBlockEnd", value);
+    if (typeof value !== "string") this.setStylerefMap("paddingBlockEnd", value);
     else this._style.paddingBlockEnd = value as any;
   }
 
@@ -5783,8 +5658,7 @@ export class CSSStyleref implements CSSStyleDeclarationref {
   }
 
   public set paddingBlockStart(value: string | ref<string>) {
-    if (typeof value !== "string")
-      this.setStylerefMap("paddingBlockStart", value);
+    if (typeof value !== "string") this.setStylerefMap("paddingBlockStart", value);
     else this._style.paddingBlockStart = value as any;
   }
 
@@ -5811,8 +5685,7 @@ export class CSSStyleref implements CSSStyleDeclarationref {
   }
 
   public set paddingInlineEnd(value: string | ref<string>) {
-    if (typeof value !== "string")
-      this.setStylerefMap("paddingInlineEnd", value);
+    if (typeof value !== "string") this.setStylerefMap("paddingInlineEnd", value);
     else this._style.paddingInlineEnd = value as any;
   }
 
@@ -5821,8 +5694,7 @@ export class CSSStyleref implements CSSStyleDeclarationref {
   }
 
   public set paddingInlineStart(value: string | ref<string>) {
-    if (typeof value !== "string")
-      this.setStylerefMap("paddingInlineStart", value);
+    if (typeof value !== "string") this.setStylerefMap("paddingInlineStart", value);
     else this._style.paddingInlineStart = value as any;
   }
 
@@ -5876,8 +5748,7 @@ export class CSSStyleref implements CSSStyleDeclarationref {
   }
 
   public set pageBreakBefore(value: string | ref<string>) {
-    if (typeof value !== "string")
-      this.setStylerefMap("pageBreakBefore", value);
+    if (typeof value !== "string") this.setStylerefMap("pageBreakBefore", value);
     else this._style.pageBreakBefore = value as any;
   }
 
@@ -5886,8 +5757,7 @@ export class CSSStyleref implements CSSStyleDeclarationref {
   }
 
   public set pageBreakInside(value: string | ref<string>) {
-    if (typeof value !== "string")
-      this.setStylerefMap("pageBreakInside", value);
+    if (typeof value !== "string") this.setStylerefMap("pageBreakInside", value);
     else this._style.pageBreakInside = value as any;
   }
 
@@ -5918,8 +5788,7 @@ export class CSSStyleref implements CSSStyleDeclarationref {
   }
 
   public set perspectiveOrigin(value: string | ref<string>) {
-    if (typeof value !== "string")
-      this.setStylerefMap("perspectiveOrigin", value);
+    if (typeof value !== "string") this.setStylerefMap("perspectiveOrigin", value);
     else this._style.perspectiveOrigin = value as any;
   }
 
@@ -5973,8 +5842,7 @@ export class CSSStyleref implements CSSStyleDeclarationref {
   }
 
   public set printColorAdjust(value: string | ref<string>) {
-    if (typeof value !== "string")
-      this.setStylerefMap("printColorAdjust", value);
+    if (typeof value !== "string") this.setStylerefMap("printColorAdjust", value);
     else this._style.printColorAdjust = value as any;
   }
 
@@ -6064,8 +5932,7 @@ export class CSSStyleref implements CSSStyleDeclarationref {
   }
 
   public set scrollMarginBlock(value: string | ref<string>) {
-    if (typeof value !== "string")
-      this.setStylerefMap("scrollMarginBlock", value);
+    if (typeof value !== "string") this.setStylerefMap("scrollMarginBlock", value);
     else this._style.scrollMarginBlock = value as any;
   }
 
@@ -6074,8 +5941,7 @@ export class CSSStyleref implements CSSStyleDeclarationref {
   }
 
   public set scrollMarginBlockEnd(value: string | ref<string>) {
-    if (typeof value !== "string")
-      this.setStylerefMap("scrollMarginBlockEnd", value);
+    if (typeof value !== "string") this.setStylerefMap("scrollMarginBlockEnd", value);
     else this._style.scrollMarginBlockEnd = value as any;
   }
 
@@ -6084,8 +5950,7 @@ export class CSSStyleref implements CSSStyleDeclarationref {
   }
 
   public set scrollMarginBlockStart(value: string | ref<string>) {
-    if (typeof value !== "string")
-      this.setStylerefMap("scrollMarginBlockStart", value);
+    if (typeof value !== "string") this.setStylerefMap("scrollMarginBlockStart", value);
     else this._style.scrollMarginBlockStart = value as any;
   }
 
@@ -6094,8 +5959,7 @@ export class CSSStyleref implements CSSStyleDeclarationref {
   }
 
   public set scrollMarginBottom(value: string | ref<string>) {
-    if (typeof value !== "string")
-      this.setStylerefMap("scrollMarginBottom", value);
+    if (typeof value !== "string") this.setStylerefMap("scrollMarginBottom", value);
     else this._style.scrollMarginBottom = value as any;
   }
 
@@ -6104,8 +5968,7 @@ export class CSSStyleref implements CSSStyleDeclarationref {
   }
 
   public set scrollMarginInline(value: string | ref<string>) {
-    if (typeof value !== "string")
-      this.setStylerefMap("scrollMarginInline", value);
+    if (typeof value !== "string") this.setStylerefMap("scrollMarginInline", value);
     else this._style.scrollMarginInline = value as any;
   }
 
@@ -6114,8 +5977,7 @@ export class CSSStyleref implements CSSStyleDeclarationref {
   }
 
   public set scrollMarginInlineEnd(value: string | ref<string>) {
-    if (typeof value !== "string")
-      this.setStylerefMap("scrollMarginInlineEnd", value);
+    if (typeof value !== "string") this.setStylerefMap("scrollMarginInlineEnd", value);
     else this._style.scrollMarginInlineEnd = value as any;
   }
 
@@ -6124,8 +5986,7 @@ export class CSSStyleref implements CSSStyleDeclarationref {
   }
 
   public set scrollMarginInlineStart(value: string | ref<string>) {
-    if (typeof value !== "string")
-      this.setStylerefMap("scrollMarginInlineStart", value);
+    if (typeof value !== "string") this.setStylerefMap("scrollMarginInlineStart", value);
     else this._style.scrollMarginInlineStart = value as any;
   }
 
@@ -6134,8 +5995,7 @@ export class CSSStyleref implements CSSStyleDeclarationref {
   }
 
   public set scrollMarginLeft(value: string | ref<string>) {
-    if (typeof value !== "string")
-      this.setStylerefMap("scrollMarginLeft", value);
+    if (typeof value !== "string") this.setStylerefMap("scrollMarginLeft", value);
     else this._style.scrollMarginLeft = value as any;
   }
 
@@ -6144,8 +6004,7 @@ export class CSSStyleref implements CSSStyleDeclarationref {
   }
 
   public set scrollMarginRight(value: string | ref<string>) {
-    if (typeof value !== "string")
-      this.setStylerefMap("scrollMarginRight", value);
+    if (typeof value !== "string") this.setStylerefMap("scrollMarginRight", value);
     else this._style.scrollMarginRight = value as any;
   }
 
@@ -6154,8 +6013,7 @@ export class CSSStyleref implements CSSStyleDeclarationref {
   }
 
   public set scrollMarginTop(value: string | ref<string>) {
-    if (typeof value !== "string")
-      this.setStylerefMap("scrollMarginTop", value);
+    if (typeof value !== "string") this.setStylerefMap("scrollMarginTop", value);
     else this._style.scrollMarginTop = value as any;
   }
 
@@ -6173,8 +6031,7 @@ export class CSSStyleref implements CSSStyleDeclarationref {
   }
 
   public set scrollPaddingBlock(value: string | ref<string>) {
-    if (typeof value !== "string")
-      this.setStylerefMap("scrollPaddingBlock", value);
+    if (typeof value !== "string") this.setStylerefMap("scrollPaddingBlock", value);
     else this._style.scrollPaddingBlock = value as any;
   }
 
@@ -6183,8 +6040,7 @@ export class CSSStyleref implements CSSStyleDeclarationref {
   }
 
   public set scrollPaddingBlockEnd(value: string | ref<string>) {
-    if (typeof value !== "string")
-      this.setStylerefMap("scrollPaddingBlockEnd", value);
+    if (typeof value !== "string") this.setStylerefMap("scrollPaddingBlockEnd", value);
     else this._style.scrollPaddingBlockEnd = value as any;
   }
 
@@ -6193,8 +6049,7 @@ export class CSSStyleref implements CSSStyleDeclarationref {
   }
 
   public set scrollPaddingBlockStart(value: string | ref<string>) {
-    if (typeof value !== "string")
-      this.setStylerefMap("scrollPaddingBlockStart", value);
+    if (typeof value !== "string") this.setStylerefMap("scrollPaddingBlockStart", value);
     else this._style.scrollPaddingBlockStart = value as any;
   }
 
@@ -6203,8 +6058,7 @@ export class CSSStyleref implements CSSStyleDeclarationref {
   }
 
   public set scrollPaddingBottom(value: string | ref<string>) {
-    if (typeof value !== "string")
-      this.setStylerefMap("scrollPaddingBottom", value);
+    if (typeof value !== "string") this.setStylerefMap("scrollPaddingBottom", value);
     else this._style.scrollPaddingBottom = value as any;
   }
 
@@ -6213,8 +6067,7 @@ export class CSSStyleref implements CSSStyleDeclarationref {
   }
 
   public set scrollPaddingInline(value: string | ref<string>) {
-    if (typeof value !== "string")
-      this.setStylerefMap("scrollPaddingInline", value);
+    if (typeof value !== "string") this.setStylerefMap("scrollPaddingInline", value);
     else this._style.scrollPaddingInline = value as any;
   }
 
@@ -6223,8 +6076,7 @@ export class CSSStyleref implements CSSStyleDeclarationref {
   }
 
   public set scrollPaddingInlineEnd(value: string | ref<string>) {
-    if (typeof value !== "string")
-      this.setStylerefMap("scrollPaddingInlineEnd", value);
+    if (typeof value !== "string") this.setStylerefMap("scrollPaddingInlineEnd", value);
     else this._style.scrollPaddingInlineEnd = value as any;
   }
 
@@ -6233,8 +6085,7 @@ export class CSSStyleref implements CSSStyleDeclarationref {
   }
 
   public set scrollPaddingInlineStart(value: string | ref<string>) {
-    if (typeof value !== "string")
-      this.setStylerefMap("scrollPaddingInlineStart", value);
+    if (typeof value !== "string") this.setStylerefMap("scrollPaddingInlineStart", value);
     else this._style.scrollPaddingInlineStart = value as any;
   }
 
@@ -6243,8 +6094,7 @@ export class CSSStyleref implements CSSStyleDeclarationref {
   }
 
   public set scrollPaddingLeft(value: string | ref<string>) {
-    if (typeof value !== "string")
-      this.setStylerefMap("scrollPaddingLeft", value);
+    if (typeof value !== "string") this.setStylerefMap("scrollPaddingLeft", value);
     else this._style.scrollPaddingLeft = value as any;
   }
 
@@ -6253,8 +6103,7 @@ export class CSSStyleref implements CSSStyleDeclarationref {
   }
 
   public set scrollPaddingRight(value: string | ref<string>) {
-    if (typeof value !== "string")
-      this.setStylerefMap("scrollPaddingRight", value);
+    if (typeof value !== "string") this.setStylerefMap("scrollPaddingRight", value);
     else this._style.scrollPaddingRight = value as any;
   }
 
@@ -6263,8 +6112,7 @@ export class CSSStyleref implements CSSStyleDeclarationref {
   }
 
   public set scrollPaddingTop(value: string | ref<string>) {
-    if (typeof value !== "string")
-      this.setStylerefMap("scrollPaddingTop", value);
+    if (typeof value !== "string") this.setStylerefMap("scrollPaddingTop", value);
     else this._style.scrollPaddingTop = value as any;
   }
 
@@ -6273,8 +6121,7 @@ export class CSSStyleref implements CSSStyleDeclarationref {
   }
 
   public set scrollSnapAlign(value: string | ref<string>) {
-    if (typeof value !== "string")
-      this.setStylerefMap("scrollSnapAlign", value);
+    if (typeof value !== "string") this.setStylerefMap("scrollSnapAlign", value);
     else this._style.scrollSnapAlign = value as any;
   }
 
@@ -6301,8 +6148,7 @@ export class CSSStyleref implements CSSStyleDeclarationref {
   }
 
   public set scrollbarGutter(value: string | ref<string>) {
-    if (typeof value !== "string")
-      this.setStylerefMap("scrollbarGutter", value);
+    if (typeof value !== "string") this.setStylerefMap("scrollbarGutter", value);
     else this._style.scrollbarGutter = value as any;
   }
 
@@ -6311,8 +6157,7 @@ export class CSSStyleref implements CSSStyleDeclarationref {
   }
 
   public set shapeImageThreshold(value: string | ref<string>) {
-    if (typeof value !== "string")
-      this.setStylerefMap("shapeImageThreshold", value);
+    if (typeof value !== "string") this.setStylerefMap("shapeImageThreshold", value);
     else this._style.shapeImageThreshold = value as any;
   }
 
@@ -6375,8 +6220,7 @@ export class CSSStyleref implements CSSStyleDeclarationref {
   }
 
   public set strokeDasharray(value: string | ref<string>) {
-    if (typeof value !== "string")
-      this.setStylerefMap("strokeDasharray", value);
+    if (typeof value !== "string") this.setStylerefMap("strokeDasharray", value);
     else this._style.strokeDasharray = value as any;
   }
 
@@ -6385,8 +6229,7 @@ export class CSSStyleref implements CSSStyleDeclarationref {
   }
 
   public set strokeDashoffset(value: string | ref<string>) {
-    if (typeof value !== "string")
-      this.setStylerefMap("strokeDashoffset", value);
+    if (typeof value !== "string") this.setStylerefMap("strokeDashoffset", value);
     else this._style.strokeDashoffset = value as any;
   }
 
@@ -6413,8 +6256,7 @@ export class CSSStyleref implements CSSStyleDeclarationref {
   }
 
   public set strokeMiterlimit(value: string | ref<string>) {
-    if (typeof value !== "string")
-      this.setStylerefMap("strokeMiterlimit", value);
+    if (typeof value !== "string") this.setStylerefMap("strokeMiterlimit", value);
     else this._style.strokeMiterlimit = value as any;
   }
 
@@ -6486,8 +6328,7 @@ export class CSSStyleref implements CSSStyleDeclarationref {
   }
 
   public set textCombineUpright(value: string | ref<string>) {
-    if (typeof value !== "string")
-      this.setStylerefMap("textCombineUpright", value);
+    if (typeof value !== "string") this.setStylerefMap("textCombineUpright", value);
     else this._style.textCombineUpright = value as any;
   }
 
@@ -6505,8 +6346,7 @@ export class CSSStyleref implements CSSStyleDeclarationref {
   }
 
   public set textDecorationColor(value: string | ref<string>) {
-    if (typeof value !== "string")
-      this.setStylerefMap("textDecorationColor", value);
+    if (typeof value !== "string") this.setStylerefMap("textDecorationColor", value);
     else this._style.textDecorationColor = value as any;
   }
 
@@ -6515,8 +6355,7 @@ export class CSSStyleref implements CSSStyleDeclarationref {
   }
 
   public set textDecorationLine(value: string | ref<string>) {
-    if (typeof value !== "string")
-      this.setStylerefMap("textDecorationLine", value);
+    if (typeof value !== "string") this.setStylerefMap("textDecorationLine", value);
     else this._style.textDecorationLine = value as any;
   }
 
@@ -6525,8 +6364,7 @@ export class CSSStyleref implements CSSStyleDeclarationref {
   }
 
   public set textDecorationSkipInk(value: string | ref<string>) {
-    if (typeof value !== "string")
-      this.setStylerefMap("textDecorationSkipInk", value);
+    if (typeof value !== "string") this.setStylerefMap("textDecorationSkipInk", value);
     else this._style.textDecorationSkipInk = value as any;
   }
 
@@ -6535,8 +6373,7 @@ export class CSSStyleref implements CSSStyleDeclarationref {
   }
 
   public set textDecorationStyle(value: string | ref<string>) {
-    if (typeof value !== "string")
-      this.setStylerefMap("textDecorationStyle", value);
+    if (typeof value !== "string") this.setStylerefMap("textDecorationStyle", value);
     else this._style.textDecorationStyle = value as any;
   }
 
@@ -6545,8 +6382,7 @@ export class CSSStyleref implements CSSStyleDeclarationref {
   }
 
   public set textDecorationThickness(value: string | ref<string>) {
-    if (typeof value !== "string")
-      this.setStylerefMap("textDecorationThickness", value);
+    if (typeof value !== "string") this.setStylerefMap("textDecorationThickness", value);
     else this._style.textDecorationThickness = value as any;
   }
 
@@ -6564,8 +6400,7 @@ export class CSSStyleref implements CSSStyleDeclarationref {
   }
 
   public set textEmphasisColor(value: string | ref<string>) {
-    if (typeof value !== "string")
-      this.setStylerefMap("textEmphasisColor", value);
+    if (typeof value !== "string") this.setStylerefMap("textEmphasisColor", value);
     else this._style.textEmphasisColor = value as any;
   }
 
@@ -6574,8 +6409,7 @@ export class CSSStyleref implements CSSStyleDeclarationref {
   }
 
   public set textEmphasisPosition(value: string | ref<string>) {
-    if (typeof value !== "string")
-      this.setStylerefMap("textEmphasisPosition", value);
+    if (typeof value !== "string") this.setStylerefMap("textEmphasisPosition", value);
     else this._style.textEmphasisPosition = value as any;
   }
 
@@ -6584,8 +6418,7 @@ export class CSSStyleref implements CSSStyleDeclarationref {
   }
 
   public set textEmphasisStyle(value: string | ref<string>) {
-    if (typeof value !== "string")
-      this.setStylerefMap("textEmphasisStyle", value);
+    if (typeof value !== "string") this.setStylerefMap("textEmphasisStyle", value);
     else this._style.textEmphasisStyle = value as any;
   }
 
@@ -6603,8 +6436,7 @@ export class CSSStyleref implements CSSStyleDeclarationref {
   }
 
   public set textOrientation(value: string | ref<string>) {
-    if (typeof value !== "string")
-      this.setStylerefMap("textOrientation", value);
+    if (typeof value !== "string") this.setStylerefMap("textOrientation", value);
     else this._style.textOrientation = value as any;
   }
 
@@ -6649,8 +6481,7 @@ export class CSSStyleref implements CSSStyleDeclarationref {
   }
 
   public set textUnderlineOffset(value: string | ref<string>) {
-    if (typeof value !== "string")
-      this.setStylerefMap("textUnderlineOffset", value);
+    if (typeof value !== "string") this.setStylerefMap("textUnderlineOffset", value);
     else this._style.textUnderlineOffset = value as any;
   }
 
@@ -6659,8 +6490,7 @@ export class CSSStyleref implements CSSStyleDeclarationref {
   }
 
   public set textUnderlinePosition(value: string | ref<string>) {
-    if (typeof value !== "string")
-      this.setStylerefMap("textUnderlinePosition", value);
+    if (typeof value !== "string") this.setStylerefMap("textUnderlinePosition", value);
     else this._style.textUnderlinePosition = value as any;
   }
 
@@ -6705,8 +6535,7 @@ export class CSSStyleref implements CSSStyleDeclarationref {
   }
 
   public set transformOrigin(value: string | ref<string>) {
-    if (typeof value !== "string")
-      this.setStylerefMap("transformOrigin", value);
+    if (typeof value !== "string") this.setStylerefMap("transformOrigin", value);
     else this._style.transformOrigin = value as any;
   }
 
@@ -6733,8 +6562,7 @@ export class CSSStyleref implements CSSStyleDeclarationref {
   }
 
   public set transitionDelay(value: string | ref<string>) {
-    if (typeof value !== "string")
-      this.setStylerefMap("transitionDelay", value);
+    if (typeof value !== "string") this.setStylerefMap("transitionDelay", value);
     else this._style.transitionDelay = value as any;
   }
 
@@ -6743,8 +6571,7 @@ export class CSSStyleref implements CSSStyleDeclarationref {
   }
 
   public set transitionDuration(value: string | ref<string>) {
-    if (typeof value !== "string")
-      this.setStylerefMap("transitionDuration", value);
+    if (typeof value !== "string") this.setStylerefMap("transitionDuration", value);
     else this._style.transitionDuration = value as any;
   }
 
@@ -6753,8 +6580,7 @@ export class CSSStyleref implements CSSStyleDeclarationref {
   }
 
   public set transitionProperty(value: string | ref<string>) {
-    if (typeof value !== "string")
-      this.setStylerefMap("transitionProperty", value);
+    if (typeof value !== "string") this.setStylerefMap("transitionProperty", value);
     else this._style.transitionProperty = value as any;
   }
 
@@ -6763,8 +6589,7 @@ export class CSSStyleref implements CSSStyleDeclarationref {
   }
 
   public set transitionTimingFunction(value: string | ref<string>) {
-    if (typeof value !== "string")
-      this.setStylerefMap("transitionTimingFunction", value);
+    if (typeof value !== "string") this.setStylerefMap("transitionTimingFunction", value);
     else this._style.transitionTimingFunction = value as any;
   }
 
@@ -6818,8 +6643,7 @@ export class CSSStyleref implements CSSStyleDeclarationref {
   }
 
   public set webkitAlignContent(value: string | ref<string>) {
-    if (typeof value !== "string")
-      this.setStylerefMap("webkitAlignContent", value);
+    if (typeof value !== "string") this.setStylerefMap("webkitAlignContent", value);
     else this._style.webkitAlignContent = value as any;
   }
 
@@ -6828,8 +6652,7 @@ export class CSSStyleref implements CSSStyleDeclarationref {
   }
 
   public set webkitAlignItems(value: string | ref<string>) {
-    if (typeof value !== "string")
-      this.setStylerefMap("webkitAlignItems", value);
+    if (typeof value !== "string") this.setStylerefMap("webkitAlignItems", value);
     else this._style.webkitAlignItems = value as any;
   }
 
@@ -6838,8 +6661,7 @@ export class CSSStyleref implements CSSStyleDeclarationref {
   }
 
   public set webkitAlignSelf(value: string | ref<string>) {
-    if (typeof value !== "string")
-      this.setStylerefMap("webkitAlignSelf", value);
+    if (typeof value !== "string") this.setStylerefMap("webkitAlignSelf", value);
     else this._style.webkitAlignSelf = value as any;
   }
 
@@ -6848,8 +6670,7 @@ export class CSSStyleref implements CSSStyleDeclarationref {
   }
 
   public set webkitAnimation(value: string | ref<string>) {
-    if (typeof value !== "string")
-      this.setStylerefMap("webkitAnimation", value);
+    if (typeof value !== "string") this.setStylerefMap("webkitAnimation", value);
     else this._style.webkitAnimation = value as any;
   }
 
@@ -6858,8 +6679,7 @@ export class CSSStyleref implements CSSStyleDeclarationref {
   }
 
   public set webkitAnimationDelay(value: string | ref<string>) {
-    if (typeof value !== "string")
-      this.setStylerefMap("webkitAnimationDelay", value);
+    if (typeof value !== "string") this.setStylerefMap("webkitAnimationDelay", value);
     else this._style.webkitAnimationDelay = value as any;
   }
 
@@ -6868,8 +6688,7 @@ export class CSSStyleref implements CSSStyleDeclarationref {
   }
 
   public set webkitAnimationDirection(value: string | ref<string>) {
-    if (typeof value !== "string")
-      this.setStylerefMap("webkitAnimationDirection", value);
+    if (typeof value !== "string") this.setStylerefMap("webkitAnimationDirection", value);
     else this._style.webkitAnimationDirection = value as any;
   }
 
@@ -6878,8 +6697,7 @@ export class CSSStyleref implements CSSStyleDeclarationref {
   }
 
   public set webkitAnimationDuration(value: string | ref<string>) {
-    if (typeof value !== "string")
-      this.setStylerefMap("webkitAnimationDuration", value);
+    if (typeof value !== "string") this.setStylerefMap("webkitAnimationDuration", value);
     else this._style.webkitAnimationDuration = value as any;
   }
 
@@ -6888,8 +6706,7 @@ export class CSSStyleref implements CSSStyleDeclarationref {
   }
 
   public set webkitAnimationFillMode(value: string | ref<string>) {
-    if (typeof value !== "string")
-      this.setStylerefMap("webkitAnimationFillMode", value);
+    if (typeof value !== "string") this.setStylerefMap("webkitAnimationFillMode", value);
     else this._style.webkitAnimationFillMode = value as any;
   }
 
@@ -6898,8 +6715,7 @@ export class CSSStyleref implements CSSStyleDeclarationref {
   }
 
   public set webkitAnimationIterationCount(value: string | ref<string>) {
-    if (typeof value !== "string")
-      this.setStylerefMap("webkitAnimationIterationCount", value);
+    if (typeof value !== "string") this.setStylerefMap("webkitAnimationIterationCount", value);
     else this._style.webkitAnimationIterationCount = value as any;
   }
 
@@ -6908,8 +6724,7 @@ export class CSSStyleref implements CSSStyleDeclarationref {
   }
 
   public set webkitAnimationName(value: string | ref<string>) {
-    if (typeof value !== "string")
-      this.setStylerefMap("webkitAnimationName", value);
+    if (typeof value !== "string") this.setStylerefMap("webkitAnimationName", value);
     else this._style.webkitAnimationName = value as any;
   }
 
@@ -6918,8 +6733,7 @@ export class CSSStyleref implements CSSStyleDeclarationref {
   }
 
   public set webkitAnimationPlayState(value: string | ref<string>) {
-    if (typeof value !== "string")
-      this.setStylerefMap("webkitAnimationPlayState", value);
+    if (typeof value !== "string") this.setStylerefMap("webkitAnimationPlayState", value);
     else this._style.webkitAnimationPlayState = value as any;
   }
 
@@ -6928,8 +6742,7 @@ export class CSSStyleref implements CSSStyleDeclarationref {
   }
 
   public set webkitAnimationTimingFunction(value: string | ref<string>) {
-    if (typeof value !== "string")
-      this.setStylerefMap("webkitAnimationTimingFunction", value);
+    if (typeof value !== "string") this.setStylerefMap("webkitAnimationTimingFunction", value);
     else this._style.webkitAnimationTimingFunction = value as any;
   }
 
@@ -6938,8 +6751,7 @@ export class CSSStyleref implements CSSStyleDeclarationref {
   }
 
   public set webkitAppearance(value: string | ref<string>) {
-    if (typeof value !== "string")
-      this.setStylerefMap("webkitAppearance", value);
+    if (typeof value !== "string") this.setStylerefMap("webkitAppearance", value);
     else this._style.webkitAppearance = value as any;
   }
 
@@ -6948,8 +6760,7 @@ export class CSSStyleref implements CSSStyleDeclarationref {
   }
 
   public set webkitBackfaceVisibility(value: string | ref<string>) {
-    if (typeof value !== "string")
-      this.setStylerefMap("webkitBackfaceVisibility", value);
+    if (typeof value !== "string") this.setStylerefMap("webkitBackfaceVisibility", value);
     else this._style.webkitBackfaceVisibility = value as any;
   }
 
@@ -6958,8 +6769,7 @@ export class CSSStyleref implements CSSStyleDeclarationref {
   }
 
   public set webkitBackgroundClip(value: string | ref<string>) {
-    if (typeof value !== "string")
-      this.setStylerefMap("webkitBackgroundClip", value);
+    if (typeof value !== "string") this.setStylerefMap("webkitBackgroundClip", value);
     else this._style.webkitBackgroundClip = value as any;
   }
 
@@ -6968,8 +6778,7 @@ export class CSSStyleref implements CSSStyleDeclarationref {
   }
 
   public set webkitBackgroundOrigin(value: string | ref<string>) {
-    if (typeof value !== "string")
-      this.setStylerefMap("webkitBackgroundOrigin", value);
+    if (typeof value !== "string") this.setStylerefMap("webkitBackgroundOrigin", value);
     else this._style.webkitBackgroundOrigin = value as any;
   }
 
@@ -6978,8 +6787,7 @@ export class CSSStyleref implements CSSStyleDeclarationref {
   }
 
   public set webkitBackgroundSize(value: string | ref<string>) {
-    if (typeof value !== "string")
-      this.setStylerefMap("webkitBackgroundSize", value);
+    if (typeof value !== "string") this.setStylerefMap("webkitBackgroundSize", value);
     else this._style.webkitBackgroundSize = value as any;
   }
 
@@ -6988,8 +6796,7 @@ export class CSSStyleref implements CSSStyleDeclarationref {
   }
 
   public set webkitBorderBottomLeftRadius(value: string | ref<string>) {
-    if (typeof value !== "string")
-      this.setStylerefMap("webkitBorderBottomLeftRadius", value);
+    if (typeof value !== "string") this.setStylerefMap("webkitBorderBottomLeftRadius", value);
     else this._style.webkitBorderBottomLeftRadius = value as any;
   }
 
@@ -6998,8 +6805,7 @@ export class CSSStyleref implements CSSStyleDeclarationref {
   }
 
   public set webkitBorderBottomRightRadius(value: string | ref<string>) {
-    if (typeof value !== "string")
-      this.setStylerefMap("webkitBorderBottomRightRadius", value);
+    if (typeof value !== "string") this.setStylerefMap("webkitBorderBottomRightRadius", value);
     else this._style.webkitBorderBottomRightRadius = value as any;
   }
 
@@ -7008,8 +6814,7 @@ export class CSSStyleref implements CSSStyleDeclarationref {
   }
 
   public set webkitBorderRadius(value: string | ref<string>) {
-    if (typeof value !== "string")
-      this.setStylerefMap("webkitBorderRadius", value);
+    if (typeof value !== "string") this.setStylerefMap("webkitBorderRadius", value);
     else this._style.webkitBorderRadius = value as any;
   }
 
@@ -7018,8 +6823,7 @@ export class CSSStyleref implements CSSStyleDeclarationref {
   }
 
   public set webkitBorderTopLeftRadius(value: string | ref<string>) {
-    if (typeof value !== "string")
-      this.setStylerefMap("webkitBorderTopLeftRadius", value);
+    if (typeof value !== "string") this.setStylerefMap("webkitBorderTopLeftRadius", value);
     else this._style.webkitBorderTopLeftRadius = value as any;
   }
 
@@ -7028,8 +6832,7 @@ export class CSSStyleref implements CSSStyleDeclarationref {
   }
 
   public set webkitBorderTopRightRadius(value: string | ref<string>) {
-    if (typeof value !== "string")
-      this.setStylerefMap("webkitBorderTopRightRadius", value);
+    if (typeof value !== "string") this.setStylerefMap("webkitBorderTopRightRadius", value);
     else this._style.webkitBorderTopRightRadius = value as any;
   }
 
@@ -7056,8 +6859,7 @@ export class CSSStyleref implements CSSStyleDeclarationref {
   }
 
   public set webkitBoxOrdinalGroup(value: string | ref<string>) {
-    if (typeof value !== "string")
-      this.setStylerefMap("webkitBoxOrdinalGroup", value);
+    if (typeof value !== "string") this.setStylerefMap("webkitBoxOrdinalGroup", value);
     else this._style.webkitBoxOrdinalGroup = value as any;
   }
 
@@ -7066,8 +6868,7 @@ export class CSSStyleref implements CSSStyleDeclarationref {
   }
 
   public set webkitBoxOrient(value: string | ref<string>) {
-    if (typeof value !== "string")
-      this.setStylerefMap("webkitBoxOrient", value);
+    if (typeof value !== "string") this.setStylerefMap("webkitBoxOrient", value);
     else this._style.webkitBoxOrient = value as any;
   }
 
@@ -7085,8 +6886,7 @@ export class CSSStyleref implements CSSStyleDeclarationref {
   }
 
   public set webkitBoxShadow(value: string | ref<string>) {
-    if (typeof value !== "string")
-      this.setStylerefMap("webkitBoxShadow", value);
+    if (typeof value !== "string") this.setStylerefMap("webkitBoxShadow", value);
     else this._style.webkitBoxShadow = value as any;
   }
 
@@ -7095,8 +6895,7 @@ export class CSSStyleref implements CSSStyleDeclarationref {
   }
 
   public set webkitBoxSizing(value: string | ref<string>) {
-    if (typeof value !== "string")
-      this.setStylerefMap("webkitBoxSizing", value);
+    if (typeof value !== "string") this.setStylerefMap("webkitBoxSizing", value);
     else this._style.webkitBoxSizing = value as any;
   }
 
@@ -7123,8 +6922,7 @@ export class CSSStyleref implements CSSStyleDeclarationref {
   }
 
   public set webkitFlexBasis(value: string | ref<string>) {
-    if (typeof value !== "string")
-      this.setStylerefMap("webkitFlexBasis", value);
+    if (typeof value !== "string") this.setStylerefMap("webkitFlexBasis", value);
     else this._style.webkitFlexBasis = value as any;
   }
 
@@ -7133,8 +6931,7 @@ export class CSSStyleref implements CSSStyleDeclarationref {
   }
 
   public set webkitFlexDirection(value: string | ref<string>) {
-    if (typeof value !== "string")
-      this.setStylerefMap("webkitFlexDirection", value);
+    if (typeof value !== "string") this.setStylerefMap("webkitFlexDirection", value);
     else this._style.webkitFlexDirection = value as any;
   }
 
@@ -7161,8 +6958,7 @@ export class CSSStyleref implements CSSStyleDeclarationref {
   }
 
   public set webkitFlexShrink(value: string | ref<string>) {
-    if (typeof value !== "string")
-      this.setStylerefMap("webkitFlexShrink", value);
+    if (typeof value !== "string") this.setStylerefMap("webkitFlexShrink", value);
     else this._style.webkitFlexShrink = value as any;
   }
 
@@ -7180,8 +6976,7 @@ export class CSSStyleref implements CSSStyleDeclarationref {
   }
 
   public set webkitJustifyContent(value: string | ref<string>) {
-    if (typeof value !== "string")
-      this.setStylerefMap("webkitJustifyContent", value);
+    if (typeof value !== "string") this.setStylerefMap("webkitJustifyContent", value);
     else this._style.webkitJustifyContent = value as any;
   }
 
@@ -7190,8 +6985,7 @@ export class CSSStyleref implements CSSStyleDeclarationref {
   }
 
   public set webkitLineClamp(value: string | ref<string>) {
-    if (typeof value !== "string")
-      this.setStylerefMap("webkitLineClamp", value);
+    if (typeof value !== "string") this.setStylerefMap("webkitLineClamp", value);
     else this._style.webkitLineClamp = value as any;
   }
 
@@ -7209,8 +7003,7 @@ export class CSSStyleref implements CSSStyleDeclarationref {
   }
 
   public set webkitMaskBoxImage(value: string | ref<string>) {
-    if (typeof value !== "string")
-      this.setStylerefMap("webkitMaskBoxImage", value);
+    if (typeof value !== "string") this.setStylerefMap("webkitMaskBoxImage", value);
     else this._style.webkitMaskBoxImage = value as any;
   }
 
@@ -7219,8 +7012,7 @@ export class CSSStyleref implements CSSStyleDeclarationref {
   }
 
   public set webkitMaskBoxImageOutset(value: string | ref<string>) {
-    if (typeof value !== "string")
-      this.setStylerefMap("webkitMaskBoxImageOutset", value);
+    if (typeof value !== "string") this.setStylerefMap("webkitMaskBoxImageOutset", value);
     else this._style.webkitMaskBoxImageOutset = value as any;
   }
 
@@ -7229,8 +7021,7 @@ export class CSSStyleref implements CSSStyleDeclarationref {
   }
 
   public set webkitMaskBoxImageRepeat(value: string | ref<string>) {
-    if (typeof value !== "string")
-      this.setStylerefMap("webkitMaskBoxImageRepeat", value);
+    if (typeof value !== "string") this.setStylerefMap("webkitMaskBoxImageRepeat", value);
     else this._style.webkitMaskBoxImageRepeat = value as any;
   }
 
@@ -7239,8 +7030,7 @@ export class CSSStyleref implements CSSStyleDeclarationref {
   }
 
   public set webkitMaskBoxImageSlice(value: string | ref<string>) {
-    if (typeof value !== "string")
-      this.setStylerefMap("webkitMaskBoxImageSlice", value);
+    if (typeof value !== "string") this.setStylerefMap("webkitMaskBoxImageSlice", value);
     else this._style.webkitMaskBoxImageSlice = value as any;
   }
 
@@ -7249,8 +7039,7 @@ export class CSSStyleref implements CSSStyleDeclarationref {
   }
 
   public set webkitMaskBoxImageSource(value: string | ref<string>) {
-    if (typeof value !== "string")
-      this.setStylerefMap("webkitMaskBoxImageSource", value);
+    if (typeof value !== "string") this.setStylerefMap("webkitMaskBoxImageSource", value);
     else this._style.webkitMaskBoxImageSource = value as any;
   }
 
@@ -7259,8 +7048,7 @@ export class CSSStyleref implements CSSStyleDeclarationref {
   }
 
   public set webkitMaskBoxImageWidth(value: string | ref<string>) {
-    if (typeof value !== "string")
-      this.setStylerefMap("webkitMaskBoxImageWidth", value);
+    if (typeof value !== "string") this.setStylerefMap("webkitMaskBoxImageWidth", value);
     else this._style.webkitMaskBoxImageWidth = value as any;
   }
 
@@ -7278,8 +7066,7 @@ export class CSSStyleref implements CSSStyleDeclarationref {
   }
 
   public set webkitMaskComposite(value: string | ref<string>) {
-    if (typeof value !== "string")
-      this.setStylerefMap("webkitMaskComposite", value);
+    if (typeof value !== "string") this.setStylerefMap("webkitMaskComposite", value);
     else this._style.webkitMaskComposite = value as any;
   }
 
@@ -7288,8 +7075,7 @@ export class CSSStyleref implements CSSStyleDeclarationref {
   }
 
   public set webkitMaskImage(value: string | ref<string>) {
-    if (typeof value !== "string")
-      this.setStylerefMap("webkitMaskImage", value);
+    if (typeof value !== "string") this.setStylerefMap("webkitMaskImage", value);
     else this._style.webkitMaskImage = value as any;
   }
 
@@ -7298,8 +7084,7 @@ export class CSSStyleref implements CSSStyleDeclarationref {
   }
 
   public set webkitMaskOrigin(value: string | ref<string>) {
-    if (typeof value !== "string")
-      this.setStylerefMap("webkitMaskOrigin", value);
+    if (typeof value !== "string") this.setStylerefMap("webkitMaskOrigin", value);
     else this._style.webkitMaskOrigin = value as any;
   }
 
@@ -7308,8 +7093,7 @@ export class CSSStyleref implements CSSStyleDeclarationref {
   }
 
   public set webkitMaskPosition(value: string | ref<string>) {
-    if (typeof value !== "string")
-      this.setStylerefMap("webkitMaskPosition", value);
+    if (typeof value !== "string") this.setStylerefMap("webkitMaskPosition", value);
     else this._style.webkitMaskPosition = value as any;
   }
 
@@ -7318,8 +7102,7 @@ export class CSSStyleref implements CSSStyleDeclarationref {
   }
 
   public set webkitMaskRepeat(value: string | ref<string>) {
-    if (typeof value !== "string")
-      this.setStylerefMap("webkitMaskRepeat", value);
+    if (typeof value !== "string") this.setStylerefMap("webkitMaskRepeat", value);
     else this._style.webkitMaskRepeat = value as any;
   }
 
@@ -7346,8 +7129,7 @@ export class CSSStyleref implements CSSStyleDeclarationref {
   }
 
   public set webkitPerspective(value: string | ref<string>) {
-    if (typeof value !== "string")
-      this.setStylerefMap("webkitPerspective", value);
+    if (typeof value !== "string") this.setStylerefMap("webkitPerspective", value);
     else this._style.webkitPerspective = value as any;
   }
 
@@ -7356,8 +7138,7 @@ export class CSSStyleref implements CSSStyleDeclarationref {
   }
 
   public set webkitPerspectiveOrigin(value: string | ref<string>) {
-    if (typeof value !== "string")
-      this.setStylerefMap("webkitPerspectiveOrigin", value);
+    if (typeof value !== "string") this.setStylerefMap("webkitPerspectiveOrigin", value);
     else this._style.webkitPerspectiveOrigin = value as any;
   }
 
@@ -7366,8 +7147,7 @@ export class CSSStyleref implements CSSStyleDeclarationref {
   }
 
   public set webkitTextFillColor(value: string | ref<string>) {
-    if (typeof value !== "string")
-      this.setStylerefMap("webkitTextFillColor", value);
+    if (typeof value !== "string") this.setStylerefMap("webkitTextFillColor", value);
     else this._style.webkitTextFillColor = value as any;
   }
 
@@ -7376,8 +7156,7 @@ export class CSSStyleref implements CSSStyleDeclarationref {
   }
 
   public set webkitTextSizeAdjust(value: string | ref<string>) {
-    if (typeof value !== "string")
-      this.setStylerefMap("webkitTextSizeAdjust", value);
+    if (typeof value !== "string") this.setStylerefMap("webkitTextSizeAdjust", value);
     else this._style.webkitTextSizeAdjust = value as any;
   }
 
@@ -7386,8 +7165,7 @@ export class CSSStyleref implements CSSStyleDeclarationref {
   }
 
   public set webkitTextStroke(value: string | ref<string>) {
-    if (typeof value !== "string")
-      this.setStylerefMap("webkitTextStroke", value);
+    if (typeof value !== "string") this.setStylerefMap("webkitTextStroke", value);
     else this._style.webkitTextStroke = value as any;
   }
 
@@ -7396,8 +7174,7 @@ export class CSSStyleref implements CSSStyleDeclarationref {
   }
 
   public set webkitTextStrokeColor(value: string | ref<string>) {
-    if (typeof value !== "string")
-      this.setStylerefMap("webkitTextStrokeColor", value);
+    if (typeof value !== "string") this.setStylerefMap("webkitTextStrokeColor", value);
     else this._style.webkitTextStrokeColor = value as any;
   }
 
@@ -7406,8 +7183,7 @@ export class CSSStyleref implements CSSStyleDeclarationref {
   }
 
   public set webkitTextStrokeWidth(value: string | ref<string>) {
-    if (typeof value !== "string")
-      this.setStylerefMap("webkitTextStrokeWidth", value);
+    if (typeof value !== "string") this.setStylerefMap("webkitTextStrokeWidth", value);
     else this._style.webkitTextStrokeWidth = value as any;
   }
 
@@ -7416,8 +7192,7 @@ export class CSSStyleref implements CSSStyleDeclarationref {
   }
 
   public set webkitTransform(value: string | ref<string>) {
-    if (typeof value !== "string")
-      this.setStylerefMap("webkitTransform", value);
+    if (typeof value !== "string") this.setStylerefMap("webkitTransform", value);
     else this._style.webkitTransform = value as any;
   }
 
@@ -7426,8 +7201,7 @@ export class CSSStyleref implements CSSStyleDeclarationref {
   }
 
   public set webkitTransformOrigin(value: string | ref<string>) {
-    if (typeof value !== "string")
-      this.setStylerefMap("webkitTransformOrigin", value);
+    if (typeof value !== "string") this.setStylerefMap("webkitTransformOrigin", value);
     else this._style.webkitTransformOrigin = value as any;
   }
 
@@ -7436,8 +7210,7 @@ export class CSSStyleref implements CSSStyleDeclarationref {
   }
 
   public set webkitTransformStyle(value: string | ref<string>) {
-    if (typeof value !== "string")
-      this.setStylerefMap("webkitTransformStyle", value);
+    if (typeof value !== "string") this.setStylerefMap("webkitTransformStyle", value);
     else this._style.webkitTransformStyle = value as any;
   }
 
@@ -7446,8 +7219,7 @@ export class CSSStyleref implements CSSStyleDeclarationref {
   }
 
   public set webkitTransition(value: string | ref<string>) {
-    if (typeof value !== "string")
-      this.setStylerefMap("webkitTransition", value);
+    if (typeof value !== "string") this.setStylerefMap("webkitTransition", value);
     else this._style.webkitTransition = value as any;
   }
 
@@ -7456,8 +7228,7 @@ export class CSSStyleref implements CSSStyleDeclarationref {
   }
 
   public set webkitTransitionDelay(value: string | ref<string>) {
-    if (typeof value !== "string")
-      this.setStylerefMap("webkitTransitionDelay", value);
+    if (typeof value !== "string") this.setStylerefMap("webkitTransitionDelay", value);
     else this._style.webkitTransitionDelay = value as any;
   }
 
@@ -7466,8 +7237,7 @@ export class CSSStyleref implements CSSStyleDeclarationref {
   }
 
   public set webkitTransitionDuration(value: string | ref<string>) {
-    if (typeof value !== "string")
-      this.setStylerefMap("webkitTransitionDuration", value);
+    if (typeof value !== "string") this.setStylerefMap("webkitTransitionDuration", value);
     else this._style.webkitTransitionDuration = value as any;
   }
 
@@ -7476,8 +7246,7 @@ export class CSSStyleref implements CSSStyleDeclarationref {
   }
 
   public set webkitTransitionProperty(value: string | ref<string>) {
-    if (typeof value !== "string")
-      this.setStylerefMap("webkitTransitionProperty", value);
+    if (typeof value !== "string") this.setStylerefMap("webkitTransitionProperty", value);
     else this._style.webkitTransitionProperty = value as any;
   }
 
@@ -7486,8 +7255,7 @@ export class CSSStyleref implements CSSStyleDeclarationref {
   }
 
   public set webkitTransitionTimingFunction(value: string | ref<string>) {
-    if (typeof value !== "string")
-      this.setStylerefMap("webkitTransitionTimingFunction", value);
+    if (typeof value !== "string") this.setStylerefMap("webkitTransitionTimingFunction", value);
     else this._style.webkitTransitionTimingFunction = value as any;
   }
 
@@ -7496,8 +7264,7 @@ export class CSSStyleref implements CSSStyleDeclarationref {
   }
 
   public set webkitUserSelect(value: string | ref<string>) {
-    if (typeof value !== "string")
-      this.setStylerefMap("webkitUserSelect", value);
+    if (typeof value !== "string") this.setStylerefMap("webkitUserSelect", value);
     else this._style.webkitUserSelect = value as any;
   }
 
@@ -7607,11 +7374,7 @@ export class CSSStyleref implements CSSStyleDeclarationref {
     }
     this._style.removeProperty(property);
   }
-  setProperty(
-    property: string,
-    value: string | null,
-    priority?: string | undefined,
-  ): void {
+  setProperty(property: string, value: string | null, priority?: string | undefined): void {
     if (Object.keys(this._style).includes(property)) {
       (this as any)[property] = value;
     }

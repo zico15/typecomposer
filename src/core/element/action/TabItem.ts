@@ -1,7 +1,6 @@
 import { Component, H3Element, H4Element, IconElement } from "..";
-import { Register } from "../../decorators";
 
-export class TabElement extends Component {
+export class TabItem extends Component {
   private __closeable: boolean = false;
   private titleElement: H3Element;
   private displayContent: string;
@@ -59,14 +58,12 @@ export class TabElement extends Component {
   }
 
   public select() {
-    if (!this.classList.contains("tab-title-active"))
-      this.addClasName("tab-title-active");
+    if (!this.classList.contains("tab-title-active")) this.addClasName("tab-title-active");
     this._content.style.display = this.displayContent;
   }
 
   public unselect() {
-    if (this.classList.contains("tab-title-active"))
-      this.classList.remove("tab-title-active");
+    if (this.classList.contains("tab-title-active")) this.classList.remove("tab-title-active");
     this._content.style.display = "none";
   }
 

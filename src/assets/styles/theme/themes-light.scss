@@ -14,9 +14,7 @@
   --v-field-padding-end: 16px;
   --v-field-padding-top: 10px;
   --v-field-padding-bottom: 5px;
-  --v-field-input-padding-top: calc(
-    var(--v-field-padding-top, 10px) + var(--v-input-padding-top, 0)
-  );
+  --v-field-input-padding-top: calc(var(--v-field-padding-top, 10px) + var(--v-input-padding-top, 0));
   --v-field-input-padding-bottom: var(--v-field-padding-bottom, 5px);
   --v-input-chips-margin-top: 2px;
   --v-scrollbar-offset: inherit;

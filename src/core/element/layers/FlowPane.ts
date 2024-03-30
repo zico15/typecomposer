@@ -9,8 +9,7 @@ export class FlowPane extends ILayout {
   }
 
   appendChild<T extends Node>(node: T, flowType: FlowType = 6): T {
-    if (node && !(node as any).classList.contains("flow-pane-item"))
-      this.addClassNameInChilds(node as any, flowType);
+    if (node && !(node as any).classList.contains("flow-pane-item")) this.addClassNameInChilds(node as any, flowType);
     return super.appendChild(node) as T;
   }
 
@@ -22,18 +21,14 @@ export class FlowPane extends ILayout {
   private addClassNameInChilds(element: HTMLElement, flowType: FlowType): void {
     element.style.width = "auto";
     element.removeAttribute("height");
-    if (!element.classList.contains(`flow-type-${flowType}`))
-      element.classList.add(`flow-type-${flowType}`);
-    if (!element.classList.contains("flow-type-12"))
-      element.classList.add("flow-type-12");
+    if (!element.classList.contains(`flow-type-${flowType}`)) element.classList.add(`flow-type-${flowType}`);
+    if (!element.classList.contains("flow-type-12")) element.classList.add("flow-type-12");
   }
 
   private removeClassNameInChilds(element: HTMLElement): void {
-    if (element.classList.contains("flow-pane-item"))
-      element.classList.remove("flow-pane-item");
+    if (element.classList.contains("flow-pane-item")) element.classList.remove("flow-pane-item");
     for (let i = 1; i <= 12; i++) {
-      if (element.classList.contains(`flow-type-${i}`))
-        element.classList.remove(`flow-type-${i}`);
+      if (element.classList.contains(`flow-type-${i}`)) element.classList.remove(`flow-type-${i}`);
     }
   }
 

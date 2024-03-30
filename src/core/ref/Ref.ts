@@ -20,11 +20,7 @@ export class RefString extends String {
     if (this.refTarget) this.refTarget[propertyKey] = value;
   }
 
-  subscriber(
-    target: {},
-    propertyKey: string | symbol,
-    refPropertyKey: string | symbol = undefined,
-  ) {
+  subscriber(target: {}, propertyKey: string | symbol, refPropertyKey: string | symbol = undefined) {
     if (this.refTarget) {
       this.refTarget.subscriber(target, propertyKey, refPropertyKey);
     }
@@ -44,11 +40,7 @@ export class RefString extends String {
 export type ref<T> = {
   value: T;
   id: string;
-  subscriber: (
-    target: {},
-    propertyKey: string | symbol,
-    refPropertyKey?: string | symbol,
-  ) => void;
+  subscriber: (target: {}, propertyKey: string | symbol, refPropertyKey?: string | symbol) => void;
   unsubscribe: (data: { ref: any; name: string; fun?: Function }) => void;
   onChange: (fun: (value: T) => void, target?: {}) => void;
   toString: () => string;
@@ -65,13 +57,9 @@ export function ref<T>(target: T): {
   setValue: (value: any, propertyKey?: string | symbol) => void;
 } {
   const _id: string = Math.random().toString(36).substr(2, 9);
-  const registry: FinalizationRegistry<any> = new FinalizationRegistry(
-    (target: WeakRef<any>) => {
-      _subscribers = _subscribers.filter(
-        (subscriber) => subscriber.target != target,
-      );
-    },
-  );
+  const registry: FinalizationRegistry<any> = new FinalizationRegistry((target: WeakRef<any>) => {
+    _subscribers = _subscribers.filter((subscriber) => subscriber.target != target);
+  });
   let _subscribers: CustomEvent[] = [];
   const newTarget = {
     value: target,
@@ -95,11 +83,7 @@ export function ref<T>(target: T): {
   function checkType(value: object) {
     for (let property in value) {
       const descriptor = Object.getOwnPropertyDescriptor(value, property);
-      if (
-        descriptor &&
-        descriptor.writable &&
-        typeof value[property] === "object"
-      ) {
+      if (descriptor && descriptor.writable && typeof value[property] === "object") {
         value[property] = createProxy(value[property]);
       }
     }
@@ -115,9 +99,7 @@ export function ref<T>(target: T): {
     _subscribers.forEach((subscriber) => {
       if (!setValueToSubscriber(subscriber)) remove.push(subscriber);
     });
-    _subscribers = _subscribers.filter(
-      (subscriber) => !remove.includes(subscriber),
-    );
+    _subscribers = _subscribers.filter((subscriber) => !remove.includes(subscriber));
   }
 
   function setValueToSubscriber(subscriber: CustomEvent): boolean {

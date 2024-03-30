@@ -1,14 +1,4 @@
-import {
-  AnchorElement,
-  Component,
-  StyleOptional,
-  LabelElement,
-  ListItemElement,
-  NavElement,
-  UListElement,
-  Variant,
-  InputElement,
-} from "../..";
+import { AnchorElement, Component, StyleOptional, LabelElement, ListItemElement, NavElement, UListElement, Variant, InputElement } from "../..";
 
 export interface DataMenuBarElement extends StyleOptional {
   title?: string;
@@ -70,11 +60,7 @@ export class MenuBarElement extends Component {
     this.append(this.logo);
   }
 
-  public addMenu(
-    menu: HTMLElement | string,
-    isLogo: boolean = false,
-    optional?: StyleOptional,
-  ): void {
+  public addMenu(menu: HTMLElement | string, isLogo: boolean = false, optional?: StyleOptional): void {
     const li = new ListItemElement();
     if (this._ul.children.length === 0) li.classList.add("logo");
     if (isLogo && !(typeof menu === "string")) {

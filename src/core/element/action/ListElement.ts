@@ -1,9 +1,4 @@
-import {
-  type StyleOptional,
-  Component,
-  UListElement,
-  ListItemElement,
-} from "..";
+import { type StyleOptional, Component, UListElement, ListItemElement } from "..";
 
 export class ListElement<T = any> extends Component {
   private itemSelected: {
@@ -26,15 +21,9 @@ export class ListElement<T = any> extends Component {
     if (node instanceof HTMLCollection) {
       for (let i = 0; i < node.length; i++) {
         const item = node.item(i);
-        if (item != undefined && item instanceof HTMLElement)
-          this.addItem(item as any);
+        if (item != undefined && item instanceof HTMLElement) this.addItem(item as any);
       }
-    } else if (
-      node instanceof HTMLElement &&
-      node &&
-      !node.classList.contains("flow-pane-item")
-    )
-      this.addItem(node as any);
+    } else if (node instanceof HTMLElement && node && !node.classList.contains("flow-pane-item")) this.addItem(node as any);
     return node as T;
   }
 
@@ -44,8 +33,7 @@ export class ListElement<T = any> extends Component {
   }
 
   public addItem(element: T): ListItemElement {
-    const item =
-      element instanceof ListItemElement ? element : new ListItemElement();
+    const item = element instanceof ListItemElement ? element : new ListItemElement();
     item.classList.add("list-element-item");
     if (!(element instanceof ListItemElement)) {
       if (element instanceof HTMLElement) item.appendChild(element as Node);
@@ -74,8 +62,7 @@ export class ListElement<T = any> extends Component {
     for (let i = 0; i < this.children.length; i++) {
       const child = this.children.item(i);
       if (child instanceof HTMLElement) {
-        if (typeof element == "string" && child.innerHTML == element)
-          this.container.removeChild(child);
+        if (typeof element == "string" && child.innerHTML == element) this.container.removeChild(child);
         else if (child == element) this.container.removeChild(child);
         break;
       }

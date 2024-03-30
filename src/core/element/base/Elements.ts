@@ -1,12 +1,7 @@
 import { de, el } from "date-fns/locale";
 import { Router } from "../..";
 import { ref } from "../../ref";
-import {
-  CSSStyleDeclarationOptional,
-  CSSStyleDeclarationref,
-  CSSStyleref,
-  Variant,
-} from "./CSSStyle";
+import { CSSStyleDeclarationOptional, CSSStyleDeclarationref, CSSStyleref, Variant } from "./CSSStyle";
 import { EventComponent, EventHandler } from "./Event";
 
 export interface StyleOptional extends CSSStyleDeclarationOptional {
@@ -71,9 +66,9 @@ export class Component extends HTMLElement implements IComponent {
     if (optional != undefined) this.setStyle(optional);
   }
 
-  destructor() { }
+  destructor() {}
 
-  onInit(): void { }
+  onInit(): void {}
 
   addClasName(...names: string[]): void {
     this.classList.add(...names);
@@ -94,10 +89,7 @@ export class Component extends HTMLElement implements IComponent {
     return this._styleref;
   }
 
-  public static applyDate<T extends IComponent>(
-    data: StyleOptional | undefined,
-    element: T,
-  ): void {
+  public static applyDate<T extends IComponent>(data: StyleOptional | undefined, element: T): void {
     if (data != undefined) {
       if (data.id) {
         (element as any).id = data.id;
@@ -109,23 +101,13 @@ export class Component extends HTMLElement implements IComponent {
     }
   }
 
-  static applyStyleOrAttribute<T extends IComponent>(
-    data: CSSStyleDeclarationOptional,
-    element: T,
-  ): void {
+  static applyStyleOrAttribute<T extends IComponent>(data: CSSStyleDeclarationOptional, element: T): void {
     if (data) {
       Object.keys(data).forEach((key: string) => {
-        if (key == "for" && (data as any)[key] != undefined)
-          (element as any).setAttribute("for", (data as any)[key]);
-        else if (key == "className" && (data as any)[key] != undefined)
-          (element as any).addClasName((data as any)[key]);
-        else if (key == "text" && (data as any)[key] != undefined)
-          (element as any).innerHTML = (data as any)[key];
-        else if (
-          element.style?.hasOwnProperty &&
-          element.style.hasOwnProperty?.(key)
-        )
-          element.style[key] = (data as any)[key];
+        if (key == "for" && (data as any)[key] != undefined) (element as any).setAttribute("for", (data as any)[key]);
+        else if (key == "className" && (data as any)[key] != undefined) (element as any).addClasName((data as any)[key]);
+        else if (key == "text" && (data as any)[key] != undefined) (element as any).innerHTML = (data as any)[key];
+        else if (element.style?.hasOwnProperty && element.style.hasOwnProperty?.(key)) element.style[key] = (data as any)[key];
         else if ((data as any)[key] != undefined) {
           (element as any)[key] = (data as any)[key];
         }
@@ -133,28 +115,16 @@ export class Component extends HTMLElement implements IComponent {
     }
   }
 
-  public static setVariant(
-    element: HTMLElement,
-    variant: Variant | undefined,
-  ): void {
+  public static setVariant(element: HTMLElement, variant: Variant | undefined): void {
     const vart = variant == undefined ? "default-border" : `${variant}-border`;
-    const variants = [
-      "default-border",
-      "outline-border",
-      "underlined-border",
-      "solo-border",
-    ];
+    const variants = ["default-border", "outline-border", "underlined-border", "solo-border"];
     variants.forEach((value: string) => {
       if (element.classList.contains(value)) element.classList.remove(value);
     });
     element.classList.add(vart == "default-border" ? "outline-border" : vart);
   }
 
-  public onEvent(
-    type: string,
-    listener: EventHandler,
-    options?: boolean | AddEventListenerOptions | undefined,
-  ): void {
+  public onEvent(type: string, listener: EventHandler, options?: boolean | AddEventListenerOptions | undefined): void {
     EventComponent.addEventListener(this, type, listener, options);
   }
 
@@ -194,7 +164,7 @@ export class DivElement extends HTMLDivElement implements IComponent {
     Component.applyDate(optional, this);
   }
 
-  onInit(): void { }
+  onInit(): void {}
 
   addClasName(...names: string[]): void {
     this.classList.add(...names);
@@ -221,9 +191,7 @@ export class DivElement extends HTMLDivElement implements IComponent {
 // @ts-ignore
 customElements.define("base-div-element", DivElement, { extends: "div" });
 
-export class ParagraphElement
-  extends HTMLParagraphElement
-  implements IComponent {
+export class ParagraphElement extends HTMLParagraphElement implements IComponent {
   private _styleref: CSSStyleref = new CSSStyleref(super.style);
 
   constructor(optional?: StyleOptional) {
@@ -232,7 +200,7 @@ export class ParagraphElement
     Component.applyDate(optional, this);
   }
 
-  onInit(): void { }
+  onInit(): void {}
 
   addClasName(...names: string[]): void {
     this.classList.add(...names);
@@ -266,29 +234,29 @@ export class AnchorElement extends HTMLAnchorElement implements IComponent {
       media?: string;
       ping?: string;
       referrerpolicy?:
-      | "no-referrer"
-      | "no-referrer-when-downgrade"
-      | "origin"
-      | "origin-when-cross-origin"
-      | "same-origin"
-      | "strict-origin"
-      | "strict-origin-when-cross-origin"
-      | "unsafe-url";
+        | "no-referrer"
+        | "no-referrer-when-downgrade"
+        | "origin"
+        | "origin-when-cross-origin"
+        | "same-origin"
+        | "strict-origin"
+        | "strict-origin-when-cross-origin"
+        | "unsafe-url";
       rel?:
-      | "alternate"
-      | "author"
-      | "bookmark"
-      | "external"
-      | "help"
-      | "license"
-      | "next"
-      | "nofollow"
-      | "noopener"
-      | "noreferrer"
-      | "opener"
-      | "prev"
-      | "search"
-      | "tag";
+        | "alternate"
+        | "author"
+        | "bookmark"
+        | "external"
+        | "help"
+        | "license"
+        | "next"
+        | "nofollow"
+        | "noopener"
+        | "noreferrer"
+        | "opener"
+        | "prev"
+        | "search"
+        | "tag";
       target?: "_blank" | "_self" | "_parent" | "_top";
       type?: string;
       rlink?: string;
@@ -310,7 +278,7 @@ export class AnchorElement extends HTMLAnchorElement implements IComponent {
     });
   }
 
-  onInit(): void { }
+  onInit(): void {}
 
   addClasName(...names: string[]): void {
     this.classList.add(...names);
@@ -347,7 +315,7 @@ export class AbbreviationElement extends HTMLElement implements IComponent {
     Component.applyDate(optional, this);
   }
 
-  onInit(): void { }
+  onInit(): void {}
 
   public addClasName(...names: string[]): void {
     this.classList.add(...names);
@@ -380,29 +348,29 @@ export class AreaElement extends HTMLAreaElement implements IComponent {
       media?: string;
       ping?: string;
       referrerpolicy?:
-      | "no-referrer"
-      | "no-referrer-when-downgrade"
-      | "origin"
-      | "origin-when-cross-origin"
-      | "same-origin"
-      | "strict-origin"
-      | "strict-origin-when-cross-origin"
-      | "unsafe-url";
+        | "no-referrer"
+        | "no-referrer-when-downgrade"
+        | "origin"
+        | "origin-when-cross-origin"
+        | "same-origin"
+        | "strict-origin"
+        | "strict-origin-when-cross-origin"
+        | "unsafe-url";
       rel?:
-      | "alternate"
-      | "author"
-      | "bookmark"
-      | "external"
-      | "help"
-      | "license"
-      | "next"
-      | "nofollow"
-      | "noopener"
-      | "noreferrer"
-      | "opener"
-      | "prev"
-      | "search"
-      | "tag";
+        | "alternate"
+        | "author"
+        | "bookmark"
+        | "external"
+        | "help"
+        | "license"
+        | "next"
+        | "nofollow"
+        | "noopener"
+        | "noreferrer"
+        | "opener"
+        | "prev"
+        | "search"
+        | "tag";
       shape?: "circle" | "default" | "poly" | "rect";
       target?: "_blank" | "_self" | "_parent" | "_top";
       type?: string;
@@ -412,7 +380,7 @@ export class AreaElement extends HTMLAreaElement implements IComponent {
     Component.applyDate(optional, this);
   }
 
-  onInit(): void { }
+  onInit(): void {}
 
   public addClasName(...names: string[]): void {
     this.classList.add(...names);
@@ -443,7 +411,7 @@ export class ImageElement extends HTMLImageElement implements IComponent {
     if (optional?.src != undefined) this.src = optional.src;
   }
 
-  onInit(): void { }
+  onInit(): void {}
 
   addClasName(...names: string[]): void {
     this.classList.add(...names);
@@ -468,7 +436,7 @@ export class UListElement extends HTMLUListElement implements IComponent {
     Component.applyDate(optional, this);
   }
 
-  onInit(): void { }
+  onInit(): void {}
 
   addClasName(...names: string[]): void {
     this.classList.add(...names);
@@ -493,7 +461,7 @@ export class OrderedListElement extends HTMLOListElement implements IComponent {
     Component.applyDate(optional, this);
   }
 
-  onInit(): void { }
+  onInit(): void {}
 
   addClasName(...names: string[]): void {
     this.classList.add(...names);
@@ -518,7 +486,7 @@ export class ListItemElement extends HTMLLIElement implements IComponent {
     Component.applyDate(optional, this);
   }
 
-  onInit(): void { }
+  onInit(): void {}
 
   addClasName(...names: string[]): void {
     this.classList.add(...names);
@@ -543,7 +511,7 @@ export class MainElement extends HTMLElement implements IComponent {
     Component.applyDate(optional, this);
   }
 
-  onInit(): void { }
+  onInit(): void {}
 
   addClasName(...names: string[]): void {
     this.classList.add(...names);
@@ -573,7 +541,7 @@ export class SpanElement extends HTMLSpanElement implements IComponent {
     Component.applyDate(optional, this);
   }
 
-  public onInit(): void { }
+  public onInit(): void {}
 
   addClasName(...names: string[]): void {
     this.classList.add(...names);
@@ -598,7 +566,7 @@ export class StrongElement extends HTMLSpanElement implements IComponent {
     Component.applyDate(optional, this);
   }
 
-  public onInit(): void { }
+  public onInit(): void {}
 
   addClasName(...names: string[]): void {
     this.classList.add(...names);
@@ -625,7 +593,7 @@ export class EmElement extends HTMLEmbedElement implements IComponent {
     Component.applyDate(optional, this);
   }
 
-  public onInit(): void { }
+  public onInit(): void {}
 
   addClasName(...names: string[]): void {
     this.classList.add(...names);
@@ -649,7 +617,7 @@ export class BreakElement extends HTMLBRElement implements IComponent {
     Component.applyDate(optional, this);
   }
 
-  onInit(): void { }
+  onInit(): void {}
 
   addClasName(...names: string[]): void {
     this.classList.add(...names);
@@ -674,7 +642,7 @@ export class TableElement extends HTMLTableElement implements IComponent {
     Component.applyDate(optional, this);
   }
 
-  onInit(): void { }
+  onInit(): void {}
 
   addClasName(...names: string[]): void {
     this.classList.add(...names);
@@ -705,7 +673,7 @@ export class TableRowElement extends HTMLTableRowElement implements IComponent {
     Component.applyDate(optional, this);
   }
 
-  onInit(): void { }
+  onInit(): void {}
 
   addClasName(...names: string[]): void {
     this.classList.add(...names);
@@ -727,9 +695,7 @@ export class TableRowElement extends HTMLTableRowElement implements IComponent {
 // @ts-ignore
 customElements.define("base-tr-element", TableRowElement, { extends: "tr" });
 
-export class TableCellElement
-  extends HTMLTableCellElement
-  implements IComponent {
+export class TableCellElement extends HTMLTableCellElement implements IComponent {
   private _styleref: CSSStyleref = new CSSStyleref(super.style);
 
   constructor(optional?: StyleOptional) {
@@ -737,7 +703,7 @@ export class TableCellElement
     Component.applyDate(optional, this);
   }
 
-  onInit(): void { }
+  onInit(): void {}
   append(...childs: any[]): void {
     throw new Error("Method not implemented.");
   }
@@ -835,10 +801,9 @@ export class InputElement extends HTMLInputElement implements IComponent {
   set value(_value: string) {
     super.value = _value;
     console.log("set:input:value: ", super.value);
-
   }
 
-  onInit(): void { }
+  onInit(): void {}
 
   addClasName(...names: string[]): void {
     this.classList.add(...names);
@@ -880,7 +845,7 @@ export class ButtonElement extends HTMLButtonElement implements IComponent {
     Component.applyDate(optional, this);
   }
 
-  onInit(): void { }
+  onInit(): void {}
 
   addClasName(...names: string[]): void {
     this.classList.add(...names);
@@ -914,7 +879,7 @@ export class TextAreaElement extends HTMLTextAreaElement implements IComponent {
     Component.applyDate(optional, this);
   }
 
-  onInit(): void { }
+  onInit(): void {}
 
   addClasName(...names: string[]): void {
     this.classList.add(...names);
@@ -940,7 +905,7 @@ export class LabelElement extends HTMLLabelElement implements IComponent {
     Component.applyDate(optional, this);
   }
 
-  onInit(): void { }
+  onInit(): void {}
 
   addClasName(...names: string[]): void {
     this.classList.add(...names);
@@ -965,7 +930,7 @@ export class SelectElement extends HTMLSelectElement implements IComponent {
     Component.applyDate(optional, this);
   }
 
-  onInit(): void { }
+  onInit(): void {}
 
   addClasName(...names: string[]): void {
     this.classList.add(...names);
@@ -1000,7 +965,7 @@ export class AudioElement extends HTMLAudioElement implements IComponent {
     Component.applyDate(optional, this);
   }
 
-  onInit(): void { }
+  onInit(): void {}
 
   addClasName(...names: string[]): void {
     this.classList.add(...names);
@@ -1024,7 +989,7 @@ export class BoldElement extends HTMLElement implements IComponent {
     Component.applyDate(optional, this);
   }
 
-  public onInit(): void { }
+  public onInit(): void {}
 
   public addClasName(...names: string[]): void {
     this.classList.add(...names);
@@ -1054,7 +1019,7 @@ export class BaseElement extends HTMLElement implements IComponent {
     Component.applyDate(optional, this);
   }
 
-  public onInit(): void { }
+  public onInit(): void {}
 
   public addClasName(...names: string[]): void {
     this.classList.add(...names);
@@ -1079,7 +1044,7 @@ export class BodyElement extends HTMLBodyElement implements IComponent {
     Component.applyDate(optional, this);
   }
 
-  public onInit(): void { }
+  public onInit(): void {}
 
   public addClasName(...names: string[]): void {
     this.classList.add(...names);
@@ -1105,7 +1070,7 @@ export class VideoElement extends HTMLVideoElement implements IComponent {
     Component.applyDate(optional, this);
   }
 
-  onInit(): void { }
+  onInit(): void {}
 
   addClasName(...names: string[]): void {
     this.classList.add(...names);
@@ -1136,7 +1101,7 @@ export class CanvasElement extends HTMLCanvasElement implements IComponent {
     Component.applyDate(optional, this);
   }
 
-  onInit(): void { }
+  onInit(): void {}
 
   addClasName(...names: string[]): void {
     this.classList.add(...names);
@@ -1155,9 +1120,7 @@ customElements.define("base-canvas-element", CanvasElement, {
 });
 
 // <caption>
-export class CaptionElement
-  extends HTMLTableCaptionElement
-  implements IComponent {
+export class CaptionElement extends HTMLTableCaptionElement implements IComponent {
   private _styleref: CSSStyleref = new CSSStyleref(super.style);
 
   constructor(optional?: StyleOptional) {
@@ -1165,7 +1128,7 @@ export class CaptionElement
     Component.applyDate(optional, this);
   }
 
-  public onInit(): void { }
+  public onInit(): void {}
 
   public addClasName(...names: string[]): void {
     this.classList.add(...names);
@@ -1192,7 +1155,7 @@ export class CiteElement extends HTMLElement implements IComponent {
     Component.applyDate(optional, this);
   }
 
-  public onInit(): void { }
+  public onInit(): void {}
 
   public addClasName(...names: string[]): void {
     this.classList.add(...names);
@@ -1217,7 +1180,7 @@ export class CodeElement extends HTMLElement implements IComponent {
     Component.applyDate(optional, this);
   }
 
-  public onInit(): void { }
+  public onInit(): void {}
 
   public addClasName(...names: string[]): void {
     this.classList.add(...names);
@@ -1247,7 +1210,7 @@ export class TableColElement extends HTMLTableColElement implements IComponent {
     Component.applyDate(optional, this);
   }
 
-  public onInit(): void { }
+  public onInit(): void {}
 
   public addClasName(...names: string[]): void {
     this.classList.add(...names);
@@ -1263,9 +1226,7 @@ export class TableColElement extends HTMLTableColElement implements IComponent {
 customElements.define("base-col-element", TableColElement, { extends: "col" });
 
 // <colgroup>
-export class TableColGroupElement
-  extends HTMLTableColElement
-  implements IComponent {
+export class TableColGroupElement extends HTMLTableColElement implements IComponent {
   private _styleref: CSSStyleref = new CSSStyleref(super.style);
 
   constructor(
@@ -1278,7 +1239,7 @@ export class TableColGroupElement
     Component.applyDate(optional, this);
   }
 
-  public onInit(): void { }
+  public onInit(): void {}
 
   public addClasName(...names: string[]): void {
     this.classList.add(...names);
@@ -1305,7 +1266,7 @@ export class DataListElement extends HTMLDataListElement implements IComponent {
     Component.applyDate(optional, this);
   }
 
-  public onInit(): void { }
+  public onInit(): void {}
 
   public addClasName(...names: string[]): void {
     this.classList.add(...names);
@@ -1323,9 +1284,7 @@ customElements.define("base-datalist-element", DataListElement, {
 });
 
 // <dd>
-export class DefinitionDescriptionElement
-  extends HTMLElement
-  implements IComponent {
+export class DefinitionDescriptionElement extends HTMLElement implements IComponent {
   private _styleref: CSSStyleref = new CSSStyleref(super.style);
 
   constructor(optional?: StyleOptional) {
@@ -1333,7 +1292,7 @@ export class DefinitionDescriptionElement
     Component.applyDate(optional, this);
   }
 
-  public onInit(): void { }
+  public onInit(): void {}
 
   public addClasName(...names: string[]): void {
     this.classList.add(...names);
@@ -1365,7 +1324,7 @@ export class DeletedTextElement extends HTMLModElement implements IComponent {
     Component.applyDate(optional, this);
   }
 
-  public onInit(): void { }
+  public onInit(): void {}
 
   public addClasName(...names: string[]): void {
     this.classList.add(...names);
@@ -1404,7 +1363,7 @@ export class DetailsElement extends HTMLDetailsElement implements IComponent {
     }
   }
 
-  public onInit(): void { }
+  public onInit(): void {}
 
   public addClasName(...names: string[]): void {
     this.classList.add(...names);
@@ -1435,7 +1394,7 @@ export class DefinitionElement extends HTMLElement implements IComponent {
     Component.applyDate(optional, this);
   }
 
-  public onInit(): void { }
+  public onInit(): void {}
 
   public addClasName(...names: string[]): void {
     this.classList.add(...names);
@@ -1466,7 +1425,7 @@ export class DialogElement extends HTMLDialogElement implements IComponent {
     this.open = optional.open == undefined ? true : optional.open;
   }
 
-  public onInit(): void { }
+  public onInit(): void {}
 
   public addClasName(...names: string[]): void {
     this.classList.add(...names);
@@ -1503,7 +1462,7 @@ export class EmbedElement extends HTMLEmbedElement implements IComponent {
     Component.applyDate(optional, this);
   }
 
-  public onInit(): void { }
+  public onInit(): void {}
 
   public addClasName(...names: string[]): void {
     this.classList.add(...names);
@@ -1542,7 +1501,7 @@ export class FieldSetElement extends HTMLFieldSetElement implements IComponent {
     }
   }
 
-  public onInit(): void { }
+  public onInit(): void {}
 
   public addClasName(...names: string[]): void {
     this.classList.add(...names);
@@ -1574,7 +1533,7 @@ export class FooterElement extends HTMLElement implements IComponent {
     Component.applyDate(optional, this);
   }
 
-  public onInit(): void { }
+  public onInit(): void {}
 
   public addClasName(...names: string[]): void {
     this.classList.add(...names);
@@ -1602,17 +1561,7 @@ export class FormElement extends HTMLFormElement implements IComponent {
       method?: "get" | "post";
       name?: string;
       novalidate?: boolean;
-      rel?:
-      | "external"
-      | "help"
-      | "license"
-      | "next"
-      | "nofollow"
-      | "noopener"
-      | "noreferrer"
-      | "opener"
-      | "prev"
-      | "search";
+      rel?: "external" | "help" | "license" | "next" | "nofollow" | "noopener" | "noreferrer" | "opener" | "prev" | "search";
       target?: "_blank" | "_self" | "_parent" | "_top";
     },
   ) {
@@ -1620,7 +1569,7 @@ export class FormElement extends HTMLFormElement implements IComponent {
     Component.applyDate(optional, this);
   }
 
-  onInit(): void { }
+  onInit(): void {}
 
   addClasName(...names: string[]): void {
     this.classList.add(...names);
@@ -1645,7 +1594,7 @@ export class H1Element extends HTMLHeadingElement implements IComponent {
     if (optional?.text) this.innerText = optional.text.toString();
   }
 
-  public onInit(): void { }
+  public onInit(): void {}
 
   addClasName(...names: string[]): void {
     this.classList.add(...names);
@@ -1670,7 +1619,7 @@ export class H2Element extends HTMLHeadingElement implements IComponent {
     if (optional?.text) this.innerText = optional.text.toString();
   }
 
-  public onInit(): void { }
+  public onInit(): void {}
 
   addClasName(...names: string[]): void {
     this.classList.add(...names);
@@ -1700,12 +1649,11 @@ export class H3Element extends HTMLHeadingElement implements IComponent {
   }
 
   set text(value: string | ref<string>) {
-    if (typeof value !== "string")
-      this["_styleref"].appendStyleref("text", this, value);
+    if (typeof value !== "string") this["_styleref"].appendStyleref("text", this, value);
     else this.innerText = value;
   }
 
-  public onInit(): void { }
+  public onInit(): void {}
 
   addClasName(...names: string[]): void {
     this.classList.add(...names);
@@ -1728,7 +1676,7 @@ export class H4Element extends H3Element implements IComponent {
     if (optional?.text) this.innerText = optional.text.toString();
   }
 
-  public onInit(): void { }
+  public onInit(): void {}
 
   addClasName(...names: string[]): void {
     this.classList.add(...names);
@@ -1745,7 +1693,7 @@ export class H5Element extends H3Element implements IComponent {
     if (optional?.text) this.innerText = optional.text.toString();
   }
 
-  public onInit(): void { }
+  public onInit(): void {}
 
   addClasName(...names: string[]): void {
     this.classList.add(...names);
@@ -1762,7 +1710,7 @@ export class H6Element extends H3Element implements IComponent {
     if (optional?.text) this.innerText = optional.text.toString();
   }
 
-  public onInit(): void { }
+  public onInit(): void {}
 
   addClasName(...names: string[]): void {
     this.classList.add(...names);
@@ -1781,7 +1729,7 @@ export class HeadElement extends HTMLHeadElement implements IComponent {
     Component.applyDate(optional, this);
   }
 
-  public onInit(): void { }
+  public onInit(): void {}
 
   public addClasName(...names: string[]): void {
     this.classList.add(...names);
@@ -1805,7 +1753,7 @@ export class HeaderElement extends HTMLElement implements IComponent {
     Component.applyDate(optional, this);
   }
 
-  public onInit(): void { }
+  public onInit(): void {}
 
   public addClasName(...names: string[]): void {
     this.classList.add(...names);
@@ -1831,7 +1779,7 @@ export class HorizontalRuleElement extends HTMLHRElement implements IComponent {
     Component.applyDate(optional, this);
   }
 
-  public onInit(): void { }
+  public onInit(): void {}
 
   public addClasName(...names: string[]): void {
     this.classList.add(...names);
@@ -1863,7 +1811,7 @@ export class HtmlElement extends HTMLHtmlElement implements IComponent {
     Component.applyDate(optional, this);
   }
 
-  public onInit(): void { }
+  public onInit(): void {}
 
   public addClasName(...names: string[]): void {
     this.classList.add(...names);
@@ -1903,14 +1851,14 @@ export class IFrameElement extends HTMLIFrameElement implements IComponent {
       loading?: "eager" | "lazy";
       name?: string;
       referrerpolicy?:
-      | "no-referrer"
-      | "no-referrer-when-downgrade"
-      | "origin"
-      | "origin-when-cross-origin"
-      | "same-origin"
-      | "strict-origin"
-      | "strict-origin-when-cross-origin"
-      | "unsafe-url";
+        | "no-referrer"
+        | "no-referrer-when-downgrade"
+        | "origin"
+        | "origin-when-cross-origin"
+        | "same-origin"
+        | "strict-origin"
+        | "strict-origin-when-cross-origin"
+        | "unsafe-url";
       src?: string;
       srcdoc?: string;
       width?: number;
@@ -1918,17 +1866,14 @@ export class IFrameElement extends HTMLIFrameElement implements IComponent {
   ) {
     super();
     if (optional?.allow) this.allow = optional.allow as any;
-    if (optional?.allowfullscreen)
-      this.allowfullscreen = optional.allowfullscreen as any;
-    if (optional?.allowpaymentrequest)
-      this.allowpaymentrequest = optional.allowpaymentrequest as any;
+    if (optional?.allowfullscreen) this.allowfullscreen = optional.allowfullscreen as any;
+    if (optional?.allowpaymentrequest) this.allowpaymentrequest = optional.allowpaymentrequest as any;
     if (optional?.csp) this.csp = optional.csp as any;
     if (optional?.height) this.height = optional.height as any;
     if (optional?.importance) this.importance = optional.importance as any;
     if (optional?.loading) this.loading = optional.loading as any;
     if (optional?.name) this.name = optional.name as any;
-    if (optional?.referrerpolicy)
-      this.referrerpolicy = optional.referrerpolicy as any;
+    if (optional?.referrerpolicy) this.referrerpolicy = optional.referrerpolicy as any;
     if (optional?.src) this.src = optional.src as any;
     if (optional?.srcdoc) this.srcdoc = optional.srcdoc as any;
     if (optional?.width) this.width = optional.width as any;
@@ -2008,7 +1953,7 @@ export class IFrameElement extends HTMLIFrameElement implements IComponent {
   //   return this.getAttribute("sandbox");
   // }
 
-  onInit(): void { }
+  onInit(): void {}
 
   addClasName(...names: string[]): void {
     this.classList.add(...names);
@@ -2040,7 +1985,7 @@ export class LegendElement extends HTMLLegendElement implements IComponent {
     if (optional?.value) this.innerHTML = optional.value as any;
   }
 
-  public onInit(): void { }
+  public onInit(): void {}
 
   public addClasName(...names: string[]): void {
     this.classList.add(...names);
@@ -2071,7 +2016,7 @@ export class NavElement extends HTMLElement implements IComponent {
     Component.applyDate(optional, this);
   }
 
-  onInit(): void { }
+  onInit(): void {}
 
   addClasName(...names: string[]): void {
     this.classList.add(...names);
@@ -2096,7 +2041,7 @@ export class SectionElement extends HTMLElement implements IComponent {
     Component.applyDate(optional, this);
   }
 
-  onInit(): void { }
+  onInit(): void {}
 
   addClasName(...names: string[]): void {
     this.classList.add(...names);
@@ -2123,7 +2068,7 @@ export class ArticleElement extends HTMLElement implements IComponent {
     Component.applyDate(optional, this);
   }
 
-  onInit(): void { }
+  onInit(): void {}
 
   addClasName(...names: string[]): void {
     this.classList.add(...names);
@@ -2150,7 +2095,7 @@ export class SummaryElement extends HTMLElement implements IComponent {
     Component.applyDate(optional, this);
   }
 
-  onInit(): void { }
+  onInit(): void {}
 
   addClasName(...names: string[]): void {
     this.classList.add(...names);

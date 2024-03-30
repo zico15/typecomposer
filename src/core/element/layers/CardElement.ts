@@ -12,10 +12,7 @@ export class CardElement extends Component {
     this.__card_element_pane__.addClasName("card-pane");
   }
 
-  public static create(
-    n: number,
-    optional?: StyleOptional,
-  ): { [key: string]: CardElement } {
+  public static create(n: number, optional?: StyleOptional): { [key: string]: CardElement } {
     const cards: { [key: string]: CardElement } = {};
     for (let i = 0; i < n; i++) {
       const card = new CardElement(optional);

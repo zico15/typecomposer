@@ -28,18 +28,10 @@ class RouterController {
 
   constructor() {
     window.addEventListener("load", () => {
-      this.updateRoute(
-        this.route.history == "history"
-          ? window.location.pathname
-          : window.location.hash,
-      );
+      this.updateRoute(this.route.history == "history" ? window.location.pathname : window.location.hash);
     });
     window.addEventListener("popstate", () => {
-      this.updateRoute(
-        this.route.history == "history"
-          ? window.location.pathname
-          : window.location.hash,
-      );
+      this.updateRoute(this.route.history == "history" ? window.location.pathname : window.location.hash);
     });
   }
 
@@ -54,10 +46,7 @@ class RouterController {
     return regex2.test(route1);
   }
 
-  findCorrectRoute(
-    pathname: string,
-    routes: RoutePage[] = this.route?.routes || [],
-  ): string {
+  findCorrectRoute(pathname: string, routes: RoutePage[] = this.route?.routes || []): string {
     if (routes) {
       for (const route of routes) {
         if (this.doRoutesMatch(pathname, route.path)) {
@@ -65,10 +54,7 @@ class RouterController {
             ...route,
             build: undefined,
             routeView: undefined,
-            parent:
-              this.currentRoute.length > 0
-                ? this.currentRoute[this.currentRoute.length - 1]
-                : undefined,
+            parent: this.currentRoute.length > 0 ? this.currentRoute[this.currentRoute.length - 1] : undefined,
           });
           return route.path;
         }
@@ -79,10 +65,7 @@ class RouterController {
             ...route,
             build: undefined,
             routeView: undefined,
-            parent:
-              this.currentRoute.length > 0
-                ? this.currentRoute[this.currentRoute.length - 1]
-                : undefined,
+            parent: this.currentRoute.length > 0 ? this.currentRoute[this.currentRoute.length - 1] : undefined,
           });
           const r = this.findCorrectRoute(pathname, route.children);
           if (r != "/") return r;
@@ -93,18 +76,12 @@ class RouterController {
     return "/";
   }
 
-  private async buildRoute(
-    routes: RoutePage[] = this.route?.routes,
-    parent: string = "",
-  ): Promise<boolean> {
+  private async buildRoute(routes: RoutePage[] = this.route?.routes, parent: string = ""): Promise<boolean> {
     if (routes) {
       for (let route of routes) {
         route.path = parent + route.path;
         if (route.children) {
-          this.buildRoute(
-            route.children,
-            route.path == "/" ? route.path : route.path + "/",
-          );
+          this.buildRoute(route.children, route.path == "/" ? route.path : route.path + "/");
         }
       }
     }
@@ -114,14 +91,10 @@ class RouterController {
   private async buildPages() {
     let routePageBuildLast: RoutePageBuild | undefined = undefined;
     for (let i: number = 0; i < this.currentRoute.length; i++) {
-      if (
-        this.previousRoute[i] != undefined &&
-        this.currentRoute[i].id == this.previousRoute[i].id
-      ) {
+      if (this.previousRoute[i] != undefined && this.currentRoute[i].id == this.previousRoute[i].id) {
         routePageBuildLast = this.previousRoute[i];
         this.currentRoute[i] = this.previousRoute[i];
-        if (this.currentRoute[i + 1])
-          this.currentRoute[i + 1].parent = this.currentRoute[i];
+        if (this.currentRoute[i + 1]) this.currentRoute[i + 1].parent = this.currentRoute[i];
       } else if (this.currentRoute[i].guard) {
         const fallbackRoute = this.currentRoute[i].guard.fallbackRoute;
         const result = await this.currentRoute[i].guard.beforeEach();
@@ -196,14 +169,10 @@ class RouterController {
   }
 
   public getRouteViewFree(routeView: RouteView): RoutePageBuild | undefined {
-    let index = Array.from<RouteView>(
-      document.querySelectorAll("route-view") || [],
-    ).findIndex((r) => r == routeView);
+    let index = Array.from<RouteView>(document.querySelectorAll("route-view") || []).findIndex((r) => r == routeView);
     if (index == -1 || index >= this.currentRoute.length) return undefined;
     this.currentRoute[index++].routeView = routeView;
-    return this.currentRoute.length > index
-      ? this.currentRoute[index]
-      : undefined;
+    return this.currentRoute.length > index ? this.currentRoute[index] : undefined;
   }
 
   public getView(routeView: RoutePageBuild): IComponent | undefined {
@@ -234,8 +203,7 @@ class RouterController {
   }
 
   private setView<T extends IComponent>(view: T) {
-    if (!(document.body.lastElementChild instanceof HTMLScriptElement))
-      document.body?.lastElementChild?.remove();
+    if (!(document.body.lastElementChild instanceof HTMLScriptElement)) document.body?.lastElementChild?.remove();
     document.body.appendChild(view);
   }
 }
@@ -260,17 +228,9 @@ export class Router {
     return Router._props;
   }
 
-  static create(data: {
-    routes: RoutePage[];
-    history?: "hash" | "history";
-    pageNotFound?: Component;
-  }): void {
+  static create(data: { routes: RoutePage[]; history?: "hash" | "history"; pageNotFound?: Component }): void {
     if (Router.controller.route) throw new Error("Router already exists");
-    Router.controller.route = new Router(
-      data.routes,
-      data.history,
-      data.pageNotFound,
-    );
+    Router.controller.route = new Router(data.routes, data.history, data.pageNotFound);
   }
 
   private static createAutoId(routes: RoutePage[] = [], id: number) {

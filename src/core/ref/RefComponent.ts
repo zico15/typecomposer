@@ -27,8 +27,7 @@ export class VFor {
     const element = this.component.querySelector(`[key-for="${this.key}"]`);
     if (element) {
       this.parent = element.parentNode;
-      if (this.parent?.children)
-        this.orden = Array.from(this.parent.children).indexOf(element);
+      if (this.parent?.children) this.orden = Array.from(this.parent.children).indexOf(element);
     }
   }
 
@@ -51,25 +50,11 @@ export class VFor {
     for (let i = 0; i < value.length; i++) {
       // <div id="as"> test</div> || <p id="as"> test</p>
       const base = document.createElement("div");
-      console.log(
-        "elementBase: ",
-        value[i],
-        " v1: ",
-        this.vfor[1],
-        " v2: ",
-        this.vfor[2],
-      );
+      console.log("elementBase: ", value[i], " v1: ", this.vfor[1], " v2: ", this.vfor[2]);
       const vname = "nome";
       console.log("vname: ", vname);
-      base.innerHTML = this.elementBase.replace(
-        "{{item.nome}}",
-        value[i][vname],
-      );
-      if (base.firstChild)
-        this.parent?.insertBefore(
-          base.firstChild,
-          this.parent.children[this.orden + i],
-        );
+      base.innerHTML = this.elementBase.replace("{{item.nome}}", value[i][vname]);
+      if (base.firstChild) this.parent?.insertBefore(base.firstChild, this.parent.children[this.orden + i]);
     }
   }
 

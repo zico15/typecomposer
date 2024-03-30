@@ -12,7 +12,7 @@ import { FlowPane } from "./layers/FlowPane";
 import { ListElement } from "./action/ListElement";
 import { TabPane } from "./action/TabPane";
 import { IconElement } from "./image/IconElement";
-import { TabElement } from "./action/TabElement";
+import { TabItem } from "./action/TabItem";
 import { PaneElement } from "./layers/PaneElement";
 import { SlidePane } from "./action/SlidePane";
 import { DropDown } from "./action/DropDown";
@@ -40,7 +40,7 @@ export {
   // SvgElement,
   SlidePane,
   TabPane,
-  TabElement,
+  TabItem,
   ListElement,
   // ImageElement,
   IconElement,

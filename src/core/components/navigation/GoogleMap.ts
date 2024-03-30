@@ -59,11 +59,7 @@ export class GoogleMapElement extends Component {
               disableDefaultUI: true,
             });
             // // Criar um marcador na localização do usuário
-            this.addMarker(
-              userLocation.lat,
-              userLocation.lng,
-              "Você está aqui!",
-            );
+            this.addMarker(userLocation.lat, userLocation.lng, "Você está aqui!");
 
             // // Centralizar o mapa na localização do usuário
             // this.setCenter(userLocation.lat, userLocation.lng);

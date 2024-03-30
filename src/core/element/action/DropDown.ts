@@ -1,10 +1,6 @@
 import { Component, DivElement, StyleOptional } from "../..";
 
-type SelectionType =
-  | "closeAndClean"
-  | "closeAndKeep"
-  | "openAndClean"
-  | "openAndKeep";
+type SelectionType = "closeAndClean" | "closeAndKeep" | "openAndClean" | "openAndKeep";
 
 export class DropDownItem extends DivElement {}
 
@@ -38,15 +34,10 @@ export class DropDown<T = any> extends Component {
     this.dropdownContent = new DivElement({ className: "dropdown-content" });
     this.append(this.inputAndButtonDiv, this.dropdownContent);
     this.input = new DivElement({ className: "input" });
-    this.input.textContent = props.placeHolder
-      ? props.placeHolder
-      : props.defaultOption;
+    this.input.textContent = props.placeHolder ? props.placeHolder : props.defaultOption;
     this.selectionType = props.selectionType || "closeAndClean";
     this.onInit();
-    this.options =
-      props.options == undefined || props.options.length === 0
-        ? [props.noContent as any]
-        : props.options;
+    this.options = props.options == undefined || props.options.length === 0 ? [props.noContent as any] : props.options;
   }
 
   onInit() {
@@ -64,11 +55,7 @@ export class DropDown<T = any> extends Component {
   }
 
   private handleClickOutside(event) {
-    if (
-      !this.inputAndButtonDiv.contains(event.target) &&
-      !this.dropdownContent.contains(event.target) &&
-      this.inputAndButtonDiv.classList.contains("pressed")
-    ) {
+    if (!this.inputAndButtonDiv.contains(event.target) && !this.dropdownContent.contains(event.target) && this.inputAndButtonDiv.classList.contains("pressed")) {
       this.inputAndButtonDiv.children[1].classList.toggle("pressed");
       this.inputAndButtonDiv.classList.toggle("pressed");
       this.inputAndButtonDiv.children[1].classList.toggle("up");
@@ -101,10 +88,8 @@ export class DropDown<T = any> extends Component {
   }
 
   set selectionType(selectionType: SelectionType) {
-    if (selectionType == "closeAndKeep")
-      this.onSelectionAction = this.closeAndKeep.bind(this);
-    else if (selectionType == "openAndClean")
-      this.onSelectionAction = this.openAndClean.bind(this);
+    if (selectionType == "closeAndKeep") this.onSelectionAction = this.closeAndKeep.bind(this);
+    else if (selectionType == "openAndClean") this.onSelectionAction = this.openAndClean.bind(this);
     else if (selectionType == "openAndKeep") this.onSelectionAction = () => {};
     else this.onSelectionAction = this.closeAndClean.bind(this);
     this._selectionType = selectionType;
@@ -128,8 +113,7 @@ export class DropDown<T = any> extends Component {
     this.dropdownContent.innerHTML = "";
     this.options.forEach((option) => {
       let node: Node;
-      if (option instanceof Node)
-        node = this.dropdownContent.appendChild(option);
+      if (option instanceof Node) node = this.dropdownContent.appendChild(option);
       else {
         const div = new DropDownItem({
           text: option?.toString() || "",
@@ -147,9 +131,7 @@ export class DropDown<T = any> extends Component {
         if ((node as HTMLElement).classList.contains("selected")) {
           this.previousSelected.push(option);
         } else {
-          this.previousSelected = this.previousSelected.filter(
-            (selectedOption) => selectedOption !== option,
-          );
+          this.previousSelected = this.previousSelected.filter((selectedOption) => selectedOption !== option);
         }
         this.input.textContent = option?.toString() || "";
         this.input.style.color = "black";

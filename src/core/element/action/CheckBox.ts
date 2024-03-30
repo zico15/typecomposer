@@ -1,10 +1,4 @@
-import {
-  Component,
-  InputElement,
-  LabelElement,
-  StyleOptional,
-  IconElement,
-} from "../..";
+import { Component, InputElement, LabelElement, StyleOptional, IconElement } from "../..";
 
 export class CheckBox extends Component {
   private _input: InputElement;
