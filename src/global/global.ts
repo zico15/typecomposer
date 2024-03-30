@@ -6,6 +6,10 @@ declare global {
     getTheme(): string;
     setTheme(theme: string): void;
   }
+
+  // interface Element {
+  //   setAttribute(qualifiedName: string, value: any | ref<any>): void;
+  // }
   // interface CSSStyleDeclaration {
   //   // @ts-ignore
   //   get color(): string | ref<string>;
@@ -20,6 +24,21 @@ declare global {
   //   onChange(fun: (value: any) => void, target?: {}): void;
   // }
 }
+
+// Element.prototype.setAttribute = function (this: any,
+//   qualifiedName: string,
+//   value: any | ref<any>,
+// ): void {
+//   // if (value instanceof ref) {
+//   //   value.onChange((value) => {
+//   //     this.setAttribute(qualifiedName, value);
+//   //   });
+//   //   value.subscriber(this, qualifiedName);
+//   // } else {
+//   console.log("setAttribute: ", qualifiedName, value);
+//   super.setAttribute(qualifiedName, value);
+//   // }
+// };
 
 // Proxy.prototype.onChange = function (
 //   fun: (value: any) => void,
