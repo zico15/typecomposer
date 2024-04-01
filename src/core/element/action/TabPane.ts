@@ -1,4 +1,4 @@
-import { BorderPaneElement, DivElement, IconElement, TabItem, type StyleOptional } from "..";
+import { BorderPaneElement, DivElement, IconElement, TabItem, type StyleOptional, IComponent } from "..";
 
 export class TabPane extends BorderPaneElement {
   private tabs: DivElement = new DivElement();
@@ -17,8 +17,8 @@ export class TabPane extends BorderPaneElement {
     this.addClasName("tab-pane");
     this.style.width = "100%";
     this.style.marginTop = "10px";
-    this.style.minHeight = "280px";
-    this.style.maxHeight = "280px";
+    // this.style.minHeight = "280px";
+    // this.style.maxHeight = "280px"; ??why
     this.tabs.classList.add("tab-pane-tabs");
     this.top = this.tabs;
     this.center = new DivElement();
@@ -91,7 +91,7 @@ export class TabPane extends BorderPaneElement {
     return this.slectTabItem;
   }
 
-  public onSelectTab: (title: string, content: HTMLElement, index?: number) => void = () => {};
+  public onSelectTab: (title: string, content: IComponent, index?: number) => void = () => {};
 }
 // @ts-ignore
 customElements.define("tab-pane", TabPane);

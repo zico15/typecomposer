@@ -1,15 +1,15 @@
-import { Component, H3Element, H4Element, IconElement } from "..";
+import { Component, H3Element, H4Element, IComponent, IconElement } from "..";
 
 export class TabItem extends Component {
   private __closeable: boolean = false;
   private titleElement: H3Element;
   private displayContent: string;
-  private _content: HTMLElement;
+  private _content: IComponent;
   private closeIcon: IconElement | null = null;
 
   constructor(
     public title: string,
-    content: HTMLElement,
+    content: IComponent | HTMLElement,
     icon: IconElement | null,
     closeable: boolean = true,
   ) {
@@ -18,14 +18,14 @@ export class TabItem extends Component {
       icon.style.order = "0";
       this.appendChild(icon);
     }
-    this._content = content;
-    this.displayContent = content.style.display;
+    this._content = content as IComponent;
+    // @ts-ignore
+    this.displayContent = content.style.display; //todo - fix
     content.style.display = "none";
     this.titleElement = new H4Element({
       text: title,
       padding: "0px 10px",
-      // @ts-ignore
-      order: 1,
+      order: "1",
       margin: "0px",
     });
     this.appendChild(this.titleElement);
@@ -45,7 +45,7 @@ export class TabItem extends Component {
     this.__closeable = value;
     if (value && !this.closeIcon) {
       // @ts-ignore
-      this.closeIcon = new IconElement({ icon: "fa-thin fa-x", order: 2 });
+      this.closeIcon = new IconElement({ icon: "fa-thin fa-x", order: "2" });
       this.closeIcon.onclick = () => {
         console.log("close");
         this.remove();
@@ -67,7 +67,7 @@ export class TabItem extends Component {
     this._content.style.display = "none";
   }
 
-  get content(): HTMLElement {
+  get content(): IComponent {
     return this._content;
   }
 }
