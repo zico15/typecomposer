@@ -1,5 +1,5 @@
 import { type StyleOptional, Component, DivElement } from "..";
-import { CSSStyleDeclarationref } from "../base/CSSStyle";
+import { CSSStyleDeclarationRef } from "../base/CSSStyle";
 
 export class CardElement extends Component {
   private __card_element_pane__: DivElement;
@@ -25,7 +25,7 @@ export class CardElement extends Component {
     return this.__card_element_pane__.appendChild(node);
   }
 
-  get style(): CSSStyleDeclarationref {
+  get style(): CSSStyleDeclarationRef {
     return this.__card_element_pane__?.style || super.style;
   }
 

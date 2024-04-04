@@ -1817,7 +1817,7 @@ export interface CSSStyleDeclarationOptional {
   zIndex?: string | ref<string>;
 }
 
-export interface CSSStyleDeclarationref {
+export interface CSSStyleDeclarationRef {
   get accentColor(): string;
   set accentColor(value: string | ref<string>);
   text?: string | ref<string>;
@@ -3029,12 +3029,12 @@ export interface CSSStyleDeclarationref {
   hasOwnProperty?(key: string): boolean;
 }
 
-declare var CSSStyleDeclarationref: {
-  prototype: CSSStyleDeclarationref;
-  new (): CSSStyleDeclarationref;
+export declare var CSSStyleDeclarationRef: {
+  prototype: CSSStyleDeclarationRef;
+  new (): CSSStyleDeclarationRef;
 };
 
-export class CSSStyleref implements CSSStyleDeclarationref {
+export class CSSStyleref implements CSSStyleDeclarationRef {
   [index: number]: any;
   private _style: CSSStyleDeclaration;
   private stylerefMap = new Map<string, { data: { ref: any; name: string }; ref: ref<any> }>();
@@ -3063,8 +3063,8 @@ export class CSSStyleref implements CSSStyleDeclarationref {
     // });
   }
 
-  constructor(style: CSSStyleDeclaration) {
-    this._style = style;
+  constructor(style: CSSStyleDeclaration | CSSStyleDeclarationRef) {
+    this._style = style as CSSStyleDeclaration;
   }
 
   get accentColor(): string {

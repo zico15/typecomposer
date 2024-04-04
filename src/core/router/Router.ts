@@ -169,6 +169,7 @@ class RouterController {
   }
 
   public getRouteViewFree(routeView: RouteView): RoutePageBuild | undefined {
+    // @ts-ignore
     let index = Array.from<RouteView>(document.querySelectorAll("route-view") || []).findIndex((r) => r == routeView);
     if (index == -1 || index >= this.currentRoute.length) return undefined;
     this.currentRoute[index++].routeView = routeView;

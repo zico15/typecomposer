@@ -1,29 +1,238 @@
+import { CSSStyleDeclarationRef } from "../core/element/base/CSSStyle";
+import { RefString, ref } from "../core/ref";
+
 declare global {
   interface Array<T> {
     clear(): void;
   }
+
   interface Window {
     getTheme(): string;
     setTheme(theme: string): void;
   }
 
-  // interface Element {
-  //   setAttribute(qualifiedName: string, value: any | ref<any>): void;
-  // }
-  // interface CSSStyleDeclaration {
-  //   // @ts-ignore
-  //   get color(): string | ref<string>;
-  //   // @ts-ignore
-  //   set color(value: string | ref<string>);
-  // }
+  interface Element {
+    innerHTML: string | ref<string>;
+    style: CSSStyleDeclarationRef;
+  }
 
-  // interface ElementCSSInlineStyle {
-  //   readonly style: CSSStyleDeclaration;
+  interface HTMLButtonElement {
+    // @ts-ignore
+    type: "submit" | "reset" | "button" | "file";
+    accept: string;
+    multiple: boolean;
+    onfile: (file: FileList) => void;
+  }
+  // interface String {
+  //   refPropertyKey: string | symbol;
+  //   refTarget: any | undefined;
   // }
-  // interface Proxy {
-  //   onChange(fun: (value: any) => void, target?: {}): void;
+  // interface Number {
+  //   setRefTarget: any;
+  //   getRefTarget: any;
   // }
 }
+
+Object.defineProperty(HTMLButtonElement.prototype, "multiple", {
+  get: function () {
+    return this._multiple;
+  },
+  set: function (_value: boolean) {
+    const inputFile = this.querySelector("input[button-file=file]");
+    if (inputFile) inputFile.multiple = _value;
+    this._multiple = _value;
+  },
+});
+
+Object.defineProperty(HTMLButtonElement.prototype, "accept", {
+  get: function () {
+    return this._accept;
+  },
+  set: function (value: string) {
+    const inputFile = this.querySelector("input[button-file=file]");
+    if (inputFile) inputFile.accept = value;
+    this._accept = value;
+  },
+});
+
+const originalButton = Object.getOwnPropertyDescriptor(HTMLButtonElement.prototype, "type").set;
+
+Object.defineProperty(HTMLButtonElement.prototype, "onfile", {
+  value: function (this: HTMLButtonElement, fileList: FileList) {},
+  writable: true,
+  configurable: true,
+  enumerable: true,
+});
+
+Object.defineProperty(HTMLButtonElement.prototype, "type", {
+  set: function (value: "submit" | "reset" | "button" | "file") {
+    let inputFile: HTMLInputElement | undefined = this.querySelector("input[button-file=file]");
+    if (value == "file") {
+      if (!inputFile) {
+        inputFile = document.createElement("input");
+        inputFile.type = "file";
+        inputFile.setAttribute("button-file", "file");
+        if (this.multiple) inputFile.multiple = this.multiple;
+        if (this.accept) inputFile.accept = this.accept;
+        inputFile.style.display = "none";
+        inputFile.onchange = (event: any) => {
+          this.onfile(event.target.files);
+          event.stopPropagation();
+        };
+        this.addEventListener("click", inputFile.click.bind(inputFile));
+        this.appendChild(inputFile);
+      }
+      value = "button";
+    } else if (inputFile) {
+      this.removeEventListener("click", inputFile.click.bind(inputFile));
+      this.removeChild(inputFile);
+    }
+    originalButton.call(this, value);
+  },
+});
+
+// // Object.defineProperty(Number.prototype, "refTarget", {
+// //   value: undefined,
+// //   writable: true,
+// //   configurable: true,
+// //   enumerable: true,
+// // });
+// // Define um novo método setRefTarget no protótipo de Number
+// Number.prototype.setRefTarget = function (value) {
+//   // Cria um objeto temporário do tipo NumberWrapper
+//   const wrapper = {
+//     value: this,
+//     refTarget: value,
+//   };
+//   // Retorna o objeto temporário
+//   return wrapper;
+// };
+
+// Number.prototype.getRefTarget = function () {
+//   return this.refTarget;
+// };
+
+// // Teste
+// // const a = (5).setRefTarget("teste");
+// // console.log(a.refTarget);
+
+// let a = new Number(5);
+// let b: number = a;
+// b = ref(3);
+// b.setRefTarget("teste");
+// a.setRefTarget("teste");
+// b.toFixed(2);
+
+// // a++;
+// console.log("a: ", a.getRefTarget());
+
+// const originalStyle = Object.getOwnPropertyDescriptor(Element.prototype, "style").set;
+
+// Object.defineProperty(Element.prototype, "style", {
+//   set: function () {
+//     console.log("A chamada para style foi interceptada");
+//     return originalStyle.call(this);
+//   },
+// });
+
+const styles = window.getComputedStyle(document.body);
+const stylesName = ["backgroundColor"];
+// for (const key in styles) {
+//   if (typeof styles[key] !== "string") continue;
+//   stylesName.push(key);
+// }
+
+stylesName.forEach((key) => {
+  try {
+    const original = Object.getOwnPropertyDescriptor(CSSStyleDeclaration.prototype, key).set;
+    Object.defineProperty(CSSStyleDeclaration.prototype, key, {
+      set: function (_value: string | ref<string>) {
+        if (typeof _value !== "string") console.log("subscriber: ", _value.subscriber, " _value: ", _value, " typeof: ", typeof _value);
+
+        if (_value instanceof CSSStyleDeclaration) return;
+        if (_value instanceof RefString) {
+          _value.refTarget.subscriber(this, key, _value.refPropertyKey);
+        } else if (typeof _value !== "string") {
+          _value.subscriber(this, key);
+        } else original.call(this, _value);
+      },
+    });
+  } catch (error) {}
+});
+// for (const key in CSSStyleDeclaration.prototype) {
+//   console.log("key: ", key);
+//   Object.defineProperty(CSSStyleDeclaration.prototype, key, {
+//     set: function (value: string | ref<string>) {
+//       console.log("A chamada para color foi interceptada com o valor:", value);
+//       if (value instanceof RefString) {
+//         value.refTarget.subscriber(this, key, value.refPropertyKey);
+//       } else if (typeof value !== "string") value.subscriber(this, key);
+//       else this.color = value;
+//     },
+//   });
+// }
+//setProperty
+
+Object.defineProperty(CSSStyleDeclaration.prototype, "setProperty", {
+  value: function (property: string, value: string | ref<string>, priority?: string) {
+    if (value instanceof RefString) {
+      value.refTarget.subscriber(this, property, value.refPropertyKey);
+    } else if (typeof value !== "string") value.subscriber(this, property);
+    else this.setProperty(property, value, priority);
+  },
+});
+
+const originalInnerHTML = Object.getOwnPropertyDescriptor(Element.prototype, "innerHTML").set;
+
+// Substitui innerHTML por um setter personalizado
+Object.defineProperty(Element.prototype, "innerHTML", {
+  set: function (value: string | ref<string>) {
+    if (value instanceof RefString) {
+      value.refTarget.subscriber(this, "innerHTML", value.refPropertyKey);
+    } else if (typeof value !== "string") value.subscriber(this, "innerHTML");
+    else originalInnerHTML.call(this, value);
+  },
+});
+
+// Object.defineProperty(Element.prototype, "style", {
+//   value: {
+
+//   },
+
+//   get: function () {
+//     return
+//   },
+// });
+
+// interface Element {
+//   setAttribute(qualifiedName: string, value: any | ref<any>): void;
+// }
+// interface CSSStyleDeclaration {
+//   // @ts-ignore
+//   get color(): string | ref<string>;
+//   // @ts-ignore
+//   set color(value: string | ref<string>);
+// }
+
+// interface ElementCSSInlineStyle {
+//   readonly style: CSSStyleDeclaration;
+// }
+// interface Proxy {
+//   onChange(fun: (value: any) => void, target?: {}): void;
+// }
+
+// HTMLElement.prototype.innerHTML =  (value: string | ref<string>) => {
+//   if (set instanceof ref) {
+//     set.onChange((value) => {
+//       this.innerHTML = value;
+//     }
+//     );
+//     set.subscriber(this, "innerHTML");
+//   }
+//   else {
+//     this.innerHTML = set;
+//   }
+// }
 
 // Element.prototype.setAttribute = function (this: any,
 //   qualifiedName: string,

@@ -1,41 +1,19 @@
-import { createProxyRef } from "./RefProxyHandler";
+import { createProxyRef, CustomEvent } from "./RefProxyHandler";
 
-export interface CustomEvent {
-  target: WeakRef<any>;
-  propertyKey: string | symbol;
-  refPropertyKey: string | symbol;
-  fun?: WeakRef<Function>;
-}
+// export interface ref<T> {
+//   value: T;
+//   id: string;
+//   subscriber: (target: {}, propertyKey: string | symbol, refPropertyKey?: string | symbol) => void;
+//   unsubscribe: (data: { ref: any; name: string; fun?: Function }) => void;
+//   onChange: (fun: (value: T) => void, target?: {}) => void;
+//   toString: () => string;
+//   setValue: (value: any, propertyKey?: string | symbol) => void;
+// };
 
-export class RefString extends String {
-  constructor(
-    valor: string,
-    public refPropertyKey: string | symbol,
-    public refTarget: any | undefined = undefined,
-  ) {
-    super(valor);
-  }
-
-  setValue(value: string, propertyKey: string | symbol) {
-    if (this.refTarget) this.refTarget[propertyKey] = value;
-  }
-
-  subscriber(target: {}, propertyKey: string | symbol, refPropertyKey: string | symbol = undefined) {
-    if (this.refTarget) {
-      this.refTarget.subscriber(target, propertyKey, refPropertyKey);
-    }
-  }
-
-  onChange(fun: (value: any) => void, target?: {}) {
-    if (this.refTarget) {
-      this.refTarget.onChange(fun, target);
-    }
-  }
-
-  toString(): string {
-    return super.toString();
-  }
-}
+// export declare var ref: {
+//   prototype: ref<any>;
+//   new <T>(target: T): ref<T>;
+// };
 
 export type ref<T> = {
   value: T;
@@ -59,6 +37,7 @@ export function ref<T>(target: T): {
   const _id: string = Math.random().toString(36).substr(2, 9);
   const registry: FinalizationRegistry<any> = new FinalizationRegistry((target: WeakRef<any>) => {
     _subscribers = _subscribers.filter((subscriber) => subscriber.target != target);
+    console.log("FinalizationRegistry: ", target);
   });
   let _subscribers: CustomEvent[] = [];
   const newTarget = {
@@ -103,19 +82,25 @@ export function ref<T>(target: T): {
   }
 
   function setValueToSubscriber(subscriber: CustomEvent): boolean {
+    let result = true;
     try {
       const target = subscriber.target?.deref();
       if (target) {
         if (subscriber.fun) {
           const fun = subscriber.fun?.deref();
           if (fun) fun(newTarget.value);
-          else return false;
+          else result = false;
         }
-      } else return false;
+      } else result = false;
     } catch (error) {
-      return false;
+      result = false;
     }
-    return true;
+    if (!result) {
+      console.log("FinalizationRegistry2: ", subscriber.target);
+      registry.unregister(subscriber.target);
+      _subscribers = _subscribers.filter((item) => item != subscriber);
+    }
+    return result;
   }
 
   function subscriber(target: {}, propertyKey: string | symbol) {

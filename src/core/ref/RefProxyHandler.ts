@@ -1,4 +1,39 @@
-import { CustomEvent, RefString } from "./Ref";
+export interface CustomEvent {
+  target: WeakRef<any>;
+  propertyKey: string | symbol;
+  refPropertyKey: string | symbol;
+  fun?: WeakRef<Function>;
+}
+
+export class RefString extends String {
+  constructor(
+    valor: string,
+    public refPropertyKey: string | symbol,
+    public refTarget: any | undefined = undefined,
+  ) {
+    super(valor);
+  }
+
+  setValue(value: string, propertyKey: string | symbol) {
+    if (this.refTarget) this.refTarget[propertyKey] = value;
+  }
+
+  subscriber(target: {}, propertyKey: string | symbol, refPropertyKey: string | symbol = undefined) {
+    if (this.refTarget) {
+      this.refTarget.subscriber(target, propertyKey, refPropertyKey);
+    }
+  }
+
+  onChange(fun: (value: any) => void, target?: {}) {
+    if (this.refTarget) {
+      this.refTarget.onChange(fun, target);
+    }
+  }
+
+  toString(): string {
+    return super.toString();
+  }
+}
 
 export function createProxyRef<T extends object>(target: T, onNotity: () => void, onChange: (fun: (value: T) => void, target?: {}) => void): T {
   const handler = {};
@@ -111,6 +146,7 @@ export function createProxyRef<T extends object>(target: T, onNotity: () => void
     if (propertyKey) proxy[propertyKey] = value;
     else proxy["value"] = value;
   };
+  proxy["list"] = _subscribers;
   proxy["refPropertyKey"] = undefined;
   Object.setPrototypeOf(handler, proxyHandler);
   return proxy;
