@@ -499,6 +499,8 @@ export class ListItemElement extends HTMLLIElement implements IComponent {
     // @ts-ignore
     return this._styleref;
   }
+
+  onSelect(): void {}
 }
 
 // @ts-ignore

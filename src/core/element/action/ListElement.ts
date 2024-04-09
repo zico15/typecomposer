@@ -53,6 +53,7 @@ export class ListElement<T = any> extends Component {
       if (this.itemSelected?.parent != parent) {
         parent.classList.add("list-element-item-selected");
         this.onSelectItem(child);
+        if (parent instanceof ListItemElement) parent.onSelect();
         this.itemSelected = { parent, child };
       } else this.itemSelected = null;
     });

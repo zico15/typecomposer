@@ -100,7 +100,6 @@ class RouterController {
         const result = await this.currentRoute[i].guard.beforeEach();
         if (!result) {
           this.currentRoute = this.previousRoute;
-          console.log("Fallback route: ", fallbackRoute);
           Router.go(fallbackRoute || this.urlLast);
           return;
         }
@@ -119,7 +118,9 @@ class RouterController {
   }
 
   private updateRoute(pathname: string) {
-    pathname = pathname.replace(/^#/, "");
+    const { url, parameters } = this.extractParametersURL(pathname);
+    Router["_props"] = parameters;
+    pathname = url.replace(/^#/, "");
     if (pathname.charAt(0) != "/") pathname = "/" + pathname;
     this.previousRoute = this.currentRoute;
     this.currentRoute = [];
@@ -207,6 +208,22 @@ class RouterController {
     if (!(document.body.lastElementChild instanceof HTMLScriptElement)) document.body?.lastElementChild?.remove();
     document.body.appendChild(view);
   }
+
+  private extractParametersURL(url: string): { url: string; parameters: { [key: string]: string } } {
+    const parameters: { [key: string]: string } = {};
+
+    const queryString = url.includes("?") ? url.split("?")[1] : "";
+    const pares = queryString.split("&");
+    pares.forEach((par) => {
+      const [chave, valor] = par.split("=");
+      parameters[decodeURIComponent(chave)] = decodeURIComponent(valor);
+    });
+
+    return {
+      url: url.split("?")[0],
+      parameters: parameters,
+    };
+  }
 }
 
 export class Router {
@@ -221,9 +238,7 @@ export class Router {
     Router.createAutoId(this.routes, 0);
   }
 
-  public beforeEach(callback: (to: RoutePage) => void) {
-    // console.log("beforeEach: ", callback);
-  }
+  public beforeEach(callback: (to: RoutePage) => void) {}
 
   public static get props(): any {
     return Router._props;
@@ -232,6 +247,13 @@ export class Router {
   static create(data: { routes: RoutePage[]; history?: "hash" | "history"; pageNotFound?: Component }): void {
     if (Router.controller.route) throw new Error("Router already exists");
     Router.controller.route = new Router(data.routes, data.history, data.pageNotFound);
+  }
+
+  private static buildURL(baseUrl: string, parametros: { [key: string]: any }): string {
+    const queryString = Object.keys(parametros)
+      .map((key) => encodeURIComponent(key) + "=" + encodeURIComponent(parametros[key]))
+      .join("&");
+    return baseUrl + "?" + queryString;
   }
 
   private static createAutoId(routes: RoutePage[] = [], id: number) {
@@ -244,7 +266,7 @@ export class Router {
     return id;
   }
   public static async go(pathname: string, props: {} = {}) {
-    Router._props = props;
+    pathname = Router.buildURL(pathname, props);
     this.controller.addHistory(pathname);
   }
 }
