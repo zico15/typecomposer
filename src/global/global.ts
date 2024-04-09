@@ -1,7 +1,8 @@
+import { StyleOptional, RefString, ref, Component } from "../core";
 import { CSSStyleDeclarationRef } from "../core/element/base/CSSStyle";
-import { RefString, ref } from "../core/ref";
 
 declare global {
+  // function test_global();
   interface Array<T> {
     clear(): void;
   }
@@ -14,6 +15,19 @@ declare global {
   interface Element {
     innerHTML: string | ref<string>;
     style: CSSStyleDeclarationRef;
+    onInit(): void;
+    unmount(): void;
+    addClasName(...names: string[]): void;
+    setStyle(styles: StyleOptional): void;
+  }
+
+  interface HTMLElement {
+    innerHTML: string | ref<string>;
+    style: CSSStyleDeclarationRef;
+    onInit(): void;
+    unmount(): void;
+    addClasName(...names: string[]): void;
+    setStyle(styles: StyleOptional): void;
   }
 
   interface HTMLButtonElement {
@@ -32,6 +46,15 @@ declare global {
   //   getRefTarget: any;
   // }
 }
+
+// Object.defineProperty(window, "test_global", {
+//   value: function () {
+//     console.log("test_global");
+//   },
+//   writable: true,
+//   configurable: true,
+//   enumerable: true,
+// });
 
 Object.defineProperty(HTMLButtonElement.prototype, "multiple", {
   get: function () {
@@ -136,7 +159,7 @@ Object.defineProperty(HTMLButtonElement.prototype, "type", {
 // });
 
 const styles = window.getComputedStyle(document.body);
-const stylesName = ["backgroundColor"];
+const stylesName = Object.getOwnPropertyNames(styles);
 // for (const key in styles) {
 //   if (typeof styles[key] !== "string") continue;
 //   stylesName.push(key);
@@ -193,6 +216,45 @@ Object.defineProperty(Element.prototype, "innerHTML", {
     else originalInnerHTML.call(this, value);
   },
 });
+
+Object.defineProperty(Element.prototype, "onInit", {
+  value: function () {},
+  writable: true,
+  configurable: true,
+  enumerable: true,
+});
+
+Object.defineProperty(Element.prototype, "unmount", {
+  value: function () {},
+  writable: true,
+  configurable: true,
+  enumerable: true,
+});
+
+Object.defineProperty(Element.prototype, "addClasName", {
+  value: function (...names: string[]) {
+    this.classList.add(...names);
+  },
+  writable: true,
+  configurable: true,
+  enumerable: true,
+});
+
+Object.defineProperty(Element.prototype, "setStyle", {
+  value: function (styles: StyleOptional) {
+    Component.applyDate(styles, this);
+  },
+  writable: true,
+  configurable: true,
+  enumerable: true,
+});
+
+const construcorOriginal = Element.prototype.constructor;
+
+Element.prototype.constructor = function () {
+  construcorOriginal.call(this);
+  this.onInit();
+};
 
 // Object.defineProperty(Element.prototype, "style", {
 //   value: {

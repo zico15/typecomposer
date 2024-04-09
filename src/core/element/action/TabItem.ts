@@ -1,15 +1,15 @@
-import { Component, H3Element, H4Element, IComponent, IconElement } from "..";
+import { Component, H3Element, H4Element, IconElement } from "..";
 
 export class TabItem extends Component {
   private __closeable: boolean = false;
   private titleElement: H3Element;
   private displayContent: string;
-  private _content: IComponent;
+  private _content: HTMLElement;
   private closeIcon: IconElement | null = null;
 
   constructor(
     public title: string,
-    content: IComponent | HTMLElement,
+    content: HTMLElement,
     icon: IconElement | null,
     closeable: boolean = true,
   ) {
@@ -18,7 +18,7 @@ export class TabItem extends Component {
       icon.style.order = "0";
       this.appendChild(icon);
     }
-    this._content = content as IComponent;
+    this._content = content;
     // @ts-ignore
     this.displayContent = content.style.display; //todo - fix
     content.style.display = "none";
@@ -67,7 +67,7 @@ export class TabItem extends Component {
     this._content.style.display = "none";
   }
 
-  get content(): IComponent {
+  get content(): HTMLElement {
     return this._content;
   }
 }
