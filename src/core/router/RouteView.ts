@@ -1,4 +1,4 @@
-import { Component, StyleOptional, IComponent, Router } from "..";
+import { Component, IComponent, Router, StyleOptional } from "../..";
 import { RoutePage } from "./Router";
 
 interface RoutePageBuild extends RoutePage {

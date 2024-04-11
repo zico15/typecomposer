@@ -91,7 +91,7 @@ class RouterController {
   private async buildPages() {
     let routePageBuildLast: RoutePageBuild | undefined = undefined;
     for (let i: number = 0; i < this.currentRoute.length; i++) {
-      if (this.previousRoute[i] != undefined && this.currentRoute[i].id == this.previousRoute[i].id) {
+      if (i + 1 < this.currentRoute.length && this.previousRoute[i] != undefined && this.currentRoute[i].id == this.previousRoute[i].id) {
         routePageBuildLast = this.previousRoute[i];
         this.currentRoute[i] = this.previousRoute[i];
         if (this.currentRoute[i + 1]) this.currentRoute[i + 1].parent = this.currentRoute[i];

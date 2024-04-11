@@ -1,6 +1,6 @@
-import { Component, DivElement, StyleOptional } from "../..";
+import { Component, DivElement, InputElement, StyleOptional } from "../..";
 
-type SelectionType = "closeAndClean" | "closeAndKeep" | "openAndClean" | "openAndKeep";
+export type SelectionType = "closeAndClean" | "closeAndKeep" | "openAndClean" | "openAndKeep";
 
 export class DropDownItem extends DivElement {}
 
@@ -11,30 +11,32 @@ export class DropDown<T = any> extends Component {
   private onSelectionAction: () => void = this.closeAndClean.bind(this);
   private _selectionType: SelectionType;
   private previousSelected: T[] = [];
-  private _input: DivElement;
+  private _input: InputElement;
   private _inputAndButtonDiv: DivElement;
   private _options: T[] = [];
   private _dropdownContent: DivElement;
   private _idClass: number;
-  public onChange: (item: T) => void = () => {};
+  public onChange: (item: T, index: number) => void = () => {};
 
   constructor(
-    props: StyleOptional & {
-      placeHolder?: string;
+    props?: StyleOptional & {
       noContent?: string;
       options?: T[];
       defaultOption?: string;
       selectionType?: SelectionType;
+      placeholder?: string;
     },
   ) {
     super(props);
     this.inputAndButtonDiv = new DivElement({
       className: "input-and-button-div",
     });
+
     this.dropdownContent = new DivElement({ className: "dropdown-content" });
     this.append(this.inputAndButtonDiv, this.dropdownContent);
-    this.input = new DivElement({ className: "input" });
-    this.input.textContent = props.placeHolder ? props.placeHolder : props.defaultOption;
+    this._input = new InputElement({ className: "input" });
+    this.input.readOnly = true;
+    this.input.value = props.placeholder ? props.placeholder : props.defaultOption || "";
     this.selectionType = props.selectionType || "closeAndClean";
     this.onInit();
     this.options = props.options == undefined || props.options.length === 0 ? [props.noContent as any] : props.options;
@@ -95,12 +97,8 @@ export class DropDown<T = any> extends Component {
     this._selectionType = selectionType;
   }
 
-  get input() {
+  get input(): InputElement {
     return this._input;
-  }
-
-  set input(input: DivElement) {
-    this._input = input;
   }
 
   get options() {
@@ -111,7 +109,7 @@ export class DropDown<T = any> extends Component {
     this._options = options;
     if (!this.dropdownContent) return;
     this.dropdownContent.innerHTML = "";
-    this.options.forEach((option) => {
+    this.options.forEach((option, index) => {
       let node: Node;
       if (option instanceof Node) node = this.dropdownContent.appendChild(option);
       else {
@@ -133,9 +131,9 @@ export class DropDown<T = any> extends Component {
         } else {
           this.previousSelected = this.previousSelected.filter((selectedOption) => selectedOption !== option);
         }
-        this.input.textContent = option?.toString() || "";
+        this.input.value = option?.toString() || "";
         this.input.style.color = "black";
-        this.onChange(option);
+        this.onChange(option, index);
       };
     });
   }

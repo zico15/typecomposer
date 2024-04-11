@@ -1,4 +1,4 @@
-import { type StyleOptional, DivElement, GridElement, IComponent, ILayout } from "..";
+import { type StyleOptional, DivElement, GridElement, IComponent, ILayout } from "../..";
 
 export class BorderPaneElement extends ILayout {
   private _top: IComponent = new DivElement();
@@ -127,5 +127,4 @@ export class BorderPaneElement extends ILayout {
     }
   }
 }
-// @ts-ignore
 customElements.define("border-pane", BorderPaneElement);

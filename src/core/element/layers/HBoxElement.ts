@@ -1,4 +1,4 @@
-import { type StyleOptional, ILayout } from "..";
+import { type StyleOptional, ILayout } from "../..";
 
 export class HBoxElement extends ILayout {
   constructor(optional?: StyleOptional) {
@@ -6,5 +6,4 @@ export class HBoxElement extends ILayout {
     this.addClasName("hbox");
   }
 }
-// @ts-ignore
 customElements.define("hbox-element", HBoxElement);

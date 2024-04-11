@@ -1,4 +1,4 @@
-import { ILayout, StyleOptional } from "..";
+import { ILayout, StyleOptional } from "../..";
 
 export class StackPane extends ILayout {
   constructor(optional?: StyleOptional) {
@@ -7,5 +7,4 @@ export class StackPane extends ILayout {
   }
 }
 
-// @ts-ignore
 customElements.define("stack-pane", StackPane);

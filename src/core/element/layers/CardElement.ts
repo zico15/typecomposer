@@ -1,5 +1,4 @@
-import { type StyleOptional, Component, DivElement } from "..";
-import { CSSStyleDeclarationRef } from "../base/CSSStyle";
+import { CSSStyleDeclarationRef, StyleOptional, Component, DivElement } from "../..";
 
 export class CardElement extends Component {
   private __card_element_pane__: DivElement;

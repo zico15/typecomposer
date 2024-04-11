@@ -1,4 +1,4 @@
-import { StyleOptional } from "..";
+import { StyleOptional } from "../..";
 
 //@ts-ignore
 export interface DataInputElement extends StyleOptional {

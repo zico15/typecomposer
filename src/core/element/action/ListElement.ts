@@ -1,4 +1,4 @@
-import { type StyleOptional, Component, UListElement, ListItemElement } from "..";
+import { type StyleOptional, Component, UListElement, ListItemElement } from "../..";
 
 export class ListElement<T = any> extends Component {
   private itemSelected: {
@@ -77,5 +77,4 @@ export class ListElement<T = any> extends Component {
   public onSelectItem: (item: T) => void = () => {};
   public onUnselectItem: (item: T) => void = () => {};
 }
-// @ts-ignore
 customElements.define("list-element", ListElement);

@@ -1,4 +1,4 @@
-import { Component, StyleOptional } from "../../element";
+import { Component, StyleOptional } from "../..";
 
 export interface DataScrollElement extends StyleOptional {
   horizontal?: boolean | "auto" | "scroll" | "hidden" | "visible" | "inherit" | "initial" | "unset";
@@ -24,5 +24,4 @@ export class ScrollElement extends Component {
     else this.style.overflowY = "hidden";
   }
 }
-// @ts-ignore
 customElements.define("scroll-element", ScrollElement);

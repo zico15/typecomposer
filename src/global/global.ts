@@ -1,11 +1,22 @@
-import { StyleOptional, RefString, ref, Component } from "../core";
-import { CSSStyleDeclarationRef } from "../core/element/base/CSSStyle";
+import { RefString, ref, Component, StyleOptional, CSSStyleDeclarationRef as CSSStyleDeclarationRefType, Router } from "../";
 
 declare global {
+  var CSSStyleDeclarationRef: {
+    prototype: CSSStyleDeclaration;
+    new (): CSSStyleDeclarationRefType;
+  };
   // function test_global();
   interface Array<T> {
     clear(): void;
   }
+
+  var Router: Router;
+
+  function scoped(target: any): any;
+
+  // interface CSSStyleDeclaration {
+  //   color: string | ref<string>;
+  // }
 
   interface Window {
     getTheme(): string;
@@ -14,7 +25,7 @@ declare global {
 
   interface Element {
     innerHTML: string | ref<string>;
-    style: CSSStyleDeclarationRef;
+    style: CSSStyleDeclarationRefType;
     onInit(): void;
     unmount(): void;
     addClasName(...names: string[]): void;
@@ -23,7 +34,7 @@ declare global {
 
   interface HTMLElement {
     innerHTML: string | ref<string>;
-    style: CSSStyleDeclarationRef;
+    style: CSSStyleDeclarationRefType;
     onInit(): void;
     unmount(): void;
     addClasName(...names: string[]): void;
@@ -47,14 +58,19 @@ declare global {
   // }
 }
 
-// Object.defineProperty(window, "test_global", {
-//   value: function () {
-//     console.log("test_global");
-//   },
-//   writable: true,
-//   configurable: true,
-//   enumerable: true,
-// });
+Object.defineProperty(window, "Router", {
+  value: Router,
+  writable: true,
+  configurable: true,
+  enumerable: true,
+});
+
+Object.defineProperty(window, "scoped", {
+  value: function (target: any): any {},
+  writable: true,
+  configurable: true,
+  enumerable: true,
+});
 
 Object.defineProperty(HTMLButtonElement.prototype, "multiple", {
   get: function () {
@@ -158,44 +174,6 @@ Object.defineProperty(HTMLButtonElement.prototype, "type", {
 //   },
 // });
 
-const styles = window.getComputedStyle(document.body);
-const stylesName = Object.getOwnPropertyNames(styles);
-// for (const key in styles) {
-//   if (typeof styles[key] !== "string") continue;
-//   stylesName.push(key);
-// }
-
-stylesName.forEach((key) => {
-  try {
-    const original = Object.getOwnPropertyDescriptor(CSSStyleDeclaration.prototype, key).set;
-    Object.defineProperty(CSSStyleDeclaration.prototype, key, {
-      set: function (_value: string | ref<string>) {
-        if (typeof _value !== "string") console.log("subscriber: ", _value.subscriber, " _value: ", _value, " typeof: ", typeof _value);
-
-        if (_value instanceof CSSStyleDeclaration) return;
-        if (_value instanceof RefString) {
-          _value.refTarget.subscriber(this, key, _value.refPropertyKey);
-        } else if (typeof _value !== "string") {
-          _value.subscriber(this, key);
-        } else original.call(this, _value);
-      },
-    });
-  } catch (error) {}
-});
-// for (const key in CSSStyleDeclaration.prototype) {
-//   console.log("key: ", key);
-//   Object.defineProperty(CSSStyleDeclaration.prototype, key, {
-//     set: function (value: string | ref<string>) {
-//       console.log("A chamada para color foi interceptada com o valor:", value);
-//       if (value instanceof RefString) {
-//         value.refTarget.subscriber(this, key, value.refPropertyKey);
-//       } else if (typeof value !== "string") value.subscriber(this, key);
-//       else this.color = value;
-//     },
-//   });
-// }
-//setProperty
-
 Object.defineProperty(CSSStyleDeclaration.prototype, "setProperty", {
   value: function (property: string, value: string | ref<string>, priority?: string) {
     if (value instanceof RefString) {
@@ -241,7 +219,7 @@ Object.defineProperty(Element.prototype, "addClasName", {
 });
 
 Object.defineProperty(Element.prototype, "setStyle", {
-  value: function (styles: StyleOptional) {
+  value: function (styles: CSSStyleDeclarationRefType) {
     Component.applyDate(styles, this);
   },
   writable: true,

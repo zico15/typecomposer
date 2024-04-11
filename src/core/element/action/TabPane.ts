@@ -1,4 +1,4 @@
-import { BorderPaneElement, DivElement, IconElement, TabItem, type StyleOptional, IComponent } from "..";
+import { BorderPaneElement, DivElement, IconElement, TabItem, type StyleOptional, IComponent } from "../..";
 
 export class TabPane extends BorderPaneElement {
   private tabs: DivElement = new DivElement();
@@ -93,5 +93,4 @@ export class TabPane extends BorderPaneElement {
 
   public onSelectTab: (title: string, content: IComponent, index?: number) => void = () => {};
 }
-// @ts-ignore
 customElements.define("tab-pane", TabPane);

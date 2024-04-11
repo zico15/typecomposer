@@ -1,3 +1,4 @@
+export * from "../styles";
 export * from "./decorators";
 export * from "./ref";
 export * from "./factory";

@@ -1,10 +1,10 @@
-import { ILayout, type StyleOptional } from "..";
+import { ILayout, type StyleOptional } from "../..";
 
 export type FlowType = "flow-1" | "flow-2" | "flow-3" | "flow-4" | "flow-5" | "flow-6" | "flow-7" | "flow-8" | "flow-9" | "flow-10" | "flow-11" | "flow-12";
 
 export class FlowPane extends ILayout {
   constructor(optional?: StyleOptional) {
-    super(optional);
+    super({ overflow: "hidden", ...optional });
     this.addClasName("flow-pane");
   }
 
@@ -37,5 +37,4 @@ export class FlowPane extends ILayout {
     this.addClassNameInChilds(element, flowType);
   }
 }
-// @ts-ignore
 customElements.define("flow-pane", FlowPane);

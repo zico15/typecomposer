@@ -1,7 +1,6 @@
-import { CardElement, Component, StyleOptional } from "../../element";
+import { CardElement, Component, StyleOptional } from "../..";
 
 export class DialogPane extends Component {
-  // @ts-ignore
   private _content: HTMLElement = new CardElement({
     className: "content",
     width: "500px",
@@ -37,5 +36,4 @@ export class DialogPane extends Component {
     this.style.display = "none";
   }
 }
-// @ts-ignore
 customElements.define("dialog-pane", DialogPane);

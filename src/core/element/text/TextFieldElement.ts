@@ -1,6 +1,5 @@
-import { Variant } from "../base/CSSStyle";
-import { Component, DivElement, IconElement, InputElement, InputType, LabelElement, StyleOptional } from "..";
-import { ref } from "src/core/ref";
+import { Component, DivElement, IconElement, InputElement, InputType, LabelElement, StyleOptional, Variant } from "../..";
+import { RefString, ref } from "../../";
 
 export class TextFieldElement extends Component {
   private _input: InputElement;
@@ -24,9 +23,8 @@ export class TextFieldElement extends Component {
       height: "auto",
       width: "100%",
       placeholder: " ",
-      value: optional?.value,
+      value: optional?.value || optional?.text || "",
     });
-    delete optional?.value;
     this.appendChild(this.input);
     if (optional?.placeholderAnimation == true || optional?.placeholderAnimation == undefined) {
       this._label = new LabelElement({ text: optional?.placeholder || " " });
@@ -38,6 +36,9 @@ export class TextFieldElement extends Component {
     // @ts-ignore
     Component.setVariant(this.input, optional?.variant);
     if (optional?.icon != undefined) this.icon = optional.icon;
+    delete optional?.value;
+    delete optional?.text;
+    Component.applyDate(optional, this);
   }
 
   get input(): InputElement {
@@ -73,8 +74,11 @@ export class TextFieldElement extends Component {
     return this.input.value;
   }
 
-  set value(value: string) {
-    this.input.value = value;
+  set value(value: string | ref<string>) {
+    if (value == undefined) value = "";
+    if (typeof value == "string") this.input.value = value;
+    else if (value instanceof RefString) value.subscriber(this, "value", value.refPropertyKey);
+    else value.subscriber(this, "value");
   }
 }
 // @ts-ignore

@@ -1,18 +1,12 @@
-import { Router, ref } from "../..";
-import { CSSStyleDeclarationOptional, CSSStyleDeclarationRef, CSSStyleref, Variant } from "./CSSStyle";
+import { Router, ref, CSSStyleDeclarationRef, StyleOptional, Variant } from "../..";
 import { EventComponent, EventHandler } from "./Event";
-
-export interface StyleOptional extends CSSStyleDeclarationOptional {
-  id?: string;
-  className?: string;
-}
 
 export interface IElement {
   onInit(): void;
   append(...childs: any[]): void;
   addClasName(...names: string[]): void;
 
-  get style(): CSSStyleDeclarationRef;
+  get style(): StyleOptional;
 }
 
 export interface IComponent extends HTMLElement {
@@ -64,9 +58,9 @@ export class Component extends HTMLElement implements IComponent {
 
   public static applyDate<T extends HTMLElement>(data: StyleOptional | undefined, element: T): void {
     if (data != undefined) {
-      if (data.id) {
-        (element as any).id = data.id;
-      }
+      // if (data.id) {
+      //   (element as any).id = data.id;
+      // }
       if (data.className != undefined) {
         (element as any).addClasName(data.className);
       }
@@ -74,9 +68,10 @@ export class Component extends HTMLElement implements IComponent {
     }
   }
 
-  static applyStyleOrAttribute<T extends HTMLElement>(data: CSSStyleDeclarationOptional, element: T): void {
+  static applyStyleOrAttribute<T extends HTMLElement>(data: StyleOptional, element: T): void {
     if (data) {
       Object.keys(data).forEach((key: string) => {
+        if (data[key] == undefined) return;
         if (key == "for" && (data as any)[key] != undefined) (element as any).setAttribute("for", (data as any)[key]);
         else if (key == "className" && (data as any)[key] != undefined) (element as any).addClasName((data as any)[key]);
         else if (key == "text" && (data as any)[key] != undefined) (element as any).innerHTML = (data as any)[key];
@@ -759,6 +754,7 @@ export class DetailsElement extends HTMLDetailsElement implements IComponent {
     if (optional?.open) this.open = optional.open as any;
     if (optional?.summary) {
       if (typeof optional.summary == "string") {
+        // @ts-ignore
         this.setSummary(new SummaryElement({ text: optional.summary }));
       } else {
         this.setSummary(optional.summary);
@@ -840,6 +836,7 @@ export class FieldSetElement extends HTMLFieldSetElement implements IComponent {
     if (optional?.name) this.name = optional.name as any;
     if (optional?.legend) {
       if (typeof optional.legend == "string") {
+        // @ts-ignore
         this.setLegend(new LegendElement({ text: optional.legend }));
       } else {
         this.setLegend(optional.legend);

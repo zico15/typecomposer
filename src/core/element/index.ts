@@ -16,12 +16,12 @@ import { TabItem } from "./action/TabItem";
 import { PaneElement } from "./layers/PaneElement";
 import { SlidePane } from "./action/SlidePane";
 import { DropDown } from "./action/DropDown";
-import { Variant } from "./base/CSSStyle";
 import { ChartElement } from "./action/ChartPane";
 import { CheckBox, CheckBoxGroup } from "./action/CheckBox";
 import { ToggleButton } from "./action/ToggleButton";
-import { ILayout, StyleOptional } from "./base/Elements";
+import { ILayout } from "./base/Elements";
 import { StackPane } from "./layers/StackPane";
+import { SelectField } from "./action/SelectField";
 
 export {
   App,
@@ -55,6 +55,5 @@ export {
   StyleLink,
   ILayout,
   StackPane,
+  SelectField,
 };
-
-export type { Variant, StyleOptional };

@@ -8,12 +8,27 @@ import { Chart, ChartConfiguration } from "chart.js/auto";
 export class ChartElement extends Component {
   private _canvas: CanvasElement = new CanvasElement();
   private _chart: Chart;
+  private ctx: CanvasRenderingContext2D;
 
-  constructor(optional?: StyleOptional) {
+  constructor(
+    optional?: StyleOptional & {
+      type?: ChartConfiguration["type"];
+      data?: ChartConfiguration["data"];
+      options?: ChartConfiguration["options"];
+    },
+  ) {
     super(optional);
-    const ctx = this._canvas.getContext("2d") as CanvasRenderingContext2D;
-    this._chart = new Chart(ctx, ChartElement.ChartOptionsEmpty());
+    this.ctx = this._canvas.getContext("2d") as CanvasRenderingContext2D;
+    this._chart = new Chart(
+      this.ctx,
+      ChartElement.ChartOptionsEmpty({
+        type: optional?.type,
+        data: optional?.data,
+        options: optional?.options,
+      }),
+    );
     this.addEventListener("resize", this.resize.bind(this));
+    this.addEventListener("change", this.resize.bind(this));
     this.appendChild(this._canvas);
   }
 
@@ -21,6 +36,8 @@ export class ChartElement extends Component {
     this.style.display = "none";
     this.chart?.resize();
     this.chart?.update();
+    this._canvas.width = this.clientWidth;
+    this._canvas.height = this.clientHeight;
     this.style.display = "block";
   }
 
@@ -57,8 +74,26 @@ export class ChartElement extends Component {
     if (config != undefined) {
       this._chart.data = config.data || ChartElement.ChartOptionsEmpty().data;
       (this._chart.options as any) = config.options || ChartElement.ChartOptionsEmpty().options;
+      // ChartElement.ChartOptionsEmpty().options.da
+      // if (config.type) (this._chart.options as any).type = config.type;
+    }
+    if (config.type) {
+      // @ts-ignore
+      this._chart.config.type = config.type;
     }
     this._chart.update();
+    // mudar o type do chart
+  }
+
+  public set type(type: ChartConfiguration["type"]) {
+    // @ts-ignore
+    this._chart.config.type = type;
+    this._chart.update();
+  }
+
+  public get type(): ChartConfiguration["type"] {
+    // @ts-ignore
+    return this._chart.config.type;
   }
 
   public get configuration(): ChartConfiguration {
@@ -86,8 +121,8 @@ export class ChartElement extends Component {
     window.removeEventListener("resize", this.resize.bind(this));
   }
 
-  public static ChartOptionsEmpty(): ChartConfiguration {
-    return {
+  public static ChartOptionsEmpty(data?: ChartConfiguration): ChartConfiguration {
+    const result: any = {
       type: "line",
       data: {
         labels: [],
@@ -111,6 +146,24 @@ export class ChartElement extends Component {
         },
       },
     };
+    if (data?.data != undefined) result.data = data.data;
+    if (data?.options != undefined) result.options = data.options;
+    if (data?.type != undefined) result.type = data.type;
+    return result;
+  }
+
+  public static generateUniqueColors(qtd: number): string[] {
+    const cores: string[] = [];
+    const hexadecimais = "0123456789ABCDEF";
+
+    for (let i = 0; i < qtd; i++) {
+      let cor = "#";
+      for (let j = 0; j < 6; j++) {
+        cor += hexadecimais[Math.floor(Math.random() * 16)];
+      }
+      cores.push(cor);
+    }
+    return cores;
   }
 }
 // @ts-ignore

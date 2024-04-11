@@ -1,4 +1,4 @@
-import { Component, ILayout, type StyleOptional } from "..";
+import { ILayout, type StyleOptional } from "../..";
 
 export class VBoxElement extends ILayout {
   constructor(optional?: StyleOptional) {
@@ -6,5 +6,4 @@ export class VBoxElement extends ILayout {
     this.addClasName("vbox");
   }
 }
-// @ts-ignore
 customElements.define("vbox-element", VBoxElement);
