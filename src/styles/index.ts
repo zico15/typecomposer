@@ -619,6 +619,7 @@ const _styleAtributtes = [
 ];
 
 export interface StyleOptional {
+  id?: string | ref<string>;
   /** [MDN reference](https://developer.mozilla.org/docs/Web/CSS/accent-color) */
   className?: string | ref<string>;
   text?: string | ref<string>;

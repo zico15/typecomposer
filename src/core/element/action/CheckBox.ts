@@ -82,6 +82,8 @@ export class CheckBox extends Component {
 customElements.define("check-box", CheckBox);
 
 export class CheckBoxGroup extends Component {
+  private _selected: CheckBox | null = null;
+
   constructor(...checkBoxes: CheckBox[]) {
     super({ display: "flex" });
     this.append(...checkBoxes);
@@ -101,21 +103,28 @@ export class CheckBoxGroup extends Component {
 
   public onChange: (checkbox: CheckBox) => void = () => {};
 
+  private change(checkbox: CheckBox) {
+    if (this._selected == checkbox) this._selected = null;
+    if (checkbox.checked) {
+      this._selected = checkbox;
+      this.onChange(checkbox);
+      this.querySelectorAll("check-box").forEach((cb) => {
+        if (cb !== checkbox) {
+          (cb as CheckBox).checked = false;
+        }
+      });
+    }
+  }
+
   private check<T extends Node>(node: T) {
     if (node instanceof CheckBox) {
       const checkbox = node as CheckBox;
-      checkbox.addEventListener("change", () => {
-        if (checkbox.checked) {
-          this.onChange(checkbox);
-          this.querySelectorAll("check-box").forEach((cb) => {
-            if (cb !== checkbox) {
-              (cb as CheckBox).checked = false;
-            }
-          });
-        }
-        console.log("checkbox: ", checkbox.id, "checked: ", checkbox.checked);
-      });
+      checkbox.addEventListener("change", this.change.bind(this, checkbox));
     }
+  }
+
+  get selected(): CheckBox | null {
+    return this._selected;
   }
 }
 

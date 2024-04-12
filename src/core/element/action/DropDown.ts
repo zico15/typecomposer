@@ -17,6 +17,7 @@ export class DropDown<T = any> extends Component {
   private _dropdownContent: DivElement;
   private _idClass: number;
   public onChange: (item: T, index: number) => void = () => {};
+  private _selected: T | undefined = undefined;
 
   constructor(
     props?: StyleOptional & {
@@ -50,7 +51,6 @@ export class DropDown<T = any> extends Component {
       if (this.options.length === 0) return;
       this.inputAndButtonDiv.classList.toggle("pressed");
       arrow.classList.toggle("up");
-      console.log(this.inputAndButtonDiv.children[1].classList);
     };
     this.handleClickOutside = this.handleClickOutside.bind(this);
     document.addEventListener("mousedown", this.handleClickOutside);
@@ -62,6 +62,10 @@ export class DropDown<T = any> extends Component {
       this.inputAndButtonDiv.classList.toggle("pressed");
       this.inputAndButtonDiv.children[1].classList.toggle("up");
     }
+  }
+
+  get selected(): T | undefined {
+    return this._selected;
   }
 
   private closeAndClean() {
@@ -132,6 +136,7 @@ export class DropDown<T = any> extends Component {
           this.previousSelected = this.previousSelected.filter((selectedOption) => selectedOption !== option);
         }
         this.input.value = option?.toString() || "";
+        this._selected = option;
         this.input.style.color = "black";
         this.onChange(option, index);
       };

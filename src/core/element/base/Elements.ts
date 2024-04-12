@@ -157,29 +157,29 @@ export class AnchorElement extends HTMLAnchorElement implements IComponent {
       media?: string;
       ping?: string;
       referrerpolicy?:
-        | "no-referrer"
-        | "no-referrer-when-downgrade"
-        | "origin"
-        | "origin-when-cross-origin"
-        | "same-origin"
-        | "strict-origin"
-        | "strict-origin-when-cross-origin"
-        | "unsafe-url";
+      | "no-referrer"
+      | "no-referrer-when-downgrade"
+      | "origin"
+      | "origin-when-cross-origin"
+      | "same-origin"
+      | "strict-origin"
+      | "strict-origin-when-cross-origin"
+      | "unsafe-url";
       rel?:
-        | "alternate"
-        | "author"
-        | "bookmark"
-        | "external"
-        | "help"
-        | "license"
-        | "next"
-        | "nofollow"
-        | "noopener"
-        | "noreferrer"
-        | "opener"
-        | "prev"
-        | "search"
-        | "tag";
+      | "alternate"
+      | "author"
+      | "bookmark"
+      | "external"
+      | "help"
+      | "license"
+      | "next"
+      | "nofollow"
+      | "noopener"
+      | "noreferrer"
+      | "opener"
+      | "prev"
+      | "search"
+      | "tag";
       target?: "_blank" | "_self" | "_parent" | "_top";
       type?: string;
       rlink?: string;
@@ -240,29 +240,29 @@ export class AreaElement extends HTMLAreaElement implements IComponent {
       media?: string;
       ping?: string;
       referrerpolicy?:
-        | "no-referrer"
-        | "no-referrer-when-downgrade"
-        | "origin"
-        | "origin-when-cross-origin"
-        | "same-origin"
-        | "strict-origin"
-        | "strict-origin-when-cross-origin"
-        | "unsafe-url";
+      | "no-referrer"
+      | "no-referrer-when-downgrade"
+      | "origin"
+      | "origin-when-cross-origin"
+      | "same-origin"
+      | "strict-origin"
+      | "strict-origin-when-cross-origin"
+      | "unsafe-url";
       rel?:
-        | "alternate"
-        | "author"
-        | "bookmark"
-        | "external"
-        | "help"
-        | "license"
-        | "next"
-        | "nofollow"
-        | "noopener"
-        | "noreferrer"
-        | "opener"
-        | "prev"
-        | "search"
-        | "tag";
+      | "alternate"
+      | "author"
+      | "bookmark"
+      | "external"
+      | "help"
+      | "license"
+      | "next"
+      | "nofollow"
+      | "noopener"
+      | "noreferrer"
+      | "opener"
+      | "prev"
+      | "search"
+      | "tag";
       shape?: "circle" | "default" | "poly" | "rect";
       target?: "_blank" | "_self" | "_parent" | "_top";
       type?: string;
@@ -314,7 +314,7 @@ export class ListItemElement extends HTMLLIElement implements IComponent {
     super();
     Component.applyDate(optional, this);
   }
-  onSelect(): void {}
+  onSelect(): void { }
 }
 
 customElements.define("base-li-element", ListItemElement, { extends: "li" });
@@ -371,12 +371,49 @@ export class BreakElement extends HTMLBRElement implements IComponent {
 
 customElements.define("base-br-element", BreakElement, { extends: "br" });
 
-export class TableElement extends HTMLTableElement implements IComponent {
+export class TableHeadElement extends HTMLTableSectionElement implements IComponent {
   constructor(optional?: StyleOptional) {
     super();
     Component.applyDate(optional, this);
   }
-  addRow(...rows: TableRowElement[]) {
+}
+
+customElements.define("base-thead-element", TableHeadElement, { extends: "thead" });
+
+export class TableBodyElement extends HTMLTableSectionElement implements IComponent {
+  constructor(optional?: StyleOptional) {
+    super();
+    Component.applyDate(optional, this);
+  }
+}
+
+customElements.define("base-tbody-element", TableBodyElement, { extends: "tbody" });
+
+export class TableFootElement extends HTMLTableSectionElement implements IComponent {
+  constructor(optional?: StyleOptional) {
+    super();
+    Component.applyDate(optional, this);
+  }
+}
+
+customElements.define("base-tfoot-element", TableFootElement, { extends: "tfoot" });
+
+export class TableElement extends HTMLTableElement implements IComponent {
+
+  private _head: HTMLTableSectionElement | undefined = undefined;
+
+  constructor(optional?: StyleOptional) {
+    super();
+    Component.applyDate(optional, this);
+  }
+
+  public addHeadRow(...rows: TableRowElement[]) {
+    rows.forEach((row) => {
+      this.appendChild(row);
+    });
+  }
+
+  public addRow(...rows: TableRowElement[]) {
     rows.forEach((row) => {
       this.appendChild(row);
     });
@@ -390,7 +427,7 @@ export class TableRowElement extends HTMLTableRowElement implements IComponent {
     super();
     Component.applyDate(optional, this);
   }
-  addCell(...cells: TableCellElement[]) {
+  public addCell(...cells: TableCellElement[]) {
     cells.forEach((cell) => {
       this.appendChild(cell);
     });
@@ -932,7 +969,7 @@ export class H4Element extends H3Element implements IComponent {
     if (optional?.text) this.innerText = optional.text.toString();
   }
 
-  public onInit(): void {}
+  public onInit(): void { }
 
   addClasName(...names: string[]): void {
     this.classList.add(...names);
@@ -948,7 +985,7 @@ export class H5Element extends H3Element implements IComponent {
     if (optional?.text) this.innerText = optional.text.toString();
   }
 
-  public onInit(): void {}
+  public onInit(): void { }
 
   addClasName(...names: string[]): void {
     this.classList.add(...names);
@@ -964,7 +1001,7 @@ export class H6Element extends H3Element implements IComponent {
     if (optional?.text) this.innerText = optional.text.toString();
   }
 
-  public onInit(): void {}
+  public onInit(): void { }
 
   addClasName(...names: string[]): void {
     this.classList.add(...names);
@@ -1044,14 +1081,14 @@ export class IFrameElement extends HTMLIFrameElement implements IComponent {
       loading?: "eager" | "lazy";
       name?: string;
       referrerpolicy?:
-        | "no-referrer"
-        | "no-referrer-when-downgrade"
-        | "origin"
-        | "origin-when-cross-origin"
-        | "same-origin"
-        | "strict-origin"
-        | "strict-origin-when-cross-origin"
-        | "unsafe-url";
+      | "no-referrer"
+      | "no-referrer-when-downgrade"
+      | "origin"
+      | "origin-when-cross-origin"
+      | "same-origin"
+      | "strict-origin"
+      | "strict-origin-when-cross-origin"
+      | "unsafe-url";
       src?: string;
       srcdoc?: string;
       width?: number;
