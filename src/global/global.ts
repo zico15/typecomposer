@@ -211,7 +211,10 @@ Object.defineProperty(Element.prototype, "unmount", {
 
 Object.defineProperty(Element.prototype, "addClasName", {
   value: function (...names: string[]) {
-    this.classList.add(...names);
+    for (const name of names) {
+      const strs = name.split(" ");
+      if (strs.length > 0) this.classList.add(...strs);
+    }
   },
   writable: true,
   configurable: true,

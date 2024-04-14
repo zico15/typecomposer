@@ -157,29 +157,29 @@ export class AnchorElement extends HTMLAnchorElement implements IComponent {
       media?: string;
       ping?: string;
       referrerpolicy?:
-      | "no-referrer"
-      | "no-referrer-when-downgrade"
-      | "origin"
-      | "origin-when-cross-origin"
-      | "same-origin"
-      | "strict-origin"
-      | "strict-origin-when-cross-origin"
-      | "unsafe-url";
+        | "no-referrer"
+        | "no-referrer-when-downgrade"
+        | "origin"
+        | "origin-when-cross-origin"
+        | "same-origin"
+        | "strict-origin"
+        | "strict-origin-when-cross-origin"
+        | "unsafe-url";
       rel?:
-      | "alternate"
-      | "author"
-      | "bookmark"
-      | "external"
-      | "help"
-      | "license"
-      | "next"
-      | "nofollow"
-      | "noopener"
-      | "noreferrer"
-      | "opener"
-      | "prev"
-      | "search"
-      | "tag";
+        | "alternate"
+        | "author"
+        | "bookmark"
+        | "external"
+        | "help"
+        | "license"
+        | "next"
+        | "nofollow"
+        | "noopener"
+        | "noreferrer"
+        | "opener"
+        | "prev"
+        | "search"
+        | "tag";
       target?: "_blank" | "_self" | "_parent" | "_top";
       type?: string;
       rlink?: string;
@@ -240,29 +240,29 @@ export class AreaElement extends HTMLAreaElement implements IComponent {
       media?: string;
       ping?: string;
       referrerpolicy?:
-      | "no-referrer"
-      | "no-referrer-when-downgrade"
-      | "origin"
-      | "origin-when-cross-origin"
-      | "same-origin"
-      | "strict-origin"
-      | "strict-origin-when-cross-origin"
-      | "unsafe-url";
+        | "no-referrer"
+        | "no-referrer-when-downgrade"
+        | "origin"
+        | "origin-when-cross-origin"
+        | "same-origin"
+        | "strict-origin"
+        | "strict-origin-when-cross-origin"
+        | "unsafe-url";
       rel?:
-      | "alternate"
-      | "author"
-      | "bookmark"
-      | "external"
-      | "help"
-      | "license"
-      | "next"
-      | "nofollow"
-      | "noopener"
-      | "noreferrer"
-      | "opener"
-      | "prev"
-      | "search"
-      | "tag";
+        | "alternate"
+        | "author"
+        | "bookmark"
+        | "external"
+        | "help"
+        | "license"
+        | "next"
+        | "nofollow"
+        | "noopener"
+        | "noreferrer"
+        | "opener"
+        | "prev"
+        | "search"
+        | "tag";
       shape?: "circle" | "default" | "poly" | "rect";
       target?: "_blank" | "_self" | "_parent" | "_top";
       type?: string;
@@ -314,7 +314,7 @@ export class ListItemElement extends HTMLLIElement implements IComponent {
     super();
     Component.applyDate(optional, this);
   }
-  onSelect(): void { }
+  onSelect(): void {}
 }
 
 customElements.define("base-li-element", ListItemElement, { extends: "li" });
@@ -389,6 +389,14 @@ export class TableBodyElement extends HTMLTableSectionElement implements ICompon
 
 customElements.define("base-tbody-element", TableBodyElement, { extends: "tbody" });
 
+export class TableHeadCellElement extends HTMLTableCellElement {
+  constructor(optional?: StyleOptional) {
+    super();
+    Component.applyDate(optional, this);
+  }
+}
+customElements.define("base-th-cell-element", TableHeadCellElement, { extends: "th" });
+
 export class TableFootElement extends HTMLTableSectionElement implements IComponent {
   constructor(optional?: StyleOptional) {
     super();
@@ -399,38 +407,122 @@ export class TableFootElement extends HTMLTableSectionElement implements ICompon
 customElements.define("base-tfoot-element", TableFootElement, { extends: "tfoot" });
 
 export class TableElement extends HTMLTableElement implements IComponent {
-
-  private _head: HTMLTableSectionElement | undefined = undefined;
+  private _head: TableHeadElement | undefined = undefined;
+  private _body: TableBodyElement | undefined = undefined;
+  private _foot: TableFootElement | undefined = undefined;
 
   constructor(optional?: StyleOptional) {
     super();
     Component.applyDate(optional, this);
   }
 
-  public addHeadRow(...rows: TableRowElement[]) {
+  addHeadRows(...rows: TableRowElement[]) {
+    if (this._head == undefined) this._head = this.appendChild(new TableHeadElement());
     rows.forEach((row) => {
-      this.appendChild(row);
+      this._head.appendChild(row);
     });
   }
-
-  public addRow(...rows: TableRowElement[]) {
+  addHeadRow(row: TableRowElement) {
+    this.addHeadRows(row);
+    return row;
+  }
+  removeHeadRow(row: number | TableRowElement) {
+    if (this._head == undefined) return;
+    if (typeof row == "number") this._head.removeChild(this._head.children[row]);
+    else this._head.removeChild(row);
+  }
+  removeHeadRows() {
+    if (this._head == undefined) return;
+    this._head.innerHTML = "";
+  }
+  addFootRows(...rows: TableRowElement[]) {
+    if (this._foot == undefined) this._foot = this.appendChild(new TableFootElement());
     rows.forEach((row) => {
-      this.appendChild(row);
+      this._foot.appendChild(row);
     });
+  }
+  addFootRow(row: TableRowElement) {
+    this.addFootRows(row);
+    return row;
+  }
+  removeFootRow(row: number | TableRowElement) {
+    if (this._foot == undefined) return;
+    if (typeof row == "number") this._foot.removeChild(this._foot.children[row]);
+    else this._foot.removeChild(row);
+  }
+  removeFootRows() {
+    if (this._foot == undefined) return;
+    this._foot.innerHTML = "";
+  }
+  addRows(...rows: TableRowElement[]) {
+    if (this._body == undefined) this._body = this.appendChild(new TableBodyElement());
+    rows.forEach((row) => {
+      this._body.appendChild(row);
+    });
+  }
+  addRow(row: TableRowElement) {
+    this.addRows(row);
+    return row;
+  }
+  removeRow(row: number | TableRowElement) {
+    if (this._body == undefined) return;
+    if (typeof row == "number") this._body.removeChild(this._body.children[row]);
+    else this._body.removeChild(row);
+  }
+  removeRows() {
+    if (this._body == undefined) return;
+    this._body.innerHTML = "";
   }
 }
 
 customElements.define("base-table-element", TableElement, { extends: "table" });
 
-export class TableRowElement extends HTMLTableRowElement implements IComponent {
-  constructor(optional?: StyleOptional) {
+export class TableHeadRowElement extends HTMLTableRowElement {
+  constructor(
+    optional?: StyleOptional & {
+      cells?: TableCellElement[];
+    },
+  ) {
     super();
+    if (optional?.cells) {
+      this.addCells(...optional.cells);
+    }
+    delete optional?.cells;
     Component.applyDate(optional, this);
   }
-  public addCell(...cells: TableCellElement[]) {
+  addCells(...cells: TableCellElement[]) {
     cells.forEach((cell) => {
       this.appendChild(cell);
     });
+  }
+  addCell(cell: TableCellElement) {
+    this.appendChild(cell);
+    return cell;
+  }
+}
+customElements.define("base-th-row-element", TableHeadRowElement, { extends: "tr" });
+
+export class TableRowElement extends HTMLTableRowElement implements IComponent {
+  constructor(
+    optional?: StyleOptional & {
+      cells?: TableCellElement[];
+    },
+  ) {
+    super();
+    if (optional?.cells) {
+      this.addCells(...optional.cells);
+    }
+    delete optional?.cells;
+    Component.applyDate(optional, this);
+  }
+  addCells(...cells) {
+    cells.forEach((cell) => {
+      this.appendChild(cell);
+    });
+  }
+  addCell(cell) {
+    this.appendChild(cell);
+    return cell;
   }
 }
 
@@ -969,7 +1061,7 @@ export class H4Element extends H3Element implements IComponent {
     if (optional?.text) this.innerText = optional.text.toString();
   }
 
-  public onInit(): void { }
+  public onInit(): void {}
 
   addClasName(...names: string[]): void {
     this.classList.add(...names);
@@ -985,7 +1077,7 @@ export class H5Element extends H3Element implements IComponent {
     if (optional?.text) this.innerText = optional.text.toString();
   }
 
-  public onInit(): void { }
+  public onInit(): void {}
 
   addClasName(...names: string[]): void {
     this.classList.add(...names);
@@ -1001,7 +1093,7 @@ export class H6Element extends H3Element implements IComponent {
     if (optional?.text) this.innerText = optional.text.toString();
   }
 
-  public onInit(): void { }
+  public onInit(): void {}
 
   addClasName(...names: string[]): void {
     this.classList.add(...names);
@@ -1081,14 +1173,14 @@ export class IFrameElement extends HTMLIFrameElement implements IComponent {
       loading?: "eager" | "lazy";
       name?: string;
       referrerpolicy?:
-      | "no-referrer"
-      | "no-referrer-when-downgrade"
-      | "origin"
-      | "origin-when-cross-origin"
-      | "same-origin"
-      | "strict-origin"
-      | "strict-origin-when-cross-origin"
-      | "unsafe-url";
+        | "no-referrer"
+        | "no-referrer-when-downgrade"
+        | "origin"
+        | "origin-when-cross-origin"
+        | "same-origin"
+        | "strict-origin"
+        | "strict-origin-when-cross-origin"
+        | "unsafe-url";
       src?: string;
       srcdoc?: string;
       width?: number;

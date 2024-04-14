@@ -10,6 +10,8 @@
 
 @import url("layers/flow-pane.scss");
 
+@import url("style-alert-pane.scss");
+
 html,
 body {
   min-height: 100%;
@@ -398,10 +400,7 @@ select-box {
     top: 0.8rem;
     left: 1rem;
     cursor: text;
-    transition:
-      top 200ms ease-in,
-      left 200ms,
-      font-size 200ms;
+    transition: top 200ms ease-in, left 200ms, font-size 200ms;
   }
 
   input:focus ~ label,
@@ -865,9 +864,7 @@ menu-bar-element {
     max-height: 0; /* Start with zero height */
     visibility: hidden;
     overflow-y: scroll; /* Prevent visible overflow */
-    transition:
-      max-height 0.3s ease-out,
-      visibility 0.22s; /* Transition for the slide effect */
+    transition: max-height 0.3s ease-out, visibility 0.22s; /* Transition for the slide effect */
 
     // Style the scrollbar track
     &::-webkit-scrollbar-track {

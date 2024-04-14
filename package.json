@@ -1,6 +1,6 @@
 {
   "name": "typecomposer",
-  "version": "0.0.21",
+  "version": "0.0.30",
   "repository": {
     "type": "git",
     "url": "https://github.com/zico15"
@@ -16,9 +16,8 @@
     "public"
   ],
   "scripts": {
-    "rm-styles": "rm -rf ./styles && cp -r ./src/assets/styles .",
     "copy": "cp -r dist /Users/ezequiel/Documents/observatorios/frontend_tc/node_modules/typecomposer",
-    "build": "npm run rm-styles && rm -rf dist/ && prettier --write src/ && npm run build:esm && npm run build:cjs && npm run copy",
+    "build": "rm -rf dist/ && prettier --write src/ && npm run build:esm && npm run build:cjs && npm run copy",
     "build:esm": "tsc",
     "build:cjs": "tsc --module CommonJS --outDir dist/cjs",
     "pub": "npm run build && npm publish"
