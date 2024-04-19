@@ -10,6 +10,9 @@ declare global {
     clear(): void;
   }
 
+  interface Event {
+    detail: any;
+  }
   var Router: Router;
 
   function scoped(target: any): any;

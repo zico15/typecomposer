@@ -102,17 +102,14 @@ list-element {
   user-select: none;
 }
 
-.card-pane {
-  user-select: none;
-  box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2);
-  background-color: var(--primary-color);
-  border-radius: 10px;
-  box-shadow: 0 10px 10px rgba(0, 0, 0, 0.2);
+.card-element {
+  border-radius: 5px;
+  box-shadow: 0 0 15px 0 rgba(0, 0, 0, 0.2);
+  background-color: white;
+  padding: 20px;
   display: flex;
-  max-width: 100%;
-  margin: 0px;
-  width: auto;
-  height: auto;
+  flex-direction: column;
+  margin-top: 20px;
 }
 
 .pane {
@@ -368,16 +365,28 @@ select-box {
   flex-direction: column;
 }
 
+input:focus ~ label,
+input:not(:placeholder-shown) ~ label {
+  top: -0.1rem;
+  left: 1rem;
+  font-size: 0.8rem;
+  color: var(--primary-text-color);
+  background: var(--primary-color);
+}
+
 text-field-element,
 select-box {
   position: relative;
   padding: 5px;
+  width: 100%;
 
   input {
     outline: none;
     background: none;
     padding: 10px;
     color: var(--primary-text-color);
+    padding: 15px 10px 15px;
+    border: 1px solid lightgray;
   }
 
   input::placeholder {
@@ -397,10 +406,10 @@ select-box {
 
   label {
     position: absolute;
-    top: 0.8rem;
     left: 1rem;
     cursor: text;
     transition: top 200ms ease-in, left 200ms, font-size 200ms;
+    top: 1rem;
   }
 
   input:focus ~ label,
@@ -909,5 +918,24 @@ menu-bar-element {
         }
       }
     }
+  }
+}
+
+text-field-element {
+  input {
+    border: 1px solid lightgray !important;
+  }
+
+  label {
+    top: 1rem;
+  }
+
+  input:focus ~ label,
+  input:not(:placeholder-shown) ~ label {
+    top: -0.2rem;
+    left: 1rem;
+    font-size: 0.8rem;
+    color: var(--primary-text-color);
+    background: var(--primary-color);
   }
 }

@@ -3030,16 +3030,25 @@ export interface CSSStyleDeclarationRef {
   setProperty(property: string, value: string | ref<string> | null, priority?: string): void;
   [index: number]: string | ref<string>;
 
-  hasOwnProperty?(key: string): boolean;
+  hasOwnProperty(key: string): boolean;
 }
 
 const setPropertyOriginal = CSSStyleDeclaration.prototype.setProperty;
+
 Object.defineProperty(CSSStyleDeclaration.prototype, "setProperty", {
   value: function (property: string, value: string | ref<string> | null, priority?: string) {
     if (typeof value === "string") {
       setPropertyOriginal.call(this, property, value, priority);
     } else if (value instanceof RefString) value.refTarget.subscriber(this, property, value.refPropertyKey);
     else value.subscriber(this, property);
+  },
+  writable: true,
+  configurable: true,
+});
+
+Object.defineProperty(CSSStyleDeclaration.prototype, "hasOwnProperty", {
+  value: function (key: string) {
+    return key in this;
   },
   writable: true,
   configurable: true,

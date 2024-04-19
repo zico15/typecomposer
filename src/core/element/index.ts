@@ -23,8 +23,10 @@ import { ILayout } from "./base/Elements";
 import { StackPane } from "./layers/StackPane";
 import { SelectField } from "./action/SelectField";
 import { AlertPane, type AlertType } from "./action/AlertPane";
+import { ColorPicker } from "./action/ColorPicker";
 
 export {
+  ColorPicker,
   AlertType,
   AlertPane,
   App,

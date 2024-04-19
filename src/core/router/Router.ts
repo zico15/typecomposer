@@ -28,10 +28,10 @@ class RouterController {
 
   constructor() {
     window.addEventListener("load", () => {
-      this.updateRoute(this.route.history == "history" ? window.location.pathname : window.location.hash);
+      if (this.route) this.updateRoute(this.route.history == "history" ? window.location.pathname : window.location.hash);
     });
     window.addEventListener("popstate", () => {
-      this.updateRoute(this.route.history == "history" ? window.location.pathname : window.location.hash);
+      if (this.route) this.updateRoute(this.route.history == "history" ? window.location.pathname : window.location.hash);
     });
   }
 

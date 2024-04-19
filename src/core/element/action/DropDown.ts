@@ -20,12 +20,13 @@ export class DropDown<T = any> extends Component {
   private _selected: T | undefined = undefined;
 
   constructor(
-    props?: StyleOptional & {
+    private props?: StyleOptional & {
       noContent?: string;
       options?: T[];
       defaultOption?: string;
       selectionType?: SelectionType;
       placeholder?: string;
+      selectValue?: (value: T) => string;
     },
   ) {
     super(props);
@@ -40,6 +41,7 @@ export class DropDown<T = any> extends Component {
     this.input.value = props.placeholder ? props.placeholder : props.defaultOption || "";
     this.selectionType = props.selectionType || "closeAndClean";
     this.onInit();
+    if (props.selectValue) this.selectValue = props.selectValue;
     this.options = props.options == undefined || props.options.length === 0 ? [props.noContent as any] : props.options;
   }
 
@@ -66,6 +68,11 @@ export class DropDown<T = any> extends Component {
 
   get selected(): T | undefined {
     return this._selected;
+  }
+
+  set selected(value: T | undefined) {
+    this._selected = value;
+    this.input.value = this.selectValue(value);
   }
 
   private closeAndClean() {
@@ -135,13 +142,16 @@ export class DropDown<T = any> extends Component {
         } else {
           this.previousSelected = this.previousSelected.filter((selectedOption) => selectedOption !== option);
         }
-        this.input.value = option?.toString() || "";
+        this.input.value = this.selectValue(option);
         this._selected = option;
         this.input.style.color = "black";
         this.onChange(option, index);
+        this.dispatchEvent(new CustomEvent("change", { detail: { item: option, index } }));
       };
     });
   }
+
+  selectValue: (value: T | undefined) => string = (value: T) => value?.toString() || "";
 
   get inputAndButtonDiv() {
     return this._inputAndButtonDiv;

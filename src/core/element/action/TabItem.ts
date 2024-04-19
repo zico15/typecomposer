@@ -10,7 +10,7 @@ export class TabItem extends Component {
   constructor(
     public title: string,
     content: HTMLElement,
-    icon: IconElement | null,
+    icon?: IconElement | null,
     closeable: boolean = true,
   ) {
     super();

@@ -68,15 +68,15 @@ export class Component extends HTMLElement implements IComponent {
     }
   }
 
-  static applyStyleOrAttribute<T extends HTMLElement>(data: StyleOptional, element: T): void {
+  private static applyStyleOrAttribute<T extends HTMLElement>(data: StyleOptional, element: T): void {
     if (data) {
       Object.keys(data).forEach((key: string) => {
         if (data[key] == undefined) return;
         if (key == "for" && (data as any)[key] != undefined) (element as any).setAttribute("for", (data as any)[key]);
-        else if (key == "className" && (data as any)[key] != undefined) (element as any).addClasName((data as any)[key]);
-        else if (key == "text" && (data as any)[key] != undefined) (element as any).innerHTML = (data as any)[key];
-        else if (element.style?.hasOwnProperty && element.style.hasOwnProperty?.(key)) element.style[key] = (data as any)[key];
-        else if ((data as any)[key] != undefined) {
+        else if (key == "className" && (data as any)[key] != undefined) element.addClasName((data as any)[key]);
+        else if (key == "text" && (data as any)[key] != undefined) element.innerHTML = (data as any)[key];
+        else if (element.style.hasOwnProperty(key)) element.style[key] = (data as any)[key];
+        else if ((data as any)[key] != undefined && Object.keys(element).includes(key)) {
           (element as any)[key] = (data as any)[key];
         }
       });
@@ -390,8 +390,18 @@ export class TableBodyElement extends HTMLTableSectionElement implements ICompon
 customElements.define("base-tbody-element", TableBodyElement, { extends: "tbody" });
 
 export class TableHeadCellElement extends HTMLTableCellElement {
-  constructor(optional?: StyleOptional) {
+  constructor(
+    optional?: StyleOptional & {
+      colspan?: number;
+      rowspan?: number;
+      child?: HTMLElement;
+    },
+  ) {
     super();
+    if (optional?.colspan) this.colSpan = optional.colspan;
+    if (optional?.rowspan) this.rowSpan = optional.rowspan;
+    if (optional?.child) this.appendChild(optional.child);
+    delete optional?.child;
     Component.applyDate(optional, this);
   }
 }
@@ -477,6 +487,32 @@ export class TableElement extends HTMLTableElement implements IComponent {
 
 customElements.define("base-table-element", TableElement, { extends: "table" });
 
+export class TableFootRowElement extends HTMLTableRowElement {
+  constructor(
+    optional?: StyleOptional & {
+      cells?: TableCellElement[];
+    },
+  ) {
+    super();
+    if (optional?.cells) {
+      this.addCells(...optional.cells);
+    }
+    delete optional?.cells;
+    Component.applyDate(optional, this);
+  }
+  addCells(...cells: TableCellElement[]) {
+    cells.forEach((cell) => {
+      this.appendChild(cell);
+    });
+  }
+  addCell(cell: TableCellElement): TableCellElement {
+    this.appendChild(cell);
+    return cell;
+  }
+}
+
+customElements.define("base-tfoot-row-element", TableFootRowElement, { extends: "tr" });
+
 export class TableHeadRowElement extends HTMLTableRowElement {
   constructor(
     optional?: StyleOptional & {
@@ -529,8 +565,18 @@ export class TableRowElement extends HTMLTableRowElement implements IComponent {
 customElements.define("base-tr-element", TableRowElement, { extends: "tr" });
 
 export class TableCellElement extends HTMLTableCellElement implements IComponent {
-  constructor(optional?: StyleOptional) {
+  constructor(
+    optional?: StyleOptional & {
+      colspan?: number;
+      rowspan?: number;
+      child?: HTMLElement;
+    },
+  ) {
     super();
+    if (optional?.colspan) this.colSpan = optional.colspan;
+    if (optional?.rowspan) this.rowSpan = optional.rowspan;
+    if (optional?.child) this.appendChild(optional.child);
+    delete optional?.child;
     Component.applyDate(optional, this);
   }
 }

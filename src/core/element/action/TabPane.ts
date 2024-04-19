@@ -91,6 +91,10 @@ export class TabPane extends BorderPaneElement {
     return this.slectTabItem;
   }
 
+  get pane(): DivElement {
+    return this.tabs;
+  }
+
   public onSelectTab: (title: string, content: IComponent, index?: number) => void = () => {};
 }
 customElements.define("tab-pane", TabPane);

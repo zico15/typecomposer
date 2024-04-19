@@ -70,6 +70,10 @@ export class ListElement<T = any> extends Component {
     }
   }
 
+  public removeItems() {
+    this.container.innerHTML = "";
+  }
+
   append(...nodes: (string | Node)[]): void {
     this.container.append(...nodes);
   }
