@@ -1,0 +1,79 @@
+.flow-pane {
+  display: flex;
+  flex-wrap: wrap;
+  flex: 1 1 auto;
+  margin: 0;
+  user-select: none;
+}
+
+.flow-12 {
+  flex: 0 0 100%;
+  max-width: 100%;
+}
+
+.flow-1,
+.flow-2,
+.flow-3,
+.flow-4,
+.flow-5,
+.flow-6,
+.flow-7,
+.flow-8,
+.flow-9,
+.flow-10,
+.flow-11,
+.flow-8 {
+  width: 100%;
+  padding: 12px;
+}
+
+.order-0 {
+  order: 0;
+}
+
+@media (min-width: 960px) {
+  .flow-1 {
+    flex: 0 0 8.3333333333%;
+    max-width: 8.3333333333%;
+  }
+  .flow-2 {
+    flex: 0 0 16.6666666667%;
+    max-width: 16.6666666667%;
+  }
+  .flow-3 {
+    flex: 0 0 25%;
+    max-width: 25%;
+  }
+  .flow-4 {
+    flex: 0 0 33.3333333333%;
+    max-width: 33.3333333333%;
+  }
+  .flow-5 {
+    flex: 0 0 41.6666666667%;
+    max-width: 41.6666666667%;
+  }
+  .flow-6 {
+    flex: 0 0 50%;
+    max-width: 50%;
+  }
+  .flow-7 {
+    flex: 0 0 58.3333333333%;
+    max-width: 58.3333333333%;
+  }
+  .flow-8 {
+    flex: 0 0 66.6666666667%;
+    max-width: 66.6666666667%;
+  }
+  .flow-9 {
+    flex: 0 0 75%;
+    max-width: 75%;
+  }
+  .flow-10 {
+    flex: 0 0 83.3333333333%;
+    max-width: 83.3333333333%;
+  }
+  .flow-11 {
+    flex: 0 0 91.6666666667%;
+    max-width: 91.6666666667%;
+  }
+}

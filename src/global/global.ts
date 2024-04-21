@@ -17,10 +17,6 @@ declare global {
 
   function scoped(target: any): any;
 
-  // interface CSSStyleDeclaration {
-  //   color: string | ref<string>;
-  // }
-
   interface Window {
     getTheme(): string;
     setTheme(theme: string): void;
@@ -59,7 +55,14 @@ declare global {
   //   setRefTarget: any;
   //   getRefTarget: any;
   // }
+  interface WeakRef<T> {
+    equals<K extends WeakKey>(value: WeakRef<K>): boolean;
+  }
 }
+
+WeakRef.prototype.equals = function (value: WeakRef<any>) {
+  return this.deref() === value.deref();
+};
 
 Object.defineProperty(window, "Router", {
   value: Router,
