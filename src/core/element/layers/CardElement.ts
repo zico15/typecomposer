@@ -4,7 +4,7 @@ export class CardElement extends Component {
   constructor(optional?: StyleOptional) {
     super();
     this.addClasName("card-element");
-    Component.applyDate(optional, this);
+    Component.applyData(optional, this);
   }
 }
 customElements.define("card-element", CardElement);

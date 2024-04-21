@@ -21,7 +21,7 @@ export class ColorPicker extends Component {
     this.addEventListener("click", () => {
       this._input.click();
     });
-    Component.applyDate({ display: "flex", ...optional }, this);
+    Component.applyData({ display: "flex", ...optional }, this);
   }
 
   get value(): string {

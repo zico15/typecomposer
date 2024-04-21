@@ -27,7 +27,7 @@ export class MenuBarElement extends Component {
       this.append(this.logo);
       delete optional.logo;
     }
-    Component.applyDate(optional, this);
+    Component.applyData(optional, this);
     this._nav = new NavElement(optional);
     this.nav.append(this.checkbox, this.checkboxLabel, this._ul);
     this.append(this.nav);

@@ -38,7 +38,7 @@ export class TextFieldElement extends Component {
     if (optional?.icon != undefined) this.icon = optional.icon;
     delete optional?.value;
     delete optional?.text;
-    Component.applyDate(optional, this);
+    Component.applyData(optional, this);
   }
 
   get input(): InputElement {

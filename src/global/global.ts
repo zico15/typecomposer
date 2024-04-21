@@ -226,7 +226,7 @@ Object.defineProperty(Element.prototype, "addClasName", {
 
 Object.defineProperty(Element.prototype, "setStyle", {
   value: function (styles: CSSStyleDeclarationRefType) {
-    Component.applyDate(styles, this);
+    Component.applyData(styles, this);
   },
   writable: true,
   configurable: true,

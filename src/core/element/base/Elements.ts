@@ -56,7 +56,7 @@ export class Component extends HTMLElement implements IComponent {
     if (optional != undefined) this.setStyle(optional);
   }
 
-  public static applyDate<T extends HTMLElement>(data: StyleOptional | undefined, element: T): void {
+  public static applyData<T extends HTMLElement>(data: StyleOptional | undefined, element: T): void {
     if (data != undefined) {
       // if (data.id) {
       //   (element as any).id = data.id;
@@ -125,7 +125,7 @@ customElements.define("component-element", Component);
 export class DivElement extends HTMLDivElement implements IComponent {
   constructor(optional?: StyleOptional) {
     super();
-    Component.applyDate(optional, this);
+    Component.applyData(optional, this);
   }
 }
 
@@ -134,7 +134,7 @@ customElements.define("base-div-element", DivElement, { extends: "div" });
 export class ParagraphElement extends HTMLParagraphElement implements IComponent {
   constructor(optional?: StyleOptional) {
     super();
-    Component.applyDate(optional, this);
+    Component.applyData(optional, this);
   }
 }
 
@@ -186,7 +186,7 @@ export class AnchorElement extends HTMLAnchorElement implements IComponent {
     },
   ) {
     super();
-    Component.applyDate(optional, this);
+    Component.applyData(optional, this);
     this.addEventListener("click", (event) => {
       event.preventDefault();
       if (this._rlink != "") {
@@ -219,7 +219,7 @@ export class AbbreviationElement extends HTMLElement implements IComponent {
     },
   ) {
     super();
-    Component.applyDate(optional, this);
+    Component.applyData(optional, this);
   }
 }
 
@@ -269,7 +269,7 @@ export class AreaElement extends HTMLAreaElement implements IComponent {
     },
   ) {
     super();
-    Component.applyDate(optional, this);
+    Component.applyData(optional, this);
   }
 }
 
@@ -284,7 +284,7 @@ export class ImageElement extends HTMLImageElement implements IComponent {
   constructor(optional?: DataImageElement) {
     super();
     this.className = "image-element";
-    Component.applyDate(optional, this);
+    Component.applyData(optional, this);
     if (optional?.src != undefined) this.src = optional.src;
   }
 }
@@ -294,7 +294,7 @@ customElements.define("base-img-element", ImageElement, { extends: "img" });
 export class UListElement extends HTMLUListElement implements IComponent {
   constructor(optional?: StyleOptional) {
     super();
-    Component.applyDate(optional, this);
+    Component.applyData(optional, this);
   }
 }
 
@@ -303,7 +303,7 @@ customElements.define("base-ul-element", UListElement, { extends: "ul" });
 export class OrderedListElement extends HTMLOListElement implements IComponent {
   constructor(optional?: StyleOptional) {
     super();
-    Component.applyDate(optional, this);
+    Component.applyData(optional, this);
   }
 }
 
@@ -312,7 +312,7 @@ customElements.define("base-ol-element", OrderedListElement, { extends: "ol" });
 export class ListItemElement extends HTMLLIElement implements IComponent {
   constructor(optional?: StyleOptional) {
     super();
-    Component.applyDate(optional, this);
+    Component.applyData(optional, this);
   }
   onSelect(): void {}
 }
@@ -322,7 +322,7 @@ customElements.define("base-li-element", ListItemElement, { extends: "li" });
 export class MainElement extends HTMLElement implements IComponent {
   constructor(optional?: StyleOptional) {
     super();
-    Component.applyDate(optional, this);
+    Component.applyData(optional, this);
   }
 }
 
@@ -336,7 +336,7 @@ customElements.define("base-main-element", MainElement, { extends: "main" });
 export class SpanElement extends HTMLSpanElement implements IComponent {
   constructor(optional?: StyleOptional) {
     super();
-    Component.applyDate(optional, this);
+    Component.applyData(optional, this);
   }
 }
 
@@ -345,7 +345,7 @@ customElements.define("base-span-element", SpanElement, { extends: "span" });
 export class StrongElement extends HTMLSpanElement implements IComponent {
   constructor(optional?: StyleOptional) {
     super();
-    Component.applyDate(optional, this);
+    Component.applyData(optional, this);
   }
 }
 
@@ -356,7 +356,7 @@ customElements.define("base-strong-element", StrongElement, {
 export class EmElement extends HTMLEmbedElement implements IComponent {
   constructor(optional?: StyleOptional) {
     super();
-    Component.applyDate(optional, this);
+    Component.applyData(optional, this);
   }
 }
 
@@ -365,7 +365,7 @@ customElements.define("base-em-element", EmElement, { extends: "em" });
 export class BreakElement extends HTMLBRElement implements IComponent {
   constructor(optional?: StyleOptional) {
     super();
-    Component.applyDate(optional, this);
+    Component.applyData(optional, this);
   }
 }
 
@@ -374,7 +374,7 @@ customElements.define("base-br-element", BreakElement, { extends: "br" });
 export class TableHeadElement extends HTMLTableSectionElement implements IComponent {
   constructor(optional?: StyleOptional) {
     super();
-    Component.applyDate(optional, this);
+    Component.applyData(optional, this);
   }
 }
 
@@ -383,7 +383,7 @@ customElements.define("base-thead-element", TableHeadElement, { extends: "thead"
 export class TableBodyElement extends HTMLTableSectionElement implements IComponent {
   constructor(optional?: StyleOptional) {
     super();
-    Component.applyDate(optional, this);
+    Component.applyData(optional, this);
   }
 }
 
@@ -402,7 +402,7 @@ export class TableHeadCellElement extends HTMLTableCellElement {
     if (optional?.rowspan) this.rowSpan = optional.rowspan;
     if (optional?.child) this.appendChild(optional.child);
     delete optional?.child;
-    Component.applyDate(optional, this);
+    Component.applyData(optional, this);
   }
 }
 customElements.define("base-th-cell-element", TableHeadCellElement, { extends: "th" });
@@ -410,7 +410,7 @@ customElements.define("base-th-cell-element", TableHeadCellElement, { extends: "
 export class TableFootElement extends HTMLTableSectionElement implements IComponent {
   constructor(optional?: StyleOptional) {
     super();
-    Component.applyDate(optional, this);
+    Component.applyData(optional, this);
   }
 }
 
@@ -423,7 +423,7 @@ export class TableElement extends HTMLTableElement implements IComponent {
 
   constructor(optional?: StyleOptional) {
     super();
-    Component.applyDate(optional, this);
+    Component.applyData(optional, this);
   }
 
   addHeadRows(...rows: TableRowElement[]) {
@@ -498,7 +498,7 @@ export class TableFootRowElement extends HTMLTableRowElement {
       this.addCells(...optional.cells);
     }
     delete optional?.cells;
-    Component.applyDate(optional, this);
+    Component.applyData(optional, this);
   }
   addCells(...cells: TableCellElement[]) {
     cells.forEach((cell) => {
@@ -524,7 +524,7 @@ export class TableHeadRowElement extends HTMLTableRowElement {
       this.addCells(...optional.cells);
     }
     delete optional?.cells;
-    Component.applyDate(optional, this);
+    Component.applyData(optional, this);
   }
   addCells(...cells: TableCellElement[]) {
     cells.forEach((cell) => {
@@ -549,7 +549,7 @@ export class TableRowElement extends HTMLTableRowElement implements IComponent {
       this.addCells(...optional.cells);
     }
     delete optional?.cells;
-    Component.applyDate(optional, this);
+    Component.applyData(optional, this);
   }
   addCells(...cells) {
     cells.forEach((cell) => {
@@ -577,12 +577,20 @@ export class TableCellElement extends HTMLTableCellElement implements IComponent
     if (optional?.rowspan) this.rowSpan = optional.rowspan;
     if (optional?.child) this.appendChild(optional.child);
     delete optional?.child;
-    Component.applyDate(optional, this);
+    Component.applyData(optional, this);
   }
 }
 
 customElements.define("base-td-element", TableCellElement, { extends: "td" });
 
+export class PreElement extends HTMLPreElement implements IComponent {
+  constructor(optional?: StyleOptional) {
+    super();
+    Component.applyData(optional, this);
+  }
+}
+
+customElements.define("base-pre-element", PreElement, { extends: "pre" });
 // export interface FormOptional {
 //   acceptCharset?: string;
 //   action?: string;
@@ -641,7 +649,7 @@ export class InputElement extends HTMLInputElement implements IComponent {
     super();
     const v = optional?.value;
     delete optional?.value;
-    Component.applyDate(optional, this);
+    Component.applyData(optional, this);
     if (v) {
       if (typeof v == "string") this.value = v;
       else {
@@ -682,7 +690,7 @@ export class ButtonElement extends HTMLButtonElement implements IComponent {
     super();
     const type = optional?.type;
     delete optional?.type;
-    Component.applyDate(optional, this);
+    Component.applyData(optional, this);
     if (type) this.type = type;
     if (optional?.accept) this.accept = optional.accept;
     if (optional?.multiple) this.multiple = optional.multiple;
@@ -702,7 +710,7 @@ customElements.define("base-button-element", ButtonElement, {
 export class TextAreaElement extends HTMLTextAreaElement implements IComponent {
   constructor(optional?: StyleOptional) {
     super();
-    Component.applyDate(optional, this);
+    Component.applyData(optional, this);
   }
 }
 
@@ -713,7 +721,7 @@ customElements.define("base-textarea-element", TextAreaElement, {
 export class LabelElement extends HTMLLabelElement implements IComponent {
   constructor(optional?: StyleOptional & { for?: string; text?: string }) {
     super();
-    Component.applyDate(optional, this);
+    Component.applyData(optional, this);
   }
 }
 
@@ -722,7 +730,7 @@ customElements.define("base-label-element", LabelElement, { extends: "label" });
 export class SelectElement extends HTMLSelectElement implements IComponent {
   constructor(optional?: StyleOptional) {
     super();
-    Component.applyDate(optional, this);
+    Component.applyData(optional, this);
   }
 }
 
@@ -742,7 +750,7 @@ export class AudioElement extends HTMLAudioElement implements IComponent {
     },
   ) {
     super();
-    Component.applyDate(optional, this);
+    Component.applyData(optional, this);
   }
 }
 
@@ -751,7 +759,7 @@ customElements.define("base-audio-element", AudioElement, { extends: "audio" });
 export class BoldElement extends HTMLElement implements IComponent {
   constructor(optional?: StyleOptional) {
     super();
-    Component.applyDate(optional, this);
+    Component.applyData(optional, this);
   }
 }
 
@@ -766,7 +774,7 @@ export class BaseElement extends HTMLElement implements IComponent {
     },
   ) {
     super();
-    Component.applyDate(optional, this);
+    Component.applyData(optional, this);
   }
 }
 
@@ -776,7 +784,7 @@ customElements.define("base-base-element", BaseElement, { extends: "base" });
 export class BodyElement extends HTMLBodyElement implements IComponent {
   constructor(optional?: StyleOptional) {
     super();
-    Component.applyDate(optional, this);
+    Component.applyData(optional, this);
   }
 }
 
@@ -786,7 +794,7 @@ customElements.define("base-body-element", BodyElement, { extends: "body" });
 export class VideoElement extends HTMLVideoElement implements IComponent {
   constructor(optional?: StyleOptional) {
     super();
-    Component.applyDate(optional, this);
+    Component.applyData(optional, this);
   }
 }
 
@@ -802,7 +810,7 @@ export class CanvasElement extends HTMLCanvasElement implements IComponent {
     super();
     if (optional?.width) this.width = optional.width as any;
     if (optional?.height) this.height = optional.height as any;
-    Component.applyDate(optional, this);
+    Component.applyData(optional, this);
   }
 }
 
@@ -814,7 +822,7 @@ customElements.define("base-canvas-element", CanvasElement, {
 export class CaptionElement extends HTMLTableCaptionElement implements IComponent {
   constructor(optional?: StyleOptional) {
     super();
-    Component.applyDate(optional, this);
+    Component.applyData(optional, this);
   }
 }
 
@@ -826,7 +834,7 @@ customElements.define("base-caption-element", CaptionElement, {
 export class CiteElement extends HTMLElement implements IComponent {
   constructor(optional?: StyleOptional) {
     super();
-    Component.applyDate(optional, this);
+    Component.applyData(optional, this);
   }
 }
 
@@ -834,9 +842,10 @@ customElements.define("base-cite-element", CiteElement, { extends: "cite" });
 
 // <code>
 export class CodeElement extends HTMLElement implements IComponent {
-  constructor(optional?: StyleOptional) {
+  constructor(optional?: StyleOptional & { contentEditable?: boolean }) {
     super();
-    Component.applyDate(optional, this);
+    Component.applyData(optional, this);
+    if (optional.contentEditable != undefined) this.contentEditable = optional.contentEditable.toString();
   }
 }
 
@@ -851,7 +860,7 @@ export class TableColElement extends HTMLTableColElement implements IComponent {
   ) {
     super();
     if (optional?.span) this.span = optional.span as any;
-    Component.applyDate(optional, this);
+    Component.applyData(optional, this);
   }
 }
 
@@ -866,7 +875,7 @@ export class TableColGroupElement extends HTMLTableColElement implements ICompon
   ) {
     super();
     if (optional?.span) this.span = optional.span as any;
-    Component.applyDate(optional, this);
+    Component.applyData(optional, this);
   }
 }
 
@@ -879,7 +888,7 @@ customElements.define("base-colgroup-element", TableColGroupElement, {
 export class DataListElement extends HTMLDataListElement implements IComponent {
   constructor(optional?: StyleOptional) {
     super();
-    Component.applyDate(optional, this);
+    Component.applyData(optional, this);
   }
 }
 
@@ -891,7 +900,7 @@ customElements.define("base-datalist-element", DataListElement, {
 export class DefinitionDescriptionElement extends HTMLElement implements IComponent {
   constructor(optional?: StyleOptional) {
     super();
-    Component.applyDate(optional, this);
+    Component.applyData(optional, this);
   }
 }
 
@@ -908,7 +917,7 @@ export class DeletedTextElement extends HTMLModElement implements IComponent {
   ) {
     super();
     if (optional?.cite) this.cite = optional.cite as any;
-    Component.applyDate(optional, this);
+    Component.applyData(optional, this);
   }
 }
 
@@ -925,7 +934,7 @@ export class DetailsElement extends HTMLDetailsElement implements IComponent {
     },
   ) {
     super();
-    Component.applyDate(optional, this);
+    Component.applyData(optional, this);
     if (optional?.open) this.open = optional.open as any;
     if (optional?.summary) {
       if (typeof optional.summary == "string") {
@@ -950,7 +959,7 @@ customElements.define("base-details-element", DetailsElement, {
 export class DefinitionElement extends HTMLElement implements IComponent {
   constructor(optional?: StyleOptional) {
     super();
-    Component.applyDate(optional, this);
+    Component.applyData(optional, this);
   }
 }
 
@@ -966,7 +975,7 @@ export class DialogElement extends HTMLDialogElement implements IComponent {
     },
   ) {
     super();
-    Component.applyDate(optional, this);
+    Component.applyData(optional, this);
     this.open = optional.open == undefined ? true : optional.open;
   }
 }
@@ -990,7 +999,7 @@ export class EmbedElement extends HTMLEmbedElement implements IComponent {
     if (optional?.src) this.src = optional.src as any;
     if (optional?.type) this.type = optional.type as any;
     if (optional?.width) this.width = optional.width as any;
-    Component.applyDate(optional, this);
+    Component.applyData(optional, this);
   }
 }
 
@@ -1006,7 +1015,7 @@ export class FieldSetElement extends HTMLFieldSetElement implements IComponent {
     },
   ) {
     super();
-    Component.applyDate(optional, this);
+    Component.applyData(optional, this);
     if (optional?.disabled) this.disabled = optional.disabled as any;
     if (optional?.name) this.name = optional.name as any;
     if (optional?.legend) {
@@ -1033,7 +1042,7 @@ customElements.define("base-fieldset-element", FieldSetElement, {
 export class FooterElement extends HTMLElement implements IComponent {
   constructor(optional?: StyleOptional) {
     super();
-    Component.applyDate(optional, this);
+    Component.applyData(optional, this);
   }
 }
 
@@ -1055,7 +1064,7 @@ export class FormElement extends HTMLFormElement implements IComponent {
     },
   ) {
     super();
-    Component.applyDate(optional, this);
+    Component.applyData(optional, this);
   }
 }
 
@@ -1064,7 +1073,7 @@ customElements.define("base-form-element", FormElement, { extends: "form" });
 export class H1Element extends HTMLHeadingElement implements IComponent {
   constructor(optional?: StyleOptional) {
     super();
-    Component.applyDate(optional, this);
+    Component.applyData(optional, this);
     if (optional?.text) this.innerText = optional.text.toString();
   }
 }
@@ -1074,7 +1083,7 @@ customElements.define("base-h1-element", H1Element, { extends: "h1" });
 export class H2Element extends HTMLHeadingElement implements IComponent {
   constructor(optional?: StyleOptional) {
     super();
-    Component.applyDate(optional, this);
+    Component.applyData(optional, this);
     if (optional?.text) this.innerText = optional.text.toString();
   }
 }
@@ -1084,7 +1093,7 @@ customElements.define("base-h2-element", H2Element, { extends: "h2" });
 export class H3Element extends HTMLHeadingElement implements IComponent {
   constructor(optional?: StyleOptional) {
     super();
-    Component.applyDate(optional, this);
+    Component.applyData(optional, this);
     if (optional?.text) this.text = optional.text;
   }
 
@@ -1103,7 +1112,7 @@ customElements.define("base-h3-element", H3Element, { extends: "h3" });
 export class H4Element extends H3Element implements IComponent {
   constructor(optional?: StyleOptional) {
     super();
-    Component.applyDate(optional, this);
+    Component.applyData(optional, this);
     if (optional?.text) this.innerText = optional.text.toString();
   }
 
@@ -1119,7 +1128,7 @@ customElements.define("base-h4-element", H4Element, { extends: "h4" });
 export class H5Element extends H3Element implements IComponent {
   constructor(optional?: StyleOptional) {
     super();
-    Component.applyDate(optional, this);
+    Component.applyData(optional, this);
     if (optional?.text) this.innerText = optional.text.toString();
   }
 
@@ -1135,7 +1144,7 @@ customElements.define("base-h5-element", H5Element, { extends: "h5" });
 export class H6Element extends H3Element implements IComponent {
   constructor(optional?: StyleOptional) {
     super();
-    Component.applyDate(optional, this);
+    Component.applyData(optional, this);
     if (optional?.text) this.innerText = optional.text.toString();
   }
 
@@ -1152,7 +1161,7 @@ customElements.define("base-h6-element", H6Element, { extends: "h6" });
 export class HeadElement extends HTMLHeadElement implements IComponent {
   constructor(optional?: StyleOptional) {
     super();
-    Component.applyDate(optional, this);
+    Component.applyData(optional, this);
   }
 }
 
@@ -1162,7 +1171,7 @@ customElements.define("base-head-element", HeadElement, { extends: "head" });
 export class HeaderElement extends HTMLElement implements IComponent {
   constructor(optional?: StyleOptional) {
     super();
-    Component.applyDate(optional, this);
+    Component.applyData(optional, this);
   }
 }
 
@@ -1174,7 +1183,7 @@ customElements.define("base-header-element", HeaderElement, {
 export class HorizontalRuleElement extends HTMLHRElement implements IComponent {
   constructor(optional?: StyleOptional) {
     super();
-    Component.applyDate(optional, this);
+    Component.applyData(optional, this);
   }
 }
 
@@ -1192,7 +1201,7 @@ export class HtmlElement extends HTMLHtmlElement implements IComponent {
   ) {
     super();
     if (optional?.manifest) this.manifest = optional.manifest as any;
-    Component.applyDate(optional, this);
+    Component.applyData(optional, this);
   }
   set manifest(value: string) {
     this.setAttribute("manifest", value);
@@ -1245,7 +1254,7 @@ export class IFrameElement extends HTMLIFrameElement implements IComponent {
     if (optional?.src) this.src = optional.src as any;
     if (optional?.srcdoc) this.srcdoc = optional.srcdoc as any;
     if (optional?.width) this.width = optional.width as any;
-    Component.applyDate(optional, this);
+    Component.applyData(optional, this);
   }
 
   public set allowfullscreen(value: boolean) {
@@ -1311,7 +1320,7 @@ export class LegendElement extends HTMLLegendElement implements IComponent {
     },
   ) {
     super();
-    Component.applyDate(optional, this);
+    Component.applyData(optional, this);
     if (optional?.value) this.innerHTML = optional.value as any;
   }
 }
@@ -1323,7 +1332,7 @@ customElements.define("base-legend-element", LegendElement, {
 export class SvgElement extends HTMLObjectElement implements IComponent {
   constructor(optional?: StyleOptional & { data?: string }) {
     super();
-    Component.applyDate(optional, this);
+    Component.applyData(optional, this);
     if (optional?.width) this.width = optional.width as any;
     if (optional?.height) this.height = optional.height as any;
     this.setAttribute("type", "image/svg+xml");
@@ -1357,7 +1366,7 @@ customElements.define("base-svg-element", SvgElement, { extends: "object" });
 export class NavElement extends HTMLElement implements IComponent {
   constructor(optional?: StyleOptional) {
     super();
-    Component.applyDate(optional, this);
+    Component.applyData(optional, this);
   }
 }
 
@@ -1366,7 +1375,7 @@ customElements.define("base-nav-element", NavElement, { extends: "nav" });
 export class SectionElement extends HTMLElement implements IComponent {
   constructor(optional?: StyleOptional) {
     super();
-    Component.applyDate(optional, this);
+    Component.applyData(optional, this);
   }
 }
 
@@ -1377,7 +1386,7 @@ customElements.define("base-section-element", SectionElement, {
 export class ArticleElement extends HTMLElement implements IComponent {
   constructor(optional?: StyleOptional) {
     super();
-    Component.applyDate(optional, this);
+    Component.applyData(optional, this);
   }
 }
 
@@ -1388,7 +1397,7 @@ customElements.define("base-article-element", ArticleElement, {
 export class SummaryElement extends HTMLElement implements IComponent {
   constructor(optional?: StyleOptional) {
     super();
-    Component.applyDate(optional, this);
+    Component.applyData(optional, this);
   }
 }
 
