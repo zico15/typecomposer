@@ -1,3 +1,3 @@
+export * from "./global";
 export * from "./styles";
 export * from "./core";
-export * from "./global";

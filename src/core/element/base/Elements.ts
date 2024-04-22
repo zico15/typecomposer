@@ -76,8 +76,10 @@ export class Component extends HTMLElement implements IComponent {
         else if (key == "className" && (data as any)[key] != undefined) element.addClasName((data as any)[key]);
         else if (key == "text" && (data as any)[key] != undefined) element.innerHTML = (data as any)[key];
         else if (element.style.hasOwnProperty(key)) element.style[key] = (data as any)[key];
-        else if ((data as any)[key] != undefined && Object.keys(element).includes(key)) {
-          (element as any)[key] = (data as any)[key];
+        else if ((data as any)[key] != undefined) {
+          try {
+            (element as any)[key] = (data as any)[key];
+          } catch (__) {}
         }
       });
     }
