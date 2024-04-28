@@ -13,7 +13,6 @@ declare global {
   interface Event {
     detail: any;
   }
-  var Router: Router;
 
   function scoped(target: any): any;
 
@@ -64,12 +63,12 @@ WeakRef.prototype.equals = function (value: WeakRef<any>) {
   return this.deref() === value.deref();
 };
 
-Object.defineProperty(window, "Router", {
-  value: Router,
-  writable: true,
-  configurable: true,
-  enumerable: true,
-});
+// Object.defineProperty(window, "Router", {
+//   value: Router,
+//   writable: true,
+//   configurable: true,
+//   enumerable: true,
+// });
 
 Object.defineProperty(window, "scoped", {
   value: function (target: any): any {},
@@ -78,63 +77,69 @@ Object.defineProperty(window, "scoped", {
   enumerable: true,
 });
 
-Object.defineProperty(HTMLButtonElement.prototype, "multiple", {
-  get: function () {
-    return this._multiple;
-  },
-  set: function (_value: boolean) {
-    const inputFile = this.querySelector("input[button-file=file]");
-    if (inputFile) inputFile.multiple = _value;
-    this._multiple = _value;
-  },
-});
+try {
+  Object.defineProperty(HTMLButtonElement.prototype, "multiple", {
+    get: function () {
+      return this._multiple;
+    },
+    set: function (_value: boolean) {
+      const inputFile = this.querySelector("input[button-file=file]");
+      if (inputFile) inputFile.multiple = _value;
+      this._multiple = _value;
+    },
+  });
+} catch (__) {}
 
-Object.defineProperty(HTMLButtonElement.prototype, "accept", {
-  get: function () {
-    return this._accept;
-  },
-  set: function (value: string) {
-    const inputFile = this.querySelector("input[button-file=file]");
-    if (inputFile) inputFile.accept = value;
-    this._accept = value;
-  },
-});
+try {
+  Object.defineProperty(HTMLButtonElement.prototype, "accept", {
+    get: function () {
+      return this._accept;
+    },
+    set: function (value: string) {
+      const inputFile = this.querySelector("input[button-file=file]");
+      if (inputFile) inputFile.accept = value;
+      this._accept = value;
+    },
+  });
+} catch (__) {}
 
-const originalButton = Object.getOwnPropertyDescriptor(HTMLButtonElement.prototype, "type").set;
+try {
+  const originalButton = Object.getOwnPropertyDescriptor(HTMLButtonElement.prototype, "type").set;
 
-Object.defineProperty(HTMLButtonElement.prototype, "onfile", {
-  value: function (this: HTMLButtonElement, fileList: FileList) {},
-  writable: true,
-  configurable: true,
-  enumerable: true,
-});
+  Object.defineProperty(HTMLButtonElement.prototype, "onfile", {
+    value: function (this: HTMLButtonElement, fileList: FileList) {},
+    writable: true,
+    configurable: true,
+    enumerable: true,
+  });
 
-Object.defineProperty(HTMLButtonElement.prototype, "type", {
-  set: function (value: "submit" | "reset" | "button" | "file") {
-    let inputFile: HTMLInputElement | undefined = this.querySelector("input[button-file=file]");
-    if (value == "file") {
-      if (!inputFile) {
-        inputFile = document.createElement("input");
-        inputFile.type = "file";
-        inputFile.setAttribute("button-file", "file");
-        if (this.multiple) inputFile.multiple = this.multiple;
-        if (this.accept) inputFile.accept = this.accept;
-        inputFile.style.display = "none";
-        inputFile.onchange = (event: any) => {
-          this.onfile(event.target.files);
-          event.stopPropagation();
-        };
-        this.addEventListener("click", inputFile.click.bind(inputFile));
-        this.appendChild(inputFile);
+  Object.defineProperty(HTMLButtonElement.prototype, "type", {
+    set: function (value: "submit" | "reset" | "button" | "file") {
+      let inputFile: HTMLInputElement | undefined = this.querySelector("input[button-file=file]");
+      if (value == "file") {
+        if (!inputFile) {
+          inputFile = document.createElement("input");
+          inputFile.type = "file";
+          inputFile.setAttribute("button-file", "file");
+          if (this.multiple) inputFile.multiple = this.multiple;
+          if (this.accept) inputFile.accept = this.accept;
+          inputFile.style.display = "none";
+          inputFile.onchange = (event: any) => {
+            this.onfile(event.target.files);
+            event.stopPropagation();
+          };
+          this.addEventListener("click", inputFile.click.bind(inputFile));
+          this.appendChild(inputFile);
+        }
+        value = "button";
+      } else if (inputFile) {
+        this.removeEventListener("click", inputFile.click.bind(inputFile));
+        this.removeChild(inputFile);
       }
-      value = "button";
-    } else if (inputFile) {
-      this.removeEventListener("click", inputFile.click.bind(inputFile));
-      this.removeChild(inputFile);
-    }
-    originalButton.call(this, value);
-  },
-});
+      originalButton.call(this, value);
+    },
+  });
+} catch (__) {}
 
 // // Object.defineProperty(Number.prototype, "refTarget", {
 // //   value: undefined,

@@ -96,7 +96,7 @@ export class BorderPaneElement extends ILayout {
   }
 
   set center(component: IComponent) {
-    this._centerPane.remove();
+    this._centerPane?.remove();
     this._centerPane = component;
     this._center.innerHTML = "";
     if (this.variant == "primary") this._center.append(this.left, this._centerPane, this.right);

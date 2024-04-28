@@ -1,6 +1,6 @@
 {
   "name": "typecomposer",
-  "version": "0.0.33",
+  "version": "0.0.35",
   "repository": {
     "type": "git",
     "url": "https://github.com/zico15"
@@ -24,10 +24,9 @@
   },
   "keywords": [
     "typecomposer",
-    "components",
-    "typescript",
-    "vite",
-    "javascript"
+    "component",
+    "type",
+    "compose"
   ],
   "preferGlobal": true,
   "author": "Ezequiel",
