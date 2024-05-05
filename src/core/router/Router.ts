@@ -25,6 +25,7 @@ class RouterController {
   private previousRoute: RoutePageBuild[] = [];
   private static _props: any = {};
   private urlLast: string = "";
+  private view: IComponent | undefined = undefined;
 
   constructor() {
     window.addEventListener("load", () => {
@@ -205,7 +206,8 @@ class RouterController {
   }
 
   private setView<T extends IComponent>(view: T) {
-    if (!(document.body.lastElementChild instanceof HTMLScriptElement)) document.body?.lastElementChild?.remove();
+    if (this.view) document.body.removeChild(this.view as HTMLElement);
+    this.view = view;
     document.body.appendChild(view);
   }
 

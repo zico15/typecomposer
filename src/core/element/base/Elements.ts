@@ -18,7 +18,7 @@ export interface IComponent extends HTMLElement {
 }
 
 // 1. `<div>` - Para criar blocos de conteúdo genéricos.
-// 2. `<p>` - Para parágrafos de texto.
+// 2. `<p>` - Para parágrafos de texto.xfHTMLFormElement
 // 3. `<a>` - Para links.
 // 4. `<img>` - Para exibir imagens.
 // 5. `<ul>` - Para listas não ordenadas.
@@ -1053,6 +1053,7 @@ customElements.define("base-footer-element", FooterElement, {
 });
 
 export class FormElement extends HTMLFormElement implements IComponent {
+  private _response: any = undefined;
   constructor(
     optional?: StyleOptional & {
       acceptCharset?: string;
@@ -1067,7 +1068,32 @@ export class FormElement extends HTMLFormElement implements IComponent {
   ) {
     super();
     Component.applyData(optional, this);
+    //this.setAttribute("is-send", "false");
   }
+
+  //set onsubmit(value: ((this: GlobalEventHandlers, ev: SubmitEvent) => Promise<any>) | null) {
+  //  const a = async () => {
+  //    this.setAttribute("is-send", "true");
+  //    const elements = this.querySelectorAll("[submit-disabled]");
+  //    console.log("submit start: ", new Date().getTime());
+  //    for (let i = 0; i < elements.length; i++) {
+  //      const element = elements[i] as HTMLElement;
+  //      element.setAttribute("disabled", "true");
+  //    }
+  //    const sub = new SubmitEvent("submit");
+  //    this._response = await value.call(this, sub);
+  //    console.log("submit end: ", new Date().getTime());
+  //    this.setAttribute("is-send", "false");
+  //    for (let i = 0; i < elements.length; i++) {
+  //      const element = elements[i] as HTMLElement;
+  //      element.removeAttribute("disabled");
+  //    }
+  //  };
+
+  //  super.onsubmit = async () => {
+  //    return await a;
+  //  };
+  //}
 }
 
 customElements.define("base-form-element", FormElement, { extends: "form" });

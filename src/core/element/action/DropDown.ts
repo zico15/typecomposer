@@ -18,6 +18,8 @@ export class DropDown<T = any> extends Component {
   private _idClass: number;
   public onChange: (item: T, index: number) => void = () => {};
   private _selected: T | undefined = undefined;
+  textValue: (value: T | undefined) => string | undefined = undefined;
+  textSelected: (value: T | undefined) => string | undefined = undefined;
 
   constructor(
     private props?: StyleOptional & {
@@ -26,7 +28,8 @@ export class DropDown<T = any> extends Component {
       defaultOption?: string;
       selectionType?: SelectionType;
       placeholder?: string;
-      selectValue?: (value: T) => string;
+      textValue?: (value: T) => string;
+      textSelected?: (value: T) => string;
     },
   ) {
     super(props);
@@ -41,7 +44,9 @@ export class DropDown<T = any> extends Component {
     this.input.value = props.placeholder ? props.placeholder : props.defaultOption || "";
     this.selectionType = props.selectionType || "closeAndClean";
     this.onInit();
-    if (props.selectValue) this.selectValue = props.selectValue;
+    if (props.textValue) this.textValue = props.textValue;
+    if (props.textSelected) this.textSelected = props.textSelected;
+    if (props.textSelected == undefined && props.textValue != undefined) this.textSelected = props.textValue;
     this.options = props.options == undefined || props.options.length === 0 ? [props.noContent as any] : props.options;
   }
 
@@ -72,7 +77,7 @@ export class DropDown<T = any> extends Component {
 
   set selected(value: T | undefined) {
     this._selected = value;
-    this.input.value = this.selectValue(value);
+    this.input.value = this.textValue ? this.textValue(value) : value?.toString() || "";
   }
 
   private closeAndClean() {
@@ -125,7 +130,7 @@ export class DropDown<T = any> extends Component {
       if (option instanceof Node) node = this.dropdownContent.appendChild(option);
       else {
         const div = new DropDownItem({
-          text: option?.toString() || "",
+          text: this.textValue ? this.textValue(option) : option?.toString() || "",
         });
         node = div;
         if (this.previousSelected.includes(option)) {
@@ -142,7 +147,7 @@ export class DropDown<T = any> extends Component {
         } else {
           this.previousSelected = this.previousSelected.filter((selectedOption) => selectedOption !== option);
         }
-        this.input.value = this.selectValue(option);
+        this.input.value = this.textSelected ? this.textSelected(option) : option?.toString() || "";
         this._selected = option;
         this.input.style.color = "black";
         this.onChange(option, index);
@@ -150,8 +155,6 @@ export class DropDown<T = any> extends Component {
       };
     });
   }
-
-  selectValue: (value: T | undefined) => string = (value: T) => value?.toString() || "";
 
   get inputAndButtonDiv() {
     return this._inputAndButtonDiv;

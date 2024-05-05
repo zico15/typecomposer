@@ -14,6 +14,10 @@ declare global {
     detail: any;
   }
 
+  //interface HTMLFormElement {
+  //  onsubmit: ((this: GlobalEventHandlers, ev: SubmitEvent) => Promise<any> | any) | null;
+  //}
+
   function scoped(target: any): any;
 
   interface Window {
@@ -28,6 +32,8 @@ declare global {
     unmount(): void;
     addClasName(...names: string[]): void;
     setStyle(styles: StyleOptional): void;
+    onConnected(): void;
+    onDisconnected(): void;
   }
 
   interface HTMLElement {
@@ -37,6 +43,8 @@ declare global {
     unmount(): void;
     addClasName(...names: string[]): void;
     setStyle(styles: StyleOptional): void;
+    onConnected(): void;
+    onDisconnected(): void;
   }
 
   interface HTMLButtonElement {
@@ -207,6 +215,20 @@ Object.defineProperty(Element.prototype, "innerHTML", {
 });
 
 Object.defineProperty(Element.prototype, "onInit", {
+  value: function () {},
+  writable: true,
+  configurable: true,
+  enumerable: true,
+});
+
+Object.defineProperty(Element.prototype, "onConnected", {
+  value: function () {},
+  writable: true,
+  configurable: true,
+  enumerable: true,
+});
+
+Object.defineProperty(Element.prototype, "onDisconnected", {
   value: function () {},
   writable: true,
   configurable: true,
