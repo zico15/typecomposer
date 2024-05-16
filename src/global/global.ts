@@ -209,7 +209,7 @@ Object.defineProperty(Element.prototype, "innerHTML", {
   set: function (value: string | ref<string>) {
     if (value instanceof RefString) {
       value.refTarget.subscriber(this, "innerHTML", value.refPropertyKey);
-    } else if (typeof value !== "string") value.subscriber(this, "innerHTML");
+    } else if (typeof value == "object" && typeof value["subscriber"] == "function") value.subscriber(this, "innerHTML");
     else originalInnerHTML.call(this, value);
   },
 });
