@@ -24,10 +24,12 @@ import { StackPane } from "./layers/StackPane";
 import { SelectField } from "./action/SelectField";
 import { AlertPane, type AlertType } from "./action/AlertPane";
 import { ColorPicker } from "./action/ColorPicker";
+import { ScrollPane } from "./layers/ScrollPane";
 
 export {
   ColorPicker,
   AlertType,
+  ScrollPane,
   AlertPane,
   App,
   CardElement,

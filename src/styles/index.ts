@@ -3039,8 +3039,8 @@ Object.defineProperty(CSSStyleDeclaration.prototype, "setProperty", {
   value: function (property: string, value: string | ref<string> | null, priority?: string) {
     if (typeof value === "string") {
       setPropertyOriginal.call(this, property, value, priority);
-    } else if (value instanceof RefString) value.refTarget.subscriber(this, property, value.refPropertyKey);
-    else value.subscriber(this, property);
+    } else if (value instanceof RefString) value.refTarget.subscribe(this, property, value.refPropertyKey);
+    else value.subscribe(this, property);
   },
   writable: true,
   configurable: true,
@@ -3063,8 +3063,8 @@ Object.defineProperty(CSSStyleDeclaration.prototype, "hasOwnProperty", {
 // function setPropertyRef(property: string, value: string | ref<string>, fn: Function) {
 //   if (typeof value === "string") {
 //     fn.call(this, property, value);
-//   } else if (value instanceof RefString) value.refTarget.subscriber(this, property, value.refPropertyKey);
-//   else value.subscriber(this, property);
+//   } else if (value instanceof RefString) value.refTarget.subscribe(this, property, value.refPropertyKey);
+//   else value.subscribe(this, property);
 // }
 // Object.defineProperty(CSSStyleDeclaration.prototype, "color", {
 //   set: function (value: string | ref<string>) {

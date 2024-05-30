@@ -28,6 +28,8 @@ declare global {
   interface Element {
     innerHTML: string | ref<string>;
     style: CSSStyleDeclarationRefType;
+    set variant(v: "default" | string);
+    get variant(): "default" | string;
     onInit(): void;
     unmount(): void;
     addClasName(...names: string[]): void;
@@ -77,6 +79,16 @@ WeakRef.prototype.equals = function (value: WeakRef<any>) {
 //   configurable: true,
 //   enumerable: true,
 // });
+
+Object.defineProperty(Element.prototype, "variant", {
+  get: function () {
+    return this.getAttribute("variant") || "default";
+  },
+  set: function (v: "default" | string) {
+    if (v == "default") this.removeAttribute("variant");
+    else this.setAttribute("variant", v);
+  },
+});
 
 Object.defineProperty(window, "scoped", {
   value: function (target: any): any {},
@@ -196,8 +208,8 @@ try {
 Object.defineProperty(CSSStyleDeclaration.prototype, "setProperty", {
   value: function (property: string, value: string | ref<string>, priority?: string) {
     if (value instanceof RefString) {
-      value.refTarget.subscriber(this, property, value.refPropertyKey);
-    } else if (typeof value !== "string") value.subscriber(this, property);
+      value.refTarget.subscribe(this, property, value.refPropertyKey);
+    } else if (typeof value !== "string") value.subscribe(this, property);
     else this.setProperty(property, value, priority);
   },
 });
@@ -207,9 +219,10 @@ const originalInnerHTML = Object.getOwnPropertyDescriptor(Element.prototype, "in
 // Substitui innerHTML por um setter personalizado
 Object.defineProperty(Element.prototype, "innerHTML", {
   set: function (value: string | ref<string>) {
-    if (value instanceof RefString) {
-      value.refTarget.subscriber(this, "innerHTML", value.refPropertyKey);
-    } else if (typeof value == "object" && typeof value["subscriber"] == "function") value.subscriber(this, "innerHTML");
+    if (typeof value == "string") originalInnerHTML.call(this, value);
+    else if (value instanceof RefString) {
+      value.subscribe(this, "innerHTML", value.refPropertyKey);
+    } else if (typeof value == "object" && typeof value["subscribe"] == "function") value.subscribe(this, "innerHTML");
     else originalInnerHTML.call(this, value);
   },
 });
@@ -303,7 +316,7 @@ Element.prototype.constructor = function () {
 //       this.innerHTML = value;
 //     }
 //     );
-//     set.subscriber(this, "innerHTML");
+//     set.subscribe(this, "innerHTML");
 //   }
 //   else {
 //     this.innerHTML = set;
@@ -318,7 +331,7 @@ Element.prototype.constructor = function () {
 //   //   value.onChange((value) => {
 //   //     this.setAttribute(qualifiedName, value);
 //   //   });
-//   //   value.subscriber(this, qualifiedName);
+//   //   value.subscribe(this, qualifiedName);
 //   // } else {
 //   console.log("setAttribute: ", qualifiedName, value);
 //   super.setAttribute(qualifiedName, value);

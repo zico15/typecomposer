@@ -1,0 +1,47 @@
+.scroll-pane {
+  overflow: hidden;
+  .container-pane-vertical {
+    overflow-y: auto;
+    overflow-x: hidden;
+    flex: 1;
+  }
+  .container-pane-horizontal {
+    overflow-x: auto;
+    overflow-y: hidden;
+    flex: 1;
+  }
+  .container-pane-both {
+    flex: 1;
+    overflow: auto;
+  }
+}
+
+.scroll-pane[variant="default"],
+.scroll-pane:not([variant]) {
+  scrollbar-width: thin; /* Make scrollbar thinner */
+  scrollbar-color: rgba(0, 0, 0, 0.5) rgba(0, 0, 0, 0.1); /* Thumb color and track color */
+
+  /* Define the styles for the entire scrollbar */
+  ::-webkit-scrollbar {
+    width: 12px; /* Adjust the width to your preference */
+    height: 12px; /* Adjust the height to your preference */
+  }
+
+  /* Define the styles for the track of the scrollbar */
+  ::-webkit-scrollbar-track {
+    background: rgba(0, 0, 0, 0.1); /* Light black (transparent) background */
+    border-radius: 10px; /* Rounded corners */
+  }
+
+  /* Define the styles for the scrollbar thumb (the draggable part) */
+  ::-webkit-scrollbar-thumb {
+    background: rgba(0, 0, 0, 0.5); /* Black (semi-transparent) background */
+    border-radius: 10px; /* Rounded corners */
+    border: 3px solid rgba(0, 0, 0, 0.3); /* Adds some space around the thumb */
+  }
+
+  /* Define the styles for the scrollbar thumb when hovered */
+  ::-webkit-scrollbar-thumb:hover {
+    background: rgba(0, 0, 0, 0.7); /* Darker black (semi-transparent) background on hover */
+  }
+}

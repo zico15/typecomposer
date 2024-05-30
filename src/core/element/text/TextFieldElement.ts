@@ -77,8 +77,8 @@ export class TextFieldElement extends Component {
   set value(value: string | ref<string>) {
     if (value == undefined) value = "";
     if (typeof value == "string") this.input.value = value;
-    else if (value instanceof RefString) value.subscriber(this, "value", value.refPropertyKey);
-    else value.subscriber(this, "value");
+    else if (value instanceof RefString) value.subscribe(this, "value", value.refPropertyKey);
+    else value.subscribe(this, "value");
   }
 }
 // @ts-ignore

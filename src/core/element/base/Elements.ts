@@ -1,4 +1,4 @@
-import { Router, ref, CSSStyleDeclarationRef, StyleOptional, Variant } from "../..";
+import { Router, ref, CSSStyleDeclarationRef, StyleOptional, Variant, RefString } from "../..";
 import { EventComponent, EventHandler } from "./Event";
 
 export interface IElement {
@@ -653,12 +653,11 @@ export class InputElement extends HTMLInputElement implements IComponent {
     delete optional?.value;
     Component.applyData(optional, this);
     if (v) {
-      if (typeof v == "string") this.value = v;
+      if (typeof v == "string") this.value = v?.toString() || "";
       else {
-        const ref: ref<string> = v;
-        ref.subscriber(this, "value", ref["refPropertyKey"]);
+        v.subscribe(this, "value", v["refPropertyKey"]);
         this.addEventListener("input", (event) => {
-          ref.setValue(this.value, ref["refPropertyKey"]);
+          v.setValue(this.value, v["refPropertyKey"]);
         });
       }
     }

@@ -1,6 +1,6 @@
 {
   "name": "typecomposer",
-  "version": "0.0.39",
+  "version": "0.0.40",
   "repository": {
     "type": "git",
     "url": "https://github.com/zico15"
@@ -16,7 +16,7 @@
     "public"
   ],
   "scripts": {
-    "copy": "cp -r dist /Users/ezequiel/Documents/observatorios/frontend_tc/node_modules/typecomposer",
+    "copy": "cp -r dist '/Users/ezequiel/Library/Mobile Documents/com~apple~CloudDocs/Documents/TypeComposer/type-map-leaflet/node_modules/typecomposer'",
     "build": "rm -rf dist/ && prettier --write src/ && npm run build:esm && npm run build:cjs && npm run copy",
     "build:esm": "tsc",
     "build:cjs": "tsc --module CommonJS --outDir dist/cjs",
