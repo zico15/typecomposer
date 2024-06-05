@@ -3039,8 +3039,8 @@ Object.defineProperty(CSSStyleDeclaration.prototype, "setProperty", {
   value: function (property: string, value: string | ref<string> | null, priority?: string) {
     if (typeof value === "string") {
       setPropertyOriginal.call(this, property, value, priority);
-    } else if (value instanceof RefString) value.refTarget.subscribe(this, property, value.refPropertyKey);
-    else value.subscribe(this, property);
+    } else if (value instanceof RefString) value.__subscribe__(this, property, value.refPropertyKey);
+    else (value as any).__subscribe__(this, property);
   },
   writable: true,
   configurable: true,

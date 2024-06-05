@@ -5,7 +5,7 @@ export interface DataIconElement extends DataImageElement {
 }
 
 export class IconElement extends Component {
-  private _icon: ref<string> = ref("");
+  private _icon = ref("");
 
   constructor(optional?: DataIconElement) {
     super(optional);

@@ -1,4 +1,4 @@
-import { RefString, ref, Component, StyleOptional, CSSStyleDeclarationRef as CSSStyleDeclarationRefType, Router } from "../";
+import { RefString, ref, Component, StyleOptional, CSSStyleDeclarationRef as CSSStyleDeclarationRefType, Router, isRef } from "../";
 
 declare global {
   var CSSStyleDeclarationRef: {
@@ -208,8 +208,8 @@ try {
 Object.defineProperty(CSSStyleDeclaration.prototype, "setProperty", {
   value: function (property: string, value: string | ref<string>, priority?: string) {
     if (value instanceof RefString) {
-      value.refTarget.subscribe(this, property, value.refPropertyKey);
-    } else if (typeof value !== "string") value.subscribe(this, property);
+      value.__subscribe__(this, property, value.refPropertyKey);
+    } else if (isRef(value)) (value as any).__subscribe__(this, property);
     else this.setProperty(property, value, priority);
   },
 });
@@ -221,8 +221,8 @@ Object.defineProperty(Element.prototype, "innerHTML", {
   set: function (value: string | ref<string>) {
     if (typeof value == "string") originalInnerHTML.call(this, value);
     else if (value instanceof RefString) {
-      value.subscribe(this, "innerHTML", value.refPropertyKey);
-    } else if (typeof value == "object" && typeof value["subscribe"] == "function") value.subscribe(this, "innerHTML");
+      value.__subscribe__(this, "innerHTML", value.refPropertyKey);
+    } else if (isRef(value)) (value as any).__subscribe__(this, "innerHTML");
     else originalInnerHTML.call(this, value);
   },
 });

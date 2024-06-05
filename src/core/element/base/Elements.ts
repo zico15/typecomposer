@@ -655,9 +655,9 @@ export class InputElement extends HTMLInputElement implements IComponent {
     if (v) {
       if (typeof v == "string") this.value = v?.toString() || "";
       else {
-        v.subscribe(this, "value", v["refPropertyKey"]);
+        (v as any).__subscribe__(this, "value", v["refPropertyKey"]);
         this.addEventListener("input", (event) => {
-          v.setValue(this.value, v["refPropertyKey"]);
+          (v as any).__setValue__(this.value, v["refPropertyKey"]);
         });
       }
     }

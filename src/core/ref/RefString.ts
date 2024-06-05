@@ -2,34 +2,37 @@ export class RefString extends String {
   constructor(
     valor: string,
     public refPropertyKey: string | symbol,
-    public refTarget: any,
+    public proxy: {
+      __subscribe__(target: any, propertyKey: string | symbol, refPropertyKey: string | symbol): void;
+    } & any,
   ) {
     super(valor);
   }
 
-  setValue(value: string, propertyKey: string | symbol) {
-    if (this.refTarget) this.refTarget[propertyKey] = value;
+  __setValue__(value: string, propertyKey: string | symbol) {
+    if (this.proxy) this.proxy[propertyKey] = value;
   }
 
-  subscribe(target: {}, propertyKey: string | symbol, refPropertyKey: string | symbol = undefined) {
-    if (this.refTarget) {
-      this.refTarget.__ref__subscribe__(target, propertyKey, refPropertyKey);
+  __subscribe__(target: {}, propertyKey: string | symbol, refPropertyKey?: string | symbol) {
+    if (this.proxy) {
+      console.log("subscribe", target, propertyKey, refPropertyKey, " proxy: ", this.proxy);
+
+      this.proxy.__subscribe__(target, propertyKey, refPropertyKey);
     }
   }
 
   onChange(fun: (value: any) => void, target?: {}) {
-    if (this.refTarget) {
-      this.refTarget.subscribe(target, fun);
+    if (this.proxy) {
+      this.proxy.__onChange_(target, fun);
     }
   }
 
   get value(): any {
-    return this.refTarget.value;
+    return this.proxy[this.refPropertyKey];
   }
 
   toString(): string {
-    console.log("RefString.toString: ", this.refTarget, this.refPropertyKey);
-    if (this.refTarget && this.refPropertyKey) return this.refTarget[this.refPropertyKey] || "";
+    if (this.proxy && this.refPropertyKey) return this.proxy[this.refPropertyKey] || "";
     else return this.toString();
   }
 }
