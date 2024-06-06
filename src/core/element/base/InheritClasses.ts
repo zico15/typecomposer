@@ -17,10 +17,7 @@ export function InheritClasses<T extends (new (...args: any[]) => any)[]>(...bas
   bases.forEach((base) => {
     Object.getOwnPropertyNames(base.prototype)
       .filter((prop) => prop != "constructor")
-      .forEach((prop) => {
-        console.log("prop: ", prop);
-        // Bases.prototype[prop] = base.prototype[prop];
-      });
+      .forEach((prop) => {});
   });
   return Bases as JoinConstructors<T>;
 }

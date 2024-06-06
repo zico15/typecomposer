@@ -20,9 +20,7 @@ export class DialogPane extends Component {
     });
   }
 
-  onInit(): void {
-    console.log("DialogElement");
-  }
+  onInit(): void {}
 
   get content(): HTMLElement {
     return this._content;

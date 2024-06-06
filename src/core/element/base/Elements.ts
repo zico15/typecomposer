@@ -1,4 +1,4 @@
-import { Router, ref, CSSStyleDeclarationRef, StyleOptional, Variant, RefString } from "../..";
+import { Router, ref, CSSStyleDeclarationRef, StyleOptional, Variant, RefString, isRef } from "../..";
 import { EventComponent, EventHandler } from "./Event";
 
 export interface IElement {
@@ -655,9 +655,11 @@ export class InputElement extends HTMLInputElement implements IComponent {
     if (v) {
       if (typeof v == "string") this.value = v?.toString() || "";
       else {
-        (v as any).__subscribe__(this, "value", v["refPropertyKey"]);
+        if (isRef(v)) (v as any).__subscribe__(this, "value", undefined);
+        else (v as any).__subscribe__(this, "value", v["refPropertyKey"]);
         this.addEventListener("input", (event) => {
-          (v as any).__setValue__(this.value, v["refPropertyKey"]);
+          if (isRef(v)) v.value = this.value;
+          else (v as any).__setValue__(this.value, v["refPropertyKey"]);
         });
       }
     }
@@ -1067,32 +1069,7 @@ export class FormElement extends HTMLFormElement implements IComponent {
   ) {
     super();
     Component.applyData(optional, this);
-    //this.setAttribute("is-send", "false");
   }
-
-  //set onsubmit(value: ((this: GlobalEventHandlers, ev: SubmitEvent) => Promise<any>) | null) {
-  //  const a = async () => {
-  //    this.setAttribute("is-send", "true");
-  //    const elements = this.querySelectorAll("[submit-disabled]");
-  //    console.log("submit start: ", new Date().getTime());
-  //    for (let i = 0; i < elements.length; i++) {
-  //      const element = elements[i] as HTMLElement;
-  //      element.setAttribute("disabled", "true");
-  //    }
-  //    const sub = new SubmitEvent("submit");
-  //    this._response = await value.call(this, sub);
-  //    console.log("submit end: ", new Date().getTime());
-  //    this.setAttribute("is-send", "false");
-  //    for (let i = 0; i < elements.length; i++) {
-  //      const element = elements[i] as HTMLElement;
-  //      element.removeAttribute("disabled");
-  //    }
-  //  };
-
-  //  super.onsubmit = async () => {
-  //    return await a;
-  //  };
-  //}
 }
 
 customElements.define("base-form-element", FormElement, { extends: "form" });

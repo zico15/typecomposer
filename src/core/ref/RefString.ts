@@ -1,12 +1,12 @@
 export class RefString extends String {
   constructor(
-    valor: string,
+    value: string,
     public refPropertyKey: string | symbol,
-    public proxy: {
+    private proxy: {
       __subscribe__(target: any, propertyKey: string | symbol, refPropertyKey: string | symbol): void;
     } & any,
   ) {
-    super(valor);
+    super(value?.toString() || "");
   }
 
   __setValue__(value: string, propertyKey: string | symbol) {
@@ -15,9 +15,7 @@ export class RefString extends String {
 
   __subscribe__(target: {}, propertyKey: string | symbol, refPropertyKey?: string | symbol) {
     if (this.proxy) {
-      console.log("subscribe", target, propertyKey, refPropertyKey, " proxy: ", this.proxy);
-
-      this.proxy.__subscribe__(target, propertyKey, refPropertyKey);
+      this.proxy.__subscribe__(target, propertyKey, this.refPropertyKey);
     }
   }
 
@@ -27,12 +25,8 @@ export class RefString extends String {
     }
   }
 
-  get value(): any {
-    return this.proxy[this.refPropertyKey];
+  equals(value: string): boolean {
+    return this.valueOf() === value.valueOf();
   }
 
-  toString(): string {
-    if (this.proxy && this.refPropertyKey) return this.proxy[this.refPropertyKey] || "";
-    else return this.toString();
-  }
 }

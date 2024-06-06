@@ -1,4 +1,5 @@
 import { RefMap } from "./RefMap";
+import { RefString } from "./RefString";
 import { subscribeRef } from "./SubscribeRef";
 
 export namespace RefProperties {
@@ -27,7 +28,7 @@ export namespace RefProperties {
         else if (typeof prop === "function") subscriber.fun = prop;
         RefMap.subscribe(subscriber);
         if (prop != undefined && (typeof prop === "string" || typeof prop === "symbol"))
-          baseNotify(subscriber, prop, refPropertyKey ? proxy[refPropertyKey] : proxy["value"]);
+          baseNotify(subscriber, refPropertyKey || "value", refPropertyKey ? proxy[refPropertyKey] : proxy["value"]);
         return subscriber;
       }.bind(proxy),
       configurable: false,
@@ -60,7 +61,8 @@ export namespace RefProperties {
   }
 
   export function baseNotify(subscriber: subscribeRef<any>, prop: string | symbol | undefined, value: any) {
-    console.log("baseNotify: ", "subscriber: ", subscriber, " prop: ", prop, " value: ", value);
+    if (subscriber.refPropertyKey && subscriber.refPropertyKey !== prop) return;
+    if (value instanceof RefString) value = value.toString();
     if (subscriber.fun) subscriber.fun(value);
     else if (subscriber.target.deref() && prop) {
       const target = subscriber.target.deref();
@@ -101,7 +103,6 @@ export namespace RefProperties {
   }
 
   export function definePropertieSetValue(proxy: any) {
-    // value: string, propertyKey: string | symbol
     Object.defineProperty(proxy, "__setValue__", {
       value: function (value: any, propertyKey: string | symbol | undefined) {
         if (propertyKey) {

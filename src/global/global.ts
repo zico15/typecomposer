@@ -1,4 +1,4 @@
-import { RefString, ref, Component, StyleOptional, CSSStyleDeclarationRef as CSSStyleDeclarationRefType, Router, isRef } from "../";
+import { RefString, ref, Component, StyleOptional, CSSStyleDeclarationRef as CSSStyleDeclarationRefType, isRef } from "../";
 
 declare global {
   var CSSStyleDeclarationRef: {
@@ -69,16 +69,20 @@ declare global {
   }
 }
 
+//// Array
+//const original = Array.prototype.includes;
+
+//Object.defineProperty(Array.prototype, "includes", {
+//  value: function <T>(value: T) {
+//    console.log("includes", this);
+//    if (value instanceof RefString) return original.call(this, value.toString());
+//    return original.call(this, value);
+//  },
+//});
+
 WeakRef.prototype.equals = function (value: WeakRef<any>) {
   return this.deref() === value.deref();
 };
-
-// Object.defineProperty(window, "Router", {
-//   value: Router,
-//   writable: true,
-//   configurable: true,
-//   enumerable: true,
-// });
 
 Object.defineProperty(Element.prototype, "variant", {
   get: function () {
@@ -161,50 +165,6 @@ try {
   });
 } catch (__) {}
 
-// // Object.defineProperty(Number.prototype, "refTarget", {
-// //   value: undefined,
-// //   writable: true,
-// //   configurable: true,
-// //   enumerable: true,
-// // });
-// // Define um novo método setRefTarget no protótipo de Number
-// Number.prototype.setRefTarget = function (value) {
-//   // Cria um objeto temporário do tipo NumberWrapper
-//   const wrapper = {
-//     value: this,
-//     refTarget: value,
-//   };
-//   // Retorna o objeto temporário
-//   return wrapper;
-// };
-
-// Number.prototype.getRefTarget = function () {
-//   return this.refTarget;
-// };
-
-// // Teste
-// // const a = (5).setRefTarget("teste");
-// // console.log(a.refTarget);
-
-// let a = new Number(5);
-// let b: number = a;
-// b = ref(3);
-// b.setRefTarget("teste");
-// a.setRefTarget("teste");
-// b.toFixed(2);
-
-// // a++;
-// console.log("a: ", a.getRefTarget());
-
-// const originalStyle = Object.getOwnPropertyDescriptor(Element.prototype, "style").set;
-
-// Object.defineProperty(Element.prototype, "style", {
-//   set: function () {
-//     console.log("A chamada para style foi interceptada");
-//     return originalStyle.call(this);
-//   },
-// });
-
 Object.defineProperty(CSSStyleDeclaration.prototype, "setProperty", {
   value: function (property: string, value: string | ref<string>, priority?: string) {
     if (value instanceof RefString) {
@@ -216,14 +176,12 @@ Object.defineProperty(CSSStyleDeclaration.prototype, "setProperty", {
 
 const originalInnerHTML = Object.getOwnPropertyDescriptor(Element.prototype, "innerHTML").set;
 
-// Substitui innerHTML por um setter personalizado
 Object.defineProperty(Element.prototype, "innerHTML", {
   set: function (value: string | ref<string>) {
-    if (typeof value == "string") originalInnerHTML.call(this, value);
-    else if (value instanceof RefString) {
+    if (value instanceof RefString) {
       value.__subscribe__(this, "innerHTML", value.refPropertyKey);
     } else if (isRef(value)) (value as any).__subscribe__(this, "innerHTML");
-    else originalInnerHTML.call(this, value);
+    else originalInnerHTML.call(this, value?.toString());
   },
 });
 
@@ -282,68 +240,6 @@ Element.prototype.constructor = function () {
   construcorOriginal.call(this);
   this.onInit();
 };
-
-// Object.defineProperty(Element.prototype, "style", {
-//   value: {
-
-//   },
-
-//   get: function () {
-//     return
-//   },
-// });
-
-// interface Element {
-//   setAttribute(qualifiedName: string, value: any | ref<any>): void;
-// }
-// interface CSSStyleDeclaration {
-//   // @ts-ignore
-//   get color(): string | ref<string>;
-//   // @ts-ignore
-//   set color(value: string | ref<string>);
-// }
-
-// interface ElementCSSInlineStyle {
-//   readonly style: CSSStyleDeclaration;
-// }
-// interface Proxy {
-//   onChange(fun: (value: any) => void, target?: {}): void;
-// }
-
-// HTMLElement.prototype.innerHTML =  (value: string | ref<string>) => {
-//   if (set instanceof ref) {
-//     set.onChange((value) => {
-//       this.innerHTML = value;
-//     }
-//     );
-//     set.subscribe(this, "innerHTML");
-//   }
-//   else {
-//     this.innerHTML = set;
-//   }
-// }
-
-// Element.prototype.setAttribute = function (this: any,
-//   qualifiedName: string,
-//   value: any | ref<any>,
-// ): void {
-//   // if (value instanceof ref) {
-//   //   value.onChange((value) => {
-//   //     this.setAttribute(qualifiedName, value);
-//   //   });
-//   //   value.subscribe(this, qualifiedName);
-//   // } else {
-//   console.log("setAttribute: ", qualifiedName, value);
-//   super.setAttribute(qualifiedName, value);
-//   // }
-// };
-
-// Proxy.prototype.onChange = function (
-//   fun: (value: any) => void,
-//   target?: {},
-// ): void {
-//   console.log("onChange: ", fun, target);
-// };
 
 Array.prototype.clear = function () {
   this.length = 0;

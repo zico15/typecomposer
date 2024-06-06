@@ -47,7 +47,6 @@ export class TabItem extends Component {
       // @ts-ignore
       this.closeIcon = new IconElement({ icon: "fa-thin fa-x", order: "2" });
       this.closeIcon.onclick = () => {
-        console.log("close");
         this.remove();
       };
       this.appendChild(this.closeIcon);

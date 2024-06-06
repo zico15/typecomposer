@@ -73,7 +73,13 @@ export function isRef(obj: any): boolean {
   return typeof obj == "object" && "__subscribe__" in obj && "__onChange__" in obj && "__parent__" in obj && "__notify__" in obj;
 }
 
-export type ref<T> = typeof RefProxy;
+export type ref<T> = {
+  value: T;
+  subscribe: (target: any, prop: string | symbol | ((value: any) => void), refPropertyKey?: string | symbol | undefined) => subscribeRef<any> | undefined;
+  onChange: <T>(fun: (value: T) => void, target?: {} | undefined) => void;
+  toString: () => string;
+  toJSON: () => string;
+};
 export type refType = typeof refType;
 export type isRef = typeof isRef;
 
@@ -102,9 +108,15 @@ export function refType<T extends object>(base: T) {
   return undefined;
 }
 
-export function ref<T>(value: T) {
+export function ref<T>(value: T): {
+  value: T;
+  subscribe: (target: any, prop: string | symbol | ((value: any) => void), refPropertyKey?: string | symbol | undefined) => subscribeRef<any> | undefined;
+  onChange: <T>(fun: (value: T) => void, target?: {} | undefined) => void;
+  toString: () => string;
+  toJSON: () => string;
+} {
   //@ts-ignore
-  const r = RefProxy({ value, subscribe, onChange, toString: () => "", toJSON: () => value }, this);
+  const r = RefProxy({ value: value, subscribe, onChange, toString: () => "", toJSON: () => value }, this);
   r.subscribe = subscribe.bind(r);
   // @ts-ignore
   r.onChange<T> = onChange.bind(r);
@@ -112,5 +124,5 @@ export function ref<T>(value: T) {
   r.toString = toString.bind(r);
   // @ts-ignore
   r.toJSON = toJSON.bind(r);
-  return r;
+  return r as any;
 }

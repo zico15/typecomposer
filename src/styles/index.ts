@@ -3053,24 +3053,3 @@ Object.defineProperty(CSSStyleDeclaration.prototype, "hasOwnProperty", {
   writable: true,
   configurable: true,
 });
-
-// const styles = window.getComputedStyle(document.body);
-// let stylesName = Object.getOwnPropertyNames(styles);
-// console.log("stylesName: ");
-// // for (let key in _styleAtributtes) {
-// //   try {
-// const original = Object.getOwnPropertyDescriptor(CSSStyleDeclaration.prototype, "color").set;
-// function setPropertyRef(property: string, value: string | ref<string>, fn: Function) {
-//   if (typeof value === "string") {
-//     fn.call(this, property, value);
-//   } else if (value instanceof RefString) value.refTarget.subscribe(this, property, value.refPropertyKey);
-//   else value.subscribe(this, property);
-// }
-// Object.defineProperty(CSSStyleDeclaration.prototype, "color", {
-//   set: function (value: string | ref<string>) {
-//     console.log("A chamada para color foi interceptada com o valor:", value);
-//     setPropertyRef.call(this, "color", value, original);
-//   },
-// });
-//   } catch (error) {}
-// }

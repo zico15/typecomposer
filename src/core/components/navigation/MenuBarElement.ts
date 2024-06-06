@@ -32,7 +32,6 @@ export class MenuBarElement extends Component {
     this.nav.append(this.checkbox, this.checkboxLabel, this._ul);
     this.append(this.nav);
     this.checkbox.addEventListener("change", () => {
-      console.log(this.checkbox.checked);
       this._ul.style.top = this.clientHeight + "px";
     });
   }

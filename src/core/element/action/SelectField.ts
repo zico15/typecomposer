@@ -13,7 +13,6 @@ export class SelectField<T> extends DropDown<T> {
   ) {
     super({ ...optional, selectionType: "closeAndClean" });
     this.input.readOnly = false;
-    console.log("SelectField");
   }
 }
 customElements.define("select-field", SelectField);
