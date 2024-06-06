@@ -5,7 +5,7 @@ export type FlowType = "flow-1" | "flow-2" | "flow-3" | "flow-4" | "flow-5" | "f
 export class FlowPane extends ILayout {
   constructor(optional?: StyleOptional) {
     super({ overflow: "hidden", ...optional });
-    this.addClasName("flow-pane");
+    this.addClassName("flow-pane");
   }
 
   appendChild<T extends Node>(node: T, flowType: FlowType = "flow-6"): T {

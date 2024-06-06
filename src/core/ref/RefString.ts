@@ -25,8 +25,15 @@ export class RefString extends String {
     }
   }
 
+  get value(): string {
+    return this.toString();
+  }
+
+  get test(): string {
+    return this.toString();
+  }
+
   equals(value: string): boolean {
     return this.valueOf() === value.valueOf();
   }
-
 }

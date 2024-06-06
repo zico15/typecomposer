@@ -32,7 +32,7 @@ declare global {
     get variant(): "default" | string;
     onInit(): void;
     unmount(): void;
-    addClasName(...names: string[]): void;
+    addClassName(...names: string[]): void;
     setStyle(styles: StyleOptional): void;
     onConnected(): void;
     onDisconnected(): void;
@@ -43,7 +43,7 @@ declare global {
     style: CSSStyleDeclarationRefType;
     onInit(): void;
     unmount(): void;
-    addClasName(...names: string[]): void;
+    addClassName(...names: string[]): void;
     setStyle(styles: StyleOptional): void;
     onConnected(): void;
     onDisconnected(): void;
@@ -213,7 +213,7 @@ Object.defineProperty(Element.prototype, "unmount", {
   enumerable: true,
 });
 
-Object.defineProperty(Element.prototype, "addClasName", {
+Object.defineProperty(Element.prototype, "addClassName", {
   value: function (...names: string[]) {
     for (const name of names) {
       const strs = name.split(" ");

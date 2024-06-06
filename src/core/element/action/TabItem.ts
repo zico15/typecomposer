@@ -57,7 +57,7 @@ export class TabItem extends Component {
   }
 
   public select() {
-    if (!this.classList.contains("tab-title-active")) this.addClasName("tab-title-active");
+    if (!this.classList.contains("tab-title-active")) this.addClassName("tab-title-active");
     this._content.style.display = this.displayContent;
   }
 

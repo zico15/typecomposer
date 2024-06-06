@@ -3,7 +3,7 @@ import { ILayout, StyleOptional, ref } from "../..";
 export class GridElement extends ILayout {
   constructor(optional?: StyleOptional) {
     super(optional);
-    this.addClasName("grid-element");
+    this.addClassName("grid-element");
     if (optional?.columns) this.columns = optional.columns;
     if (optional?.rows) this.rows = optional.rows;
     this.columns = "1";

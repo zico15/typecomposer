@@ -14,7 +14,7 @@ export class TabPane extends BorderPaneElement {
     },
   ) {
     super(optional);
-    this.addClasName("tab-pane");
+    this.addClassName("tab-pane");
     this.style.width = "100%";
     this.style.marginTop = "10px";
     // this.style.minHeight = "280px";

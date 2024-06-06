@@ -7,8 +7,8 @@ export class PaneElement extends ILayout {
     super();
     this.___element_pane__ = new DivElement(optional);
     super.appendChild(this.___element_pane__);
-    this.addClasName("pane-element");
-    this.___element_pane__.addClasName("pane");
+    this.addClassName("pane-element");
+    this.___element_pane__.addClassName("pane");
   }
 
   public appendChild<T extends Node>(node: T): T {

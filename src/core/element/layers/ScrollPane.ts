@@ -11,8 +11,8 @@ export class ScrollPane extends ILayout {
   ) {
     super(optional);
     if (optional?.variant) this.variant = optional.variant;
-    this.addClasName("scroll-pane");
-    this._container.addClasName(`container-pane-${optional?.orientation || "both"}`);
+    this.addClassName("scroll-pane");
+    this._container.addClassName(`container-pane-${optional?.orientation || "both"}`);
     this.style.display = "flex";
     this.style.overflow = "hidden";
     this.style.position = "relative";

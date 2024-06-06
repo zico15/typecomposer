@@ -16,7 +16,7 @@ export class BorderPaneElement extends ILayout {
   ) {
     super(optional);
     this.variant = optional?.variant || "primary";
-    this.addClasName("border-pane");
+    this.addClassName("border-pane");
   }
 
   get variant(): string {

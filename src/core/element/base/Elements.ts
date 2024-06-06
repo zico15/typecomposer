@@ -4,7 +4,7 @@ import { EventComponent, EventHandler } from "./Event";
 export interface IElement {
   onInit(): void;
   append(...childs: any[]): void;
-  addClasName(...names: string[]): void;
+  addClassName(...names: string[]): void;
 
   get style(): StyleOptional;
 }
@@ -12,7 +12,7 @@ export interface IElement {
 export interface IComponent extends HTMLElement {
   onInit(): void;
   unmount(): void;
-  addClasName(...names: string[]): void;
+  addClassName(...names: string[]): void;
   get style(): CSSStyleDeclarationRef;
   set innerHTML(value: string | ref<string> | any);
 }
@@ -62,7 +62,7 @@ export class Component extends HTMLElement implements IComponent {
       //   (element as any).id = data.id;
       // }
       if (data.className != undefined) {
-        (element as any).addClasName(data.className);
+        (element as any).addClassName(data.className);
       }
       this.applyStyleOrAttribute(data, element);
     }
@@ -73,7 +73,7 @@ export class Component extends HTMLElement implements IComponent {
       Object.keys(data).forEach((key: string) => {
         if (data[key] == undefined) return;
         if (key == "for" && (data as any)[key] != undefined) (element as any).setAttribute("for", (data as any)[key]);
-        else if (key == "className" && (data as any)[key] != undefined) element.addClasName((data as any)[key]);
+        else if (key == "className" && (data as any)[key] != undefined) element.addClassName((data as any)[key]);
         else if (key == "text" && (data as any)[key] != undefined) element.innerHTML = (data as any)[key];
         else if (element.style.hasOwnProperty(key)) element.style[key] = (data as any)[key];
         else if ((data as any)[key] != undefined) {
@@ -277,13 +277,8 @@ export class AreaElement extends HTMLAreaElement implements IComponent {
 
 customElements.define("base-area-element", AreaElement, { extends: "area" });
 
-export interface DataImageElement extends StyleOptional {
-  src?: string;
-  alt?: string;
-}
-
 export class ImageElement extends HTMLImageElement implements IComponent {
-  constructor(optional?: DataImageElement) {
+  constructor(optional?: StyleOptional & { src?: string; alt?: string }) {
     super();
     this.className = "image-element";
     Component.applyData(optional, this);
@@ -1122,7 +1117,7 @@ export class H4Element extends H3Element implements IComponent {
 
   public onInit(): void {}
 
-  addClasName(...names: string[]): void {
+  addClassName(...names: string[]): void {
     this.classList.add(...names);
   }
 }
@@ -1138,7 +1133,7 @@ export class H5Element extends H3Element implements IComponent {
 
   public onInit(): void {}
 
-  addClasName(...names: string[]): void {
+  addClassName(...names: string[]): void {
     this.classList.add(...names);
   }
 }
@@ -1154,7 +1149,7 @@ export class H6Element extends H3Element implements IComponent {
 
   public onInit(): void {}
 
-  addClasName(...names: string[]): void {
+  addClassName(...names: string[]): void {
     this.classList.add(...names);
   }
 }

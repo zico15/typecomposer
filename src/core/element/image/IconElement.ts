@@ -1,13 +1,15 @@
-import { Component, DataImageElement, ref } from "../..";
-
-export interface DataIconElement extends DataImageElement {
-  icon?: string | ref<string>;
-}
+import { Component, StyleOptional, ref } from "../..";
 
 export class IconElement extends Component {
   private _icon = ref("");
 
-  constructor(optional?: DataIconElement) {
+  constructor(
+    optional?: StyleOptional & {
+      icon?: string | ref<string>;
+      src?: string;
+      alt?: string;
+    },
+  ) {
     super(optional);
     if (optional != undefined && optional.icon != undefined) this.icon = optional.icon;
   }
@@ -21,7 +23,7 @@ export class IconElement extends Component {
     else {
       const splice = value.split(" ");
       splice.forEach((v) => {
-        this.addClasName(v);
+        this.addClassName(v);
       });
     }
   }

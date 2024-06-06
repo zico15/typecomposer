@@ -39,7 +39,7 @@ function RefProxy<T extends object>(target: T, parent: any): T {
   const proxy: T = new Proxy(target, {
     get: (target, prop: any, receiver) => {
       const value = Reflect.get(target, prop, receiver);
-      if (parent && typeof value === "string") return new RefString(value, prop, proxy);
+      if (parent && typeof value === "string" && value) return new RefString(value, prop, proxy);
       return value;
     },
     set: (target: any, prop, value, receiver) => {
