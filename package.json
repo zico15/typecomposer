@@ -1,6 +1,6 @@
 {
   "name": "typecomposer",
-  "version": "0.0.45",
+  "version": "0.0.47",
   "repository": {
     "type": "git",
     "url": "https://github.com/zico15"
@@ -10,10 +10,12 @@
   "module": "dist/esm/index.js",
   "types": "dist/esm/index.d.ts",
   "files": [
+    "README.md",
     "dist",
     "styles",
     "typings.d.ts",
-    "public"
+    "public",
+    "LICENSE"
   ],
   "scripts": {
     "copy": "cp -r dist '/Users/ezequiel/Documents/observatorios/frontend_tc/node_modules/typecomposer'",
@@ -23,10 +25,7 @@
     "pub": "npm run build && npm publish"
   },
   "keywords": [
-    "typecomposer",
-    "component",
-    "type",
-    "compose"
+    "typecomposer"
   ],
   "preferGlobal": true,
   "author": "Ezequiel",
