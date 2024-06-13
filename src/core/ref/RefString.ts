@@ -1,39 +1,37 @@
+import { RefStringAndNumber } from "./RefDefineProperty";
+
 export class RefString extends String {
   constructor(
-    value: string,
-    public refPropertyKey: string | symbol,
-    private proxy: {
-      __subscribe__(target: any, propertyKey: string | symbol, refPropertyKey: string | symbol): void;
-    } & any,
+    private _value: string,
+    refPropertyKey: string | symbol,
+    parent: any,
   ) {
-    super(value?.toString() || "");
-  }
-
-  __setValue__(value: string, propertyKey: string | symbol) {
-    if (this.proxy) this.proxy[propertyKey] = value;
-  }
-
-  __subscribe__(target: {}, propertyKey: string | symbol, refPropertyKey?: string | symbol) {
-    if (this.proxy) {
-      this.proxy.__subscribe__(target, propertyKey, this.refPropertyKey);
-    }
-  }
-
-  onChange(fun: (value: any) => void, target?: {}) {
-    if (this.proxy) {
-      this.proxy.__onChange_(target, fun);
-    }
+    super(_value?.toString() || "");
+    RefStringAndNumber.assignProperties(this, parent, refPropertyKey);
   }
 
   get value(): string {
-    return this.toString();
+    return this._value;
   }
 
-  get test(): string {
-    return this.toString();
+  set value(_value: string) {
+    // @ts-ignore
+    this.__setValue__(_value, this.refPropertyKey);
   }
 
   equals(value: string): boolean {
     return this.valueOf() === value.valueOf();
+  }
+
+  valueOf(): string {
+    return this._value.toString() || "";
+  }
+
+  toString(): string {
+    return this._value?.toString() || "";
+  }
+
+  public static typeofString(value: any): boolean {
+    return typeof value == "string" || value instanceof String;
   }
 }

@@ -1,4 +1,4 @@
-import { Component, DivElement, InputElement, StyleOptional } from "../..";
+import { Component, DivElement, InputElement, RefString, StyleOptional, isRef, ref, refType } from "../..";
 
 export type SelectionType = "closeAndClean" | "closeAndKeep" | "openAndClean" | "openAndKeep";
 
@@ -13,18 +13,20 @@ export class DropDown<T = any> extends Component {
   private previousSelected: T[] = [];
   private _input: InputElement;
   private _inputAndButtonDiv: DivElement;
-  private _options: T[] = [];
+  private _options: ref<T[]> = ref([]);
+  private _value: T | ref<T>;
   private _dropdownContent: DivElement;
   private _idClass: number;
   public onChange: (item: T, index: number) => void = () => {};
-  private _selected: T | undefined = undefined;
+  private _selected: number = -1;
   textValue: (value: T | undefined) => string | undefined = undefined;
   textSelected: (value: T | undefined) => string | undefined = undefined;
 
   constructor(
     private props?: StyleOptional & {
       noContent?: string;
-      options?: T[];
+      options?: T[] | ref<T[]>;
+      value?: T | ref<T>;
       defaultOption?: string;
       selectionType?: SelectionType;
       placeholder?: string;
@@ -41,13 +43,14 @@ export class DropDown<T = any> extends Component {
     this.append(this.inputAndButtonDiv, this.dropdownContent);
     this._input = new InputElement({ className: "input" });
     this.input.readOnly = true;
-    this.input.value = props.placeholder ? props.placeholder : props.defaultOption || "";
+    this.input.placeholder = props.placeholder || "";
     this.selectionType = props.selectionType || "closeAndClean";
     this.onInit();
     if (props.textValue) this.textValue = props.textValue;
     if (props.textSelected) this.textSelected = props.textSelected;
     if (props.textSelected == undefined && props.textValue != undefined) this.textSelected = props.textValue;
-    this.options = props.options == undefined || props.options.length === 0 ? [props.noContent as any] : props.options;
+    this.options = props.options;
+    if (props.value) this.selected = props.value;
   }
 
   onInit() {
@@ -72,12 +75,15 @@ export class DropDown<T = any> extends Component {
   }
 
   get selected(): T | undefined {
-    return this._selected;
+    return this._options.value[this._selected];
   }
 
-  set selected(value: T | undefined) {
-    this._selected = value;
-    this.input.value = this.textValue ? this.textValue(value) : value?.toString() || "";
+  set selected(value: T | ref<T>) {
+    this._value = value;
+    const baseValue = isRef(value) ? (value as any).value : value;
+    const index = this.options.findIndex((option) => option?.toString() == baseValue?.toString());
+    this._selected = index;
+    this.input.value = index == -1 ? this.props?.defaultOption || "" : this.textSelected ? this.textSelected(baseValue) : baseValue?.toString() || "";
   }
 
   private closeAndClean() {
@@ -117,12 +123,20 @@ export class DropDown<T = any> extends Component {
     return this._input;
   }
 
-  get options() {
-    return this._options;
+  get options(): T[] {
+    return this._options.value;
   }
 
-  set options(options: T[]) {
-    this._options = options;
+  set options(_options: T[] | ref<T[]>) {
+    const baseRef: ref<T[]> = (refType<T[]>(_options) as any) || (ref(_options || []) as any);
+    this._options = baseRef;
+    this._options.onChange(() => {
+      this.updateContent();
+    }, this);
+    this.updateContent();
+  }
+
+  private updateContent() {
     if (!this.dropdownContent) return;
     this.dropdownContent.innerHTML = "";
     this.options.forEach((option, index) => {
@@ -148,12 +162,16 @@ export class DropDown<T = any> extends Component {
           this.previousSelected = this.previousSelected.filter((selectedOption) => selectedOption !== option);
         }
         this.input.value = this.textSelected ? this.textSelected(option) : option?.toString() || "";
-        this._selected = option;
+        this._selected = index;
         this.input.style.color = "black";
         this.onChange(option, index);
+        const baseRef: ref<T> | undefined = refType<T>(this._value);
+        if (baseRef) baseRef.value = option;
         this.dispatchEvent(new CustomEvent("change", { detail: { item: option, index } }));
       };
     });
+    this.input.value =
+      this.selected == undefined ? this.props?.defaultOption || "" : this.textSelected ? this.textSelected(this.selected) : this.selected?.toString() || "";
   }
 
   get inputAndButtonDiv() {

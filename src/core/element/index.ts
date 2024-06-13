@@ -25,6 +25,7 @@ import { SelectField } from "./action/SelectField";
 import { AlertPane, type AlertType } from "./action/AlertPane";
 import { ColorPicker } from "./action/ColorPicker";
 import { ScrollPane } from "./layers/ScrollPane";
+import { TablePane, TablePagination } from "./layers/TablePane";
 
 export {
   ColorPicker,
@@ -37,6 +38,8 @@ export {
   CheckBox,
   CheckBoxGroup,
   ToggleButton,
+  TablePane,
+  TablePagination,
   // BodyElement,
   // H1Element,
   // H2Element,

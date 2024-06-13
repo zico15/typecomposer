@@ -1,4 +1,4 @@
-import { RefString, ref, Component, StyleOptional, CSSStyleDeclarationRef as CSSStyleDeclarationRefType, isRef } from "../";
+import { ref, Component, StyleOptional, CSSStyleDeclarationRef as CSSStyleDeclarationRefType, refType } from "../";
 
 declare global {
   var CSSStyleDeclarationRef: {
@@ -17,6 +17,8 @@ declare global {
   //interface HTMLFormElement {
   //  onsubmit: ((this: GlobalEventHandlers, ev: SubmitEvent) => Promise<any> | any) | null;
   //}
+
+  // Definie node
 
   function scoped(target: any): any;
 
@@ -56,28 +58,76 @@ declare global {
     multiple: boolean;
     onfile: (file: FileList) => void;
   }
-  // interface String {
-  //   refPropertyKey: string | symbol;
-  //   refTarget: any | undefined;
-  // }
-  // interface Number {
-  //   setRefTarget: any;
-  //   getRefTarget: any;
-  // }
   interface WeakRef<T> {
     equals<K extends WeakKey>(value: WeakRef<K>): boolean;
   }
 }
 
-//// Array
-//const original = Array.prototype.includes;
+//const originalAppend = HTMLElement.prototype.append;
 
-//Object.defineProperty(Array.prototype, "includes", {
-//  value: function <T>(value: T) {
-//    console.log("includes", this);
-//    if (value instanceof RefString) return original.call(this, value.toString());
-//    return original.call(this, value);
+//Object.defineProperty(HTMLElement.prototype, "append", {
+//  value: function (this: HTMLElement, ...nodes: Array<Node | string>) {
+//    for (const node of nodes) {
+//      const baseRef = refType(node);
+//      if (baseRef && baseRef["__target__"]) originalAppend.call(this, baseRef["__target__"]);
+//      else originalAppend.call(this, node);
+//    }
 //  },
+//  writable: true,
+//  configurable: true,
+//  enumerable: true,
+//});
+
+//const originalAppendChild = Node.prototype.appendChild;
+
+//Object.defineProperty(Node.prototype, "appendChild", {
+//  value: function (this: Node, child: Node) {
+//    const baseRef = refType(child);
+//    if (baseRef && baseRef["__target__"]) originalAppendChild.call(this, baseRef["__target__"]);
+//    else originalAppendChild.call(this, child);
+//  },
+//  writable: true,
+//  configurable: true,
+//  enumerable: true,
+//});
+
+//const originalRemoveChild = Node.prototype.removeChild;
+
+//Object.defineProperty(Node.prototype, "removeChild", {
+//  value: function (this: Node, child: Node) {
+//    const baseRef = refType(child);
+//    if (baseRef && baseRef["__target__"]) originalRemoveChild.call(this, baseRef["__target__"]);
+//    else originalRemoveChild.call(this, child);
+//  },
+//  writable: true,
+//  configurable: true,
+//  enumerable: true,
+//});
+
+//const originalInsertBefore = Node.prototype.insertBefore;
+
+//Object.defineProperty(Node.prototype, "insertBefore", {
+//  value: function (this: Node, newChild: Node, refChild: Node) {
+//    const baseRef = refType(newChild);
+//    if (baseRef && baseRef["__target__"]) originalInsertBefore.call(this, baseRef["__target__"], refChild);
+//    else originalInsertBefore.call(this, newChild, refChild);
+//  },
+//  writable: true,
+//  configurable: true,
+//  enumerable: true,
+//});
+
+//const originalReplaceChild = Node.prototype.replaceChild;
+
+//Object.defineProperty(Node.prototype, "replaceChild", {
+//  value: function (this: Node, newChild: Node, oldChild: Node) {
+//    const baseRef = refType(newChild);
+//    if (baseRef && baseRef["__target__"]) originalReplaceChild.call(this, baseRef["__target__"], oldChild);
+//    else originalReplaceChild.call(this, newChild, oldChild);
+//  },
+//  writable: true,
+//  configurable: true,
+//  enumerable: true,
 //});
 
 WeakRef.prototype.equals = function (value: WeakRef<any>) {
@@ -165,22 +215,12 @@ try {
   });
 } catch (__) {}
 
-Object.defineProperty(CSSStyleDeclaration.prototype, "setProperty", {
-  value: function (property: string, value: string | ref<string>, priority?: string) {
-    if (value instanceof RefString) {
-      value.__subscribe__(this, property, value.refPropertyKey);
-    } else if (isRef(value)) (value as any).__subscribe__(this, property);
-    else this.setProperty(property, value, priority);
-  },
-});
-
 const originalInnerHTML = Object.getOwnPropertyDescriptor(Element.prototype, "innerHTML").set;
 
 Object.defineProperty(Element.prototype, "innerHTML", {
   set: function (value: string | ref<string>) {
-    if (value instanceof RefString) {
-      value.__subscribe__(this, "innerHTML", value.refPropertyKey);
-    } else if (isRef(value)) (value as any).__subscribe__(this, "innerHTML");
+    const baseref = refType(value);
+    if (baseref) baseref.subscribe(this, "innerHTML");
     else originalInnerHTML.call(this, value?.toString());
   },
 });

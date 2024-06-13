@@ -1,4 +1,4 @@
-import { Component, DivElement, IconElement, InputElement, InputType, LabelElement, StyleOptional, Variant, isRef } from "../..";
+import { Component, DivElement, IconElement, InputElement, InputType, LabelElement, Ref, StyleOptional, Variant, isRef } from "../..";
 import { RefString, ref } from "../../";
 
 export class TextFieldElement extends Component {
@@ -75,10 +75,7 @@ export class TextFieldElement extends Component {
   }
 
   set value(value: string | ref<string>) {
-    if (value == undefined) value = "";
-    if (value instanceof RefString) value.__subscribe__(this, "value", value.refPropertyKey);
-    else if (isRef(value)) (value as any).__subscribe__(this, "value");
-    else this.input.value = String(value);
+    if (Ref.subscribe(value, this, "value") == undefined) this.input.value = String(value);
   }
 }
 // @ts-ignore

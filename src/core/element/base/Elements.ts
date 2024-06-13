@@ -1,4 +1,4 @@
-import { Router, ref, CSSStyleDeclarationRef, StyleOptional, Variant, RefString, isRef } from "../..";
+import { Router, ref, CSSStyleDeclarationRef, StyleOptional, Variant, isRef, refType } from "../..";
 import { EventComponent, EventHandler } from "./Event";
 
 export interface IElement {
@@ -49,18 +49,31 @@ export interface IComponent extends HTMLElement {
 // 30. `<details>` e `<summary>` - Elementos de HTML5 para criar conteúdo expansível.
 
 export class Component extends HTMLElement implements IComponent {
-  //
-
   constructor(optional?: StyleOptional) {
     super();
     if (optional != undefined) this.setStyle(optional);
   }
 
   public static applyData<T extends HTMLElement>(data: StyleOptional | undefined, element: T): void {
+    const styleProxy = element["__style__"];
+    if (styleProxy == undefined) {
+      element["__style__"] = new Proxy(element.style, {
+        set: (target, prop, value) => {
+          const baseRef = refType(value);
+          if (baseRef != undefined && typeof target[prop] != "function") baseRef.subscribe(target, prop);
+          else target[prop] = value;
+          return true;
+        },
+        get: (target, prop) => {
+          return target[prop];
+        },
+      });
+      Object.defineProperty(element, "style", {
+        get: () => element["__style__"],
+      });
+    }
+
     if (data != undefined) {
-      // if (data.id) {
-      //   (element as any).id = data.id;
-      // }
       if (data.className != undefined) {
         (element as any).addClassName(data.className);
       }
@@ -392,13 +405,19 @@ export class TableHeadCellElement extends HTMLTableCellElement {
       colspan?: number;
       rowspan?: number;
       child?: HTMLElement;
+      value?: string | number | HTMLElement;
     },
   ) {
     super();
     if (optional?.colspan) this.colSpan = optional.colspan;
     if (optional?.rowspan) this.rowSpan = optional.rowspan;
+    if (optional?.value) {
+      if (optional.value instanceof HTMLElement) this.appendChild(optional.value);
+      else this.innerHTML = optional.value.toString();
+    }
     if (optional?.child) this.appendChild(optional.child);
     delete optional?.child;
+    delete optional?.value;
     Component.applyData(optional, this);
   }
 }
@@ -567,13 +586,19 @@ export class TableCellElement extends HTMLTableCellElement implements IComponent
       colspan?: number;
       rowspan?: number;
       child?: HTMLElement;
+      value?: string | number | HTMLElement;
     },
   ) {
     super();
     if (optional?.colspan) this.colSpan = optional.colspan;
     if (optional?.rowspan) this.rowSpan = optional.rowspan;
+    if (optional?.value) {
+      if (optional.value instanceof HTMLElement) this.appendChild(optional.value);
+      else this.innerHTML = optional.value.toString();
+    }
     if (optional?.child) this.appendChild(optional.child);
     delete optional?.child;
+    delete optional?.value;
     Component.applyData(optional, this);
   }
 }
@@ -650,12 +675,13 @@ export class InputElement extends HTMLInputElement implements IComponent {
     if (v) {
       if (typeof v == "string") this.value = v?.toString() || "";
       else {
-        if (isRef(v)) (v as any).__subscribe__(this, "value", undefined);
-        else (v as any).__subscribe__(this, "value", v["refPropertyKey"]);
-        this.addEventListener("input", (event) => {
-          if (isRef(v)) v.value = this.value;
-          else (v as any).__setValue__(this.value, v["refPropertyKey"]);
-        });
+        const baseRef = refType(v);
+        if (baseRef != undefined) {
+          baseRef.subscribe(this, "value");
+          this.addEventListener("input", (event) => {
+            baseRef.value = this.value;
+          });
+        }
       }
     }
   }

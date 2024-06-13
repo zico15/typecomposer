@@ -2,17 +2,35 @@ import { RefMap } from "./RefMap";
 import { RefString } from "./RefString";
 import { subscribeRef } from "./SubscribeRef";
 
-export namespace RefProperties {
-  export function definePropertieParent(proxy: any, parent: any) {
+export namespace RefProxyProperties {
+  export function assignProperties(proxy: any, target: any, parent: any): any {
+    definePropertieTargetAndParent(proxy, target, parent);
+    definePropertieSubscribe(proxy);
+    definePropertieOnChange(proxy);
+    definePropertieListOnChange(proxy);
+    definePropertieNotify(proxy);
+    definePropertieSetValue(proxy);
+    definePropertieToString(proxy);
+    definePropertieToJSON(proxy);
+    return proxy;
+  }
+
+  function definePropertieTargetAndParent(proxy: any, target: any, parent: any) {
     Object.defineProperty(proxy, "__parent__", {
       value: parent,
       configurable: false,
       enumerable: false,
       writable: false,
     });
+    Object.defineProperty(proxy, "__target__", {
+      value: target,
+      configurable: false,
+      enumerable: false,
+      writable: false,
+    });
   }
 
-  export function definePropertieSubscribe(proxy: any) {
+  function definePropertieSubscribe(proxy: any) {
     Object.defineProperty(proxy, "__subscribe__", {
       value: function (target: any, prop: string | symbol | ((value: any) => void), refPropertyKey?: string | symbol): subscribeRef<any> | undefined {
         if (target === undefined) return undefined;
@@ -37,7 +55,7 @@ export namespace RefProperties {
     });
   }
 
-  export function definePropertieOnChange(proxy: any) {
+  function definePropertieOnChange(proxy: any) {
     Object.defineProperty(proxy, "__onChange__", {
       value: function (fun: (value: any) => void) {
         const subscriber: subscribeRef<any> = { target: new WeakRef(fun), prop: undefined, fun: fun, ref: new WeakRef(proxy), isUnsubscribed: false };
@@ -50,7 +68,7 @@ export namespace RefProperties {
     });
   }
 
-  export function definePropertieListOnChange(proxy: any) {
+  function definePropertieListOnChange(proxy: any) {
     const subscribers: subscribeRef<any>[] = [];
     Object.defineProperty(proxy, "__list_change__", {
       value: subscribers,
@@ -60,7 +78,7 @@ export namespace RefProperties {
     });
   }
 
-  export function baseNotify(subscriber: subscribeRef<any>, prop: string | symbol | undefined, value: any) {
+  function baseNotify(subscriber: subscribeRef<any>, prop: string | symbol | undefined, value: any) {
     if (subscriber.refPropertyKey && subscriber.refPropertyKey !== prop) return;
     if (value instanceof RefString) value = value.toString();
     if (subscriber.fun) subscriber.fun(value);
@@ -78,7 +96,7 @@ export namespace RefProperties {
         continue;
       }
       if (subscriber.isUnsubscribed) continue;
-      if (subscriber.fun) subscriber.fun(proxy);
+      if (subscriber.fun) subscriber.fun(proxy.__parent__ ? proxy : proxy.value);
     }
     if (proxy.__parent__) {
       parents.push(proxy);
@@ -87,7 +105,7 @@ export namespace RefProperties {
     }
   }
 
-  export function definePropertieNotify(proxy: any) {
+  function definePropertieNotify(proxy: any) {
     Object.defineProperty(proxy, "__notify__", {
       value: function (prop: string | symbol, value: any) {
         const subscribers = RefMap.getSubscribes(proxy);
@@ -102,7 +120,7 @@ export namespace RefProperties {
     });
   }
 
-  export function definePropertieSetValue(proxy: any) {
+  function definePropertieSetValue(proxy: any) {
     Object.defineProperty(proxy, "__setValue__", {
       value: function (value: any, propertyKey: string | symbol | undefined) {
         if (propertyKey) {
@@ -114,7 +132,197 @@ export namespace RefProperties {
             proxy = value;
           } else proxy.value = value;
         }
-      },
+      }.bind(proxy),
+      configurable: false,
+      enumerable: false,
+      writable: false,
+    });
+  }
+
+  function definePropertieToString(proxy: any) {
+    Object.defineProperty(proxy, "__toString__", {
+      value: function () {
+        try {
+          return this.__parent__ ? JSON.stringify(this) : JSON.stringify(this.value);
+        } catch (e) {
+          return undefined;
+        }
+      }.bind(proxy),
+      configurable: false,
+      enumerable: false,
+      writable: false,
+    });
+  }
+
+  function definePropertieToJSON(proxy: any) {
+    Object.defineProperty(proxy, "__toJSON__", {
+      value: function () {
+        try {
+          return JSON.parse(this.__toString__());
+        } catch (e) {
+          return undefined;
+        }
+      }.bind(proxy),
+      configurable: false,
+      enumerable: false,
+      writable: false,
+    });
+  }
+}
+
+export namespace RefProperties {
+  export function assignProperties(proxy: any): any {
+    Object.defineProperty(proxy, "toString", {
+      value: function () {
+        return this.__toString__();
+      }.bind(proxy),
+      configurable: false,
+      enumerable: false,
+      writable: false,
+    });
+    Object.defineProperty(proxy, "toJSON", {
+      value: function () {
+        return this.__toJSON__();
+      }.bind(proxy),
+      configurable: false,
+      enumerable: false,
+      writable: false,
+    });
+    Object.defineProperty(proxy, "subscribe", {
+      value: function (target: any, prop: string | symbol | ((value: any) => void), refPropertyKey?: string | symbol) {
+        return this.__subscribe__(target, prop, refPropertyKey);
+      }.bind(proxy),
+      configurable: false,
+      enumerable: false,
+      writable: false,
+    });
+    Object.defineProperty(proxy, "onChange", {
+      value: function (fun: (value: any) => void) {
+        return this.__onChange__(fun);
+      }.bind(proxy),
+      configurable: false,
+      enumerable: false,
+      writable: false,
+    });
+    return proxy;
+  }
+}
+
+export namespace RefStringAndNumber {
+  export function assignProperties(proxy: any, parent: any, refPropertyKey: string | symbol): any {
+    definePropertieParent(proxy, parent);
+    definePropertieParent(proxy, parent);
+    definePropertieSubscribe(proxy);
+    definePropertieOnChange(proxy);
+    definePropertieListOnChange(proxy);
+    definePropertieNotify(proxy);
+    definePropertieSetValue(proxy);
+    definePropertieToString(proxy);
+    definePropertieToJSON(proxy);
+    definePropertieRefPropertyKey(proxy, refPropertyKey);
+    return proxy;
+  }
+
+  function definePropertieRefPropertyKey(proxy: any, refPropertyKey: string | symbol) {
+    Object.defineProperty(proxy, "__refPropertyKey__", {
+      value: refPropertyKey,
+      configurable: false,
+      enumerable: false,
+      writable: false,
+    });
+  }
+
+  function definePropertieParent(proxy: any, parent: any) {
+    Object.defineProperty(proxy, "__parent__", {
+      value: parent,
+      configurable: false,
+      enumerable: false,
+      writable: false,
+    });
+  }
+
+  function definePropertieSubscribe(proxy: any) {
+    Object.defineProperty(proxy, "__subscribe__", {
+      value: function (target: any, prop: string | symbol | ((value: any) => void)) {
+        if (this.__parent__) {
+          this.__parent__.__subscribe__(target, prop, this.__refPropertyKey__);
+        }
+      }.bind(proxy),
+      configurable: false,
+      enumerable: false,
+      writable: false,
+    });
+  }
+
+  function definePropertieOnChange(proxy: any) {
+    Object.defineProperty(proxy, "__onChange__", {
+      value: function (fun: (value: any) => void, target?: {}) {
+        if (this.__parent__) {
+          this.__parent__.__onChange_(target, fun);
+        }
+      }.bind(proxy),
+      configurable: false,
+      enumerable: false,
+      writable: false,
+    });
+  }
+
+  function definePropertieListOnChange(proxy: any) {
+    Object.defineProperty(proxy, "__list_change__", {
+      value: proxy.__parent__?.__list_change__ || [],
+      configurable: false,
+      enumerable: false,
+      writable: false,
+    });
+  }
+
+  // __setValue__
+  function definePropertieSetValue(proxy: any) {
+    Object.defineProperty(proxy, "__setValue__", {
+      value: function (value: any, refPropertyKey: string | symbol) {
+        // @ts-ignore
+        if (typeof value == "object" && value instanceof RefString) {
+          // @ts-ignore
+          value = value.valueOf();
+        }
+        this._value = value;
+        if (this.__parent__) this.__parent__.__setValue__(value, refPropertyKey);
+      }.bind(proxy),
+      configurable: false,
+      enumerable: false,
+      writable: false,
+    });
+  }
+
+  function definePropertieToString(proxy: any) {
+    Object.defineProperty(proxy, "__toString__", {
+      value: function () {
+        return this._value.toString();
+      }.bind(proxy),
+      configurable: false,
+      enumerable: false,
+      writable: false,
+    });
+  }
+
+  function definePropertieToJSON(proxy: any) {
+    Object.defineProperty(proxy, "__toJSON__", {
+      value: function () {
+        return { value: this._value.toString() };
+      }.bind(proxy),
+      configurable: false,
+      enumerable: false,
+      writable: false,
+    });
+  }
+
+  function definePropertieNotify(proxy: any) {
+    Object.defineProperty(proxy, "__notify__", {
+      value: function (prop: string | symbol, value: any) {
+        if (this.__parent__) {
+          this.__parent__.__notify__(prop, value);
+        }
+      }.bind(proxy),
       configurable: false,
       enumerable: false,
       writable: false,
