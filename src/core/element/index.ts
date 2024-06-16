@@ -21,7 +21,6 @@ import { CheckBox, CheckBoxGroup } from "./action/CheckBox";
 import { ToggleButton } from "./action/ToggleButton";
 import { ILayout } from "./base/Elements";
 import { StackPane } from "./layers/StackPane";
-import { SelectField } from "./action/SelectField";
 import { AlertPane, type AlertType } from "./action/AlertPane";
 import { ColorPicker } from "./action/ColorPicker";
 import { ScrollPane } from "./layers/ScrollPane";
@@ -65,5 +64,4 @@ export {
   StyleLink,
   ILayout,
   StackPane,
-  SelectField,
 };

@@ -14,12 +14,6 @@ declare global {
     detail: any;
   }
 
-  //interface HTMLFormElement {
-  //  onsubmit: ((this: GlobalEventHandlers, ev: SubmitEvent) => Promise<any> | any) | null;
-  //}
-
-  // Definie node
-
   function scoped(target: any): any;
 
   interface Window {
@@ -30,8 +24,7 @@ declare global {
   interface Element {
     innerHTML: string | ref<string>;
     style: CSSStyleDeclarationRefType;
-    set variant(v: "default" | string);
-    get variant(): "default" | string;
+    variant: "default" | string;
     onInit(): void;
     unmount(): void;
     addClassName(...names: string[]): void;
@@ -63,73 +56,6 @@ declare global {
   }
 }
 
-//const originalAppend = HTMLElement.prototype.append;
-
-//Object.defineProperty(HTMLElement.prototype, "append", {
-//  value: function (this: HTMLElement, ...nodes: Array<Node | string>) {
-//    for (const node of nodes) {
-//      const baseRef = refType(node);
-//      if (baseRef && baseRef["__target__"]) originalAppend.call(this, baseRef["__target__"]);
-//      else originalAppend.call(this, node);
-//    }
-//  },
-//  writable: true,
-//  configurable: true,
-//  enumerable: true,
-//});
-
-//const originalAppendChild = Node.prototype.appendChild;
-
-//Object.defineProperty(Node.prototype, "appendChild", {
-//  value: function (this: Node, child: Node) {
-//    const baseRef = refType(child);
-//    if (baseRef && baseRef["__target__"]) originalAppendChild.call(this, baseRef["__target__"]);
-//    else originalAppendChild.call(this, child);
-//  },
-//  writable: true,
-//  configurable: true,
-//  enumerable: true,
-//});
-
-//const originalRemoveChild = Node.prototype.removeChild;
-
-//Object.defineProperty(Node.prototype, "removeChild", {
-//  value: function (this: Node, child: Node) {
-//    const baseRef = refType(child);
-//    if (baseRef && baseRef["__target__"]) originalRemoveChild.call(this, baseRef["__target__"]);
-//    else originalRemoveChild.call(this, child);
-//  },
-//  writable: true,
-//  configurable: true,
-//  enumerable: true,
-//});
-
-//const originalInsertBefore = Node.prototype.insertBefore;
-
-//Object.defineProperty(Node.prototype, "insertBefore", {
-//  value: function (this: Node, newChild: Node, refChild: Node) {
-//    const baseRef = refType(newChild);
-//    if (baseRef && baseRef["__target__"]) originalInsertBefore.call(this, baseRef["__target__"], refChild);
-//    else originalInsertBefore.call(this, newChild, refChild);
-//  },
-//  writable: true,
-//  configurable: true,
-//  enumerable: true,
-//});
-
-//const originalReplaceChild = Node.prototype.replaceChild;
-
-//Object.defineProperty(Node.prototype, "replaceChild", {
-//  value: function (this: Node, newChild: Node, oldChild: Node) {
-//    const baseRef = refType(newChild);
-//    if (baseRef && baseRef["__target__"]) originalReplaceChild.call(this, baseRef["__target__"], oldChild);
-//    else originalReplaceChild.call(this, newChild, oldChild);
-//  },
-//  writable: true,
-//  configurable: true,
-//  enumerable: true,
-//});
-
 WeakRef.prototype.equals = function (value: WeakRef<any>) {
   return this.deref() === value.deref();
 };
@@ -139,8 +65,11 @@ Object.defineProperty(Element.prototype, "variant", {
     return this.getAttribute("variant") || "default";
   },
   set: function (v: "default" | string) {
-    if (v == "default") this.removeAttribute("variant");
-    else this.setAttribute("variant", v);
+    v = v?.toString()?.trim() || "default";
+    if (v == "default" || v == undefined || v.trim().length == 0) this.removeAttribute("variant");
+    else {
+      this.setAttribute("variant", v);
+    }
   },
 });
 

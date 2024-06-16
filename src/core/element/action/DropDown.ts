@@ -1,4 +1,4 @@
-import { Component, DivElement, InputElement, RefString, StyleOptional, isRef, ref, refType } from "../..";
+import { Component, DivElement, StyleOptional, TextFieldElement, isRef, ref, refType } from "../..";
 
 export type SelectionType = "closeAndClean" | "closeAndKeep" | "openAndClean" | "openAndKeep";
 
@@ -7,12 +7,10 @@ export class DropDownItem extends DivElement {}
 // @ts-ignore
 customElements.define("drop-down-item", DropDownItem, { extends: "div" });
 
-export class DropDown<T = any> extends Component {
+export class DropDown<T = any> extends TextFieldElement {
   private onSelectionAction: () => void = this.closeAndClean.bind(this);
   private _selectionType: SelectionType;
   private previousSelected: T[] = [];
-  private _input: InputElement;
-  private _inputAndButtonDiv: DivElement;
   private _options: ref<T[]> = ref([]);
   private _value: T | ref<T>;
   private _dropdownContent: DivElement;
@@ -21,6 +19,7 @@ export class DropDown<T = any> extends Component {
   private _selected: number = -1;
   textValue: (value: T | undefined) => string | undefined = undefined;
   textSelected: (value: T | undefined) => string | undefined = undefined;
+  private _filter: (value: T, input: string) => boolean = () => true;
 
   constructor(
     private props?: StyleOptional & {
@@ -30,36 +29,53 @@ export class DropDown<T = any> extends Component {
       defaultOption?: string;
       selectionType?: SelectionType;
       placeholder?: string;
+      variant?: "outline" | "underlined";
+      placeholderAnimation?: boolean;
       textValue?: (value: T) => string;
       textSelected?: (value: T) => string;
+      filter?: (item: T, input: string) => boolean;
     },
   ) {
-    super(props);
-    this.inputAndButtonDiv = new DivElement({
-      className: "input-and-button-div",
-    });
-
+    super({ placeholder: props?.placeholder, placeholderAnimation: props?.placeholderAnimation });
+    const v = props?.value;
+    delete props?.value;
+    Component.applyData(props, this);
+    props.value = v;
     this.dropdownContent = new DivElement({ className: "dropdown-content" });
-    this.append(this.inputAndButtonDiv, this.dropdownContent);
-    this._input = new InputElement({ className: "input" });
-    this.input.readOnly = true;
-    this.input.placeholder = props.placeholder || "";
+    this.dropdownContent.variant = props?.variant;
+    this.append(this.dropdownContent);
     this.selectionType = props.selectionType || "closeAndClean";
     this.onInit();
     if (props.textValue) this.textValue = props.textValue;
     if (props.textSelected) this.textSelected = props.textSelected;
     if (props.textSelected == undefined && props.textValue != undefined) this.textSelected = props.textValue;
     this.options = props.options;
+    this.input.addEventListener("input", () => {
+      if (this.input.readOnly == false) {
+        this.updateContent();
+      }
+    });
+    this.filter = props.filter;
     if (props.value) this.selected = props.value;
   }
 
+  get filter() {
+    return this._filter;
+  }
+
+  set filter(filter: ((value: T, input: string) => boolean) | undefined) {
+    this.input.readOnly = filter == undefined;
+    console.log("filter");
+    if (filter == undefined) filter = () => true;
+    else this._filter = filter;
+  }
+
   onInit() {
-    this.className = "dropdown";
     const arrow = new DivElement({ className: "arrow-down" });
-    this.inputAndButtonDiv.append(this.input, arrow);
-    this.inputAndButtonDiv.onclick = () => {
+    this.append(arrow);
+    this.onclick = () => {
       if (this.options.length === 0) return;
-      this.inputAndButtonDiv.classList.toggle("pressed");
+      this.dropdownContent.classList.toggle("pressed");
       arrow.classList.toggle("up");
     };
     this.handleClickOutside = this.handleClickOutside.bind(this);
@@ -67,10 +83,10 @@ export class DropDown<T = any> extends Component {
   }
 
   private handleClickOutside(event) {
-    if (!this.inputAndButtonDiv.contains(event.target) && !this.dropdownContent.contains(event.target) && this.inputAndButtonDiv.classList.contains("pressed")) {
-      this.inputAndButtonDiv.children[1].classList.toggle("pressed");
-      this.inputAndButtonDiv.classList.toggle("pressed");
-      this.inputAndButtonDiv.children[1].classList.toggle("up");
+    if (!this.contains(event.target) && !this.dropdownContent.contains(event.target) && this.classList.contains("pressed")) {
+      this.children[1].classList.toggle("pressed");
+      this.classList.toggle("pressed");
+      this.children[1].classList.toggle("up");
     }
   }
 
@@ -81,24 +97,26 @@ export class DropDown<T = any> extends Component {
   set selected(value: T | ref<T>) {
     this._value = value;
     const baseValue = isRef(value) ? (value as any).value : value;
-    const index = this.options.findIndex((option) => option?.toString() == baseValue?.toString());
-    this._selected = index;
-    this.input.value = index == -1 ? this.props?.defaultOption || "" : this.textSelected ? this.textSelected(baseValue) : baseValue?.toString() || "";
+    const index = this.options.findIndex((option) => option == baseValue);
+    if (index == -1) return;
+    const items = this.dropdownContent.querySelector(".option");
+    if (items) this.selectOption(this.options[index], index, items as HTMLElement);
+    this.dropdownContent.classList.remove("pressed");
   }
 
   private closeAndClean() {
     Array.from(this.dropdownContent.children).forEach((child: HTMLElement) => {
       child.classList.remove("selected");
     });
-    this.inputAndButtonDiv.children[1].classList.toggle("pressed");
-    this.inputAndButtonDiv.classList.toggle("pressed");
-    this.inputAndButtonDiv.children[1].classList.toggle("up");
+    this.children[1].classList.toggle("pressed");
+    this.classList.toggle("pressed");
+    this.children[1].classList.toggle("up");
   }
 
   private closeAndKeep() {
-    this.inputAndButtonDiv.children[1].classList.toggle("pressed");
-    this.inputAndButtonDiv.classList.toggle("pressed");
-    this.inputAndButtonDiv.children[1].classList.toggle("up");
+    this.children[1].classList.toggle("pressed");
+    this.classList.toggle("pressed");
+    this.children[1].classList.toggle("up");
   }
 
   private openAndClean() {
@@ -119,10 +137,6 @@ export class DropDown<T = any> extends Component {
     this._selectionType = selectionType;
   }
 
-  get input(): InputElement {
-    return this._input;
-  }
-
   get options(): T[] {
     return this._options.value;
   }
@@ -140,6 +154,7 @@ export class DropDown<T = any> extends Component {
     if (!this.dropdownContent) return;
     this.dropdownContent.innerHTML = "";
     this.options.forEach((option, index) => {
+      if (!this.filter(option, this.input.value.toString())) return;
       let node: Node;
       if (option instanceof Node) node = this.dropdownContent.appendChild(option);
       else {
@@ -153,33 +168,28 @@ export class DropDown<T = any> extends Component {
         this.dropdownContent.append(div);
       }
       (node as HTMLElement).classList.add("option");
-      (node as HTMLElement).onclick = () => {
-        this.onSelectionAction();
-        (node as HTMLElement).classList.toggle("selected");
-        if ((node as HTMLElement).classList.contains("selected")) {
-          this.previousSelected.push(option);
-        } else {
-          this.previousSelected = this.previousSelected.filter((selectedOption) => selectedOption !== option);
-        }
-        this.input.value = this.textSelected ? this.textSelected(option) : option?.toString() || "";
-        this._selected = index;
-        this.input.style.color = "black";
-        this.onChange(option, index);
-        const baseRef: ref<T> | undefined = refType<T>(this._value);
-        if (baseRef) baseRef.value = option;
-        this.dispatchEvent(new CustomEvent("change", { detail: { item: option, index } }));
-      };
+      (node as HTMLElement).onclick = this.selectOption.bind(this, option, index, node as HTMLElement);
     });
-    this.input.value =
-      this.selected == undefined ? this.props?.defaultOption || "" : this.textSelected ? this.textSelected(this.selected) : this.selected?.toString() || "";
+    if (this.input.readOnly)
+      this.input.value =
+        this.selected == undefined ? this.props?.defaultOption || "" : this.textSelected ? this.textSelected(this.selected) : this.selected?.toString() || "";
   }
 
-  get inputAndButtonDiv() {
-    return this._inputAndButtonDiv;
-  }
-
-  set inputAndButtonDiv(inputAndButtonDiv: DivElement) {
-    this._inputAndButtonDiv = inputAndButtonDiv;
+  private selectOption(option: T, index: number, element: HTMLElement) {
+    this.onSelectionAction();
+    element.classList.toggle("selected");
+    if (element.classList.contains("selected")) {
+      this.previousSelected.push(option);
+    } else {
+      this.previousSelected = this.previousSelected.filter((selectedOption) => selectedOption !== option);
+    }
+    this.input.value = this.textSelected ? this.textSelected(option) : option?.toString() || "";
+    this._selected = index;
+    this.input.style.color = "black";
+    this.onChange(option, index);
+    const baseRef: ref<T> | undefined = refType<T>(this._value);
+    if (baseRef) baseRef.value = option;
+    this.dispatchEvent(new CustomEvent("change", { detail: { item: option, index } }));
   }
 
   get dropdownContent() {

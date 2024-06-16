@@ -17,10 +17,11 @@ function updateRef<T extends object>(proxy: any, value: T): any {
 function RefProxy<T extends object>(target: T, parent: any): T {
   const proxy: T = RefProxyProperties.assignProperties(
     new Proxy(target, {
-      get: (target, prop: any, receiver) => {
+      get: (_target, prop: any, receiver) => {
         const value = target[prop];
         if (typeof value == "string" && proxy["__parent__"]) return new RefString(value, prop, proxy);
         else if (typeof value == "number" && proxy["__parent__"]) return new RefNumber(value, prop, proxy);
+        //else if (typeof value === "function") return value.bind(_target);
         return value;
       },
       set: (target: any, prop, value, receiver) => {

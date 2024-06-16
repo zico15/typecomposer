@@ -1,0 +1,223 @@
+drop-down,
+text-field-element {
+  position: relative;
+  padding: 2px;
+  display: flex;
+  flex-direction: row;
+  height: 50px;
+
+  > input {
+    width: -webkit-fill-available;
+    height: 100%;
+    outline: none;
+    color: var(--primary-text-color);
+  }
+
+  > input::placeholder {
+    color: var(--primary-text-color);
+  }
+
+  > input ~ .icon {
+    position: absolute;
+    top: 0.1rem;
+    left: 1rem;
+    height: 100%;
+    display: flex;
+    justify-content: center;
+    color: var(--primary-text-color);
+    align-items: center;
+  }
+
+  > label {
+    position: absolute;
+    left: 1rem;
+    cursor: text;
+    transition: top 200ms ease-in, left 200ms, font-size 200ms;
+    top: 0.8rem;
+  }
+
+  > input:focus ~ label,
+  > input:not(:placeholder-shown) ~ label {
+    top: -0.6rem;
+    left: 1rem;
+    font-size: 0.8rem;
+    color: var(--primary-text-color);
+    background: var(--primary-color);
+  }
+
+  > input:focus ~ label {
+    color: var(--primary-select-color);
+  }
+
+  > .options-container {
+    background: var(--primary-color);
+    color: var(--primary-text-color);
+    max-height: 0;
+    width: 96%;
+    opacity: 0;
+    transition: all 0.4s;
+    border-radius: 0 0 8px 8px;
+    overflow: hidden;
+    order: 1;
+    position: absolute;
+    z-index: 100;
+    background-color: var(--primary-color);
+    left: 5px !important;
+  }
+
+  > .options-container.active {
+    max-height: 240px;
+    opacity: 1;
+    right: -5px;
+    left: -5px;
+    overflow-y: scroll;
+  }
+
+  > .option {
+    padding: 5px 5px;
+    padding-top: 6px;
+    cursor: pointer;
+  }
+
+  > .option:hover {
+    background: #ccc;
+  }
+
+  > .option .radio {
+    display: none;
+  }
+
+  &[variant="outline"],
+  &:not([variant]) {
+    border: 1px var(--primary-border-color);
+    border-radius: 5px;
+  }
+
+  &[variant="outline"]:focus-within,
+  &:not([variant]):focus-within {
+    border: 1px var(--primary-select-color);
+    border-radius: 5px;
+  }
+
+  &[variant="underlined"] {
+    border: none;
+    border-bottom: 1px var(--primary-border-color);
+  }
+
+  &[variant="underlined"]:focus-within {
+    border: none;
+    border-bottom: 1px var(--primary-select-color);
+  }
+
+  &[variant="solo"] {
+    background-color: var(--primary-color);
+    box-shadow: 3px 3px 3px 3px rgba(0, 0, 0, 0.3);
+    border-radius: 5px;
+  }
+
+  &[variant="solo"]:focus-within {
+    background-color: var(--primary-select-color);
+  }
+
+  &[variant="standard"] {
+    border: 1px var(--primary-border-color);
+    border-radius: 5px;
+  }
+
+  &[variant="standard"]:focus-within {
+    background-color: var(--primary-select-color);
+  }
+}
+
+drop-down {
+  // Style the area holding the input & button
+  //border: 1px solid #6a5acd;
+  //border-radius: 8px;
+  padding: 12px;
+  display: flex;
+  justify-content: space-between;
+
+  .arrow-down {
+    content: "";
+    position: relative;
+    width: 20px; // Width of the arrow
+    height: 20px; // Height of the arrow
+    transform-origin: center;
+    background: url("/icons/arrowdown.svg") no-repeat center center / contain;
+    pointer-events: none;
+    transition: transform 0.3s ease;
+
+    &.up {
+      transform: rotate(180deg);
+    }
+  }
+
+  .dropdown-content {
+    box-sizing: border-box;
+    width: 100%;
+    left: 0px;
+    padding: 8px;
+    margin-top: 10px;
+    border-radius: 8px;
+    display: block; // Initially hidden
+    position: absolute;
+    top: 100%; //  Place directly below the input area
+    background-color: #fff;
+    box-shadow: 7px 7px 10px 0px #00000026;
+
+    min-width: 120px;
+    z-index: 1; // Ensure dropdown is above other content
+    max-height: 0; /* Start with zero height */
+    visibility: hidden;
+    overflow-y: scroll; /* Prevent visible overflow */
+    transition: max-height 0.3s ease-out, visibility 0.22s; /* Transition for the slide effect */
+
+    &.pressed {
+      max-height: 184px;
+      visibility: visible;
+    }
+    // Style the scrollbar track
+    &::-webkit-scrollbar-track {
+      background: #f0f0f0; // Light grey track background
+      border-radius: 8px; // Rounded corners for the track
+    }
+
+    // Style the scrollbar thumb (the scrolling handle)
+    &::-webkit-scrollbar-thumb {
+      background-color: #320098; // The scrollbar color
+      border-radius: 10px; // Rounded corners for the thumb
+      border: 3px solid #f0f0f0; // Creates padding around the thumb
+
+      &:hover {
+        background: darken(#6a5acd, 10%); // Darkens the thumb on hover
+      }
+    }
+
+    // Style the scrollbar itself (width, etc.)
+    &::-webkit-scrollbar {
+      width: 8px; // The width of the scrollbar
+    }
+
+    .option {
+      display: flex;
+      justify-content: space-between;
+      padding: 12px;
+      border-radius: 8px;
+
+      &:hover {
+        background-color: #3970fe33;
+      }
+
+      &.selected {
+        color: #3970fe;
+
+        &::after {
+          content: "";
+          width: 16px;
+          justify-self: flex-end;
+          background: url("/Vector.svg") no-repeat center center / contain;
+        }
+      }
+    }
+  }
+}

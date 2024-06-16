@@ -98,14 +98,14 @@ export class Component extends HTMLElement implements IComponent {
     }
   }
 
-  public static setVariant(element: HTMLElement, variant: Variant | undefined): void {
-    const vart = variant == undefined ? "default-border" : `${variant}-border`;
-    const variants = ["default-border", "outline-border", "underlined-border", "solo-border"];
-    variants.forEach((value: string) => {
-      if (element.classList.contains(value)) element.classList.remove(value);
-    });
-    element.classList.add(vart == "default-border" ? "outline-border" : vart);
-  }
+  //public static setVariant(element: HTMLElement, variant: Variant | undefined): void {
+  //  const vart = variant == undefined ? "default-border" : `${variant}-border`;
+  //  const variants = ["default-border", "outline-border", "underlined-border", "solo-border"];
+  //  variants.forEach((value: string) => {
+  //    if (element.classList.contains(value)) element.classList.remove(value);
+  //  });
+  //  element.classList.add(vart == "default-border" ? "outline-border" : vart);
+  //}
 
   public onEvent(type: string, listener: EventHandler, options?: boolean | AddEventListenerOptions | undefined): void {
     EventComponent.addEventListener(this, type, listener, options);

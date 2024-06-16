@@ -6,7 +6,7 @@
   --primary-color-button: #4caf50; /* Green */
   --primary-color-button-hover: #3e8e41;
   --primary-color-text: #ffffff;
-  --primary-select-color: rgb(105, 108, 255);
+  --primary-select-color: solid rgb(105, 108, 255);
   --primary-text-color: rgba(50, 71, 92, 0.6);
   --primary-text-color-hover: rgba(50, 71, 92, 0.8);
   --primary-text-color-active: rgba(50, 71, 92, 1);
@@ -14,6 +14,7 @@
   --primary-text-color-placeholder: rgba(50, 71, 92, 0.4);
   --primary-text-color-icon: rgba(50, 71, 92, 0.6);
   --primary-text-color-icon-hover: rgba(50, 71, 92, 0.8);
+  --primary-border-color: solid lightgray;
 
   --v-input-control-height: 56px;
   --v-field-padding-bottom: 5px;

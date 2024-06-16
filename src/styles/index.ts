@@ -2417,6 +2417,16 @@ export interface CSSStyleDeclarationRef {
   hasOwnProperty(key: string): boolean;
 }
 
+const removePropertyOriginal = CSSStyleDeclaration.prototype.removeProperty;
+
+Object.defineProperty(CSSStyleDeclaration.prototype, "removeProperty", {
+  value: function (property: string) {
+    removePropertyOriginal.call(this, property);
+  },
+  writable: true,
+  configurable: true,
+});
+
 const setPropertyOriginal = CSSStyleDeclaration.prototype.setProperty;
 
 Object.defineProperty(CSSStyleDeclaration.prototype, "setProperty", {
