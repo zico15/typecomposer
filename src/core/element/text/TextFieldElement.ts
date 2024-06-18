@@ -1,4 +1,17 @@
-import { Component, DivElement, IComponent, IconElement, InputElement, InputType, LabelElement, Ref, StyleOptional, Variant, isRef } from "../..";
+import {
+  Component,
+  DivElement,
+  FieldSetElement,
+  IComponent,
+  IconElement,
+  InputElement,
+  InputType,
+  LabelElement,
+  LegendElement,
+  Ref,
+  StyleOptional,
+  Variant,
+} from "../..";
 import { ref } from "../../";
 
 export class TextFieldElement extends Component {
@@ -6,6 +19,7 @@ export class TextFieldElement extends Component {
   private _label: LabelElement | undefined = undefined;
   private _icon?: IComponent | undefined = undefined;
   private iconPane = new DivElement({ className: "icon" });
+  private _fieldset: FieldSetElement;
 
   constructor(
     optional?: StyleOptional & {
@@ -18,12 +32,15 @@ export class TextFieldElement extends Component {
     },
   ) {
     super();
+    this._fieldset = new FieldSetElement();
+    this.fieldset.variant = optional?.variant;
     this._input = new InputElement({
       type: optional?.type || "text",
       placeholder: " ",
       value: optional?.value || optional?.text || "",
     });
-    this.appendChild(this.input);
+    this.fieldset.append(new LegendElement({ text: optional?.placeholder || "" }));
+    this.append(this.input, this.fieldset);
     if (optional?.placeholderAnimation == true || optional?.placeholderAnimation == undefined) {
       this._label = new LabelElement({ text: optional?.placeholder || " " });
       this._label.addEventListener("click", () => this.input.focus());
@@ -49,6 +66,15 @@ export class TextFieldElement extends Component {
 
   get icon(): IComponent | undefined {
     return this._icon;
+  }
+
+  get fieldset(): FieldSetElement {
+    return this._fieldset;
+  }
+
+  set variant(value: Variant) {
+    this.input.variant = value;
+    this.fieldset.variant = value;
   }
 
   set icon(value: IComponent) {
