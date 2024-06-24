@@ -15,6 +15,7 @@ export class ChartElement extends Component {
       type?: ChartConfiguration["type"];
       data?: ChartConfiguration["data"];
       options?: ChartConfiguration["options"];
+      plugins?: ChartConfiguration["plugins"];
     },
   ) {
     super(optional);
@@ -25,6 +26,7 @@ export class ChartElement extends Component {
         type: optional?.type,
         data: optional?.data,
         options: optional?.options,
+        plugins: optional?.plugins,
       }),
     );
     this.addEventListener("resize", this.resize.bind(this));
@@ -149,6 +151,7 @@ export class ChartElement extends Component {
     if (data?.data != undefined) result.data = data.data;
     if (data?.options != undefined) result.options = data.options;
     if (data?.type != undefined) result.type = data.type;
+    if (data?.plugins != undefined) result.plugins = data.plugins;
     return result;
   }
 
