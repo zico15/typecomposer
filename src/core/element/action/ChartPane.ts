@@ -110,6 +110,15 @@ export class ChartElement extends Component {
     return this._chart.data.datasets;
   }
 
+  public get plugins(): ChartConfiguration["plugins"] {
+    return this._chart.config.plugins;
+  }
+
+  public set plugins(plugins: ChartConfiguration["plugins"]) {
+    this._chart.config.plugins = plugins;
+    this._chart.update();
+  }
+
   public set datasets(datasets: ChartConfiguration["data"]["datasets"]) {
     this._chart.data.datasets = datasets;
     this._chart.update();

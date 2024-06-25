@@ -98,15 +98,6 @@ export class Component extends HTMLElement implements IComponent {
     }
   }
 
-  //public static setVariant(element: HTMLElement, variant: Variant | undefined): void {
-  //  const vart = variant == undefined ? "default-border" : `${variant}-border`;
-  //  const variants = ["default-border", "outline-border", "underlined-border", "solo-border"];
-  //  variants.forEach((value: string) => {
-  //    if (element.classList.contains(value)) element.classList.remove(value);
-  //  });
-  //  element.classList.add(vart == "default-border" ? "outline-border" : vart);
-  //}
-
   public onEvent(type: string, listener: EventHandler, options?: boolean | AddEventListenerOptions | undefined): void {
     EventComponent.addEventListener(this, type, listener, options);
   }
@@ -440,6 +431,50 @@ export class TableElement extends HTMLTableElement implements IComponent {
   constructor(optional?: StyleOptional) {
     super();
     Component.applyData(optional, this);
+  }
+
+  getRows(): TableRowElement[] {
+    return Array.from(this._body.querySelectorAll("tr") as any);
+  }
+
+  getRow(row: number): TableRowElement | undefined {
+    return this.getRows()[row];
+  }
+
+  getCellsByColumn(column: number): TableCellElement[] {
+    return this.getRows().map((row) => {
+      return row.querySelectorAll("td")[column];
+    });
+  }
+
+  getCellsByRow(row: number): TableCellElement[] {
+    return Array.from(this.getRow(row)?.querySelectorAll("td") as any);
+  }
+
+  getCell(row: number, column: number): TableCellElement | undefined {
+    return this.getCellsByRow(row)[column];
+  }
+
+  getRowsHead(): TableRowElement[] {
+    return Array.from(this._head.querySelectorAll("tr") as any);
+  }
+
+  getRowHead(row: number): TableRowElement | undefined {
+    return this.getRowsHead()[row];
+  }
+
+  getCellsHeadByRow(row: number): TableCellElement[] {
+    return Array.from(this.getRowHead(row)?.querySelectorAll("td") as any);
+  }
+
+  getCellsHeadByColumn(column: number): TableCellElement[] {
+    return this.getRowsHead().map((row) => {
+      return row.querySelectorAll("td")[column];
+    });
+  }
+
+  getCellHead(row: number, column: number): TableCellElement | undefined {
+    return this.getCellsHeadByRow(row)[column];
   }
 
   addHeadRows(...rows: TableRowElement[]) {

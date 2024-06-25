@@ -2,14 +2,14 @@ import { Component, H3Element, H4Element, IconElement } from "..";
 
 export class TabItem extends Component {
   private __closeable: boolean = false;
-  private titleElement: H3Element;
+  private _titleElement: H3Element;
   private displayContent: string;
-  private _content: HTMLElement;
+  private _content: HTMLElement | undefined;
   private closeIcon: IconElement | null = null;
 
   constructor(
     public title: string,
-    content: HTMLElement,
+    content?: HTMLElement,
     icon?: IconElement | null,
     closeable: boolean = true,
   ) {
@@ -19,10 +19,12 @@ export class TabItem extends Component {
       this.appendChild(icon);
     }
     this._content = content;
-    // @ts-ignore
-    this.displayContent = content.style.display; //todo - fix
-    content.style.display = "none";
-    this.titleElement = new H4Element({
+    if (this.content) {
+      this.displayContent = content.style.display.toString(); //todo - fix
+      // @ts-ignore
+      this.content.style.display = "none";
+    }
+    this._titleElement = new H4Element({
       text: title,
       padding: "0px 10px",
       order: "1",
@@ -58,15 +60,19 @@ export class TabItem extends Component {
 
   public select() {
     if (!this.classList.contains("tab-title-active")) this.addClassName("tab-title-active");
-    this._content.style.display = this.displayContent;
+    if (this.content) this.content.style.display = this.displayContent;
   }
 
   public unselect() {
     if (this.classList.contains("tab-title-active")) this.classList.remove("tab-title-active");
-    this._content.style.display = "none";
+    if (this.content) this.content.style.display = "none";
   }
 
-  get content(): HTMLElement {
+  get titleElement(): H3Element {
+    return this._titleElement;
+  }
+
+  get content(): HTMLElement | undefined {
     return this._content;
   }
 }

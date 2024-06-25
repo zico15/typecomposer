@@ -209,5 +209,4 @@ export class DropDown<T = any> extends TextFieldElement {
   }
 }
 
-// @ts-ignore
 customElements.define("drop-down", DropDown);

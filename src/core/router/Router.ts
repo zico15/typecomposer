@@ -119,6 +119,7 @@ class RouterController {
   }
 
   private updateRoute(pathname: string) {
+    pathname = pathname.replace(/\?$/, "");
     const { url, parameters } = this.extractParametersURL(pathname);
     Router["_props"] = parameters;
     pathname = url.replace(/^#/, "");
@@ -146,6 +147,7 @@ class RouterController {
     this._route = value;
     const isHistory = this.buildRoute();
     let pathname = window.location.pathname;
+    pathname = pathname.replace(/\?$/, "");
     if (pathname.charAt(pathname.length - 1) == "/") {
       pathname = pathname.substring(0, pathname.length - 1) || "/";
     }
@@ -165,9 +167,14 @@ class RouterController {
 
   public addHistory(pathname: string) {
     pathname = pathname.replace(/^#/, "");
+    pathname = pathname.replace(/\?$/, "");
     if (pathname.charAt(0) != "/") pathname = "/" + pathname;
-    if (this.route.history == "hash") window.location.hash = "#" + pathname;
-    else window.history.pushState({}, "", pathname);
+    if (this.route.history == "hash") {
+      window.location.hash = "#" + pathname;
+    } else {
+      window.history.pushState({}, "", pathname);
+      this.updateRoute(pathname);
+    }
   }
 
   public getRouteViewFree(routeView: RouteView): RoutePageBuild | undefined {
@@ -222,7 +229,7 @@ class RouterController {
     });
 
     return {
-      url: url.split("?")[0],
+      url: url.split("?")[0].replace("?", ""),
       parameters: parameters,
     };
   }
@@ -255,7 +262,7 @@ export class Router {
     const queryString = Object.keys(parametros)
       .map((key) => encodeURIComponent(key) + "=" + encodeURIComponent(parametros[key]))
       .join("&");
-    return baseUrl + "?" + queryString;
+    return baseUrl + (queryString ? "?" + queryString : "");
   }
 
   private static createAutoId(routes: RoutePage[] = [], id: number) {

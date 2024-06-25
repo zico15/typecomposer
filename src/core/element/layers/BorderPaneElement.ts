@@ -1,13 +1,11 @@
-import { type StyleOptional, DivElement, GridElement, IComponent, ILayout } from "../..";
+import { type StyleOptional, DivElement, IComponent, ILayout, HtmlElement } from "../..";
 
 export class BorderPaneElement extends ILayout {
-  private _top: IComponent = new DivElement();
-  private _left: IComponent = new DivElement();
-  private _center: GridElement = new GridElement();
-  private _centerPane: IComponent = new DivElement();
-  private _right: IComponent = new DivElement();
-  private _bottom: IComponent = new DivElement();
-  private _variant: "primary" | "secondary";
+  private _top: HTMLElement;
+  private _left: HTMLElement;
+  private _center: HTMLElement;
+  private _right: HTMLElement;
+  private _bottom: HTMLElement;
 
   constructor(
     optional?: StyleOptional & {
@@ -15,116 +13,98 @@ export class BorderPaneElement extends ILayout {
     },
   ) {
     super(optional);
-    this.variant = optional?.variant || "primary";
+    this.variant = optional?.variant;
     this.addClassName("border-pane");
-  }
-
-  get variant(): string {
-    return this._variant;
+    this._left = this.appendChild(new DivElement());
+    this._top = this.appendChild(new DivElement());
+    this._center = this.appendChild(new DivElement());
+    this._right = this.appendChild(new DivElement());
+    this._bottom = this.appendChild(new DivElement());
+    this._top.setAttribute("slot", "top");
+    this._left.setAttribute("slot", "left");
+    this._center.setAttribute("slot", "center");
+    this._right.setAttribute("slot", "right");
+    this._bottom.setAttribute("slot", "bottom");
   }
 
   set variant(variant: "primary" | "secondary") {
-    this._variant = variant;
-    if (this._center == undefined) return;
-    if (variant == "primary") {
-      this.style.gridTemplateRows = "auto 1fr auto";
-      this.style.gridTemplateColumns = "auto";
-      this._center.style.gridTemplateColumns = "auto 1fr auto";
-      this._center.style.gridTemplateRows = "auto";
-      this.innerHTML = "";
-      super.append(this.top, this._center, this.bottom);
-      this._center.innerHTML = "";
-      this._center.append(this.left, this._centerPane, this.right);
-    } else {
-      this.style.gridTemplateRows = "auto";
-      this.style.gridTemplateColumns = "auto 1fr auto";
-      this._center.style.gridTemplateRows = "auto 1fr auto";
-      this._center.style.gridTemplateColumns = "auto";
-      this.innerHTML = "";
-      super.append(this.left, this._center, this.right);
-      this._center.innerHTML = "";
-      this._center.append(this.top, this._centerPane, this.bottom);
-    }
+    super.variant = variant;
   }
 
-  get top(): IComponent {
-    return this._top;
+  get top(): HTMLElement {
+    return this._top as any;
   }
 
-  get left(): IComponent {
-    return this._left;
+  get left(): HTMLElement {
+    return this._left as any;
   }
 
-  get center(): IComponent {
-    return this._centerPane;
+  get center(): HTMLElement {
+    return this._center as any;
   }
 
-  get containerCenter(): GridElement {
-    return this._center;
+  get right(): HTMLElement {
+    return this._right as any;
   }
 
-  get right(): IComponent {
-    return this._right;
+  get bottom(): HTMLElement {
+    return this._bottom as any;
   }
 
-  get bottom(): IComponent {
-    return this._bottom;
-  }
-
-  set top(component: IComponent) {
+  set top(component: HTMLElement) {
     this._top?.remove();
+    this.innerHTML = "";
     this._top = component;
-    if (this.variant == "primary") {
-      this.innerHTML = "";
-      super.append(this.top, this._center, this.bottom);
-    } else {
-      this._center.innerHTML = "";
-      this._center.append(this.top, this._centerPane, this.bottom);
-    }
+    component.setAttribute("slot", "top");
+    this.append(this._left, this._top, this._center, this._right, this._bottom);
   }
 
-  set left(component: IComponent) {
+  set left(component: HTMLElement) {
     this._left?.remove();
     this._left = component;
-    if (this.variant == "primary") {
-      this._center.innerHTML = "";
-      this._center.append(this.left, this._centerPane, this.right);
-    } else {
-      this.innerHTML = "";
-      this.append(this.left, this._center, this.right);
-    }
+    component.setAttribute("slot", "left");
+    this.append(this._left, this._top, this._center, this._right, this._bottom);
   }
 
-  set center(component: IComponent) {
-    this._centerPane?.remove();
-    this._centerPane = component;
-    this._center.innerHTML = "";
-    if (this.variant == "primary") this._center.append(this.left, this._centerPane, this.right);
-    else this._center.append(this.top, this._centerPane, this.bottom);
+  set center(component: HTMLElement) {
+    this._center?.remove();
+    this._center = component;
+    component.setAttribute("slot", "center");
+    this.append(this._left, this._top, this._center, this._right, this._bottom);
   }
 
-  set right(component: IComponent) {
+  set right(component: HTMLElement) {
     this._right?.remove();
     this._right = component;
-    if (this.variant == "primary") {
-      this._center.innerHTML = "";
-      this._center.append(this.left, this._centerPane, this.right);
-    } else {
-      this.innerHTML = "";
-      this.append(this.left, this._center, this.right);
-    }
+    component.setAttribute("slot", "right");
+    this.append(this._left, this._top, this._center, this._right, this._bottom);
   }
 
-  set bottom(component: IComponent) {
+  set bottom(component: HTMLElement) {
     this._bottom?.remove();
     this._bottom = component;
-    if (this.variant == "primary") {
-      this.innerHTML = "";
-      super.append(this.top, this._center, this.bottom);
-    } else {
-      this._center.innerHTML = "";
-      this._center.append(this.top, this._centerPane, this.bottom);
-    }
+    component.setAttribute("slot", "bottom");
+    this.append(this._left, this._top, this._center, this._right, this._bottom);
+  }
+
+  getTop<T>(): T {
+    return this._top as T;
+  }
+
+  getLeft<T>(): T {
+    return this._left as T;
+  }
+
+  getCenter<T>(): T {
+    return this._center as T;
+  }
+
+  getRight<T>(): T {
+    return this._right as T;
+  }
+
+  getBottom<T>(): T {
+    return this._bottom as T;
   }
 }
 customElements.define("border-pane", BorderPaneElement);

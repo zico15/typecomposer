@@ -45,8 +45,9 @@ export namespace RefProxyProperties {
         if (typeof prop === "string" || typeof prop === "symbol") subscriber.prop = prop;
         else if (typeof prop === "function") subscriber.fun = prop;
         RefMap.subscribe(subscriber);
-        if (prop != undefined && (typeof prop === "string" || typeof prop === "symbol"))
+        if (prop != undefined && (typeof prop === "string" || typeof prop === "symbol") && !(typeof prop === "function")) {
           baseNotify(subscriber, refPropertyKey || "value", refPropertyKey ? proxy[refPropertyKey] : proxy["value"]);
+        } else subscriber.fun.bind(subscriber.target.deref())(refPropertyKey ? proxy[refPropertyKey] : proxy["value"]);
         return subscriber;
       }.bind(proxy),
       configurable: false,
@@ -60,7 +61,7 @@ export namespace RefProxyProperties {
       value: function (fun: (value: any) => void) {
         const subscriber: subscribeRef<any> = { target: new WeakRef(fun), prop: undefined, fun: fun, ref: new WeakRef(proxy), isUnsubscribed: false };
         proxy.__list_change__.push(subscriber);
-        if (subscriber.fun) subscriber.fun(proxy);
+        if (subscriber.fun) subscriber.fun.bind(subscriber.target.deref())(proxy.__parent__ ? proxy : proxy.value);
       }.bind(proxy),
       configurable: false,
       enumerable: false,
@@ -96,7 +97,7 @@ export namespace RefProxyProperties {
         continue;
       }
       if (subscriber.isUnsubscribed) continue;
-      if (subscriber.fun) subscriber.fun(proxy.__parent__ ? proxy : proxy.value);
+      if (subscriber.fun) subscriber.fun.bind(subscriber.target.deref())(proxy.__parent__ ? proxy : proxy.value);
     }
     if (proxy.__parent__) {
       parents.push(proxy);

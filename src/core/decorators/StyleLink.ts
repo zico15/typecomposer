@@ -1,7 +1,5 @@
-import { Component } from "../element";
-
 export function StyleLink(url: string) {
-  return (constructor: Function) => {
+  return (__: Function) => {
     if (url != undefined) {
       if (url.indexOf("src/") == -1) url = "src/" + url;
       // if (constructor.prototype._onLoad == undefined)

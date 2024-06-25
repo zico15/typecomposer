@@ -17,8 +17,6 @@ export class TabPane extends BorderPaneElement {
     this.addClassName("tab-pane");
     this.style.width = "100%";
     this.style.marginTop = "10px";
-    // this.style.minHeight = "280px";
-    // this.style.maxHeight = "280px"; ??why
     this.tabs.classList.add("tab-pane-tabs");
     this.top = this.tabs;
     this.center = new DivElement();
@@ -28,13 +26,15 @@ export class TabPane extends BorderPaneElement {
     if (optional != undefined && optional?.alignTab != undefined) this.tabs.style.justifyContent = optional.alignTab;
   }
 
-  public addTap(title: string, content: HTMLElement, icon: IconElement | null = null) {
-    this.addTaps(new TabItem(title, content, icon, this.closeable));
+  public addTap(title: string, content?: HTMLElement, icon: IconElement | null = null): TabItem {
+    const tab = new TabItem(title, content, icon, this.closeable);
+    this.addTaps(tab);
+    return tab;
   }
 
   public addTaps(...tabs: TabItem[]) {
     tabs.forEach((tab) => {
-      this.center.appendChild(tab.content);
+      if (tab.content != undefined) this.center.appendChild(tab.content);
       this.tabs.appendChild(tab);
       tab.addEventListener("click", () => this.setTabSelected(tab));
       // if (this.type == "max")

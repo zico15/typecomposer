@@ -33,26 +33,25 @@ export class TextFieldElement extends Component {
   ) {
     super();
     this._fieldset = new FieldSetElement();
-    this.fieldset.variant = optional?.variant;
     this._input = new InputElement({
       type: optional?.type || "text",
       placeholder: " ",
       value: optional?.value || optional?.text || "",
     });
-    this.fieldset.append(new LegendElement({ text: optional?.placeholder || "" }));
     this.append(this.input, this.fieldset);
     if (optional?.placeholderAnimation == true || optional?.placeholderAnimation == undefined) {
       this._label = new LabelElement({ text: optional?.placeholder || " " });
       this._label.addEventListener("click", () => this.input.focus());
       this.appendChild(this.label);
+      this.fieldset.append(new LegendElement({ text: optional?.placeholder || "" }));
     } else this.input.placeholder = optional?.placeholder || " ";
     this.appendChild(this.iconPane);
     this.iconPane.addEventListener("click", () => this.input.focus());
-    // @ts-ignore
-    this.input.variant = optional?.variant;
+    //this.input.variant = optional?.variant;
     if (optional?.icon != undefined) this.icon = optional.icon;
     delete optional?.value;
     delete optional?.text;
+    this.variant = optional?.variant;
     Component.applyData(optional, this);
   }
 
@@ -75,6 +74,9 @@ export class TextFieldElement extends Component {
   set variant(value: Variant) {
     this.input.variant = value;
     this.fieldset.variant = value;
+    super.variant = value;
+    //if (value == "default" || value == undefined) this.removeAttribute("variant");
+    //else this.setAttribute("variant", value);
   }
 
   set icon(value: IComponent) {

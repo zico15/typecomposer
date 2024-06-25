@@ -10,6 +10,7 @@
 
 @import url("layers/flow-pane.scss");
 @import url("layers/scroll-pane.scss");
+@import url("layers/border-pane.scss");
 
 // components
 @import url("components/TablePane.scss");
@@ -92,11 +93,6 @@ list-element {
   justify-content: flex-start;
   align-items: stretch;
   align-content: stretch;
-}
-
-.border-pane {
-  display: grid;
-  height: 100vh;
 }
 
 .card-element,
