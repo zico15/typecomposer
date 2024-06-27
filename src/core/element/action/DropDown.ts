@@ -19,7 +19,7 @@ export class DropDown<T = any> extends TextFieldElement {
   private _dropdownContent: DivElement;
   private _idClass: number;
   private _arrow: DivElement;
-  public onChange: (item: T, index: number) => void = () => { };
+  public onChange: (item: T, index: number) => void = () => {};
   private _selected: number = -1;
   textValue: (value: T | undefined) => string | undefined = undefined;
   textSelected: (value: T | undefined) => string | undefined = undefined;
@@ -76,8 +76,11 @@ export class DropDown<T = any> extends TextFieldElement {
   onInit() {
     this._arrow = new DivElement({ className: "arrow-down" });
     this.append(this._arrow);
-    this.onclick = () => {
+    this.onclick = (event) => {
       if (this.options.length === 0) return;
+      if (this.dropdownContent.contains(event.target as Node)) {
+        return;
+      }
       this.dropdownContent.classList.toggle("pressed");
       this._arrow.classList.toggle("up");
     };
@@ -115,15 +118,15 @@ export class DropDown<T = any> extends TextFieldElement {
     Array.from(this.dropdownContent.children).forEach((child: HTMLElement) => {
       child.classList.remove("selected");
     });
-    this.children[1].classList.toggle("pressed");
-    this.classList.toggle("pressed");
-    this.children[1].classList.toggle("up");
+    this.arrow.classList.toggle("pressed");
+    this.dropdownContent.classList.toggle("pressed");
+    this.arrow.classList.toggle("up");
   }
 
   private closeAndKeep() {
-    this.children[1].classList.toggle("pressed");
-    this.classList.toggle("pressed");
-    this.children[1].classList.toggle("up");
+    this.arrow.classList.toggle("pressed");
+    this.dropdownContent.classList.toggle("pressed");
+    this.arrow.classList.toggle("up");
   }
 
   private openAndClean() {
@@ -137,10 +140,15 @@ export class DropDown<T = any> extends TextFieldElement {
   }
 
   set selectionType(selectionType: SelectionType) {
-    if (selectionType == "closeAndKeep") this.onSelectionAction = this.closeAndKeep.bind(this);
-    else if (selectionType == "openAndClean") this.onSelectionAction = this.openAndClean.bind(this);
-    else if (selectionType == "openAndKeep") this.onSelectionAction = () => { };
-    else this.onSelectionAction = this.closeAndClean.bind(this);
+    if (selectionType == "closeAndKeep") {
+      this.onSelectionAction = this.closeAndKeep.bind(this);
+    } else if (selectionType == "openAndClean") {
+      this.onSelectionAction = this.openAndClean.bind(this);
+    } else if (selectionType == "openAndKeep") {
+      this.onSelectionAction = () => {};
+    } else {
+      this.onSelectionAction = this.closeAndClean.bind(this);
+    }
     this._selectionType = selectionType;
   }
 
