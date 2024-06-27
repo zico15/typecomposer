@@ -109,8 +109,8 @@ export class DropDown<T = any> extends TextFieldElement {
     const baseValue = isRef(value) ? (value as any).value : value;
     const index = this.options.findIndex((option) => option == baseValue);
     if (index == -1) return;
-    const items = this.dropdownContent.querySelector(".option");
-    if (items) this.selectOption(this.options[index], index, items as HTMLElement);
+    const items = this.dropdownContent.querySelectorAll(".option");
+    if (items) this.selectOption(this.options[index], index, items[index] as HTMLElement);
     this.dropdownContent.classList.remove("pressed");
   }
 
