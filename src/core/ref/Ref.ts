@@ -15,6 +15,7 @@ function updateRef<T extends object>(proxy: any, value: T): any {
 }
 
 function RefProxy<T extends object>(target: T, parent: any): T {
+  let state = "";
   const proxy: T = RefProxyProperties.assignProperties(
     new Proxy(target, {
       get: (_target, prop: any, receiver) => {
@@ -25,11 +26,17 @@ function RefProxy<T extends object>(target: T, parent: any): T {
         return value;
       },
       set: (target: any, prop, value, receiver) => {
+        if (parent == undefined && prop == "__state__") return true;
         if (typeof target[prop] === "function") return true;
         if (value instanceof RefString || value instanceof RefNumber) value = value?.valueOf();
         const result = typeof value === "object" && typeof target[prop] == "object" ? updateRef(target[prop], value) != undefined : (target[prop] = value);
         // @ts-ignore
-        proxy.__notify__(prop, value);
+        const newState = proxy.__toString__();
+        if (newState != state) {
+          // @ts-ignore
+          proxy.__notify__(prop, value);
+        }
+        state = newState;
         return true;
       },
       deleteProperty: (target, prop) => {

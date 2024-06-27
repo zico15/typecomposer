@@ -1390,12 +1390,21 @@ customElements.define("base-legend-element", LegendElement, {
 });
 
 export class SvgElement extends HTMLObjectElement implements IComponent {
-  constructor(optional?: StyleOptional & { data?: string }) {
+  constructor(optional?: StyleOptional & { data?: string; src?: string; width?: string; height?: string; fill?: string }) {
     super();
+    if (optional.src) this.data = optional.src;
     Component.applyData(optional, this);
     if (optional?.width) this.width = optional.width as any;
     if (optional?.height) this.height = optional.height as any;
     this.setAttribute("type", "image/svg+xml");
+    this.addEventListener("load", () => {
+      const svg = this.contentDocument?.querySelector("svg");
+      if (svg && optional.fill) {
+        svg.style.fill = optional.fill;
+        svg.width.baseVal.valueAsString = this.width.toString();
+        svg.height.baseVal.valueAsString = this.height.toString();
+      }
+    });
   }
   set color(value: string) {
     const pathElement = this.contentDocument?.querySelector("path");
@@ -1406,10 +1415,8 @@ export class SvgElement extends HTMLObjectElement implements IComponent {
         if (pathElement) pathElement.style.fill = value;
       };
       var circleElements = this.contentDocument.querySelectorAll("circle");
-
-      // Alterar a cor de todos os elementos de círculo dentro do SVG
       circleElements.forEach(function (circle) {
-        circle.style.fill = value; // Alterar para a cor vermelha
+        circle.style.fill = value;
       });
     }
   }

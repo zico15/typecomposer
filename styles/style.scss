@@ -74,7 +74,7 @@ list-element {
     margin: 0;
     padding: 0;
     width: auto;
-    overflow-y: scroll;
+    overflow-y: auto;
     max-height: 100%;
   }
 
@@ -83,6 +83,13 @@ list-element {
     display: flex;
     justify-content: space-between;
     align-items: center;
+  }
+
+  &[variant="secondary"] {
+    ul li:hover {
+      background-color: var(--primary-surface);
+      color: var(--primary-color-text);
+    }
   }
 }
 
@@ -372,7 +379,6 @@ input:not(:placeholder-shown) ~ label {
   left: 1rem;
   font-size: 0.8rem;
   color: var(--primary-text-color);
-  background: var(--primary-color);
 }
 
 chart-element {

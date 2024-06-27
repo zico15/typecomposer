@@ -8,9 +8,13 @@ export class ListElement<T = any> extends Component {
 
   private _container: UListElement = new UListElement();
 
-  constructor(optional?: StyleOptional) {
+  constructor(optional?: StyleOptional & { variant?: "primary" | "secondary" | string }) {
     super({ height: "100vh", ...optional });
     super.append(this.container);
+  }
+
+  set variant(value: "primary" | "secondary" | string) {
+    super.variant = value == "primary" ? "default" : value;
   }
 
   public get container(): UListElement {

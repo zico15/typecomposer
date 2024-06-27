@@ -106,9 +106,18 @@ export namespace RefProxyProperties {
     }
   }
 
+  function getSuperParent(proxy: any): any {
+    if (proxy.__parent__) return getSuperParent(proxy.__parent__);
+    return proxy;
+  }
+
   function definePropertieNotify(proxy: any) {
     Object.defineProperty(proxy, "__notify__", {
       value: function (prop: string | symbol, value: any) {
+        //const superParent = getSuperParent(proxy);
+        //const __state__ = String(superParent.__state__);
+        //superParent.__state__ = superParent.__toString__();
+        //if (__state__ == superParent.__state__) return;
         const subscribers = RefMap.getSubscribes(proxy);
         for (const subscriber of subscribers) {
           baseNotify(subscriber, prop, value);
@@ -204,6 +213,11 @@ export namespace RefProperties {
       configurable: false,
       enumerable: false,
       writable: false,
+    });
+    const value = proxy.toString();
+    Object.defineProperty(proxy, "__state__", {
+      value: value,
+      writable: true,
     });
     return proxy;
   }

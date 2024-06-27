@@ -8,6 +8,7 @@ export interface StyleOptional {
   className?: string | ref<string>;
   text?: string | ref<string>;
   accentColor?: string | ref<string>;
+  readOnly?: boolean | ref<boolean>;
   /** [MDN reference](https://developer.mozilla.org/docs/Web/CSS/align-content) */
   alignContent?: string | ref<string>;
   /** [MDN reference](https://developer.mozilla.org/docs/Web/CSS/align-items) */

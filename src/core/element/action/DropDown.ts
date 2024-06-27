@@ -2,10 +2,13 @@ import { Component, DivElement, StyleOptional, TextFieldElement, isRef, ref, ref
 
 export type SelectionType = "closeAndClean" | "closeAndKeep" | "openAndClean" | "openAndKeep";
 
-export class DropDownItem extends DivElement {}
+export class DropDownItem extends Component {
+  constructor(props?: StyleOptional) {
+    super({ display: "block", unicodeBidi: "isolate", ...props });
+  }
+}
 
-// @ts-ignore
-customElements.define("drop-down-item", DropDownItem, { extends: "div" });
+customElements.define("drop-down-item", DropDownItem);
 
 export class DropDown<T = any> extends TextFieldElement {
   private onSelectionAction: () => void = this.closeAndClean.bind(this);
@@ -15,7 +18,8 @@ export class DropDown<T = any> extends TextFieldElement {
   private _value: T | ref<T>;
   private _dropdownContent: DivElement;
   private _idClass: number;
-  public onChange: (item: T, index: number) => void = () => {};
+  private _arrow: DivElement;
+  public onChange: (item: T, index: number) => void = () => { };
   private _selected: number = -1;
   textValue: (value: T | undefined) => string | undefined = undefined;
   textSelected: (value: T | undefined) => string | undefined = undefined;
@@ -36,7 +40,7 @@ export class DropDown<T = any> extends TextFieldElement {
       filter?: (item: T, input: string) => boolean;
     },
   ) {
-    super({ placeholder: props?.placeholder, placeholderAnimation: props?.placeholderAnimation });
+    super({ placeholder: props?.placeholder, placeholderAnimation: props?.placeholder == undefined ? false : props?.placeholderAnimation });
     const v = props?.value;
     delete props?.value;
     Component.applyData(props, this);
@@ -65,29 +69,32 @@ export class DropDown<T = any> extends TextFieldElement {
 
   set filter(filter: ((value: T, input: string) => boolean) | undefined) {
     this.input.readOnly = filter == undefined;
-    console.log("filter");
     if (filter == undefined) filter = () => true;
     else this._filter = filter;
   }
 
   onInit() {
-    const arrow = new DivElement({ className: "arrow-down" });
-    this.append(arrow);
+    this._arrow = new DivElement({ className: "arrow-down" });
+    this.append(this._arrow);
     this.onclick = () => {
       if (this.options.length === 0) return;
       this.dropdownContent.classList.toggle("pressed");
-      arrow.classList.toggle("up");
+      this._arrow.classList.toggle("up");
     };
     this.handleClickOutside = this.handleClickOutside.bind(this);
     document.addEventListener("mousedown", this.handleClickOutside);
   }
 
   private handleClickOutside(event) {
-    if (!this.contains(event.target) && !this.dropdownContent.contains(event.target) && this.classList.contains("pressed")) {
-      this.children[1].classList.toggle("pressed");
-      this.classList.toggle("pressed");
-      this.children[1].classList.toggle("up");
+    if (!this.contains(event.target) && !this.dropdownContent.contains(event.target) && this.dropdownContent.classList.contains("pressed")) {
+      this._arrow.classList.toggle("pressed");
+      this.dropdownContent.classList.toggle("pressed");
+      this._arrow.classList.toggle("up");
     }
+  }
+
+  get arrow() {
+    return this._arrow;
   }
 
   get selected(): T | undefined {
@@ -132,7 +139,7 @@ export class DropDown<T = any> extends TextFieldElement {
   set selectionType(selectionType: SelectionType) {
     if (selectionType == "closeAndKeep") this.onSelectionAction = this.closeAndKeep.bind(this);
     else if (selectionType == "openAndClean") this.onSelectionAction = this.openAndClean.bind(this);
-    else if (selectionType == "openAndKeep") this.onSelectionAction = () => {};
+    else if (selectionType == "openAndKeep") this.onSelectionAction = () => { };
     else this.onSelectionAction = this.closeAndClean.bind(this);
     this._selectionType = selectionType;
   }
