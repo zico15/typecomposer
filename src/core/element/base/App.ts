@@ -1,34 +1,57 @@
 export type theme = "light" | "dark" | string;
 import { IComponent } from "../..";
+import { RefTranslate } from "../../ref/RefTranslate";
 import { CSSStyleDeclarationRef } from "../../../styles";
 
-export class App {
-  private static data: { theme: theme; language: string } = {
+class __App__ {
+  private translateData: {};
+  private isTranslateInit: boolean = false;
+
+  private data: { theme: theme; language: string } = {
     theme: "light",
     language: "en",
   };
 
-  private constructor() {}
+  constructor() {
+    const store = localStorage.getItem("__app__");
+    if (store) {
+      this.data = JSON.parse(store);
+    }
+    console.log("__App__", this.data);
+    document.addEventListener("DOMContentLoaded", () => {
+      // @ts-ignore
+      RefTranslate.translateAll();
+      this.isTranslateInit = true;
+    });
+  }
 
-  public static getTheme(): theme {
+  public get theme(): theme {
     return this.data.theme;
   }
 
-  public static getLanguage(): string {
-    return App.data.language;
-  }
-
-  public static setTheme(theme: theme): void {
-    App.data.theme = theme;
+  public set theme(value: theme) {
+    this.data.theme = value;
     const html = document.querySelector("html");
-    html?.setAttribute("data-theme", theme);
+    html?.setAttribute("data-theme", value);
+    localStorage.setItem("__app__", JSON.stringify(this.data));
   }
 
-  public static setLanguage(language: string): void {
-    App.data.language = language;
+  public set language(value: string) {
+    const isUpdate = this.data.language != value;
+
+    if (isUpdate || !this.isTranslateInit) {
+      this.data.language = value;
+      localStorage.setItem("__app__", JSON.stringify(this.data));
+      // @ts-ignore
+      RefTranslate.translateAll();
+    }
   }
 
-  public static setPage(page: IComponent): void {
+  public get language(): string {
+    return this.data.language;
+  }
+
+  public setPage(page: IComponent): void {
     document.body.innerHTML = "";
     document.body.appendChild(page);
   }
@@ -37,31 +60,43 @@ export class App {
    * Gets a reference to the root node of the document.
    * @returns {HTMLElement} The root node of the document.
    */
-  public static get root(): HTMLElement {
+  public get root(): HTMLElement {
     return document.documentElement;
   }
 
-  public static get body(): HTMLElement {
+  public get body(): HTMLElement {
     return document.body;
   }
 
-  public static get head(): HTMLElement {
+  public get head(): HTMLElement {
     return document.head;
   }
 
-  public static get location(): Location {
+  public get location(): Location {
     return window.location;
   }
 
-  public static get title(): string {
+  public get title(): string {
     return document.title;
   }
 
-  public static set title(value: string) {
+  public set title(value: string) {
     document.title = value;
   }
 
-  public static get style(): CSSStyleDeclarationRef {
+  public get style(): CSSStyleDeclarationRef {
     return document.documentElement.style;
   }
+
+  public set translate(value: object) {
+    this.translateData = value;
+  }
+
+  public get translate(): object {
+    return this.translateData;
+  }
 }
+
+export type App = __App__;
+
+export const App = new __App__();

@@ -1110,7 +1110,6 @@ customElements.define("base-footer-element", FooterElement, {
 });
 
 export class FormElement extends HTMLFormElement implements IComponent {
-  private _response: any = undefined;
   constructor(
     optional?: StyleOptional & {
       acceptCharset?: string;
@@ -1134,7 +1133,6 @@ export class H1Element extends HTMLHeadingElement implements IComponent {
   constructor(optional?: StyleOptional) {
     super();
     Component.applyData(optional, this);
-    if (optional?.text) this.innerText = optional.text.toString();
   }
 }
 
@@ -1144,7 +1142,6 @@ export class H2Element extends HTMLHeadingElement implements IComponent {
   constructor(optional?: StyleOptional) {
     super();
     Component.applyData(optional, this);
-    if (optional?.text) this.innerText = optional.text.toString();
   }
 }
 
@@ -1154,16 +1151,6 @@ export class H3Element extends HTMLHeadingElement implements IComponent {
   constructor(optional?: StyleOptional) {
     super();
     Component.applyData(optional, this);
-    if (optional?.text) this.text = optional.text;
-  }
-
-  get text(): string {
-    return this.innerText;
-  }
-
-  set text(value: string | ref<string>) {
-    if (typeof value !== "string") this["_styleref"].appendStyleref("text", this, value);
-    else this.innerText = value;
   }
 }
 
@@ -1173,13 +1160,6 @@ export class H4Element extends H3Element implements IComponent {
   constructor(optional?: StyleOptional) {
     super();
     Component.applyData(optional, this);
-    if (optional?.text) this.innerText = optional.text.toString();
-  }
-
-  public onInit(): void {}
-
-  addClassName(...names: string[]): void {
-    this.classList.add(...names);
   }
 }
 
@@ -1189,13 +1169,6 @@ export class H5Element extends H3Element implements IComponent {
   constructor(optional?: StyleOptional) {
     super();
     Component.applyData(optional, this);
-    if (optional?.text) this.innerText = optional.text.toString();
-  }
-
-  public onInit(): void {}
-
-  addClassName(...names: string[]): void {
-    this.classList.add(...names);
   }
 }
 
@@ -1205,13 +1178,6 @@ export class H6Element extends H3Element implements IComponent {
   constructor(optional?: StyleOptional) {
     super();
     Component.applyData(optional, this);
-    if (optional?.text) this.innerText = optional.text.toString();
-  }
-
-  public onInit(): void {}
-
-  addClassName(...names: string[]): void {
-    this.classList.add(...names);
   }
 }
 

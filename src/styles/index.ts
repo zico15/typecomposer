@@ -3,6 +3,7 @@ import { ref, refType } from "..";
 export type Variant = "default" | "outline" | "solo" | "standard" | "underlined";
 
 export interface StyleOptional {
+  onclick?: ((this: GlobalEventHandlers, ev: MouseEvent) => any) | null;
   id?: string | ref<string>;
   /** [MDN reference](https://developer.mozilla.org/docs/Web/CSS/accent-color) */
   className?: string | ref<string>;

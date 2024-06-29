@@ -1,9 +1,10 @@
+import { RefTranslate } from "../core/ref/RefTranslate";
 import { ref, Component, StyleOptional, CSSStyleDeclarationRef as CSSStyleDeclarationRefType, refType } from "../";
 
 declare global {
   var CSSStyleDeclarationRef: {
     prototype: CSSStyleDeclaration;
-    new (): CSSStyleDeclarationRefType;
+    new(): CSSStyleDeclarationRefType;
   };
   // function test_global();
   interface Array<T> {
@@ -74,7 +75,7 @@ Object.defineProperty(Element.prototype, "variant", {
 });
 
 Object.defineProperty(window, "scoped", {
-  value: function (target: any): any {},
+  value: function (target: any): any { },
   writable: true,
   configurable: true,
   enumerable: true,
@@ -91,7 +92,7 @@ try {
       this._multiple = _value;
     },
   });
-} catch (__) {}
+} catch (__) { }
 
 try {
   Object.defineProperty(HTMLButtonElement.prototype, "accept", {
@@ -104,13 +105,13 @@ try {
       this._accept = value;
     },
   });
-} catch (__) {}
+} catch (__) { }
 
 try {
   const originalButton = Object.getOwnPropertyDescriptor(HTMLButtonElement.prototype, "type").set;
 
   Object.defineProperty(HTMLButtonElement.prototype, "onfile", {
-    value: function (this: HTMLButtonElement, fileList: FileList) {},
+    value: function (this: HTMLButtonElement, fileList: FileList) { },
     writable: true,
     configurable: true,
     enumerable: true,
@@ -142,41 +143,59 @@ try {
       originalButton.call(this, value);
     },
   });
-} catch (__) {}
+} catch (__) { }
 
 const originalInnerHTML = Object.getOwnPropertyDescriptor(Element.prototype, "innerHTML").set;
 
 Object.defineProperty(Element.prototype, "innerHTML", {
   set: function (value: string | ref<string>) {
-    const baseref = refType(value);
-    if (baseref) baseref.subscribe(this, "innerHTML");
-    else originalInnerHTML.call(this, value?.toString());
+    if ((value as any) instanceof RefTranslate) {
+      (value as any).subscribe(this, "innerHTML");
+    } else {
+      const baseref = refType(value);
+      if (baseref) baseref.subscribe(this, "innerHTML");
+      else originalInnerHTML.call(this, value?.toString());
+    }
+  },
+});
+
+const originalInnerText = Object.getOwnPropertyDescriptor(HTMLElement.prototype, "innerText").set;
+
+Object.defineProperty(HTMLElement.prototype, "innerText", {
+  set: function (value: string | ref<string>) {
+    if ((value as any) instanceof RefTranslate) {
+      (value as any).subscribe(this, "innerText");
+    } else {
+      const baseref = refType(value);
+      if (baseref) baseref.subscribe(this, "innerText");
+      else originalInnerText.call(this, value?.toString());
+    }
   },
 });
 
 Object.defineProperty(Element.prototype, "onInit", {
-  value: function () {},
+  value: function () { },
   writable: true,
   configurable: true,
   enumerable: true,
 });
 
 Object.defineProperty(Element.prototype, "onConnected", {
-  value: function () {},
+  value: function () { },
   writable: true,
   configurable: true,
   enumerable: true,
 });
 
 Object.defineProperty(Element.prototype, "onDisconnected", {
-  value: function () {},
+  value: function () { },
   writable: true,
   configurable: true,
   enumerable: true,
 });
 
 Object.defineProperty(Element.prototype, "unmount", {
-  value: function () {},
+  value: function () { },
   writable: true,
   configurable: true,
   enumerable: true,
@@ -224,4 +243,32 @@ Window.prototype.setTheme = function (theme: string): void {
   localStorage.setItem("theme", theme);
 };
 
-export {};
+const originalPlaceholder = Object.getOwnPropertyDescriptor(HTMLInputElement.prototype, "placeholder");
+
+Object.defineProperty(HTMLInputElement.prototype, "placeholder", {
+  set: function (value: string) {
+    if ((value as any) instanceof RefTranslate) {
+      (value as any).subscribe(this, "placeholder");
+    } else {
+      const baseref = refType(value);
+      if (baseref) baseref.subscribe(this, "placeholder");
+      else originalPlaceholder.set.call(this, value);
+    }
+  },
+});
+
+const originalPlaceholderTextArea = Object.getOwnPropertyDescriptor(HTMLTextAreaElement.prototype, "placeholder");
+
+Object.defineProperty(HTMLTextAreaElement.prototype, "placeholder", {
+  set: function (value: string) {
+    if ((value as any) instanceof RefTranslate) {
+      (value as any).subscribe(this, "placeholder");
+    } else {
+      const baseref = refType(value);
+      if (baseref) baseref.subscribe(this, "placeholder");
+      else originalPlaceholderTextArea.set.call(this, value);
+    }
+  },
+});
+
+export { };

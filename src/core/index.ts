@@ -5,3 +5,4 @@ export * from "./factory";
 export * from "./element";
 export * from "./components";
 export * from "./router";
+export * from "./translate";
