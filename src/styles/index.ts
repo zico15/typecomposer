@@ -3,6 +3,7 @@ import { ref, refType } from "..";
 export type Variant = "default" | "outline" | "solo" | "standard" | "underlined";
 
 export interface StyleOptional {
+  variant?: string | ref<string>;
   onclick?: ((this: GlobalEventHandlers, ev: MouseEvent) => any) | null;
   id?: string | ref<string>;
   /** [MDN reference](https://developer.mozilla.org/docs/Web/CSS/accent-color) */
@@ -11,11 +12,65 @@ export interface StyleOptional {
   accentColor?: string | ref<string>;
   readOnly?: boolean | ref<boolean>;
   /** [MDN reference](https://developer.mozilla.org/docs/Web/CSS/align-content) */
-  alignContent?: string | ref<string>;
+  alignContent?:
+    | string
+    | ref<string>
+    | "normal"
+    | "start"
+    | "end"
+    | "flex-end"
+    | "flex-start"
+    | "center"
+    | "baseline"
+    | "first baseline"
+    | "last baseline"
+    | "space-between"
+    | "space-around"
+    | "space-evenly"
+    | "stretch"
+    | "safe center"
+    | "unsafe center"
+    | "inherit"
+    | "initial"
+    | "revert"
+    | "unset";
   /** [MDN reference](https://developer.mozilla.org/docs/Web/CSS/align-items) */
-  alignItems?: string | ref<string>;
+  alignItems?:
+    | string
+    | ref<string>
+    | "baseline"
+    | "center"
+    | "end"
+    | "flex-end"
+    | "flex-start"
+    | "self-end"
+    | "self-start"
+    | "start"
+    | "stretch"
+    | "inherit"
+    | "initial"
+    | "revert"
+    | "unset";
   /** [MDN reference](https://developer.mozilla.org/docs/Web/CSS/align-self) */
-  alignSelf?: string | ref<string>;
+  alignSelf?:
+    | string
+    | ref<string>
+    | "auto"
+    | "baseline"
+    | "center"
+    | "end"
+    | "flex-end"
+    | "flex-start"
+    | "normal"
+    | "self-end"
+    | "self-start"
+    | "start"
+    | "stretch"
+    | "inherit"
+    | "initial"
+    | "revert"
+    | "revert-layer"
+    | "unset";
   alignmentBaseline?: string | ref<string>;
   /** [MDN reference](https://developer.mozilla.org/docs/Web/CSS/all) */
   all?: string | ref<string>;
@@ -618,7 +673,7 @@ export interface StyleOptional {
   /** [MDN reference](https://developer.mozilla.org/docs/Web/CSS/pointer-events) */
   pointerEvents?: string | ref<string>;
   /** [MDN reference](https://developer.mozilla.org/docs/Web/CSS/position) */
-  position?: string | ref<string>;
+  position?: string | ref<string> | "static" | "relative" | "absolute" | "fixed" | "sticky" | "inherit" | "initial" | "revert" | "revert-layer" | "unset";
   /** [MDN reference](https://developer.mozilla.org/docs/Web/CSS/print-color-adjust) */
   printColorAdjust?: string | ref<string>;
   /** [MDN reference](https://developer.mozilla.org/docs/Web/CSS/quotes) */
@@ -1486,17 +1541,41 @@ export interface CSSStyleDeclarationRef {
   /** [MDN reference](https://developer.mozilla.org/docs/Web/CSS/direction) */
   direction: string | ref<string>;
   /** [MDN reference](https://developer.mozilla.org/docs/Web/CSS/display) */
-  display: string | ref<string> | "absolute" | "fixed" | "relative" | "static" | "sticky";
+  display:
+    | string
+    | ref<string>
+    | "block"
+    | "inline"
+    | "inline-block"
+    | "flex"
+    | "inline-flex"
+    | "grid"
+    | "inline-grid"
+    | "flow-root"
+    | "none"
+    | "contents"
+    | "table"
+    | "table-row"
+    | "list-item"
+    | "inherit"
+    | "initial"
+    | "revert"
+    | "revert-layer"
+    | "unset";
+  /** [MDN reference](https://developer.mozilla.org/docs/Web/CSS/dominant-baseline) */
   dominantBaseline: string | ref<string>;
   /** [MDN reference](https://developer.mozilla.org/docs/Web/CSS/empty-cells) */
   emptyCells: string | ref<string>;
+  /** [MDN reference](https://developer.mozilla.org/docs/Web/CSS/fill) */
   fill: string | ref<string>;
+  /** [MDN reference](https://developer.mozilla.org/docs/Web/CSS/fill-opacity) */
   fillOpacity: string | ref<string>;
+  /** [MDN reference](https://developer.mozilla.org/docs/Web/CSS/fill-rule) */
   fillRule: string | ref<string>;
   /** [MDN reference](https://developer.mozilla.org/docs/Web/CSS/filter) */
   filter: string | ref<string>;
   /** [MDN reference](https://developer.mozilla.org/docs/Web/CSS/flex) */
-  flex: string | ref<string>;
+  flex: string | ref<string> | "auto" | "initial" | "none";
   /** [MDN reference](https://developer.mozilla.org/docs/Web/CSS/flex-basis) */
   flexBasis: string | ref<string>;
   /** [MDN reference](https://developer.mozilla.org/docs/Web/CSS/flex-direction) */
@@ -1511,7 +1590,9 @@ export interface CSSStyleDeclarationRef {
   flexWrap: string | ref<string>;
   /** [MDN reference](https://developer.mozilla.org/docs/Web/CSS/float) */
   float: string | ref<string>;
+  /** [MDN reference](https://developer.mozilla.org/docs/Web/CSS/flood-color) */
   floodColor: string | ref<string>;
+  /** [MDN reference](https://developer.mozilla.org/docs/Web/CSS/flood-opacity) */
   floodOpacity: string | ref<string>;
   /** [MDN reference](https://developer.mozilla.org/docs/Web/CSS/font) */
   font: string | ref<string>;

@@ -37,6 +37,7 @@ export class TextFieldElement extends Component {
       type: optional?.type || "text",
       placeholder: " ",
       value: optional?.value || optional?.text || "",
+      variant: optional?.variant,
     });
     this.append(this.input, this.fieldset);
     if (optional?.placeholderAnimation == true || optional?.placeholderAnimation == undefined) {
@@ -47,7 +48,6 @@ export class TextFieldElement extends Component {
     } else this.input.placeholder = optional?.placeholder || " ";
     this.appendChild(this.iconPane);
     this.iconPane.addEventListener("click", () => this.input.focus());
-    //this.input.variant = optional?.variant;
     if (optional?.icon != undefined) this.icon = optional.icon;
     delete optional?.value;
     delete optional?.text;
@@ -71,12 +71,10 @@ export class TextFieldElement extends Component {
     return this._fieldset;
   }
 
-  set variant(value: Variant) {
+  set variant(value: Variant | string | ref<string>) {
     this.input.variant = value;
     this.fieldset.variant = value;
     super.variant = value;
-    //if (value == "default" || value == undefined) this.removeAttribute("variant");
-    //else this.setAttribute("variant", value);
   }
 
   set icon(value: IComponent) {

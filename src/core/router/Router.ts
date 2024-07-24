@@ -31,9 +31,13 @@ class RouterController {
     window.addEventListener("load", () => {
       if (this.route) this.updateRoute(this.route.history == "history" ? window.location.pathname : window.location.hash);
     });
-    window.addEventListener("popstate", () => {
-      if (this.route) this.updateRoute(this.route.history == "history" ? window.location.pathname : window.location.hash);
-    });
+    //window.addEventListener("popstate", () => {
+    //  if (this.route) this.updateRoute(this.route.history == "history" ? window.location.pathname : window.location.hash);
+    //});
+    //// quando a uma mudanca na url
+    //window.addEventListener("hashchange", () => {
+    //  if (this.route) this.updateRoute(window.location.hash);
+    //});
   }
 
   doRoutesMatch(route1: string, route2: string): boolean {
@@ -169,12 +173,9 @@ class RouterController {
     pathname = pathname.replace(/^#/, "");
     pathname = pathname.replace(/\?$/, "");
     if (pathname.charAt(0) != "/") pathname = "/" + pathname;
-    if (this.route.history == "hash") {
-      window.location.hash = "#" + pathname;
-    } else {
-      window.history.pushState({}, "", pathname);
-      this.updateRoute(pathname);
-    }
+    if (this.route.history == "hash") window.location.hash = "#" + pathname;
+    else window.history.pushState({}, "", pathname);
+    this.updateRoute(this.route.history == "history" ? window.location.pathname : window.location.hash);
   }
 
   public getRouteViewFree(routeView: RouteView): RoutePageBuild | undefined {
@@ -255,7 +256,7 @@ export class Router {
 
   static create(data: { routes: RoutePage[]; history?: "hash" | "history"; pageNotFound?: Component }): void {
     if (Router.controller.route) throw new Error("Router already exists");
-    Router.controller.route = new Router(data.routes, data.history, data.pageNotFound);
+    Router.controller.route = new Router(data.routes, data.history || "history", data.pageNotFound);
   }
 
   private static buildURL(baseUrl: string, parametros: { [key: string]: any }): string {

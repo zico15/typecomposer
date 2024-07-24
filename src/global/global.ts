@@ -4,7 +4,7 @@ import { ref, Component, StyleOptional, CSSStyleDeclarationRef as CSSStyleDeclar
 declare global {
   var CSSStyleDeclarationRef: {
     prototype: CSSStyleDeclaration;
-    new(): CSSStyleDeclarationRefType;
+    new (): CSSStyleDeclarationRefType;
   };
   // function test_global();
   interface Array<T> {
@@ -25,7 +25,7 @@ declare global {
   interface Element {
     innerHTML: string | ref<string>;
     style: CSSStyleDeclarationRefType;
-    variant: "default" | string;
+    variant: string | ref<string> | undefined;
     onInit(): void;
     unmount(): void;
     addClassName(...names: string[]): void;
@@ -66,16 +66,20 @@ Object.defineProperty(Element.prototype, "variant", {
     return this.getAttribute("variant") || "default";
   },
   set: function (v: "default" | string) {
-    v = v?.toString()?.trim() || "default";
-    if (v == "default" || v == undefined || v.trim().length == 0) this.removeAttribute("variant");
+    const baseRef = refType(v);
+    if (baseRef) baseRef.subscribe(this, "variant");
     else {
-      this.setAttribute("variant", v);
+      v = v?.toString()?.trim() || "default";
+      if (v == "default" || v == undefined || v.trim().length == 0) this.removeAttribute("variant");
+      else {
+        this.setAttribute("variant", v);
+      }
     }
   },
 });
 
 Object.defineProperty(window, "scoped", {
-  value: function (target: any): any { },
+  value: function (target: any): any {},
   writable: true,
   configurable: true,
   enumerable: true,
@@ -92,7 +96,7 @@ try {
       this._multiple = _value;
     },
   });
-} catch (__) { }
+} catch (__) {}
 
 try {
   Object.defineProperty(HTMLButtonElement.prototype, "accept", {
@@ -105,13 +109,13 @@ try {
       this._accept = value;
     },
   });
-} catch (__) { }
+} catch (__) {}
 
 try {
   const originalButton = Object.getOwnPropertyDescriptor(HTMLButtonElement.prototype, "type").set;
 
   Object.defineProperty(HTMLButtonElement.prototype, "onfile", {
-    value: function (this: HTMLButtonElement, fileList: FileList) { },
+    value: function (this: HTMLButtonElement, fileList: FileList) {},
     writable: true,
     configurable: true,
     enumerable: true,
@@ -143,7 +147,7 @@ try {
       originalButton.call(this, value);
     },
   });
-} catch (__) { }
+} catch (__) {}
 
 const originalInnerHTML = Object.getOwnPropertyDescriptor(Element.prototype, "innerHTML").set;
 
@@ -174,28 +178,28 @@ Object.defineProperty(HTMLElement.prototype, "innerText", {
 });
 
 Object.defineProperty(Element.prototype, "onInit", {
-  value: function () { },
+  value: function () {},
   writable: true,
   configurable: true,
   enumerable: true,
 });
 
 Object.defineProperty(Element.prototype, "onConnected", {
-  value: function () { },
+  value: function () {},
   writable: true,
   configurable: true,
   enumerable: true,
 });
 
 Object.defineProperty(Element.prototype, "onDisconnected", {
-  value: function () { },
+  value: function () {},
   writable: true,
   configurable: true,
   enumerable: true,
 });
 
 Object.defineProperty(Element.prototype, "unmount", {
-  value: function () { },
+  value: function () {},
   writable: true,
   configurable: true,
   enumerable: true,
@@ -271,4 +275,4 @@ Object.defineProperty(HTMLTextAreaElement.prototype, "placeholder", {
   },
 });
 
-export { };
+export {};

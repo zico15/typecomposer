@@ -1,4 +1,4 @@
-import { type StyleOptional, DivElement, IComponent, ILayout, HtmlElement } from "../..";
+import { type StyleOptional, DivElement, IComponent, ILayout, HtmlElement, ref } from "../..";
 
 export class BorderPaneElement extends ILayout {
   private _top: HTMLElement;
@@ -9,7 +9,7 @@ export class BorderPaneElement extends ILayout {
 
   constructor(
     optional?: StyleOptional & {
-      variant?: "primary" | "secondary";
+      variant?: "primary" | "secondary" | string | ref<string>;
     },
   ) {
     super(optional);
@@ -27,7 +27,7 @@ export class BorderPaneElement extends ILayout {
     this._bottom.setAttribute("slot", "bottom");
   }
 
-  set variant(variant: "primary" | "secondary") {
+  set variant(variant: "primary" | "secondary" | string | ref<string>) {
     super.variant = variant;
   }
 

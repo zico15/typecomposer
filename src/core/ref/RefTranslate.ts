@@ -4,7 +4,10 @@ import { WeakRefMap } from "./RefMap";
 export class RefTranslate extends String {
   static list: WeakRefMap<object, Map<string, string[]>> = new WeakRefMap();
 
-  constructor(private _value: string[]) {
+  constructor(
+    private _value: string[],
+    private args: any[],
+  ) {
     super(_value?.toString() || "");
   }
 
