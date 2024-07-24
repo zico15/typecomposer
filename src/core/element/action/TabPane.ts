@@ -37,6 +37,10 @@ export class TabPane extends BorderPaneElement {
       if (tab.content != undefined) this.center.appendChild(tab.content);
       this.tabs.appendChild(tab);
       tab.addEventListener("click", () => this.setTabSelected(tab));
+      tab.onUpdatedContent = (newContent) => {
+        if (newContent) this.center.append(tab.content);
+        this.setTabSelected(tab);
+      };
       // if (this.type == "max")
       //     this.tabs.style.gridTemplateColumns = "repeat(" + this.tabs.children.length + ", 1fr)";
       // else {
@@ -49,13 +53,10 @@ export class TabPane extends BorderPaneElement {
   }
 
   public removeTap(title: string) {
-    for (let i = 0; i < this.tabs.children.length; i++) {
-      const child = this.tabs.children.item(i);
-      if (child instanceof HTMLElement && child.innerHTML == title) {
-        this.tabs.removeChild(child);
-        break;
-      }
-    }
+    const tabToRemove: TabItem | null = this.getTab({ title: title });
+    if (!tabToRemove) return;
+    tabToRemove.content.remove();
+    tabToRemove.remove();
   }
 
   get closeable(): boolean {
@@ -83,8 +84,12 @@ export class TabPane extends BorderPaneElement {
     return Array.from(this.tabs.children) as TabItem[];
   }
 
-  getTab(index: number): TabItem | null {
-    return this.tabs.children.item(index) as TabItem;
+  getTab(tabToFind: { index?: number; title?: string }): TabItem | null {
+    if (tabToFind.index) return this.tabs.children.item(tabToFind.index) as TabItem;
+    else if (tabToFind.title) {
+      return (Array.from(this.tabs.children) as TabItem[]).find((tab) => tab.title == tabToFind.title) || null;
+    }
+    return null;
   }
 
   get select(): TabItem | null {

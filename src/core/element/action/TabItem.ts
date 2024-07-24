@@ -75,6 +75,14 @@ export class TabItem extends Component {
   get content(): HTMLElement | undefined {
     return this._content;
   }
+
+  set content(newContent: HTMLElement | undefined) {
+    this._content.remove();
+    this._content = newContent;
+    this.onUpdatedContent(newContent);
+  }
+
+  public onUpdatedContent(newContent: HTMLElement | undefined) {}
 }
 // @ts-ignore
 customElements.define("tab-item", TabItem);
