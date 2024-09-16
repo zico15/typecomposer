@@ -1,47 +1,39 @@
 .table-pane {
-  display: block;
-  unicode-bidi: isolate;
+  width: 80%;
+  background-color: var(--primary-color);
+  border-radius: 0px;
+  overflow: hidden;
+
+  .table-container {
+    overflow-y: auto;
+  }
+
   table {
-    font-family: "Inter", sans-serif;
+    width: 100%;
     border-collapse: collapse;
-    font-size: 14px;
+    margin-bottom: 0;
     color: var(--primary-text-color);
-    width: -webkit-fill-available;
+  }
 
-    th {
-      background-color: var(--segundary-color);
-      color: var(--primary-text-color);
-      text-align: center;
-      position: sticky;
-      top: -2px;
-    }
+  table th,
+  table td {
+    padding: 16px;
+    text-align: left;
+  }
 
-    th,
-    td {
-      border: 1px solid var(--segundary-color);
-      padding: 6px, 8px;
-      font-weight: normal;
-    }
+  table thead {
+    background-color: var(--segundary-color);
+    position: sticky;
+    top: 0;
+    z-index: 1;
+  }
 
-    thead {
-      position: sticky;
-      top: 0px;
-    }
-
-    table tbody tr:nth-of-type(even) {
-      background-color: var(--segundary-color);
-    }
+  table tbody tr {
+    border-bottom: 1px solid var(--segundary-color);
   }
 
   table tbody tr:last-child {
     border-bottom: none;
-  }
-
-  .scrollable-table {
-    height: 500px;
-    overflow-y: auto;
-    display: flex;
-    flex-direction: column;
   }
 
   .table-footer {

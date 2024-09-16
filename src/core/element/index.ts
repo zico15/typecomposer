@@ -25,6 +25,8 @@ import { AlertPane, type AlertType } from "./action/AlertPane";
 import { ColorPicker } from "./action/ColorPicker";
 import { ScrollPane } from "./layers/ScrollPane";
 import { TablePane, TablePagination } from "./layers/TablePane";
+import { PopUpButton } from "./action/PopUpButton";
+import { AvatarElement } from "./action/AvatarElement";
 
 export {
   ColorPicker,
@@ -39,11 +41,13 @@ export {
   ToggleButton,
   TablePane,
   TablePagination,
+  AvatarElement,
   // BodyElement,
   // H1Element,
   // H2Element,
   // ButtonElement,
   DropDown,
+  PopUpButton,
   // AnchorPane,
   // Pane,
   // SvgElement,

@@ -1,0 +1,57 @@
+.pop-up-button {
+  display: flex;
+  align-items: center;
+  position: relative;
+  .button {
+    width: 20px;
+    height: 20px;
+    //margin-left: 24px; // Separation from the profile picture
+    cursor: pointer;
+  }
+
+  .options-container {
+    opacity: 0; // Start with the menu fully transparent
+    max-height: 0;
+    display: flex;
+    flex-direction: column;
+    background-color: white;
+    padding: 12px;
+    gap: 2px;
+    position: absolute;
+    border-radius: 16px;
+    box-shadow: 4px 4px 4px 0px #cccccc40;
+    top: 1%;
+    //right: 0;
+    margin-top: 25px;
+    transition: opacity 0.15s ease-out, max-height 0.15s ease-out, transform 0.15s ease-out;
+    transform: scaleY(0); // Start with the menu scaled down vertically
+    transform-origin: top; // Scale from the top
+    overflow: hidden; // Prevent displaying content outside of the max-height
+    z-index: 100; // Ensure the dropdown is above other content
+  }
+
+  .option {
+    width: auto;
+    padding: 8px 6px;
+    border-radius: 8px;
+    opacity: 0; // Start with the options fully transparent
+    transform: translateY(-10px); // Start with the options slightly above their final position
+    transition: opacity 0.15s ease-out 0.15s, transform 0.15s ease-out 0.15s; // Delay the transition so it starts after the container begins to show
+
+    &:hover {
+      background: #3970fe33;
+      cursor: pointer;
+    }
+  }
+
+  .button.pressed + .options-container {
+    opacity: 1; // Transition to full opacity
+    max-height: 500px; // Set a max-height large enough to accommodate the content
+    transform: scaleY(1); // Scale back to full size
+
+    .option {
+      opacity: 1; // Transition the options to full opacity
+      transform: translateY(0); // Transition the options to their final position
+    }
+  }
+}

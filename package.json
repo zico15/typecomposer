@@ -1,6 +1,6 @@
 {
   "name": "typecomposer",
-  "version": "0.0.60",
+  "version": "0.0.71",
   "repository": {
     "type": "git",
     "url": "https://github.com/zico15"
@@ -13,16 +13,16 @@
     "README.md",
     "dist",
     "styles",
-    "typings.d.ts",
+    "typings/index.d.ts",
     "public",
     "LICENSE"
   ],
   "scripts": {
-    "copy": "cp -r dist '/Users/ezequiel/Documents/degital-menu/dashboard/node_modules/typecomposer'",
-    "copy_style": "cp -r styles '/Users/ezequiel/Documents/degital-menu/dashboard/node_modules/typecomposer'",
+    "copy": "cp -r dist '/Users/ezequiel/Documents/observatorios/frontend_tc/node_modules/typecomposer'",
+    "copy_style": "cp -r styles '/Users/ezequiel/Documents/observatorios/frontend_tc/node_modules/typecomposer'",
     "build": "rm -rf dist/ && prettier --write src/ && npm run build:esm && npm run build:cjs && npm run copy && npm run copy_style",
-    "build:esm": "tsc",
-    "build:cjs": "tsc --module CommonJS --outDir dist/cjs",
+    "build:esm": "tsc  -p tsconfig.json",
+    "build:cjs": "tsc  -p tsconfig.json --module CommonJS --outDir dist/cjs",
     "pub": "npm run build && npm publish"
   },
   "keywords": [
@@ -32,17 +32,12 @@
   "author": "Ezequiel",
   "license": "MIT",
   "dependencies": {
-    "chart.js": "^4.4.0",
-    "ts-morph": "^20.0.0",
-    "vite": "^5.0.0"
+    "chart.js": "^4.4.0"
   },
   "devDependencies": {
+    "@types/node": "^22.5.5",
     "ts-morph": "^20.0.0",
+    "typescript": "^5.6.2",
     "vite": "^5.0.0"
-  },
-  "peerDependencies": {
-    "typescript": "^5.2.2",
-    "vite": "^5.0.0",
-    "@googlemaps/js-api-loader": "^1.16.2"
   }
 }

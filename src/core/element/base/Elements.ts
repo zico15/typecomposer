@@ -434,7 +434,7 @@ export class TableElement extends HTMLTableElement implements IComponent {
   }
 
   getRows(): TableRowElement[] {
-    return Array.from(this._body.querySelectorAll("tr") as any);
+    return Array.from(this.rows) as TableRowElement[];
   }
 
   getRow(row: number): TableRowElement | undefined {
@@ -534,6 +534,11 @@ export class TableElement extends HTMLTableElement implements IComponent {
     if (this._body == undefined) return;
     this._body.innerHTML = "";
   }
+  removeColumn(column: number) {
+    Array.from(this.rows).forEach((row) => {
+      row.removeChild(row.children[column]);
+    });
+  }
 }
 
 customElements.define("base-table-element", TableElement, { extends: "table" });
@@ -631,6 +636,7 @@ export class TableCellElement extends HTMLTableCellElement implements IComponent
       if (optional.value instanceof HTMLElement) this.appendChild(optional.value);
       else this.innerHTML = optional.value.toString();
     }
+    //this.#value = optional?.value;
     if (optional?.child) this.appendChild(optional.child);
     delete optional?.child;
     delete optional?.value;
@@ -701,6 +707,9 @@ export class InputElement extends HTMLInputElement implements IComponent {
       name?: string;
       value?: string | ref<string>;
       placeholder?: string;
+      hidden?: boolean;
+      accept?: string;
+      multiple?: boolean;
     },
   ) {
     super();
@@ -767,7 +776,7 @@ customElements.define("base-button-element", ButtonElement, {
 });
 
 export class TextAreaElement extends HTMLTextAreaElement implements IComponent {
-  constructor(optional?: StyleOptional) {
+  constructor(optional?: StyleOptional & { value?: string | ref<string> }) {
     super();
     Component.applyData(optional, this);
   }

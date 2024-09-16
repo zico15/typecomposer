@@ -31,9 +31,9 @@ class RouterController {
     window.addEventListener("load", () => {
       if (this.route) this.updateRoute(this.route.history == "history" ? window.location.pathname : window.location.hash);
     });
-    //window.addEventListener("popstate", () => {
-    //  if (this.route) this.updateRoute(this.route.history == "history" ? window.location.pathname : window.location.hash);
-    //});
+    window.addEventListener("popstate", () => {
+      if (this.route) this.updateRoute(this.route.history == "history" ? window.location.pathname : window.location.hash);
+    });
     //// quando a uma mudanca na url
     //window.addEventListener("hashchange", () => {
     //  if (this.route) this.updateRoute(window.location.hash);
@@ -41,6 +41,8 @@ class RouterController {
   }
 
   doRoutesMatch(route1: string, route2: string): boolean {
+    console.log("route1: ", route1, " route2: ", route2);
+    if (route2 == Router.PATH_FULL) return true;
     // Replace '*' with a regex pattern that matches any segment
     const routePattern2 = route2.replace(/\*/g, "[a-zA-Z0-9-]+");
 
@@ -174,8 +176,10 @@ class RouterController {
     pathname = pathname.replace(/\?$/, "");
     if (pathname.charAt(0) != "/") pathname = "/" + pathname;
     if (this.route.history == "hash") window.location.hash = "#" + pathname;
-    else window.history.pushState({}, "", pathname);
-    this.updateRoute(this.route.history == "history" ? window.location.pathname : window.location.hash);
+    else {
+      window.history.pushState({}, "", pathname);
+      this.updateRoute(this.route.history == "history" ? window.location.pathname : window.location.hash);
+    }
   }
 
   public getRouteViewFree(routeView: RouteView): RoutePageBuild | undefined {
@@ -183,6 +187,7 @@ class RouterController {
     let index = Array.from<RouteView>(document.querySelectorAll("route-view") || []).findIndex((r) => r == routeView);
     if (index == -1 || index >= this.currentRoute.length) return undefined;
     this.currentRoute[index++].routeView = routeView;
+    console.log("index: ", this.currentRoute);
     return this.currentRoute.length > index ? this.currentRoute[index] : undefined;
   }
 
@@ -239,6 +244,7 @@ class RouterController {
 export class Router {
   public static controller: RouterController = new RouterController();
   private static _props: any = {};
+  public static readonly PATH_FULL: string = "*";
 
   constructor(
     public routes: RoutePage[] = [],

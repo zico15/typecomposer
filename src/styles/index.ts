@@ -4,8 +4,11 @@ export type Variant = "default" | "outline" | "solo" | "standard" | "underlined"
 
 export interface StyleOptional {
   variant?: string | ref<string>;
+  disabled?: boolean | ref<boolean>;
   onclick?: ((this: GlobalEventHandlers, ev: MouseEvent) => any) | null;
+  onchange?: ((this: GlobalEventHandlers, ev: Event) => any) | null;
   id?: string | ref<string>;
+  title?: string | ref<string>;
   /** [MDN reference](https://developer.mozilla.org/docs/Web/CSS/accent-color) */
   className?: string | ref<string>;
   text?: string | ref<string>;

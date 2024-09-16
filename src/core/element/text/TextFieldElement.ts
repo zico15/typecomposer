@@ -38,6 +38,8 @@ export class TextFieldElement extends Component {
       placeholder: " ",
       value: optional?.value || optional?.text || "",
       variant: optional?.variant,
+      disabled: optional?.disabled,
+      color: optional?.color,
     });
     this.append(this.input, this.fieldset);
     if (optional?.placeholderAnimation == true || optional?.placeholderAnimation == undefined) {
@@ -53,6 +55,11 @@ export class TextFieldElement extends Component {
     delete optional?.text;
     this.variant = optional?.variant;
     Component.applyData(optional, this);
+  }
+
+  set disabled(value: boolean) {
+    this.input.disabled = value;
+    super.disabled = value;
   }
 
   get input(): InputElement {

@@ -1,61 +1,5 @@
 import { RefTranslate } from "../core/ref/RefTranslate";
-import { ref, Component, StyleOptional, CSSStyleDeclarationRef as CSSStyleDeclarationRefType, refType } from "../";
-
-declare global {
-  var CSSStyleDeclarationRef: {
-    prototype: CSSStyleDeclaration;
-    new (): CSSStyleDeclarationRefType;
-  };
-  // function test_global();
-  interface Array<T> {
-    clear(): void;
-  }
-
-  interface Event {
-    detail: any;
-  }
-
-  function scoped(target: any): any;
-
-  interface Window {
-    getTheme(): string;
-    setTheme(theme: string): void;
-  }
-
-  interface Element {
-    innerHTML: string | ref<string>;
-    style: CSSStyleDeclarationRefType;
-    variant: string | ref<string> | undefined;
-    onInit(): void;
-    unmount(): void;
-    addClassName(...names: string[]): void;
-    setStyle(styles: StyleOptional): void;
-    onConnected(): void;
-    onDisconnected(): void;
-  }
-
-  interface HTMLElement {
-    innerHTML: string | ref<string>;
-    style: CSSStyleDeclarationRefType;
-    onInit(): void;
-    unmount(): void;
-    addClassName(...names: string[]): void;
-    setStyle(styles: StyleOptional): void;
-    onConnected(): void;
-    onDisconnected(): void;
-  }
-
-  interface HTMLButtonElement {
-    // @ts-ignore
-    type: "submit" | "reset" | "button" | "file";
-    accept: string;
-    multiple: boolean;
-    onfile: (file: FileList) => void;
-  }
-  interface WeakRef<T> {
-    equals<K extends WeakKey>(value: WeakRef<K>): boolean;
-  }
-}
+import { ref, Component, CSSStyleDeclarationRef as CSSStyleDeclarationRefType, refType } from "../";
 
 WeakRef.prototype.equals = function (value: WeakRef<any>) {
   return this.deref() === value.deref();
@@ -75,6 +19,17 @@ Object.defineProperty(Element.prototype, "variant", {
         this.setAttribute("variant", v);
       }
     }
+  },
+});
+
+// disabled
+Object.defineProperty(HTMLElement.prototype, "disabled", {
+  get: function () {
+    return this.getAttribute("disabled") == "true";
+  },
+  set: function (v: boolean) {
+    if (v) this.setAttribute("disabled", "");
+    else this.removeAttribute("disabled");
   },
 });
 

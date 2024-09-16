@@ -1,6 +1,4 @@
 import {
-  ref,
-  isRef,
   StyleOptional,
   Component,
   DivElement,
@@ -10,6 +8,10 @@ import {
   TableRowElement,
   TableCellElement,
   TableHeadCellElement,
+  TableHeadRowElement,
+  CheckBox,
+  InputElement,
+  DropDown,
 } from "../..";
 
 export class TablePagination extends Component {
@@ -96,68 +98,109 @@ export class TablePagination extends Component {
 
 customElements.define("table-pagination", TablePagination);
 
-export class TablePane extends Component {
-  private _container: DivElement = new DivElement({ className: "table-container scroll-pane" });
-  private _footer: DivElement = new DivElement({ className: "table-footer" });
-  private _table: TableElement = new TableElement({});
-  private _rows!: ref<any[][]>;
+// teste a classe TablePane
+export class TablePane<T = any> extends Component {
+  #container: DivElement = new DivElement({ className: "scrollable-table" });
+  #footer: DivElement = new DivElement({ className: "table-footer" });
+  #table: TableElement = new TableElement({});
+  #values: { [key: string]: T }[] = [];
+  #valuesHead: any[] = [];
+  #columnsKey: string[] | undefined = undefined;
+  #elementEmpty: DivElement = new DivElement({ text: "No data", width: "100%", textAlign: "center", margin: "auto" });
+  #isElementEmpty: boolean = true;
 
   constructor(
     optional?: StyleOptional & {
-      rows?: any[][] | ref<(string | number)[][]>;
-      header?: string[];
+      rows?: { [key: string]: T }[];
       pagination?: boolean;
+      columnsKey?: string[];
+      valueEmpty?: string | HTMLElement;
     },
   ) {
-    super({ display: "block", ...optional });
+    super({ ...optional });
     this.addClassName("table-pane");
     this.container.append(this.table);
     this.append(this.container);
-    this._container.style.maxHeight = this.style.maxHeight;
-    this._container.style.maxWidth = this.style.maxWidth;
-    this._container.style.height = this.style.height;
-    this._container.style.width = this.style.width;
-    this.style.maxHeight = "";
-    this.style.maxWidth = "";
-    this.append(this._footer);
+    this.#columnsKey = optional?.columnsKey;
+    this.append(this.#footer);
     if (optional?.pagination) this.pagination = new TablePagination();
-    if (optional && optional?.rows) this.rows = optional.rows;
-    else this.rows = ref([]);
-    if (optional?.header) this.setHeadRow(optional.header);
+    if (optional && optional?.rows) this.addRows(optional.rows);
+    if (optional && optional?.valueEmpty) this.valueEmpty = optional.valueEmpty;
+    this.container.append(this.#elementEmpty);
   }
 
-  get rows(): any[][] | undefined {
-    return this._rows.value;
+  get values(): { [key: string]: T }[] {
+    return this.#values;
   }
 
-  set rows(value: any[][] | ref<any[][]>) {
-    this._rows = isRef(value) ? (value as ref<any[][]>) : (ref(value) as ref<any[][]>);
-    this._rows.onChange(() => {
-      const rows = this.rows || [];
-      this.table.removeRows();
-      rows.forEach((value) => {
-        const row = new TableRowElement({
-          cells: [...value.map((v) => new TableCellElement({ value: v }))],
-        });
-        this.table.addRow(row);
-      });
-      const pagination = this.pagination;
-      if (pagination) {
-        pagination.total = rows.length;
-      }
-    }, this);
+  get valuesHead(): any[] {
+    return this.#valuesHead;
+  }
+
+  set valueEmpty(value: string | HTMLElement) {
+    this.#elementEmpty.innerHTML = "";
+    if (typeof value === "string") this.#elementEmpty.innerText = value;
+    else this.#elementEmpty.append(value);
+  }
+
+  toMatrix(): any[][] {
+    const keys = this.#columnsKey || Object.keys(this.values[0]);
+    const matrix = [keys, ...this.values.map((v) => keys.map((k) => v[k]))];
+    return matrix;
   }
 
   get container(): DivElement {
-    return this._container;
+    return this.#container;
   }
 
   get table(): TableElement {
-    return this._table;
+    return this.#table;
+  }
+
+  public static readonly AUTO = (value: any, row: number, column: number) => {
+    if (value instanceof CheckBox) return value.checked;
+    if (value instanceof InputElement) return value.value;
+    if (value instanceof SelectElement) return value.value;
+    if (value instanceof DropDown) return value.value;
+    if (value instanceof HTMLElement) return (value as any)?.value || value?.innerText;
+    return value;
+  };
+
+  /**
+   * The toTable function creates a copy of an existing table, applies transformations to its data, and allows specific columns to be excluded.
+   * It accepts a custom conversion function that can be used to transform the data in each table cell before returning the transformed table.
+   * @param convert  convert: (value: any, column: number, row: number) => any (optional, default: TablePane.AUTO)
+   * @param excludeColumns An array of column indices that should be excluded from the resulting table.
+   * @returns Returns a copy of the original table (TableElement) with the transformations applied to the cells and the specified columns removed.
+   */
+  toTable(convert: (value: any, column: number, row: number) => any = TablePane.AUTO, excludeColumns: number[] = []): TableElement {
+    const table = this.table.cloneNode(true) as TableElement;
+    excludeColumns = excludeColumns.sort((a, b) => a - b);
+    const rows = table.rows;
+    for (let i = 0; i < rows.length; i++) {
+      const row = rows[i];
+      for (let j = 0; j < row.cells.length; j++) {
+        const cell = row.cells[j];
+        const value = convert(cell.children[0] || cell.innerText, j, i);
+        cell.innerHTML = "";
+        if (value instanceof HTMLElement) {
+          cell.appendChild(value);
+        } else {
+          cell.innerHTML = String(value);
+        }
+      }
+    }
+    while (excludeColumns.length > 0) {
+      const index = excludeColumns[0];
+      table.removeColumn(index);
+      excludeColumns.map((v) => (v > index ? v - 1 : v));
+      excludeColumns.shift();
+    }
+    return table;
   }
 
   get footer(): DivElement {
-    return this._footer;
+    return this.#footer;
   }
 
   get pagination(): TablePagination | undefined {
@@ -182,22 +225,96 @@ export class TablePane extends Component {
     }
   }
 
-  public setHeadRow(row: string[] | undefined) {
-    this.table.removeHeadRows();
-    if (!row) return;
-    this.table.addHeadRows(
-      new TableRowElement({
+  public setColumsKey(columnsKey: string[]) {
+    this.#columnsKey = columnsKey;
+  }
+
+  public addHeadRow(row: any[]): TableHeadRowElement {
+    row = row?.filter((v) => v !== undefined) || row;
+    this.#valuesHead.push(row);
+    return this.table.addHeadRow(
+      new TableHeadRowElement({
         cells: [...row.map((v) => new TableHeadCellElement({ value: v }))],
       }),
     );
   }
 
-  public addRow(row: any[]) {
-    this._rows.value.push(row);
+  public addRow(row: { [key: string]: T }): TableRowElement {
+    if (this.#isElementEmpty) {
+      this.container.removeChild(this.#elementEmpty);
+      this.#isElementEmpty = false;
+    }
+    this.values.push(row);
+    const keys = this.#columnsKey || Object.keys(row);
+    return this.table.addRow(
+      new TableRowElement({
+        cells: [...keys.map((v) => new TableCellElement({ value: row[v] as any }))],
+      }),
+    );
   }
 
-  public addRows(rows: any[][]) {
-    this._rows.value.push(...rows);
+  public setHeadRows(rows: string[][]) {
+    this.removeHeadRows();
+    this.addHeadRows(rows);
+  }
+
+  public addHeadRows(rows: string[][]): TableHeadRowElement[] {
+    const headRows: TableHeadRowElement[] = [];
+    for (let i = 0; i < rows.length; i++) {
+      headRows.push(this.addHeadRow(rows[i]));
+    }
+    return headRows;
+  }
+
+  public setRows(rows: { [key: string]: T }[]) {
+    this.removeRows();
+    this.addRows(rows);
+  }
+
+  public addRows(rows: { [key: string]: T }[]): TableRowElement[] {
+    const rowsElement: TableRowElement[] = [];
+    this.values.push(...rows);
+    for (let i = 0; i < rows.length; i++) {
+      rowsElement.push(this.addRow(rows[i]));
+    }
+    return rowsElement;
+  }
+
+  public removeHeadRow(row: number) {
+    this.table.removeHeadRow(row);
+  }
+
+  public removeRow(row: number | { [key: string]: T }) {
+    if (typeof row === "object") {
+      const index = this.values.findIndex((v) => v === row);
+      console.log(index);
+      if (index >= 0) {
+        this.table.removeRow(index);
+        this.values.splice(index, 1);
+      }
+    } else {
+      this.table.removeRow(row);
+      this.values.splice(row, 1);
+    }
+    if (this.values.length === 0) {
+      this.removeRows();
+    }
+  }
+
+  public removeRows() {
+    this.table.removeRows();
+    this.#values = [];
+    if (!this.#isElementEmpty) this.container.append(this.#elementEmpty);
+    this.#isElementEmpty = true;
+  }
+
+  public removeHeadRows() {
+    this.table.removeHeadRows();
+  }
+
+  public removeAll() {
+    this.removeRows();
+    this.removeHeadRows();
   }
 }
 

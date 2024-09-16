@@ -115,8 +115,8 @@ export class DropDown<T = any> extends TextFieldElement {
   }
 
   private closeAndClean() {
-    Array.from(this.dropdownContent.children).forEach((child: HTMLElement) => {
-      child.classList.remove("selected");
+    Array.from(this.dropdownContent.children).forEach((value: HTMLElement) => {
+      value.classList.remove("selected");
     });
     this.arrow.classList.toggle("pressed");
     this.dropdownContent.classList.toggle("pressed");

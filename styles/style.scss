@@ -15,6 +15,7 @@
 // components
 @import url("components/TablePane.scss");
 @import url("components/TextFieldElement.scss");
+@import url("components/PopUpButton.scss");
 
 @import url("style-alert-pane.scss");
 
@@ -29,6 +30,12 @@ body {
 
 * {
   box-sizing: border-box;
+
+  &:disabled {
+    cursor: not-allowed;
+    pointer-events: none;
+    opacity: 0.6;
+  }
 }
 
 h1,
@@ -218,13 +225,14 @@ border-dashed {
 }
 
 button {
-  background-color: var(--primary-color-button); /* Green */
+  background-color: var(--primary-color-button);
   border: none;
   color: var(--primary-color-text);
   padding: 10px 22px;
   text-align: center;
   text-decoration: none;
   display: inline-block;
+  cursor: pointer;
   font-size: 16px;
   border-radius: 5px;
   margin: 5px 2px;
@@ -725,4 +733,20 @@ menu-bar-element {
 
 .stack-pane > * {
   position: absolute;
+}
+
+.avatar-element {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 60px;
+  height: 60px;
+  .avatar {
+    width: 100%;
+    height: 100%;
+    border-radius: 50%; /* Makes the image circular */
+    object-fit: cover; /* Ensures the image fits within the circle */
+    border: 2px solid #ccc; /* Optional: Add a border */
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1); /* Optional: Add a subtle shadow */
+  }
 }
