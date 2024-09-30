@@ -133,6 +133,10 @@ export class TablePane<T = any> extends Component {
     return this.#values;
   }
 
+  get rows() {
+    return this.table.rows;
+  }
+
   get valuesHead(): any[] {
     return this.#valuesHead;
   }

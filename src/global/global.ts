@@ -1,5 +1,5 @@
 import { RefTranslate } from "../core/ref/RefTranslate";
-import { ref, Component, CSSStyleDeclarationRef as CSSStyleDeclarationRefType, refType } from "../";
+import { ref, Component, CSSStyleDeclarationRef as CSSStyleDeclarationRefType, refType, InputElement } from "../";
 
 WeakRef.prototype.equals = function (value: WeakRef<any>) {
   return this.deref() === value.deref();
@@ -76,28 +76,22 @@ try {
     enumerable: true,
   });
 
+  function onButtonFile() {
+    const file = new InputElement({ type: "file", accept: this.accept, multiple: this.multiple });
+    file.onchange = (event: any) => {
+      this.onfile(event.target.files);
+      event.stopPropagation();
+      file.remove();
+    };
+    file.click();
+  }
+
   Object.defineProperty(HTMLButtonElement.prototype, "type", {
     set: function (value: "submit" | "reset" | "button" | "file") {
-      let inputFile: HTMLInputElement | undefined = this.querySelector("input[button-file=file]");
+      if (this.__onButtonFile__) this.removeEventListener("click", this.__onButtonFile__);
       if (value == "file") {
-        if (!inputFile) {
-          inputFile = document.createElement("input");
-          inputFile.type = "file";
-          inputFile.setAttribute("button-file", "file");
-          if (this.multiple) inputFile.multiple = this.multiple;
-          if (this.accept) inputFile.accept = this.accept;
-          inputFile.style.display = "none";
-          inputFile.onchange = (event: any) => {
-            this.onfile(event.target.files);
-            event.stopPropagation();
-          };
-          this.addEventListener("click", inputFile.click.bind(inputFile));
-          this.appendChild(inputFile);
-        }
-        value = "button";
-      } else if (inputFile) {
-        this.removeEventListener("click", inputFile.click.bind(inputFile));
-        this.removeChild(inputFile);
+        this.__onButtonFile__ = onButtonFile.bind(this);
+        this.addEventListener("click", this.__onButtonFile__);
       }
       originalButton.call(this, value);
     },
